@@ -37,4 +37,22 @@ http://localhost:8000
 
 ## GitHub Pages
 
-建议仓库名使用用户指定的 `博一文献阅读`。如果 GitHub Pages 对中文路径使用不顺手，后续也可以改成 `spintronics-literature`，网页标题仍然保留中文。
+当前部署仓库为 `yhluo57/phd-literature-notes`，GitHub Pages 地址：
+
+```text
+https://yhluo57.github.io/phd-literature-notes/
+```
+
+## 维护台功能
+
+网页顶部进入“维护台”后，可以完成这些维护动作：
+
+- 新文献导入：新建空白条目，或从 DOI 生成文献信息。
+- 在线/半在线编辑：修改会先保存在浏览器本地草稿，不会立刻覆盖 GitHub。
+- JSON 自动生成：随时复制或下载当前 `papers.json`。
+- PDF 文件名批量生成：选择多个 PDF，网页会用文件名猜测年份、期刊、标题、标签和分组。
+- DOI 补全：使用 Crossref 公开接口补全年份、期刊、作者、标题和 DOI 链接。
+- 重点图谱升级：给选中文献生成研究问题、证据链和关键图谱卡片模板。
+- GitHub API 保存：填入 fine-grained token 后，把当前 `papers.json` 写回仓库。
+
+建议 GitHub token 只给 `yhluo57/phd-literature-notes` 这个仓库，并只开启 Contents 读写权限。Token 只保存在当前浏览器会话中。
