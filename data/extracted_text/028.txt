@@ -1,0 +1,1260 @@
+
+
+--- PAGE 1 ---
+PERSPECTIVE
+www.advmattechnol.de
+Progress and Application Perspectives of Voltage-Controlled
+Magnetic Tunnel Junctions
+Yixin Shao and Pedram Khalili Amiri*
+This article discusses the current state of development, open research
+opportunities, and application perspectives of electric-ﬁeld-controlled
+magnetic tunnel junctions that use the voltage-controlled magnetic
+anisotropy eﬀect to control their magnetization. The integration of embedded
+magnetic random-access memory (MRAM) into mainstream semiconductor
+foundry manufacturing opens new possibilities for the development of
+energy-eﬃcient, high-performance, and intelligent computing systems. The
+current generation of MRAM, which uses the current-controlled spin-transfer
+torque (STT) eﬀect to write information, has gained traction due to its
+nonvolatile data retention and lower integration cost compared to embedded
+Flash. However, scaling MRAM to high bit densities will likely require a
+transition from current-controlled to voltage-controlled operation. In this
+perspective, an overview of voltage-controlled magnetic anisotropy (VCMA) as
+a promising beyond-STT write mechanism for MRAM devices is provided and
+recent advancements in developing VCMA-MRAM devices with perpendicular
+magnetization are highlighted. Starting from the fundamental mechanisms,
+the key remaining challenges of VCMA-MRAM, such as increasing the VCMA
+coeﬃcient, controlling the write error rate, and achieving ﬁeld-free VCMA
+switching are discussed. Then potential solutions are discussed and open
+research questions are highlighted. Lastly, prospective applications of
+voltage-controlled magnetic tunnel junctions (VC-MTJs) in security
+applications, extending beyond their traditional role as memory devices are
+explored.
+1. Introduction
+Over the past decade, the semiconductor industry has shown very
+signiﬁcant interest in emerging nonvolatile memory technolo-
+gies. This trend has been driven by the growing demand for com-
+puting applications that require large amounts of memory with
+Y. Shao, P. Khalili Amiri
+Department of Electrical and Computer Engineering
+Northwestern University
+Evanston, IL 60208, USA
+E-mail: pedram@northwestern.edu
+The ORCID identiﬁcation number(s) for the author(s) of this article
+can be found under https://doi.org/10.1002/admt.202300676
+© 2023 The Authors. Advanced Materials Technologies published by
+Wiley-VCH GmbH. This is an open access article under the terms of the
+Creative Commons Attribution-NonCommercial License, which permits
+use, distribution and reproduction in any medium, provided the original
+work is properly cited and is not used for commercial purposes.
+DOI: 10.1002/admt.202300676
+high
+bandwidth,
+low
+energy
+dissi-
+pation, and low latency,[1–8]
+as well
+as
+the
+increasing
+diﬃculty
+of
+scal-
+ing incumbent memory technologies
+– notably, embedded static random-
+access memory (SRAM) and embedded
+Flash
+(eFlash)
+–
+at
+advanced
+semi-
+conductor logic manufacturing nodes.
+In addition to potential standby energy
+savings due to their nonvolatile data re-
+tention, the value proposition of emerg-
+ing technology candidates for embed-
+ded memory principally takes one of two
+forms: 1) A nonvolatile memory technol-
+ogy that can be integrated into existing
+advanced complementary metal-oxide-
+silicon (CMOS) logic manufacturing pro-
+cesses with few added masks, and there-
+fore small added costs. This is the case
+for eFlash alternatives based on mag-
+netic random-access memory (MRAM)
+below the 28 nm node.[9–12] 2) A random-
+access memory technology that decreases
+the portion of the area occupied by
+SRAM in existing microprocessors, ac-
+celerators for graphics and artiﬁcial in-
+telligence, and other application-speciﬁc
+integrated circuits.[13–16] Such a higher-
+density version of SRAM can, in princi-
+ple, be used to reduce the overall chip
+area for the same amount of embedded
+memory, or conversely, achieve larger on-chip memory capac-
+ity (and therefore higher bandwidth) for the same constant chip
+area. The development of embedded MRAM based on the spin-
+transfer torque (STT) eﬀect to date has been focused on both of
+these potential applications.
+In addition, the large-scale integration of MRAM with high
+densities in relatively mature CMOS nodes (at the time of
+this writing, roughly encompassing the 14–28 nm nodes) also
+presents an unprecedented opportunity to rethink the funda-
+mental fabric of computing, beyond only using MRAM as an
+eSRAM or eFlash replacement. Speciﬁcally, emerging memory
+technologies oﬀer unique physics that can be leveraged to per-
+form computing tasks that are typically challenging to execute
+using traditional CMOS technology. Examples include utiliz-
+ing analog weights encoded in memristors to perform matrix
+multiplication,[17–21] implementing stochastic computing to im-
+prove the size and energy eﬃciency of neural networks,[22–28]
+as well as using various in-memory, reservoir, probabilistic, and
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (1 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+
+
+--- PAGE 2 ---
+www.advancedsciencenews.com
+www.advmattechnol.de
+Figure 1. a,b) Typical structure of STT- and VCMA-MRAM cells, where the
+access transistor, bit line (BL), word line (WL), and source line (SL) are
+also indicated. In STT-MRAM, the writing of information is realized via
+electric current, while in VCMA-MRAM, the writing process is realized by
+an electric ﬁeld (i.e., voltage), resulting in a smaller access transistor and
+lower dynamic energy dissipation.
+other physics-based approaches to computing that capitalize on
+the unique physics of emerging nanodevices.[29–33]
+MRAM has emerged as the most promising candidate for
+many of the above-mentioned embedded applications due to
+its fast write and read speed, high density (using a one-
+transistor[12,13] or zero-transistor cell with a two-terminal select
+device[34]), high endurance, nonvolatile data retention, and rela-
+tive ease of integration with existing semiconductor processes,
+due to the availability of 300 mm volume processing tools.
+The basic storage element of an MRAM is the so-called mag-
+netic tunnel junction (MTJ). An MTJ comprises a sandwiched de-
+vice structure where an ultrathin insulating layer (typically made
+of MgO) separates two ferromagnetic layers. One of the ferro-
+magnetic layers is ﬁxed by exchange coupling to another hard
+magnetic or synthetic antiferromagnetic layer, hence referred to
+as the “ﬁxed layer,” while the other ferromagnet is free to switch,
+making it the “free layer”. When the thickness of the insulating
+layer is thin enough, electrons from one ferromagnetic layer can
+tunnel into the other, producing a tunneling current that corre-
+sponds to a tunneling resistance. The magnitude of this tunnel-
+ing resistance depends on the relative orientation of the magneti-
+zation of the two ferromagnetic layers. When the magnetization
+of the two layers is parallel to each other, the resistance is rela-
+tively low, noted as the “P” state, while when the magnetization
+of the two layers is anti-parallel, the resistance is relatively high,
+noted as the “AP” state. These two states, characterized by dif-
+ferent resistance values, can be encoded as “0” and “1”, respec-
+tively, by using appropriate select devices and readout circuitry
+that convert the resistance diﬀerence into a binary voltage signal.
+This readout mechanism is referred to as tunneling magnetore-
+sistance (TMR).[35–42]
+The conventional switching mechanism of existing embed-
+ded MRAM is based on current-induced magnetization reversal
+using the spin-transfer torque (STT) eﬀect.[43–47] As shown in
+Figure 1a, a typical STT-MRAM cell integrates an MTJ in series
+with a ﬁeld-eﬀect transistor (FET), resulting in a one transistor
+– one resistor (1T-1R) structure, similar to that of DRAM. How-
+ever, writing using STT requires a signiﬁcant amount of current
+to be passed through the MTJ, thus limiting the scalability to ad-
+vanced technology nodes due to the need for the FET to drive this
+current.[48–51] High-speed (few nanoseconds or less) switching us-
+ing STT also typically requires a larger current, exacerbating this
+scaling challenge and creating a tradeoﬀbetween the write speed
+and endurance of the device. In order to overcome these limita-
+tions of STT-MRAM, a potential solution is to use electric-ﬁeld-
+controlled phenomena for switching, which eliminate the need
+for a large write current. This idea is illustrated in Figure 1b.
+A wide range of magnetoelectric coupling mechanisms have
+been studied for this purpose, which includes voltage-controlled
+magnetic anisotropy (VCMA),[52–59] strain-mediated magneto-
+electric coupling,[60,61] coupling of magnetization and polariza-
+tion vectors in a single-phase multiferroic material,[62,63] as well
+as the recently demonstrated voltage-controlled exchange cou-
+pling (VCEC) in magnetic tunnel junctions.[64] While each of
+these approaches comes with its advantages and challenges, in
+this perspective, our focus will be the development status and
+opportunities related to VCMA devices.
+2. Voltage-Controlled Magnetic Anisotropy (VCMA)
+as a Write Mechanism for MRAM
+As shown in Figure 1b, the basic idea of VCMA-based MRAM
+is to use an electric-ﬁeld-based principle for switching, to enable
+higher bit density (smaller access transistors) as well as ultra-low
+power switching due to reduced Ohmic dissipation.[53,65–69]
+VCMA was ﬁrst predicted in theoretical studies that investi-
+gated the electric-ﬁeld-induced spin-dependent screening, which
+could, in turn, modify the surface magnetization and mag-
+netic anisotropy.[70,71] This was followed by the ﬁrst experimental
+demonstration of the VCMA eﬀect in an Fe/MgO structure,[53]
+which is the most widely used material combination in MTJs to-
+day (usually, in the form of CoFe/MgO) due to its high TMR. As
+shown in Figure 2a, the application of an electric ﬁeld can change
+the ﬁlling of the hybridized orbitals near the interface, thus ad-
+justing the magnetic anisotropy due to spin-orbit interaction. The
+manifestation of the VCMA eﬀect at the device level is shown in
+Figure 2b. It can be observed that under +1 V, the perpendicular
+magnetic anisotropy (PMA) of the magnetic tunnel junction free
+layer is eliminated and the free layer becomes in-plane, while un-
+der −1 V, the PMA is enhanced, increasing the coercivity of the
+free layer.[65]
+By itself, a static VCMA pulse (i.e., having a pulse width much
+larger than the timescale of the magnetization dynamics) cannot
+result in deterministic switching of the MTJ free layer. However,
+180˚ switching of MTJs via the VCMA eﬀect can be realized dy-
+namically, by applying a voltage pulse across the MTJ, with the
+pulse duration set to be half of the precession period of the free
+layer.[54,65,68,69,72–83] As illustrated in Figure 3, when a voltage of
+a certain polarity is applied, the energy barrier Eb between the
+P and AP states is lowered due to the VCMA eﬀect.[53,67,70,84–89]
+As the amplitude of the voltage reaches a threshold value, Eb is
+temporarily eliminated and the magnetization of the free layer
+starts to precess around an in-plane axis provided by a small in-
+plane bias magnetic ﬁeld. By removing the voltage pulse halfway
+through the precession period, the magnetization of the free layer
+will end up in the opposite direction. Depending on whether the
+stable free layer states (in the absence of voltage) are in-plane or
+(more commonly) out-of-plane, the switching voltage must have
+a polarity that corresponds to the increase or reduction of the
+PMA due to VCMA, respectively.[90]
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (2 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+ 2365709x, 2023, 18, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202300676 by Readcube-Labtiva, Wiley Online Library on [16/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- PAGE 3 ---
+www.advancedsciencenews.com
+www.advmattechnol.de
+Figure 2. Basic principle and device implication of VCMA. a) Schematic of the eﬀect of the electric ﬁeld on the occupancy of 3d orbitals in an Fe layer.
+Reproduced with permission.[53] Copyright 2009, Springer Nature. b) Measured magnetoresistance curves of a perpendicular MTJ as a function of
+a perpendicular magnetic ﬁeld under diﬀerent bias voltages. Due to the VCMA eﬀect, the coercivity of the free layer increases (decreases) with the
+application of a negative (positive) voltage. Reproduced with permission.[65] Copyright 2015, IEEE.
+There are several advantages of using VCMA as the write
+mechanism over STT: First, no current is needed for switch-
+ing, therefore the dynamic power consumption can be much
+lower (≈fJ/bit).[72,83] In addition, there is no constraint on the
+size of the access transistor, as it does not have to provide a
+large write current to the MTJ. Hence, VCMA-MRAM can in
+principle be scaled down to more advanced technology nodes
+while using minimum-sized transistors, thus providing higher
+bit density. Furthermore, precessional switching via VCMA typ-
+ically occurs within less than a nanosecond, enabling an ultra-
+fast write process[72,83] which is especially important for Cache
+applications. Moreover, while STT-MRAM suﬀers from the read
+disturbance challenge, read disturbance can be completely elimi-
+nated for VCMA-MRAM by changing the polarity of the read volt-
+age, taking advantage of the odd dependence of anisotropy on the
+electric ﬁeld.[76,91] Finally, VCMA-MRAM usually utilizes MTJs
+with thicker MgO thickness to eliminate STT contributions to
+the device dynamics. This increases the TMR ratio, and can also
+provide better endurance.
+3. Challenges and Research Opportunities for
+VCMA-MRAM
+There are a number of remaining challenges, each presenting
+exciting research opportunities when it comes to integrating
+VCMA-MRAM into practical memory and computing circuits. In
+this section, we discuss our perspectives on four of these oppor-
+tunities: 1) Material design to achieve a more eﬃcient VCMA ef-
+fect, 2) Reliable VCMA switching with a low write error rate, 3)
+Field-free VCMA-induced precessional switching, and 4) Exten-
+sion of the VCMA-induced switching concept to materials with
+antiferromagnetic order.
+3.1. Material Design to Achieve a More Eﬃcient VCMA Eﬀect
+For the practical implementation of VCMA-MRAM, one of the
+main requirements is to switch the device at low voltages com-
+patible with existing CMOS logic circuits. In precessional VCMA
+Figure 3. Illustration of VCMA-induced precessional switching. When a voltage is applied, it eliminates the energy barrier between the two free layer
+states, and the magnetization of the free layer begins to precess around the in-plane bias magnetic ﬁeld. If the voltage is removed halfway through the
+precession period, the magnetization will be reversed and ends up pointing in the opposite direction.
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (3 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+ 2365709x, 2023, 18, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202300676 by Readcube-Labtiva, Wiley Online Library on [16/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- PAGE 4 ---
+www.advancedsciencenews.com
+www.advmattechnol.de
+Figure 4. a,b) Schematic of the device structure and measured resistance as a function of magnetic ﬁeld for perpendicular voltage-controlled magnetic
+tunnel junctions with high VCMA (130 fJ V−1 m−1), TMR > 150%, and temperature stability after annealing at 400 ˚C for BEOL integration.[94] c–e)
+Measured switching probability under sub-nanosecond pulses for both switching directions, and for two successive voltage-induced switching attempts.
+Reproduced under the terms of the CC BY 4.0 license.[94] Copyright 2022, Springer Nature.
+switching, the switching voltage, noted as Vsw, is the value
+at which the energy barrier between the free layer states is
+eliminated. The switching voltage can be expressed as Vsw =
+tMgO tfree(Ki(V = 0)∕tfree −2𝜋M2
+S)∕𝜉,[65,83,92] where tMgO is the
+thickness of the MgO tunnel barrier, tfree is the thickness of
+the free layer, Ki is the PMA, MS is the saturation magnetiza-
+tion, and 𝜉is the VCMA coeﬃcient that quantiﬁes the mag-
+netic anisotropy’s sensitivity to electric ﬁelds. As the switch-
+ing voltage is inversely proportional to 𝜉, a suﬃciently large
+VCMA coeﬃcient is necessary for low write voltages and to
+achieve switching of nanoscale MTJs. On the other hand, a
+large enough energy barrier is needed to maintain suﬃcient
+thermal stability. The energy barrier can be written as Eb =
+𝜋D2tfree(Ki(V = 0)∕tfree −2𝜋M2
+S)∕4,[65,83,92] where D is the diam-
+eter of the device. For smaller devices, to have the same thermal
+stability coeﬃcient Δ = Eb / kT, a higher PMA is needed, im-
+posing an even higher demand for the VCMA coeﬃcient. It can
+be estimated that for Cache applications with MTJ diameters in
+the range of ≈20–30 nm, VCMA coeﬃcients as high as ≈300–
+900 fJ V−1 m−1 are needed, depending on the required thermal
+stability coeﬃcient.[65,93,94]
+In the early stages of VCMA-MRAM studies, the VCMA coef-
+ﬁcient was limited to relatively low values (≈30–50 fJ V−1 m−1),
+which resulted in relatively high switching voltages (≈2 V
+or higher) and limited the minimum device size that could
+be switched to 50 nm in diameter or larger.[69,72–82] Subse-
+quent studies theoretically predicted[95–97] and experimentally
+demonstrated[98–101] material structures with substantially higher
+VCMA values, but most of these studies did not advance to per-
+forming precessional VCMA switching. This is due to the fact
+that it is challenging to simultaneously achieve all the required
+parameters, including high PMA for thermal stability, high TMR
+for readout, high VCMA for switching, and suﬃcient thermal tol-
+erance (up to 400 ˚C) to withstand advanced CMOS back-end-of-
+line (BEOL) processing temperatures, all within the same MTJ
+material stack. Additionally, although there have been reports of
+signiﬁcant voltage-induced modulation of magnetic properties
+using magneto-ionic eﬀects,[102–114] these eﬀects are not suitable
+for high-speed precessional switching due to their inability to op-
+erate within the sub-nanosecond timescales required for such ap-
+plications.
+Our recent study has shown a signiﬁcant improvement of
+VCMA up to 130 fJ V−1 m−1 in the CoFeB/MgO/CoFeB system
+with Mo capping and optimized CoFeB composition, after an-
+nealing at 400 °C, while simultaneously achieving TMR larger
+than 150%.[83] Owing to the high VCMA coeﬃcient, precessional
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (4 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+ 2365709x, 2023, 18, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202300676 by Readcube-Labtiva, Wiley Online Library on [16/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- PAGE 5 ---
+www.advancedsciencenews.com
+www.advmattechnol.de
+Figure 5. Experimental results on the enhancement of VCMA with heavy metal insertion. a) Comparison of the electric-ﬁeld dependences of the PMA en-
+ergy for MTJs (FeB/Fe/heavy metal/MgO/FeB) with diﬀerent heavy metal insertions. Reproduced under the terms of the CC BY 4.0 license.[101] Copyright
+2017, Springer Nature. b) Free-layer thickness dependence of the VCMA coeﬃcient (red dots) and PMA energy values (blue dots) for Fe/Ir/MgO/Fe.
+Reproduced under the terms of the CC BY 4.0 license.[99] Copyright 2018, AIP.
+switching was realized at a voltage of ≈1 V for 50 and 70 nm MTJs
+and a voltage of ≈2 V for 30 nm MTJs. These results are summa-
+rized in Figure 4. However, further development is still needed
+for switching of MTJs with a higher PMA and at an even lower
+voltage. To further enhance the VCMA eﬀect in functional MTJ
+structures, several diﬀerent material systems are currently being
+studied, some of which are discussed in the next sub-sections.
+3.1.1. Insertion of a Heavy Metal at the Oxide – Free Layer Interface
+A number of ab initio computational studies proposed the in-
+sertion of an ultrathin heavy metal layer with large spin-orbit
+coupling (SOC) at the Fe/MgO interface (e.g., Ir or Os), show-
+ing that this can enhance the PMA and VCMA.[95–97] Following
+the theoretical prediction, several experimental studies investi-
+gated the VCMA eﬀect in ferromagnet (FM) – dielectric inter-
+faces with heavy metal insertion.[99–101,115] Figure 5 shows two ex-
+amples of the enhancement of VCMA in MTJs with Ir insertion
+at the Fe/MgO interface. VCMA eﬃciency up to 300 fJ V−1 m−1
+was observed. It is worth noting that, in ab initio calculations,
+the heavy metal is typically inserted at the Fe/MgO interface,
+whereas in the real case, the Ir atoms will diﬀuse into the ferro-
+magnetic layer during the annealing process. As a result, quanti-
+tative agreement between the computational and experimental
+results is not necessarily expected. In addition to heavy metal
+doping, it was also shown that the strain induced due to the lat-
+tice mismatch between the Ir and CoFe layers can also be used
+to enhance the VCMA eﬀect.[98] Ab initio calculations have also
+been conducted to study the impact of strain on the VCMA eﬀect.
+VCMA coeﬃcients of >10 000 fJ V−1 m−1 were reported for both
+Ir capping[95] and doping[96] cases. However, experimental results
+on such high VCMA coeﬃcients are still lacking, and further ma-
+terials engineering is still needed for the improvement of PMA
+and VCMA properties. In addition, the interfacial metal insertion
+may negatively aﬀect the TMR, which represents a challenge for
+the development of fully functional memory devices.
+3.1.2. Control of Interface Oxidation State
+As discussed previously, PMA in the CoFeB/MgO system orig-
+inates from the hybridization between the Fe 3d and O 2p or-
+bitals at the interface. Ab initio calculations have suggested that
+the occupation of the hybridized orbitals can be modiﬁed via
+the charge accumulation/depletion at the CoFeB/MgO interface
+with the application of an electric ﬁeld.[88,116] Further theoretical
+studies have shown that the oxidation level at the Fe/MgO inter-
+face can have an impact on the VCMA eﬀect.[117,118] It was pro-
+posed that an ideal abrupt Fe/MgO would give rise to the PMA
+while enhancing the VCMA is favored by an over-oxidation state.
+Li et al. conﬁrmed this ﬁnding by inserting an Mg layer at the
+CoFeB/MgO interface,[119] and studying the magnetic properties
+of MTJs with diﬀerent insertion materials and thicknesses. As
+shown in Figure 6, for the Mg insertion case, PMA and MS both
+show a peak value around Region III, where an ideal CoFe/MgO
+interface is expected. The VCMA coeﬃcient shows a peak value
+of ≈100 fJ V−1 m−1 at thinner Mg insertion, suggesting that an
+over-oxidized CoFe/MgO interface will increase the VCMA eﬀect,
+which is consistent with ab initio calculations.[117,118] A recent
+study shows a similar result with MgAl insertion.[120] A VCMA
+coeﬃcient of ≈300 fJ V−1 m−1 was observed with reasonable
+PMA values, suggesting the precise control of interface oxidiza-
+tion level can be a useful technique for improving VCMA and
+PMA properties.
+3.1.3. Modiﬁcation of the Dielectric Constant
+The VCMA eﬀect originates form the charge accumulation at the
+FM/oxide interface. Thus, the VCMA coeﬃcient 𝜉is proportional
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (5 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+ 2365709x, 2023, 18, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202300676 by Readcube-Labtiva, Wiley Online Library on [16/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- PAGE 6 ---
+www.advancedsciencenews.com
+www.advmattechnol.de
+Figure 6. a) VCMA coeﬃcient, b) PMA, and c) MS as a function of inser-
+tion layer thickness for Ta, Pt, and Mg. Reproduced with permission.[119]
+Copyright 2017, AIP.
+to ΔQ/(SΔE) = 𝜖0𝜖r,[121–123] where ΔQ is the charge accumula-
+tion, S is the area, ΔE is the applied electric ﬁeld, 𝜖0 is the vacuum
+permittivity, and 𝜖r is the relative permittivity (dielectric constant)
+of the oxide layer. Therefore, exploiting an oxide with a higher
+dielectric constant could potentially increase the VCMA coeﬃ-
+cient. There have been a number of studies on the VCMA eﬀect
+using dielectric layers other than MgO, including HfO2
+[123–125]
+and SrTiO3.[122,126] However, these approaches did not succeed
+in realizing functional MTJ structures, due to the low TMR ra-
+tio in those systems due to the lack of MgO within the tunnel
+barrier.[127] Figure 7 shows the VCMA and TMR results on full
+MTJs with a MgO/PZT/MgO barrier.[121] The VCMA eﬀect is en-
+hanced with the insertion of PZT due to the enhancement of
+the eﬀective dielectric constant while maintaining a reasonably
+high TMR ratio. However, the absolute value for the VCMA co-
+eﬃcient in this case was still low. The key challenge with this
+approach is that, in order to realize a high TMR and PMA, the
+presence of the CoFeB/MgO interface is essential, and as a re-
+sult, a signiﬁcant portion of the tunnel barrier thickness will
+consist of MgO, rather than the high dielectric constant mate-
+rial. Therefore, regardless of the speciﬁc high-𝜖r material used,
+the eﬀective dielectric constant enhancement remains relatively
+small.
+3.2. Reliable VCMA Switching with Low Write Error Rate
+For memory applications, a key requirement for any magnetic
+memory device is to achieve a low write error rate (WER),
+to reduce the need for error correction and write veriﬁca-
+tion. Due to its resonant mechanism, achieving low WER (as
+well as good uniformity of WER across large numbers of
+devices) is a challenge for VCMA-based precessional switch-
+ing. As discussed in Section 2, bidirectional switching is re-
+alized by a unipolar voltage pulse with certain pulse width.
+During the application of the pulse, the PMA is eliminated,
+and the magnetization precesses around the in-plane eﬀec-
+tive ﬁeld. Once the pulse is removed, the PMA comes back
+to its original value, and the magnetization will relax into
+one of the energy minima. Ideally, the precession trajectory is
+ﬁxed for a given pulse width, resulting in deterministic 180˚
+switching for an appropriately chosen pulse shape. However,
+in practice, the precession will be aﬀected by thermal ﬂuctua-
+tions, which results in stochastic write errors. In addition, as
+seen in the inset of Figure 4e, the real pulse shape in many
+VCMA switching experiments is not an ideal rectangular shape,
+which results in additional errors and device-to-device variations.
+Therefore, an important research need for VCMA-MRAM is to
+develop methods for reducing WER and the device-to-device vari-
+ations of resonance characteristics in VCMA-induced preces-
+sional switching.
+3.2.1. Improvement of Thermal Stability
+Both the WER and read disturbance rate (RDR) of VCMA-
+MRAM devices are a function of the read/write pulse width
+and amplitude.[76] While single-pulse WER in VCMA switch-
+ing can be relatively high, owing to the possibility of fast (sub-
+nanosecond) write times, it is still possible to achieve very low
+eﬀective WER using write veriﬁcation schemes with short over-
+all program time. This was demonstrated in simulations of a 256
+Kbit VCMA-MRAM in a 28 nm CMOS process, which showed
+the capability of the MRAM for delivering WER below 10−9 with
+less than 10 ns total program time, utilizing a write veriﬁcation
+process.[76] This highlights the potential of VCMA-MRAM for L3
+or last-level (LL) Cache. However, this approach adds circuit over-
+head and eliminates the possibility of using VCMA devices in ap-
+plications such as L2 Cache, which require write times of ≈5 ns
+or less. Therefore, further eﬀorts are needed to reduce the WER
+while maintaining the write speed as well as the energy eﬃciency.
+Using numerical simulations, Shiota et al. proposed that the
+WER can be reduced by increasing the thermal stability (i.e.,
+free layer energy barrier) and reducing the damping of the free
+layer.[75] As shown in Figure 8, larger thermal stability provides
+lower WER, due to the fact that the thermal ﬂuctuation is reduced
+before and after the application of the pulse, i.e., the starting posi-
+tion and the relaxation process. Furthermore, smaller damping is
+also helpful for lowering WER since the inﬂuence of thermal ﬂuc-
+tuation during the precession is reduced. Based on this, a WER
+of 2 × 10−5 was demonstrated without a read verify process by im-
+proving the thermal stability.[75] An even lower WER of <10−6 was
+realized by further optimization of the CoFeB composition.[80]
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (6 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+ 2365709x, 2023, 18, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202300676 by Readcube-Labtiva, Wiley Online Library on [16/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- PAGE 7 ---
+www.advancedsciencenews.com
+www.advmattechnol.de
+Figure 7. VCMA coeﬃcient 𝜉, vs. a,b) Ki and TMR ratio. The circles are drawn to illustrate the distribution of VCMA coeﬃcients for the MgO and
+MgO/PZT/MgO MTJs. Reproduced with permission.[121] Copyright 2016, AIP.
+3.2.2. Use of Inverse Bias
+It is worth noting that, a larger thermal stability requires a higher
+voltage and/or a larger VCMA coeﬃcient since the VCMA ef-
+fect needs to be large enough to eliminate PMA for precessional
+switching. To address this, a method of using inverse voltage bias
+was proposed,[128] whose eﬀectiveness was later conﬁrmed by nu-
+merical simulations.[129] Figure 9a shows the schematic illustra-
+tion of this idea. During the switching process, a voltage with
+certain polarity was used to remove the PMA. If reverse volt-
+age pulses with the opposite polarity are applied before and af-
+ter the write pulse, the PMA at the initial and relaxation states
+will be enhanced, functioning as eﬀectively higher thermal sta-
+bility. Figure 9b shows an experimental demonstration of this
+method.[130] The reduction of WER was observed experimentally
+by applying inverse bias. However, the length of the bias voltage
+pulses applied before and after the write pulse is as large as sev-
+eral nanoseconds, which is not favorable for ultrafast switching
+applications.
+3.2.3. Control of Pulse shape
+Apart from thermal stability, WER may also be inﬂuenced by the
+shape of the voltage pulse, speciﬁcally, its rise and fall times. For
+Figure 8. Calculated WER as a function of thermal stability Δ for various
+damping constants. Arrow indicates typical experimental values of WER
+obtained in MTJ structures with small VCMA and Δ values. Reproduced
+with permission.[75] Copyright 2015, IOP.
+stable precessional motion, it is necessary for the eﬀective mag-
+netic ﬁeld to maintain a constant, in-plane orientation during the
+pulse application. Lee et al. studied the eﬀect of pulse shapes on
+the precessional switching process using a macro-spin model.
+They proposed a word-line pulsing method to generate better
+square-shaped pulses, eﬀectively by using the nonlinearity of the
+access transistor, when VCMA-MTJs are integrated with CMOS
+as shown in Figure 1.[131] As shown in Figure 10a when a square-
+shaped pulse is applied to the device, the PMA is eliminated
+abruptly, therefore the eﬀective ﬁeld becomes in-plane abruptly
+as well and stays constant during the voltage pulse, which pro-
+vides a stable axis for the precession of the magnetic moment.
+However, when a triangular-shaped pulse is applied, as shown in
+Figure 10b, due to the long rise and fall time, the eﬀective ﬁeld
+changes gradually from perpendicular to in-plane, resulting in
+an unstable precession. The free layer magnetization trajectories
+for both cases are shown in Figure 10c,d.
+A more recent study reported experimental results and a more
+detailed explanation of the eﬀect of the pulse shape on WER.[79]
+This work studied the WER for pulses with diﬀerent rise and
+fall times and found that a short and well-deﬁned fall time could
+reduce the WER. This was attributed to the eﬀect of damping,
+which reduces the amplitude of the precession. As a result of
+damping, for a perfectly square-shaped pulse, the magnetic mo-
+ment cannot reach the exact opposite point where the other en-
+ergy minimum is, at the half-precession period. On the other
+hand, when a ﬁnite fall time exists, during the fall time there will
+be an additional eﬀective ﬁeld term and corresponding torque,
+which compensate for the damping-induced magnetization drift.
+By precise control of the fall time, this torque can be just enough
+to pull the magnetic moment to the other energy minimum, thus
+reducing WER. On the other hand, during the rise time, the ex-
+tra torque will drag the magnetic moment toward the in-plane
+direction and will not contribute to improving the WER. Both
+studies show the potential of reducing WER by controlling the
+voltage pulse shape. Further studies are still needed for the pre-
+cise control of pulse shape in real circuits. We expect that the
+utility of such approaches will exhibit itself particularly well once
+VCMA-MTJs are directly integrated into CMOS read and write
+circuity. In this case, the proximity of on-chip transistors will pro-
+vide more control over the pulse shape than in typical laboratory
+experiments with probed individual MTJ devices.
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (7 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+ 2365709x, 2023, 18, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202300676 by Readcube-Labtiva, Wiley Online Library on [16/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- PAGE 8 ---
+www.advancedsciencenews.com
+www.advmattechnol.de
+Figure 9. a) Schematic illustration of the inverse bias method for reducing WER. The application of the inverse voltage increases the PMA, providing
+an eﬀectively higher thermal stability. Reproduced with permission.[129] Copyright 2018, IOP. b) WER experimentally measured using the inverse bias
+method. Reproduced with permission.[130] Copyright 2020, APS.
+Figure 10. a,b) Simulation results for square-shaped write pulse and triangular-shaped write pulse. c) VCMA-induced switching with a square pulse
+shows a more stable trajectory compared to the triangular pulse case shown in (d). Reproduced with permission.[131] Copyright 2017, IEEE.
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (8 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+ 2365709x, 2023, 18, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202300676 by Readcube-Labtiva, Wiley Online Library on [16/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- PAGE 9 ---
+www.advancedsciencenews.com
+www.advmattechnol.de
+Figure 11. TEM image of the MTJ with a Co-MHM integrated on top of it.
+Arrows indicate the direction of the magnetization of the Co-MHM as well
+as the generated stray ﬁeld. Reproduced with permission.[81] Copyright
+2020, IEEE.
+3.3. Field-Free VCMA Switching
+As discussed in Section 2, in order to switch the MTJ with volt-
+age pulses, an external in-plane magnetic ﬁeld is required to de-
+ﬁne the axis for precession. The application of such an external
+magnetic ﬁeld in an integrated chip is impractical. Consequently,
+ﬁeld-free VCMA switching is essential for practical applications.
+Here we brieﬂy discuss some of the methods to address this is-
+sue.
+One approach to realize ﬁeld-free switching is to utilize the
+stray ﬁeld from a permanent magnet integrated close to the MTJ
+on the chip. As shown in Figure 11, Wu et al. proposed the in-
+tegration of a thick Co magnetic hard mask (MHM) on the top
+of the MTJ cell to provide an in-plane ﬁeld,[81] using which they
+were able to demonstrate VCMA-induced switching without the
+application of external magnetic ﬁelds. However, there are at least
+two challenges with this method: i) The switching time depends
+on the magnitude of the in-plane ﬁeld on the MTJ. Therefore,
+the statistical distribution of the in-plane ﬁeld can add variability
+within a chip. ii) The thickness of the MHM layer is usually rel-
+atively large, which may hinder the achievement of a small pitch
+between neighboring MTJs in high-density memory arrays.
+Another approach that could potentially realize ﬁeld-free
+VCMA switching is to use a conically magnetized free layer (CFL)
+with an elliptic cylinder shape.[132,133] When the MTJ is fabri-
+cated into an elliptical pillar, due to the shape anisotropy, a shape
+anisotropy ﬁeld with an in-plane component will be obtained,
+which could serve as the bias magnetic ﬁeld in certain cases.
+However, since the in-plane shape anisotropy ﬁeld is propor-
+tional to the in-plane component of the magnetization, it can-
+not help in the case of fully perpendicular free layers. There-
+fore, the idea of a CFL has been proposed. The conically mag-
+netized state originates from the competition between the ﬁrst
+(K1) and second (K2) order magnetic anisotropy.[134–141] It has
+been experimentally studied in various systems including thin
+Co on Pt or Pd,[134] Co/Pt multilayers,[135] and Ta/CoFeB/MgO
+structures.[136] Electric ﬁeld control of the cone state has also been
+experimentally demonstrated,[137] where an electric ﬁeld can be
+used to adjust the cone angle of the free layer. The ﬁeld-free
+VCMA switching of CFL MTJs has been demonstrated in macro-
+spin simulations.[132,133] While the need for precise control of the
+second-order anisotropy may make it diﬃcult to realize this con-
+cept in practical memory arrays, experimental investigation of the
+ﬁeld-free VCMA switching using CFLs remains an exciting re-
+search opportunity.
+Finally, it may be possible to use exchange bias (EB) to provide
+a built-in bias ﬁeld within the device, in a free layer that is inter-
+faced with an adjacent antiferromagnet. This would be similar
+to an approach that has been applied previously to break the in-
+plane symmetry of spin-orbit torque (SOT) MRAM devices, in or-
+der to achieve deterministic SOT-induced switching.[142,143] How-
+ever, the need for simultaneous optimization of EB, PMA, and
+VCMA within the same material structure presents a signiﬁcant
+materials development challenge.
+3.4. VCMA-Induced Switching of Antiferromagnetic Materials
+Materials with antiferromagnetic order are increasingly of inter-
+est for MRAM applications, and the study of their SOT-induced
+switching behavior has been an active and fast-growing research
+area in recent years.[144–147] This is motivated by their vanish-
+ing macroscopic magnetization, which eliminates dipole inter-
+actions between adjacent bits (as well as with external ﬁelds),
+making it possible to achieve a denser pitch between bits for
+high-density memory applications. In addition, due to the large
+built-in exchange ﬁeld, the dynamics of antiferromagnets occur
+at much higher frequencies than in ferromagnets, thereby mak-
+ing them potentially good candidates for ultrahigh-speed spin-
+tronic devices. However, the same challenges of transistor size
+and energy dissipation, outlined for current-induced switching of
+ferromagnets in Section 2, also apply in the case of antiferromag-
+nets. As a result, developing methods for electric-ﬁeld-induced
+switching of antiferromagnets is highly desirable. The VCMA ef-
+fect, which has been predicted to also exist at the interface of var-
+ious metallic antiferromagnets and commonly used oxides such
+as MgO,[148,149] could provide a pathway toward this goal.[150]
+This concept is illustrated in Figure 12. As in the case of fer-
+romagnetic free layers, the application of a voltage pulse will at-
+tempt to reorient the Néel vector⃗l = ⃖⃖⃖⃖⃗
+M1 −⃖⃖⃖⃖⃗
+M2 (i.e., the vector sub-
+traction of the two sublattice magnetizations, the sum of which,
+⃖⃖⃖⃖⃗
+M1 + ⃖⃖⃖⃖⃗
+M2, is zero) toward the in-plane orientation. Due to the
+large exchange ﬁeld, this occurs via a coupled precession of the
+two sublattices at a frequency much higher than in the ferromag-
+netic case (Figure 12b). If the voltage is terminated while both
+sublattice magnetizations are near their opposite orientations,
+as shown in Figure 12c, the result will be 180˚ switching of the
+Néel vector. Macro-spin simulations indicate that this switching
+process can take place in less than ≈30 ps for common metallic
+antiferromagnets,[150] which is much faster than ferromagnetic
+VCMA switching. Interestingly, the threshold electric ﬁeld re-
+quired for switching in this case is still only determined by the
+VCMA coeﬃcient and the PMA of the free layer, and not by the
+exchange ﬁeld. Thus, if realized experimentally, this switching
+concept can provide a pathway toward ultrafast antiferromagnetic
+dynamics without the need for large currents.
+It is worth noting that, there has also been signiﬁcant progress
+recently in developing large magnetoresistance eﬀects in het-
+erostructures and tunnel junctions based on noncollinear[151,152]
+and collinear spin-split antiferromagnets,[153–157] as well as hybrid
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (9 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+ 2365709x, 2023, 18, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202300676 by Readcube-Labtiva, Wiley Online Library on [16/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- PAGE 10 ---
+www.advancedsciencenews.com
+www.advmattechnol.de
+Figure 12. a) Illustration of VCMA-induced switching of the antiferromagnetic Néel vector by a short voltage pulse. b,c) Bottom panels show macro-spin
+simulations of 90° and 180° switching of the Néel vector due to VCMA. Reproduced with permission.[150] Copyright 2019, APS.
+ferro-antiferromagnetic tunnel junctions,[158] which collectively
+point to a promising future for devices where both writing and
+reading of information are performed by using the antiferromag-
+netic order as the state variable.[159]
+4. VCMA-MRAM Devices for Security Applications
+In addition to conventional memory applications, VCMA-MRAM
+has also been studied for security applications due to the grow-
+ing possibility of integration of MRAM within the semiconduc-
+tor industry. Here we brieﬂy emphasize two such opportunities
+that exploit the properties of VCMA-MRAM, namely the use of
+VCMA for true random number generator (TRNG) and physi-
+cally unclonable function (PUF) applications.
+4.1. VCMA-MRAM Cell for TRNG
+In Section 2, we discussed the utilization of VCMA as a switching
+mechanism for MRAM, wherein a voltage of a speciﬁc polarity
+reduces the PMA in the MTJ. A similar method can also be em-
+ployed to generate random bits. As discussed in Section 2, upon
+voltage application across the MTJ, the energy barrier is elimi-
+nated, prompting the free layer to initiate a precession around
+the in-plane axis. The VCMA switching is accomplished by re-
+moving the voltage pulse at the half-precession period. However,
+if the voltage pulse is sustained, due to the existence of damp-
+ing, the magnetic moment will continue to precess with a de-
+creasing amplitude, and will ﬁnally relax in the in-plane direc-
+tion within a few nanoseconds. If we remove the voltage pulse
+at this point, the easy axis reverts to the perpendicular orienta-
+tion, causing the magnetic moment to settle in one of the per-
+pendicular states with equal probability. This phenomenon can
+be used as a TRNG with a 50% probability.[160,161] Figure 13 shows
+the simulation result for random bits generated by an MTJ using
+this VCMA approach. Given its simplicity and compactness, this
+method could potentially provide a signiﬁcant power and density
+improvement compared to conventional pseudo-random num-
+ber generators based on CMOS, which typically consist of thou-
+sands of transistors.[162,163]
+4.2. VCMA-MRAM Cell for PUF
+Another opportunity for VCMA-MRAM beyond conventional
+memory is secure hardware building blocks such as PUFs.[164,165]
+PUFs are becoming increasingly important in addressing secu-
+rity challenges related to device-level authentication of electronic
+systems. Figure 14 shows the schematic illustration of a VCMA-
+based PUF proposed by Tanaka et al.,[166] where the vertical axis
+represents the magnetic energy and the red arrows represent the
+direction of the magnetization of the free layer. Due to the un-
+compensated stray ﬁeld from the ﬁxed layer, there will be a shift
+of the energy minimum between two free layer directions, re-
+sulting in a global minimum and a local minimum, as shown
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (10 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+ 2365709x, 2023, 18, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202300676 by Readcube-Labtiva, Wiley Online Library on [16/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- PAGE 11 ---
+www.advancedsciencenews.com
+www.advmattechnol.de
+Figure 13. Simulation results of random bits generated by an MTJ using VCMA. The random bit is generated at the falling edge of the CLK signal. The
+random states of AP and P are converted to digital signals ‘1′ and ‘0′, indicated as DOUT. Reproduced under the terms of the CC BY 4.0 license.[160]
+Copyright 2017, AIP.
+in Figure 14a,d. While this stray ﬁeld would be zero in an ideal
+memory device, in practice, it will have a distribution centered
+around zero for an array of tunnel junctions, with a non-zero shift
+for each individual device. This shift will be diﬀerent for each de-
+vice on a chip, because of manufacturing variations. Initially, the
+free layer can be in either of its two states. When a voltage with
+a certain polarity is applied, due to the VCMA eﬀect, the energy
+barrier is eliminated and the magnetization will always fall into
+the global minimum state, and will stay there after the voltage
+is removed. This represents the PUF state, which can be used
+to generate a unique ﬁngerprint of a given array of MTJs on a
+chip.
+Figure 14. Schematic illustration of a PUF based on VCMA-MTJs. The
+vertical axis represents the energy of the magnetization and red arrows
+indicate the magnetization direction of the free layer. Reproduced with
+permission.[166] Copyright 2020, IEEE.
+5. Conclusion
+Voltage-controlled magnetic anisotropy oﬀers a promising route
+toward achieving a combination of performance, density, energy
+eﬃciency, and endurance in magnetic random-access memories
+beyond existing current-controlled MRAMs. The switching can
+be realized with sub-nanosecond voltage pulses, resulting in fast
+and ultra-low power write operations, making it a promising can-
+didate for Cache applications. Its unipolar write process also al-
+lows for the elimination of read disturb issues by taking advan-
+tage of reverse voltage sensing. There are exciting opportunities
+for further impactful research on VCMA materials and devices.
+Further materials engineering is required to reduce the write volt-
+age by increasing the VCMA coeﬃcient. Write error rates can be
+potentially lowered by suppressing thermal ﬂuctuations, precise
+control of the pulse shape, and taking advantage of circuit tech-
+niques adapted to the physics of the VCMA devices. The necessity
+for the external in-plane magnetic ﬁeld needs to be eliminated,
+with possible approaches including the integration of magnetic
+hard masks, utilizing canted free layers with optimized higher-
+order anisotropies, and even using built-in exchange bias. In ad-
+dition to memory applications, the integration of VCMA-MRAM
+devices with CMOS also unlocks new opportunities for innova-
+tion in security and unconventional computing applications. Fi-
+nally, extension of the VCMA writing mechanism to other types
+of magnetic order such as antiferromagnets presents an exciting
+direction for both fundamental and applied research.
+Acknowledgements
+The authors acknowledge support from the National Science Founda-
+tion through award numbers 1919109, 1853879, 2203242, 2203243, and
+2106562.
+Conﬂict of Interest
+The authors declare no conﬂict of interest.
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (11 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+ 2365709x, 2023, 18, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202300676 by Readcube-Labtiva, Wiley Online Library on [16/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- PAGE 12 ---
+www.advancedsciencenews.com
+www.advmattechnol.de
+Keywords
+antiferromagnets, ferromagnets, magnetic random-access memories,
+magnetic tunnel junction, spin-transfer torque, spintronics, voltage-
+controlled magnetic anisotropy
+Received: April 30, 2023
+Revised: June 21, 2023
+Published online: August 7, 2023
+[1] I. Gorton, P. Greenﬁeld, A. Szalay, R. Williams, Computer 2008, 41,
+30.
+[2] A. Makarov, V. Sverdlov, S. Selberherr, Microelectron. Reliability
+2012, 52, 628.
+[3] J. S. Meena, S. M. Sze, U. Chand, T.-Y. Tseng, Nanoscale Res. Lett.
+2014, 9, 1.
+[4] S. Yu, P.-Y. Chen, IEEE Solid-State Circuits Magazine 2016, 8, 43.
+[5] K. L. Wang, P. K. Amiri, SPIN 2012, 02, 1250009.
+[6] P. Khalili, K. L. Wang, IEEE Spectrum 2015, 52, 30.
+[7] G. Finocchio, M. Di Ventra, K. Y. Camsari, K. Everschor-Sitte, P.
+Khalili Amiri, Z. Zeng, J. Magn. Magn. Mater. 2021, 521, 167506.
+[8] A. D. Kent, D. C. Worledge, Nat. Nanotechnol. 2015, 10, 187.
+[9] C. S. Lin, W. T. Huang, A. Huang, Y. H. Yang, Y. L. Hsu, S. K. Yang,
+J. Liu, H. W. Tseng, J. Huang, B. Y. Chou, K. Huang, W. K. Chang,
+D. Chang, C. H. Chien, H. Yeh, P. W. Liu, C. D. Hsieh, H. Chuang,
+A. Kalnitsky, in IEEE Symp. on VLSI Technology, IEEE, HI, USA June
+2020, pp 1–2.
+[10] F. Khan, M. S. Han, D. Moy, R. Katz, L. Jiang, E. Banghart, N. Robson,
+T. Kirihata, J. C. S. Woo, S. S. Iyer, IEEE Electron Device Lett.Lett. 2019,
+40, 1100.
+[11] H. Yang, S. O. Valenzuela, M. Chshiev, S. Couet, B. Dieny, B. Dlubak,
+A. Fert, K. Garello, M. Jamet, D.-E. Jeong, K. Lee, T. Lee, M.-B. Martin,
+G. S. Kar, P. Sénéor, H.-J. Shin, S. Roche, Nature 2022, 606, 663.
+[12] W. J. Gallagher, E. Chien, T. W. Chiang, J. C. Huang, M. C. Shih, C. Y.
+Wang, C. H. Weng, S. Chen, C. Bair, G. Lee, Y. C. Shih, C. F. Lee, P.
+H. Lee, R. Wang, K. H. Shen, J. J. Wu, W. Wang, H. Chuang in IEEE
+Intl. Electron Devices Meeting (IEDM), IEEE, NY, USA Dec, 2019, pp
+2.7.1–2.7.4.
+[13] O. Golonzka, J. G. Alzate, U. Arslan, M. Bohr, P. Bai, J. Brockman,
+B. Buford, C. Connor, N. Das, B. Doyle, T. Ghani, F. Hamzaoglu, P.
+Heil, P. Hentges, R. Jahan, D. Kencke, B. Lin, M. Lu, M. Mainuddin,
+M. Meterelliyoz, P. Nguyen, D. Nikonov, K. O. brien, J. O. Donnell,
+K. Oguz, D. Ouellette, J. Park, J. Pellegren, C. Puls, P. Quintero, et al.,
+in IEEE Intl. Electron Devices Meeting (IEDM), IEEE, NY, USA, 2018.
+[14] S. Ito, Y. Hayakawa, Z. Wei, S. Muraoka, K. Kawashima, H. Kotani, K.
+Kouno, M. Nakamura, G. A. Du, J. F. Chen, S. P. Yeoh, M. H. Chen,
+T. Mikawa, S. Yoneda in IEEE Intl. Memory Workshop (IMW), IEEE,
+NY, USA, 2018, pp 1–4.
+[15] S. H. Kang in Symp. on VLSI Technology (VLSI-Technology): Digest of
+Technical Papers, IEEE, NY, USA, 2014, pp 1–2.
+[16] J. M. Slaughter, K. Nagel, R. Whig, S. Deshpande, S. Aggarwal, M.
+DeHerrera, J. Janesky, M. Lin, H. Chia, M. Hossain, S. Ikegawa, F. B.
+Mancoﬀ, G. Shimon, J. J. Sun, M. Tran, T. Andre, S. M. Alam, F. Poh,
+J. H. Lee, Y. T. Chow, Y. Jiang, H. X. Liu, C. C. Wang, S. M. Noh, T.
+Tahmasebi, S. K. Ye, D. Shum, in IEEE Intl. Electron Devices Meeting
+(IEDM), IEEE, NY, USA, 2016.
+[17] S. Choi, J. Yang, G. Wang, Adv. Mater. 2020, 32, 2004659.
+[18] R. Guo, W. Lin, X. Yan, T. Venkatesan, J. Chen, Appl. Phys. Rev. 2020,
+7, 011304.
+[19] Y. Li, Z. Wang, R. Midya, Q. Xia, J. J. Yang, J. Phys. D: Appl. Phys. 2018,
+51, 503002.
+[20] M. A. Zidan, J. P. Strachan, W. D. Lu, Nat. Electron. 2018, 1, 22.
+[21] V. K. Sangwan, M. C. Hersam, Nat. Nanotechnol. 2020, 15, 517.
+[22] K. Kim, J. Kim, J. Yu, J. Seo, J. Lee, K. Choi in Proceedings of the 53rd
+Ann. Design Automation Conf., 2016, p. 124.
+[23] J. Li, A. Ren, Z. Li, C. Ding, B. Yuan, Q. Qiu, Y. Wang presented
+at 22nd Asia and South Paciﬁc Design Automation Conf. (ASP-DAC),
+IEEE, New York, NY, USA 2017, pp 115–120.
+[24] G. Yu, P. Upadhyaya, Q. Shao, H. Wu, G. Yin, X. Li, C. He, W. Jiang,
+X. Han, P. K. Amiri, K. L. Wang, Nano Lett.Lett. 2017, 17, 261.
+[25] Z. Li, J. Li, A. Ren, R. Cai, C. Ding, X. Qian, J. Draper, B. Yuan, J. Tang,
+Q. Qiu, IEEE Trans. Computer-Aided Design Integ. Circuits Syst. 2018,
+38, 1543.
+[26] M. Schott, A. Bernand-Mantel, L. Ranno, S. Pizzini, J. Vogel, H. Béa,
+C. Baraduc, S. Auﬀret, G. Gaudin, D. Givord, Nano Lett.Lett. 2017,
+17, 3006.
+[27] Y. Shao, S. L. Sinaga, I. O. Sunmola, A. S. Borland, M. J. Carey, J. A.
+Katine, V. Lopez-Dominguez, P. K. Amiri, IEEE Magn. Lett. 2021, 12,
+1.
+[28] H. Sim, J. Lee presented at Proceedings of the 54th Ann. Design Au-
+tomation Conf. 2017, p. 29.
+[29] G. Finocchio, M. Di Ventra, K. Y. Camsari, K. Everschor-Sitte, P. K.
+Amiri, Z. Zeng, J. Magn. Magn. Mater. 2021, 521, 167506.
+[30] N. A. Aadit, A. Grimaldi, M. Carpentieri, L. Theogarajan, J. M.
+Martinis, G. Finocchio, K. Y. Camsari, Nat. Electron. 2022, 5, 00774.
+[31] K. Y. Camsari, B. M. Sutton, S. Datta, Appl. Phys. Rev. 2019, 6,
+011305.
+[32] A. Grimaldi, L. Sánchez-Tejerina, N. A. Aadit, S. Chiappini, M.
+Carpentieri, K. Camsari, G. Finocchio, Phys. Rev. Appl. 2022, 17,
+024052.
+[33] S. Jung, H. Lee, S. Myung, H. Kim, S. K. Yoon, S.-W. Kwon, Y. Ju, M.
+Kim, W. Yi, S. Han, B. Kwon, B. Seo, K. Lee, G.-H. Koh, K. Lee, Y.
+Song, C. Choi, D. Ham, S. J. Kim, Nature 2022, 601, 211.
+[34] R. Dorrance, J. G. Alzate, S. S. Cherepov, P. Upadhyaya, I. N.
+Krivorotov, J. A. Katine, J. Langer, K. L. Wang, P. K. Amiri, D.
+Markovi´c, IEEE Electron Device Lett. 2013, 34, 753.
+[35] J. C. Slonczewski, Phys. Rev. B 1989, 39, 6995.
+[36] P. M. Tedrow, R. Meservey, Phys. Rev. Lett. 1971, 26, 192.
+[37] M. Julliere, Phys. Lett. A 1975, 54, 225.
+[38] T. Miyazaki, N. Tezuka, J. Magn. Magn. Mater. 1995, 139, L231.
+[39] T. Miyazaki, N. Tezuka, J. Magn. Magn. Mater. 1995, 151, 403.
+[40] J. S. Moodera, L. R. Kinder, T. M. Wong, R. Meservey, Phys. Rev. Lett.
+1995, 74, 3273.
+[41] S. Yuasa, T. Nagahama, A. Fukushima, Y. Suzuki, K. Ando, Nat.
+Mater. 2004, 3, 868.
+[42] S. S. P. Parkin, C. Kaiser, A. Panchula, P. M. Rice, B. Hughes, M.
+Samant, S.-H. Yang, Nat. Mater. 2004, 3, 862.
+[43] J. A. Katine, F. J. Albert, R. A. Buhrman, E. B. Myers, D. C. Ralph,
+Phys. Rev. Lett. 2000, 84, 3149.
+[44] J. A. Katine, E. E. Fullerton, J. Magn. Magn. Mater. 2008, 320,
+1217.
+[45] S. Mangin, D. Ravelosona, J. A. Katine, M. J. Carey, B. D. Terris, E.
+E. Fullerton, Nat. Mater. 2006, 5, 210.
+[46] J. C. Slonczewski, J. Magn. Magn. Mater. 1996, 159, L1.
+[47] Y. Huai, F. Albert, P. Nguyen, M. Pakala, T. Valet, Appl. Phys. Lett.
+2004, 84, 3118.
+[48] W. Zhao, Y. Zhang, T. Devolder, J.-O. Klein, D. Ravelosona, C.
+Chappert, P. Mazoyer, Microelectron. Reliability 2012, 52, 1848.
+[49] D. C. Ralph, M. D. Stiles, J. Magn. Magn. Mater. 2008, 320, 1190.
+[50] A. Brataas, A. D. Kent, H. Ohno, Nat. Mater. 2012, 11, 372.
+[51] K. C. Chun, H. Zhao, J. D. Harms, T.-H. Kim, J.-P. Wang, C. H. Kim,
+IEEE J. Solid-State Circuits 2012, 48, 598.
+[52] Y. Shiota, T. Nozaki, F. Bonell, S. Murakami, T. Shinjo, Y. Suzuki, Nat.
+Mater. 2012, 11, 39.
+[53] T. Maruyama, Y. Shiota, T. Nozaki, K. Ohta, N. Toda, M. Mizuguchi,
+A. Tulapurkar, T. Shinjo, M. Shiraishi, S. Mizukami, Nat. Nanotech-
+nol. 2009, 4, 158.
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (12 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+ 2365709x, 2023, 18, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202300676 by Readcube-Labtiva, Wiley Online Library on [16/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- PAGE 13 ---
+www.advancedsciencenews.com
+www.advmattechnol.de
+[54] W. Wang, C. Chien, J. Phys. D: Appl. Phys. 2013, 46, 074004.
+[55] W.-G. Wang, M. Li, S. Hageman, C. L. Chien, Nat. Mater. 2012, 11,
+64.
+[56] P. K. Amiri, J. G. Alzate, X. Q. Cai, F. Ebrahimi, Q. Hu, K. Wong, C.
+Grèzes, H. Lee, G. Yu, X. Li, M. Akyol, Q. Shao, J. A. Katine, J. Langer,
+B. Ocker, K. L. Wang, IEEE Trans. Magn. 2015, 51, 3401507.
+[57] P. K. Amiri, K. L. Wang, SPIN 2012, 02, 1240002.
+[58] J. Zhu, J. A. Katine, G. E. Rowlands, Y.-J. Chen, Z. Duan, J. G. Alzate,
+P. Upadhyaya, J. Langer, P. K. Amiri, K. L. Wang, I. N. Krivorotov,
+Phys. Rev. Lett. 2012, 108, 197203.
+[59] J. G. Alzate, P. K. Amiri, P. Upadhyaya, S. S. Cherepov, J. Zhu, M.
+Lewis, R. Dorrance, J. A. Katine, J. Langer, K. Galatsis, D. Markovic, I.
+Krivorotov, K. L. Wang, in 2012 Intl. Electron Devices Meeting (IEDM),
+IEEE, San Francisco, CA 2012.
+[60] H. Yan, Z. Feng, S. Shang, X. Wang, Z. Hu, J. Wang, Z. Zhu, H.
+Wang, Z. Chen, H. Hua, W. Lu, J. Wang, P. Qin, H. Guo, X. Zhou, Z.
+Leng, Z. Liu, C. Jiang, M. Coey, Z. Liu, Nat. Nanotechnol. 2019, 14,
+131.
+[61] S. Cherepov, P. K. Amiri, J. G. Alzate, K. Wong, M. Lewis, P.
+Upadhyaya, J. Nath, M. Bao, A. Bur, T. Wu, G. P. Carman, A. Khitun,
+K. L. Wang, Appl. Phys. Lett. 2014, 104, 082403.
+[62] Y.-H. Chu, L. W. Martin, M. B. Holcomb, M. Gajek, S.-J. Han, Q. He,
+N. Balke, C.-H. Yang, D. Lee, W. Hu, Q. Zhan, P.-L. Yang, A. Fraile-
+Rodríguez, A. Scholl, S. X. Wang, R. Ramesh, Nat. Mater. 2008, 7,
+478.
+[63] N. A. Spaldin, R. Ramesh, Nat. Mater. 2019, 18, 203.
+[64] D. Zhang, M. Bapna, W. Jiang, D. Sousa, Y.-C. Liao, Z. Zhao, Y. Lv,
+P. Sahu, D. Lyu, A. Naeemi, T. Low, S. A. Majetich, J.-P. Wang, Nano
+Lett. 2022, 22, 622.
+[65] P. K. Amiri, J. G. Alzate, X. Q. Cai, F. Ebrahimi, Q. Hu, K. Wong, C.
+Grèzes, H. Lee, G. Yu, X. Li, IEEE Trans. Magn. 2015, 51, 1.
+[66] W.-G. Wang, M. Li, S. Hageman, C. Chien, Nat. Mater. 2012, 11,
+64.
+[67] M. Weisheit, S. FÃhler, A. Marty, Y. Souche, C. Poinsignon, D.
+Givord, Science 2007, 315, 349.
+[68] Y. Shiota, T. Nozaki, F. Bonell, S. Murakami, T. Shinjo, Y. Suzuki, Nat.
+Mater. 2012, 11, 39.
+[69] S. Kanai, M. Yamanouchi, S. Ikeda, Y. Nakatani, F. Matsukura, H.
+Ohno, Appl. Phys. Lett. 2012, 101, 122403.
+[70] C.-G. Duan, S. S. Jaswal, E. Y. Tsymbal, Phys. Rev. Lett. 2006, 97,
+047201.
+[71] I. V. Ovchinnikov, K. L. Wang, Phys. Rev. B 2009, 79, 020402.
+[72] C. Grezes, F. Ebrahimi, J. Alzate, X. Cai, J. Katine, J. Langer, B. Ocker,
+P. Khalili Amiri, K. Wang, Appl. Phys. Lett. 2016, 108, 012403.
+[73] Y. Shiota, S. Miwa, T. Nozaki, F. Bonell, N. Mizuochi, T. Shinjo, H.
+Kubota, S. Yuasa, Y. Suzuki, Appl. Phys. Lett. 2012, 101, 102406.
+[74] S. Kanai, Y. Nakatani, M. Yamanouchi, S. Ikeda, F. Matsukura, H.
+Ohno, Appl. Phys. Lett. 2013, 103, 072408.
+[75] Y. Shiota, T. Nozaki, S. Tamaru, K. Yakushiji, H. Kubota, A.
+Fukushima, S. Yuasa, Y. Suzuki, Appl. Phys. Exp. 2015, 9, 013001.
+[76] C. Grezes, H. Lee, A. Lee, S. Wang, F. Ebrahimi, X. Li, K. Wong, J. A.
+Katine, B. Ocker, J. Langer, IEEE Magn. Lett. 2017, 8, 3102705.
+[77] S. Kanai, F. Matsukura, H. Ohno, Appl. Phys. Lett. 2016, 108, 192406.
+[78] Y. Shiota, T. Nozaki, S. Tamaru, K. Yakushiji, H. Kubota, A.
+Fukushima, S. Yuasa, Y. Suzuki, Appl. Phys. Lett. 2017, 111, 022408.
+[79] T. Yamamoto, T. Nozaki, H. Imamura, Y. Shiota, T. Ikeura, S. Tamaru,
+K. Yakushiji, H. Kubota, A. Fukushima, Y. Suzuki, Phys. Rev. Appl.
+2019, 11, 014013.
+[80] T. Yamamoto, T. Nozaki, H. Imamura, Y. Shiota, S. Tamaru, K.
+Yakushiji, H. Kubota, A. Fukushima, Y. Suzuki, S. Yuasa, J. Phys. D:
+Appl. Phys. 2019, 52, 164001.
+[81] Y. C. Wu, W. Kim, K. Garello, F. Yasin, G. Jayakumar, S. Couet, R.
+Carpenter, S. Kundu, S. Rao, D. Crotti in 2020 IEEE Symp. on VLSI
+Technol., IEEE, HI, USA 2020, pp 1–2.
+[82] R. Carpenter, W. Kim, K. Sankaran, N. Ao, M. Ben Chroud, A. Kumar,
+A. Trovato, G. Pourtois, S. Couet, G. Kar, presented at IEEE Intl. Elec-
+tron Devices Meeting, IEEE, San Francisco, CA 2021.
+[83] Y. Shao, V. Lopez-Dominguez, N. Davila, Q. Sun, N. Kioussis, J. A.
+Katine, P. Khalili Amiri, Commun. Mater. 2022, 3, 87.
+[84] J. M. Rondinelli, M. Stengel, N. A. Spaldin, Nat. Nanotechnol. 2008,
+3, 46.
+[85] C.-G. Duan, J. P. Velev, R. F. Sabirianov, Z. Zhu, J. Chu, S. S. Jaswal,
+E. Y. Tsymbal, Phys. Rev. Lett. 2008, 101, 137201.
+[86] M. Tsujikawa, T. Oda, Phys. Rev. Lett. 2009, 102, 247203.
+[87] S. Miwa, M. Suzuki, M. Tsujikawa, K. Matsuda, T. Nozaki, K. Tanaka,
+T. Tsukahara, K. Nawaoka, M. Goto, Y. Kotani, Nat. Commun. 2017,
+8, 15848.
+[88] M. K. Niranjan, C.-G. Duan, S. S. Jaswal, E. Y. Tsymbal, Appl. Phys.
+Lett. 2010, 96, 222504.
+[89] K. Nakamura, R. Shimabukuro, Y. Fujiwara, T. Akiyama, T. Ito, A.
+Freeman, Phys. Rev. Lett. 2009, 102, 187201.
+[90] P. Khalili Amiri, P. Upadhyaya, J. G. Alzate, K. L. Wang, J. Appl. Phys.
+2013, 113, 013912.
+[91] H. Lee, C. Grezes, S. Wang, F. Ebrahimi, P. Gupta, P. K. Amiri, K. L.
+Wang, IEEE Magn. Lett. 2016, 7, 3103405.
+[92] J. G. A. Vinasco, in Voltage-Controlled Magnetic Dynamics in
+Nanoscale Magnetic tunnel Junctions, University of California, Los An-
+geles 2014.
+[93] T. Nozaki, T. Yamamoto, S. Miwa, M. Tsujikawa, M. Shirai, S. Yuasa,
+Y. Suzuki, Micromachines 2019, 10, 327.
+[94] Y. Shao, V. Lopez-Dominguez, N. Davila, Q. Sun, N. Kioussis,
+J.
+A.
+Katine,
+P.
+Khalili
+Amiri,
+Commun.
+Mater.
+2022,
+3,
+87.
+[95] S. Kwon, P.-V. Ong, Q. Sun, F. Mahfouzi, X. Li, K. L. Wang, Y. Kato,
+H. Yoda, P. K. Amiri, N. Kioussis, Phys. Rev. B 2019, 99, 064434.
+[96] S. Kwon, Q. Sun, F. Mahfouzi, K. L. Wang, P. K. Amiri, N. Kioussis,
+Phys. Rev. Appl. 2019, 12, 044075.
+[97] K. Nakamura, T. Nomura, A.-M. Pradipto, K. Nawa, T. Akiyama, T.
+Ito, J. Magn. Magn. Mater. 2017, 429, 214.
+[98] Y. Kato, H. Yoda, Y. Saito, S. Oikawa, K. Fujii, M. Yoshiki, K. Koi,
+H. Sugiyama, M. Ishikawa, T. Inokuchi, Appl. Phys. Exp. 2018, 11,
+053007.
+[99] T. Nozaki, A. Kozioł-Rachwał, M. Tsujikawa, Y. Shiota, X. Xu, T.
+Ohkubo, T. Tsukahara, S. Miwa, M. Suzuki, S. Tamaru, NPG Asia
+Mater. 2017, 9, e451.
+[100] T. Nozaki, M. Endo, M. Tsujikawa, T. Yamamoto, T. Nozaki, M.
+Konoto, H. Ohmori, Y. Higo, H. Kubota, A. Fukushima, APL Mater.
+2020, 8, 011108.
+[101] T. Nozaki, T. Yamamoto, S. Tamaru, H. Kubota, A. Fukushima, Y.
+Suzuki, S. Yuasa, APL Mater. 2018, 6, 026101.
+[102] U. Bauer, L. Yao, A. J. Tan, P. Agrawal, S. Emori, H. L. Tuller, S. Van
+Dijken, G. S. Beach, Nat. Mater. 2015, 14, 174.
+[103] K. Duschek, M. Uhlemann, H. Schlörb, K. Nielsch, K. Leistner, Elec-
+trochem. Commun. 2016, 72, 153.
+[104] D. A. Gilbert, A. J. Grutter, E. Arenholz, K. Liu, B. J. Kirby, J. A.
+Borchers, B. B. Maranville, Nat. Commun. 2016, 7, 1.
+[105] X. Zhu, J. Zhou, L. Chen, S. Guo, G. Liu, R. W. Li, W. D. Lu, Adv.
+Mater. 2016, 28, 7658.
+[106] U. Bauer, S. Emori, G. S. Beach, Nat. Nanotechnol. 2013, 8,
+411.
+[107] C. Bi, Y. Liu, T. Newhouse-Illige, M. Xu, M. Rosales, J. Freeland, O.
+Mryasov, S. Zhang, S. Te Velthuis, W. Wang, Phys. Rev. Lett. 2014,
+113, 267202.
+[108] N. Di, J. Kubal, Z. Zeng, J. Greeley, F. Maroun, P. Allongue, Appl.
+Phys. Lett. 2015, 106, 122405.
+[109] D. A. Gilbert, J. Olamit, R. K. Dumas, B. J. Kirby, A. J. Grutter, B. B.
+Maranville, E. Arenholz, J. A. Borchers, K. Liu, Nat. Commun. 2016,
+7, 1.
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (13 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+ 2365709x, 2023, 18, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202300676 by Readcube-Labtiva, Wiley Online Library on [16/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- PAGE 14 ---
+www.advancedsciencenews.com
+www.advmattechnol.de
+[110] A. J. Grutter, D. A. Gilbert, U. Alaan, E. Arenholz, B. B. Maranville, J.
+A. Borchers, Y. Suzuki, K. Liu, B. J. Kirby, Appl. Phys. Lett. 2016, 108,
+082405.
+[111] H.-B. Li, N. Lu, Q. Zhang, Y. Wang, D. Feng, T. Chen, S. Yang, Z.
+Duan, Z. Li, Y. Shi, Nat. Commun. 2017, 8, 1.
+[112] J. Walter, G. Yu, B. Yu, A. Grutter, B. Kirby, J. Borchers, Z. Zhang, H.
+Zhou, T. Birol, M. Greven, Phys. Rev. Mater. 2017, 1, 071403.
+[113] S. Dasgupta, B. Das, Q. Li, D. Wang, T. T. Baby, S. Indris, M. Knapp,
+H. Ehrenberg, K. Fink, R. Kruk, Adv. Funct. Mater. 2016, 26, 7507.
+[114] J. Walter, H. Wang, B. Luo, C. D. Frisbie, C. Leighton, ACS Nano
+2016, 10, 7799.
+[115] H. Nakayama, T. Nozaki, T. Nozaki, S. Yuasa, Appl. Phys. Lett. 2023,
+122, 032403.
+[116] K. He, J. Chen, Y. Feng, Appl. Phys. Lett. 2011, 99, 072503.
+[117] K. Nakamura, T. Akiyama, T. Ito, M. Weinert, A. Freeman, Phys. Rev.
+B 2010, 81, 220409.
+[118] F. Ibrahim, A. Hallal, B. Dieny, M. Chshiev, Phys. Rev. B 2018, 98,
+214441.
+[119] X. Li, K. Fitzell, D. Wu, C. T. Karaba, A. Buditama, G. Yu, K. L. Wong,
+N. Altieri, C. Grezes, N. Kioussis, Appl. Phys. Lett. 2017, 110, 052401.
+[120] T. Nozaki, T. Nozaki, H. Onoda, H. Nakayama, T. Ichinose, T.
+Yamamoto, M. Konoto, S. Yuasa, APL Mater. 2022, 10, 081103.
+[121] D. Chien, X. Li, K. Wong, M. A. Zurbuchen, S. Robbennolt, G. Yu,
+S. Tolbert, N. Kioussis, P. Khalili Amiri, K. L. Wang, Appl. Phys. Lett.
+2016, 108, 112402.
+[122] B. F. Vermeulen, J. Swerts, S. Couet, M. Popovici, I. P. Radu, J. Van
+de Vondel, K. Temst, G. Groeseneken, K. Martens, Phys. Rev. Mater.
+2020, 4, 114415.
+[123] H. Onoda, T. Nozaki, S. Tamaru, T. Nozaki, S. Yuasa, Phys. Rev.
+Mater. 2022, 6, 104406.
+[124] K. Kita, D. W. Abraham, M. J. Gajek, D. Worledge, J. Appl. Phys. 2012,
+112, 033919.
+[125] K. Yamada, H. Kakizakai, K. Shimamura, M. Kawaguchi, S. Fukami,
+N. Ishiwata, D. Chiba, T. Ono, Appl. Phys. Exp. 2013, 6, 073004.
+[126] S. Nakazawa, A. Obinata, D. Chiba, K. Ueno, Appl. Phys. Lett. 2017,
+110, 062406.
+[127] E. Hassen, B. Viala, M. Cyrille, M. Cartier, O. Redon, P. Lima, B.
+Belhadji, H. Yang, J. Velev, M. Chshiev, J. Appl. Phys. 2012, 111,
+07C727.
+[128] H. Noguchi, K. Ikegami, K. Abe, S. Fujita, Y. Shiota, T. Nozaki, S.
+Yuasa, Y. Suzuki, Int El Devices Meet 2016.
+[129] T. Ikeura, T. Nozaki, Y. Shiota, T. Yamamoto, H. Imamura, H. Kubota,
+A. Fukushima, Y. Suzuki, S. Yuasa, Japan. J. Appl. Phys. 2018, 57,
+040311.
+[130] T. Yamamoto, T. Nozaki, H. Imamura, S. Tarnaru, K. Yakushiji, H.
+Kubota, A. Fukushima, Y. Suzuki, S. Yuasa, Phys. Rev. Appl. 2020, 13.
+[131] H. Lee, A. Lee, S. Wang, F. Ebrahimi, P. Gupta, P. K. Amiri, K. L. Wang,
+IEEE Trans. Very Large Scale Integ. (VLSI) Syst. 2017, 25, 2027.
+[132] R. Matsumoto, T. Nozaki, S. Yuasa, H. Imamura, Phys. Rev. Appl.
+2018, 9, 014026.
+[133] R. Matsumoto, H. Imamura, Phys. Rev. Appl. 2022, 17, 034063.
+[134] J.-W. Lee, J.-R. Jeong, S.-C. Shin, J. Kim, S.-K. Kim, Phys. Rev. B 2002,
+66, 172409.
+[135] H. Stillrich, C. Menk, R. Frömter, H. P. Oepen, J. Appl. Phys. 2009,
+105, 07C308.
+[136] J. M. Shaw, H. T. Nembach, M. Weiler, T. Silva, M. Schoen, J. Z. Sun,
+D. C. Worledge, IEEE Magn. Lett. 2015, 6, 1.
+[137] K.-W. Park, J.-Y. Park, S.-h. C. Baek, D.-H. Kim, S.-M. Seo, S.-W.
+Chung, B.-G. Park, Appl. Phys. Lett. 2016, 109, 012405.
+[138] A. Timopheev, R. Sousa, M. Chshiev, H. Nguyen, B. Dieny, Sci. Rep.
+2016, 6, 26877.
+[139] A. Sugihara, T. Nozaki, H. Kubota, H. Imamura, A. Fukushima, K.
+Yakushiji, S. Yuasa, Japan. J. Appl. Phys. 2019, 58, 090905.
+[140] A. Sugihara, A. Spiesser, T. Nozaki, H. Kubota, H. Imamura, A.
+Fukushima, K. Yakushiji, S. Yuasa, Japan. J. Appl. Phys. 2019, 59,
+010901.
+[141] Y. Kitaoka, H. Imamura, Japan. J. Appl. Phys. 2021, 60, 018003.
+[142] S. Fukami, C. Zhang, S. DuttaGupta, A. Kurenkov, H. Ohno, Nat.
+Mater. 2016, 15, 535.
+[143] V. Lopez-Dominguez, Y. Shao, P. Khalili Amiri, J. Appl. Phys. 2023,
+133, 040902.
+[144] S. D. Gupta, A. Kurenkov, O. A. Tretiakov, G. Krishnaswamy, G. Sala,
+V. Krizakova, F. Maccherozzi, S. S. Dhesi, P. Gambardella, S. Fukami,
+H. Ohno, Nat. Commun. 2020, 11, 5715.
+[145] J. Shi, V. Lopez-Dominguez, F. Garesci, C. Wang, H. Almasi, M.
+Grayson, G. Finocchio, P. Khalili Amiri, Nat. Electron. 2020, 3,
+92.
+[146] S. Arpaci, V. Lopez-Dominguez, J. Shi, L. Sánchez-Tejerina, F.
+Garesci, C. Wang, X. Yan, V. K. Sangwan, M. A. Grayson, M. C.
+Hersam, G. Finocchio, P. Khalili Amiri, Nat. Commun. 2021, 12,
+3828.
+[147] H. Tsai, T. Higo, K. Kondou, T. Nomoto, A. Sakai, A. Kobayashi, T.
+Nakano, K. Yakushiji, R. Arita, S. Miwa, Y. Otani, S. Nakatsuji, Nature
+2020, 580, 608.
+[148] P. H. Chang, W. Fang, T. Ozaki, K. D. Belashchenko, Phys. Rev. Mater.
+2021, 5, 054406.
+[149] G. Zheng, S.-H. Ke, M. Miao, J. Kim, R. Ramesh, N. Kioussis, Sci.
+Rep. 2017, 7, 5366.
+[150] V. Lopez-Dominguez, H. Almasi, P. Khalili Amiri, Phys. Rev. Appl.
+2019, 11, 024019.
+[151] X. Chen, T. Higo, K. Tanaka, T. Nomoto, H. Tsai, H. Idzuchi, M.
+Shiga, S. Sakamoto, R. Ando, H. Kosaki, T. Matsuo, D. Nishio-
+Hamane, R. Arita, S. Miwa, S. Nakatsuji, Nature 2023, 613, 490.
+[152] P. Qin, H. Yan, X. Wang, H. Chen, Z. Meng, J. Dong, M. Zhu, J. Cai,
+Z. Feng, X. Zhou, L. Liu, T. Zhang, Z. Zeng, J. Zhang, C. Jiang, Z. Liu,
+Nature 2023, 613, 485.
+[153] A. Bose, N. J. Schreiber, R. Jain, D.-F. Shao, H. P. Nair, J. Sun, X. S.
+Zhang, D. A. Muller, E. Y. Tsymbal, D. G. Schlom, D. C. Ralph, Nat.
+Electron. 2022, 5, 267.
+[154] D.-F. Shao, S.-H. Zhang, M. Li, C.-B. Eom, E. Y. Tsymbal, Nat. Com-
+mun. 2021, 12, 7061.
+[155] L. Šmejkal, J. Sinova, T. Jungwirth, Phys. Rev. X 2022, 12, 040501.
+[156] I. Mazin, The PRX Editors, Phys. Rev. X 2022, 12, 040002.
+[157] L. Šmejkal, R. González-Hernández, T. Jungwirth, J. Sinova, Sci. Adv.
+2020, 6, eaaz8809.
+[158] A. Du, D. Zhu, K. Cao, Z. Zhang, Z. Guo, K. Shi, D. Xiong, R. Xiao,
+W. Cai, J. Yin, S. Lu, C. Zhang, Y. Zhang, S. Luo, A. Fert, W. Zhao,
+Nat. Electron. 2023, 6, 425.
+[159] P. Khalili Amiri, F. Garesci, G. Finocchio, Nat. Electron. 2023, 6, 407.
+[160] H. Lee, F. Ebrahimi, P. K. Amiri, K. L. Wang, AIP Adv. 2017, 7, 055934.
+[161] A. Fukushima, T. Yamamoto, T. Nozaki, K. Yakushiji, H. Kubota, S.
+Yuasa, APL Mater. 2021, 9, 030905.
+[162] W. A. Borders, A. Z. Pervaiz, S. Fukami, K. Y. Camsari, H. Ohno, S.
+Datta, Nature 2019, 573, 390.
+[163] Y. Shao, S. L. Sinaga, I. O. Sunmola, A. S. Borland, M. J. Carey, J. A.
+Katine, V. Lopez-Dominguez, P. Khalili Amiri, IEEE Magn. Lett. 2021,
+12, 4501005.
+[164] C. Herder, M.-D. Yu, F. Koushanfar, S. Devadas, Proc. IEEE 2014,
+102, 1126.
+[165] Y. Gao, S. F. Al-Sarawi, D. Abbott, Nat. Electron. 2020, 3, 81.
+[166] Y. Tanaka, M. Goto, A. K. Shukla, K. Yoshikawa, H. Nomura, S. Miwa,
+S. Tomishima, Y. Suzuki, IEEE Trans. Magn. 2020, 57, 3400806.
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (14 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+ 2365709x, 2023, 18, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202300676 by Readcube-Labtiva, Wiley Online Library on [16/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+--- PAGE 15 ---
+www.advancedsciencenews.com
+www.advmattechnol.de
+YixinShaoisaPh.D.candidateinelectricalengineeringatNorthwesternUniversity.Hereceivedhis
+B.S.degreeinphysicsfromNanjingUniversityin2018andjoinedthePhysicalElectronicsResearch
+Laboratory(PERL)atNorthwesternUniversityasaPh.D.studentintheFallof2018,whereheworkson
+voltage-controlledspintronicdevicesandtheirapplicationsinunconventionalcomputingarchitec-
+tures.
+PedramKhaliliAmiriisanassociateprofessorofelectricalandcomputerengineeringandapplied
+physicsatNorthwesternUniversity.PriortojoiningNorthwesternUniversityin2017,hewasanas-
+sistantadjunctprofessorattheUniversityofCalifornia,LosAngeles.HereceivedaB.S.degreefrom
+SharifUniversityofTechnologyin2004,andaPh.D.degree(cumlaude)fromDelftUniversityofTech-
+nology(TUDelft)in2008,bothinelectricalengineering.Hisresearchinterestsincludespintronics,
+emergingmemorydevices,probabilisticandneuromorphiccomputingarchitectures,quantumand
+topologicalmagneticmaterials,magnonics,andmagneticsensing.Heisaseniormemberofthe
+IEEE.
+Adv. Mater. Technol. 2023, 8, 2300676
+2300676 (15 of 15)
+© 2023 The Authors. Advanced Materials Technologies published by Wiley-VCH GmbH
+ 2365709x, 2023, 18, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202300676 by Readcube-Labtiva, Wiley Online Library on [16/03/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

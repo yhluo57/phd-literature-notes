@@ -1,0 +1,371 @@
+
+
+--- PAGE 1 ---
+Composition dependence of magnetoresistance effect and its annealing endurance in
+tunnel junctions having Mn-Ga electrode with high perpendicular magnetic anisotropy
+Takahide Kubota, Masaaki Araidai, Shigemi Mizukami, Xianmin Zhang, Qinli Ma, Hiroshi Naganuma, Mikihiko
+Oogane, Yasuo Ando, Masaru Tsukada, and Terunobu Miyazaki 
+ 
+Citation: Applied Physics Letters 99, 192509 (2011); doi: 10.1063/1.3659484 
+View online: http://dx.doi.org/10.1063/1.3659484 
+View Table of Contents: http://scitation.aip.org/content/aip/journal/apl/99/19?ver=pdfcov 
+Published by the AIP Publishing 
+ 
+Articles you may be interested in 
+Tunnel magnetoresistance effect using perpendicularly magnetized tetragonal and cubic Mn-Co-Ga Heusler alloy
+electrode 
+J. Appl. Phys. 115, 17C704 (2014); 10.1063/1.4855016 
+ 
+Magnetoresistance effect in L10-MnGa/MgO/CoFeB perpendicular magnetic tunnel junctions with Co interlayer 
+Appl. Phys. Lett. 101, 032402 (2012); 10.1063/1.4737000 
+ 
+Annealing effects on CoFeB-MgO magnetic tunnel junctions with perpendicular anisotropy 
+J. Appl. Phys. 110, 033904 (2011); 10.1063/1.3611426 
+ 
+Effect of metallic Mg insertion on the magnetoresistance effect in MgO-based tunnel junctions using D022-Mn3-
+δGa perpendicularly magnetized spin polarizer 
+J. Appl. Phys. 110, 013915 (2011); 10.1063/1.3603034 
+ 
+Tunnel magnetoresistance properties and annealing stability in perpendicular anisotropy MgO-based magnetic
+tunnel junctions with different stack structures 
+J. Appl. Phys. 109, 07C711 (2011); 10.1063/1.3554092 
+ 
+ 
+ This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+137.30.242.61 On: Tue, 09 Dec 2014 12:33:01
+
+
+--- PAGE 2 ---
+Composition dependence of magnetoresistance effect and its annealing
+endurance in tunnel junctions having Mn-Ga electrode with high
+perpendicular magnetic anisotropy
+Takahide Kubota,1,a) Masaaki Araidai,1 Shigemi Mizukami,1 Xianmin Zhang,1
+Qinli Ma,1 Hiroshi Naganuma,2 Mikihiko Oogane,2 Yasuo Ando,2 Masaru Tsukada,1 and
+Terunobu Miyazaki1
+1WPI Advanced Institute for Materials Research, Tohoku University, Katahira 2-1-1, Aoba-ku, Sendai
+980-8577, Japan
+2Department of Applied Physics, Graduate School of Engineering, Tohoku University, Aza-aoba 6-6-05,
+Aramaki, Aoba-ku, Sendai 980-8579, Japan
+(Received 19 September 2011; accepted 18 October 2011; published online 9 November 2011;
+publisher error corrected 21 November 2011)
+The composition dependence of the tunnel magnetoresistance (TMR) effect in Mn-Ga/MgO/CoFe
+magnetic tunnel junctions (MTJs) for Mn54Ga46, Mn62Ga38, and Mn71Ga29 (at. %) electrodes was
+investigated. An MTJ with a Mn62Ga38 electrode showed a maximum TMR ratio of 23% at 10 K
+and high annealing endurance up to 375 C. The bias voltage dependence of the TMR ratio was
+distinct among MTJs with different Mn-Ga compositions. Here, we discuss this dependence on the
+basis of the difference in the D1 band dispersions for Mn-Ga alloys calculated by ﬁrst principles.
+V
+C 2011 American Institute of Physics. [doi:10.1063/1.3659484]
+Magnetic thin ﬁlms with a high perpendicular magnetic
+anisotropy (PMA) are essential for the development of spin-
+transfer-torque-switching-type1
+random
+access
+memories
+(STT-RAMs), since these ﬁlms can aid the reduction of the
+critical current required for writing a digital information bit,2
+enhancement of thermal endurance,3 and improvement in
+scalability.4 For STT-RAMs to be practically usable, magnetic
+tunnel junctions (MTJs) should have good annealing endur-
+ance because the standard backend technology for the metalli-
+zation of complementary metal oxide semiconductor (CMOS)
+circuits requires annealing typically at temperatures over
+350 C. Among PMA ﬁlms for MTJs,5–9 D022-Mn3dGa
+(Refs. 10 and 11) and L10-Mn-Ga (Ref. 12) ordered alloy thin
+ﬁlms are attractive as they have high PMA (Ku ¼ 1–2  107
+erg/cm3), a small Gilbert damping constant,13 and high trans-
+port spin polarization14 and TMR ratio (expected theoreti-
+cally).15 Moreover, it is preferable for MnxGa1x binary alloys
+to possess thermodynamically stable L10 and D022 phases in a
+relatively wide composition range of x  0.5–0.65 and
+x  0.65–0.74,
+respectively,
+to
+facilitate
+device
+fabrica-
+tion.16,17 Then, the annealing stability of PMA in MTJs would
+be expected to be high. While the structural and magnetic
+properties of bulk Mn-Ga alloys have been studied exten-
+sively, the dependences of the TMR effect on both the compo-
+sition and the annealing effect have not yet been investigated.
+Therefore, we investigated these dependences in this study.
+All the ﬁlms used in this study were grown by an
+ultrahigh-vacuum magnetron sputtering system (base pressure
+<1 107Pa) with stacking structures of MgO(100) substrate/
+Cr(40)/Mn-Ga(30)/Mg(0.4)/MgO(2.2)/CoFe(2.5)/Ta(5)/Ru(5)
+(unit: nanometers). Three kinds of Mn-Ga compositions were
+investigated:
+L10-Mn54Ga46,
+L10-Mn62Ga38,
+and
+D022-
+Mn71Ga29 (at. %). All the layers were deposited at an ambient
+temperature. In-situ annealing was carried out after the depo-
+sition of Cr at 700 C, of L10-Mn62Ga38 and D022-Mn71Ga29
+at 400 C, and of L10-Mn54Ga46 at 500 C. Each of the Mn-
+Ga layers was subjected to post-annealing to promote a well-
+ordered structure with good PMA properties. The correspond-
+ing structural and magnetic properties were investigated using
+an x-ray diffractometer and a vibrating sample magnetometer.
+Each Mn-Ga layer exhibited well-squared hysteresis loops
+and had high PMA (Ku ¼ 1–2  107 erg/cm3) as well as a
+high degree of L10 ordering, which was weakly dependent on
+the Mn-Ga the composition.18 Details of the magnetic and
+structural properties of the Mn-Ga ﬁlms are discussed else-
+where.19 The ﬁlms were patterned into pillar shapes with
+sizes ranging from 10  10 lm2 to 100 100 lm2 by ultra-
+violet lithography and Ar plasma milling techniques. After
+the fabrication processes, MTJs were annealed in a vacuum
+furnace at temperatures (Tanneal) ranging from 250 C to
+400 C to improve the (001) orientation of the MgO barrier.
+Electrical transport properties were investigated by a direct-
+current four-terminal method at 10 K and 300 K. We calcu-
+lated the electronic band structures using the commercially
+available Atomistix ToolKit (ATK).20 This code uses numeri-
+cal atomic orbitals and norm-conserving pseudopotentials.
+We
+employed
+the
+Perdew-Burke-Ernzerhof
+(PBE)-type
+exchange-correlation functional.21
+Fig. 1 shows typical dependences of the TMR ratio on
+the magnetic ﬁeld perpendicular to the ﬁlm plane direction.
+In the present MTJs, a completely anti-parallel conﬁguration
+of the magnetizations of Mn-Ga and CoFe electrodes cannot
+be realized, and the observed TMR ratio is underestimated
+relative to that in the case of MTJs showing parallel to anti-
+parallel magnetization switching (TMRP-AP). From the pres-
+ent experimental results, TMRP-AP was obtained by an equa-
+tion of the angular dependence of the TMR effect.22 The
+detailed equation for the calibration is described in Refs. 16
+and 23.
+a)Author to whom correspondence should be addressed. Electronic mail:
+takahide@wpi-aimr.tohoku.ac.jp.
+0003-6951/2011/99(19)/192509/3/$30.00
+V
+C 2011 American Institute of Physics
+99, 192509-1
+APPLIED PHYSICS LETTERS 99, 192509 (2011)
+ This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+137.30.242.61 On: Tue, 09 Dec 2014 12:33:01
+
+
+--- PAGE 3 ---
+Fig. 2(a) shows the dependence of TMRP-AP on Tanneal.
+The
+maximum
+TMR
+ratios
+of
+all
+ﬁlm
+compositions
+were 18% (Mn54Ga46, Tanneal ¼ 325 C), 23% (Mn62Ga38,
+Tanneal ¼ 375 C), and 20% (Mn71Ga29, Tanneal ¼ 325 C) at
+10 K. At 300 K, these ratios were 6% (Mn54Ga46,
+Tanneal ¼ 325 C), 7% (Mn62Ga38, Tanneal ¼ 350 C), and 8%
+(Mn71Ga29, Tanneal ¼ 350 C). The Mn62Ga38 MTJ exhibited
+a higher TMR ratio than the others, although the magnitude
+and the difference of TMRP-AP among the present samples
+were small. However, we found a clear, different dependence
+on Tanneal. Note that the annealing endurance of the
+Mn62Ga38 electrode up to 375 C is higher than that of the
+other PMA-material-based MTJs described in Refs. 5–9, and
+the temperature is sufﬁciently high to be the process temper-
+ature of the CMOS technology. One possible reason for the
+high annealing endurance is the stable low-temperature
+solid-solution phase of L10-Mn62Ga38,16 whose boundary to
+the high-temperature phase is almost 700 C. On the other
+hand, the other two compositions are relatively close to the
+edge of other nonmagnetic phases, and their decomposed
+temperature is relatively low.16,17 The temperature at which
+TMRP-AP begins to decrease is lower than the disordering
+temperature in the phase diagram for each composition. This
+is attributed to the decrease in the disordering temperature
+due to a strain24 at the Mn-Ga/MgO interface or the low
+dimensionality at the interface.
+Figs. 2(b)–2(d) show the dependence of the product of
+the resistance and the area (R  A) in the parallel magnetiza-
+tion conﬁguration in MTJs with Mn71Ga29, Mn62Ga38, and
+Mn54Ga46 electrodes, respectively. For Mn71Ga29 (Fig. 2(b))
+and Mn62Ga38 (Fig. 2(c)), R  A showed a slight decrease
+with increasing Tanneal. A similar behavior was observed in
+for the CoFeB/MgO MTJs.25 In contrast, R  A for the
+Mn54Ga46 MTJs (Fig. 2(d)) decreased more drastically than
+for the other two MTJs. Even though the reason for the dif-
+ferent behaviors of R  A is unclear, the dependence indi-
+cates the poor annealing stability of the Mn54Ga46 MTJs.
+To better understand the dependence of the electronic
+structure on the Mn-Ga composition, tunneling conductance
+spectra (dI/dV – V; Fig. 3(a)) and the bias voltage dependence
+of the TMR ratio of the MTJs (TMR – V; Fig. 3(b)) were
+measured at 10 K. In these graphs, the negative bias region
+corresponds to the tunneling of electrons from the top CoFe
+electrode to the bottom Mn-Ga electrodes. The shape of the
+dI/dV spectra for each composition is almost the same, which
+is mainly attributed to the nature of the MgO barrier, as dis-
+cussed in our previous works.15,23 The difference among the
+compositions is apparent in the TMR – V curves. The TMR –
+V curves in the positive bias side exhibited a similar shape,
+because they were mainly affected by the electronic structure
+at the MgO/CoFe interface. On the other hand, the negative
+bias side exhibited an apparent difference, which implies
+apparently different electronic structures at the interface of
+the Mn-Ga electrodes. The TMR ratios of the Mn62Ga38 and
+Mn71Ga29 MTJs decreased gradually with increasing magni-
+tude of the bias voltage, whereas that of the Mn54Ga46 MTJ
+decreased steeply near the zero-bias point. Such a steep
+decrease is often attributed to the inelastic tunneling pro-
+cess.26 However, the inelastic tunneling due to magnetic im-
+purity is one of a possible factor, the calculated dispersion of
+the D1 bands can also qualitatively explain the TMR – V curve
+of the Mn54Ga46 MTJ, as discussed in the following section.
+Fig. 4 shows the calculated electronic band structures
+of bulk L10-MnGa (Mn50Ga50; a, b) and D022-Mn3Ga
+(Mn75Ga25; c, d) along the [001] direction. In the calculation
+for L10-MnGa, we used a supercell that is represented by a
+conventional L10 unit cell doubled along the c-axis, to com-
+pare it directly with a D022 unit cell. The in-plane lattice
+FIG. 1. (Color online) TMR curves of Mn-Ga/MgO/CoFe MTJs with differ-
+ent Mn-Ga compositions at 10 K.
+FIG. 2. (Color online) Annealing temperature dependence of (a) TMR ratio
+and ((b), (c), (d)) products of resistance and area (R  A) in a parallel mag-
+netization conﬁguration. Solid and open data points were measured at 10 K
+and 300 K, respectively. The circle, square, and triangle points represent
+Mn71Ga29, Mn62Ga38, and Mn54Ga46 (at. %) compositions, respectively.
+FIG. 3. (Color online) Bias voltage dependences of (a) differential conduct-
+ance and (b) TMR ratio measured at 10 K.
+192509-2
+Kubota et al.
+Appl. Phys. Lett. 99, 192509 (2011)
+ This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+137.30.242.61 On: Tue, 09 Dec 2014 12:33:01
+
+
+--- PAGE 4 ---
+constant (a) and the c/a ratio of the L10 supercell and the D022
+unit cell were ﬁxed to 3.90 A˚ and 1.81, respectively. Figs.
+4(a) and 4(c) [(b) and (d)] represent the majority (minority)
+spin band. Bold curves represent bands with the D1 symmetry,
+which mainly contribute to the tunneling conductance in
+MTJs with the MgO barrier.27 The spin polarization of the D1
+band seems to be small around the Fermi energy (EF) for the
+L10-MnGa, because the D1 band touches EF in the minority
+spin channel and crosses EF in the majority spin channel. EF
+of L10-Mn54Ga46 is considered to be lower than that calcu-
+lated for L10-MnGa (Mn50Ga50) because EF decreases with
+decreasing total number of valence electrons under the
+assumption of a rigid band picture. If EF is located just below
+the edge of the minority D1 band, the tunneling conductance
+from the minority spin channel is increased for the unﬁlled D1
+states at a small ﬁnite negative bias, which is considered to
+lead to a drastic decrease in the TMR ratio on the negative
+bias side in the L10-Mn54Ga46 MTJ. The relatively gradual
+decay of TMRP-AP in D022-Mn71Ga29 implies a gradual decay
+of the D1-spin polarization for the minority band gap shown in
+Fig. 4(d). The behavior of the L10-Mn62Ga38 MTJ is consid-
+ered to be similar to that of the D022-Mn71Ga29 MTJ because
+EF of L10-Mn62Ga38 is assumed to be located within the band
+gap of the minority spin channel, if we consider the rigid band
+picture. In this case, the spin polarization of L10-Mn62Ga38 is
+higher than that of D022-Mn71Ga29. However, here, the reason
+for the small TMR ratio in the experiments is still unclear. At
+present, one possible reason is considered to be the imperfec-
+tions (e.g., lattice dislocations, defects, and contaminations) at
+the interfaces around the MgO barrier. In particular, a lattice
+misﬁt of approximately 7% is observed between the Mn-Ga
+ﬁlms and MgO, and such a large misﬁt may cause lattice dis-
+locations and an unfavorable growth of the MgO barrier.
+Imperfections at the interface were found by transition elec-
+tron microscopy analysis of the D022-Mn71Ga29 MTJ, as
+described in Ref. 15. To improve the TMR ratio, it is impor-
+tant to choose some other barrier material or to reduce the
+misﬁt by modifying the interface.
+In summary, we investigated the TMR effect in Mn-Ga/
+MgO/CoFe MTJs with ﬁlms of three different Mn-Ga compo-
+sitions. Among the prepared samples, MTJs with L10-
+Mn62Ga38 exhibited a high annealing endurance of the TMR
+ratio up to 375 C and a maximum TMR ratio of 23% at 10 K.
+The bias voltage dependence of differential conductance
+differed slightly with varying Mn-Ga composition, whereas
+that of the TMR ratio clearly depended on the Mn-Ga compo-
+sition. The dependence in the TMR – V curve could be quali-
+tatively understood by the dispersion of the D1 bands in the
+Mn-Ga [001] direction. These experimental and theoretical
+results suggest that a Mn-Ga ordered alloy with a Mn content
+of about 60 at. % is promising from the viewpoints of achiev-
+ing a stable alloy phase and high spin polarization.
+This work was partly supported by a Grant for Industrial
+Technology Research from NEDO, the Strategic Japanese-
+German cooperative program (ASPIMATT) from the JST,
+and a Grant-in-Aid for Scientiﬁc Research from the JSPS.
+1J. C. Slonczewski, J. Magn. Magn. Mater. 159, L1 (1996).
+2S. Mangin, D. Ravelosona, J. A. Katine, M. J. Carey, B. D. Terris, and E.
+E. Fullerton, Nature Mater. 5, 210 (2006).
+3K. Yakushiji, S. Yuasa, T. Nagahama, A. Fukushima, H. Kubota, T.
+Katayama, and K. Ando, Appl. Phys. Express 1, 041302 (2008).
+4T. Kai, J. Ozeki, M. Nakayama, H. Akikawa, S. Ikegawa, and H. Yoda,
+presented at the 53rd Magnetism and Magnetic Materials Conference,
+Austin, DC-07, 2008.
+5K. Yakushiji, K. Noma, T. Saruya, H. Kubota, A. Fukushima, T. Naga-
+hama, S. Yuasa, and K. Ando, Appl. Phys. Express 3, 053003 (2010).
+6K. Mizunuma, S. Ikeda, J. H. Park, H. Yamamoto, H. Gan, K. Miura, H.
+Hasegawa, J. Hayakawa, F. Matsukura, and H. Ohno, Appl. Phys. Lett. 95,
+232516 (2009).
+7G. Kim, Y. Sakuraba, M. Oogane, Y. Ando, and T. Miyazaki, Appl. Phys.
+Lett. 92, 172502 (2008).
+8T. Daibou, M. Yoshikawa, E. Kitagawa, T. Nagase, K. Nishiyama, M.
+Nagamine, M. Amano, M. Nakayama, T. Kai, T. Kishi, and H. Yoda, pre-
+sented at the 11th Joint MMM–Intermag Conference, Washington, D.C.,
+DA-08, 2010.
+9S. Ikeda, K. Miura, H. Yamamoto, K. Mizunuma, H. D. Gan, M. Endo, K.
+Kanai,J.Hayakawa,F.Matsukura,andH.Ohno,NatureMater.9,721(2010).
+10F. Wu, S. Mizukami, D. Watanabe, H. Naganuma, M. Oogane, Y. Ando,
+and T. Miyazaki, Appl. Phys. Lett. 94, 122503 (2009).
+11H. Kurt, K. Rode, M. Venkatesan, P. Stamenov, and J. M. D. Coey, Phys.
+Rev. B 83, 020405(R) (2011).
+12M. Tanaka, J. P. Harbison, J. DeBoeck, T. Sand, B. Philips, T. L. Cheeks,
+and V. G. Keramidas, Appl. Phys. Lett. 62, 1565 (1993).
+13S. Mizukami, F. Wu, A. Sakuma, J. Walowski, D. Watanabe, T. Kubota,
+X. Zhang, H. Naganuma, M. Oogane, Y. Ando, and T. Miyazaki, Phys.
+Rev. Lett. 106, 117201 (2011).
+14B. Balke, G. H. Fecher, J. Winterlik, and C. Felser, Appl. Phys. Lett. 90,
+152504 (2007).
+15T. Kubota, Y. Miura, D. Watanabe, S. Mizukami, F. Wu, H. Naganuma,
+X. Zhang, M. Oogane, M. Shirai, Y. Ando, and T. Miyazaki, Appl. Phys.
+Express 4, 043002 (2011).
+16T. B. Massalski, Binary Alloy Phase Diagrams, 2nd ed. (ASM Interna-
+tional, Ohio, 1990), p. 2824.
+17H. Niida, T. Hori, H. Onodera, Y. Yamaguchi, and Y. Nakagawa, J. Appl.
+Phys. 79, 5946 (1996).
+18Note: Since the D022 ordering is a higher ordered structure including L10
+ordering, we can deﬁne the long-range order parameter of the L10 structure
+in D022-Mn71Ga29 by using the intensity of superlattice diffractions.
+19S. Mizukami, T. Kubota, F. Wu, X. Zhang, H. Naganuma, M. Oogane, Y.
+Ando, A. Sakuma, and T. Miyazaki, “Tunable Magnetization in Manga-
+nese Gallium Alloy Thin Films with Large Perpendicular Magnetic
+Anisotropy” (unpublished).
+20M. Brandbyge, J.-L. Mozos, P. Ordejon, J. Taylor, and K. Stokbro, Phys.
+Rev. B 65, 165401 (2002).
+21J. P. Perdew, K. Burke, and M. Ernzerhof, Phys. Rev. Lett. 77, 3865 (1996).
+22J. C. Slonczewski, Phys. Rev. B 39, 6995 (1989).
+23T. Kubota, S. Mizukami, D. Watanabe, F. Wu, X. Zhang, H. Naganuma,
+M. Oogane, Y. Ando, and T. Miyazaki, J. Appl. Phys. 110, 013915 (2011).
+24G. Gompper and D. M. Kroll, Phys. Rev. B 40, 7221 (1989).
+25S. Ikeda, J. Hayakawa, Y. Ashizawa, Y. M. Lee, K. Miura, H. Hasegawa, M.
+Tsunoda, F. Matsukura, and H. Ohno, Appl. Phys. Lett. 93, 082508 (2008).
+26S. Zhang, P. M. Levy, A. C. Marley, and S. S. P. Parkin, Phys. Rev. Lett.
+79, 3744 (1997).
+27W. H. Butler, X.-G. Zhang, and T. C. Schulthess, Phys. Rev. B 63, 054416
+(2001).
+FIG. 4. (Color online) Calculated band dispersion relations of bulk (a), (b)
+L10-MnGa (Mn50Ga50) and (c), (d) D022-Mn3Ga (Mn75Ga25). Majority and
+minority spin channels are shown in Figs. 1(a) and 1(b) and Figs. 1(b) and
+1(d), respectively. The bold lines indicate dispersions with D1 symmetry.
+192509-3
+Kubota et al.
+Appl. Phys. Lett. 99, 192509 (2011)
+ This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+137.30.242.61 On: Tue, 09 Dec 2014 12:33:01

@@ -1,0 +1,660 @@
+
+
+--- PAGE 1 ---
+Applied Physics
+Express
+     
+LETTERS
+In-plane current-induced magnetization switching
+in CoGa/MnGa/MgO films
+To cite this article: Masahiro Takikawa et al 2017 Appl. Phys. Express 10 073004
+ 
+View the article online for updates and enhancements.
+You may also like
+Electrospun X-type Fe2CoGa nanowires:
+assessment of structural, magnetic, and
+electronic properties for nanomagnetic
+applications
+Dinesh Subba and Ananthakrishnan
+Srinivasan
+-
+Slow spin dynamics in a CoM2O4 A-site
+spinel (M=Al, Ga, and Rh)
+T Naka, T Nakane, J Valenta et al.
+-
+Current-Induced Magnetization Switching
+Behavior in Perpendicular Magnetized
+L10-MnAl/B2-CoGa Bilayer
+Hong-Li Sun,  , Rong-Kun Han et al.
+-
+This content was downloaded from IP address 159.226.35.194 on 07/09/2025 at 04:09
+
+
+--- PAGE 2 ---
+In-plane current-induced magnetization switching in CoGa/MnGa/MgO ﬁlms
+Masahiro Takikawa1,2, Kazuya Z. Suzuki1*, Reza Ranjbar1, and Shigemi Mizukami1
+1WPI Advanced Institute for Materials Research, Tohoku University, Sendai 980-8577, Japan
+2Department of Applied Physics, Graduate School of Engineering, Tohoku University, Sendai 980-8579, Japan
+*E-mail: kazuya.suzuki.d8@tohoku.ac.jp
+Received May 9, 2017; accepted May 26, 2017; published online June 22, 2017
+In-plane current-induced magnetization switching was investigated in a micron-sized Hall bar for the paramagnetic CoGa-buffered and MgO-
+capped 2-nm-thick ferrimagnetic L10 MnGa layer with perpendicular magnetic anisotropy. Current-induced switching was clearly observed when
+the in-plane longitudinal magnetic ﬁeld applied was sufﬁciently large and at an injection current density of 1011 A/m2. The in-plane ﬁeld direction
+and CoGa thickness dependence indicate that the deterministic bipolar switching primarily originates from a damping-like spin–orbit torque (SOT)
+arising from the spin-Hall effect in CoGa with a positive spin-Hall angle. The current pulse response suggested that the SOT switching was
+thermally assisted by Joule heating. © 2017 The Japan Society of Applied Physics
+C
+urrent-induced spin–orbit torque (SOT) switching of
+magnetization in ﬁlms with perpendicular magnetic
+anisotropy (PMA) is of importance for a writing
+technique for a three-terminal device utilizing a perpendic-
+ularly magnetized magnetic tunnel junction (p-MTJ), which
+can serve as a memory element of magnetoresistive random
+access memory (MRAM).1–6) Most studies on SOT for PMA
+ﬁlms have been performed on thin layered ﬁlms with an
+interfacial PMA composed of a heavy metal, e.g., Ta and
+Pt, and ultrathin ferromagnetic metals and alloys, e.g., Co
+and CoFeB. Moreover, SOT for magnetic alloys and multi-
+layers with a bulk-like PMA are of interest in determining
+whether MRAM using SOT switching can be scaled below
+the 20-nm technology node, which would require a large
+PMA thickness product of Keff
+u d > 1 mJ=m2 to maintain the
+long retention.7–9)
+Tetragonal Heusler-like Mn-based alloys and their deriv-
+atives, such as L10 MnGa, D022 Mn3Ga, and D022 Mn3Ge,
+have been extensively studied as magnetic materials for
+MRAM applications. This is because these Mn-based mate-
+rials have very low net magnetic moments owing to ferri-
+magnetism,10) high PMA,11–14) low Gilbert damping,12,15) and
+high spin polarization,10,13,16,17) which are rarely seen in other
+materials in bulk form. We recently discovered the room
+temperature (RT) growth of 1- to 3-nm L10 MnGa ultrathin
+ﬁlms utilizing the paramagnetic B2 ordered CoGa buﬀer
+layer.18) By using this method, we demonstrated ultrathin
+MnGa=MgO p-MTJs19) and also the growth of (001)-textured
+polycrystalline MnGa ﬁlms.20) In addition, we have observed
+clear SOT switching for CoGa=MnGa=Pt ﬁlms,21) though
+another group studied a GaAs=MnGa=heavy metal layer.22,23)
+However, a stacking structure with a heavy metal capping
+layer is not useful for p-MTJs in practice.
+In this Letter, we report the observation of current-induced
+SOT magnetization switching in CoGa=MnGa=MgO ﬁlms
+even without the heavy metal capping layer on the MnGa
+layer. The ﬁlms were fabricated by ultrahigh vacuum mag-
+netron sputtering and the stacking structure was (001) MgO
+single-crystal substrate=MgO (10)=CoGa (15, 20, and 25)=
+MnGa (2)=Mg (0.4)=MgO (2)=Ta (2) (where the thicknesses
+are in nanometers) [Fig. 1(a)]. The ﬂushing of MgO substrate
+was performed at 700 °C and the CoGa layer was annealed
+in situ at 500 °C. All the layers were deposited at RT. The
+ﬁlm compositions of CoGa and MnGa were Co55Ga45 and
+Mn59Ga41, respectively, as estimated by inductively coupled
+plasma mass spectroscopy. X-ray diﬀraction measurements
+showed that the B2-ordered paramagnetic CoGa buﬀer with
+the (001) orientation was epitaxially grown on the MgO
+substrate. The top Ta layer serves as a layer protecting MgO
+from reacting with the air and has no eﬀect on the SOT, as
+mentioned later. The ﬁlm was patterned into the micron-sized
+Hall bar by conventional ultraviolet photolithography and
+Ar ion milling, as studied before.21) The length and width of
+the main Hall bar are 30 and 6 µm, respectively [Fig. 1(b)],
+and the resistances R were approximately 142, 104, and 88 Ω
+for samples with dCoGa = 15, 20, and 25 nm. Hereafter, the
+dCoGa = 20 nm sample is described. Most of the current ﬂows
+in the CoGa layer since a thin Ta layer may be partially
+oxidized and the resistivity of MnGa is ≃1.6 µΩ·m,24) which
+is comparable to that of CoGa (≃2.5 µΩ·m).25) The anom-
+alous Hall resistance RH was measured at RT by measuring
+the voltage across the side Hall bars while injecting current I.
+An out-of-plane magnetic ﬁeld Hz or in-plane longitudinal
+(transverse) magnetic ﬁeld Hy(x) parallel (perpendicular) to
+V+
+V-
+I-
+I+
+30 μm
+Hall bar
+y
+x
+z
+θ
+M
+H
+β
+-4
+-2
+0
+2
+4
+-0.2
+-0.1
+0
+0.1
+0.2
+RH (Ω)
+μ0Hy (T)
+-400
+-200
+0
+200
+400
+-0.2
+-0.1
+0
+0.1
+0.2
+μ0Hz (mT)
+RH (Ω)
+(a)
+(d)
+(c)
+(b)
+CoGa (001)
+(15, 20, 25 nm)
+MgO (001) (10 nm)
+MgO (001) Subst.
+MgO (2 nm) / 
+Mg (0.4 nm)
+MnGa (001) (2 nm)
+Ta (2 nm)
+Fig. 1.
+(a) Illustration of stacking structure of ﬁlms. (b) Schematic of the
+Hall bar sample and the coordinate system. Anomalous Hall resistance RH
+measured at Idc = +1 mA as a function of (c) the out-of-plane ﬁeld Hz and
+(d) the in-plane longitudinal ﬁeld Hy. The curve in (d) is based on the
+calculated data.
+Applied Physics Express 10, 073004 (2017)
+https://doi.org/10.7567/APEX.10.073004
+073004-1
+© 2017 The Japan Society of Applied Physics
+
+
+--- PAGE 3 ---
+the main Hall bar was applied [Fig. 1(b)]. The low-ﬁeld RH
+measurements were conducted by the prober station with an
+electromagnet at maximum Hz and Hx,y values of 500 and
+200 mT, respectively, at direct current (dc) and pulse current
+measurements using a Keithley 6221 source meter and a
+Keithley 2182A digital nanovoltmeter with a current pulse
+duration τp as low as 100 µs. High-ﬁeld dc measurements
+were performed by the physical property measurement
+system with a maximum applied ﬁeld of 9 T.
+Figures 1(c) and 1(d) show typical RH–Hz and RH–Hy
+curves for the dCoGa = 20 nm sample, which were recorded
+at a direct current Idc = 1 mA. The RH–Hz hysteresis loop is
+rectangular and exhibits abrupt switching, similar to that
+observed in ﬁlms with a Cr=CoGa buﬀer.18) The RH–Hy data
+indicate a high PMA of the MnGa layer, and they agree with
+the uniform rotation model with an eﬀective PMA ﬁeld of
+0Heff
+k ¼ 2:63  0:08 T and an Hy oﬀset angle of β = −2.3°,
+as deﬁned in Fig. 1(b). The saturation magnetization Ms
+of 350 ± 50 kA=m was evaluated by using a vibrating
+sample magnetometer, yielding Keff
+u d ¼ 0MsHeff
+k dMnGa=2 ’
+0:46 mJ=m2.
+Figure 2(a) displays typical data of magnetization switch-
+ing by current pulses for the dCoGa = 20 nm sample with
+under various applied Hy ﬁelds. A clear switching behavior is
+observed for μ0∣Hy∣> 20 mT. The magnetization switching
+polarity, i.e., clockwise and anticlockwise, changes with the
+sign of Hy, which is a unique feature of current-induced
+SOT switching.3) Figure 2(b) shows a phase diagram of the
+switching current Ic vs Hy for the sample. In the low-Hy-ﬁeld
+regime, Ic is nearly unchanged. When the damping-like
+torque resulting from the spin-Hall eﬀect (SHE) is taken into
+account, the switching current density Jc for ﬁlms with
+perpendicular magnetization can be derived from the macro-
+spin model:4)
+Jc ¼
+2e
+ħ
+
+ 0Msd
+eff
+SH
+
+ Heff
+k
+2
+ Hyﬃﬃﬃ
+2
+p
+
+
+;
+ð1Þ
+where e, ħ, d, and eff
+SH are the electron charge, Dirac constant,
+magnetic layer thickness, and eﬀective spin-Hall angle for a
+heavy metal layer, respectively. Note that eff
+SH is not the spin-
+Hall angle but is modiﬁed by the interface mixing con-
+ductance, and so on. To examine the relationship between Ic
+and Hy, dc current switching measurements under large Hy
+were also performed [Fig. 2(b)]. A systematic decrease in
+Ic with magnitude of Hy increasing to 1 T was conﬁrmed.
+This trend qualitatively agrees with Eq. (1), suggesting that
+the magnetization switching is induced by the SHE in the
+CoGa layer even though CoGa does not contain any heavy
+elements. The symmetry between Ic and Hy is the same as
+that in substrate=Pt=Co=AlO ﬁlms,3) indicating that eff
+SH > 0
+for CoGa, being similar to that for Pt.
+Similar experiments were also performed for the control
+sample of CoGa (10)=MnGa (2)=CoGa (1)=MgO (2)=Ta (2),
+prepared separately. Even in this sample, current-induced
+switching was observed. Thus, the top Ta layer and MgO
+capping layer may have no direct eﬀects on the switching
+observed in this study. In addition, we could not observe
+current-induced switching in the presence of only Hx, which
+implies that the ﬁeld-like SOT is weak compared with the
+damping-like torque.1) By substituting the experimental values
+of Ms, Heff
+k , and dMnGa, Eq. (1) yields Jc = 3 × 1012 A=m2 at
+Hy = 200 mT even when eff
+SH is unity. However, the experi-
+mental Jc, corresponding to the current density in the CoGa
+layer at the switching, is 2 × 1011 A=m2 at μ0Hy = 200 mT,
+which is much smaller than that predicted from Eq. (1) and
+is comparable to the values reported for ﬁlms with a lower
+PMA.
+Equation (1) is derived by assuming that the magnetization
+uniformly rotates without thermal ﬂuctuations and that the
+current I ﬂows only into the normal metal layer. The main
+factors reducing Jc in micron-scaled samples are known to be
+the nonuniform magnetization process, thermally activated
+switching, and Joule heating.3,26,27) To gain insight into the
+Joule heating eﬀect, we also measured RH–Hz with diﬀerent
+Ip values at τp = 100 µs [Fig. 3(a)]. Both RH at the zero ﬁeld
+and Hc are found to be degraded at Ip = 20 mA near the
+switching threshold, Thus, Joule heating may reduce the
+(h)
+Mz < 0
+Mz > 0
+Mz < 0
+Mz > 0
+pulse
+dc
+-0.2
+0
+0.2
+Ip (mA)
+-0.2
+0
+0.2
+-0.2
+0
+0.2
+-0.2
+0
+0.2
+RH (Ω)
+-0.2
+0
+0.2
+-0.2
+0
+0.2
+-30
+-20
+-10
+0
+10
+20
+30
+-0.2
+0
+0.2
+200
+100
+20
+0
+-20
+-100
+-200
+(a)
+(b)
+(c)
+(d)
+(e)
+(f)
+(g)
+μ0Hy (mT)
+-1
+0
+1
+-30
+-20
+-10
+0
+10
+20
+30
+Ic (mA)
+μ0Hy (T)
+Fig. 2.
+(a) Anomalous Hall resistance RH as a function of the pulsed
+current Ip with a pulse duration of 100 µs with applied in-plane longitudinal
+magnetic ﬁelds μ0Hy of (a) 200, (b) 100, (c) 20, (d) 0, (e) −20, (f) −100,
+and (g) −200 mT. (h) Switching phase diagram of the switching current
+Ic vs Hy. Open and solid circles are the data obtained for the 100 µs pulse
+current and dc measurement, respectively. The dashed lines are visual
+guides.
+Appl. Phys. Express 10, 073004 (2017)
+M. Takikawa et al.
+073004-2
+© 2017 The Japan Society of Applied Physics
+
+
+--- PAGE 4 ---
+switching current via the reduction of Hc and=or PMA. This
+consideration is also consistent with the τp dependence of Ic
+[Fig. 3(b)]. Ic only slightly increases with decreasing τp and is
+very similar to that at dc, even for τp = 100 µs. This result is
+similar to the τp dependence of Ic observed in Pt=Co=MgO=Pt
+ﬁlms,26) in which increases in Ic have been observed with
+τp decreasing to 10–100 ns. Therefore, measurements with
+a shorter pulse duration are necessary to investigate the
+switching without Joule heating in our sample.
+To quantitatively investigate the eﬀect of SOT strength and
+Joule heating on the magnetization process, we measured
+RH–Hy for the dCoGa = 20 nm sample with diﬀerent Idc values,
+as shown in Figs. 4(a)–4(c). Similar to the change in Hc
+in Fig. 3(a), the kink determined by Heff
+k
+systematically
+decreases with increasing Idc. At Idc = 19 mA, Heff
+k
+becomes
+∼1.5 T. This reduction in PMA is caused by the sample
+temperature T rising from RT, which may not be as high as
+300 °C. This is because the magnetic properties for our
+ultrathin MnGa ﬁlms are irreversibly deteriorated owing to
+atomic diﬀusion when the samples were annealed at 300 °C.
+However, such a deterioration has not been observed in these
+switching experiments with ∣Idc∣= 20 mA. In this temperature
+range, the magnetic order may be reduced because the Curie
+temperature Tc for bulk Mn60Ga40 is 658 K, which is lower
+than those for Co–Fe alloys. Apart from the change in PMA,
+diﬀerences in Hy for ±Idc are observed with increasing Idc in
+the RH–Hy data, which may be related to the SOT strength
+and can be expressed by the relation3)
+HyðÞ ¼ H
+y ðÞ  Hþ
+y ðÞ
+¼
+ħ
+e
+  eff
+SHjJj=0Msd
+sinð  Þ
+;
+ð2Þ
+where θ is the magnetization angle [Fig. 1(a)] and H
+y ðÞ is
+the value of Hy at the given θ for the current density ±J.
+The RH–Hy curves at Idc > 15 mA deviate from that calculated
+by using the uniform rotation model (not shown here). Thus,
+we directly evaluated ΔHy at θ ≃−30° at which RH becomes
+a half, as indicated with dashed lines and arrows in
+Figs. 4(a)–4(c). The Idc dependence of ΔHy (θ ≃−30°) is
+shown in Fig. 4(d). Rather than exhibiting a linear de-
+pendence, ΔHy rapidly increases with increasing Idc, in con-
+trast to what is predicted from Eq. (2). This nonlinear trend
+may be due to the reduction in Ms by Joule heating. Thus,
+ΔHy was calculated using Eq. (2) under the assumptions
+that eff
+SH is nearly constant and MsðTÞ ’ ½RHðTÞ=RHðRTÞ 
+MsðRTÞ
+in
+this
+temperature
+range.
+We
+approximately
+obtained the reduced Ms values at each Idc from the RH–Idc
+data by ﬁtting the proper mathematical function. By taking
+into account the reduction in Ms, the experimental data of
+ΔHy are roughly explained by Eq. (2) with eff
+SH ¼ 0:04­0:12
+for CoGa, as shown in Fig. 4(d).
+These eff
+SH values for CoGa are similar to those for Pt,3,28)
+even though those were crudely obtained under several
+-400
+-200
+0
+200
+400
+-0.2
+-0.1
+0
+0.1
+0.2
+μ0Hz (mT)
+RH (Ω)
+(a)
+Ip (mA)
+1.0
+5.0
+10
+15
+20
+16
+18
+20
+22
+24
+26
+Ic (mA)
+τp (μs)
+100
+101
+102
+103
+104
+0
+(b)
+25
+20
+15
+dCoGa (nm) 
+dc
+| Hy |  = 100 mT
+Fig. 3.
+(a) Anomalous Hall resistance RH as a function of the out-of-plane
+ﬁeld Hz with diﬀerent values of pulsed current Ip. (b) Average switching
+current Ic as a function of the pulse duration τp for samples with diﬀerent
+CoGa thickness dCoGa.
+0
+10
+20
+0
+0.1
+0.2
+-200
+-100
+0
+RH (Ω)
+Idc (mA)
+μ0ΔHy (mT)
+0
+1
+2
+0
+0.02
+0.04
+0.06
+0.08
+0.10
+0
+1
+2
+0
+0.02
+0.04
+0.06
+0.08
+0.10
+0
+1
+2
+0
+0.02
+0.04
+0.06
+0.08
+|Idc| = 17 mA
+RH (Ω)
+(b)
+(a)
+(c)
+|Idc| = 18 mA
+|Idc| = 19 mA
+I > 0
+I < 0
+I > 0
+I < 0
+I > 0
+I < 0
+μ0ΔHy
+μ0ΔHy
+μ0ΔHy
+μ0Hy (T)
+θSH
+eff
+0.04
+0.08
+0.12
+(d)
+Fig. 4.
+Typical data for RH as a function of the in-plane longitudinal ﬁeld
+Hy for the dCoGa = 20 nm sample, which was measured with Idc of (a) ±17,
+(b) ±18, and (c) ±19 mA. The dashed lines denote the half value of the
+remanent RH. (d) Remanent RH and μ0ΔHy at θ ≃−30° as a function of Idc.
+The curves are the calculated values.
+Appl. Phys. Express 10, 073004 (2017)
+M. Takikawa et al.
+073004-3
+© 2017 The Japan Society of Applied Physics
+
+
+--- PAGE 5 ---
+assumptions and at a temperature above RT. The physical
+mechanism of the spin-Hall angle is still under discussion
+even in elemental metals, such as Pt. A recent study has
+suggested that the spin-Hall angle for Pt linearly increases
+with increasing resistivity;28) B2 CoGa has been known to
+have a high resistivity at a composition deviating from the
+stoichiometry and its resistivity reached a maximum at 55%
+Co in the bulk study.25) Moreover, the spin–orbit interaction
+for Ga 4p orbitals is ξSO = 155 meV, which is comparable to
+that for Pd 4d orbitals (= 189 meV).29) Pd-based layered
+systems, such as Co=Pd multilayers, Pd=L10 FePd, and
+Pd=Co=AlOx, have also exhibited relatively large SOT7,8) and
+current-induced switching.30) Therefore, it is likely that
+highly resistive B2 CoGa also has a relatively large spin-
+Hall angle. An investigation of the precise value of eff
+SH for
+CoGa remains as an open subject for future study.
+In
+summary,
+in-plane
+current-induced
+magnetization
+switching was investigated in CoGa=MnGa=MgO ﬁlms.
+Current-induced switching was clearly observed at a current
+density of 1011 A=m2. The in-plane ﬁeld direction and CoGa
+thickness dependence indicated that damping-like SOT
+resulting from the spin-Hall eﬀect in CoGa with positive
+spin-Hall angle is the main cause of the deterministic bipolar
+switching. This study demonstrated that SOT switching is
+possible even in a CoGa=MnGa=MgO structure serving as
+the bottom electrode for p-MTJs.
+Acknowledgments
+This work was partially supported by the ImPACT
+program, Grants-in-Aid for Scientiﬁc Research (Nos. 16H03846 and 17K14103),
+and the Sasakawa Foundation. The authors thank Y. Kondo for technical
+assistance.
+1)
+I. M. Miron, K. Garello, G. Gaudin, P.-J. Zermatten, M. V. Costache, S.
+Auﬀret, S. Bandiera, B. Rodmacq, A. Schuhl, and P. Gambardella, Nature
+476, 189 (2011).
+2)
+L. Liu, C. F. Pai, Y. Li, H. W. Tseng, D. C. Ralph, and R. A. Buhrman,
+Science 336, 555 (2012).
+3)
+L. Liu, O. J. Lee, T. J. Gudmundsen, D. C. Ralph, and R. A. Buhrman,
+Phys. Rev. Lett. 109, 096602 (2012).
+4)
+K.-S. Lee, S.-W. Lee, B.-C. Min, and K.-J. Lee, Appl. Phys. Lett. 102,
+112410 (2013).
+5)
+M. Cubukcu, O. Boulle, M. Drouard, K. Garello, C. O. Avci, I. M. Miron, J.
+Langer, B. Ocker, P. Gambardella, and G. Gaudin, Appl. Phys. Lett. 104,
+042406 (2014).
+6)
+H. Yoda, N. Shimomura, Y. Ohsawa, S. Shirotori, Y. Kato, T. Inokuchi, Y.
+Kamiguchi, B. Altansargai, Y. Saito, K. Koi, H. Sugiyama, S. Oikawa, M.
+Shimizu, M. Ishikawa, K. Ikegami, and A. Kurobe, IEDM Tech. Dig., 2016,
+27.6.1.
+7)
+M. Jamali, K. Narayanapillai, X. Qiu, L. M. Loong, A. Manchon, and H.
+Yang, Phys. Rev. Lett. 111, 246602 (2013).
+8)
+H.-R. Lee, K. Lee, J. Cho, Y.-H. Choi, C.-Y. You, M.-H. Jung, F. Bonell,
+Y. Shiota, S. Miwa, and Y. Suzuki, Sci. Rep. 4, 6548 (2014).
+9)
+Z. Zhao, M. Jamali, A. K. Smith, and J.-P. Wang, Appl. Phys. Lett. 106,
+132404 (2015).
+10) B. Balke, G. H. Fecher, J. Winterlik, and C. Felser, Appl. Phys. Lett. 90,
+152504 (2007).
+11)
+F. Wu, S. Mizukami, D. Watanabe, H. Naganuma, M. Oogane, Y. Ando,
+and T. Miyazaki, Appl. Phys. Lett. 94, 122503 (2009).
+12) S. Mizukami, F. Wu, A. Sakuma, J. Walowski, D. Watanabe, T. Kubota, X.
+Zhang, H. Naganuma, M. Oogane, Y. Ando, and T. Miyazaki, Phys. Rev.
+Lett. 106, 117201 (2011).
+13) H. Kurt, K. Rode, M. Venkatesan, P. Stamenov, and J. M. D. Coey, Phys.
+Rev. B 83, 020405(R) (2011).
+14) S. Mizukami, A. Sakuma, A. Sugihara, K. Z. Suzuki, and R. Ranjbar, Scr.
+Mater. 118, 70 (2016).
+15) S. Mizukami, A. Sugihara, S. Iihama, Y. Sasaki, K. Z. Suzuki, and T.
+Miyazaki, Appl. Phys. Lett. 108, 012404 (2016).
+16) H. Kurt, N. Baadji, K. Rode, M. Venkatesan, P. Stamenov, S. Sanvito, and
+J. M. D. Coey, Appl. Phys. Lett. 101, 132410 (2012).
+17) S. Mizukami, A. Sakuma, A. Sugihara, T. Kubota, Y. Kondo, H. Tsuchiura,
+and T. Miyazaki, Appl. Phys. Express 6, 123002 (2013).
+18) K. Z. Suzuki, R. Ranjbar, A. Sugihara, T. Miyazaki, and S. Mizukami, Jpn.
+J. Appl. Phys. 55, 010305(R) (2016).
+19) K. Z. Suzuki, R. Ranjbar, J. Okabayashi, Y. Miura, A. Sugihara, H.
+Tsuchiura, and S. Mizukami, Sci. Rep. 6, 30249 (2016).
+20) A. Ono, K. Z. Suzuki, R. Ranjbar, A. Sugihara, and S. Mizukami, Appl.
+Phys. Express 10, 023005 (2017).
+21) R. Ranjbar, K. Z. Suzuki, Y. Sasaki, L. Bainsla, and S. Mizukami, Jpn. J.
+Appl. Phys. 55, 120302(R) (2016).
+22) K. K. Meng, J. Miao, X. G. Xu, Y. Wu, X. P. Zhao, J. H. Zhao, and Y.
+Jiang, Phys. Rev. B 94, 214413 (2016).
+23) K. Meng, J. Miao, X. Xu, Y. Wu, J. Xiao, J. Zhao, and Y. Jiang, Sci. Rep. 6,
+38375 (2016).
+24) F. Wu, E. P. Sajitha, S. Mizukami, D. Watanabe, T. Miyazaki, H.
+Naganuma, M. Oogane, and Y. Ando, Appl. Phys. Lett. 96, 042505 (2010).
+25) G. L. Whittle, G. C. Fletcher, P. E. Clark, and R. Cywinski, J. Phys. 12, 303
+(1982).
+26) C. Onur Avci, K. Garello, I. Mihai Miron, G. Gaudin, S. Auﬀret, O. Boulle,
+and P. Gambardella, Appl. Phys. Lett. 100, 212404 (2012).
+27) K. Garello, C. O. Avci, I. M. Miron, M. Baumgartner, A. Ghosh, S. Auﬀret,
+O. Boulle, G. Gaudin, and P. Gambardella, Appl. Phys. Lett. 105, 212402
+(2014).
+28) E. Sagasta, Y. Omori, M. Isasa, M. Gradhand, L. E. Hueso, Y. Niimi, Y.
+Otani, and F. Casanova, Phys. Rev. B 94, 060412(R) (2016).
+29) Y. Kota and A. Sakuma, J. Phys. Soc. Jpn. 83, 034715 (2014).
+30) A. Ghosh, K. Garello, C. O. Avci, M. Gabureac, and P. Gambardella, Phys.
+Rev. Appl. 7, 014004 (2017).
+Appl. Phys. Express 10, 073004 (2017)
+M. Takikawa et al.
+073004-4
+© 2017 The Japan Society of Applied Physics

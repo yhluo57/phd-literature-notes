@@ -1,0 +1,579 @@
+
+
+--- PAGE 1 ---
+第 54 卷 第 6 期
+2025 年 6 月
+Vol. 54 No. 6
+June，2025
+人
+工
+晶
+体
+学
+报
+JOURNAL OF SYNTHETIC CRYSTALS
+DOI：10. 16553/j. cnki. issn1000-985x. 2024. 0272
+机器学习在分子束外延生长的应用进展
+杨再洪
+1，2，周
+灿
+2，范柳燕
+2，张燕辉
+2，陈泽中
+1，陈平平
+2
+（1. 上海理工大学材料与化学学院，上海 200093；2. 中国科学院上海技术物理研究所红外科学与技术全国重点实验室，上海 200083）
+摘要：最近几年，人工智能在材料领域得到广泛应用，机器学习在分子束外延（MBE）技术中的应用引人关注。基于原
+位反射高能电子衍射（RHEED）及相关物性的智能识别和反馈的MBE 技术，能够显著提升生长材料的质量和生长效
+率，有望实现薄膜的MBE智能外延。本综述聚焦机器学习MBE中的应用研究，首先介绍了MBE中常用的机器学习算
+法模型，阐述了机器学习在优化MBE 生长条件中的应用，着重总结了不同材料体系（半导体薄膜和量子结构材料、氧
+化物材料和二维材料等）基于RHEED图像机器学习的研究进展，并就存在的问题和未来的发展策略进行了总结展望。
+关键词：分子束外延；机器学习；反射高能电子衍射；Ⅲ-Ⅴ族半导体材料；人工智能
+中图分类号：O484. 1
+文献标志码：A     
+文章编号：1000-985X（2025）06-0924-11
+Research Progress on Application of Machine Learning in Molecular 
+Beam Epitaxy Growth
+YANG Zaihong
+1，2， ZHOU Can
+2， FAN Liuyan
+2， ZHANG Yanhui
+2， CHEN Zezhong
+1， CHEN Pingping
+2
+（1. School of Materials and Chemistry， University of Shanghai for Science and Technology， Shanghai 200093， China；
+2. State Key Laboratory of Infrared Physics， Shanghai Institute of Technical Physics， Chinese Academy of Sciences， Shanghai 200083， China）
+Abstract：In recent years， artificial intelligence has been widely applied in the field of materials， and the application of 
+machine learning in molecular beam epitaxy （MBE） has attracted attention.  Intelligent recognition and feedback based on 
+in-situ reflection high-energy electron diffraction （RHEED） and related material properties in MBE technology can 
+significantly improve the quality and efficiency of material growth， leading to the realization of intelligent epitaxy of epitaxial 
+films.  This article focuses on the application of machine learning in MBE.  It first introduces commonly used machine learning 
+algorithm models in MBE， and explains the application of machine learning in optimizing growth conditions and specifically 
+summarizes the research progress on machine learning based on RHEED images for different material systems （semiconductor 
+thin films and quantum structure materials， oxide materials， and two-dimensional materials）.  A summary and outlook were 
+provided on the existing problems and future development strategies.
+Key words：molecular beam epitaxy； machine learning； reflection high-energy electron diffraction； Ⅲ-Ⅴ semiconductor 
+material； artificial intelligence
+0 引
+言
+人工智能将与工业革命相媲美，其带来的生产力巨大提升为材料科学领域带来了诸多机遇与挑战
+［1］。
+机器学习作为人工智能的重要分支，近几年得到快速发展和广泛应用。John Hopfield和Geoffrey Hinton 利因
+在人工神经网络和机器学习领域的开创性贡献，荣获2024 年诺贝尔物理学奖。1982 年，John Hopfield 提出
+了霍普菲尔德网络，对人工智能和神经网络的发展影响深远，而Geoffrey Hinton 基于霍普菲尔德网络开发了
+收稿日期：2024⁃11⁃01
+基金项目：国家自然科学基金（12027805，11991060）；中国科学院专项（GJ0090406）
+作者简介：杨再洪（1999—），男，贵州省人，硕士研究生。E-mail：zaihongy@163. com
+通信作者：陈泽中，博士，副教授。E-mail：zzhchen@usst. edu. cn
+
+
+--- PAGE 2 ---
+第 6 期
+杨再洪等：机器学习在分子束外延生长的应用进展
+一种新的神经网络“玻尔兹曼机”，推动了机器学习的爆炸式发展。借助机器学习技术设计和优化新材料、
+系统和流程，能够在日益激烈的竞争环境中保持同步进步。同时，这些进步也能够转化为创新的计算平台，
+为材料科学的发展提供更为稳固的基础。随着技术的不断进步和应用的深入，人工智能将在材料科学的各
+个领域发挥越来越重要的作用，为材料的创新和应用带来革命性的变化
+［2］。
+目前，机器学习已经在材料科学中得到广泛应用，推动了材料科学和技术的巨大进步。过去十年中，将
+机器学习应用于材料科学的研究数量以每年约1. 67倍的速度增长，已从一个小众话题发展成为材料科学的
+一个完整子领域
+［3］。Butler等
+［4］综述了机器学习在分子和材料科学中的应用，利用机器学习从海量的文献和
+实验数据中提取有价值的信息，加速新材料和分子的发现过程，并选择了多种机器学习方法，结合量子计算
+等前沿技术，展示了这些方法在预测分子和材料性质、优化材料设计等方面的潜力。此外，Batra等
+［5］深入探
+讨了人工智能和机器学习在材料科学的多方面应用，通过多种机器学习算法模型建立材料与性能间的映射
+关系，进行材料属性预测、材料筛选及新材料的发现。这些技术将有助于研究者充分发挥材料科学与机器
+学习的协同效应，推动科学研究与技术创新的前沿。
+分子束外延（molecular beam epitaxy， MBE）作为一种高质量、高精度的半导体材料外延技术，在半导体
+器件和纳米材料研究领域具有重要应用价值
+［6⁃7］。通过精确控制外延过程中的温度和束流等参数，可以实现
+高质量的晶体生长
+［8］，还具有高度的生长控制性能，可以实现单层和亚单层的生长，并在纳米尺度上控制材
+料的厚度和界面质量，这种高精度的控制能力使MBE 成为用于制备纳米结构和异质结构的理想工具
+［9⁃10］。
+反射高能电子衍射（reflection high-energy electron diffraction， RHEED）是一种表面敏感的实时表征技术，在
+MBE材料生长和薄膜表征领域得到了广泛应用
+［11］。通过照射高能电子束到样品表面，并观察电子衍射图样
+来获取关于材料表面结构和生长过程的信息
+［12］。RHEED 的原理基于布拉格衍射定律，即入射电子束与晶
+格平面的相互作用会导致电子的衍射，通过调节入射角度和观察角度，获得不同的衍射图样，这些衍射图样
+包含了关于晶格结构、表面形貌和生长动力学等信息
+［13⁃16］。结合机器学习智能化控制系统，可以精确控制分
+子束的束流、生长温度和生长速率等参数，进而实现对材料生长过程的精细调控，利用机器学习算法分析大
+量实验数据，能够智能识别影响生长的关键因素，预测最佳的生长条件，并实现对相关条件的智能反馈。这
+不仅提高了材料的质量和均匀性，还加快了研发速度，降低了生产成本，在实现智能MBE技术的基础上推动
+光电材料和器件的发展。
+本文在简要介绍了机器学习的概念与MBE常用的几种机器学习算法模型的基础上，重点综述了机器学
+习在MBE 技术中的应用，包括优化生长条件和衬底脱氧，在Ⅲ-Ⅴ族化合物、氧化物薄膜和二维材料等不同
+材料生长中RHEED图像的应用，最后讨论了其在MBE应用中的局限及未来的发展方向。
+1 机器学习的介绍
+机器学习是人工智能的一个分支，因其卓越的模式识别能力及其在逼近复杂系统的经验函数方面的潜
+力而具有革命性。机器学习涉及凸分析、概率论、计算机科学、近似理论和算法复杂度理论等多门学科，主
+要描述了识别、学习数据模式以执行分类和预测等任务的自动化过程
+［17］。机器学习的流程如图1所示，主要
+有以下几个步骤：数据收集、数据预处理、模型选择和模型训练等。根据不同的任务和问题进行分类，常见
+的机器学习算法包括监督学习、无监督学习和强化学习
+［18］。监督学习通过使用已知结果的数据来学习如何
+对未观察到的结果进行分类或预测新数据，通常，这是通过学习预测器和已知结果之间的关联来实现的，预
+测器和已知结果用于分类或预测新个体的结果
+［19］；无监督学习则是模型从未标记的数据中学习数据的结构
+和模式，而无需使用标签信息；强化学习是一种通过与环境进行交互来学习最优行为策略的方法，其模型通
+过尝试不同的行动，并根据环境的反馈来学习如何做出最优的决策
+［20］。选择恰当的机器学习模型是搭建机
+器学习框架的核心环节，它直接关系到模型的预测准确性和模型的泛化性能。每个模型都有其特定的应用
+场景，因此，不存在一个万能的模型能够满足所有场景的需求。机器学习拥有很多算法，表1列举了在MBE
+材料生长中常用的几种机器学习算法模型及各自的特点。
+925
+
+
+--- PAGE 3 ---
+综合评述
+第 54 卷
+人工晶体学报
+2 机器学习在MBE生长的应用进展
+2. 1　机器学习在优化生长条件上的应用
+在MBE生长过程中，生长条件对外延材料的质量和性能至关重要，这里的生长条件主要包括脱氧条件、
+生长温度、各束源的束流比和生长速率等。在实验前需仔细调节和优化生长条件，以确保生长高质量的外
+延材料。Wakabayashi 等
+［34］采用MBE 生长SrRuO3薄膜时，通过高斯过程回归模型构建了一个预测函数来预
+测目标值剩余电阻率比（residual resistivity ratio， RRR），而贝叶斯算法通过平衡利用已有数据的信息和探索
+未知区域来选择最有可能提高RRR 值的生长参数，使用预测的RRR 值的期望改进（EI）作为选择下一个样
+品生长参数的依据，通过迭代这个过程，逐步优化了Ru束流、生长温度和喷嘴到衬底距离这三个生长参数。
+研究结果表明在只进行了24次MBE生长的情况下，成功获得了RRR值超过50的高质量SrRuO3薄膜，图2的
+图1　机器学习的流程
+Fig. 1　Process of machine learning
+表1 MBE技术中常见的机器学习算法模型
+Table 1 Common machine learning algorithm models in MBE technology  
+Algorithmic model
+Random forest
+K-means clustering
+Hierarchical clustering
+Nonnegative matrix fac⁃
+torization
+Convolutional neural 
+network
+Support vector 
+machine
+Principal components 
+analysis
+Uniform manifold 
+approximation
+and projection
+Logistic regression
+Naive bayes
+Peculiarity
+It can process a large amount of data and high-dimensional features， is not easy to overfit， and is robust to 
+missing data.  But the training time is long， and the interpretability of the model is relatively poor.
+Simple， easy to understand and implement， suitable for large-scale datasets.  But it is sensitive to the initial 
+clustering center and converges to the local optimal solution.
+Ability to organize and present information clearly， making complex concepts and relationships easier to understand 
+and remember.  But it can be an oversimplification of complex realities， leading to some information being over⁃
+looked or misunderstood.
+The latent features in the data can be extracted. But the computational complexity is high， and it is easy to fall 
+into the local optimal solution.
+It can effectively process two-dimensional data such as images and videos， and has the characteristics of parameter 
+sharing and local connection， which is suitable for extracting spatial features.  But the training time is long， the 
+model is poorly interpretable， and it is easy to overfit and other problems.
+Able to process high-dimensional data， has good generalization ability， performs well for small-sample data. But 
+has high computational complexity for large-scale datasets， and is sensitive to missing data.
+It can reduce data dimensions， remove noise and redundant information， improve model efficiency， and more.  
+But some information may be lost， sensitivity to outliers， etc.
+It has a good ability to express the data of nonlinear structure， and has a fast calculation speed.  But the processing 
+capacity for ultra-large-scale data is relatively weak.
+It is suitable for binary classification problems， which is fast to computation， easy to explain and implement. But 
+it is not suitable for nonlinear relationships and is susceptible to outliers.
+The model is simple， computationally efficient， and performs well with small-scale data.  But the conditional 
+independence of the input data is more stringent， and when the assumption is not true， the classification results 
+will be affected.
+Reference
+［21⁃22］
+［23］
+［24］
+［25］
+［26⁃27］
+［28］
+［29］
+［30］
+［31］
+［32⁃33］
+926
+
+
+--- PAGE 4 ---
+第 6 期
+杨再洪等：机器学习在分子束外延生长的应用进展
+晶体结构表征结果表明，通过贝叶斯优化后生长的薄膜具有高结晶质量，极大提高了优化效率，减少试错时
+间和成本。Ohkubo 等
+［35］通过贝叶斯算法对TiN 薄膜的MBE 生长条件进行闭环优化，以XRD 的测量结果作
+为目标值，优化了生长温度、束流比等条件，实现了高结晶质量TiN 薄膜的MBE 外延生长，图3为TiN 薄膜的
+电阻率随温度的变化，其金属超导体转变的临界温度超过5 K，高于大多数以前报道的值，进一步证实了贝
+叶斯优化的MBE技术的适用性，以及制造高品质的过渡金属氮化物外延薄膜的有效性。Messecar等
+［36］通过比
+较多种机器学习算法模型来预测MBE外延GaN和ZnO薄膜的表面形貌和晶格有序度，进而优化其生长过程。
+通过将RHEED和扫描电子显微镜（scanning electron microscope， SEM）照片与各生长条件数据关联，结果表明
+对于表面形貌的预测，朴素贝叶斯分类器算法模型训练时间最短且展现出了良好的泛化性能；发现对于晶格
+有序度的预测，量子支持向量分类器利用量子计算的优势，解决数据的复杂关系，进而提高对晶格有序度预测
+的准确性。预测结果表明对于GaN薄膜，较高的生长温度和较低的Ga束流最有可能生长出原子级平坦的晶
+体；而对于ZnO薄膜，较高的N束流和较低的Ga束流则对应最小的平坦表面概率，预测结果与实验结果一致。
+2. 2　机器学习在RHEED中的应用
+2. 2. 1　衬底脱氧
+衬底的表面状况和脱氧工艺是决定外延片质量的重要
+步骤。脱氧是指在材料生长前将衬底表面上的杂质和氧化
+物通过高温去除，以保证生长过程中的纯净性和界面质量。
+衬底脱氧是否成功主要取决于脱氧温度及脱氧时间，可通
+过RHEED 图案来判断脱氧进行的情况。脱氧过程是一个
+循序渐进的过程，需要时刻关注RHEED 图案的变化，而机
+器学习技术脱离人为监测，实现实时监控，因此在脱氧过程
+具有显著优势。Shen 等
+［37］在卷积神经网络的基础上，采用
+了一个混合卷积和Vision Transformer（CNN-ViT）模型对
+GaAs、Ge 和InAs 等衬底的脱氧过程RHEED 图像进行分析
+处理，将不同设备和衬底材料的脱氧温度进行了标准化。
+该模型包括卷积层、上采样层、多头注意力机制和前馈神经
+网络等组件，经过充分训练，模型对衬底脱氧与否的验证精
+图2　（a）RHEED图案；
+（b）AFM照片；
+（c）θ-2θ扫描XRD图谱；
+（d）具有50~52的RRR的SrRuO3薄膜的截面HAADF-STEM
+图像；
+（e）图（d）中界面附近的放大图像；
+（f）图（e）中界面附近的放大图像
+［34］
+Fig. 2　（a） RHEED pattern； （b） AFM image； （c） θ-2θ scanned XRD pattern； （d） cross-sectional HAADF-STEM image of the SrRuO3 
+thin film with the RRR of 50~52； （e） magnified image near the interface in Fig.（d）； （f） magnified image near the interface in Fig.（e）
+［34］
+图3　不同条件下外延生长TiN薄膜的电阻率随温
+度的变化关系
+［35］
+Fig. 3　Change relationship between of epitaxial TiN 
+films with temperature under different conditions
+［35］
+927
+
+
+--- PAGE 5 ---
+综合评述
+第 54 卷
+人工晶体学报
+度可以达到99. 95%，在衬底的实时脱氧反馈中，能够准确判断脱氧的温度及脱氧是否完成。图4 为CNN-
+ViT 模型在衬底脱氧时RHEED 图像中应用的思路图，其对图像衍射斑点的变化情况进行识别，判断脱氧与
+否并做出反馈，从而实现自动脱氧的过程。此模型在判断不同设备上GaSb衬底的脱氧时也表现出相当高的
+准确性。Noh 等
+［38］采用了模式检测模型（pattern detection model， PDM）来分析Si 和SiC 衬底脱氧过程中
+RHEED 图像，并将此模型部署于MBE 设备中，图5 显示了PDM 模型判断不同脱氧情况的结果，正常脱氧时
+在一定时间及温度下，RHEED 衍射条纹7×7结构预测占比为100%，而在异常脱氧时7×7结构随着脱氧时间
+的变化而变化，并未达到完全脱氧状态，通过反馈从而准确判断衬底的脱氧温度及时间。Khaireh-Walieh
+等
+［39］使用深度学习方法来自动监测MBE RHEED 图像序列中的GaAs衬底脱氧过程，通过无监督自编码器对
+RHEED 图像进行特征提取，并结合有监督卷积分类器神经网络，实现了对RHEED 图像序列的自动分类，研
+究表明，这种轻量级的网络模型能够准确地识别脱氧的确切时刻，并且该模型在几个月的时间内具有很强
+的稳定性。
+2. 2. 2　Ⅲ-Ⅴ族半导体材料外延生长
+Ⅲ-Ⅴ族半导体材料具有很好的电子特性，如较
+高的电子迁移率和能隙宽度，在电子器件中具有广泛
+的应用，包括光电器件（如激光二极管和太阳能电池）
+及微波器件等。Noh等
+［38］在MBE生长GaN HEMT结构
+中，通过结晶质量预测模型（crystal quality prediction 
+model， CPM）来预测GaN HEMT的半峰全宽（full width 
+at half maximum， FWHM），其基于RHEED 图案、原有
+FWHM 数据、PDM 数据和生长条件等数据进行训练，
+预测了GaN 晶体管结构的晶体质量，结果表明CPM的
+准确率达到81. 7%，召回率为99. 3%和F1分数为84. 8%。
+Kwoen 等
+［40］设计了一个包含卷积层和全连接层的卷
+积神经网络模型来研究GaAs 生长的RHEED 图案，此
+模型基于全连接层构建二元分类器模型以实现图像
+精准分类，通过使用训练数据对模型进行训练，结果
+表明随着训练次数的增加，训练模型的准确性提高，
+图4　机器学习在RHEED中应用的总体框架
+［37］
+Fig. 4　Overarching framework for the application of machine learning in RHEED
+［37］
+图5　在两次不同脱氧运行中实现7×7 RHEED模式的概率
+［38］
+Fig. 5　Probability of achieving 7×7 RHEED pattern in two 
+different deoxidation runs
+［38］
+928
+
+
+--- PAGE 6 ---
+第 6 期
+杨再洪等：机器学习在分子束外延生长的应用进展
+并发现模型在测试数据上的分类准确率超过99%。后续Kwoen 等
+［41］使用主成分分析（principal component 
+analysis， PCA）和聚类算法对GaAs 生长的RHEED 图像处理分析。通过PCA 对图像进行降维处理，提取出4
+个主成分（PCs）表示RHEED 图案的亮线和点特征，很好地解释了图像的变化。最后使用基于密度的带噪声
+应用空间聚类（DBSCAN）方法将图像分类，而无需使用标签，实现无监督学习模式，成功对GaAs的MBE生长
+过程中的RHEED图像进行分类。进一步地，Kwoen等
+［42］在二分类模型基础上开发了一个可以对更多类别进
+行分类的卷积神经网络模型，图6示出该模型的总体结构，包括三个卷积层和全连接层，使用收集到的GaAs
+生长RHEED 图像数据对模型进行训练，发现模型在分类RHEED 图像上的高准确率和高F1 分数。Shen
+等
+［43］采用3D ResNet 50 模型对InAs/GaAs 量子点生长过程的RHEED 视频进行特征判断及密度分类训练，并
+将模型用于实时反馈控制，结果表明该模型能够实时预测量子点的后续密度，并根据预测结果调整材料生
+长的参数。通过这种方式，成功将量子点的密度从1. 5×10
+10 cm
+-2减小到3. 8×10
+8 cm
+-2或增加到1. 4×10
+11 cm
+-2。
+如图7 所示为高密度量子点（QD）的受控生长过程，图7（a）为生长温度随帧率的变化，图7（b）~（e）为量子点
+生长过程对应的RHEED图案，图7（g）显示了通过模型预测量子点的形成时间，而图7（h）预测了量子点密度
+的变化，在1 000 帧后高密度特征值上升，而低密度特征值下降。Anjum 等
+［44］利用极致梯度提升（eXtreme 
+gradient boosting， XGBoost）算法模型在MBE 过程中通过RHEED 来识别GaN 晶片旋转错误。实验结果表明
+大规模数据集上，模型的精确度、召回率、F1分数和整体准确率分别达到了98. 8%、99. 6%、83. 1%和98. 5%，
+这表明XGBoost模型在收集和处理时间序列数据及进行准确预测方面非常有效，解决了MBE 过程中的旋转
+误差检测问题，对材料生长过程中RHEED图像特殊位置的判断更加精确。
+2. 2. 3　氧化物薄膜外延生长
+氧化物薄膜具有良好的光学均匀性、热传导性和电导性，在电子器件、传感器和能源材料等领域具有广
+泛的应用前景。Provence 等
+［45］在MBE 生长钙钛矿氧化物薄膜中，采用PCA 对数据进行降维处理，结合
+K-means 聚类算法对降维后的RHEED 图像数据进行分类，确定了其最佳聚类数K 为7，图8 所示K-means 聚
+类下不同K值对应的分类结果，反映了每个聚类代表的不同生长阶段。对于化学计量比接近的样品，聚类结
+果显示出模糊的边界，而对于非化学计量比接近的样品，聚类结果显示出明显的阶段性演化。Vasudevan
+等
+［16］通过原子力显微镜图像结合RHEED 图像分析，观察到在掺杂空穴的La5/8Ca3/8MnO3（LCMO）薄膜生长过
+程中出现了明显的3D 斑点，这表明薄膜表面存在较大的高度差异和颗粒结构，相比之下，LaMnO3（LMO）薄
+膜则较为平滑，没有明显3D 斑点。使用PCA 技术分析RHEED 图像的结果显示，在3D 生长阶段开始之前，
+主成分结果显示了对应RHEED 信号强度的波动，这种波动可能反映了薄膜生长过程的某些变化或预示了
+图6　包括卷积神经网络和全连接层的RHEED模式多类分类别模型
+［42］
+Fig. 6　RHEED model multiclass classification model includes convolutional neural network and fully connected layer
+［42］
+929
+
+
+--- PAGE 7 ---
+综合评述
+第 54 卷
+人工晶体学报
+3D 生长的开始，从而可以确定薄膜生长过程中特定的生长转变。Vasudevan 等
+［46］采用PCA 与K-means 聚类
+技术研究了La3/8Ca5/8MnO3薄膜生长过程中RHEED 图像的动态行为，通过分析PCA 特征值的变化，可以观察
+到薄膜生长过程RHEED 图像的周期性振荡，结合K-means 聚类分析确定了有序和无序生长之间的转变。
+Gliebe 等
+［47］基于PCA、K-means 聚类和非负矩阵分解（non-negative matrix factorization， NMF）方法，对LaAlO3 
+（LAO）等材料生长的RHEED 图像进行处理分析，发现三种技术均能区分图像的重要特征，识别生长中的过
+渡时间，以及薄膜层的形成随时间变化规律，研究结论表明，NMF 的直接性与非负性等因素使其较适用于
+RHEED 视频分析，图9为LAO 的NMF 处理分析结果，反映了4个不同图像特征所对应的基础信息图。Liang
+等
+［48］采用U-Net卷积神经网络、交并比跟踪算法（intersection over union tacking， IOU tacking）跟踪算法和基于
+密度的带噪声应用空间聚类（density-based spatial clustering of applications with noise， DBSCAN）等技术，并结
+合X 射线衍射（X-ray diffraction， XRD）与原子力显微镜（atomic force microscope， AFM）材料表征，对FexOy系
+材料进行结构相位映射的判断。通过对RHEED 图像数据的特征识别、特征点跟踪、相位映射识别及相位映
+射的分类等，创建了一种基于深度学习的分析方法模型，成功识别材料生长过程中出现的不同类型RHEED
+模式。Schaefer 等
+［49］采用学习感知图像块相似度（learned perceptual image patch similarity， LPIPS）算法模型
+的度量标准，该标准利用预训练的深度卷积神经网络（AlexNet）来自动评估单斜晶系（InxGa1−x）2O3 合金
+RHEED 图像的相似性，通过实时监测RHEED 图像和衍射峰的定量特征，并结合循环氧化生长和蚀刻的方
+法，可以快速评估生长条件，从而优化了In的均匀掺杂和材料质量，并且提高了衬底的利用率。
+2. 2. 4　其他二维材料的外延生长
+机器学习在二维材料的外延生长中也有着重要应用。Kim 等
+［50］采用PCA 和K-means聚类算法来处理在
+石墨烯衬底上生长ReSe2的RHEED 数据，图10 为PCA 分析结果，结合各成分衍射强度，揭示了在ReSe2薄膜
+生长过程中不同成分的变化，体现了层与层之间的干涉或散射的程度。K-means聚类分析结果表明，每个聚
+类具有统计相似性，从而确定不同的生长阶段和表面结构的变化。当K 值大于4 时，K-means 聚类的结果与
+PCA 的结果一致，表明在ReSe2薄膜生长初期，主要的生长模式变化发生在最初的时间段内。Yoshinari 等
+［51］
+在使用MBE技术在Si（111）衬底沉积In，结合多维尺度分析原理，选择采用通用性较强的“欧几里得距离”检
+图7　高密度量子点的受控生长过程
+［43］
+Fig. 7　Controlled growth process of high-density quantum dots
+［43］
+930
+
+
+--- PAGE 8 ---
+第 6 期
+杨再洪等：机器学习在分子束外延生长的应用进展
+测表面上部结构相的数量，在聚类组合方法中，Ward 分层聚类分析由于其高度敏感而被确定为最适合用于
+RHEED图像模式变化的检测，通过比较PCA、独立成分分析（independent component analysis， ICA）与NMF三
+种数据降维操作来确定In 沉积的最佳时间，结果表明只能分解非负矩阵约束的降维方法NMF 最适合，计算
+显示不同结构In的最佳沉积时间与实验过程基本一致，从而实现表面超结构的自动检测和优化形成条件的
+确定。Price等
+［52］在蓝宝石上外延生长二维材料W1−xVxSe2，利用U-Net架构，基于Transformer的分割模型和逻
+辑回归模型分割图像数据和预测晶粒取向，结果表明在小数据集构建的预测模型中，二元晶粒取向预测准
+确率为80%；基于线性回归模型，采用装袋法寻找特征化的RHEED 数据与XPS 量化结果之间的相关性，从
+而对钒的掺杂成分进行预测，结果表明差值测试准确度最高，除了目标范围的组成终点外，基本上没有离群
+预测。Chong等
+［53］在石墨烯上外延生长MoSe2，利用PCA算法模型对RHEED图像进行分类处理，各主成分均
+展现出对RHEED 图像信息的有效表征能力，成功实现了不同生长模式特征的精细区分，进而深化了对
+MoSe2二维与三维生长模式的识别与界定。此外，研究还揭示了石墨烯衬底信号对薄膜生长动力学监测造
+成的干扰问题，并通过修正的主成分分析（mPCA）策略有效滤除了衬底信号的贡献，提升了分析的准确性。
+此类基于机器学习的薄膜生长辅助控制技术，预示着在二维材料制备领域，开发先进的实时自动控制系统
+和自动化检测手段，具有巨大的发展潜力与广阔的应用前景。
+图8　（a）对于TbScO3上的SrTiO3，K均值聚类高达K=7；
+（b）每个聚类中的平均代表图像；
+（c）每个K值绘制的K均值最小化函数
+［45］
+Fig. 8　（a） K-means clustering up to K = 7 for SrTiO3 on TbScO3； （b） mean representative images in each cluster； 
+（c） K-means minimization function plotted for each value of K
+［45］
+图9　LAO的NMF等级为4。
+（a）~（d）四个簇的相应系数图；
+（e）~（h）四个簇的相应基础图
+［47］
+Fig. 9　NMF with rank 4 for LAO.  （a）~（d） corresponding coefficient plots for the four clusters； （e）~（h） corresponding basis plots 
+for the four clusters
+［47］
+931
+
+
+--- PAGE 9 ---
+综合评述
+第 54 卷
+人工晶体学报
+3 结语与展望
+MBE生长的影响因素较多，传统实验手段需要花费大量人力、物力来实现生长条件的探索及优化，借助
+机器学习技术将极大程度地降低成本并提高效率。在衬底的脱氧及各类材料的MBE外延生长研究中，机器
+学习对RHEED 图案的识别、分类及实时监测反馈都得到了质的提升。这些研究为材料外延生长建立了新
+的范式，与传统方法相比，机器学习能够极大加快材料优化过程，促进新的材料生长。然而，现有的机器学
+习技术并不能视为解决所有问题的万能方案。
+数据驱动作为机器学习的核心特征，但也受限于固有的局限性。MBE实验对生长条件的精确调控需求
+极为广泛，且此类实验通常伴随着显著的资源消耗与时间成本，这直接导致了数据采集量的相对稀缺。这
+一现状对机器学习模型的训练阶段构成了严峻挑战，即模型难以从有限的样本集中充分提炼出具有普遍性
+的规律，进而削弱了其泛化能力。此外，若缺乏对MBE工艺的深刻理解，将导致模型设计不合理或预测结果
+不可靠，在缺乏足够专家知识以正确标注数据或设定合理模型假设的情况下，机器学习的效果将显著下降。
+同时，智能化水平和硬件设施的限制也是阻碍机器学习在MBE 领域发展的关键因素。因此，要完全实现
+MBE的智能化，仍需克服硬件和软件层面的诸多技术难题。
+尽管面临诸多挑战，随着人工智能的迅速发展，机器学习将极大推动MBE技术的发展。具体策略如下：
+1）构建高效的数据采集与共享机制。依托标准化数据记录策略是一项关键举措，即便个体不直接涉足
+机器学习算法的研发，也能通过详尽记录RHEED 视频及其元数据，为数据资源贡献力量。同时，构建集中
+式数据存储平台，旨在促进跨研究团队间的数据互通与合作，进一步加速科研进程。
+2）数据驱动的实时反馈与控制。目前的研究主要集中在对RHEED 视频的解释及生长条件的优化上。
+图10　PCA结果。
+（a）RHEED视频的6个PC。PC1显示石墨烯的衍射信号，PC2包含石墨烯和ReSe 2层两者的信号，PC3-6仅示
+出了ReSe2层的2D生长的信号；
+（b）相应的得分图；
+（c）原始RHEED图像强度；
+（d）~（e）修改后的RHEED视频的强度图。蓝色
+和橙色线分别表示ReSe2薄膜的（0，0）和（2，0）衍射条纹（如插图所示）
+［50］
+Fig. 10　PCA results.  （a） Six PCs of the RHEED video for the 3UC-thick-ReSe2 thin film， PC1 shows the diffraction signal of 
+graphene， PC2 contains the signals of both the graphene and ⁃ReSe2 layers， PC3-6 show the signal of only the 2D growth of ReSe2 
+layer； （b） corresponding score plots； （c） original RHEED video； （d）~（e） modified RHEED video.  Blue and orange lines denote the 
+（0，0） and （2，0） diffraction streaks of the ReSe2 thin film （shown in the inset）， respectively
+［50］
+932
+
+
+--- PAGE 10 ---
+第 6 期
+杨再洪等：机器学习在分子束外延生长的应用进展
+可进一步结合原位光谱（如椭圆光谱和调制反射光谱等），对薄膜外延的质量和组分等实现实时反馈与闭环
+控制，使设备能够在生长过程中自动智能调整参数以优化薄膜质量和性能，从而实现智能化生长。
+3）多模态数据融合。针对MBE 过程中产生的大量多模态数据（涵盖RHEED 视频、XRD 图谱、XPS 分析
+及扫描探针显微镜图像等），开发能够综合处理多种数据类型的高级机器学习模型显得尤为重要。此类模
+型将促进对生长过程的深入理解，从而更全面预测材料的电学或光学性质。相关研究为真正实现智能化外
+延高性能半导体单晶薄膜及相关材料提供基础，促进光电子和微电子领域的发展。
+参
+考
+文
+献
+［1］GUPTA V， LIAO W K， CHOUDHARY A， et al.  Evolution of artificial intelligence for application in contemporary materials science［J］.  MRS 
+Communications， 2023， 13（5）： 754-763.
+［2］ABOLHASANI M， BROWN K A， EDITORS G.  Role of AI in experimental materials science［J］.  MRS Bulletin， 2023， 48（2）： 134-141.
+［3］JAIN A.  Machine learning in materials research： developments over the last decade and challenges for the future［J］.  Current Opinion in Solid 
+State and Materials Science， 2024， 33： 101189.
+［4］BUTLER K T， DAVIES D W， CARTWRIGHT H， et al.  Machine learning for molecular and materials science［J］.  Nature， 2018， 559
+（7715）： 547-555.
+［5］BATRA R， SONG L， RAMPRASAD R.  Emerging materials intelligence ecosystems propelled by machine learning［J］.  Nature Reviews 
+Materials， 2020， 6（8）： 655-678.
+［6］HENINI M.  Molecular beam epitaxy： from research to manufacturing［J］.  Thin Solid Films， 1997， 306（2）： 331-337.
+［7］CHENG K Y.  Development of molecular beam epitaxy technology for III-V compound semiconductor heterostructure devices［J］.  Journal of 
+Vacuum Science & Technology A： Vacuum， Surfaces， and Films， 2013， 31（5）： 050814.
+［8］DZIWOKI A， BLYZNIUK B， FREINDL K， et al.  The use of external fields （magnetic， electric， and strain） in molecular beam epitaxy-the 
+method and application examples［J］.  Molecules， 2024， 29（13）： 3162.
+［9］BRAHLEK M， LAPANO J， LEE J S.  Topological materials by molecular beam epitaxy［J］.  Journal of Applied Physics， 2020， 128（21）： 
+210902.
+［10］BAUER G， SPRINGHOLZ G.  Molecular beam epitaxy： aspects and applications［J］.  Vacuum， 1992， 43（5/6/7）： 357-365.
+［11］HAFEZ M A， ZAYED M K， ELSAYED-ALI H E.  Review： geometric interpretation of reflection and transmission RHEED patterns［J］.  
+Micron， 2022， 159： 103286.
+［12］MITURA Z， SZCZYPIŃSKI M M， MITURA S.  Discussion of the importance of the refraction effects for RHEED［J］.  Applied Surface Science， 
+2017， 421： 247-251.
+［13］FOXON C T.  Control of MBE， MOMBE and CBE growth using RHEED［J］.  Applied Surface Science， 1991， 50（1/2/3/4）： 28-33.
+［14］王继红， 罗子江， 周　勋， 等.  RHEED 衍射花样与晶体表面形貌的关联性研究［J］.  贵州大学学报（自然科学版）， 2013， 30（2）： 73-
+76.
+WANG J H， LUO Z J， ZHOU X， et al.  Correlation study between RHEED diffraction patterns and crystal surface morphology［J］.  Journal of 
+Guizhou University （Natural Sciences）， 2013， 30（2）： 73-76 （in Chinese）.
+［15］GONZÁLEZ V I， GALLÉ G， ARNAUD B， et al.  Observation of large multiple scattering effects in ultrafast electron diffraction on 
+monocrystalline silicon［J］.  Physical Review B， 2018， 97（5）： 054302.
+［16］VASUDEVAN R K， GIANFRANCESCO A G， BADDORF A P， et al.  Full information acquisition and analysis of reflection high energy 
+electron diffraction data for epitaxial growth processes［J］.  Microscopy and Microanalysis， 2016， 22（S3）： 376-377.
+［17］MITCHELL T M.  Machine learning［M］.  New Yorks： McGraw-Hill， 1997.
+［18］KELLIHER A.  Machines learning culture［J］.  IEEE MultiMedia， 2015， 22（2）： 18-22.
+［19］SEREY J， QUEZADA L， ALFARO M， et al.  Artificial intelligence methodologies for data management［J］.  Symmetry， 2021， 13（11）： 2040.
+［20］BOTVINICK M， RITTER S， WANG J X， et al.  Reinforcement learning， fast and slow［J］.  Trends in Cognitive Sciences， 2019， 23（5）： 408-422.
+［21］GENUER R， POGGI J M， TULEAU-MALOT C， et al.  Random forests for big data［J］.  Big Data Research， 2017， 9： 28-46.
+［22］MANTERO A， ISHWARAN H.  Unsupervised random forests［J］.  Statistical Analysis and Data Mining： the ASA Data Science Journal， 2021， 
+14（2）： 144-167.
+［23］YU H， WEN G Q， GAN J Z， et al.  Self-paced learning for K-means clustering algorithm［J］.  Pattern Recognition Letters， 2020， 132： 69-75.
+［24］WANG B S， BARBU A.  Hierarchical classification for large-scale learning［J］.  Electronics， 2023， 12（22）： 4646.
+［25］HUANG Q， YIN X S， CHEN S C， et al.  Robust nonnegative matrix factorization with structure regularization［J］.  Neurocomputing， 2020， 
+412： 72-90.
+［26］CHEN F H， LI S L， HAN J L， et al.  Review of lightweight deep convolutional neural networks［J］.  Archives of Computational Methods in 
+933
+
+
+--- PAGE 11 ---
+综合评述
+第 54 卷
+人工晶体学报
+Engineering， 2024， 31（4）： 1915-1937.
+［27］LI Z W， LIU F， YANG W J， et al.  A survey of convolutional neural networks： analysis， applications， and prospects［J］.  IEEE Transactions 
+on Neural Networks and Learning Systems， 2022， 33（12）： 6999-7019.
+［28］TAVARA S.  Parallel computing of support vector machines： a survey［J］.  ACM Computing Surveys， 2019， 51（6）： 1-38.
+［29］GEWERS F L， FERREIRA G R， DE-ARRUDA H F， et al.  Principal component analysis： a natural approach to data exploration［J］.  ACM 
+Computing Surveys， 2021， 54（4）： 1-34.
+［30］MCINNES L， HEALY J， SAUL N， et al.  UMAP： uniform manifold approximation and projection［J］.  Journal of Open Source Software， 2018， 
+3（29）： 861.
+［31］SPERANDEI S.  Understanding logistic regression analysis［J］.  Biochemia Medica， 2014， 24（1）： 12-18.
+［32］CHEN S L， WEBB G I， LIU L Y， et al.  A novel selective naïve Bayes algorithm［J］.  Knowledge-Based Systems， 2020， 192： 105361.
+［33］YU L J， GAN S F， CHEN Y， et al.  Correlation-based weight adjusted naive Bayes［J］.  IEEE Access， 2020， 8： 51377-51387.
+［34］WAKABAYASHI Y K， OTSUKA T， KROCKENBERGER Y， et al.  Machine-learning-assisted thin-film growth： Bayesian optimization in 
+molecular beam epitaxy of SrRuO3 thin films［J］.  APL Materials， 2019， 7（10）： 101114.
+［35］OHKUBO I， HOU Z， LEE J N， et al.  Realization of closed-loop optimization of epitaxial titanium nitride thin-film growth via machine learning［J］.  
+Materials Today Physics， 2021， 16： 100296.
+［36］MESSECAR A S， DURBIN S M， MAKIN R A.  Quantum and classical machine learning investigation of synthesis-structure relationships in 
+epitaxially grown wide band gap semiconductors［J］.  MRS Communications， 2024， 14（4）： 660-666.
+［37］SHEN C， ZHAN W K， TANG J， et al.  Universal deoxidation of semiconductor substrates assisted by machine learning and real-time feedback 
+control［J］.  ACS Applied Materials & Interfaces， 2024， 16（14）： 18213-18221.
+［38］NOH Y K， NOH H K， PARK B G， et al.  Hybrid NH3/N2 molecular beam epitaxy with artificial-intelligence-assisted reflection high-energy 
+electron diffraction analysis［J］.  InInternational Conference on Compound Semiconductor Manufacturing Technology， 2021： 24-27.
+［39］KHAIREH-WALIEH A， ARNOULT A， PLISSARD S， et al.  Monitoring MBE substrate deoxidation via RHEED image-sequence analysis by 
+deep learning［J］.  Crystal Growth and Design， 2023， 23（2）： 892-898.
+［40］KWOEN J， ARAKAWA Y.  Classification of reflection high-energy electron diffraction pattern using machine learning［J］.  Crystal Growth & 
+Design， 2020， 20（8）： 5289-5293.
+［41］KWOEN J， ARAKAWA Y.  Classification of in situ reflection high energy electron diffraction images by principal component analysis［J］.  
+Japanese Journal of Applied Physics， 2021， 60： SBBK03.
+［42］KWOEN J， ARAKAWA Y.  Multiclass classification of reflection high-energy electron diffraction patterns using deep learning［J］.  Journal of 
+Crystal Growth， 2022， 593： 126780.
+［43］SHEN C， ZHAN W K， XIN K Y， et al.  Machine-learning-assisted and real-time-feedback-controlled growth of InAs/GaAs quantum dots［J］.  
+Nature Communications， 2024， 15（1）： 2724.
+［44］ANJUM S， LEE H Y， NOH H K.  Rotation error detection of gallium nitride （GaN） substrate in MBE utilizing ensemble learning［J］.  Crystal 
+Growth & Design， 2023， 23（6）： 4138-4146.
+［45］PROVENCE S R， THAPA S， PAUDEL R， et al.  Machine learning analysis of perovskite oxides grown by molecular beam epitaxy［J］.  
+Physical Review Materials， 2020， 4（8）： 083807.
+［46］VASUDEVAN R K， TSELEV A， BADDORF A P， et al.  Big-data reflection high energy electron diffraction analysis for understanding epitaxial 
+film growth processes［J］.  ACS Nano， 2014， 8（10）： 10899-10908.
+［47］GLIEBE K， SEHIRLIOGLU A.  Distinct thin film growth characteristics determined through comparative dimension reduction techniques［J］.  
+Journal of Applied Physics， 2021， 130（12）： 125301.
+［48］LIANG H T， STANEV V， KUSNE A G， et al.  Application of machine learning to reflection high-energy electron diffraction images for 
+automated structural phase mapping［J］.  Physical Review Materials， 2022， 6（6）： 063805.
+［49］SCHAEFER S， FEBBA D， EGBO K， et al.  Rapid screening of molecular beam epitaxy conditions for monoclinic （InxGa1−x）2O3 alloys［J］.  
+Journal of Materials Chemistry A， 2024， 12（9）： 5508-5519.
+［50］KIM H J， CHONG M S， RHEE T G， et al.  Machine-learning-assisted analysis of transition metal dichalcogenide thin-film growth［J］.  Nano 
+Convergence， 2023， 10（1）： 10.
+［51］YOSHINARI A， IWASAKI Y， KOTSUGI M， et al.  Skill-Agnostic analysis of reflection high-energy electron diffraction patterns for Si（111） 
+surface superstructures using machine learning［J］.  Science and Technology of Advanced Materials： Methods， 2022， 2（1）： 162-174.
+［52］PRICE C C， LI Y S， ZHOU G Y， et al.  Predicting and accelerating nanomaterials synthesis using machine learning featurization［J］.  Nano 
+Letters， 2024： 4c04500.
+［53］CHONG M S， RHEE T G， KHIM Y G， et al.  Machine-learning-empowered identification of initial growth modes for 2D transition metal 
+dichalcogenide thin films［J］.  Applied Surface Science， 2024， 669： 160547.
+934

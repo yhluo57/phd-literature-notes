@@ -1,0 +1,482 @@
+
+
+--- PAGE 1 ---
+
+View
+Online 
+Export
+Citation
+RESEARCH ARTICLE |  MARCH 16 2023
+Tunnel magnetoresistance exceeding 100% in magnetic
+tunnel junctions using Mn-based tetragonal alloy electrodes
+with perpendicular magnetic anisotropy
+Kazuya Z. Suzuki 
+ ; Shigemi Mizukami  
+AIP Advances 13, 035225 (2023)
+https://doi.org/10.1063/5.0141706
+Articles You May Be Interested In
+Enhanced tunnel magnetoresistance in Mn-based perpendicular magnetic tunnel junctions utilizing
+antiferromagnetically coupled bcc-Co-based interlayer
+Appl. Phys. Lett. (April 2021)
+Enhancement of tunnel magnetoresistance in fully perpendicular MnGa-based magnetic tunnel junctions
+with metastable bcc CoMnFe interlayer
+AIP Advances (March 2025)
+Perpendicular magnetic tunnel junctions with Mn-modified ultrathin MnGa layer
+Appl. Phys. Lett. (February 2018)
+ 28 November 2025 03:03:51
+
+
+--- PAGE 2 ---
+AIP Advances
+ARTICLE
+scitation.org/journal/adv
+Tunnel magnetoresistance exceeding 100%
+in magnetic tunnel junctions using Mn-based
+tetragonal alloy electrodes with perpendicular
+magnetic anisotropy
+Cite as: AIP Advances 13, 035225 (2023); doi: 10.1063/5.0141706
+Submitted: 8 January 2023 • Accepted: 23 February 2023 •
+Published Online: 16 March 2023
+Kazuya Z. Suzuki1,2,a)
+and Shigemi Mizukami1,3,b)
+AFFILIATIONS
+1 WPI Advanced Institute for Materials Research, Tohoku University, Sendai 980-8577, Japan
+2Advanced Science Research Center, Japan Atomic Energy Agency, Tokai 319-1195, Japan
+3Center for Science and Innovation in Spintronics (CSIS), Core Research Cluster (CRC), Tohoku University, Sendai 980-8577, Japan
+a)Electronic mail: suzuki.kazuya04@jaea.go.jp
+b)Author to whom correspondence should be addressed: shigemi.mizukami.a7@tohoku.ac.jp
+ABSTRACT
+We studied MgO barrier magnetic tunnel junctions (MTJs) comprising perpendicularly magnetized MnGa and FeCoB electrodes. In those
+perpendicular (p-) MTJs, we utilized thin metastable bcc CoMn alloys as an interlayer between MnGa and MgO to enhance the tun-
+nel magnetoresistance (TMR) effect. Moreover, we investigated the effect of a thin Mg interlayer between MnGa and CoMn. Owing to
+the interlayer engineering, we achieved a TMR ratio over 100%, the highest value observed for p-MTJs with a tetragonal MnGa elec-
+trode. Our study contributes to the further development of spintronic devices using p-MTJs with various Mn-based tetragonal alloy
+electrodes.
+© 2023 Author(s). All article content, except where otherwise noted, is licensed under a Creative Commons Attribution (CC BY) license
+(http://creativecommons.org/licenses/by/4.0/). https://doi.org/10.1063/5.0141706
+I. INTRODUCTION
+Tetragonal Mn-based ordered alloy thin films, such as MnZ
+(Z = Al, Ga), Mn3Z (Z = Al, Ga, Ge, Sn), and MnYZ (Y = Al,
+Ga, Mn, Z = Ge, Sb), tend to have large perpendicular anisotropy
+(PMA), small magnetization, and a relatively low Gilbert damping
+constant.1–5 These unique magnetic properties are well suited for
+magnetic electrodes in perpendicular (p-) magnetic tunnel junctions
+(MTJs), which can be used for magnetoresistive memory (MRAM)
+and potential logic and high-frequency applications.6–8 To date,
+extensive studies have been conducted on those Mn-based alloy thin
+films from various perspectives.9–22
+A challenging issue is to obtain a large TMR ratio in p-
+MTJs with Mn-based alloy electrodes. First-principles calculations
+have suggested TMR ratios in percentages of hundreds in the p-
+MTJ comprising a (001)-oriented MgO barrier and Mn-based alloy
+electrodes.23 However, such significant TMR effects have not been
+experimentally observed.24–26 Furthermore, p-MTJs with Mn-based
+alloy electrodes generally exhibit a small TMR effect, despite using
+an interlayer, such as FeCo(B) (001), between MgO(001) and (001)-
+oriented Mn-based alloys.27–29 It contrasts with the high TMR
+ratio above 100% typically obtained in p-MTJ with a MgO(001)
+barrier and FeCo(B) (001) electrodes.30 Moreover, a much higher
+TMR ratio, up to ∼600%, is obtained with in-plane magnetized
+MTJs.31–34
+Recently, we investigated p-MTJs comprising MnGa(001)/
+MgO(001)/FeCo(B) (001) and reported a TMR ratio of 85% when
+using a metastable bcc CoMn(001) interlayer between MnGa
+and MgO.35 Our TMR ratio was relatively large compared with
+that previously reported for a similar p-MTJ using a CoFe(001)
+AIP Advances 13, 035225 (2023); doi: 10.1063/5.0141706
+13, 035225-1
+© Author(s) 2023
+ 28 November 2025 03:03:51
+
+
+--- PAGE 3 ---
+AIP Advances
+ARTICLE
+scitation.org/journal/adv
+interlayer,27 probably because of the intriguing properties of
+metastable bcc CoMn alloys.36–38 Therefore, it may be valuable to
+investigate the p-MTJ with a CoMn interlayer to enhance the TMR
+effect from a technical viewpoint.
+A key material in these p-MTJs is the metastable bcc CoMn
+interlayer, which may be stabilized on the MnGa (001) surface with
+epitaxial strain.39,40 The magnetic and electronic properties of bcc
+CoMn are sensitive to the composition and local atomic structures
+of Co and Mn and the axial ratio of the bcc cell, as discussed in
+thick films on a Cr(001) buffer.39 The thermodynamically stable
+phase of CoMn is fcc or hcp and exhibits ferrimagnetism or antifer-
+romagnetism depending on the composition owing to the antifer-
+romagnetic coupling of Mn.41,42 Even in the bcc metastable phase,
+an antiferromagnetic pairing of Mn atoms occupying the nearest
+neighbor sites influences their electronic structure and magnetism.39
+With an interlayer, the local crystal structures and compositions
+may also be influenced by the MnGa(001) surface conditions and
+CoMn/MnGa interface abruptness, eventually affecting the TMR
+effect.
+To gain insight into the aforementioned issue, we investigated
+the effect of an ultrathin Mg interlayer between MnGa and CoMn
+as a case study. Such an interlayer can modify the nanostructure of
+the CoMn interlayer in p-MTJs. The Mg interlayer does not disturb
+the epitaxial growth of bcc CoMn(001) on MnGa(001) when the Mg
+interlayer thickness is appropriate. Moreover, it increases the TMR
+ratio by more than 100% in the p-MTJs.
+II. EXPERIMENTAL METHODS
+MTJ
+stacking
+films
+were
+prepared
+using
+magnetron
+sputtering with a base pressure below 1 × 10−7 Pa.35 The stacking
+structure was as follows: MgO(001) substrate/Cr(40)/Co55Ga45(30)/
+Mn61Ga39(3)/Mg (tMg = 0–0.8)/Co80Mn20(tCoMn = 0.8–1.4)/Mg(0.4)
+/MgO(2)/Fe60Co20B20(1.4)/Ta(3)/Ru(5) (thickness in nm). The
+Co80Mn20 interlayer was deposited via a co-sputtering technique
+using pure Co (99.9%) and Mn (99.99%) targets. All layers were
+deposited
+without
+intentional
+heating.
+We
+also
+fabricated
+films with MgO(001) substrate/Co55Ga45(15)/Mn61Ga39(3)/Mg(0.4)/
+Co80Mn20(tCoMn = 0.8–1.4)/MgO (2)/Ta(1.5) stacking for anoma-
+lous Hall effect (AHE) measurements. Microfabrication of MTJs
+was performed using standard ultraviolet photolithography and
+Ar ion milling. MTJs with junction areas of 10 × 10, 20 × 20, and
+30 × 30 μm2 were obtained. The MTJs were annealed in a vacuum
+furnace without an external magnetic field. The magnetoresistance
+(MR) measurements were performed at room temperature using
+a four-probe technique with a maximum magnetic field of 5 kOe.
+We also used a physical property measurement system (PPMS,
+Quantum Design) for the MR and AHE measurements at different
+temperatures under a high magnetic field. Structural characteri-
+zation of the MTJ cross-section was performed using high-angle
+annular dark field scanning transmission electron microscopy
+(HAADF-STEM) and energy dispersive x-ray (EDX) spectroscopy.
+III. EXPERIMENTAL RESULTS AND DISCUSSIONS
+As a representative case, Fig. 1(a) shows minor hysteresis loops
+for the TMR effect in the p-MTJs with and without a 0.4-nm-thick
+Mg interlayer. A magnetic field of 20 kOe is initially applied to the
+FIG. 1. (a) Minor MR loops measured in p-MTJs with tCoMn = 0.8 nm and tMg
+= 0 or 0.4 nm. The TMR ratio in the case of tMg = 0 nm was 95%, which is similar
+to the values reported in Ref. 35. (b) The annealing temperature dependence of
+the TMR ratio with different Mg interlayer thicknesses. (c) tMg dependences of the
+TMR ratio and RAp values.
+AIP Advances 13, 035225 (2023); doi: 10.1063/5.0141706
+13, 035225-2
+© Author(s) 2023
+ 28 November 2025 03:03:51
+
+
+--- PAGE 4 ---
+AIP Advances
+ARTICLE
+scitation.org/journal/adv
+normal film. The TMR ratio exceeds 100% in the p-MTJs with a
+0.4-nm-thick Mg interlayer. Here, minor MR loops reflect the mag-
+netization reversal of FeCoB, which has a coercivity much lower than
+that of MnGa, as discussed later.
+Figure 1(b) shows the MTJ annealing temperature dependence
+of the TMR ratio in p-MTJs with different Mg interlayer thicknesses.
+The maximum TMR ratio is observed at annealing temperatures
+between 250 and 275 ○C in all cases. The maximum values of the
+TMR ratio as a function of the Mg interlayer thickness and the
+corresponding resistance-area products in a parallel state of magne-
+tization (RAp) are depicted in Fig. 1(c). The TMR ratio increases as
+the Mg interlayer thickness increases from 0 to 0.5 nm [Fig. 1(c)].
+The Mg interlayer maximizes the TMR effect for thicknesses of
+0.4 and 0.5 nm; however, the corresponding RAp values are lower
+[Fig. 1(c)]. In contrast, when the Mg interlayer is between 0.6 and
+0.8 nm, the TMR ratio decreases while the RAp increases rapidly.
+Therefore, the formation of bcc CoMn(001) and the lattice coher-
+ence of CoMn(001)/MgO(001)/FeCo(B) (001) may be preserved
+for Mg interlayer thickness of 0–0.5 nm at annealing temperatures
+below 250–275 ○C. A significant change in crystalline structures and
+orientations may occur when the Mg interlayer thickness is higher
+than 0.6 nm.
+However, there are differences in the annealing dependence of
+the TMR ratio in p-MTJs depending on the Mg interlayer thickness.
+Although the TMR effects deteriorate at an annealing temperature
+close to 300 ○C for all p-MTJs, the reduction in the TMR ratio is
+moderate at Mg interlayer thicknesses of 0.2, 0.4, and 0.5 nm, as
+compared to that at 0, 0.6, and 0.8 nm. These observations suggest
+that the Mg interlayer with thicknesses of 0.2–0.5 nm modifies the
+nano/atomic structures and thermal endurance of the bcc CoMn
+interlayer and interfaces.
+Figure 2(a) shows the cross-sectional structural analysis via
+HAADF-STEM for p-MTJs annealed at 260 ○C. The (001)-oriented
+bcc CoMn layer and the (001)-oriented MgO barrier have a rela-
+tively flat interface at CoMn/MgO. All layers are epitaxially grown,
+as suggested by the coherence of the lattice fringes. Figures 2(b) and
+2(c) show the line profiles of EDX for the as-prepared MTJ and
+MTJ annealed at 260 ○C, respectively. For the as-prepared MTJ, the
+presence of Mg can be seen as a weak and broad EDX peak at the
+interface of CoMn and MnGa [Fig. 2(b)]. However, several line pro-
+file measurements indicated that the Mg interlayer was not spatially
+homogeneous (not shown here). Therefore, the Mg interlayer may
+be present at the interface as islands or discontinuous layers. For
+the annealed MTJs, the EDX peak of Mg is no longer visible at the
+CoMn and MnGa interfaces [Fig. 2(c)], indicating that Mg atoms
+are completely diffused during the annealing process. In addition,
+the Mn and Co concentrations increased near the interface of the
+MgO barrier and in the MnGa layer, respectively, after annealing, as
+shown in Figs. 2(b) and 2(c). Therefore, the atomic diffusions of sev-
+eral types of elements may deteriorate the TMR effect at annealing
+temperatures closer to 300 ○C [Fig. 1(b)].
+Figures 3(a)–3(c) show the MR curves for the p-MTJs with dif-
+ferent thicknesses of CoMn layers, measured at 300 K by applying a
+magnetic field of up to 90 kOe. The MTJ with tCoMn = 1.0 nm has the
+highest TMR ratio in this study: 118% at 300 K and more than 260%
+at 10 K, as shown in Fig. 3(d).
+The MR curve in Fig. 3(a) is similar to that reported for the
+p-MTJ comprising MnGa/FM/MgO/FeCoB (FM = Co, CoFe, and
+FIG. 2. (a) The cross-sectional HAADF-STEM image of p-MTJ annealed at
+260 ○C. The EDX line profile for (b) the as-prepared and (c) annealed p-MTJs. The
+line profiles of elemental concentrations of Co, Ga, Mn, and O were shown along
+the [001] direction (a film normal). Note that tMg and tCoMn are 0.4 and 1.0 nm,
+respectively, for the p-MTJs analyzed here.
+CoMn).27,29,35 In MTJs comprising a thin Co-based interlayer, the
+interlayer is perpendicularly magnetized by an exchange field stem-
+ming from the perpendicular magnetization of MnGa via strong
+antiferromagnetic coupling, even in a remanent state.27,29,35 The
+abrupt changes in the resistance at magnetic fields of ∼0 and ∼30 kOe
+are attributed to magnetization reversals for FeCoB and to net
+magnetization reversals for CoMn/MnGa, respectively. The gradual
+change in resistance is attributed to the magnetization rotation of
+CoMn, which has easy plane magnetic anisotropy. This interpreta-
+tion also agrees with that derived from the magnetization process
+observed in the AHE curve for the film stack without the top FeCoB
+electrode, as shown in Fig. 3(e).
+In contrast, the MR curves in the p-MTJs change signifi-
+cantly at tCoMn = 1.0 and 1.2 nm, as shown in Figs. 3(b) and
+3(c), respectively. The p-MTJs exhibited two more hystereses in
+the MR curves in addition to a gradual change in resistance.
+The hysteresis narrows with increasing CoMn interlayer thickness.
+These changes in hysteresis are also observed in the AHE mea-
+surement, as shown in Figs. 3(f) and 3(g). The remanent values
+of AHE decrease with increasing tCoMn, while the AHE curves
+approach those observed in synthetic antiferromagnets with PMA
+(p-SyAF).43,44 Therefore, in p-MTJ with tCoMn = 1.0 and 1.2 nm,
+AIP Advances 13, 035225 (2023); doi: 10.1063/5.0141706
+13, 035225-3
+© Author(s) 2023
+ 28 November 2025 03:03:51
+
+
+--- PAGE 5 ---
+AIP Advances
+ARTICLE
+scitation.org/journal/adv
+FIG. 3. The MR curves measured with
+PPMS in p-MTJ with (a) tCoMn = 0.8 nm,
+(b) 1.0 nm, and (c) 1.2 nm. (d) The max-
+imum value of the TMR ratio obtained at
+10 and 300 K for the p-MTJs as a func-
+tion of tCoMn. The AHE curves measured
+in the films with (e) tCoMn = 0.8 nm, (f)
+1.0 nm, and (g) 1.2 nm.
+the bcc CoMn interlayer magnetically couples to two antiferro-
+magnetically coupled magnetic layers with a perpendicular mag-
+netic easy axis, similar to the FeCoB interlayer that couples to
+the [Co/Pt]/Ru/[Co/Pt] p-SyAF.43,44 During annealing, atomic dif-
+fusion likely promotes the p-SyAF structure between CoMn and
+MnGa, as discussed in Fig. 2. Similar observations were reported
+in x-ray circular magnetic dichroism studies on MnGa/CoMn/MgO
+films.45
+Figure 4(a) shows the temperature dependence of the TMR
+ratio for p-MTJ with tCoMn = 0.8 nm at different Mg interlayer thick-
+nesses. The temperature dependence of RAp and the normalized
+values of RAp are also shown in Figs. 4(b) and 4(c), respectively.
+The data here are obtained from the MTJs annealed at 260 ○C. There
+are no significant changes in the temperature dependence of the
+TMR ratios and RAp at different Mg interlayer thicknesses, except
+at tMg = 0.8 nm. For tMg = 0.4 and 0.5 nm, the variations in the
+TMR ratio with temperature are almost the same [Fig. 4(a)]. More-
+over, the change in RAp relative to temperature is relatively weak
+[Fig. 4(c)].
+Various physical mechanisms have been discussed for the
+temperature dependence of the TMR effect and junction resis-
+tance in terms of elastic, in-elastic, and defect-mediated tunnel-
+ing transport.46–48 In general, the temperature dependence of RAp
+becomes weaker with decreasing numbers of defects in the bar-
+rier.46 The reduction in such imperfections may also reduce dif-
+fuse electron scattering/tunneling and promote coherent tunneling,
+enhancing the TMR effect relevant to the highly spin-polarized Δ1
+Bloch bands in bcc CoMn and bcc FeCo(B).36,37,49,50 In addition,
+the enhanced coherent tunneling can be caused by reductions in
+electrode oxidization at the interface of the MgO barrier.51 These
+AIP Advances 13, 035225 (2023); doi: 10.1063/5.0141706
+13, 035225-4
+© Author(s) 2023
+ 28 November 2025 03:03:51
+
+
+--- PAGE 6 ---
+AIP Advances
+ARTICLE
+scitation.org/journal/adv
+FIG. 4. Temperature dependence of (a) the TMR ratio, (b) RAp, and (c) normalized
+RAp for p-MTJ with tCoMn = 0.8 nm and different Mg interlayer thicknesses.
+interpretations are consistent with the experimental fact that the p-
+MTJs with tMg = 0.4 and 0.5 nm exhibit a larger TMR ratio and
+weaker temperature dependence of RAp compared with the other
+p-MTJs. We believe that the island-like Mg interlayer improves the
+(001)-texture of bcc CoMn(001)/MgO(001) with fewer defects and
+reduces harmful electrode oxidation at the interface of MgO with
+their diffusion during annealing. More detailed analysis is necessary
+to clarify the role of the Mg interlayer, which is beyond the scope of
+this study.
+IV. SUMMARY
+We studied p-MTJs comprising perpendicularly magnetized
+MnGa and FeCoB electrodes using thin metastable bcc CoMn alloys
+as an interlayer between MnGa and MgO and a thin Mg interlayer
+between MnGa and CoMn. We observed a TMR ratio exceeding
+100% when the Mg interlayer thicknesses were 0.4 and 0.5 nm. Such
+an ultrathin Mg interlayer did not disturb the epitaxial growth of
+metastable bcc CoMn(001) on MnGa(001) from the detailed TEM
+analysis. We discussed the enhanced TMR effect in terms of the
+enhanced coherent tunneling by introducing the Mg interlayer. This
+finding may be helpful for the further development of p-MTJs with
+Mn-based tetragonal alloys for various potential applications.
+ACKNOWLEDGMENTS
+This work was partially supported by KAKENHI (Grant Nos.
+21H05000 and 22K04235), the JST A-STEP tryout (Grant No.
+JPMJTM20K5), and the JST CREST (Grant No. JPMJCR17J5). S.M.
+thanks the CSRN of CSIS at Tohoku University and the X-NICS of
+MEXT (Grant No. JPJ011438).
+AUTHOR DECLARATIONS
+Conflict of Interest
+The authors have no conflicts to disclose.
+Author Contributions
+Kazuya Z. Suzuki: Conceptualization (equal); Data curation (lead);
+Formal analysis (equal); Funding acquisition (equal); Investiga-
+tion (lead); Methodology (equal); Validation (equal); Visualization
+(lead); Writing – original draft (lead); Writing – review & editing
+(supporting). Shigemi Mizukami: Conceptualization (equal); Data
+curation (supporting); Formal analysis (equal); Funding acquisition
+(equal); Investigation (supporting); Methodology (equal); Project
+administration (lead); Resources (lead); Supervision (lead); Valida-
+tion (equal); Visualization (supporting); Writing – original draft
+(supporting); Writing – review & editing (lead).
+DATA AVAILABILITY
+The data that support the findings of this study are available
+within the article.
+REFERENCES
+1X. Zhao and J. Zhao, Adv. Mater. Interfaces 9, 2201606 (2022).
+2P. C. Filippou, S. V. Faleev, C. Garg, J. Jeong, Y. Ferrante, T. Topuria, M. G.
+Samant, and S. S. P. Parkin, Sci. Adv. 8, eabg2469 (2022).
+3K. Elphick, W. Frost, M. Samiepour, T. Kubota, K. Takanashi, H. Sukegawa,
+S. Mitani, and A. Hirohata, Sci. Technol. Adv. Mater. 22, 235 (2021).
+4Y. Ferrante, J. Jeong, R. Saha, S. V. Faleev, M. G. Samant, T. Topuria, H. Deniz,
+and S. S. P. Parkin, APL Mater. 7, 031103 (2019).
+5S. Mizukami, A. Sakuma, A. Sugihara, K. Z. Suzuki, and R. Ranjbar, Scr. Mater.
+118, 70 (2016).
+6D.-L. Zhang, C. Sun, Y. Lv, K. B. Schliep, Z. Zhao, J.-Y. Chen, P. M. Voyles, and
+J.-P. Wang, Phys. Rev. Appl. 9, 044028 (2018).
+7S. Tsunegi, K. Mizunuma, K. Suzuki, H. Imamura, S. Tamaru, M. Yoshimura,
+M. Sato, Y. Kono, H. Wado, A. Fukushima, H. Kubota, and S. Mizukami, Appl.
+Phys. Lett. 112, 262408 (2018).
+8S. Mizukami, S. Iihama, Y. Sasaki, A. Sugihara, R. Ranjbar, and K. Z. Suzuki,
+J. Appl. Phys. 120, 142102 (2016).
+9Y. Takeuchi, R. Okuda, J. Igarashi, B. Jinnai, T. Saino, S. Ikeda, S. Fukami, and
+H. Ohno, Appl. Phys. Lett. 120, 052404 (2022).
+AIP Advances 13, 035225 (2023); doi: 10.1063/5.0141706
+13, 035225-5
+© Author(s) 2023
+ 28 November 2025 03:03:51
+
+
+--- PAGE 7 ---
+AIP Advances
+ARTICLE
+scitation.org/journal/adv
+10T. Kubota, K. Ito, R. Y. Umetsu, and K. Takanashi, Appl. Phys. Lett. 118, 262404
+(2021).
+11L. Ren, L. Liu, X. Shu, W. Lin, P. Yang, J. Chen, and K. L. Teo, ACS Appl. Mater.
+Interfaces 13, 18294 (2021).
+12J. Okabayashi, Y. Miura, Y. Kota, K. Z. Suzuki, A. Sakuma, and S. Mizukami,
+Sci. Rep. 10, 8744 (2020).
+13Y. He, G. H. Fecher, C. Fu, Y. Pan, K. Manna, J. Kroder, A. Jha, X. Wang,
+Z. Hu, S. Agrestini, J. Herrero-Martín, M. Valvidares, Y. Skourski, W. Schnelle,
+P. Stamenov, H. Borrmann, L. H. Tjeng, R. Schaefer, S. S. P. Parkin, J. M. D. Coey,
+and C. Felser, Adv. Mater. 32, 2004331 (2020).
+14J. Finley and L. Liu, Appl. Phys. Lett. 116, 110501 (2020).
+15J. Seyd, I. Pilottek, N. Y. Schmidt, O. Caha, M. Urbánek, and M. Albrecht,
+J. Phys.: Condens. Matter 32, 145801 (2020).
+16S. Mao, J. Lu, H. Wang, X. Zhao, D. Wei, and J. Zhao, J. Phys. D. Appl. Phys. 52,
+405002 (2019).
+17S. Mizukami, K. Z. Suzuki, and Y. Miura, Appl. Phys. Express 12, 043003 (2019).
+18K. Z. Suzuki, S. Kimura, H. Kubota, and S. Mizukami, ACS Appl. Mater.
+Interfaces 10, 43305 (2018).
+19P. C. Filippou, J. Jeong, Y. Ferrante, S.-H. Yang, T. Topuria, M. G. Samant, and
+S. S. P. Parkin, Nat. Commun. 9, 4653 (2018).
+20X. Zhang, L. L. Tao, J. Zhang, S. H. Liang, L. Jiang, and X. F. Han, Appl. Phys.
+Lett. 110, 252403 (2017).
+21S. Mao, J. Lu, X. Zhao, X. Wang, D. Wei, J. Liu, J. Xia, and J. Zhao, Sci. Rep. 7,
+43064 (2017).
+22M. Takikawa, K. Z. Suzuki, R. Ranjbar, and S. Mizukami, Appl. Phys. Express
+10, 073004 (2017).
+23Y. Miura and M. Shirai, IEEE Trans. Magn. 50, 1 (2014).
+24K. Z. Suzuki, R. Ranjbar, J. Okabayashi, Y. Miura, A. Sugihara, H. Tsuchiura,
+and S. Mizukami, Sci. Rep. 6, 30249 (2016).
+25J. Jeong, Y. Ferrante, S. V. Faleev, M. G. Samant, C. Felser, and S. S. P. Parkin,
+Nat. Commun. 7, 10276 (2016).
+26K. Z. Suzuki, Y. Miura, R. Ranjbar, L. Bainsla, A. Ono, Y. Sasaki, and
+S. Mizukami, Appl. Phys. Lett. 112, 062402 (2018).
+27Q. L. Ma, S. Mizukami, T. Kubota, X. M. Zhang, Y. Ando, and T. Miyazaki, Phys.
+Rev. Lett. 112, 157202 (2014).
+28A. Titova, C. Fowley, E. Clifford, Y.-C. Lau, K. Borisov, D. Betto, G. Atcheson,
+R. Hübner, C. Xu, P. Stamenov, M. Coey, K. Rode, J. Lindner, J. Fassbender, and
+A. M. Deac, Sci. Rep. 9, 4020 (2019).
+29Q. Ma, A. Sugihara, K. Suzuki, X. Zhang, T. Miyazaki, and S. Mizukami, Spin 4,
+1440024 (2014).
+30S. Ikeda, K. Miura, H. Yamamoto, K. Mizunuma, H. D. Gan, M. Endo, S. Kanai,
+J. Hayakawa, F. Matsukura, and H. Ohno, Nat. Mater. 9, 721 (2010).
+31S. Yuasa, T. Nagahama, A. Fukushima, Y. Suzuki, and K. Ando, Nat. Mater. 3,
+868 (2004).
+32S. S. P. Parkin, C. Kaiser, A. Panchula, P. M. Rice, B. Hughes, M. Samant, and
+S.-H. Yang, Nat. Mater. 3, 862 (2004).
+33S. Ikeda, J. Hayakawa, Y. Ashizawa, Y. M. Lee, K. Miura, H. Hasegawa,
+M. Tsunoda, F. Matsukura, and H. Ohno, Appl. Phys. Lett. 93, 082508 (2008).
+34T. Scheike, Q. Xiang, Z. Wen, H. Sukegawa, T. Ohkubo, K. Hono, and S. Mitani,
+Appl. Phys. Lett. 118, 042411 (2021).
+35K. Z. Suzuki, T. Ichinose, S. Iihama, R. Monma, and S. Mizukami, Appl. Phys.
+Lett. 118, 172412 (2021).
+36K. Kunimatsu, T. Tsuchiya, K. Elphick, T. Ichinose, K. Z. Suzuki, A. Hirohata,
+and S. Mizukami, Jpn. J. Appl. Phys. 58, 080908 (2019).
+37K. Kunimatsu, T. Tsuchiya, T. Roy, K. Elphick, T. Ichinose, M. Tsujikawa,
+A. Hirohata, M. Shirai, and S. Mizukami, Appl. Phys. Express 13, 083007
+(2020).
+38K. Elphick, K. Yoshida, T. Roy, T. Ichinose, K. Kunimatsu, T. Tsuchiya, K. Z.
+Suzuki, M. Tsujikawa, Y. Nagai, S. Mizukami, M. Shirai, and A. Hirohata, Phys.
+Rev. Appl. 16, 054052 (2021).
+39K. Kunimatsu, T. Roy, J. Okabayashi, T. Tsuchiya, T. Ichinose, M. Tsujikawa,
+M. Shirai, and S. Mizukami, J. Magn. Magn. Mater. 548, 168841 (2022).
+40D. Wu, G. L. Liu, C. Jing, Y. Z. Wu, D. Loison, G. S. Dong, X. F. Jin, and D.-S.
+Wang, Phys. Rev. B 63, 214403 (2001).
+41A. Z. Menshikov, G. A. Takzei, Yu. A. Dorofeev, V. A. Kazanstev, A. K.
+Kostyshin, and I. I. Sych Zh, Eksp. Teor. Fiz. 89, 1269 (1985), [Sov. Phys. JETP
+62, 734 (1985)].
+42K. Ishida and T. Nishizawa, Bull. Alloy Phase Diagrams 11, 125 (1990).
+43K. Yakushiji, H. Kubota, A. Fukushima, and S. Yuasa, Appl. Phys. Express 8,
+083003 (2015).
+44D.-Y. Lee, T.-H. Shim, and J.-G. Park, Nanotechnology 27, 295705 (2016).
+45J. Okabayashi, K. Z. Suzuki, and S. Mizukami, J. Magn. Magn. Mater. 564,
+170163 (2022).
+46C. H. Shang, J. Nowak, R. Jansen, and J. S. Moodera, Phys. Rev. B 58, R2917
+(1998).
+47S. Zhang, P. M. Levy, A. C. Marley, and S. S. P. Parkin, Phys. Rev. Lett. 79, 3744
+(1997).
+48Y. Lu, M. Tran, H. Jaffrès, P. Seneor, C. Deranlot, F. Petroff, J.-M. George,
+B. Lépine, S. Ababou, and G. Jézéquel, Phys. Rev. Lett. 102, 176801 (2009).
+49W. H. Butler, X.-G. Zhang, T. C. Schulthess, and J. M. MacLaren, Phys. Rev. B
+63, 054416 (2001).
+50J. Mathon and A. Umerski, Phys. Rev. B 63, 220403 (2001).
+51X.-G. Zhang, W. H. Butler, and A. Bandyopadhyay, Phys. Rev. B 68, 092402
+(2003).
+AIP Advances 13, 035225 (2023); doi: 10.1063/5.0141706
+13, 035225-6
+© Author(s) 2023
+ 28 November 2025 03:03:51

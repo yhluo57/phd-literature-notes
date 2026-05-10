@@ -1,0 +1,527 @@
+
+
+--- PAGE 1 ---
+Japanese Journal of
+Applied Physics
+     
+RAPID COMMUNICATION
+Current-induced spin–orbit torque magnetization
+switching in a MnGa/Pt film with a perpendicular
+magnetic anisotropy
+To cite this article: Reza Ranjbar et al 2016 Jpn. J. Appl. Phys. 55 120302
+ 
+View the article online for updates and enhancements.
+You may also like
+Some Considerations on the Influence of
+Voltage in Potentiostatic Two-Step
+Anodizing of AA1050
+J. M. Montero-Moreno, M. Sarret and C.
+Müller
+-
+Formation of Stoichiometric SrRuO3
+Electrodes for PZT Capacitors by Pulsed-
+MOCVD
+Jun Minamidate, Atsushi Nagai, Sukpil
+Kim et al.
+-
+Passivity and Pit Stability Behavior of
+Copper as a Function of Selected Water
+Chemistry Variables
+Hongbo Cong, Harold T. Michels and John
+R. Scully
+-
+This content was downloaded from IP address 159.226.35.194 on 27/07/2025 at 16:02
+
+
+--- PAGE 2 ---
+Current-induced spin–orbit torque magnetization switching in a MnGa/Pt ﬁlm
+with a perpendicular magnetic anisotropy
+Reza Ranjbar1, Kazuya Z. Suzuki1*, Yuta Sasaki1,2, Lakhan Bainsla1, and Shigemi Mizukami1
+1WPI Advanced Institute for Materials Research, Tohoku University, Sendai 980-8577, Japan
+2Department of Applied Physics, Graduate School of Engineering, Tohoku University, Sendai 980-8579, Japan
+*E-mail: kazuya.suzuki.d8@tohoku.ac.jp
+Received August 25, 2016; accepted September 21, 2016; published online November 1, 2016
+Current-induced magnetization switching is demonstrated in a micron sized Hall bar consisting of Pt-capped ultrathin ferrimagnetic MnGa ﬁlms.
+The ﬁlms showed a low magnetization Ms ’ 150 kA/m and a large perpendicular magnetic anisotropy (PMA) ﬁeld 0Heff
+K ’ 2:5 T, indicating a PMA
+thickness t product K eff
+u t ’ 0:47 mJ/m2, which is relatively larger than those reported for other material ﬁlms with PMA. Magnetization switching
+induced by an in-plane electrical current was examined with the application of an in-plane magnetic ﬁeld. The phase diagram of the switching
+current vs the in-plane magnetic ﬁeld is qualitatively consistent with that of the torque due to the spin-Hall effect in the Pt layer.
+© 2016 The Japan Society of Applied Physics
+T
+he use of spin–orbit torque (SOT) has attracted much
+attention as one of the ways to electrically manip-
+ulate the magnetization of magnetic thin ﬁlms by
+applying an electrical current.1–5) Many studies have been
+performed on SOT for magnetic ﬁlms with in-plane and
+perpendicular magnetic anisotropy (PMA) from both funda-
+mental and technological points of view. In particular,
+current-induced SOT switching of magnetization in ﬁlms
+with PMA is technologically important, this is because it
+can be used as a writing technique for a three-terminal device
+utilizing a perpendicularly magnetized magnetic tunnel
+junction (p-MTJ), which can serve as a memory element
+of magnetoresistive random access memory (MRAM).6)
+The basic concept is similar to that of MRAM based on
+spin-transfer-torque (STT) writing7–9) or voltage-controlled
+magnetic anisotropy (VCMA) writing.10,11)
+Most studies on SOT for PMA ﬁlms have been performed
+on thin layered ﬁlms with an interfacial PMA composed of a
+heavy metal, e.g., Ta, W, and Pt, and ultrathin ferromagnetic
+metal=alloys, e.g., Co and CoFeB, where SOT is induced by
+an electrical current in the ﬁlm plane.3–6,12–14) On the other
+hand, some studies on SOT in Fe-based ordered magnetic
+alloys and amorphous rare-earth transition metal magnets
+have been performed to clarify the origin of SOT in ﬁlms
+with a bulk PMA.15–17) Such studies on thin alloy ﬁlms with
+a large bulk PMA may also provide insight into whether
+SOT-MRAM can be scaled below the 20 nm technology
+node, which would require a large PMA thickness t product
+Keff
+u t > 1 mJ=m2 to maintain the long retention.
+Tetragonal Heusler-like Mn-based alloys and their deriv-
+atives, such as MnGa and Mn3Ge, have been extensively
+studied for spintronic memory and logic applications, as
+well as THz wave applications.18–22) This is because these
+Mn-based materials have very low net magnetic moments
+owing to ferrimagnetism,18–22) high uniaxial magnetic aniso-
+tropy,18–21) low Gilbert damping,23,24) and high spin polar-
+ization,22,25–27) which are rarely seen in other materials.
+Recently, Meng et al. have studied the anomalous Hall eﬀect
+in a heavy-metal-capped (Pt and Ta) 3-nm-thick MnGa layer
+grown on GaAs with a molecular beam epitaxy technique.28)
+They suggested the existence of SOT even though they did
+not observe current-induced magnetization switching. In this
+communication we demonstrate current-induced SOT mag-
+netization switching in ultrathin MnGa ﬁlms. The MnGa
+ultrathin ﬁlm in this study has a relatively large PMA
+compared with that of the materials system that has been
+studied so far, whereas the switching electrical current
+density was of the order of 1011 A=m2, which is similar to that
+in other systems.
+The ﬁlms were fabricated by ultrahigh vacuum magnetron
+sputtering and the stacking structure was (001) MgO single-
+crystal substrate=CoGa (15)=MnGa (2.5)=Pt (2.0) (thickness
+is in nm). The ﬁlm compositions of CoGa and MnGa were
+Co60Ga40 and Mn59Ga41, respectively, as estimated by
+inductively coupled plasma mass spectroscopy. X-ray diﬀrac-
+tion measurements revealed that the B2-ordered paramag-
+netic CoGa buﬀer was epitaxially grown on the MgO sub-
+strate with (001) orientation. This CoGa buﬀer may promote
+the c-axis-oriented epitaxial growth of L10-ordered MnGa
+without signiﬁcant interfacial reaction.30) The Cr=CoGa
+bilayer buﬀer is much better for the MnGa epitaxial
+growth,29,30) whereas it cannot be used in this study because
+Cr shunts the electrical current. The 2-nm-thick Pt layer was
+used here, which is the same as that used in a previous study
+of SOT in the Pt=Co=Al–O ﬁlms.5) We also fabricated and
+characterized the ﬁlms with the 5-nm-thick Pt capping layer.
+However, its PMA was highly deteriorated, indicating its
+unsuitability for this study.
+Figure 1 shows a typical out-of-plane magnetization
+hysteresis loop for the ﬁlm measured using a vibrating
+sample magnetometer. The saturation magnetization Ms of
+150 ± 50 kA=m is smaller than that of a previously reported
+3-nm-thick MnGa layer grown on a CoGa=Cr buﬀer and
+capped by a MgO barrier.30) This reduction in Ms may be
+mainly due to the atomic mixing of the MnGa and Pt capping
+layers and partially due to the slightly less ordering of the
+MnGa layer than that grown on the CoGa=Cr buﬀer layer.
+The surface roughnesses of CoGa and MnGa are also slightly
+larger than those reported previously. These structural
+properties may also lead to the non abrupt switching of
+magnetization at μ0Hc ≃110 mT, implying that magnetiza-
+tion reversal proceeds by pinning=depinning of the magnetic
+domain wall.
+The ﬁlm was then patterned into the micron sized Hall bar
+with Ti=Au electrodes by conventional ultraviolet photo-
+lithography and Ar ion milling. The Hall bars of six diﬀerent
+sizes were formed on a substrate. Henceforth, we show the
+data for the smallest Hall bar. An optical microscopy image
+Japanese Journal of Applied Physics 55, 120302 (2016)
+http://doi.org/10.7567/JJAP.55.120302
+RAPID COMMUNICATION
+120302-1
+© 2016 The Japan Society of Applied Physics
+
+
+--- PAGE 3 ---
+of the Hall bar is shown in Fig. 2(a). The length and width of
+the main Hall bar where the current I ﬂows are 30 and 6 µm,
+respectively, and its resistance R was approximately 350 Ω.
+The resistance of the CoGa, MnGa, and Pt layers were
+evaluated for separately prepared samples, and the current
+ﬂowing into the Pt layer IA is evaluated as IA = 0.44 × I. That
+is, approximately half of the total current ﬂows into the thin
+Pt layer because of the very high resistivity of the CoGa and
+MnGa.31,32) The anomalous Hall resistance RH was measured
+at room temperature by measuring the voltage across the side
+Hall bars while injecting I. An out-of-plane magnetic ﬁeld H
+or in-plane magnetic ﬁeld HL parallel to the main Hall bar
+was applied, as shown in Fig. 2(a).
+Figure 2(b) shows RH–H curves. The hysteresis loops seen
+in the RH–H data is identical to the magnetization hysteresis
+loop [Fig. 1(b)] within the experimental errors, because of
+the proportionality of RH to the out-of-plane component of
+magnetization. RH was also measured as a function of HL
+using a physical properties measurement system [Fig. 2(c)].
+The RH–HL data indicates a high PMA of the MnGa layer.
+For μ0HL > ±3 T, the RH value tends to be constant and close
+to zero. The direction of HL is not completely parallel to the
+ﬁlm plane and there is a misalignment angle of approximately
+1°, so that magnetization is slightly tilted from the in-plane
+direction, which is consistent with the non-zero and constant
+RH at high ﬁelds. The magnitude of RH increases gradually
+with decreasing magnitude of HL, corresponding to rotation
+of the magnetization. The eﬀective PMA ﬁeld Heff
+K
+is
+evaluated to be 0Heff
+K ’ 2:5 T from the kink of the RH–HL
+data, indicating that the PMA thickness t product is
+Keff
+u t ’ 0:47 mJ=m2.
+According to a previous work,5) the current-induced
+magnetization switching measurement was performed while
+applying various HL. Typical RH–I data with μ0HL of −50, 0,
+and 50 mT are shown in Figs. 3(a)–3(c), respectively. The RH
+shows no clear magnetization hysteresis at μ0HL = 0 mT.
+However, the RH at μ0HL = ±50 mT exhibits a hysteresis loop
+similar to that in the RH–H data in Fig. 2(b), demonstrating
+current-induced magnetization switching. In the case of
+μ0HL = −50 mT, the magnetization switches from upward to
+downward at the switching current Ic ≃−15 mA and switches
+from downward to upward at Ic ≃15 mA with sweeping I;
+that is, counter-clockwise hysteretic behavior is observed.
+On the other hand, clockwise hysteretic behavior is found for
+μ0HL = 50 mT, at which the magnetization switches at Ic with
+polarity opposite to those in Fig. 3(a). This change in the
+polarity of the switching current with diﬀerent HL values
+is a unique feature in current-induced SOT magnetization
+switching.5) This unique feature may not be explained by the
+magnetic ﬁeld generated from the current, the so-called
+Oersted’s
+ﬁeld,
+whose
+magnitude
+is
+estimated
+to
+be
+negligibly small, e.g., 3.1 mT at I = 15 mA.
+When SOT originates from the spin-Hall eﬀect (SHE), the
+switching current density Jc for ﬁlms with perpendicular
+magnetization is expressed as33)
+jJcj ¼ 2e
+ħ
+0Mst
+jSHj
+Heff
+K
+2
+ jHLjﬃﬃﬃ
+2
+p
+
+
+;
+ð1Þ
+where e, ħ, and θSH are the electron charge, Dirac constant,
+and spin-Hall angle for a heavy metal layer, respectively. In
+this model, it is assumed that the magnetization uniformly
+(b)
+(c)
+-200
+-100
+0
+100
+200
+-0.1
+0
+0.1
+RH (Ω)
+μ0H (mT)
+-4
+-2
+0
+2
+4
+-0.1
+0
+0.1
+RH (Ω)
+μ0HL (T)
+(a)
+Fig. 2.
+(Color online) (a) Image of the Hall devices and schematic of
+measurement geometry for out-of-plane magnetic ﬁeld H and in-plane
+longitudinal magnetic ﬁeld HL. Anomalous Hall resistance RH as a function
+of (b) H and (c) HL, which were measured at an electrical current I = 1 mA.
+MgO (001) Sub.
+Pt   2 nm
+CoGa
+15 nm
+MnGa
+2.5 nm
+(a)
+Ga
+Mn
+-400
+-200
+0
+200
+400
+-400
+-200
+0
+200
+400
+M (kA/m) 
+μ0H (mT)
+(b)
+H
+film
+⊥
+Fig. 1.
+(Color online) (a) Illustration of the crystal structure of L10 MnGa
+and stacking structure of ﬁlms. (b) Out-of-plane magnetization hysteresis
+loops of the ﬁlm.
+Jpn. J. Appl. Phys. 55, 120302 (2016)
+R. Ranjbar et al.
+120302-2
+© 2016 The Japan Society of Applied Physics
+
+
+--- PAGE 4 ---
+rotates without thermal ﬂuctuations at HL that is much
+smaller than Heff
+K , and the current I ﬂows only into the heavy
+metal layer. Figure 4 shows a phase diagram of the mag-
+netization switching current Ic vs HL, which was evaluated
+from the RH–I data with diﬀerent HL values. The absolute
+value of Ic systematically decreases with increasing magni-
+tude of HL, which qualitatively agrees with Eq. (1), although
+the decrease in Ic for I < 0 is slower than that for I > 0.
+The current-induced magnetization switching from upward
+to downward (downward to upward) occurs when the direc-
+tion of I is antiparallel (parallel) to HL in the MnGa=Pt ﬁlm.
+This symmetry between I and HL is opposite to that in
+substrate=Pt=Co=Al–O ﬁlms,5) in which the switching from
+upward to downward (downward to upward) occurred when
+the direction of I was parallel (antiparallel) to HL.5) This
+symmetry diﬀerence is reasonably accounted for by the fact
+that the direction of pure spin current generated from SHE is
+antisymmetric with respect to the current path above or below
+the magnetic layer. Thus, the symmetry in Fig. 4 is consistent
+with θSH > 0 for Pt.
+Here, we note the result of similar experiments performed
+on using other samples prepared separately for reference.
+The similar SOT switching was reproduced in one sample
+with the same stacking structure. The SOT switching was
+also observed in the CoGa=MnGa (2 nm)=Pt (2 nm) structure,
+in which the thickness of MnGa was slightly smaller than that
+mentioned above. This thinner MnGa ﬁlm exhibited a smaller
+Hc (∼50 mT), indicating that Heff
+K decreases with decreasing
+thickness. Ic for this sample was lower than those shown in
+Figs. 3 and 4, e.g., Ic ≃10 mA at μ0HL = 50 mT. On the other
+hand, we observed no SOT switching in the CoGa=MnGa
+(2 nm)=Cu (5 nm) structure with the applied current used in
+this study. These features for diﬀerent MnGa thicknesses and
+capping materials are also qualitatively in agreement with
+Eq. (1).
+Finally, we brieﬂy comment on the magnitude of Jc in this
+study. Equation (1) yields Jc = 1.2 × 1013 A=m2 at HL = 150
+mT by substituting the experimental values of Ms, Heff
+K , and t.
+Here, θSH = 0.11 for Pt was assumed,34) which may be the
+largest among the various reported values of θSH for Pt,
+ranging from ∼0.004 to ∼0.1.35) Thus, the above estimation of
+Jc is considered to be the lower bound for the theoretical
+Jc value. On the other hand, the experimental Jc, correspond-
+ing to the current density in the Pt layer at the switching,
+is ∼5.0 × 1011 A=m2 at Ic = 13.5 mA and μ0HL = −150 mT,
+which is much smaller than that predicted from Eq. (1) and
+is comparable to the values reported for ﬁlms with a lower
+PMA. There are many factors that reduce Jc in reality; e.g.,
+the eﬀects of a nonuniform magnetization process, the thermal
+ﬂuctuation of magnetization, and the Joule heating ef-
+fect.5,12–14) On the other hand, SOT is also considered to
+originate from the Rashba eﬀect,3) whose existence has not yet
+been clariﬁed in the present materials. In addition, it is likely
+that SOT due to the SHE in MnGa=Pt is signiﬁcantly depend-
+ent on the nature of the interface because the antiferromag-
+netic MnPt shows a large θSH of up to 0.24.36) The clariﬁcation
+of these issues is obviously beyond the scope of this com-
+munication and will require future comprehensive studies.
+In summary, current-induced magnetization switching was
+studied in Pt-capped 2.5-nm-thick MnGa ﬁlms with PMA.
+A micron sized Hall bar device clearly showed magnetization
+switching as a function of in-plane electrical current, depend-
+ing on the direction of the longitudinal in-plane magnetic ﬁeld.
+The switching phase diagram qualitatively agreed with that of
+SOT due to the SHE for the Pt layer. This study demonstrated
+that SOT switching was possible in Mn-based magnets with a
+large PMA with moderate electrical current density.
+Acknowledgments
+This work is partially supported by a Grant-in-Aid for
+Scientiﬁc Research (No. 16H03846), the ImPACT Program, and the Asahi Glass
+Foundation. Y.S. acknowledges the GP Spin program. The authors thank Y.
+Kondo for technical assistance and T. Miyazaki for valuable comments.
+12
+14
+16
+18
+-200
+-100
+0
+100
+200
+-18
+-16
+-14
+-12
+Ic (mA)
+μ0HL (mT)
+HL
+I
+I
+HL
+HL
+I
+HL
+I
+Fig. 4.
+(Color online) Phase diagram of the switching current Ic vs the in-
+plane magnetic ﬁeld HL. Insets are illustration of the magnetization rotation
+for each set of Ic and HL.
+-0.05
+0
+0.05
+-20
+-10
+0
+10
+20
+-0.05
+0
+0.05
+RH (Ω)
+I (mA)
+-0.05
+0
+0.05
+(a)
+(c)
+μ0HL = - 50 mT
+μ0HL = 50 mT
+μ0HL = 0 mT
+(b)
+Fig. 3.
+(Color online) Anomalous Hall resistance RH as a function of the
+electrical current I while applying the in-plane magnetic ﬁeld (a) μ0HL = −50
+mT, (b) 0 mT, and (c) 50 mT. Data points near I = 0 mA have been removed.
+Jpn. J. Appl. Phys. 55, 120302 (2016)
+R. Ranjbar et al.
+120302-3
+© 2016 The Japan Society of Applied Physics
+
+
+--- PAGE 5 ---
+1)
+K. Ando, S. Takahashi, K. Harii, K. Sasage, J. Ieda, S. Maekawa, and E.
+Saitoh, Phys. Rev. Lett. 101, 036601 (2008).
+2)
+L. Liu, T. Moriyama, D. C. Ralph, and R. A. Buhrman, Phys. Rev. Lett.
+106, 036601 (2011).
+3)
+I. M. Miron, K. Garello, G. Gaudin, P.-J. Zermatten, M. V. Costache, S.
+Auﬀret, S. Bandiera, B. Rodmacq, A. Schuhl, and P. Gambardella, Nature
+476, 189 (2011).
+4)
+L. Liu, C. F. Pai, Y. Li, H. W. Tseng, D. C. Ralph, and R. A. Buhrman,
+Science 336, 555 (2012).
+5)
+L. Liu, O. J. Lee, T. J. Gudmundsen, D. C. Ralph, and R. A. Buhrman,
+Phys. Rev. Lett. 109, 096602 (2012).
+6)
+M. Cubukcu, O. Boulle, M. Drouard, K. Garello, C. O. Avci, I. M. Miron, J.
+Langer, B. Ocker, P. Gambardella, and G. Gaudin, Appl. Phys. Lett. 104,
+042406 (2014).
+7)
+J. C. Slonczewski, J. Magn. Magn. Mater. 159, L1 (1996).
+8)
+T. Kishi, H. Yoda, T. Kai, T. Nagase, E. Kitagawa, M. Yoshikawa, K.
+Nishiyama, T. Daibou, M. Nagamine, M. Amano, S. Takahashi, M.
+Nakayama, N. Shimomura, H. Aikawa, S. Ikegawa, S. Yuasa, K. Yakushiji,
+H. Kubota, A. Fukushima, M. Oogane, T. Miyazaki, and K. Ando, IEDM
+Tech. Dig., 2008, p. 1.
+9)
+S. Ikeda, K. Miura, H. Yamamoto, K. Mizunuma, H. D. Gan, M. Endo, S.
+Kanai, J. Hayakawa, F. Matsukura, and H. Ohno, Nat. Mater. 9, 721 (2010).
+10) T. Maruyama, Y. Shiota, T. Nozaki, K. Ohta, N. Toda, M. Mizuguchi, A. A.
+Tulapurkar, T. Shinjo, M. Shiraishi, S. Mizukami, Y. Ando, and Y. Suzuki,
+Nat. Nanotechnol. 4, 158 (2009).
+11)
+K. L. Wang, H. Lee, and P. Khalili Amiri, IEEE Trans. Nanotechnol. 14,
+992 (2015).
+12) C. Onur Avci, K. Garello, I. Mihai Miron, G. Gaudin, S. Auﬀret, O. Boulle,
+and P. Gambardella, Appl. Phys. Lett. 100, 212404 (2012).
+13) K. Garello, C. O. Avci, I. M. Miron, M. Baumgartner, A. Ghosh, S. Auﬀret,
+O. Boulle, G. Gaudin, and P. Gambardella, Appl. Phys. Lett. 105, 212402
+(2014).
+14) C. Zhang, S. Fukami, H. Sato, F. Matsukura, and H. Ohno, Appl. Phys.
+Lett. 107, 012401 (2015).
+15) H.-R. Lee, K. Lee, J. Cho, Y.-H. Choi, C.-Y. You, M.-H. Jung, F. Bonell,
+Y. Shiota, S. Miwa, and Y. Suzuki, Sci. Rep. 4, 6548 (2014).
+16) Z. Zhao, M. Jamali, A. K. Smith, and J.-P. Wang, Appl. Phys. Lett. 106,
+132404 (2015).
+17) G. Géranton, F. Freimuth, S. Blügel, and Y. Mokrousov, Phys. Rev. B 91,
+014417 (2015).
+18) L. Zhu and J. Zhao, Appl. Phys. A 111, 379 (2013).
+19) Q. Ma, A. Sugihara, K. Suzuki, X. Zhang, T. Miyazaki, and S. Mizukami,
+Spin 4, 1440024 (2014).
+20) H. Kurt and J. M. D. Coey, in Heusler Alloys, ed. C. Felser and A. Hirohata
+(Springer International Publishing, Cham, 2016) Springer Series in
+Materials Science, Vol. 222, Chap. 7.
+21) S. Mizukami, A. Sakuma, A. Sugihara, K. Z. Suzuki, and R. Ranjbar, Scr.
+Mater. 118, 70 (2016).
+22) B. Balke, G. H. Fecher, J. Winterlik, and C. Felser, Appl. Phys. Lett. 90,
+152504 (2007).
+23) S. Mizukami, F. Wu, A. Sakuma, J. Walowski, D. Watanabe, T. Kubota, X.
+Zhang, H. Naganuma, M. Oogane, Y. Ando, and T. Miyazaki, Phys. Rev.
+Lett. 106, 117201 (2011).
+24) S. Mizukami, A. Sugihara, S. Iihama, Y. Sasaki, K. Z. Suzuki, and T.
+Miyazaki, Appl. Phys. Lett. 108, 012404 (2016).
+25) H. Kurt, K. Rode, M. Venkatesan, P. Stamenov, and J. M. D. Coey, Phys.
+Rev. B 83, 020405(R) (2011).
+26) H. Kurt, N. Baadji, K. Rode, M. Venkatesan, P. Stamenov, S. Sanvito, and
+J. M. D. Coey, Appl. Phys. Lett. 101, 132410 (2012).
+27) Q. L. Ma, S. Mizukami, T. Kubota, X. M. Zhang, Y. Ando, and T.
+Miyazaki, Phys. Rev. Lett. 112, 157202 (2014).
+28) K. K. Meng, J. Miao, X. G. Xu, J. X. Xiao, J. H. Zhao, and Y. Jiang, Phys.
+Rev. B 93, 060406(R) (2016).
+29) K. Z. Suzuki, R. Ranjbar, A. Sugihara, T. Miyazaki, and S. Mizukami, Jpn.
+J. Appl. Phys. 55, 010305(R) (2016).
+30) K. Z. Suzuki, R. Ranjbar, J. Okabayashi, Y. Miura, A. Sugihara, H.
+Tsuchiura, and S. Mizukami, Sci. Rep. 6, 30249 (2016).
+31) F. Wu, E. P. Sajitha, S. Mizukami, D. Watanabe, T. Miyazaki, H.
+Naganuma, M. Oogane, and Y. Ando, Appl. Phys. Lett. 96, 042505 (2010).
+32) G. L. Whittle, G. C. Fletcher, P. E. Clark, and R. Cywinski, J. Phys. 12, 303
+(1982).
+33) K.-S. Lee, S.-W. Lee, B.-C. Min, and K.-J. Lee, Appl. Phys. Lett. 102,
+112410 (2013).
+34) M. Althammer, S. Meyer, H. Nakayama, M. Schreier, S. Altmannshofer, M.
+Weiler, H. Huebl, S. Geprägs, M. Opel, R. Gross, D. Meier, C. Klewe, T.
+Kuschel, J. M. Schmalhorst, G. Reiss, L. Shen, A. Gupta, Y. T. Chen,
+G. E. W. Bauer, E. Saitoh, and S. T. B. Goennenwein, Phys. Rev. B 87,
+224401 (2013).
+35) J. Sinova, S. O. Valenzuela, J. Wunderlich, C. H. Back, and T. Jungwirth,
+Rev. Mod. Phys. 87, 1213 (2015).
+36) Y. Ou, S. Shi, D. C. Ralph, and R. A. Buhrman, Phys. Rev. B 93,
+220405(R) (2016).
+Jpn. J. Appl. Phys. 55, 120302 (2016)
+R. Ranjbar et al.
+120302-4
+© 2016 The Japan Society of Applied Physics

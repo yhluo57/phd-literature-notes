@@ -1,0 +1,2570 @@
+
+
+--- PAGE 1 ---
+
+View
+Online 
+Export
+Citation
+REVIEW ARTICLE |  JUNE 14 2024
+Voltage-controlled magnetic anisotropy-based spintronic
+devices for magnetic memory applications: Challenges and
+perspectives 
+Pinkesh Kumar Mishra  
+ ; Meenakshi Sravani 
+ ; Arnab Bose 
+ ; Swapnil Bhuktare 
+J. Appl. Phys. 135, 220701 (2024)
+https://doi.org/10.1063/5.0201648
+Articles You May Be Interested In
+Impact of ambient temperature on the switching of voltage-controlled perpendicular magnetic tunnel
+junction
+Appl. Phys. Lett. (March 2021)
+Voltage-gated spin-orbit torque switching in IrMn-based perpendicular magnetic tunnel junctions
+Appl. Phys. Lett. (January 2023)
+Strain-mediated voltage controlled magnetic anisotropy based switching for magnetic memory applications
+J. Appl. Phys. (September 2023)
+ 17 March 2026 06:59:48
+
+
+--- PAGE 2 ---
+Voltage-controlled magnetic anisotropy-based
+spintronic devices for magnetic memory
+applications: Challenges and perspectives
+Cite as: J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+View Online
+Export Citation
+CrossMark
+Submitted: 31 January 2024 · Accepted: 15 May 2024 ·
+Published Online: 14 June 2024
+Pinkesh Kumar Mishra,1,a)
+Meenakshi Sravani,1
+Arnab Bose,2
+and Swapnil Bhuktare1
+AFFILIATIONS
+1Department of Electrical Engineering, Indian Institute of Technology Tirupati, Tirupati, Andhra Pradesh, India
+2Department of Electrical Engineering, Indian Institute of Technology Kanpur, Kanpur, Uttar Pradesh, India
+a)Author to whom correspondence should be addressed: ee21s503@iittp.ac.in
+ABSTRACT
+Electronic spins provide an additional degree of freedom that can be used in modern spin-based electronic devices. Some benefits of spin-
+tronic devices include nonvolatility, energy efficiency, high endurance, and CMOS compatibility, which can be leveraged for data processing
+and storage applications in today’s digital era. To implement such functionalities, controlling and manipulating electron spins is of prime
+interest. One of the efficient ways of achieving this in spintronics is to use the electric field to control electron spin or magnetism through
+the voltage-controlled magnetic anisotropy (VCMA) effect. VCMA avoids the movement of charges and significantly reduces the Ohmic
+loss. This article reviews VCMA-based spintronic devices for magnetic memory applications. First, we briefly discuss the VCMA effect and
+various mechanisms explaining its physical origin. We then mention various challenges in VCMA that impede it for practical VCMA-based
+magnetic memory. We review various techniques to address them, such as field-free switching operation, write error rate improvement, wid-
+ening the operation window, enhancing the VCMA coefficient, and ensuring fast-read operation with low read disturbance. Finally, we draw
+conclusions outlining the future perspectives.
+© 2024 Author(s). All article content, except where otherwise noted, is licensed under a Creative Commons Attribution (CC BY) license
+(https://creativecommons.org/licenses/by/4.0/). https://doi.org/10.1063/5.0201648
+I. INTRODUCTION
+The development of substantial data storage and processing
+capabilities of the devices is essential for modern applications, such
+as the Internet of Things and artificial intelligence. For several
+decades, semiconductor memories like static and dynamic random
+access memories (RAMs) have been at the forefront of data storage
+solutions.1,2 As semiconductor memories are scaled down, charge
+leakage issues increase, raising standby power dissipation.3,4 This
+limits their application in areas requiring substantial data storage
+and processing. However, the standby power dissipation in nonvol-
+atile memories is negligible, making pursuing nonvolatile memory
+technologies essential. Spintronic devices meet these criteria and
+hold potential as one of the future alternative technologies.5–7
+Magnetic random access memories (MRAMs) based on the mag-
+netic tunnel junction (MTJ), the flagship spintronic device, are very
+promising in this direction.8–10 The MTJ device consists of a thin
+insulating spacer (non-magnetic) sandwiched between two ferro-
+magnetic (FM) layers,8 a pinned layer (PL), and a free layer (FL).
+The spin direction of the PL is immutable due to its high coercivity
+and cannot be changed by applying the practical magnetic field,
+while the spin orientation of the FL can be modulated relatively
+easily.5 The relative spin directions of these FM layers define the
+electrical conductivity of the MTJ device.11,12 The electrical resis-
+tance is low when the magnetization direction of the FM layers is
+parallel (P) and high when it is antiparallel (AP) to each other.13,14
+Controlling and manipulating the magnetization of the FL is
+crucial for developing MRAMs. Various techniques have been
+employed to achieve this, including the use of the Oersted
+field,15–17 spin transfer torque (STT),18–23 thermal gradient,24,25
+spin–orbit torque (SOT),26–31 and VCMA.32–37 The Oersted field
+technique, which powered the initial generation of MRAMs,
+encounters scalability challenges as device miniaturization necessi-
+tates a larger magnetic field.28 The STT mechanism was first
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-1
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 3 ---
+theoretically introduced in 1996 by Slonczewski18 and Berger21 and
+can resolve this shortcoming. STT can manipulate the magnetiza-
+tion of the FL using a spin-polarized current that flows through the
+MTJ device without needing an external magnetic field.38 In
+STT-MRAMs, both the read and write currents share the same
+path, which may cause disturbance in the reading procedure.39,40
+Moreover, the writing process requires a considerably higher
+current magnitude that can break down the insulating barrier,
+causing reliability issues.41–44 In this geometry, the spin directions
+of the FL and PL are colinear, leading to a long incubation delay45
+and making it unsuitable for high-speed applications. Substantial
+switching current in STT necessitates oversized access transistors,
+hampering the component density of the STT-based MRAM and
+limiting its competitiveness.46–48 Many researchers are actively
+working on STT to improve the switching efficiency and speed of
+the device.49–52 Hu and Worledge from IBM introduced a double
+spin-torque MTJ (DS-MTJ) device using two PLs with one FL.49,50
+Due to these two PLs, the FL experienced spin torque from both
+PL/FL interfaces. Thus, this reduces the switching current by two
+times. With this technique, they reported less switching error with
+a sub-nanosecond current pulse. Safranski et al. experimentally
+demonstrated53 STT switching in the DS-MTJ device with a
+current 10 times and power consumption 3–10 times less than the
+conventional three-terminal SOT switching for a similar energy
+barrier.
+As mentioned earlier, the SOT technique can also manipulate
+the FL spin. Here, write current flows through high spin–orbit cou-
+pling (SOC) material, such as heavy metal (HM),27,54 topological
+insulator,55–57 antiferromagnet (AFM),58 etc. The SOC converts
+charge current into spin current via the spin Hall effect in the bulk
+SOC material59 and via the Rashba–Edelstein effect at the material
+interfaces.60,61 This method separates the read and write current
+paths29,33,62–64 and alleviates the electrical stress on the oxide
+spacer when performing write operations.65 In SOT, the initial
+magnetization direction of the FL and spin polarization direction at
+the HM/FL interface are perpendicular. Therefore, fast switching
+can be achieved;29 in other words, it needs a very short current
+pulse to complete the magnetization switching. The extra third ter-
+minal required in the SOT devices penalizes the chip density.66
+However, Wu et al. experimentally studied voltage-gated SOT
+(VGSOT) with four MTJ devices and claimed component density
+close to the two-terminal device.35 Joule heating is another major
+concern in the STT and SOT mechanisms due to the current flow
+via the device.67,68 VCMA is one of the methods used to mitigate
+this Ohmic loss issue. Instead of the motion of charge carriers and
+current flow, VCMA employs the electric field to control the elec-
+tron spin. Typically, it involves an MTJ device characterized by a
+high resistance-area (RA) product.69–71 As a result, the current that
+passes through the thin insulating barrier is extremely minimal,
+enhancing the energy efficiency of VCMA and making it appealing
+for a wide range of applications, such as MRAMs,72,73 random
+number (RN) generators,74–76 physically unclonable functions
+(PUFs),77–79
+neuromorphic
+computing,80,81
+and
+spintronic
+oscillators.82–87
+In
+this
+article,
+our
+primary
+focus
+is
+the
+VCMA-MRAM, which is discussed in Secs. II and III.
+Reducing the size of the device is essential to achieve a high
+chip density. The perpendicular magnetic anisotropy (PMA)
+system, known for its scalability and thermal stability, is more
+advantageous than
+the
+in-plane
+magnetic
+anisotropy
+(IMA)
+system.88,89 Consequently, devices utilizing PMA nanomagnets are
+favored over those with IMA. However, the PMA system necessi-
+tates an external symmetry-breaking field to facilitate deterministic
+switching,90,91 which poses challenges for practical applications.
+Hence, field-free switching operation is very desirable and a hot
+research topic. VCMA switching is precessional in nature, and,
+consequently, it also suffers from problems such as high write error
+rate (WER) and narrow operation window. Moreover, a low
+VCMA coefficient and a read disturbance rate (RDR) are some
+additional concerns associated with VCMA-based MRAMs. This
+article looks into the recent advancements toward addressing these
+challenges. This article is structured as follows: Sec. II briefly dis-
+cusses the VCMA effect and its physical origin, Sec. III reviews
+various challenges in VCMA and techniques to address them,
+Sec. IV outlines future perspectives and draws concluding remarks.
+II. VCMA EFFECT AND ITS PHYSICAL ORIGINS
+First, we present the phenomenological description of the
+VCMA effect for easy understanding to the readers. Later, we
+briefly discuss different mechanisms proposed in the literature to
+explain the microscopic origin of VCMA.
+A. Phenomenological description
+The energy barrier separates two energy minimum states of
+the FL of the MTJ device. A significant energy barrier is necessary
+to ensure the thermal stability of the FL. First, we discuss the mod-
+ulation of this energy barrier due to applied voltage, as can be seen
+in Fig. 1. The voltage-dependent energy barrier [Eb(V)] due to the
+VCMA effect can be given as92
+Eb(V)  AMTJ[Ki(V)  2πM2
+s (Nz  Nx,y)tFL],
+(1)
+where AMTJ, Ki(V), Ms, tFL, Nx,y, and Nz are the cross-sectional cir-
+cular MTJ area, voltage-dependent interfacial PMA, saturation
+magnetization, FL thickness, and demagnetization factors in the
+in-plane and perpendicular directions, respectively. The VCMA
+FIG. 1. (a) MTJ device with applied voltage and (b) modulation of the energy
+barrier by applying voltage on the MTJ device. The +V on the MTJ reduces
+(enhances) the energy barrier between two stable states.
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-2
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 4 ---
+effect might exhibit a non-linear relationship with the applied
+voltage. However, for the typical voltage range used for MRAM
+devices, it can be assumed that Ki(V) linearly depends on the
+voltage (V) at oxide and can be expressed as92,93
+Ki(V) ¼ Ki(V ¼ 0)  βV/tox,
+(2)
+where β and tox are the VCMA coefficient and oxide thickness,
+respectively. As can be seen from Eqs. (1) and (2), as well as in
+Fig. 1, the energy barrier increases for the negative voltage (light
+blue color) and decreases for the positive voltage (red color).
+The energy barrier can be eliminated entirely for a voltage
+called critical voltage (VC) and this critical voltage is given by94
+VC ¼ Δ(V ¼ 0)toxkBT/(AMTJβ),
+(3)
+where Δ(V ¼ 0) is the thermal stability at zero voltage and is
+defined as [Ki(V ¼ 0)  2πM2
+s (Nz  Nx,y)tFL]/kBT, where kB is the
+Boltzmann constant and T is the operating temperature of the
+device. The thermal stability of the FL of the MTJ device is also
+affected by the voltage at the oxide and can be estimated by solving
+Eqs. (1) and (2) as
+Δ(V) ¼ Δ(V ¼ 0)  βVAMTJ/kBTtox:
+(4)
+Once the energy barrier is eliminated, an in-plane magnetic
+field is required to break the symmetry and induce magnetization
+switching deterministically. This in-plane magnetic field can be
+achieved through various sources detailed in Sec. III.
+The VCMA coefficient is the modulation in areal density of
+anisotropy energy per unit electric field.95 It can be obtained from
+the slope of PMA energy density vs the electric field curve [see
+Eq. (2)]. This curve can be obtained by different methods, such as
+hysteresis measurements,96 microwave ferromagnetic resonance,97,98
+and magnetoresistance curve.98
+A few parameters, such as saturation magnetization and PMA
+constant, are significantly affected by the operating temperature of
+the device. These variations reasonably impact the switching per-
+formance of the device. Therefore, these must be considered during
+device operations. The temperature-dependent saturation magneti-
+zation (Ms(T)) and PMA constant (Ki(T)) can be given as99–101
+Ms(T) ¼ Ms(0) 1 
+T
+TC
+
+ϑ
+"
+#
+,
+(5a)
+Ki(T) ¼ Ki(0)[1  δT],
+(5b)
+where Ms(0) and Ki(0) are the saturation magnetization and PMA
+constant at 0 K, respectively, and TC is the Curie temperature. ϑ
+and δ are the fitting parameters and their values can be obtained
+from experimental measurements if required.
+B. Microscopic mechanisms behind physical origin
+The theoretical prediction of the VCMA effect in the metal
+was given by Nie and Blügel in 2000.102 In 2007, Weisheit et al.103
+first demonstrated the VCMA effect in ultrathin FePt and FePd
+layers. They utilized propylene carbonate electrolytes to prevent
+hydrogen formation and diffusion into the film under negative
+voltage. They observed reversible changes in the coercivity of the
+FePt or FePd films when immersed in the electrolyte, depending
+on the applied voltage. Later, in 2009, Maruyama et al.104 studied
+the effect of the electric field on the magnetic anisotropy in a thin-
+film structure of Fe/MgO. They reported a large change in mag-
+netic
+anisotropy
+(40%)
+by
+a
+small
+voltage
+(<100 mV/nm).
+Hereafter, Leistner et al.105 reported a significant change in mag-
+netic anisotropy by 25% using FePt-based thin film due to
+charge-induced differences between surface compositions. They
+demonstrated the manipulation of magnetism in metal oxides
+using an electric field via reversible oxidation/reduction pro-
+cesses.105 There are various possibilities for VCMA emanation,
+such as the voltage-induced redox reaction,106,107 electromigra-
+tion,108
+charge
+trapping,109
+Rashba
+effect,110,111
+piezoelectric
+effect,112 and purely electronically induced VCMA,113,114 etc. The
+first three mechanisms can cause an adequate VCMA coefficient
+(in order of thousands of fJ/V m).106,108,109 Nonetheless, their com-
+patibility with high-speed MRAM applications is compromised by
+the sluggish pace of chemical reactions.95,113 The prevailing expla-
+nation for the VCMA effect in thin films attributes it to the accu-
+mulation or depletion of charges at the HM/oxide interface.113 This
+can change the band structure115 along with the electronic occu-
+pancy of 3d orbitals.116 Such changes can induce significant PMA.
+Purely electronically induced VCMA effects, such as anisot-
+ropy in the orbital angular momentum resulting from charge
+doping114 and induction of an electric quadrupole,114 are discussed
+below. The variation in the orbital magnetic moment is elucidated
+by selectively introducing electron/hole doping in the electronic
+orbitals of atoms at the interface, which explains the VCMA
+effect.114,117 Kawabe et al.117 demonstrated the modulation of the
+orbital magnetic moment in the ultrathin Co induced by an electric
+field. The orbital magnetic moment mechanism is shown in
+Fig. 2(a). The PMA energy can be changed due to this effect
+through
+the
+SOC
+from
+the
+spin-conserved
+excitation
+pro-
+cesses.114,117,118 The PMA energy in ferromagnetic metals is
+defined as the disparity between the SOC energies associated with
+the perpendicular and in-plane magnetizations, which can be given
+by the first term of the following equation:119
+λ
+4h hΔLξ, ##i  hΔLξ,""i
+
+
+þ 7λ
+2h hΔT0
+ζ,#"i  hΔT0
+ζ,"#i
+
+
+,
+(6)
+where λ and h are the SOC coefficient and reduced Planck’s
+constant,
+respectively.
+The
+orbital
+angular
+momentum
+is
+hΔLξi ¼ hLzi  hLxi
+with
+hLzi
+and
+hLxi
+being
+the
+z-
+and
+x-components of the spin angular momentum, respectively. The
+magnetic dipole moment is hΔT0
+ζi ¼ hT0
+zi  hT0
+xi with hT0
+zi and
+hT0
+xi being the corresponding z- and x-components of a magnetic
+dipole, respectively. The symbols ↑(↓) represent the majority
+(minority) spin bands’ contributions, respectively.
+Another mechanism responsible for the VCMA effect is the
+electric field at the metal and dielectric interface.120 This field is
+typically non-uniform along the direction perpendicular to the
+interface. It interacts with the electric dipole and the quadrupole
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-3
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 5 ---
+moments of the electron shells within the metal layer. The mecha-
+nism is illustrated in Fig. 2(b). An electric quadruple is associated
+with the magnetic dipole moments within an electron shell and
+affects the magnetic anisotropy through the SOC.120,121 In 5d mate-
+rials like Pt that exhibit proximity-induced spin polarization, the
+magnetic dipole T0
+z term plays a crucial role in the VCMA effect.
+This term corresponds to an electric quadruple in the atoms.122
+This can be seen from the second term of Eq. (6). Interested
+readers can explore several insightful review articles by Nozaki
+et al. in 2019,114 Pardede et al. in 2020,123 and Shao and Khalili
+Amiri in 2023.124 They primarily focused on the mechanisms and
+applications of the VCMA. Rather than discussing these aspects
+again, we primarily focus on reviewing various challenges associ-
+ated with VCMA switching for VCMA-MRAM applications and
+possible methods to address them. We now discuss these issues
+sequentially in Sec. III.
+III. VARIOUS CHALLENGES IN VCMA
+With various advantages, the VCMA-based MRAM has some
+issues, such as external field requirement, high WER, narrow oper-
+ation window, low VCMA coefficient, and RDR and read delay, as
+shown in Fig. 3. In Secs. III A–III E, we review the recent advance-
+ments toward addressing these issues.
+A. Field-free switching operations
+Field-free switching is crucial for implementing high-density
+MRAMs. Here, we focus on field-free VCMA switching assisted by
+various mechanisms, such as VGSOT, built-in in-plane magnetic
+field, STT, conically magnetized FL (CFL), strain, self-regulated
+precessional switching, Rashba field, and skyrmion techniques, to
+accomplish this. We reviewed all these techniques reported until
+the writing of the paper to the best of our knowledge.
+1. VGSOT technique
+When used independently, VCMA or SOT switching in the
+PMA nanomagnet requires an external symmetry-breaking mag-
+netic field.92 However, this field requirement can be eliminated
+when it (VCMA or SOT) is used in a suitable combination with an
+exchange bias (EB) or STT. Many researchers have reported field-
+free
+switching
+operations
+in
+such
+devices
+theoretically
+and
+experimentally.33,35,125–129 The VGSOT device comprises an MTJ
+on top of a high SOC material. The voltage pulse on the MTJ
+device induces the VCMA as well as STT effects. The minimum
+current density required for deterministic SOT switching, called
+critical current density, can be reduced using this voltage pulse.33
+However, its mechanism is not clear and needs to be clarified. One
+possibility is due to modifications of Rashba SOC (RSOC) by the
+electric field.111,130 Another possible mechanism is the modulation
+of interfacial PMA by the voltage pulse.116,126
+In 2016, Yoda et al. studied131 the magnetization dynamics of
+the IMA MTJ of the VGSOT device. They fabricated a prototype
+FIG. 3. Various challenges associated with VCMA switching. It includes the
+requirement of the external field, high write error rate, narrow operation window,
+low VCMA coefficient, and read disturbance and delay.
+FIG. 2. Emergence of the VCMA effect. (a) Orbital magnetic moment and
+(b) electric quadrupole. Reproduced under the terms of the CC BY 4.0 license
+from Nozaki et al., Micromachines 10(5), 327 (2019). Copyright 2019 MDPI.
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-4
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 6 ---
+structure (eight MTJs). The MTJ voltage was employed as a
+selection criterion, while the SOT effect served as a writing
+mechanism. Their simulation results showed the possibility of a
+low WER (1012) with a reasonable VCMA coefficient and
+thermal stability in a wide range of write current densities.131 In
+2017, Inokuchi et al. experimentally demonstrated a voltage-
+controlled spintronic memory (VoCSM) device125 by modulating
+the strength of the energy barrier. The Ta/CoFeB/MgO/CoFeB/Ru/
+CoFe/IrMn multilayer stack was fabricated on a thermally oxidized
+Si substrate. The HM (Ta) was grown over a thermally oxidized Si
+substrate and treated as a write line. The strings of the IMA MTJs
+were fabricated on the common write line on Ta. They found
+improvement in the read disturbance as well as WER [no switching
+error for the 5  108 Landau–Lifshitz–Gilbert (LLG) simulations]
+by adequately controlling the read and write sequences. The varia-
+tion in the SOT current density is attributed to alterations in the
+surface anisotropy of the FL induced by control voltage.125 These
+works mentioned above were for the IMA MTJ-based devices, and
+the discussion of VCMA switching in the perpendicular MTJ
+(pMTJ) device assisted by EB field or a combination of STT and
+SOT is given below.
+a. VGSOT with antiferromagnet. An AFM is vital to realize
+field-free
+switching
+operations
+in
+today’s
+spintronic
+devices.
+Experimental evidence supports the capability of an AFM to
+exhibit SOT and induce an EB field.132,133 This EB field can miti-
+gate the external field requirement and has already been used to
+realize field-free SOT switching. Figure 4(a) depicts a VGSOT
+device with AFM as the high SOC material. In 2019, Peng et al.
+experimentally demonstrated134 field-free switching in a pMTJ
+device using a combination of SOT, exchange bias, and VCMA.
+They reported a reduction in the current density by 49% using
+0.6 V on the MTJ with a small write energy of 6.2 fJ/bit. In 2020,
+Zhang et al.33 realized field-free switching in a three-terminal
+VGSOT device. They used a pMTJ device (CoFeB/MgO/CoFeB) on
+an AFM (IrMn) for the simulation. The EB field from the AFM
+can tilt the FL magnetization.135 They started the simulation with
+SOT only. This resulted in an incomplete field-free switching with
+a significant plateau time.33 However, they found a substantially
+reduced plateau time by including the VCMA effect. An MTJ
+voltage of 1.3848 V could completely eliminate the effective PMA
+field and reduce the critical current by 30 times compared to the
+SOT case without the VCMA effect.33
+Later, in 2021, Kang et al. experimentally reported127 field-free
+SOT switching using an electric field. They used two side gates to
+create lateral electric fields that could break the symmetry. This
+resulted in deterministic switching without requiring an external
+field. In 2022, Alla et al. reported128 a simulation-based field-free
+VCMA switching in the VGSOT device. They studied the effect of
+various writing mechanisms (VCMA, SOT, and EB field). In 2023,
+Lu et al. recently realized field-free switching operation in the
+VGSOT device.129 They reported improvement in the annealing
+temperature and PMA by introducing a thin W layer at the
+AFM/FM interface. A voltage of 0.76 V to the MTJ can reduce the
+required current by 73% and power consumption by 84%. They also
+reported a reduction in the coercive field due to the VCMA effect.
+b. Combination of SOT, STT, and VCMA. The voltage pulse at
+the MTJ device induces two different effects: STT and VCMA. SOT
+and STT, in combination with the VCMA effect, promise faster and
+more energy-efficient switching than STT or SOT switching alone.
+In 2020, Grimaldi et al.136 combined these three effects in a three-
+terminal pMTJ device and experimentally demonstrated magnetiza-
+tion switching. Later, in 2021, Krizakova et al.137 experimentally real-
+ized field-free SOT switching operation assisted by a dual-bias
+voltage pulse in a three-terminal device. The group also performed
+micromagnetic simulations to verify the experimental outcomes.
+Figure 4(b) depicts the operation of the device. With this combina-
+tion, they showed an improvement in switching efficiency or critical
+switching energy below the STT technique. This voltage does not
+compromise the ability of SOT switching with sub-ns current pulse.
+A year later, Yoshida et al.138 reported micromagnetic simulation-
+based field-free switching driven by SOT and STT, including the
+VCMA effect in a pMTJ device. By properly optimizing the SOT
+FIG. 4. VGSOT device structure with a pMTJ device on (a) an AFM and (b) an
+HM. The light orange color arrows in the AFM adjacent to the FL represent the
+EB field (x-direction). The white color arrows in the MTJ show the spin direc-
+tions of the FM layers (z-direction). The spin polarization direction at the HM
+and FL interface is in the y-direction.
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-5
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 7 ---
+and STT pulses, they achieved 100% switching for 100 trials. This
+combination reduces power consumption tenfold and the switching
+time by ∼50% compared to STT switching alone.
+Due to the various benefits of the VGSOT device discussed, it
+avails in many applications, such as multilevel switching using
+voltage-controlled SOT,139 computing-in-memory,140 logic locking
+for hardware security using VGSOT device,141 and logic locking for
+high-speed digital circuits.142 However, the three-terminal VGSOT
+device faces a low component density issue compared to the two-
+terminal device. It penalizes the component density of the chip.
+Moreover, the requirement for two different pulses is another
+concern with such devices.
+2. Built-in in-plane magnetic field technique
+Another possible way to get field-free switching involves
+using a magnetic field generated by integrating an additional
+magnetic layer in the device structure. The strength of the mag-
+netic field can be manipulated by adjusting the distance between
+the embedded magnet and the FL. This embedded magnet allows
+its use in the STT, SOT, and VCMA in different forms.32,90,143–145
+In 2017, Deng et al. theoretically proposed32 an elliptical bias
+layer (BL) in an elliptical pMTJ device for VCMA switching. The
+BL is engineered inside the MTJ stack to provide an EB field,
+resulting in field-free precessional VCMA switching.32 The sche-
+matic shown in Fig. 5 comprises an elliptical pMTJ on an extra
+BL (10 nm) separated by a metal (3 nm). Micromagnetic/macro-
+spin simulations showed that an EB field of up to 50 mT can be
+obtained in such structures.
+The experimental realization of such devices by adding addi-
+tional magnetic layers or nanomagnets is available in the literature
+by many researchers for SOT143–145 and VCMA.146 The fabrication
+of the MTJ-based devices requires a metallic hard mask (MHM).
+The Co metal can be fabricated directly on the MTJ without an
+additional mask. Leveraging this advantage, Garello et al. used
+magnetic Co metal as an MHM in 2019,145 demonstrating a field-
+free SOT switching. Later, Tsou et al.99 performed a write margin
+analysis for this structure through numerical simulation. By
+employing this method, they showed a 60% reduction in the
+required switching current. Another major advantage of this struc-
+ture was the elimination of the plateau time, which significantly
+improves the operation speed of the device. Later, in 2020, Kong
+et al.144 used an additional in-plane magnetized CoFeB layer to
+couple with a perpendicularly magnetized CoFeB layer via the Ta
+spacer in the pMTJ device and experimentally performed field-free
+switching. After two years of the Kong group, Cai et al.143 demon-
+strated it in a similar structure with CMOS-compatible 300 mm
+integrated with the pMTJ device for MRAMs. They reported an
+ultra-fast (current pulse duration of 0.3 ns) and energy-efficient
+switching for the MRAM device.
+In 2020, Wu et al. reported146 field-free VCMA switching
+using an embedded nanomagnet (MHM). VCMA needs the same
+polarity of the write pulse for AP-P or P-AP transitions because it
+is unipolar. Therefore, a pre-read process is required before writing
+VCMA-based memories to ensure the magnetization state of the
+FL.114,146,147 Due to the presence of MHM, the threshold voltages
+of these transitions (AP-P and P-AP) can be different.146 This can
+be helpful for the pre-read operation. They showed a WER value of
+the order of 105 for this device.
+3. STT technique
+As mentioned, STT switching can be achieved without relying
+on external field assistance but requires a large current when used
+alone. Usually, STT switching requires a lengthy current pulse of
+several nanoseconds; shortening this pulse width necessitates a sig-
+nificantly higher switching current due to the inverse relationship
+between pulse duration and required current amplitude.28 The
+switching current required for magnetization is directly propor-
+tional to the energy difference between two minima, necessitating a
+substantial current to overcome the large energy barrier to ensure
+thermal stability.93 This large current may damage the thin oxide
+layer of the MTJ. However, combining SOT with STT can lower the
+necessary switching current, preventing the breakdown of the
+tunnel barrier. A few researchers reported magnetization switching
+by combining the SOT and STT techniques.46,148,149 This may help
+the switching dynamics in two ways: STT-assisted SOT switching
+and SOT-assisted STT switching. In the former case, STT can
+provide the necessary bias to break the symmetry and allow magne-
+tization switching without an external field.148 In the latter sce-
+nario, SOT causes an initial deviation in the magnetization
+alignment within the ferromagnet. This would eliminate the incu-
+bation delay and, thus, allow fast switching.148 This combination
+ensures field-free switching operation.148 VCMA helps the STT
+switching as a suitable combination of STT and VCMA ensures
+switching at a lower current.92,93,150,151 This can be achieved
+through voltage pulse engineering. A voltage pulse can reduce the
+energy barrier due to the VCMA effect. After this, STT current due
+to
+a
+small
+voltage
+pulse
+can
+complete
+the
+magnetization
+FIG. 5. Diagram of an elliptical pMTJ device with the major axis along the x-
+direction. The extra bias layer (BL) provides an in-plane magnetic field through
+exchange coupling or EB field in the x-direction. The metal separates the BL
+and FL. Reproduced under the terms of the CC BY 4.0 license from Deng
+et al., Sci. Rep. 7(1), 16562 (2017). Copyright 2017 Nature Portfolio.
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-6
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 8 ---
+switching.93,103 Figure 6 illustrates the STT-assisted VCMA switch-
+ing mechanism.
+In 2012, Alzate et al. experimentally demonstrated152 VCMA
+switching without external field assistance. They used a small
+non-zero leakage current insufficient for purely STT switching
+through the pMTJ device, achieving a tenfold reduction in switching
+energy. In 2014, Kanai et al. experimentally demonstrated150 that
+combining consecutive voltage pulses for the VCMA and STT effects
+enables faster and more reliable magnetization switching without
+external magnetic fields and explored how the width of these pulses
+influences switching probability. A switching probability of 1 can be
+achieved using optimized voltage pulses. Kang et al.92 used this tech-
+nique for VCMA-MRAM cell design and showed that this could be
+useful in avoiding source degeneration problems.
+For getting deterministic switching using a combination of the
+STT and VCMA mechanisms, there are two concerns: for a small
+voltage (very small STT), a non-zero stray magnetic field from the
+PL is required, and second, for a high voltage, large STT can over-
+come this stray field effect and switch the magnetization, but
+switching speed is reduced (few μs to few ms). This makes the
+above technique unsuitable for high-speed MRAMs.151 The proper
+optimization of these pulses is required to get field-free VCMA
+switching with STT assistance.
+4. CFL method
+An elliptical MTJ can provide the required in-plane magnetic
+field owing to its shape anisotropy. This field can help in getting
+field-free switching operations for a few cases.124,153 This field,
+however, depends upon the in-plane component of the magnetiza-
+tion and cannot be helpful for fully perpendicular FL cases.153 A
+deviation of the magnetization from the perpendicular direction is
+required to execute precessional switching. To deal with this
+concern, numerous researchers suggested the idea of a CFL (see
+Fig. 7).153–156 The stabilization of the conically magnetized state
+arises from the interplay between the first- and second-order mag-
+netic anisotropy.157–160 The cone state is experimentally observed
+in thin films of Co deposited on Pt or Pd,161 Co/Pt multilayers,162
+MgO/CoFeB/Ta heterostructure,163 and FM/AFM interfaces.164–166
+The initial magnetization state at minimum energy for zero
+applied voltage can be given by153,156 m(0)
+z
+¼ +
+ﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+1 þ K(0)
+1,eff /2K(0)
+2
+q
+,
+m(0)
+x
+¼ +
+ﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+1  (m(0)
+z )
+2
+q
+,
+and
+m(0)
+y
+¼ 0,
+where
+K(0)
+1,eff
+(¼K(0)
+1
+ 0:5πM2
+s (Nz  Nx)) and K(0)
+2
+are the effective first-order
+anisotropy constant and second-order anisotropy constant at zero
+voltage,
+respectively.
+The
+equilibrium
+polar
+angle
+θ(0) ¼ sin1
+ﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+K(0)
+1,eff /2K(0)
+2
+q
+
+
+at 0 K can be found by competition
+between K(0)
+1,eff and K(0)
+2 .167 The cone state region, which is shown in
+Fig. 7 by the shadow, having K(0)
+1,eff , 0 and K(0)
+2
+. 0:5K(0)
+1,eff .
+These anisotropy constants depend linearly on the voltage [see
+Eq. (2)]. In the CFL, the magnetization tilts from the out-of-plane
+(OOP) [see Fig. 7(b)], reducing the energy required to write the
+MTJ device, but this necessitates symmetry breaking through the
+application of an in-plane magnetic field.
+In 2015, Matsumoto et al. reported154 STT switching with the
+CFL MTJ device. They observed a reduction in the current density
+by 22% and switching time by 56% than the perpendicular FL for
+the same thermal stability. In 2016, Park et al. experimentally
+showed159 the manipulation of the easy cone state in the Ta/Pt/
+CoFeB/MgO structure using an electric field. They reported the
+canting of the easy axis from the perpendicular direction to form a
+cone state. They reported the control of the cone angle (θ) from
+22° to 32° by an electric field of 4 MV/cm. In 2018, Matsumoto
+et al. demonstrated153 field-free VCMA switching in the CFL pMTJ
+FIG. 6. (a) Device structure of a pMTJ device with applied voltage, (b) consecutive voltage pulses for the VCMA and STT effects, and (c) energy barrier height modulation
+by voltage. The first voltage pulse (VVCMA) reduces the energy barrier. Consequently, a small STT current by small voltage (VSTT) ensures the magnetization flipping
+without external field assistance.
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-7
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 9 ---
+device with elliptical nanomagnets that use shape anisotropy to
+induce an in-plane magnetic field, offering a practical design guide
+for magnetic memory applications. They also derived an analytical
+formula for precessional switching and conducted a comprehensive
+study of WER in CFL-based VCMA switching devices.156 They
+reported a WER less than 105. They reported voltage pulse
+width (tPW) effect on the WER for K1,eff ¼ 80 kJ/m3 and
+Ku2 ¼ 40 kJ/m3 with optimum WER (8  107) at tPW ¼ 0:55 ns
+and θ(0) ¼ 450. They also reported the dependence of the optimum
+WER on θ(0) for the optimum values of voltage pulse width
+(0.55 ns) and (K1,eff , Ku2). Such CFL-based field-free VCMA
+switching is yet to be demonstrated experimentally. Mass produc-
+tion of the elliptical MTJ devices may suffer fabrication problems
+due to a lack of precise control of the cross section of the MTJ
+device. This may lead to different shape anisotropy fields for differ-
+ent MTJs. Our group recently studied168 WER in the CFL MTJ
+device with circular nanomagnets using the SOT method without
+using the external field. Our device structure consists of a CoFeB/
+MgO/CoFeB/PtMn multi-structure stack. We exploited the EB field
+from AFM (i.e., PtMn) to realize field-free switching and also used
+field-like torque (FLT) to improve the switching performance of
+the device. We reported a WER of the order of 107. A similar
+WER study in a circular MTJ can be achieved using the VCMA
+mechanism.
+5. Strain control
+Strain is of great interest in controlling the magnetization
+dynamics. Magnetostriction is a well-known phenomenon where
+an applied magnetic field can change the shape or dimensions of
+the magnetic materials. The inverse of magnetostriction, the
+Villari effect, allows change in magnetization in response to the
+mechanical strain.169,170 This happens because of the presence of
+magnetocrystalline anisotropy. Much research has been done on
+strain-mediated magnetization switching using techniques such as
+STT,86,171–175 SOT,26,176,177 and VCMA.178,179 In 2013, Biswas
+et al. reported energy-efficient STT switching assisted by surface
+acoustic waves.172 In 2014, Khan et al. studied strain-assisted STT
+switching and reported a reduction in the required energy by 50
+times that of conventional STT-MRAMs.174 In 2018, Wang et al.
+theoretically
+reported
+field-free
+SOT
+switching
+assisted
+by
+strain.177 In 2020, Chen et al. achieved a switching probability of
+0.98 by implementing field-free strain-assisted SOT switching,
+notably reducing the required current.176 Later, in 2023, Mishra
+et al.26 reported this in the pMTJ device with the best-case switch-
+ing probability of 0.99.
+A few researchers theoretically reported field-free VCMA
+switching assisted by strain.178,179 Magnetization can be rotated up
+to 90 using the VCMA effect alone.180,181 As a result, achieving a
+predictable 180 rotation necessitates an external field assistance. In
+2017, Drobitch et al. investigated VCMA switching assisted by
+strain and STT179 in a two-terminal device. The device used per-
+pendicularly magnetized elliptical FM layers. The FL was made of
+Terfenol-D, a highly magnetostrictive material. This device is very
+crucial for a high-density MRAM. The schematic of such a
+strain-assisted VCMA device can be seen in Fig. 8. The pMTJ is on
+a thin piezoelectric layer attached to a conducting substrate. The
+applied voltage across the structure partly drops across the MTJ
+and partly across the piezoelectric layer, assuming that the highly
+conducting substrate drops negligible voltage. The voltage across
+the MTJ induces the VCMA effect, and the voltage across the pie-
+zoelectric layer generates the strain. This strain influences the FL
+anisotropy via magnetoelastic coupling between the piezoelectric
+layer and FL. This magnetic field can break the symmetry and
+result in deterministic switching. This magnetoelastic anisotropy
+field depends on the magnetization components of FM layers along
+the stress axis.179 Thus, it may lead to a high WER. They reported
+a WER of the order of 104.
+As mentioned earlier, Terfenol-D can have good magnetostric-
+tion properties, but the VCMA coefficient may be low. Moreover, it
+FIG. 8. The device structure of the strain-assisted VCMA switching. The pMTJ
+is made on the piezoelectric layer. The voltage (VPP) is applied across the struc-
+ture. It partly drops across the MTJ (VMTJ) and partly drops across the piezo-
+electric layer (VPIEZO). Magnetization of the FL is rotated by 90 (black color
+arrow) from OOP to in-plane due to the VCMA effect. Another 90 rotation can
+be achieved by symmetry-breaking field due to strain.
+FIG. 7. (a) An elliptical MTJ device with the Cartesian coordinate system. The
+major axis of the FL lies along the x-direction. (b) Defining different initial mag-
+netic states as a function of effective first-order (K(0)
+1,eff) and second-order (K(0)
+2 )
+anisotropies at zero voltage. The shaded region in the second quadrant repre-
+sents the stable cone state with polar angle θ. The hatched region is a bistable
+state. Redrawn from Casimir et al., J. Phys. Radium 20, 360 (1959). Copyright
+1959 EDP Sciences.
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-8
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 10 ---
+is a very fragile and costly material.182 Our group has, therefore,
+recently studied strain-assisted VCMA switching in mainstream
+materials like CoFeB.178 We used a similar device structure to that
+of Drobitch et al.179 We performed macro-spin simulations to
+investigate the effect of strain and EB field on the WER of the
+device.178 We reported the WER value of the order of 105 with a
+short voltage pulse of the duration of 0.6 ns. These strain-mediated
+devices are yet to be realized experimentally. Furthermore, strain
+can affect parameters like exchange bias,183 PMA,184,185 and
+VCMA.184 Therefore, optimizing these parameters while demon-
+strating the device experimentally is crucial.
+6. Self-regulated precessional switching method
+Most methods to realize field-free switching discussed here are
+based on the MTJ device with a single PL and FL. However, the
+advantages of using two PLs on the device performance for STT
+are already discussed in Sec. I.51 Numerous researchers studied the
+double-barrier MTJ device structure.186–188 Recently, Sin and Oh
+have proposed189 a novel method to achieve field-free switching
+operation without external field assistance. They exploited the fact
+that the resistance of the device in the antiparallel state is larger
+than that in the parallel state to break the energy symmetry. The
+device structure is shown in Fig. 9 and comprises two PLs with one
+FL. The “up” state and read operations are executed by applying a
+constant current through MTJ1 via terminals T1 and T3, as seen in
+Fig. 9(b). The purpose of current is not to create STT but to induce
+charge in the oxide layer for the VCMA effect. The VCMA effect
+reduces the PMA, thus reducing the resistance and the voltage drop
+across the device. The energy symmetry is broken if the current is
+sufficient, and the parallel “up” state becomes more favorable.
+MTJ2 similarly enables deterministic writing of the “down” state
+through the injection of current through terminals T2 and T3 [see
+Fig. 9(c)]. They reported improved switching performance of the
+device compared to other VCMA techniques with a small mean
+energy consumption of 38.22 fJ and a mean switching delay of
+3.77 ns.
+7. Rashba field method
+Another way to realize a field-free switching operation is to
+use the Rashba field. Some researchers have studied magnetization
+dynamics induced by the Rashba field.110,190,191 The Rashba effect
+occurs due to the breaking of inversion symmetry in heterojunc-
+tions. Deng et al. utilized this technique and performed field-free
+VCMA switching.192 Brief mechanisms can be understood from
+Fig. 10. The device comprises an elliptical pMTJ on an HM.
+Voltage pulse V2 reduces the interfacial PMA due to the VCMA
+effect, and simultaneously applied voltage V3 generates the Rashba
+field (−y-direction) at the FM/HM interface, assisting the magneti-
+zation switching. The Rashba field can be given as
+~BR ¼
+αR
+2μBMs
+^z ~JFL
+	
+
+,
+(7)
+where αR, JFL, and μB are the Rashba coefficient, the current
+density through the HM, and Bohr magnetron, respectively. They
+reported fast (0.5 ns) and energy-efficient (6 fJ) switching in the
+pMTJ device with a large thermal stability of 61 and a large opera-
+tion window of 0.8 ns. The three-terminal device shown in Fig. 10
+requires two pulses (voltage and/or current). The additional termi-
+nal may penalize the chip density. Moreover, this method is yet to
+be reported experimentally for field-free VCMA switching.
+8. Skyrmion-assisted method
+A skyrmion is a topologically stable spin texture characterized
+by swirling magnetic moments and emerges in certain thin-film
+FIG. 10. Schematic of a three-terminal device structure with an elliptical MTJ
+on the HM. The direction of the effective Rashba field is shown by a blue color
+arrow (−y-direction), and the current flows in the −x-direction. Reproduced from
+Deng et al., Appl. Phys. Lett. 112(25), 252405 (2018) with the permission of AIP
+Publishing.
+FIG. 9. (a) Double-barrier MTJ device structure with two PLs and one FL,
+(b) writing “up” state and read operations by current flows through terminals T1
+and T3, and (c) writing “down” state by current flows through terminals T2 and T3.
+Reproduced under the terms of the CC BY 4.0 license from Sin et al., Sci. Rep.
+13(1), 16084 (2023). Copyright 2023 Nature Portfolio.
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-9
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 11 ---
+FM materials.193,194 The skyrmion can be manipulated using an
+electric field,195 spin-polarized current,196 etc. In the switching
+process, the skyrmion acts as an intermediate state and assists in
+switching the PMA nanomagnet.197,198 The applied voltage pulse
+reduces the interfacial PMA and creates a skyrmion. The voltage
+pulse is removed coincidently with the skyrmion’s inbreathing
+(shrinking) motion.199 Therefore, once the PMA is restored to its
+original value, the intermediate skyrmion annihilates to other ferro-
+magnetic magnetic states. The illustrative switching process is
+shown in Fig. 11. In 2018, Bhattacharya and Atulasimha197 pro-
+posed a two-terminal skyrmion-mediated VCMA switching mecha-
+nism for magnetic memory. They studied VCMA switching
+without an external field using Dzyaloshinskii–Moriya interaction
+(DMI).200,201 The equivalent magnetic field due to DMI can be for-
+mulated as ~HDMI ¼ (2D/μ0Ms)[(~∇ ~m)^z  ~∇mz],202 where D is the
+effective DMI constant and mz is the z-component of the reduced
+magnetization (~m). The DMI is in significant quantities at the
+FM/HM interface with high SOC and promotes the magnetization
+canting between the neighboring spins.197 This mitigates the require-
+ment of the external magnetic field. They performed 104 LLG simu-
+lations and found no switching error. Later, in 2020, Rajib et al.
+studied field-free VCMA switching assisted by skyrmion.199
+An MTJ device with smaller dimensions needs higher VCMA,
+PMA, and DMI values for the switching. Nozaki et al. experimen-
+tally reported an immense value of the PMA.95 Large values of the
+VCMA and DMI are theoretically predicted.203–205 However, these
+are yet to be reported experimentally. Moreover, skyrmion-
+mediated VCMA switching is yet to be done experimentally.
+Various
+field-free
+VCMA
+switching
+techniques
+reported
+experimentally and theoretically until the writing of the article are
+summarized in Table I (with corresponding WER values) and
+Fig. 12.
+B. WER improvement
+A large WER is another concern in the VCMA. VCMA switch-
+ing is precessional in nature, and it leads to a large WER. The WER
+has a non-monotonic dependence on the voltage pulse (amplitude
+and width) with a characteristic minimum, as has been observed by
+many researchers.114,151,178,179,206 This could occur due to the transi-
+tion between precession orbits induced by thermal effects.207 This
+can indeed limit the development of VCMA-based MRAMs. A very
+low WER is required for memory applications to avoid error correc-
+tion and write verification processes. For practical memories to work
+accurately, a WER less than 109 for chips with error correction
+FIG. 11. (a) Schematic of an MTJ device on the HM and (b) illustration of
+skyrmion-mediated switching operation. The ferromagnetic state can be
+reversed by simultaneously removing the voltage while inducing the inhalation of
+the skyrmion. Reproduced with permission from Rajib et al., IEEE Trans.
+Electron devices 67, 3883–3888 (2020). Copyright 2020 IEEE.199
+TABLE I. List of various field-free techniques and WER values.
+Field-free VCMA
+techniques
+Minimum WERs
+Comments
+VGSOT technique
+IMA system: 10−12 Ref. 131 and
+<5 × 10−9 Ref. 125
+There is no switching error for 5 × 108 simulations.125
+PMA system: 10−5 Ref. 35
+105 events with tPW of 0.4 ns.
+Embedded extra magnet
+9 × 10−5 Ref. 146
+This WER is measured at tPW = 1 ns.
+Strain-assisted VCMA
+10−4 Ref. 179 and 5 × 10−5 Ref. 178
+Simulated for 104 times with tPW = 0.7 ns179 and 105 times with tPW
+= 0.6 ns.178
+Rashba field-assisted VCMA
+0 Ref. 192
+Data extraction from the graph with 100 LLG simulations.192
+STT-assisted VCMA
+≈0.01 Ref. 152 and 0 Ref. 150
+Data extraction from the graph with 100 LLG simulations.150,152
+Skyrmion-mediated VCMA
+<10−4 Ref. 197
+No switching error for 104 LLG simulations.
+CFL method
+<10−5 Ref. 156
+Error correction is feasible at 300 K, excluding the external field.
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-10
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 12 ---
+code (ECC) and less than 1018 for chips without the ECC is
+desired.47,208 The error correction and write verification processes
+slow down the device operation speed. Here, we discuss various
+approaches to improve the WER.209,210
+1. Improving the thermal stability
+An enormous thermal stability of the MTJ device is necessary
+to make the device immune to thermal effects, resulting in a lower
+FIG. 12. The summarization of all the field-free VCMA switching operation techniques theoretically or experimentally reported in the literature.
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-11
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 13 ---
+WER. In 2016, Shiota et al. studied209 the impact of thermal stabil-
+ity on the WER. They reported improvement in the WER by
+increasing the thermal stability of the device and decreasing the
+damping constant (α). It has been shown that small α leads to
+a low switching error.211 A WER less than 1015
+can be
+obtained with a small α of 0.01 and thermal stability (Δ) value
+greater than 48.209
+2. Pulse engineering
+The switching performance of the device is sensitive to the
+voltage pulse parameters, such as amplitude, width, and rise/fall
+time. Utilizing a triangular pulse suggests a gradual change in the
+effective field from the OOP to the in-plane direction. Therefore, it
+makes the FL precession unstable. A rectangular pulse (zero rise
+and fall times) abruptly eliminates the effective PMA, causing the
+effective magnetic field to align in the in-plane direction. The mag-
+netization can precess around a stable axis and switch efficiently.
+The illustrative 3D magnetization trajectories for triangular (black
+color) and rectangular (green color) voltage pulses are shown in
+Fig. 13. These are simulated from the parameters given in Ref. 178
+and are mentioned for the sake of illustration only. Compared to
+the rectangular pulse, a significant precession can be seen for the
+triangular pulse (large rise and fall times). Large precession leads to
+a large WER once thermal fluctuations are considered.
+In 2019, Yamamoto et al. experimentally reported212 the
+importance of properly optimizing rise and fall times in getting a
+lower WER. The magnetization may be subjected to additional
+fields during the rise or fall time because of the uncompensated
+PMA. Because of this field, torque can pull the magnetization
+along the in-plane direction during the pulse rise time. This can
+increase the WER as the pulse rise time increases. With respect
+to the fall time, they found that a short and properly optimized
+pulse fall time (to compensate for the damping torque) can reduce
+the WER.
+3. Inverse bias method
+A large PMA is necessary to ensure adequate thermal stability
+of the device. Therefore, a large voltage pulse and/or VCMA coeffi-
+cient is required to eliminate the PMA to achieve precessional
+switching. Applying a voltage pulse with an opposite polarity
+(inverse bias) can resolve the abovementioned issues. The inverse
+bias pulse applied before and after the write pulse enhances PMA.
+This, therefore, improves the thermal stability of the device at the
+initial and relaxation states and can result in a lower WER. This
+method was experimentally confirmed by Noguchi et al. in
+2016.213 The technique has been illustrated in Fig. 14. Figure 14(a)
+shows the conventional voltage pulse and its associated PMA.
+Because of thermal noise, there can be mz distribution at the initial
+or the final states. Figure 14(b) shows the inverse bias method with
+the voltage pulse of opposite polarity to the write pulse being used
+before and after the write pulse. The opposite polarity voltage
+enhances the PMA and reduces the distribution of the mz states, as
+shown schematically in Fig. 14(b). The inverse bias method has
+another advantage in terms of pre-read and read-verify steps. As
+mentioned earlier, VCMA switching is unipolar, and the polarity
+of the applied voltage cannot define the magnetization direction.
+Therefore, pre-read is necessary to know the magnetization direc-
+tion before the writing process. Before the actual write pulse, the
+inverse bias pulse can be used to pre-read the state. In the same
+way, after the writing is done, it is essential to verify that the
+intended bit has been written correctly. This read-verify action can
+be done using the inverse bias pulse after the actual write pulse.
+In 2018, Ikeura et al.214 quantitatively studied the efficacy of
+this inverse bias method using macro-spin simulation. They
+reported a WER in the order of 106 using this technique. As men-
+tioned earlier, adequate thermal stability of the MTJ device can
+reduce the WER. The inverse bias voltage enhances PMA and,
+therefore, the thermal stability of the device at the initial and relax-
+ation states. Hence, the WER reduces significantly. In 2020,
+FIG. 13. Effect of pulse shaping on the switching performance of the device. (a) Triangular (black color) and rectangular (green color) voltage pulses and (b) correspond-
+ing magnetization trajectories (mz) with a large precession in the x–y plane for the triangular pulse (black color) than small precession for the rectangular pulse (green
+color).
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-12
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 14 ---
+Yamamoto et al. experimentally demonstrated215 the inverse bias
+effect on the WER. They reported that inverse biases after the
+write pulse can significantly improve the WER and operation
+window. However, the inverse bias voltage pulse before the write
+pulse does not substantially affect the WER or the operation
+window.
+The WER can be reduced further by the write verification
+schemes. Grezes et al.216 used a write verification process to achieve
+WER below 10−9 with a total program time of less than 10 ns.
+Table II and Fig. 15 summarize improvement in the WER reported
+theoretically
+and/or
+experimentally
+for
+the
+abovementioned
+techniques.
+C. Operation window improvement
+Another issue with the VCMA switching is a narrow operation
+window. To achieve deterministic switching, the voltage pulse should
+be turned off after the magnetization completes half precession
+cycle.209 The voltage pulse width (tPW) can be given by 209,214,217
+tPW ¼ π(1 þ α2)
+μ0γHip
+,
+(8)
+where μ0 is the vacuum permeability, γ is the gyromagnetic ratio,
+and Hip is the component of the effective magnetic field in the
+in-plane direction. Suppose a case when the pulse duration is less or
+more than the precession period. In that case, the WER value
+increases because the magnetization trajectories (mz) either do not
+reach the other easy axis state completely or reach and return toward
+the initial magnetic state. Proper optimization of the pulse duration
+is, therefore, necessary. It also affects the operation window. There
+are a few techniques that address the operation window.
+1. Device and pulse engineering
+VCMA switching produces WER minima for a short duration
+of the voltage pulse. The thermal fluctuation influences the WER
+and operation window.207 Unfortunately, only a few researchers
+addressed the narrow operation window issue.32,192 In 2017, Deng
+et al.32 studied ultrafast low-energy VCMA switching through
+macro-spin simulation. They found that the operation window
+depends on the applied voltage and oxide thickness. The operation
+window can be widened by adequately optimizing the oxide thick-
+ness and properly selecting the applied voltage. Reducing the
+amplitude of the voltage pulse enhances the effective PMA field.
+This increases mz and reduces mx, where mx is the x-component of
+~m. This reduces the effective anisotropy field along the x axis. The
+precession period depends inversely on this field component
+[Eq. (8)],207 so the precession period increases, resulting in a more
+extensive operation window. Therefore, the device can tolerate
+more variations in the voltage pulse width. They found an opera-
+tion window of 0.15 ns.32
+Later, in 2018, Deng et al. reported192 an improvement in the
+operation window up to 0.8 ns. As discussed earlier, the internal
+Rashba field can be used instead of an external field. This Rashba
+field can be controlled with the help of the current [Eq. (7)] that is
+being passed through the HM. By optimizing this current, the
+Rashba field and operation window can be enhanced. In 2020, the
+operation window and WER improvement were addressed by
+Yamamoto et al.215 They reported improvement in the operation
+window using properly optimized inverse biases before and after
+the write pulse. Matsumoto et al. theoretically studied the switching
+performance of the pMTJ device using the VCMA technique at
+FIG. 14. Modulating PMA using (a) the conventional and (b) inverse bias voltage
+pulse. The inverse bias pulse enhances PMA before and after the write pulse,
+thus improving the thermal stability of the device. Magnetization distributions for
+both methods can be seen as confined in a smaller region for the inverse bias
+method than the conventional method. Reproduced with permission from Ikeura
+et al., Jpn. J. Appl. Phys. 57(4), 040311 (2018). Copyright 2018 IOP.
+TABLE II. List of various WER improvement methods in VCMA switching.
+WER techniques
+Minimum WERs
+Comments
+Thermal stability
+4 × 10−3 (experiment) and 10−15 (simulation)
+Ref. 209
+Very less WER of 10−15 at α = 0.01 and high thermal stability
+(Δ > 48).209
+Pulse engineering
+Order of 10−4 Ref. 212
+Precise voltage pulse fall time significantly improves the WER.
+Inverse bias
+Order of 10−6 Ref. 214
+It enhances thermal stability before and after the write pulse and,
+thus, improves the WER.
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-13
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 15 ---
+room temperature.218 They reported VCMA switching with low
+WER for a range of voltage pulses. They assumed pulse width as
+tolerance pulse or operation window for which the WER lies
+between 2  105 and 103.218 They reported a long tolerance of
+few ns where WER values are in the range of 2  105–103.
+In 2021, One et al.217 studied VCMA switching using detailed
+macro-spin simulation. As per their analysis, important switching
+behavior parameters are the damping constant and the anisotropy
+field modulation (p). p is given as a percentage proportion of the
+anisotropy field (HK), and it can be defined by the relation
+p ¼ 1  HK/HK0, where HK0 is the amplitude of the anisotropy
+field in the absence of the electric field. They showed that for a
+certain value of the critical modulation (pc ¼ 1  2Hip/HK0), the
+magnetization will always lose energy and switch to the energy
+minima, irrespective of the voltage pulse width. One can design
+and operate the device in the critical modulation bands to improve
+the operation window significantly.
+2. Circuit technique
+The narrow operation window in the VCMA technique can be
+widened not only by the parameters and pulse optimization but
+also by the external circuit design. In 2019, Cai et al. reported219
+VCMA-based magnetic memory design in fully depleted silicon on
+insulator (FD SOI) assisted by body bias. They explored the
+1MTJ-1T (one MTJ and one transistor) structure, varying the tran-
+sistor size and the VCMA voltage pulse (amplitude and width).
+They reported that high switching probability could be achieved for
+an extensive range of voltage pulse width by adequately selecting
+the supply voltage (more than 1.2 V) and the access transistor
+dimension (large dimension, i.e., W = 400 nm).219
+The switching performance of each MTJ device in a memory
+array can be different due to process variations during the fabrica-
+tion. Therefore, the WER may vary from cell to cell. A write pulse
+termination (WPT) circuit scheme can address this issue.220 The
+WER value can be lowered for a range of voltage pulse widths
+using the WPT technique. This technique applies a voltage pulse to
+the selected cell where switching failure happens and, thus, improves
+the switching performance of the device.220 In 2016, Grezes et al.
+experimentally reported70 VCMA-induced switching in the pMTJ
+device of different dimensions. They observed that switching voltage
+and time are insensitive to the junction diameter in high-resistance
+MTJs. They obtained a relatively high switching probability for an
+operation window of 0.2 ns.70 Figure 16 illustrates the summary of
+different techniques to widen the operation window.
+D. VCMA coefficient improvement
+A lower switching voltage is desirable for the practical imple-
+mentation of VCMA-based memories. This can be accomplished
+by fine-tuning the oxide thickness, thermal stability of the device at
+zero voltage, MTJ cross-sectional area, and VCMA coefficient, as
+seen in Eq. (3). Equation (3) suggests that reducing the oxide thick-
+ness can decrease switching voltage, but the tunneling current may
+increase. It causes more Ohmic loss as the STT effect may domi-
+nate. Furthermore, for smaller devices, a large value of PMA is
+needed for the same thermal stability. This causes a large VCMA
+coefficient or write voltage. Since a lower switching voltage is
+pivotal for technological application, we require an immense
+VCMA coefficient. There are quite a few mechanisms to enhance
+the VCMA coefficient, as mentioned below.
+1. HM insertions at oxide and FL interface
+It has been proved theoretically and experimentally that
+inserting HM (with high SOC material like Ir or Os) at the FM/
+dielectric
+interface
+can
+increase
+the
+PMA
+and
+VCMA
+coefficient.95,184,203,221–223
+Ab
+initio
+computations
+provide
+a
+straightforward theoretical approach to studying the HM insertion
+at the Fe/MgO interface. However, experimental challenges arise
+due to the interdiffusion of atoms across different layers during the
+FIG. 15. Summary of various WER improvement methods in VCMA switching.
+FIG. 16. Summary of various techniques to widen the operation window in the
+VCMA switching.
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-14
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 16 ---
+annealing process.124 This causes deviation between the theory and
+experiment. Nozaki et al. investigated222 how a CoFe termination
+layer affects the VCMA coefficient and tunneling magnetoresis-
+tance (TMR) in the Ir-doped Fe/MgO structures. They reported a
+large β of −350 fJ/V m. Furthermore, the lattice mismatch between
+the layers (Ir and CoFe) can induce a strain. Kato et al. experimen-
+tally demonstrated224 a giant β (thousands of fJ/V m) in a structur-
+ally strained CoFe layer in a MgO/CoFe/Ir system. Using the ab
+initio computations, it is found that strain can affect the VCMA
+coefficient. An extremely large value of β (>10000 fJ/V m) was pre-
+dicted in an atomically thin Ir dusting layer (monolayer) in the
+Fe/MgO system.184,203 However, such a high VCMA coefficient is
+yet to be demonstrated experimentally. The metal insertion may
+negatively impact the TMR in some cases. Therefore, thorough
+research is needed to optimize these parameters precisely.
+2. Interface oxidation state controlling
+As previously mentioned, an electric field at the FM/oxide
+interface, such as the CoFeB/MgO case, can alter the occupancy of
+hybridized orbitals by causing either charge accumulation or deple-
+tion. This has been confirmed by ab initio computations.116,225
+Moreover, theoretical investigations suggest that the VCMA coeffi-
+cient can be significantly influenced by the oxidation level at the
+Fe/MgO interface.226,227 The VCMA coefficient can be enhanced
+by properly optimizing the oxidation level at the CoFe/MgO inter-
+face. The mechanism of over-oxidation and oxygen migration has
+been illustrated in Fig. 17. In the former case, additional oxygen
+atoms are introduced into the Fe monolayer, while later, the
+oxygen atoms are migrated from the MgO interface toward Fe. In
+2017, Li et al. studied228 the effect of the insertion layer X (where X
+can be Ta, Pt, and Mg) on the VCMA coefficient. They found
+an increment in the VCMA coefficient (100 fJ/V m) by three
+times that of the conventional Ta/CoFeB/MgO-based structure
+(∼30 fJ/V m).229,230 Precise control of the thickness of the Mg atom
+insertions results in either an under-oxidation or over-oxidation
+state at the CoFe/MgO interface. The maximum VCMA coefficient
+(100 fJ/V m) is achieved when the CoFe layer undergoes intense
+over-oxidation.228 In a recent study, Nozaki et al. investigated231
+the effect of post-oxidized MgAl layer insertion on the PMA, TMR,
+and VCMA of the epitaxial MTJ device. A large β (∼300 fJ/V m)
+with reasonable PMA was observed by precise interface engineer-
+ing. Therefore, the VCMA coefficient and PMA can be improved
+by precise control of MgAl insertion.
+3. Dielectric constant of the oxide layer
+As mentioned earlier, VCMA originates from the accumula-
+tion or depletion of charges at the FM/oxide interface. Significant
+charge accumulation corresponds to a large VCMA coefficient.
+Quantitatively, it can be expressed as proportional to the relative
+dielectric constant (/ΔQ/ΔEAs ¼ εrε0),232,233 where ΔQ, ΔE, As,
+εr, and ε0 are the charge accumulation, applied electric field,
+surface area, relative permittivity of the oxide layer, and vacuum
+permittivity, respectively. Therefore, a significant value of the
+VCMA coefficient can be achieved using an insulating barrier with
+high-κ materials, such as SrTiO3
+233,234 or HfO2
+235–237 However, the
+MTJ device with these materials exhibits poor TMR.238 Chien et al.
+experimentally studied the VCMA coefficient and TMR in a MgO/
+PZT/MgO energy barrier-based system.232 They found enrichment
+in β by 40% for the MgO/PZT/MgO barrier (19.8 ± 1.3 fJ/V m)
+than the normal MgO barrier-based (14.3 ± 2.7 fJ/V m) MTJ
+FIG. 17. Various mechanisms to enhance the VCMA coefficient. The blue color,
+red color, green color, and orange color atoms are Fe, Ir, O, and Mg, respec-
+tively. Ir insertion figure: Reproduced with permission from Kwon et al., Phys.
+Rev. Appl. 12(4), 044075 (2019). Copyright 2019 American Physical Society.
+Controlling oxidation state figure: Reproduced with permission from Ibrahim
+et al., Phys. Rev. B, 98(1), 214441 (2018). Copyright 2018 American Physical
+Society.
+FIG. 18. Circuit design to mitigate read disturbance and minimize the read
+delay during sensing. During the read operation mode, sense voltage, write
+voltage, bit line, and source line are at high, ground, ground, and high potential,
+respectively. Reproduced with permission from Lee et al., IEEE Magn. Lett. 7,
+1–5 (2016). Copyright 2016 IEEE.
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-15
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 17 ---
+device. They also found a reasonable TMR value of more than
+50%.
+E. Reducing RDR and read delay
+The thermal fluctuation during the read operation led to a large
+RDR. This issue was addressed by Lee et al. in 2016.239 They pro-
+posed a source line sensing (SLS) scheme other than the conventional
+bit line sensing (BLS) scheme. This SLS scheme, shown in Fig. 18, uti-
+lizes the VCMA effect and imposes a voltage with opposite polarity
+to that of the MTJ voltage during the sensing process. The concept of
+the reverse polarity voltage pulse compared to the write voltage pulse
+was introduced by Wang et al. in 2015.73 The RDR reduced signifi-
+cantly with this scheme.239 They also found that an enhancement in
+coercivity during the read operation resulted in an improved sensing
+margin. In 2016, Grezes et al. experimentally reported216 that device
+performance (WER and RDR) depends on the read/write voltage
+pulse amplitude and duration. They reported a WER less than
+109(1017) with 10 ns (20 ns) write time, and an RDR less than
+10−16 with 2 ns read time in a 256 kbit MeRAM.
+In the MTJ device, the RA product indicates whether the STT
+or VCMA effect dominates. A thicker oxide layer increases the RA
+product, enhancing the VCMA domination but also lengthening
+the read time.240 However, the total read delay can be balanced
+with the signal transmission latency on the memory chip due to
+VCMA exhibiting higher chip density than STT- and SOT-based
+MRAMs.
+IV. OUTLINES AND FUTURE PERSPECTIVES
+In summary, the VCMA-based MRAM is recognized as an
+emerging and energy-efficient technology, notable for its negligible
+Ohmic loss and rapid switching capabilities. This article covers
+several challenges in VCMA switching and recent advancements
+toward addressing these issues, such as field-free switching opera-
+tion, WER improvement, widening the operation window, improv-
+ing the VCMA coefficient, RDR, and read delay. Some field-free
+switching techniques, such as VGSOT and Rashba field methods,
+can provide a low WER, but these need an extra terminal that can
+penalize the chip density. Additionally, they require extra current
+or voltage pulse. VCMA switching using the self-regulated preces-
+sional switching using double-barrier device structure, skyrmion,
+strain, and CFL techniques is interesting but yet to be demonstrated
+experimentally. Strain can influence the exchange bias, PMA, and
+VCMA coefficient. Therefore, optimizing this effect could enable
+us to enhance device performance. Recently, our group has demon-
+strated simulation-based SOT switching in the CFL MTJ device
+with circular nanomagnets without needing an external field.
+Similar investigations could also be extended to VCMA switching.
+A large WER is another important issue that impedes the use
+of these techniques for practical magnetic memory applications.
+Although a few WER improvement methods, such as increasing
+barrier height and reducing damping constant,209 engineering of
+the pulse shape,212 and inverse bias,213,214 have been proposed, they
+are still not enough to fulfill the requirements for practical MRAM
+realizations. Other methods for improving WER, such as error cor-
+rection through multiple writings and write verification, can also
+reduce the WER. However, these methods may decrease the
+operational speed of the device. Consequently, thorough research is
+necessary to tackle this challenge and further enhance the switching
+performance of the device. A narrow operation window is a signifi-
+cant challenge with VCMA switching, and while some researchers
+have addressed it, more work is needed to enhance device robust-
+ness against pulse width variations. A high VCMA coefficient value
+can reduce the required voltage, but its immense value and ade-
+quate TMR are yet to be demonstrated experimentally. The RDR is
+another issue with VCMA switching. Although a few researchers
+have tried to address this, substantial work must be done to make it
+suitable for practical memory applications.
+ACKNOWLEDGMENTS
+We acknowledge the Science and Engineering Research Board
+(SERB), Department of Science and Technology, Government of
+India, under Grant Nos. CRG/2022/007360 and EEQ/2020/000164
+for support.
+AUTHOR DECLARATIONS
+Conflict of Interest
+The authors have no conflicts to disclose.
+Author Contributions
+Pinkesh Kumar Mishra: Conceptualization (lead); Data curation
+(lead); Formal analysis (equal); Investigation (lead); Methodology
+(equal); Resources (lead); Validation (lead); Visualization (lead);
+Writing – original draft (lead); Writing – review & editing (equal).
+Meenakshi Sravani: Conceptualization (supporting); Validation
+(supporting); Writing – review & editing (supporting). Arnab
+Bose:
+Investigation
+(supporting);
+Supervision
+(supporting);
+Validation (supporting); Visualization (equal); Writing – review &
+editing (equal). Swapnil Bhuktare: Conceptualization (equal);
+Funding acquisition (lead); Investigation (lead); Methodology
+(equal); Supervision (lead); Validation (supporting); Visualization
+(supporting); Writing – original draft (supporting); Writing –
+review & editing (equal).
+DATA AVAILABILITY
+Data sharing is not applicable to this article as no new data
+were created or analyzed in this study.
+REFERENCES
+1C. S. Hwang, “Prospective of semiconductor memory devices: From memory
+system to materials,” Adv. Electron. Mater. 1(6), 1400056 (2015).
+2Z. Lin, Z. Tong, J. Zhang, F. Wang, T. Xu, Y. Zhao, X. Wu, C. Peng, W. Lu,
+Q. Zhao, and J. Chen, “A review on SRAM-based computing in-memory:
+Circuits, functions, and applications,” J. Semicond. 43(3), 031401 (2022).
+3W. Gul, M. Shams, and D. Al-Khalili, “SRAM cell design challenges in modern
+deep sub-micron technologies: An overview,” Micromachines 13(8), 1332
+(2022).
+4M. A. Turi and J. G. Delgado-Frias, “Effective low leakage 6T and 8T FinFET
+SRAMs: Using cells with reverse-biased FinFETs, near-threshold operation, and
+power gating,” IEEE Trans. Circuits Syst. II: Express Briefs 67(4), 765–769
+(2020).
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-16
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 18 ---
+5S. Bhatti, R. Sbiaa, A. Hirohata, H. Ohno, S. Fukami, and S. N. Piramanayagam,
+“Spintronics based random access memory: A review,” Mater. Today 20(9),
+530–548 (2017).
+6X. Yao, J. Harms, A. Lyle, F. Ebrahimi, Y. Zhang, and J.-P. Wang, “Magnetic
+tunnel junction-based spintronic logic units operated by spin transfer torque,”
+IEEE Trans. Nanotechnol. 11(1), 120–126 (2012).
+7K. L. Wang, J. G. Alzate, and P. Khalili Amiri, “Low-power non-volatile spin-
+tronic memory: STT-RAM and beyond,” J. Phys. D: Appl. Phys. 46(7), 074003
+(2013).
+8H. Bai and E. Jiang, “Magnetic tunnel junctions (MTJs),” Chin. Sci. Bull. 46(9),
+709–716 (2001).
+9N. Maciel, E. Marques, L. Naviner, Y. Zhou, and H. Cai, “Magnetic tunnel junc-
+tion applications,” Sensors 20(1), 121 (2019).
+10B. R. Zink, Y. Lv, and J.-P. Wang, “Review of magnetic tunnel junctions for
+stochastic computing,” IEEE J. Explor. Solid-State Comput. Devices Circuits
+8(2), 173–184 (2022).
+11S. A. Wolf, D. D. Awschalom, R. A. Buhrman, J. M. Daughton, S. von Molnár,
+M. L. Roukes, A. Y. Chtchelkanova, and D. M. Treger, “Spintronics: A spin-
+based
+electronics
+vision
+for
+the
+future,”
+Science
+294(5546),
+1488–1495
+(2001).
+12C. Chappert, A. Fert, and F. N. Van Dau, “The emergence of spin electronics
+in data storage,” Nat. Mater. 6(11), 813–823 (2007).
+13J. S. Moodera, L. R. Kinder, T. M. Wong, and R. Meservey, “Large magnetore-
+sistance at room temperature in ferromagnetic thin film tunnel junctions,” Phys.
+Rev. Lett. 74(16), 3273–3276 (1995).
+14A. Chen, Y. Zhao, Y. Wen, L. Pan, P. Li, and X.-X. Zhang, “Full voltage manip-
+ulation of the resistance of a magnetic tunnel junction,” Sci. Adv. 5(12),
+eaay5141 (2019).
+15B. J. Chen and G. C. Han, “Field-assisted switching of free-layer magnetization
+in magnetic tunnel junctions,” IEEE Magn. Lett. 6, 1–4 (2015).
+16S. Tehrani, J. M. Slaughter, M. Deherrera, B. N. Engel, N. D. Rizzo, J. Salter,
+M. Durlam, R. W. Dave, J. Janesky, B. Butcher, K. Smith, and G. Grynkewich,
+“Magnetoresistive random access memory using magnetic tunnel junctions,”
+Proc. IEEE 91(5), 703–714 (2003).
+17M. Durlam, P. J. Naji, A. Omair, M. DeHerrera, J. Calder, J. M. Slaughter,
+B. N. Engel, N. D. Rizzo, G. Grynkewich, B. Butcher, C. Tracy, K. Smith,
+K. W. Kyler, J. Jack Ren, J. A. Molla, W. A. Feil, R. G. Williams, and S. Tehrani,
+“A 1-Mbit MRAM based on 1T1MTJ bit cell integrated with copper intercon-
+nects,” IEEE J. Solid-State Circuits 38(5), 769–773 (2003).
+18J. C. Slonczewski, “Current-driven excitation of magnetic multilayers,”
+J. Magn. Magn. Mater. 159(1–2), L1–L7 (1996).
+19J. Xiao, A. Zangwill, and M. D. Stiles, “Boltzmann test of Slonczewski’s theory
+of spin-transfer torque,” Phys. Rev. B 70(17), 172405 (2004).
+20I. Žutić, J. Fabian, and S. Das Sarma, “Spintronics: Fundamentals and applica-
+tions,” Rev. Mod. Phys. 76(2), 323–410 (2004).
+21L. Berger, “Emission of spin waves by a magnetic multilayer traversed by a
+current,” Phys. Rev. B 54(13), 9353–9358 (1996).
+22J. A. Katine, F. J. Albert, R. A. Buhrman, E. B. Myers, and D. C. Ralph,
+“Current-driven magnetization reversal and spin-wave excitations in Co/Cu/Co
+pillars,” Phys. Rev. Lett. 84(14), 3149–3152 (2000).
+23J. A. Katine and E. E. Fullerton, “Device implications of spin-transfer torques,”
+J. Magn. Magn. Mater. 320(7), 1217–1226 (2008).
+24T. Y. Cheng, L. Atkinson, J. Wu, R. W. Chantrell, J. Sizeland, Y. M. Lu,
+J. W. Cai, and Y. B. Xu, “Heat-assisted magnetization dynamics in GdFeCo using
+field-induced TR-MOKE,” IEEE Trans. Magn. 50(11), 1–4 (2014).
+25Z. Ren, K. Qian, M. Aldosary, Y. Liu, S. K. Cheung, I. Ng, J. Shi, and Q. Shao,
+“Strongly heat-assisted spin–orbit torque switching of a ferrimagnetic insulator,”
+APL Mater. 9(5), 051117 (2021).
+26P. K. Mishra, M. Sravani, M. V. Narayana, and S. Bhuktare, “Acoustically assis-
+ted energy efficient field free spin orbit torque switching of out of plane nano-
+magnet,” J. Appl. Phys. 133(13), 133901 (2023).
+27L. Liu, O. J. Lee, T. J. Gudmundsen, D. C. Ralph, and R. A. Buhrman,
+“Current-induced switching of perpendicularly magnetized magnetic layers
+using spin torque from the spin Hall effect,” Phys. Rev. Lett. 109(9), 096602
+(2012).
+28Q. Shao, P. Li, L. Liu, H. Yang, S. Fukami, A. RazavI, H. Wu, K. Wang,
+F. Freimuth, Y. Mokrousov, M. D. Stiles, S. Emori, A. Hoffmann, J. Akerman,
+K. Roy, J.-P. Wang, S.-H. Yang, K. Garello, and W. Zhang, “Roadmap of spin–
+orbit torques,” IEEE Trans. Magn. 57(7), 1–39 (2021).
+29D. Zhu and W. Zhao, “Threshold current density for perpendicular magneti-
+zation switching through spin-orbit torque,” Phys. Rev. Appl. 13(4), 044078
+(2020).
+30I. Mihai Miron, G. Gaudin, S. Auffret, B. Rodmacq, A. Schuhl, S. Pizzini,
+J. Vogel, and P. Gambardella, “Current-driven spin torque induced by the
+Rashba effect in a ferromagnetic metal layer,” Nat. Mater. 9(3), 230–234 (2010).
+31K. Garello, C. O. Avci, I. M. Miron, M. Baumgartner, A. Ghosh, S. Auffret,
+O. Boulle, G. Gaudin, and P. Gambardella, “Ultrafast magnetization switching by
+spin-orbit torques,” Appl. Phys. Lett. 105(21), 212402 (2014).
+32J. Deng, G. Liang, and G. Gupta, “Ultrafast and low-energy switching in
+voltage-controlled elliptical pMTJ,” Sci. Rep. 7(1), 16562 (2017).
+33K. Zhang, D. Zhang, C. Wang, L. Zeng, Y. Wang, and W. Zhao, “Compact
+modeling and analysis of voltage-gated spin-orbit torque magnetic tunnel junc-
+tion,” IEEE Access 8, 50792–50800 (2020).
+34Z. Wen, H. Sukegawa, T. Seki, T. Kubota, K. Takanashi, and S. Mitani,
+“Voltage control of magnetic anisotropy in epitaxial Ru/Co2FeAl/MgO hetero-
+structures,” Sci. Rep. 7(1), 45026 (2017).
+35Y. C. Wu, K. Garello, W. Kim, M. Gupta, M. Perumkunnil, V. Kateel,
+S. Couet, R. Carpenter, S. Rao, S. Van Beek, K. K. Vudya Sethu, F. Yasin,
+D. Crotti, and G. S. Kar, “Voltage-gate-assisted spin-orbit-torque magnetic
+random-access memory for high-density and low-power embedded applications,”
+Phys. Rev. Appl. 15(6), 064015 (2021).
+36Y. Shiota, T. Nozaki, F. Bonell, S. Murakami, T. Shinjo, and Y. Suzuki,
+“Induction of coherent magnetization switching in a few atomic layers of FeCo
+using voltage pulses,” Nat. Mater. 11(1), 39–43 (2011).
+37T. Nozaki, J. Okabayashi, S. Tamaru, M. Konoto, T. Nozaki, and S. Yuasa,
+“Understanding voltage-controlled magnetic anisotropy effect at Co/oxide inter-
+face,” Sci. Rep. 13, 10640 (2023).
+38A. Fert and F. N. Van Dau, “Spintronics, from giant magnetoresistance to mag-
+netic skyrmions and topological insulators,” C. R. Phys. 20(7–8), 817–831 (2019).
+39S. Mittal, J. S. Vetter, and L. Jiang, “Addressing read-disturbance issue in
+STT-RAM by data compression and selective duplication,” IEEE Comput.
+Archit. Lett. 16(2), 94–98 (2017).
+40R. Carboni, S. Ambrogio, W. Chen, M. Siddik, J. Harms, A. Lyle, W. Kula,
+G. Sandhu, and D. Ielmini, “Modeling of breakdown-limited endurance in spin-
+transfer torque magnetic memory under pulsed cycling regime,” IEEE Trans.
+Electron Devices 65(6), 2470–2478 (2017).
+41X. Wang, Z. Wang, X. Hao, Y. Zhou, J. Zhang, H. Gan, D. H. Jung, K. Satoh,
+B. Yen, R. Malmhall, and Y. Huai, “Different dielectric breakdown mechanisms
+for RF-MgO and naturally oxidized MgO,” Appl. Phys. Express 7(8), 083002
+(2014).
+42W. Zhao, Y. Zhang, T. Devolder, J. Klein, D. Ravelosona, C. Chappert, and
+P. Mazoyer, “Failure and reliability analysis of STT-MRAM,” Microelectron.
+Reliab. 52(9–10), 1848–1852 (2012).
+43C. Yoshida, M. Kurasawa, Y. M. Lee, K. Tsunoda, M. Aoki, and Y. Sugiyama,
+“A study of dielectric breakdown mechanism in CoFeB/MgO/CoFeB magnetic
+tunnel junction,” 2009 IEEE International Reliability Physics Symposium,
+Montreal, QC, Canada (IEEE, 2009), pp. 139–142.
+44Q. Chen, T. Min, T. Torng, C. Horng, D. Tang, and P. Wang, “Study of dielec-
+tric breakdown distributions in magnetic tunneling junction with MgO barrier,”
+J. Appl. Phys. 105(7), 07C931 (2009).
+45T. Devolder, C. Chappert, J. A. Katine, M. J. Carey, and K. Ito, “Distribution
+of the magnetization reversal duration in subnanosecond spin-transfer switch-
+ing,” Phys. Rev. B 75(6), 064402 (2007).
+46S. Pathak, C. Youm, and J. Hong, “Impact of spin-orbit torque on spin-
+transfer torque switching in magnetic tunnel junctions,” Sci. Rep. 10(1), 2799
+(2020).
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-17
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 19 ---
+47A. V. Khvalkovskiy, D. Apalkov, S. Watts, R. Chepulskii, R. S. Beach, A. Ong,
+X. Tang, A. Driskill-Smith, W. H. Butler, P. B. Visscher, D. Lottis, E. Chen,
+V. Nikitin, and M. Krounbi, “Basic principles of STT-MRAM cell operation in
+memory arrays,” J. Phys. D: Appl. Phys. 46(7), 074001 (2013).
+48D. Apalkov, B. Dieny, and J. M. Slaughter, “Magnetoresistive random access
+memory,” Proc. IEEE 104(10), 1796–1830 (2016).
+49G. Hu, C. Safranski, J. Z. Sun, P. Hashemi, S. L. Brown, J. Bruley, L. Buzi,
+C. P. D’Emic, E. Galligan, M. G. Gottwald, O. Gunawan, J. Lee, S. Karimeddiny,
+P. L. Trouilloud, and D. C. Worledge, “Double spin-torque magnetic tunnel
+junction devices for last-level cache applications,” in 2022 International Electron
+Devices Meeting (IEDM) (IEEE, 2022).
+50D. C. Worledge and G. Hu, “A snapshot review of double magnetic junctions
+for STT-MRAM,” MRS Adv. 8(5), 131–137 (2023).
+51G. Hu, “Spin-transfer torque MRAM—Status and outlook,” in 2023 IEEE
+International Magnetic Conference—Short Papers (INTERMAG Short Papers),
+Sendai (IEEE, 2023).
+52G. Hu, G. Lauer, J. Z. Sun, P. Hashemi, C. Safranski, S. L. Brown, L. Buzi,
+E. R. Edwards, C. P. D’Emic, E. Galligan, M. G. Gottwald, O. Gunawan, H. Jung,
+J. Kim, K. Latzko, J. J. Nowak, P. L. Trouilloud, S. Zare, and D. C. Worledge, “2x
+reduction of STT-MRAM switching current using double spin-torque magnetic
+tunnel junction,” in 2021 IEEE International Electron Devices Meeting (IEDM)
+(IEEE, 2021).
+53C. Safranski, G. Hu, J. Z. Sun, P. Hashemi, S. L. Brown, L. Buzi, C. P. D’Emic,
+E. R. J. Edwards, E. Galligan, M. G. Gottwald, O. Gunawan, S. Karimeddiny,
+H. Jung, J. Kim, K. Latzko, P. L. Trouilloud, S. Zare, and D. C. Worledge,
+“Reliable sub-nanosecond MRAM with double spin-torque magnetic tunnel
+junctions,” in 2022 IEEE Symposium on VLSI Technology and Circuits (VLSI
+Technology and Circuits), Honolulu, HI (IEEE, 2022).
+54L. Liu, C.-F. Pai, Y. Li, H. W. Tseng, D. C. Ralph, and R. A. Buhrman,
+“Spin-torque switching with the giant spin Hall effect of tantalum,” Science
+336(6081), 555–558 (2012).
+55Y. Fan, P. Upadhyaya, X. Kou, M. Lang, S. Takei, Z. Wang, J. Tang, L. He,
+L.-T. Chang, M. Montazeri, G. Yu, W. Jiang, T. Nie, R. N. Schwartz,
+Y. Tserkovnyak, and K. L. Wang, “Magnetization switching through giant spin–
+orbit torque in a magnetically doped topological insulator heterostructure,” Nat.
+Mater. 13(7), 699–704 (2014).
+56T. Fan, N. H. Khang, S. Nakano, and P. N. Hai, “Ultrahigh efficient spin orbit
+torque magnetization switching in fully sputtered topological insulator and ferro-
+magnet multilayers,” Sci. Rep. 12(1), 2998 (2022).
+57P. Li, J. Kally, S. S.-L. Zhang, T. Pillsbury, J. Ding, G. Csaba, J. Ding, J. S. Jiang,
+Y. Liu, R. Sinclair, C. Bi, A. DeMann, G. Rimal, W. Zhang, S. B. Field, J. Tang,
+W. Wang, O. G. Heinonen, V. Novosad, A. Hoffmann, N. Samarth, and M. Wu,
+“Magnetization switching using topological surface states,” Sci. Adv. 5(8),
+eaaw3415 (2019).
+58Y.-W. Oh, S. Chris Baek, Y. M. Kim, H. Y. Lee, K.-D. Lee, C.-G. Yang,
+E.-S. Park, K.-S. Lee, K.-W. Kim, G. Go, J.-R. Jeong, B.-C. Min, H.-W. Lee,
+K.-J. Lee, and B.-G. Park, “Field-free switching of perpendicular magnetization
+through spin–orbit torque in antiferromagnet/ferromagnet/oxide structures,”
+Nat. Nanotechnol. 11(10), 878–884 (2016).
+59J. Maciejko, T. L. Hughes, and S.-C. Zhang, “The quantum spin Hall effect,”
+Annu. Rev. Condens. Matter Phys. 2(1), 31–53 (2011).
+60D. Bercioux and P. Lucignano, “Quantum transport in Rashba spin–orbit
+materials: A review,” Rep. Prog. Phys. 78(10), 106001 (2015).
+61X. Fan, H. Celik, J. Wu, C. Ni, K.-J. Lee, V. O. Lorenz, and J. Q. Xiao,
+“Quantifying interface and bulk contributions to spin–orbit torque in magnetic
+bilayers,” Nat. Commun. 5(1), 3042 (2014).
+62V. Krizakova, M. Perumkunnil, S. Couet, P. Gambardella, and K. Garello,
+“Spin-orbit torque switching of magnetic tunnel junctions for memory applica-
+tions,” J. Magn. Magn. Mater. 562, 169692 (2022).
+63Z. Wang, Z. Li, Y. Liu, S. Li, L. Chang, W. Kang, Y. Zhang, and W. Zhao,
+“Progresses and challenges of spin orbit torque driven magnetization switching
+and application (invited),” in 2018 IEEE International Symposium on Circuits
+and Systems (ISCAS) (IEEE, 2018), pp. 1–5.
+64K. Jabeur, G. D. Pendina, and G. Prenat, “High performance spin-orbit-torque
+(SOT) based non-volatile standard cell for hybrid CMOS/magnetic ICs,”
+Comput. Sci. Inf. Technol. 5(3), 91–96 (2017).
+65M. Baumgartner, K. Garello, J. Mendil, C. O. Avci, E. Grimaldi, C. Murer,
+J. Feng, M. Gabureac, C. Stamm, Y. Acremann, S. Finizio, S. Wintz, J. Raabe,
+and P. Gambardella, “Spatially and time-resolved magnetization dynamics driven
+by spin–orbit torques,” Nat. Nanotechnol. 12(10), 980–986 (2017).
+66Y. Seo and K.-W. Kwon, “Area optimization techniques for high-density
+spin-orbit torque MRAMs,” Electronics 10(7), 792 (2021).
+67D. Li, S. Chen, Y. Zuo, J. Yun, B. Cui, K. Wu, X. Guo, D. Yang, J. Wang, and
+L. Xi, “Roles of joule heating and spin-orbit torques in the direct current
+induced magnetization reversal,” Sci. Rep. 8(1), 12959 (2018).
+68D.
+Yu,
+Y.
+Ga,
+J.
+Liang,
+C.
+Jia,
+and
+H.
+Yang,
+“Voltage-controlled
+Dzyaloshinskii-Moriya interaction torque switching of perpendicular magnetiza-
+tion,” Phys. Rev. Lett. 130(5), 056701 (2023).
+69Y. Shiota, S. Miwa, T. Nozaki, F. Bonell, N. Mizuochi, T. Shinjo, H. Kubota,
+S. Yuasa, and Y. Suzuki, “Pulse voltage-induced dynamic magnetization switch-
+ing in magnetic tunneling junctions with high resistance-area product,” Appl.
+Phys. Lett. 101(10), 102406 (2012).
+70C. Grezes, F. Ebrahimi, J. G. Alzate, X. Cai, J. A. Katine, J. Langer, B. Ocker,
+P. Khalili Amiri, and K. L. Wang, “Ultra-low switching energy and scaling in
+electric-field-controlled
+nanoscale
+magnetic
+tunnel
+junctions
+with
+high
+resistance-area product,” Appl. Phys. Lett. 108(1), 012403 (2016).
+71T. Yamamoto, T. Nozaki, H. Imamura, Y. Shiota, S. Tamaru, K. Yakushiji,
+H. Kubota, A. Fukushima, Y. Suzuki, and S. Yuasa, “Improvement of write error
+rate in voltage-driven magnetization switching,” J. Phys. D: Appl. Phys. 52(16),
+164001 (2019).
+72N. Maciel, E. Marques, L. Naviner, H. Cai, and J. Yang, “Voltage-controlled
+magnetic anisotropy MeRAM bit-cell over event transient effects,” J. Low Power
+Electron. Appl. 9(2), 15 (2019).
+73K. L. Wang, H. Lee, and P. Khalili Amiri, “Magnetoelectric random access
+memory-based circuit design by using voltage-controlled magnetic anisotropy in
+magnetic tunnel junctions,” IEEE Trans. Nanotechnol. 14(6), 992–997 (2015).
+74B. Parks, M. Bapna, J. Igbokwe, H. Almasi, W. Wang, and S. A. Majetich,
+“Superparamagnetic perpendicular magnetic tunnel junctions for true random
+number generators,” AIP Adv. 8(5), 055903 (2017).
+75A. Fukushima, T. Yamamoto, T. Nozaki, K. Yakushiji, H. Kubota, and
+S. Yuasa, “Recent progress in random number generator using voltage
+pulse-induced switching of nano-magnet: A perspective,” APL Mater. 9(3),
+030905 (2021).
+76S. Liu, J. Kwon, P. W. Bessler, S. G. Cardwell, C. Schuman, J. D. Smith,
+J. B. Aimone, S. Misra, and J. A. Incorvia, “Random bitstream generation using
+voltage-controlled magnetic anisotropy and spin orbit torque magnetic tunnel junc-
+tions,” IEEE J. Explor. Solid-State Comput. Devices Circuits 8(2), 194–202 (2022).
+77Y. Tanaka, M. Goto, A. K. Shukla, K. Yoshikawa, H. Nomura, S. Miwa,
+S. Tomishima, and Y. Suzuki, “Physically unclonable functions with voltage-
+controlled magnetic tunnel junctions,” IEEE Trans. Magn. 57(2), 1–6 (2021).
+78Y. Shao, N. Davila, F. Ebrahimi, J. A. Katine, G. Finocchio, and P. Khalili
+Amiri, “Reconfigurable physically unclonable functions based on nanoscale
+voltage-controlled magnetic tunnel junctions,” Adv. Electron. Mater. 9(8),
+2300195 (2023).
+79A.
+Meo,
+E.
+Garzón,
+R.
+De
+Rose,
+G.
+Finocchio,
+M.
+Lanuzza,
+and
+M. Carpentieri, “Voltage-controlled magnetic anisotropy based physical unclon-
+able function,” Appl. Phys. Lett. 123(6), 062405 (2023).
+80R. Ismael Salinas, P.-C. Chen, C.-Y. Yang, and C.-H. Lai, “Spintronic materials
+and devices towards an artificial neural network: Accomplishments and the last
+mile,” Mater. Res. Lett. 11(5), 305–326 (2022).
+81A. H. Lone, S. Amara, and H. Fariborzi, “Voltage-controlled domain wall
+motion-based neuron and stochastic magnetic tunnel junction synapse for neu-
+romorphic computing applications,” IEEE J. Explor. Solid-State Comput.
+Devices Circuits 8(1), 1–9 (2022).
+82T. Taniguchi, “Phase locking in voltage-controlled parametric oscillator,”
+J. Magn. Magn. Mater. 578, 170806 (2023).
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-18
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 20 ---
+83H. Lee, C. Grezes, A. Lee, F. Ebrahimi, P. Khalili Amiri, and K. L. Wang, “A
+spintronic voltage-controlled stochastic oscillator for event-driven random sam-
+pling,” IEEE Electron Device Lett. 38(2), 281–284 (2017).
+84A. Kumar, M. Rajabali, V. H. González, M. Zahedinejad, A. Houshang, and
+J. Åkerman, “Fabrication of voltage-gated spin Hall nano-oscillators,” Nanoscale
+14(4), 1432–1439 (2022).
+85J.-G. Choi, J. Park, M.-G. Kang, D. Kim, J.-S. Rieh, K.-J. Lee, K.-J. Kim, and
+B.-G. Park, “Voltage-driven gigahertz frequency tuning of spin Hall nano-
+oscillators,” Nat. Commun. 13(1), 3783 (2022).
+86M. Sravani, P. Kumar Mishra, and S. Bhuktare, “Injection locking of spin
+torque nano oscillators using surface acoustic waves,” J. Magn. Magn. Mater.
+564, 170048 (2022).
+87M. Sravani, P. K. Mishra, and S. Bhuktare, “Field-free spin Hall nano oscillator
+using the exchange bias in ferro/anti-ferromagnetic structures,” IEEE Trans.
+Magn. 60(5), 1 (2024).
+88D. Lordan, G. Wei, P. McCloskey, C. O’Mathuna, and A. Masood, “Origin of
+perpendicular magnetic anisotropy in amorphous thin films,” Sci. Rep. 11(1),
+3734 (2021).
+89B. Tudu and A. Tiwari, “Recent developments in perpendicular magnetic
+anisotropy thin films for data storage applications,” Vacuum 146, 329–341
+(2017).
+90H. Wu, J. Zhang, B. Cui, S. A. Razavi, X. Che, Q. Pan, D. Wu, G. Yu, X. Han,
+and K. L. Wang, “Field-free approaches for deterministic spin–orbit torque
+switching of the perpendicular magnet,” Mater. Futures 1(2), 022201 (2022).
+91L. You, O. Lee, D. Bhowmik, D. Labanowski, J. Hong, J. Bokor, and
+S. Salahuddin, “Switching of perpendicularly polarized nanomagnets with spin
+orbit torque without an external magnetic field by engineering a tilted anisot-
+ropy,” Proc. Natl. Acad. Sci. U.S.A. 112(33), 10310–10315 (2015).
+92W. Kang, Y. Ran, Y. Zhang, W. Lv, and W. Zhao, “Modeling and exploration
+of the voltage-controlled magnetic anisotropy effect for the next-generation low-
+power and high-speed MRAM applications,” IEEE Trans. Nanotechnol. 16(3),
+387–395 (2017).
+93J. Song, I. Ahmed, Z. Zhao, D. Zhang, S. S. Sapatnekar, J.-P. Wang, and
+C. H. Kim, “Evaluation of operating margin and switching probability of voltage-
+controlled magnetic anisotropy magnetic tunnel junctions,” IEEE J. Explor.
+Solid-State Comput. Devices Circuits 4(2), 76–84 (2018).
+94Y. Shao, V. Lopez-Dominguez, N. Davila, Q. Sun, N. Kioussis, J. A. Katine,
+and P. Khalili Amiri, “Sub-volt switching of nanoscale voltage-controlled perpen-
+dicular magnetic tunnel junctions,” Commun. Mater. 3(1), 87 (2022).
+95T. Nozaki, A. Kozioł-Rachwał, M. Tsujikawa, Y. Shiota, X. Xu, T. Ohkubo,
+T. Tsukahara, S. Miwa, M. Suzuki, S. Tamaru, H. Kubota, A. Fukushima, K. Hono,
+M. Shirai, Y. Suzuki, and S. Yuasa, “Highly efficient voltage control of spin and
+enhanced interfacial perpendicular magnetic anisotropy in iridium-doped Fe/MgO
+magnetic tunnel junctions,” NPG Asia Mater. 9(12), e451 (2017).
+96Y. Shiota, T. Maruyama, T. Nozaki, T. Shinjo, M. Shiraishi, and Y. Suzuki,
+“Voltage-assisted magnetization switching in ultrathin Fe80Co20 alloy layers,”
+Appl. Phys. Express 2, 063001 (2009).
+97T. Nozaki, Y. Shiota, M. Shiraishi, T. Shinjo, and Y. Suzuki, “Voltage-induced
+perpendicular magnetic anisotropy change in magnetic tunnel junctions,” Appl.
+Phys. Lett. 96(2), 022506 (2010).
+98J. Zhu, J. A. Katine, G. E. Rowlands, Y.-J. Chen, Z. Duan, J. G. Alzate,
+P. Upadhyaya, J. Langer, P. K. Amiri, K. L. Wang, and I. N. Krivorotov,
+“Voltage-induced ferromagnetic resonance in magnetic tunnel junctions,” Phys.
+Rev. Lett. 108(19), 197203 (2012).
+99Y.-J. Tsou, J.-C. Chiu, H.-C. Shih, and C. Liu, “Write margin analysis of spin–
+orbit torque switching using field-assisted method,” IEEE J. Explor. Solid-State
+Comput. Devices Circuits 5(2), 173–181 (2019).
+100M. Kazemi, G. E. Rowlands, E. Ipek, R. A. Buhrman, and E. G. Friedman,
+“Compact model for spin–orbit magnetic tunnel junctions,” IEEE Trans.
+Electron Devices 63(2), 848–855 (2016).
+101K.-M. Lee, J. W. Choi, J. Sok, and B.-C. Min, “Temperature dependence of
+the interfacial magnetic anisotropy in W/CoFeB/MgO,” AIP Adv. 7(6), 065107
+(2017).
+102X. Nie and S. Blügel, “Electric field for the change of the magnetization in
+thin films,” European Patent 1099217 (2000).
+103M. Weisheit, S. Fähler, A. Marty, Y. Souche, C. Poinsignon, and D. Givord,
+“Electric field-induced modification of magnetism in thin-film ferromagnets,”
+Science 315(5810), 349–351 (2007).
+104T. Maruyama, Y. Shiota, T. Nozaki, K. Ohta, N. Toda, M. Mizuguchi,
+A. A. Tulapurkar, T. Shinjo, M. Shiraishi, S. Mizukami, Y. Ando, and Y. Suzuki,
+“Large voltage-induced magnetic anisotropy change in a few atomic layers of
+iron,” Nat. Nanotechnol. 4(3), 158–161 (2009).
+105K. Leistner, J. Wunderwald, N. Lange, S. Oswald, M. Richter, H. Zhang,
+L. Schultz, and S. Fähler, “Electric-field control of magnetism by reversible
+surface reduction and oxidation reactions,” Phys. Rev. B 87(22), 224411 (2013).
+106U. Bauer, L. Yao, A. J. Tan, P. Agrawal, S. Emori, H. L. Tuller, S. van Dijken,
+and G. S. Beach, “Magneto-ionic control of interfacial magnetism,” Nat. Mater.
+14(2), 174–181 (2014).
+107F. Bonell, Y. T. Takahashi, D. D. Lam, S. Yoshida, Y. Shiota, S. Miwa,
+T. Nakamura, and Y. Suzuki, “Reversible change in the oxidation state and mag-
+netic circular dichroism of Fe driven by an electric field at the FeCo/MgO inter-
+face,” Appl. Phys. Lett. 102(15), 152401 (2013).
+108A. Rajanikanth, T. Hauet, F. Montaigne, S. Mangin, and S. Andrieu,
+“Magnetic anisotropy modified by electric field in V/Fe/MgO(001)/Fe epitaxial
+magnetic tunnel junction,” Appl. Phys. Lett. 103(6), 062402 (2013).
+109U. Bauer, M. Przybylski, J. Kirschner, and G. S. Beach, “Magnetoelectric
+charge trap memory,” Nano Lett. 12(3), 1437–1442 (2012).
+110S. E. Barnes, J. Ieda, and S. Maekawa, “Rashba spin-orbit anisotropy and the
+electric field control of magnetism,” Sci. Rep. 4(1), 4105 (2014).
+111L. Xu and S. Zhang, “Electric field control of interface magnetic anisotropy,”
+J. Appl. Phys. 111(7), 07C501 (2012).
+112V. B. Naik, H. Meng, J. X. Xiao, R. S. Liu, A. Kumar, K. Y. Zeng, P. Luo, and
+S. Yap, “Effect of electric-field on the perpendicular magnetic anisotropy and
+strain properties in CoFeB/MgO magnetic tunnel junctions,” Appl. Phys. Lett.
+105(5), 052403 (2014).
+113T. Nozaki, A. Kozioł-Rachwał, W. Skowroński, V. Zayets, Y. Shiota,
+S. Tamaru, H. Kubota, A. Fukushima, S. Yuasa, and Y. Suzuki, “Large
+voltage-induced changes in the perpendicular magnetic anisotropy of an
+MgO-based tunnel junction with an ultrathin Fe layer,” Phys. Rev. Appl. 5(4),
+044006 (2016).
+114T. Nozaki, T. Yamamoto, S. Miwa, M. Tsujikawa, M. Shirai, S. Yuasa, and
+Y. Suzuki, “Recent progress in the voltage-controlled magnetic anisotropy effect
+and the challenges faced in developing voltage-torque MRAM,” Micromachines
+10(5), 327 (2019).
+115K. Nakamura, R. Shimabukuro, Y. Fujiwara, T. Akiyama, T. Ito, and
+A. J. Freeman, “Giant modification of the magnetocrystalline anisotropy in
+transition-metal monolayers by an external electric field,” Phys. Rev. Lett.
+102(18), 187201 (2009).
+116M. Tsujikawa and T. Oda, “Finite electric field effects in the large perpendic-
+ular magnetic anisotropy surface Pt/Fe/Pt(001): A first-principles study,” Phys.
+Rev. Lett. 102(24), 247203 (2009).
+117T. Kawabe, K. Yoshikawa, M. Tsujikawa, T. Tsukahara, K. Nawaoka,
+Y. Kotani, K. Toyoki, M. Goto, M. Suzuki, T. Nakamura, M. Shirai, Y. Suzuki,
+and S. Miwa, “Electric-field-induced changes of magnetic moments and magne-
+tocrystalline anisotropy in ultrathin cobalt films,” Phys. Rev. B 96(22), 220412
+(2017).
+118P. Bruno, “Tight-binding approach to the orbital magnetic moment and mag-
+netocrystalline anisotropy of transition-metal monolayers,” Phys. Rev. B 39(1),
+865 (1989).
+119Y. Suzuki and S. Miwa, “Magnetic anisotropy of ferromagnetic metals in low-
+symmetry systems,” Phys. Lett. A 383(11), 1203–1206 (2019).
+120S. Miwa, M. Suzuki, M. Tsujikawa, K. Matsuda, T. Nozaki, K. Tanaka,
+T. Tsukahara, K. Nawaoka, M. Goto, Y. Kotani, T. Ohkubo, F. Bonell, E. Tamura,
+K. Hono,
+T.
+Nakamura, M. Shirai,
+S. Yuasa, and
+Y.
+Suzuki,
+“Voltage
+controlled interfacial magnetism through platinum orbits,” Nat. Commun. 8(1),
+15848 (2017).
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-19
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 21 ---
+121G. V. Laan, “Microscopic origin of magnetocrystalline anisotropy in transi-
+tion metal thin films,” J. Phys.: Condens. Matter 10(14), 3239–3253 (1998).
+122A. K. Shukla, M. Goto, X. Xu, K. Nawaoka, J. Suwardy, T. Ohkubo, K. Hono,
+S. Miwa, and Y. Suzuki, “Voltage-controlled magnetic anisotropy in Fe1−xCox/
+Pd/MgO system,” Sci. Rep. 8(1), 10362 (2018).
+123I. Pardede, D. Yoshikawa, T. Kanagawa, N. Ikhsan, M. Obata, and T. Oda,
+“Anatomy of magnetic anisotropy and voltage-controlled magnetic anisotropy in
+metal oxide heterostructure from first principles,” Crystals 10(12), 1118 (2020).
+124Y. Shao and P. Khalili Amiri, “Progress and application perspectives of
+voltage-controlled magnetic tunnel junctions,” Adv. Mater. Technol. 8, 2300676
+(2023).
+125T. Inokuchi, H. Yoda, Y. Kato, M. Shimizu, S. Shirotori, N. Shimomura,
+K. Koi, Y. Kamiguchi, H. Sugiyama, S. Oikawa, K. Ikegami, M. Ishikawa,
+B. Altansargai, A. Tiwari, Y. Ohsawa, Y. Saito, and A. Kurobe, “Improved read
+disturb and write error rates in voltage-control spintronics memory (VoCSM) by
+controlling energy barrier height,” Appl. Phys. Lett. 110(25), 252404 (2017).
+126W. Li, S. Peng, J. Lu, H. Wu, X. Li, D. Xiong, Y. Zhang, Y. Zhang,
+K. L. Wang, and W. Zhao, “Experimental demonstration of voltage-gated
+spin-orbit torque switching in an antiferromagnet/ferromagnet structure,” Phys.
+Rev. B 103(9), 094436 (2021).
+127M.-G. Kang, J.-G. Choi, J. Jeong, J. Y. Park, H.-J. Park, T. Kim, T. Lee,
+K.-J. Kim, K.-W. Kim, J. H. Oh, D. D. Viet, J.-R. Jeong, J. M. Yuk, J. Park,
+K.-J. Lee, and B.-G. Park, “Electric-field control of field-free spin-orbit torque
+switching via laterally modulated Rashba effect in Pt/Co/AlOx structures,” Nat.
+Commun. 12(1), 7111 (2021).
+128S. Alla, V. K. Joshi, and S. Bhat, “Voltage-gated spin-orbit torque magnetic tunnel
+junction model analysis,” in 2022 International Conference on Distributed Computing,
+VLSI, Electrical Circuits and Robotics (DISCOVER) (IEEE, 2022), pp. 96–101.
+129J. Lu, W. Li, J. Liu, Z. Liu, Y. Wang, C. Jiang, J. Du, S. Lu, N. Lei, S. Peng,
+and W. Zhao, “Voltage-gated spin-orbit torque switching in IrMn-based perpen-
+dicular magnetic tunnel junctions,” Appl. Phys. Lett. 122(1), 012402 (2023).
+130R. H. Liu, W. L. Lim, and S. Urazhdin, “Control of current-induced
+spin-orbit effects in a ferromagnetic heterostructure by electric field,” Phys. Rev.
+B 89(22), 220409 (2014).
+131H. Yoda, N. Shimomura, Y. Ohsawa, S. Shirotori, Y. Kato, T. Inokuchi,
+Y. Kamiguchi, B. Altansargai, Y. Saito, K. Koi, H. Sugiyama, S. Oikawa,
+M. Shimizu, M. Ishikawa, K. Ikegami, and A. Kurobe, “Voltage-control spin-
+tronics memory (VoCSM) having potentials of ultra-low energy-consumption
+and high-density,” in 2016 IEEE International Electron Devices Meeting (IEDM)
+(IEEE, 2016), pp. 27.6.1–27.6.4.
+132Y. Liu, B. Zhou, and J.-G. Zhu, “Field-free magnetization switching by utiliz-
+ing the spin Hall effect and interlayer exchange coupling of iridium,” Sci. Rep.
+9(1), 325 (2019).
+133W. Zhang, W. Han, S.-H. Yang, Y. Sun, Y. Zhang, B. Yan, and S. S. Parkin,
+“Giant facet-dependent spin-orbit torque and spin Hall conductivity in the trian-
+gular antiferromagnet IrMn3,” Sci. Adv. 2(9), e1600759 (2016).
+134S. Z. Peng, J. Q. Lu, W. X. Li, L. Z. Wang, H. Zhang, X. Li, K. L. Wang, and
+W. S. Zhao, “Field-free switching of perpendicular magnetization through
+voltage-gated spin-orbit torque,” in 2019 IEEE International Electron Devices
+Meeting (IEDM) (IEEE, 2019).
+135S. Fukami, C. Zhang, S. DuttaGupta, A. Kurenkov, and H. Ohno,
+“Magnetization switching by spin–orbit torque in an antiferromagnet–ferromag-
+net bilayer system,” Nat. Mater. 15(5), 535–541 (2016).
+136E. Grimaldi, V. Krizakova, G. Sala, F. Yasin, S. Couet, G. Sankar Kar,
+K. Garello, and P. Gambardella, “Single-shot dynamics of spin–orbit torque and
+spin transfer torque switching in three-terminal magnetic tunnel junctions,” Nat.
+Nanotechnol. 15(2), 111–117 (2020).
+137V. Krizakova, E. Grimaldi, K. Garello, G. Sala, S. Couet, G. S. Kar, and
+P. Gambardella, “Interplay of voltage control of magnetic anisotropy, spin-
+transfer torque, and heat in the spin-orbit-torque switching of three-terminal
+magnetic tunnel junctions,” Phys. Rev. Appl. 15(5), 054055 (2021).
+138C. Yoshida, T. Tanaka, T. Ataka, M. Hoshina, and A. Furuya, “Field-free reli-
+able magnetization switching in a three-terminal perpendicular magnetic tunnel
+junction via spin-orbit torque, spin-transfer torque, and voltage-controlled mag-
+netic anisotropy,” J. Phys. D: Appl. Phys. 55(36), 365003 (2022).
+139S. Shreya and B. K. Kaushik, “Modeling of voltage-controlled spin–orbit
+torque MRAM for multilevel switching application,” IEEE Trans. Electron
+Devices 67(1), 90–98 (2020).
+140S. Shreya, A. Jain, and B. K. Kaushik, “Computing-in-memory using voltage-
+controlled spin-orbit torque based MRAM array,” Microelectron. J. 109, 104943
+(2021).
+141D. Divyanshu, R. Kumar, D. Khan, S. Amara, and Y. Massoud, “Logic
+locking for hardware security using voltage-gated spin-orbit torque magnetic
+tunnel junction,” in 2022 IEEE Asia Pacific Conference on Circuits and Systems
+(APCCAS) (IEEE, 2022), Vol. 11, p. 3537.
+142D. Divyanshu, R. Kumar, D. Khan, S. Amara, and Y. Massoud, “Design of
+VGSOT-MTJ-based logic locking for high-speed digital circuits,” Electronics
+11(21), 3537 (2022).
+143K.
+Cai,
+G.
+Talmelli,
+K.
+Fan,
+S.
+Van
+Beek,
+V.
+Kateel,
+M.
+Gupta,
+M. G. Monteiro, M. B. Chroud, G. Jayakumar, A. Trovato, S. Rao, G. S. Kar, and
+S. Couet, “First demonstration of field-free perpendicular SOT-MRAM for ultra-
+fast and high-density embedded memories,” in 2022 International Electron
+Devices Meeting (IEDM), San Francisco, CA (IEEE, 2022).
+144W. J. Kong, C. H. Wan, C. Y. Guo, C. Fang, B. S. Tao, X. Wang, and
+X. F. Han, “All-electrical manipulation of magnetization in magnetic tunnel
+junction via spin–orbit torque,” Appl. Phys. Lett. 116(16), 162401 (2020).
+145K. Garello, F. Yasin, S. Couet, L. Souriau, J. Swerts, S. Rao, S. Van Beek,
+W. Kim, E. Liu, S. Kundu, D. Tsvetanova, K. Croes, N. Jossart, E. Grimaldi,
+M. Baumgartner, D. Crotti, A. Fumemont, P. Gambardella, and G. S. Kar,
+“SOT-MRAM 300 mm integration for low power and ultrafast embedded memo-
+ries,” in 2019 IEEE Symposium on VLSI Circuits (IEEE, 2019).
+146Y. C. Wu, W. Kim, K. Garello, F. Yasin, G. Jayakumar, S. Couet,
+R. Carpenter, S. Kundu, S. Rao, D. Crotti, J. Van Houdt, G. Groeseneken, and
+G. S. Kar, “Deterministic and field-free voltage-controlled MRAM for high per-
+formance and low power applications,” in 2020 IEEE Symposium on VLSI
+Technology (IEEE, 2020), pp. 1–2.
+147R. Dorrance, J. G. Alzate, S. S. Cherepov, P. Upadhyaya, I. N. Krivorotov,
+J. A. Katine, J. Langer, K. L. Wang, P. K. Amiri, and D. Markovic, “Diode-MTJ
+crossbar memory cell using voltage-induced unipolar switching for high-density
+MRAM,” IEEE Electron Device Lett. 34(6), 753–755 (2013).
+148A. Meo, J. Chureemart, R. W. Chantrell, and P. Chureemart, “Magnetisation
+switching dynamics induced by combination of spin transfer torque and spin
+orbit torque,” Sci. Rep. 12(1), 3380 (2022).
+149Y. Xu, B. Wu, Z. Wang, Y. Wang, Y. Zhang, and W. Zhao, “Write-efficient
+STT/SOT hybrid triple-level cell for high-density MRAM,” IEEE Trans. Electron
+Devices 67(4), 1460–1465 (2020).
+150S. Kanai, Y. Nakatani, M. Yamanouchi, S. Ikeda, H. Sato, F. Matsukura, and
+H. Ohno, “Magnetization switching in a CoFeB/MgO magnetic tunnel junction
+by combining spin-transfer torque and electric field-effect,” Appl. Phys. Lett.
+104(21), 212406 (2014).
+151P.
+Khalili
+Amiri,
+J.
+G.
+Alzate,
+X.
+Q.
+Cai,
+F.
+Ebrahimi,
+Q.
+Hu,
+K. Wong, C. Grezes, H. Lee, G. Yu, X. Li, M. Akyol, Q. Shao, J. A. Katine,
+J.
+Langer,
+B.
+Ocker,
+and
+K.
+L.
+Wang,
+“Electric-field-controlled
+magnetoelectric RAM: Progress, challenges, and scaling,” IEEE Trans. Magn.
+51(11), 1–7 (2015).
+152J. G. Alzate, P. K. Amiri, P. Upadhyaya, S. S. Cherepov, J. Zhu, M. Lewis,
+R. Dorrance, J. A. Katine, J. Langer, K. Galatsis, D. Markovic, I. Krivorotov, and
+K. L. Wang, “Voltage-induced switching of nanoscale magnetic tunnel junc-
+tions,”
+in
+2012
+International
+Electron
+Devices
+Meeting
+(IEEE,
+2012),
+pp. 29.5.1–29.5.4.
+153R. Matsumoto, T. Nozaki, S. Yuasa, and H. Imamura, “Voltage-induced pre-
+cessional switching at zero-bias magnetic field in a conically magnetized free
+layer,” Phys. Rev. Appl. 9(1), 014026 (2018).
+154R. Matsumoto, H. Arai, S. Yuasa, and H. Imamura, “Spin-transfer-torque
+switching in a spin-valve nanopillar with a conically magnetized free layer,”
+Appl. Phys. Express 8(6), 063007 (2015).
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-20
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 22 ---
+155R. Matsumoto, H. Arai, S. Yuasa, and H. Imamura, “Theoretical analysis of
+thermally activated spin-transfer-torque switching in a conically magnetized
+nanomagnet,” Phys. Rev. B 92(14), 140409 (2015).
+156R. Matsumoto and H. Imamura, “Write error rate in bias-magnetic-field-free
+voltage-induced switching in a conically magnetized free layer,” Phys. Rev. Appl.
+17(3), 034063 (2022).
+157J.-W. Lee, J.-R. Jeong, S.-C. Shin, J. Kim, and S.-K. Kim, “Spin-reorientation
+transitions in ultrathin Co films on Pt(111) and Pd(111) single-crystal sub-
+strates,” Phys. Rev. B 66(17), 172409 (2002).
+158H. Stillrich, C. Menk, R. Frömter, and H. Oepen, “Magnetic anisotropy and
+the cone state in Co/Pt multilayer films,” J. Appl. Phys. 105(7), 07C308 (2009).
+159K.-W. Park, J.-Y. Park, S.-H. C. Baek, D.-H. Kim, S.-M. Seo, S.-W. Chung,
+and B.-G. Park, “Electric field control of magnetic anisotropy in the easy cone
+state of Ta/Pt/CoFeB/MgO structures,” Appl. Phys. Lett. 109(1), 012405 (2016).
+160Y. Kitaoka and H. Imamura, “The first and the second-order magnetic
+anisotropy in a Fe/MgO system under electric field: A first-principles study,”
+Jpn. J. Appl. Phys. 60(1), 018003 (2021).
+161D. I. Anyfantis, C. Ballani, N. Kanistras, A. Barnasas, I. Tsiaoussis,
+G. Schmidt, E. T. Papaioannou, and P. Poulopoulos, “Magnetic anisotropies and
+exchange bias of Co/CoO multilayers with intermediate ultrathin Pt layers,”
+Materials 16(4), 1378 (2023).
+162X. Xiao, L. Sun, Y. M. Luo, D. Zhang, J. H. Liang, and Y. Z. Wu, “Electrical
+manipulation of perpendicular magnetic anisotropy in a Pt/Co/Pt trilayer grown
+on PMN-PT(011) substrate,” J. Phys. D: Appl. Phys. 51(11), 115001 (2018).
+163J. M. Shaw, H. T. Nembach, M. Weiler, T. J. Silva, M. Schoen, J. Z. Sun, and
+D. C. Worledge, “Perpendicular magnetic anisotropy and easy cone state in Ta/
+Co60Fe20B20/MgO,” IEEE Magn. Lett. 6, 1–4 (2015).
+164G. M. Castro, J. Geshev, J. E. Schmidt, E. B. Saitovich, and L. C. Nagamine,
+“Cone magnetization state and exchange bias in IrMn/Cu/[Co/Pt]3 multilayers,”
+J. Appl. Phys. 106(11), 113922 (2009).
+165G. M. B. Castro, L. C. C. M. Nagamine, J. Geshev, E. B. Saitovich, and
+J. E. Schmidt, “Perpendicular exchange bias in IrMn/Pt/[Co/Pt]3 multilayers
+with cone magnetization,” Thin Solid Films 519(19), 6591–6594 (2011).
+166M. Grimsditch, A. Hoffmann, P. Vavassori, H. Shi, and D. Lederman,
+“Exchange-induced anisotropies at ferromagnetic-antiferromagnetic interfaces
+above and below the Néel temperature,” Phys. Rev. Lett. 90(25), 257201 (2003).
+167H. Casimir, J. Smit, U. Enz, J. Fast, H. Wijn, E. Gorter, A. Duyvesteyn,
+J. Fast, and J. de Jong, “Rapport sur quelques recherches dans le domaine
+du magnétisme aux laboratoires philips,” J. Phys. Radium 20(2–3), 360–373
+(1959).
+168P. K. Mishra and S. Bhuktare, “Write error rate analysis of field-free
+spin-orbit torque switching in conically magnetized free layer nanomagnet,”
+Appl. Phys. Lett. 124(16), 162401 (2024).
+169G. Sebald, M. Nakano, M. Lallart, T. Tian, G. Diguet, and J.-Y. Cavaille,
+“Energy conversion in magneto-rheological elastomers,” Sci. Technol. Adv.
+Mater. 18(1), 766–778 (2017).
+170G. Riesgo, L. Elbaile, J. Carrizo, R. D. Crespo, M. A. García, Y. Torres, and
+J. A. García, “Villari effect at low strain in magnetoactive materials,” Materials
+13(11), 2472 (2020).
+171W.
+Al
+Misba,
+M.
+M.
+Rajib,
+D.
+Bhattacharya,
+and
+J.
+Atulasimha,
+“Acoustic-wave-induced ferromagnetic-resonance-assisted spin-torque switching
+of perpendicular magnetic tunnel junctions with anisotropy variation,” Phys.
+Rev. Appl. 14(1), 014088 (2020).
+172A. K. Biswas, S. Bandyopadhyay, and J. Atulasimha, “Acoustically assisted
+spin-transfer-torque switching of nanomagnets: An energy-efficient hybrid writing
+scheme for non-volatile memory,” Appl. Phys. Lett. 103(23), 232401 (2013).
+173H. B. Huang, J. M. Hu, N. T. Yang, X. Q. Ma, and L. Q. Chen,
+“Strain-assisted current-induced magnetization reversal in magnetic tunnel junc-
+tions: A micromagnetic study with phase-field microelasticity,” Appl. Phys. Lett.
+105(5), 122407 (2014).
+174A. Khan, D. E. Nikonov, S. Manipatruni, T. Ghani, and I. A. Young, “Voltage
+induced magnetostrictive switching of nanomagnets: Strain assisted strain trans-
+fer torque random access memory,” Appl. Phys. Lett. 104(26), 262407 (2014).
+175H. B. Huang, C. P. Zhao, and X. Q. Ma, “Micromagnetic simulation of
+strain-assisted current-induced magnetization switching,” Adv. Condens. Matter
+Phys. 2016, 1–6 (2016).
+176Y.-B. Chen, B. Wei, X.-K. Yang, J.-H. Liu, J. Li, H.-Q. Cui, C. Li, and
+M.-X. Song, “In-plane magnetization switching characteristics of energy-efficient
+strain-mediated nanomagnets assisted by the spin Hall effect at room tempera-
+ture,” J. Magn. Magn. Mater. 514, 167216 (2020).
+177Q. Wang, J. Domann, G. Yu, A. Barra, K. L. Wang, and G. P. Carman,
+“Strain-mediated spin-orbit torque switching for magnetic memory,” Phys. Rev.
+Appl. 10(3), 034052 (2018).
+178P. K. Mishra, N. Halavath, and S. Bhuktare, “Strain mediated voltage con-
+trolled magnetic anisotropy based switching for magnetic memory applications,”
+J. Appl. Phys. 134(12), 123905 (2023).
+179J. L. Drobitch, M. A. Abeed, and S. Bandyopadhyay, “Precessional switching
+of a perpendicular anisotropy magneto-tunneling junction without a magnetic
+field,” Jpn. J. Appl. Phys. 56(10), 100309 (2017).
+180J. Stöhr, H. C. Siegmann, A. Kashuba, and S. J. Gamble, “Magnetization
+switching without charge or spin currents,” Appl. Phys. Lett. 94(7), 072504
+(2009).
+181R. Matsumoto, S. Yuasa, and H. Imamura, “Substantial reduction of write-
+error rate for voltage-controlled magnetoresistive random access memory by
+in-plane demagnetizing field and voltage-induced negative out-of-plane anisot-
+ropy field,” J. Magn. Magn. Mater. 579, 170804 (2023).
+182S. Xu, Q. Peng, F. Xing, H. Xue, J. Sun, L. Ma, and M. Li, “A low-cost current
+sensor based on semi-cylindrical magnetostrictive composite,” Electronics 9(11),
+1833 (2020).
+183M. Liu, C. Ma, W. Du, H. Su, H. Zhang, B. Liu, H. Meng, and
+X. Tang, “Deterministic magnetic moment rotation in antiferromagnetic
+material by piezoelectric strain modulation,” NPG Asia Mater. 14(1), 68
+(2022).
+184S. Kwon, P.-V. Ong, Q. Sun, F. Mahfouzi, X. Li, K. L. Li, Y. Kato, H. Yoda,
+P. K. Amiri, and N. Kioussis, “Colossal electric field control of magnetic anisot-
+ropy at ferromagnetic interfaces induced by iridium overlayer,” Phys. Rev. B
+99(6), 064434 (2019).
+185G. Yu, Z. Wang, M. Abolfath-Beygi, C. He, X. Li, K. L. Wong, P. Nordeen,
+H. Wu, G. P. Carman, X. Han, I. A. Alhomoudi, P. K. Amiri, and K. L. Wang,
+“Strain-induced modulation of perpendicular magnetic anisotropy in Ta/CoFeB/
+MgO structures investigated by ferromagnetic resonance,” Appl. Phys. Lett.
+106(7), 072402 (2015).
+186D.-Y. Lee, S.-H. Hong, S.-E. Lee, and J.-G. Park, “Dependency of tunneling-
+magnetoresistance ratio on nanoscale spacer thickness and material for double
+MgO based perpendicular-magnetic-tunneling-junction,” Sci. Rep. 6(1), 38125
+(2016).
+187H. Sato, M. Yamanouchi, S. Ikeda, S. Fukami, F. Matsukura, and H. Ohno,
+“Perpendicular-anisotropy CoFeB-MgO magnetic tunnel junctions with a MgO/
+CoFeB/Ta/CoFeB/MgO recording structure,” Appl. Phys. Lett. 101(2), 022414
+(2012).
+188H. Sato, E. C. Enobio, M. Yamanouchi, S. Ikeda, S. Fukami, S. Kanai,
+F. Matsukura, and H. Ohno, “Properties of magnetic tunnel junctions with a
+MgO/CoFeB/Ta/CoFeB/MgO recording structure down to junction diameter of
+11 nm,” Appl. Phys. Lett. 105(6), 062403 (2014).
+189S. Sin and S. Oh, “Deterministic field-free voltage-induced magnetization
+switching with self-regulated precession for low-power memory,” Sci. Rep. 13(1),
+16084 (2023).
+190Z. Yu, J. Chen, L. Zhang, Y. Xing, and J. Wang, “Magnetization dynamics
+induced by the Rashba effect in ferromagnetic films,” Nanoscale 10(39),
+18728–18733 (2018).
+191S.-D. Guo, J.-X. Zhu, G.-Z. Wang, H.-T. Guo, B. Wang, K. Cheng, and
+Y. S. Ang, “Switching Rashba spin-splitting by reversing electric-field direction,”
+Phys. Rev. Mater. 7(4), 044604 (2023).
+192J. Deng, X. Fong, and G. Liang, “Electric-field-induced three-terminal pMTJ
+switching in the absence of an external magnetic field,” Appl. Phys. Lett.
+112(25), 252405 (2018).
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-21
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 23 ---
+193Y. Nakatani, M. Hayashi, S. Kanai, S. Fukami, and H. Ohno, “Electric field
+control of skyrmions in magnetic nanodisks,” Appl. Phys. Lett. 108(15), 152403
+(2016).
+194M. M. Rajib, W. A. Misba, D. Bhattacharya, and J. Atulasimha, “Robust sky-
+rmion mediated reversal of ferromagnetic nanodots of 20 nm lateral dimension
+with high Ms and observable DMI,” Sci. Rep. 11(1), 20914 (2021).
+195Y.-D. Wang, Z.-J. Wei, H.-R. Tu, C.-H. Zhang, and Z.-P. Hou, “Electric field
+manipulation of magnetic skyrmions,” Rare Met. 41(12), 4000–4014 (2022).
+196K. Everschor, M. Garst, R. A. Duine, and A. Rosch, “Current-induced rota-
+tional torques in the skyrmion lattice phase of chiral magnets,” Phys. Rev. B
+84(6), 064401 (2011).
+197D. Bhattacharya and J. Atulasimha, “Skyrmion-mediated voltage-controlled
+switching
+of
+ferromagnets
+for
+reliable
+and
+energy-efficient
+two-terminal
+memory,” ACS Appl. Mater. Interfaces 10(20), 17455–17462 (2018).
+198D. Bhattacharya, S. A. Razavi, H. Wu, B. Dai, K. L. Wang, and J. Atulasimha,
+“Creation and annihilation of non-volatile fixed magnetic skyrmions using
+voltage control of magnetic anisotropy,” Nat. Electron. 3(9), 539–545 (2020).
+199M. M. Rajib, W. A. Misba, D. Bhattacharya, F. Garcia-Sanchez, and
+J. Atulasimha, “Dynamic skyrmion-mediated switching of perpendicular MTJs:
+Feasibility analysis of scaling to 20 nm with thermal noise,” IEEE Trans. Electron
+Devices 67(9), 3883–3888 (2020).
+200I. Dzyaloshinsky, “A thermodynamic theory of “weak” ferromagnetism of
+antiferromagnetics,” J. Phys. Chem. Solids 4(4), 241–255 (1958).
+201T. Moriya, “Anisotropic superexchange interaction and weak ferromagne-
+tism,” Phys. Rev. 120(1), 91–98 (1960).
+202A. Vansteenkiste, J. Leliaert, M. Dvornik, M. Helsen, F. Garcia-Sanchez, and
+B. Van Waeyenberge, “The design and verification of MuMax3,” AIP Adv. 4(10),
+107133 (2014).
+203S. Kwon, Q. Sun, F. Mahfouzi, K. L. Wang, P. K. Amiri, and N. Kioussis,
+“Voltage-controlled magnetic anisotropy in heterostructures with atomically thin
+heavy metals,” Phys. Rev. Appl. 12(4), 044075 (2019).
+204C. Deger, “Strain-enhanced Dzyaloshinskii–Moriya interaction at Co/Pt inter-
+faces,” Sci. Rep. 10(1), 12314 (2020).
+205H. Yang, O. Boulle, V. Cros, A. Fert, and M. Chshiev, “Controlling
+Dzyaloshinskii-Moriya interaction via chirality dependent atomic-layer stacking,
+insulator capping and electric field,” Sci. Rep. 8(1), 12356 (2018).
+206S. Wang, H. Lee, F. Ebrahimi, P. K. Amiri, K. L. Wang, and P. Gupta,
+“Comparative evaluation of spin-transfer-torque and magnetoelectric random
+access memory,” IEEE J. Emerging Sel. Top. Circuits Syst. 6(2), 134–145 (2016).
+207T. Yamamoto, T. Nozaki, Y. Shiota, H. Imamura, S. Tamaru, K. Yakushiji,
+H. Kubota, A. Fukushima, Y. Suzuki, and S. Yuasa, “Thermally induced
+precession-orbit transition of magnetization in voltage-driven magnetization
+switching,” Phys. Rev. Appl. 10(2), 024004 (2018).
+208U. Roy, T. Pramanik, L. F. Register, and S. K. Banerjee, “Write error rate of
+spin-transfer-torque random access memory including micromagnetic effects
+using rare event enhancement,” IEEE Trans. Magn. 52(10), 1–6 (2016).
+209Y. Shiota, T. Nozaki, S. Tamaru, K. Yakushiji, H. Kubota, A. Fukushima,
+S. Yuasa, and Y. Suzuki, “Evaluation of write error rate for voltage-driven
+dynamic magnetization switching in magnetic tunnel junctions with perpendicu-
+lar magnetization,” Appl. Phys. Express 9(1), 013001 (2016).
+210S. Wang, S. Pal, T. Li, A. Pan, C. Grezes, P. Khalili-Amiri, K. L. Wang, and
+P. Gupta, “Hybrid VC-MTJ/CMOS non-volatile stochastic logic for efficient
+computing,” in Design, Automation & Test in Europe Conference & Exhibition
+(DATE), 2017 (IEEE, 2017), p. 1442–1447.
+211H. Cheng and N. Deng, “Influence of thermal agitation on the electric field
+induced precessional magnetization reversal with perpendicular easy axis,” AIP
+Adv. 3(12), 122124 (2013).
+212T. Yamamoto, T. Nozaki, H. Imamura, Y. Shiota, T. Ikeura, S. Tamaru,
+K. Yakushiji, H. Kubota, A. Fukushima, Y. Suzuki, and S. Yuasa, “Write-error
+reduction of voltage-torque-driven magnetization switching by a controlled
+voltage pulse,” Phys. Rev. Appl. 11(1), 014013 (2019).
+213H. Noguchi, K. Ikegami, K. Abe, S. Fujita, Y. Shiota, T. Nozaki, S. Yuasa, and
+Y. Suzuki, “Novel voltage controlled MRAM (VCM) with fast read/write circuits
+for ultra large last level cache,” 2016 IEEE International Electron Devices Meeting
+(IEDM) (IEEE, 2016), pp. 27.5.1–27.5.4.
+214T. Ikeura, T. Nozaki, Y. Shiota, T. Yamamoto, H. Imamura, H. Kubota,
+A. Fukushima, Y. Suzuki, and S. Yuasa, “Reduction in the write error rate of
+voltage-induced dynamic magnetization switching using the reverse bias
+method,” Jpn. J. Appl. Phys. 57(4), 040311 (2018).
+215T. Yamamoto, T. Nozaki, H. Imamura, S. Tamaru, K. Yakushiji, H. Kubota,
+A. Fukushima, Y. Suzuki, and S. Yuasa, “Voltage-driven magnetization switching
+using inverse-bias schemes,” Phys. Rev. Appl. 13(1), 014045 (2020).
+216C. Grezes, H. Lee, A. Lee, S. Wang, F. Ebrahimi, X. Li, K. Wong, J. A. Katine,
+B. Ocker, J. Langer, P. Gupta, P. Khalili Amiri, and K. L. Wang, “Write error rate
+and
+read
+disturbance
+in
+electric-field-controlled
+magnetic
+random-access
+memory,” IEEE Magn. Lett. 8, 1–5 (2017).
+217R.-A.
+One,
+H.
+Béa,
+S.
+Mican,
+M.
+Joldos,
+P.
+B.
+Veiga,
+B.
+Dieny,
+L. D. Buda-Prejbeanu, and C. Tiusan, “Route towards efficient magnetization
+reversal driven by voltage control of magnetic anisotropy,” Sci. Rep. 11(1), 8801
+(2021).
+218R. Matsumoto, T. Sato, and H. Imamura, “Voltage-induced switching with
+long tolerance of voltage-pulse duration in a perpendicularly magnetized free
+layer,” Appl. Phys. Express 12(5), 053003 (2019).
+219H. Cai, M. Han, W. Shan, J. Yang, Y. Wang, W. Kang, and W. Zhao,
+“Voltage-controlled magnetoelectric memory bit-cell design with assisted body-
+bias in FD-SOI,” in Proceedings of the 2019 on Great Lakes Symposium on VLSI,
+Tysons Corner, VA (Association for Computing Machinery, 2019).
+220H. Lee, Integration of Voltage-controlled Spintronic Devices in CMOS Circuits
+(UCLA, 2017), see http://dissertations.umi.com/ucla:16312.
+221K. Nakamura, T. Nomura, A.-M. Pradipto, K. Nawa, T. Akiyama, and T. Ito,
+“Effect of heavy-metal insertions at Fe/MgO interfaces on electric-field-induced
+modification of magnetocrystalline anisotropy,” J. Magn. Magn. Mater. 429,
+214–220 (2017).
+222T. Nozaki, M. Endo, M. Tsujikawa, T. Yamamoto, T. Nozaki, M. Konoto,
+H. Ohmori, Y. Higo, H. Kubota, A. Fukushima, M. Hosomi, M. Shirai, Y. Suzuki,
+and S. Yuasa, “Voltage-controlled magnetic anisotropy in an ultrathin Ir-doped Fe
+layer with a CoFe termination layer,” APL Mater. 8(1), 011108 (2020).
+223H. Nakayama, T. Nozaki, T. Nozaki, and S. Yuasa, “Engineering Co/MgO
+interface with heavy metals for voltage-controlled magnetic anisotropy effect,”
+Appl. Phys. Lett. 122(3), 032403 (2023).
+224Y. Kato, H. Yoda, Y. Saito, S. Oikawa, K. Fujii, M. Yoshiki, K. Koi,
+H. Sugiyama, M. Ishikawa, T. Inokuchi, N. Shimomura, M. Shimizu, S. Shirotori,
+B. Altansargai, Y. Ohsawa, K. Ikegami, A. Tiwari, and A. Kurobe, “Giant voltage-
+controlled magnetic anisotropy effect in a crystallographically strained CoFe
+system,” Appl. Phys. Express 11(5), 053007 (2018).
+225K. H. He, J. S. Chen, and Y. P. Feng, “First principles study of the electric
+field effect on magnetization and magnetic anisotropy of FeCo/MgO(001) thin
+film,” Appl. Phys. Lett. 99(7), 072503 (2011).
+226K. Nakamura, T. Akiyama, T. Ito, M. Weinert, and A. J. Freeman, “Role
+of an interfacial FeO layer in the electric-field-driven switching of magnetocrys-
+talline anisotropy at the Fe/MgO interface,” Phys. Rev. B 81(22), 220409 (2010).
+227F. Ibrahim, A. Hallal, B. Dieny, and M. Chshiev, “Establishing characteristic
+behavior of voltage control of magnetic anisotropy by ionic migration,” Phys.
+Rev. B 98(1), 214441 (2018).
+228X. Li, K. Fitzell, D. Wu, C. T. Karaba, A. Buditama, G. Yu, K. L. Wong,
+N. Altieri, C. Grezes, N. Kioussis, S. Tolbert, Z. Zhang, J. P. Chang, P. Khalili
+Amiri, and K. L. Wang, “Enhancement of voltage-controlled magnetic anisot-
+ropy through precise control of Mg insertion thickness at CoFeB|MgO interface,”
+Appl. Phys. Lett. 110(5), 052401 (2017).
+229M. Endo, S. Kanai, S. Ikeda, F. Matsukura, and H. Ohno, “Electric-field
+effects on thickness dependent magnetic anisotropy of sputtered MgO/
+Co40Fe40B20/Ta structures,” Appl. Phys. Lett. 96(21), 212503 (2010).
+230Y. Shiota, F. Bonell, S. Miwa, N. Mizuochi, T. Shinjo, and Y. Suzuki,
+“Opposite signs of voltage-induced perpendicular magnetic anisotropy change in
+CoFeB|MgO junctions with different underlayers,” Appl. Phys. Lett. 103(8),
+082410 (2013).
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-22
+© Author(s) 2024
+ 17 March 2026 06:59:48
+
+
+--- PAGE 24 ---
+231T. Nozaki, T. Nozaki, H. Onoda, H. Nakayama, T. Ichinose, T. Yamamoto,
+M. Konoto, and S. Yuasa, “Precise interface engineering using a post-oxidized
+ultrathin MgAl layer for the voltage-controlled magnetic anisotropy effect,” APL
+Mater. 10(8), 081103 (2022).
+232D. Chien, X. Li, K. Wong, M. A. Zurbuchen, S. Robbennolt, G. Yu, S. Tolbert,
+N. Kioussis, P. Khalili Amiri, K. L. Wang, and J. P. Chang, “Enhanced voltage-
+controlled magnetic anisotropy in magnetic tunnel junctions with an MgO/PZT/
+MgO tunnel barrier,” Appl. Phys. Lett. 108(11), 112402 (2016).
+233B. F. Vermeulen, J. Swerts, S. Couet, M. Popovici, I. P. Radu, J. Van de
+Vondel, K. Temst, G. Groeseneken, and K. Martens, “Electronic voltage control
+of magnetic anisotropy at room temperature in high-κ SrTiO3/Co/Pt trilayer,”
+Phys. Rev. Mater. 4(11), 114415 (2020).
+234S. Nakazawa, A. Obinata, D. Chiba, and K. Ueno, “Electric field control of
+magnetic anisotropy in a Co/Pt bilayer deposited on a high-κ SrTiO3,” Appl.
+Phys. Lett. 110(6), 062406 (2017).
+235H. Onoda, T. Nozaki, S. Tamaru, T. Nozaki, and S. Yuasa, “Enhancing
+voltage-controlled magnetic anisotropy in Fe80B20/MgO/HfO2 thin films by
+dielectric constant modulation,” Phys. Rev. Mater. 6(10), 104406 (2022).
+236K.
+Kita,
+D.
+W.
+Abraham,
+M.
+J.
+Gajek,
+and
+D.
+C.
+Worledge,
+“Electric-field-control of magnetic anisotropy of Co0.6Fe0.2B0.2/oxide stacks using
+reduced voltage,” J. Appl. Phys. 112(3), 033919 (2012).
+237K. Yamada, H. Kakizakai, K. Shimamura, M. Kawaguchi, S. Fukami,
+N. Ishiwata, D. Chiba, and T. Ono, “Electric field modulation of magnetic
+anisotropy
+in
+MgO/Co/Pt
+structure,”
+Appl.
+Phys.
+Express
+6(7),
+073004
+(2013).
+238E. M. Hassen, B. Viala, M. C. Cyrille, M. Cartier, O. Redon, P. Lima,
+B. Belhadji, H. X. Yang, J. Velev, and M. Chshiev, “Room temperature magneto-
+resistance in CoFeB/SrTiO3/CoFeB magnetic tunnel junctions deposited by ion
+beam sputtering,” J. Appl. Phys. 111(7), 07C727 (2012).
+239H. Lee, C. Grezes, S. Wang, F. Ebrahimi, P. Gupta, P. K. Amiri, and K. L. Wang,
+“Source line sensing in magneto-electric random-access memory to reduce read dis-
+turbance and improve sensing margin,” IEEE Magn. Lett. 7, 1–5 (2016).
+240W. Kang, L. Chang, Y. Zhang, and W. Zhao, “Voltage-controlled MRAM
+for working memory: Perspectives and challenges,” in Design, Automation &
+Test in Europe Conference & Exhibition (DATE), Lausanne, Switzerland (IEEE,
+2017).
+Journal of
+Applied Physics
+REVIEW
+pubs.aip.org/aip/jap
+J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648
+135, 220701-23
+© Author(s) 2024
+ 17 March 2026 06:59:48

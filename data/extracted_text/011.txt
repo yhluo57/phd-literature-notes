@@ -1,0 +1,672 @@
+
+
+--- PAGE 1 ---
+This content has been downloaded from IOPscience. Please scroll down to see the full text.
+Download details:
+IP Address: 207.162.240.147
+This content was downloaded on 06/07/2017 at 10:19
+Please note that terms and conditions apply.
+L10-MnGa based magnetic tunnel junction for high magnetic field sensor
+View the table of contents for this issue, or go to the journal homepage for more
+2017 J. Phys. D: Appl. Phys. 50 285002
+(http://iopscience.iop.org/0022-3727/50/28/285002)
+Home
+Search
+Collections
+Journals
+About
+Contact us
+My IOPscience
+You may also be interested in:
+Magnetic tunnel junctions of perpendicularly magnetized L10-MnGa/Fe/MgO/CoFe structures:
+Fe-layer-thickness dependences of magnetoresistance effect and tunnelling conductance spectra
+T Kubota, Q L Ma, S Mizukami et al.
+Tunable three-axis magnetoresistance sensor with a spin-polarised current
+Jui-Hang Chang and Ching-Ray Chang
+Perpendicular magnetic tunnel junction and its application in magnetic random access memory
+Liu Hou-Fang, Syed Shahbaz Ali and Han Xiu-Feng
+Low current density induced spin-transfer torque switching in CoFeB–MgO magnetic tunnel junctions
+with perpendicular anisotropy
+H Meng, R Sbiaa, S Y H Lua et al.
+Spin-torque sensor with tunable sensitivity and detection range
+Sang-Il Kim, Min-Su Seo, Yeon Suk Choi et al.
+Tailoring the interfacial exchange coupling of perpendicularly magnetized Co/L10-Mn1.5Ga bilayers
+J X Xiao, J Lu, W Q Liu et al.
+Magnetoresistive nanosensors: controlling magnetism at the nanoscale
+Diana C Leitao, Ana V Silva, Elvira Paz et al.
+Thermally assisted MRAMs: ultimate scalability and logic functionalities
+I L Prejbeanu, S Bandiera, J Alvarez-Hérault et al.
+
+
+--- PAGE 2 ---
+1
+© 2017 IOP Publishing Ltd  Printed in the UK
+1.  Introduction
+Magnetic field sensors have attracted much interest in the last 
+few decades for their potential applications in the fields of 
+weak magnetic detection and medical inspection, as well as 
+automotive systems, due to their high sensitivity, low power 
+consumption and long endurance [1]. Currently, Hall sensors 
+are widely used in these areas, especially for high magnetic 
+field sensing with high spatial resolution. However, the Hall 
+sensors have some shortcomings, such as poor thermal sta­
+bility and a limited operation frequency range, which restricts 
+their wide applications. Recently, the magnetoresistance (MR) 
+sensors based on spin valves and magnetic tunnel junctions 
+have become the new generation magnetic field sensors for 
+their higher sensitivity and smaller size, compared with tradi­
+tional Hall effect sensors and anisotropic magnetoresistance 
+(AMR) sensors [2–4]. In MR sensors, the basic concerns are 
+to realize a linear and reversible response to the applied magn­
+etic field, high sensitivity and large dynamic range [5, 6]. To 
+date, there are two main methods to align the magnetizations 
+of the sensing layer and the reference layer to be initially 
+perpendicular to each other. One is utilizing the shape aniso­
+tropy and step edge anisotropy in a film plane, or introducing 
+a transverse bias field, which complicates the system design 
+and leads to the magnetic noise. The other approach is uti­
+lizing out-of-plane magnetized materials to realize the vertical 
+alignment. In this configuration, the magnetization of the ref­
+erence and sensing layers is aligned along the out-of-plane 
+and in-plane directions, respectively [7, 8], which has been 
+widely used in recent designs of tunneling magnetoresist­
+ance (TMR) sensors as an alternative to Hall sensors for high 
+magn­etic field sensing with high spatial resolution.
+Perpendicular field sensors based on the TMR effect have 
+been intensely investigated for their promising applications 
+in mobile devices. Generally, to realize the linear response to 
+the applied field and large dynamic range in the TMR effect 
+based perpendicular magnetic field sensors, the ferromagnetic 
+material acting as a reference layer requires a high coercive 
+force (Hc), a high spin polarization and well matching with 
+MgO barriers. In recent years, several kinds of materials with 
+perpendicular magnetic anisotropy (PMA) have been incor­
+porated into MgO based MTJ field sensors, such as CoFeB, 
+Journal of Physics D: Applied Physics
+L10-MnGa based magnetic tunnel junction 
+for high magnetic field sensor
+X P Zhao, J Lu1, S W Mao, Z F Yu, H L Wang, X L Wang, D H Wei  
+and J H Zhao1
+State Key Laboratory of Superlattices and Microstructures, Institute of Semiconductors, Chinese Academy 
+of Sciences, PO Box 912, Beijing 10083, People’s Republic of China
+E-mail: lujun@semi.ac.cn and jhzhao@red.semi.ac.cn
+Received 17 December 2016, revised 24 April 2017
+Accepted for publication 25 May 2017
+Published 23 June 2017
+Abstract
+We report on the investigation of the magnetic tunnel junction structure designed for high 
+magnetic field sensors with a perpendicularly magnetized L10-MnGa reference layer and an 
+in-plane magnetized Fe sensing layer. A large linear tunneling magnetoresistance ratio up 
+to 27.4% and huge dynamic range up to 5600 Oe have been observed at 300 K, with a low 
+nonlinearity of 0.23% in the optimized magnetic tunnel junction (MTJ). The field response of 
+tunneling magnetoresistance is discussed to explain the field sensing properties in the dynamic 
+range. These results indicate that L10-MnGa based orthogonal MTJ is a promising candidate 
+for a high performance magnetic field sensor with a large dynamic range, high endurance and 
+low power consumption.
+Keywords: magnetic field sensor, magnetic tunnel junctions, dynamic range, molecular-beam 
+epitaxy, L10-MnGa
+(Some figures may appear in colour only in the online journal)
+1 Author to whom any correspondence should be addressed.
+1361-6463/17/285002+6$33.00
+https://doi.org/10.1088/1361-6463/aa750a
+J. Phys. D: Appl. Phys. 50 (2017) 285002 (6pp)
+
+
+--- PAGE 3 ---
+X P Zhao et al
+2
+[Co/Pt(Pd)]n and Pt/CoFe [8–15]. However, CoFeB based 
+MTJ field sensors show large and linear TMR signals at low 
+magn­etic field, usually no more than 150 Oe, due to the small 
+coercivity. In the case of the [Co/Pt(Pd)]n based MTJ sensor, 
+the linear dynamic range has been extended but still no more 
+than 2500 Oe [15]. Meanwhile, a small TMR ratio was always 
+observed in [Co/Pt(Pd)]n and Pt/CoFe based MTJs, which is 
+attributed to the low spin polarization.
+Among the various PMA materials, tetragonal L10-MnGa 
+alloys have shown many attractive properties, such as large 
+PMA (Ku ~ 107 erg cm−3) [16, 17], a low Gilbert damping 
+constant of 0.008, and a high spin polarization of transport 
+electrons of more than 70% [18, 19]. These properties make 
+the tetragonal L10-MnGa alloy an excellent candidate for ultra­
+high-density magnetic recording media, spin transfer-torque 
+MR random access memory (STT-MRAM) with low critical 
+current density and high power spin-torque nano-oscillators 
+(STNO). Compared with the PMA materials mentioned above, 
+L10-MnGa film exhibits a larger coercive field Hc and perpend­
+icular magnetic anisotropy Ku, which is expected to facilitate 
+out-of-plane field sensing in an extended dynamic range and 
+keep thermal stability. In previous works, a relatively small 
+TMR ratio was obtained in L10-MnGa based MTJs, due to 
+the large lattice mismatch (7%) between the L10-MnGa and 
+MgO barrier layers. To solve this problem, the magnetic layer/
+barrier interfaces were usually modified by inserting a con­
+ventional 3D transition metal (typically Fe, Co) alloys layer to 
+increase the TMR ratio [20–22].
+In this work, we investigated the TMR effect in 
+L10-Mn1.5Ga/Co/MgO/Fe MTJs field sensors with an orthog­
+onal alignment of magnetization. The measured TMR ratio of 
+the MTJ device is up to 27.4% with the Co thickness of 0.8 nm 
+at 300 K. In particular, a large dynamic range up to 5600 Oe 
+was observed in our devices with ultra-small nonlinearity and 
+excellent reproducibility. Finally, the mechanism of field sen­
+sitivity and the nonlinearity properties of the MTJ device were 
+analyzed in detail.
+2.  Experiments
+The MTJ structure consisting of a L10-MnGa(25)/Co(0.8)/
+MgO(2.3)/Fe(5)/Pd(2) (thickness unit: nanometers) multilayer 
+was deposited on a GaAs (0 0 1) substrate by a molecular-
+beam epitaxy (MBE) system with two growth chambers. A 
+150-nm-thick GaAs buffer layer was first epitaxially grown on 
+the GaAs (0 0 1) substrate to smooth the surface. Subsequently, 
+without breaking the vacuum, the sample was transferred via 
+an ultrahigh vacuum channel to the second growth chamber. 
+A 25-nm-thick L10-Mn1.5Ga film was then epitaxially grown 
+on the GaAs buffer layer at 250 °C, followed by an in situ 
+annealing process at 300 °C to improve the L10 phase order 
+and decrease the surface roughness. The Co layer was inserted 
+between the L10-MnGa and MgO barrier layers with a thick­
+ness of 0.8 nm, which is an optimized value to suppress the 
+defects arising from the lattice mismatch [22]. The MgO bar­
+rier layer was subsequently deposited using the electron beam 
+evaporation source at room temperature.
+The films were patterned into pillar shapes with sizes 
+ranging from 10  ×  10 µm2 to 70  ×  70 µm2 using typical ultra­
+violet lithography and Ar plasma milling techniques. After the 
+fabrication processes, the MTJ devices were annealed in a 
+vacuum furnace with high vacuum at 300 °C under a magn­
+etic field of 5000 Oe for 30 min. The crystalline and inter­
+face characteristics of a MTJ multilayer were confirmed by 
+cross-sectional high-resolution transmission electron micro­
+scope (HRTEM) images. The static magnetic properties of the 
+entire films were measured by the superconducting quantum 
+interference device (SQUID) with a maximum applied field 
+of 5 T. Electrical transport properties of the MTJ sensors were 
+measured by a DC four-terminal method from 5 K to 300 K 
+using a physical property measurement system (PPMS). The 
+experimental results for the devices with the different sizes 
+showed similar behaviors and all data shown below are for 
+40  ×  40 µm2 pillars.
+3.  Results and discussion
+3.1.  Magnetization behavior and HRTEM image of multilayers 
+of L10-MnGa based MTJ
+The out-of-plane hysteresis loops of the entire multilayers 
+of L10-MnGa based MTJ sensors with different Co layer 
+thicknesses tCo of 0 and 0.8 nm are illustrated in figure 1(a). 
+The L10-MnGa film epitaxially grown on the GaAs (0 0 1) 
+Figure 1.  (a) Hysteresis loops of L10-MnGa based MTJ with tCo  =  0 nm (black line) and tCo  =  0.8 nm (red line) with the magnetic field 
+applied along the film normal. The blue arrow represents the perpendicular magnetizations of L10-MnGa, Co and Fe film. (b) A high-
+resolution cross-sectional TEM image of L10-MnGa based MTJ stacking structure.
+J. Phys. D: Appl. Phys. 50 (2017) 285002
+
+
+--- PAGE 4 ---
+X P Zhao et al
+3
+substrate has large perpendicular magnetic anisotropy and 
+acts as the reference layer in the MTJ sensors. Obviously, both 
+the magnetization loops exhibit clear hysteresis with a large 
+coercive field, which is attributed to the perpendicular magn­
+etic anisotropy of L10-MnGa(/Co) layer. Compared with the 
+structure without an FM insertion layer, the coercivity for the 
+film with a 0.8 nm thick Co insertion layer is smaller, due to 
+the soft–hard exchange coupling between L10-MnGa and Co 
+[23]. Generally, the magnetic coupling between 3d magnetic 
+metal and L10-MnGa could be either ferromagnetic or antifer­
+romagnetic couplings. Moreover, the out-of-plane magnetiza­
+tion curves become saturated at a high field up to 2.1 T, due 
+to the large demagnetizing field of the Fe layer. Figure 1(b) 
+shows the cross-sectional HRTEM image of multilayers of 
+the MTJ stacking structure. Continuous lattice patterns are 
+clearly observed from the bottom L10-MnGa layer to the top 
+Fe layer, which indicates that a high degree of (0 0 1) orien­
+tation was maintained throughout the MTJ stack. The lattice 
+between Co and MnGa has the orientation relationship of Co 
+(0 0 1)//MnGa (0 0 1) and Co [1 1 0]//MnGa [1 0 0] [24] in the 
+directions perpendicular and parallel to the film plane, respec­
+tively. Therefore, a nearly lattice-matched heterostructure is 
+obtained in the MTJ multilayer, which is a critical condition 
+for achieving a high TMR ratio in MTJ devices.
+3.2. TMR of L10-MnGa based MTJ device
+Figure 2(a) shows the TMR curves of MTJ sensors with 
+a 0.8 nm Co insertion layer measured at 5, 100, 200 and 
+300 K, respectively. Here, the TMR ratio was calculated by 
+the form­ula (R  −  RL)/RL  ×  100%, where RL represents the 
+magneto-resistance of the low resistance state. The TMR ratio 
+reaches 27.4% at 300 K and 74.6% at 5 K, respectively, which 
+are higher than the previously reported results in L10-MnGa/
+FM/MgO/CoFe(Fe) based MTJs [20–22]. In L10-MnGa/MgO 
+based MTJs, the inelastic scattering process induced by the 
+large mismatch between MgO and MnGa (~7%) and diffu­
+sion of the Mn element may be the reason for the low MR 
+ratio. The benefits of the Co insertion layer are improving the 
+lattice matching between the alloy and MgO barrier, as well 
+as the high spin polarization of the ∆1 band [25]. The strong 
+temper­ature dependence of TMR is attributed to the suppres­
+sion of spin-flip scattering through tunneling in the MgO bar­
+rier layer and stimulation of the impurity band around the 
+Fermi level. In the spin-dependent scattering, the MgO barrier 
+layer is the key to obtain a high TMR ratio in the MTJ, due to 
+the spin filter effect [26]. Besides, due to the antiferromagn­
+etic coupling between L10-MnGa and Co insertion layers 
+[27, 28], the magnetization of the thin Co film is antiparallel 
+to that of the L10-MnGa layer, which results in the high resist­
+ance state at the high magnetic field in the TMR curves. The 
+L10-MnGa layer and Co layer show coherent magnetization 
+rotation behavior and thus work together as a reference layer. 
+Therefore, the large coercive force of the Co layer induced by 
+the anti-ferromagnetically coupled L10-MnGa provides a wide 
+dynamic range for perpendicular field sensing. Moreover, the 
+magnetization reversal behavior of each layer was discussed 
+to gain a deep insight into the TMR curves of the MTJ field 
+sensor device, which is shown in figure 2(b). For the reason 
+that the magnetic field is aligned along the out-of-plane direc­
+tion, the perpend­icular magnetization component of the soft 
+magnetic layer Fe is proportional to the applied field H. Before 
+a complete parallel state was achieved, the magnetization of 
+the Co film had rotated to an opposite direction because of 
+the spin-flip of the L10-MnGa reference layer. Therefore, the 
+observed TMR ratio is probably underestimated because a 
+complete parallel magnetization configuration in this struc­
+ture is not achieved. In the L10-MnGa based MTJs with a thin 
+Fe insertion layer, small shoulders appear in the TMR curves 
+near the coercivity because of the relatively weak exchange 
+coupling between the L10-MnGa and Fe [22, 23]. In our case, 
+even when the applied field reaches 4 T, the MR curves keep 
+at a high resist­ance state, which verifies the antiferromagnetic 
+alignment of the magnetizations of the Co insertion layer and 
+adjacent L10-MnGa reference layer. Thus, the interfacial anti­
+ferromagnetic exchange coupling constant Jex (~M
+H d
+s
+Co
+ex Co) 
+between L10-MnGa and Co is at least  −3.2 erg cm−2, which 
+is larger than that of the L10-MnGa/Fe bilayer system [23].
+In addition, the TMR curves exhibit a nearly linear vari­
+ation from  ±5600 Oe to ∓20000 Oe under the applied 
+perpend­icular field, which suggests that the dynamic range in 
+L10-MnGa based MTJ reaches 5600 Oe. This result is larger 
+than the typical value reported in CoFeB, [Co/Pt(Pd)]n and 
+Pt/CoFe based out-of-plane MTJ field sensors, which are not 
+more than 2500 Oe [8–15]. Generally, the large dynamic range 
+will enhance the anti-interference performance and flexibility 
+Figure 2.  (a) Magnetoresistance curves of L10-MnGa based MTJ 
+measured at 5, 100, 200 and 300 K, respectively. The magnetic 
+field was applied perpendicularly to the film. (b) The magnetization 
+rotation process in magnetoresistance curve of L10-MnGa based 
+MTJ measured at 5 K with the perpendicular field swept from  −4 T 
+to 4 T.
+J. Phys. D: Appl. Phys. 50 (2017) 285002
+
+
+--- PAGE 5 ---
+X P Zhao et al
+4
+of the magnetic field sensors. Compared to the magnetization 
+curves, the TMR curves show the same magnetization reversal 
+behaviors, which indicates that the magnetic properties of the 
+L10-MnGa based MTJ stack are not modified after patterning. 
+The switching field of TMR curves shows a typical inverse 
+relationship with temperature because of the enhancement of 
+domain pinning effect at low temperatures [29–31].
+3.3.  Perpendicular field sensing characteristics of L10-MnGa 
+based MTJ device
+To test the reproducibility of the MTJ device, we measured the 
+R–H curves in the dynamic range from  −5600 Oe to  +5600 Oe 
+under a perpendicular magnetic field at 300 K for 100 cycles. 
+As shown in figure 3(a), the ten randomly selected cycles were 
+stacked in the y-axis with a constant offset of 5 Ω. It is clear 
+that the TMR of MTJ shows a linear response to the applied 
+field H in the dynamic range. Besides, a good reversibility of 
+R–H curves was demonstrated, due to the parallel arrangement 
+of the randomly selected cycle curves (a good coincidence in 
+the actual measurement). Throughout the 100 testing cycles, 
+The TMR ratio (shown in the inset of figure  3(a)) defined 
+in the dynamic range from  −5600 Oe to  +5600 Oe nearly 
+keeps at the same value of 10.313% with the increasing cycle 
+number. These results suggest a reversible magnetization 
+rotation process of the sensing layer Fe, which is attributed to 
+the single domain state in L10-MnGa based MTJ. Moreover, 
+the field sensitivity is also a key factor for practical sensing 
+applications. In our MTJ structure, the observed field sensi­
+tivity is around 0.0011%/Oe, which is close to the value of 
+commercialized semiconductor Hall sensors and large enough 
+for reliable perpendicular magnetic field sensing.
+As a crucial performance index in the practical application 
+of field sensors, the nonlinearity of the first R–H cycle curve 
+was analyzed in detail to demonstrate the field response char­
+acteristic of the MTJ field sensor device. The nonlinearity, 
+defined as 100%  ×  (R(H)  −  R0  −  r0H)/R(H) [7] is plotted in 
+figure 3(b), where R0 and r0 are coefficients obtained from 
+linear regression of TMR as a function of the applied magn­
+etic field H. As shown in the figure 3(b), the measured TMR 
+curve is almost coincided with linear fitted curve. A nonlin­
+earity smaller than 0.23% is obtained in the dynamic range 
+from  −5600 Oe to  +5600 Oe in the MTJ, which enables a 
+precise sensing to the perpendicular magnetic field in a wide 
+dynamic range.
+For a better understanding of the mechanism in the field 
+sensing, the magnetization of the sensing free layer is expected 
+to coherently rotate toward the film plane. Here, we define θ as 
+the angle between the magnetizations of the sensing layer and 
+its easy axis. Considering the magnetization configuration in 
+the filed sensors, the resistance as a function of θ is [32]
+( )
+⎜
+⎟
+⎛
+⎝⎜
+⎛
+⎝
+⎞
+⎠
+⎞
+⎠⎟
+θ
+π
+θ
+=
++
+−
+−
+−
+R
+R
+R
+R
+2
+1
+cos 2
+P
+AP
+P
+
+(1)
+where 
+/
+θ
+π
+= H
+M
+sin
+4
+s, RAP and RP are the resistance of the 
+parallel and antiparallel state respectively, and Ms is the satur­
+ation magnetization. The resulting change in the sensor resist­
+ance was deduced as [10]
+ 
+(
+)
+( )
+( )
+⎛
+⎝⎜
+⎞
+⎠⎟
+⎛
+⎝⎜
+⎞
+⎠⎟
+π
+π
+−
+=
+−
++
+−
+=
++
+−
+R H
+R
+R
+R
+R
+R
+R
+H
+M
+H
+M
+0
+0
+4
+1
+1
+4
+.
+AP
+P
+AP
+P
+s
+2
+MR
+s
+
+(2)
+That is, the sensor resistance varies linearly with applied 
+magn­etic field below the saturation field   πM
+4
+s. Furthermore, 
+the field sensitivity can be expressed as [33]
+( )
+π
+=
+=
++
+S
+R
+R
+H
+M
+1
+0
+d
+d
+1
+1
+1
+4
+.
+2
+MR
+s
+
+(3)
+According to equation (3), the field sensitivity S is expressed 
+as a function of πM
+4
+s and MR ratio. In our case, the satur­
+ation field of the sensing layer Fe in the out-of-plane direc­
+tion is nearly constant around 2.1 T, which is consistent 
+with the theoretical value πM
+4
+s (~2.13 T). By inserting a 
+3D transition metal Co layer, a large TMR ratio up to 27.4% 
+was obtained in the L10-MnGa based MTJ field sensor. 
+However, in our stacking structure, the complete parallel 
+magnetization configuration of the insertion layer Co and 
+sensing layer Fe could not be realized. Thus, the TMR 
+ratio (TMRP–AP) for a parallel-to-antiparallel magnetiza­
+tion switching case was deduced from observed TMR ratio 
+Figure 3.  (a) The randomly selected ten cycle of R–H curves of 
+the MTJ under the application of a perpendicular field from  −5600 
+to  +5600 Oe at 300 K. The ten cycles were stacked in the y-axis 
+with an offset of 5 Ω. The inset shows the cycling performance of 
+the TMR ratio defined in the dynamic range. (b) The nonlinearity 
+characteristics of TMR curves of L10-MnGa based MTJ in the 
+dynamic range from  −5600 to  +5600 Oe.
+J. Phys. D: Appl. Phys. 50 (2017) 285002
+
+
+--- PAGE 6 ---
+X P Zhao et al
+5
+(TMRobs) utilizing equation (1). The magnetization of the 
+reference layer Fe is aligned along the in-plane direction 
+when H  =  0. Therefore, the calibrated value of TMRP–AP 
+reaches 50.2% at 300 K with tCo  =  0.8 nm, which is at 
+the same magnitude with the previous best results of L10-
+MnGa based MTJs [34]. Regarding the field sensitivity S, 
+the observed value was 0.0011%/Oe, which corresponds to 
+9.43  ×  10−6/Oe with the low resistance state set at R(0). 
+The theoretical value deduced by the equation (3) reaches 
+to 9.22  ×  10−6/Oe, which is quite consistent with the exper­
+imental value.
+4.  Conclusions
+In summary, we have proposed a promising field sensor struc­
+ture based on a L10-MnGa perpendicular anisotropy reference 
+layer and an in-plane magnetized Fe layer. The insertion of 
+a thin Co layer between the L10-MnGa and MgO barrier is 
+an effective approach to improve the interface quality and 
+enhance the MR ratio. The optimized MTJ sensors show a 
+large TMR up to 27.4% at 300 K, which is higher than the 
+previous results in L10-MnGa/FM/MgO/CoFe(Fe) based 
+MTJs [22]. Meanwhile, the strong antiferromagnetic coupling 
+between the L10-MnGa reference layer and the Co insertion 
+layer has been observed. In particular, for perpendicular field 
+sensing, a huge linear dynamic range up to 5600 Oe was 
+achieved in our structure. The value is much larger than the 
+previous results based on CoFeB, [Co/Pt(Pd)]n and Pt/CoFe. 
+Moreover, an ultra-low nonlinearity and excellent reproduc­
+ibility have been confirmed in the huge dynamic range. All 
+of these results indicate that a L10-MnGa based orthogonal 
+MTJ structure is a promising candidate for high performance 
+magnetic field sensor.
+Acknowledgments
+The work was supported by the National Hightech R&D Pro­
+gram of China (MOST, Grant Nos. 2014AA032904), National 
+Program on Key Basic Research Project (MOST, Grant Nos. 
+2015CB921500), the National Natural Science Foundation of 
+China (NSFC, Grant Nos. 61334006, 11304307, 11474273) 
+and the Key Research Project of Frontier Science of Chinese 
+Academy of Science (Grant Nos. QYZDY-SSW-JSC015).
+ORCID
+J H Zhao  https://orcid.org/0000-0003-2269-3963
+References
+ [1] Daughton J M, Pohm A V, Fayfield R T and Smith C H 1999 
+Applications of spin dependent transport materials J. Phys. 
+D: Appl. Phys. 22 R169
+ [2] Mancoff F B, Dunn J H, Clemens B M and White R L 2000 
+A giant magnetoresistance sensor for high magnetic field 
+measurements Appl. Phys. Lett. 77 1879
+ [3] Jin W and Liu Y W 2007 Micromagnetic simulation for high 
+field sensors with perpendicular magnetizations Chin. Phys. 
+16 1731
+ [4] Liu Y F, Cai J W and Sun L 2010 Large enhancement of 
+anisotropic magnetoresistance and thermal stability in  
+Ta/NiFe/Ta trilayers with interfacial Pt addition Appl. Phys. 
+Lett. 96 092509
+ [5] Yoon S et al 2012 Sensitivity enhancement of a giant 
+magnetoresistance alternating spin-valve sensor for high-
+field applications J. Appl. Phys. 111 07E504
+ [6] Tondra M, Daughton J M, Wang D and Fink A 1998 Picotesla 
+field sensor design using spin-dependent tunneling devices 
+J. Appl. Phys. 83 6688
+ [7] Wei H X, Qin Q H, Wen Z C, Han X F and Zhang X G 2009 
+Magnetic tunnel junction sensor with Co/Pt perpendicular 
+anisotropy ferromagnetic layer Appl. Phys. Lett. 94 17290
+ [8] Ding Y, Judy J H and Wang J P 2005 Magnetoresistive sensors 
+with perpendicular magnetic anisotropy J. Appl. Phys. 
+97 10N704
+ [9] Nakano T, Oogane M, Furuichi T and Ao K 2016 Magnetic 
+Tunnel junctions with [Co/Pd]-based reference layer and 
+CoFeB sensing layer for magnetic sensor IEEE Trans. 
+Magn. 52 1
+ [10] Dijken S V and Coey J M D 2005 Magnetoresistance sensor 
+with an out-of-plane magnetized sensing layer Appl. Phys. 
+Lett. 87 022504
+ [11] Liu X, Ren C and Xiao G 2002 Magnetic tunnel junction field 
+sensors with hard-axis bias field J. Appl. Phys. 92 4722
+ [12] Wisniowski P, Wrona J, Stobiecki T and Cardoso S 2012 
+Magnetic tunnel junctions based on out-of-plane anisotropy 
+free and in-plane pinned layer structures for magnetic field 
+sensors IEEE Trans. Magn. 48 3840
+ [13] Liu H, Bedau D, Backes D, Katine J, Langer J and Kent A 
+2010 Ultrafast switching in magnetic tunnel junction 
+based orthogonal spin transfer devices Appl. Phys. Lett. 
+97 242510
+ [14] Song C, Wang Y Y, Li X J, Wang G Y and Pan F 
+2012 Interlayer magnetostatic coupling and linear 
+magnetoresistance in [Pd/Co]/MgO/Co junction sensor 
+Appl. Phys. Lett. 101 062404
+ [15] Nakano T, Oogane M, Furuichi T and Ando Y 2017 Magnetic 
+tunnel junctions using perpendicularly magnetized synthetic 
+antiferromagnetic reference layer for wide-dynamic-range 
+magnetic sensors Appl. Phys. Lett. 110 1
+ [16] Mizukami S et al 2011 Long-lived ultrafast spin precession in 
+manganese alloys films with a large perpendicular magnetic 
+anisotropy Phys. Rev. Lett. 106 117201
+ [17] Zhu L, Nie S, Meng K, Pan D, Zhao J and Zheng H 2012 
+Multifunctional L10-Mn1.5Ga films with ultrahigh 
+coercivity, giant perpendicular magnetocrystalline 
+anisotropy and large magnetic energy product Adv. Mater. 
+24 4547
+ [18] Kurt H, Rode K, Venkatesan M, Stamenov P S and 
+Coey J M D 2011 High spin polarization in epitaxial films 
+of ferrimagnetic Mn3Ga Phys. Rev. B 83 020405
+ [19] Wu F et al 2009 Epitaxial Mn2.5Ga thin films with giant 
+perpendicular magnetic anisotropy for spintronic devices 
+Appl. Phys. Lett. 94 122503
+ [20] Kubota T et al 2011 Effect of metallic Mg insertion on the 
+magnetoresistance effect in MgO-based tunnel junctions 
+using D022–Mn3−δGa perpendicularly magnetized spin 
+polarizer J. Appl. Phys. 110 013915
+ [21] Kubota T et al 2011 Composition dependence of 
+magnetoresistance effect and its annealing endurance 
+in tunnel junctions having Mn-Ga electrode with high 
+perpendicular magnetic anisotropy Appl. Phys. Lett. 
+99 192509
+ [22] Kubota T et al 2012 Dependence of tunnel magnetoresistance 
+effect on Fe thickness of perpendicularly magnetized 
+J. Phys. D: Appl. Phys. 50 (2017) 285002
+
+
+--- PAGE 7 ---
+X P Zhao et al
+6
+L10-Mn62Ga38/Fe/MgO/CoFe junctions Appl. Phys. Express 
+5 043003
+ [23] Mizukami S et al 2014 Magnetization dynamics for L10-
+MnGa/Fe exchange coupled bilayers J. Appl. Phys. 
+115 17C119
+ [24] Zhang X G and Butler W H 2004 Large magnetoresistance in 
+bcc Co∕MgO∕Co and FeCo∕MgO∕FeCo tunnel junctions 
+Phys. Rev. B 70 172407
+ [25] Butler W H, Zhang X G, Schulthess T C and Maclaren J M 
+2001 Spin-dependent tunneling conductance of Fe|MgO|Fe, 
+sandwiches Phys. Rev. B 63 054416
+ [26] Yuasa S and Djayaprawira D D 2007 Giant tunnel 
+magnetoresistance in magnetic tunnel junctions with a 
+crystalline MgO (0 0 1) barrier J. Phys. D: Appl. Phys. 
+40 337
+ [27] Xiao J X et al 2016 Tailoring the interfacial exchange coupling 
+of perpendicularly magnetized Co/L10–Mn1.5Ga bilayers  
+J. Phys. D: Appl. Phys. 49 245003
+ [28] Ma Q L, Mizukami S, Kubota T, Zhang X M, Ando Y and 
+Miyazaki T 2014 Abrupt transition from ferromagnetic to 
+antiferromagnetic of interfacial exchange in perpendicularly 
+magnetized L10-MnGa/FeCo tuned by fermi level position 
+Phys. Rev. Lett. 112 157202
+ [29] Paul D I 1982 General theory of the coercive force due to 
+domain wall pinning J. Appl. Phys. 53 2362
+ [30] Zhang B and Soffa W A 1994 The structure and properties of 
+L10 ordered ferromagnets: CoPt, FePt, FePd and MnAl Scr. 
+Metall. Mater. 30 683
+ [31] Reininger T and Kronmüller H 1991 Temperature dependence 
+of the pinning mechanism for domain wall movements in 
+nonmagnetostrictive amorphous alloys Phys. Status Solidi 
+128 491
+ [32] Hehn M, Malinowski G, Sajieddine M, Jouguelet E and 
+Schuhl A 2004 A high magnetic field sensor based on 
+magnetic tunnel junctions Eur. Phys. J. Appl. Phys. 28 79
+ [33] Zeng Z M, Amiri P K, Katine J A, Langer J, Wang K L and 
+Jiang H W 2012 Nanoscale magnetic tunnel junction 
+sensors with perpendicular anisotropy sensing layer Appl. 
+Phys. Lett. 101 062412
+ [34] Ma Q L et al 2012 Magnetoresistance effect in L10-MnGa/
+MgO/CoFeB perpendicular magnetic tunnel junctions with 
+Co interlayer Appl. Phys. Lett. 101 032402
+J. Phys. D: Appl. Phys. 50 (2017) 285002

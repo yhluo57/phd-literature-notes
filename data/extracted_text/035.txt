@@ -1,0 +1,725 @@
+
+
+--- PAGE 1 ---
+npj | spintronics
+Review
+https://doi.org/10.1038/s44306-025-00094-z
+Machine learning for the development of
+new materials for a magnetic tunnel
+junction
+Check for updates
+Atsufumi Hirohata1,2,3
+, Hiroki Koizumi1,8, Tufan Roy1,2, Masahito Tsujikawa2, Shigemi Mizukami1,4,
+Kenji Nawa5,6,7 & Masafumi Shirai1,2
+In materials science, we have been increasing the number of constituent elements in an alloy and
+compounds to improve their properties. For example, in magnetism and spintronics, ternary alloys,
+such as NdFeB and CoFeB have been developed and widely used in permanent magnets and
+memories/sensors, respectively. It has now been considered to be a time to add more elements to
+further explore their horizon. For such a complicated development, a manual systematic study is no
+longer practical, leading to the utilisation of machine learning to predict a candidate. These candidates
+can then be additionally screened by ab initio calculations before experimental conﬁrmation, which
+can be performed routinely. Additional use of quantum annealing may also broaden the adoptability of
+machine learning on the materials development. In this perspective, we plan to offer a standardised
+process for such a development with some requirements for improvement.
+In spintronics, one of the major methods to generate a spin-polarised
+electron is to ﬂow an unpolarised electron through a ferromagnetic layer,
+e.g., giant magnetoresistive (GMR) and tunnelling magnetoresistive (TMR)
+junctions1.Todate,themaximumGMRandTMRratioshavebeenreported
+to be 822 and 631%3 at room temperature, respectively. In order to increase
+these ratios further at least over 1000% to achieve a magnetic switch, it is
+crucial to develop a half-metallic ferromagnetic ﬁlm with 100% spin
+polarisation at room temperature4,5, with a suitable non-magnetic spacer
+and tunnel barrier for GMR and TMR devices. Among such half-metallic
+ferromagnets, a Heusler alloy can be an ideal candidate. Two distinctive
+types of Heusler alloys exist, half- and full-Heusler alloys with the form of
+XYZ and X2YZ, respectively. As shown in Fig. 1, these alloys have compli-
+cated crystalline structures, the C1b (with making X’ to be empty) and L21
+structure (with making X’ to be the same as X), respectively. In order to
+develop an appropriate Heusler alloy for spintronic applications, some of X
+atomscanbereplacedwithX’toformaquaternaryalloytoincreasethealloy
+combinations as schematically shown in Fig. 1.
+For the Heusler alloys, 16, 30 and 14 elements can ﬁll the X, Y and Z
+positions, respectively as listed in Fig. 2. This means there are 16 × {16 (for
+ternary and quaternary L21) + 1 (vacancy for C1b)} × 30 × 14 = 114,240
+combinations. It is hence impossible to study each alloy experimentally.
+Insteaditisessentialtoutilisemachinelearningtomakescreening.Thisway
+one can efﬁciently predict an alloy even with minor compositional changes,
+which make the combinations to be inﬁnite.
+For the material development, there are nine major methods currently
+used; neural networks (NNs), support vector machine, linear regression,
+logistic regression, K-means clustering, K-nearest neighbours, decision
+trees, random forests and principal component analysis6. Each method has
+advantages and disadvantages. Note that irrelevant methods may provide
+wrong prediction. In order to make the selection of a method, a ﬂowchart
+has been proposed by Okabe et al.6.
+To date, the data-driven materials design, i.e., materials informatics,
+has been successfully applied for prediction of a large variety of spintronics
+materials,wherethemostattemptshavebeenmadeinvirtualspace,i.e.,only
+with machine learning and ab initio calculations7–15. For example, Kim et al.
+built a random forest approach combined with ab initio calculations to
+search for a quaternary Heusler alloy in a stable phase7. Hu et al. demon-
+strated predictions of Heusler alloys with high spin polarisation by fully
+connected NN and ab initio calculations9. Very recently, a stacked model
+approach, incorporating different machine learning models, has been pro-
+posed to be a robust technique and applied to predict novel Heusler alloys12.
+Bayesian optimisation is also widely used for transition-metal alloys12,13 and
+1Center for Science and Innovation in Spintronics, Tohoku University, Sendai, Japan. 2Research Institute of Electrical Communication, Tohoku University,
+Sendai, Japan. 3Max-Planck-Institute for Chemical Physics of Solids, Dresden, Germany. 4WPI Advanced Institute for Materials Research, Tohoku University,
+Sendai, Japan. 5Graduate School of Engineering, Mie University, Tsu, Japan. 6Research Center for Magnetic and Spintronic Materials, National Institute for
+Materials Science (NIMS), Tsukuba, Japan. 7National Institute of Advanced Industrial Science and Technology, Tsukuba, Japan. 8Present address: Research
+Institute of Electrical Communication, Tohoku University, Sendai, Japan.
+e-mail: atsufumi.hirohata.d1@tohoku.ac.jp
+npj Spintronics |  (2025) 3:32 
+1
+1234567890():,;
+1234567890():,;
+
+
+--- PAGE 2 ---
+tunnel barrier materials14. An attempt to merge virtual space with such real
+space, i.e., machine learning and experiments, has been realised but with a
+limited number of examples, e.g., ref. 15.
+In this work, half-metal Heusler alloys suitable for spintronic device
+applications have been discovered by combining virtual-space prediction
+and real-space thin-ﬁlm fabrication. For the prediction of a Heusler alloy, a
+decision tree has been selected according to the ﬂowchart in Fig. 3. The
+decision tree method is relatively simple to use and interpret, and is to
+handle both numerical and categorical data with and without nonlinearity
+(see Section “Machine learning and ﬁrst-principles Calculations”). How-
+ever, the decision tree may create over-complexity if training data used are
+not representative. In addition, we have introduced the prediction of spinel-
+type oxides as a new tunnel barrier, where cation disordering determines
+thermodynamical stability and TMR properties as discussed in Section
+“Machine learning and ﬁrst-principles Calculations for more complex
+materials”. Here, quantum annealing approach, a promising alternative
+method for a sufﬁcient exploration of optimal materials from combinatorial
+explosion of candidates, is combined with machine learning and ab initio
+calculations.
+Machine learning and ﬁrst-principles calculations
+For the ab initio calculations, a projector augmented wave (PAW) method16
+implemented in Vienna ab initio simulation package (VASP)17 was used
+with a plane wave basis set. A generalised gradient approximation (GGA)18
+was adopted for exchange-correlation energies/potentials. The Liechten-
+stein’s method19 implemented in spin-polarised relativistic Korringa-Kohn-
+Rostoker (SPR-KKR)20 computational code was utilized to calculate an
+exchange interaction deﬁned as
+H ¼ 
+X
+i≠jJij e!
+i  e!
+j
+ð1Þ
+where~ei isaunitvectorpointingtothedirectionofamagneticmomentatan
+atom i. In the frameworkof a mean-ﬁeld approximation, Curie temperature
+(TC) was evaluated by solving the following linear equations in terms of the
+thermal average of a magnetic moment at a site μ:
+heμi ¼
+2
+3kBTC
+X
+νJμν
+0 heνi
+ð2Þ
+Fig. 1 | Schematic crystalline structure of a quaternary XX’YZ Heusler alloy (red,
+purple, blue and green atoms represent X, X’, Y and Z elements, respectively) created
+by VESTA [42].
+Fig. 2 | Consisting elements for quaternary Heusler
+alloy XX’YZ. On the periodic table, elements which
+can ﬁll X and X’, Y and Z positions are highlighted in
+red, blue and green, respectively5.
+Fig. 3 | Flowchart for the selection of a relevant approach for machine learning6.
+https://doi.org/10.1038/s44306-025-00094-z
+Review
+npj Spintronics |  (2025) 3:32 
+2
+
+
+--- PAGE 3 ---
+whereJμν
+0 isthesumof exchangeinteractionsbetweenμ and ν sitesupto the
+distance R deﬁned as21
+Jμν
+0 
+X
+RJμν
+0R
+ð3Þ
+For the Heusler-alloy prediction, regression analysis on TC was carried
+out over the alloys consisting of XX’YZ. As a decision tree method, Light
+Gradient Boosting Machine (Light GBM) (https://lightgbm.readthedocs.io/
+en/stable/) was employed for the analysis. As shown in Fig. 4, about 4550
+data were used for training, while about 1950 data were predicted as a
+preliminary test. Here, a correlation coefﬁcient was calculated to be 0.91 and
+0.73 for training and prediction, respectively.
+Accordingly, 84 (178) Heusler alloys were preliminary predicted to
+possess TC higher than 1000 K (800 K). Their TC were then calculated by ab
+initio calculationsand wefoundthat 67(132) Heusleralloysactuallypossess
+TC higher than 1000 K (800 K), proving the accuracy of prediction to be
+about 80% (74%) for the criteria Tc > 1000 K (800 K). Note that additional
+83 (104) Heusler alloys with their TC higher than 1000 K (800 K), which
+were not predicted by the machine learning, were also included by ab initio
+calculations. After running full screening over about 97,000 alloys, the ML
+model predicted that additional 84 (362) Heusler alloys possess TC higher
+than 1000 K (800 K). By using ab initio calculations, we conﬁrmed that 62
+(179) Heusler alloys actually possess TC higher than 1000 K (800 K) among
+the predicted alloys. The accuracy of the ML prediction is evaluated as 74%
+(49%) for the full-range screening with the criteria TC > 1000 K (800 K).
+Thus, the accuracy of the ML prediction is reasonable even in the full-range
+screening. Finally, we selected about 350 Heusleralloys for the candidates of
+electrode materials in magnetic tunnel junctions (MTJs) by taking account
+the TC and also the stability of alloys based on the calculated formation
+energy. Note that a high TC, over 1000 K (800 K) ensures a stronger
+exchange coupling between the magnetic atoms of bulk electrode. This
+stronger coupling reduces the effect of thermal ﬂuctuation of the magnetic
+moments, hence expected to reduce the temperature dependence of
+TMR ratio.
+For a realistic device application,magnetic stiffness wasthen calculated
+at an interface between the predicted Heusler-alloy ﬁlm and a MgO tun-
+nelling barrier (see Fig. 5). Including the abovementioned 350 candidates,
+the magnetic stiffness of about 600 XX’YZ/MgO junctions were assessed by
+ab initio calculations for both XX’- and YZ-terminated interfaces. As a
+result, we found the interfaces which possess relatively high magnetic
+stiffness as listed in Table 1. Note that the interface with higher magnetic
+stiffness is relevant for applications.
+By comparing these stiffness constants calculated with known data,
+e.g., Fe/MgO: 753 mJ/m2 and Co2MnSi/MgO: 529 mJ/m222, most interfaces
+can be implemented in a spintronic device possibly. In this perspective,
+CoCrMnSi and Fe2CoAl were selected for further experimental investiga-
+tion. Here, strong antiferromagnetic coupling is formed between the con-
+stituent atoms, e.g., between Mn ( + 2.86 μB) and Cr (–2.89 μB) spins for
+CoCrMnSi, enhancing magnetic stiffness at the interface23.
+Analysing the data calculated for XX’YZ/MgO junctions, we found the
+correlation between the magnetic stiffness constants on the XX’YZ/MgO
+interfaces and the magnitude of magnetic moment of XX’YZ averaged over
+the interfacial region. The covalent bonding with the nearest neighbouring
+O atom causes the reduction of magnetic moment at the magnetic atom on
+the interface, leading to the reduction of magnetic stiffness constants. The
+strength of the covalent bonding depends on the sorts of magnetic atoms on
+the interfacial layer and the atomic distances between the magnetic atoms
+and the neighbouring O atoms. Experimentally, one can expect that the
+formation of the energetically stable atomic termination needs advanced
+technique. For example, Yamada et al. tried to control the interface using
+molecular beam epitaxy (MBE) technique24. As various techniques are
+studied for interface control, thus we believe that it is important to further
+develop the growth technique to control the interface (please also see the
+review of the interface of Heusler alloys/compounds25).
+To date, there is no experimental research focusing on the high-
+stiffness interface. One example of interface modiﬁcation is that MTJs of
+Co2MnSi terminated with Co2MnAl at the interface. Miura et al. reported
+that an insertion of thin Co2MnAl layers into a Co2MnSi/MgO junction can
+eliminate interface statesin the minority-spin gap and provide a 100% spin-
+polarisation at the interface26. Ozawa et al. reported a TMR ratio was
+enhanced by inserting a thin Co2MnAl layer at the Co2MnSi/MgO interface
+which was prepared by sputtering. MTJs fabricated by sputtering requires
+annealing to enhance TMR effect, which could also cause atomic mixing27.
+One strategy is to use a MBE method to form equilibrium/non-equilibrium
+state of the interface. For example, Brown-Heft et al. recently reported
+termination-dependent half-metallicity in Fe2MnAl/Co2MnAl superlattice
+prepared using MBE method28. Therefore, such MBE technique may be one
+of the promising technologies for translating simulations to real structures.
+Experimental investigation and discussion
+Here we review two experimental studies trying to obtain the ﬁlms of new
+Heusler alloys predicted from the abovementioned ﬁrst-principes calcula-
+tions, such as NiCrMnSi29 and CoIrMnAl30. All samples were deposited on
+Fig. 4 | Regression analysis on TC of quaternary Heusler alloys using Light GBM.
+Data used for training and predicted are shown as blue and amber dots, respectively.
+Fig. 5 | XX’YZ/MgO interface for calculations (XX’-
+termination) created by VESTA42.
+https://doi.org/10.1038/s44306-025-00094-z
+Review
+npj Spintronics |  (2025) 3:32 
+3
+
+
+--- PAGE 4 ---
+MgO(001) substrates using an ultrahigh vacuum (UHV) magnetron
+sputtering.
+Sample stacking structure of NiCrMnSi was MgO(001) substrate/
+NiCrMnSi(100 nm)/Ta(3 nm)29. NiCrMnSi ﬁlms were deposited by a co-
+sputteringtechniqueusingNiCrand MnSi alloytargets.The compositionof
+Ni:Cr:Mn:Siintheﬁlmswasevaluatedas25.9:29.5:23.0:21.6(at%).The
+out-of-plane x-ray diffraction (XRD) patterns showed the diffraction peaks
+in the ﬁlms deposited at the temperature more than 700 °C. However, the
+XRD patterns were not consistent with those from the cubic or tetragonal
+phase of NiCrMnSi. Transmission electron microscopy (TEM) measure-
+ments indicated multiple crystalline phases were formed for NiCrMnSi
+ﬁlms deposited at 700 °C. For the sample deposited at 500 °C, all four ele-
+ments were homogeneously distributed in a whole region, indicated with
+energy dispersive X-ray spectrometry (EDX) in the TEM apparatus, as
+shown in Fig. 6. However, non-uniform distributions for Ni and Cr atoms
+were observed for the sample deposited at 700 °C. It suggested that the Ni-
+rich phase and the Cr-rich phase were spatially separated in this sample29.
+Sample stacking structure of CoIrMnAl was MgO(001) substrate/
+CoIrMnAl(50 nm)/Ir(3 nm)30. CoIrMnAl ﬁlms were deposited by a co-
+sputtering technique using Co, Ir, and MnAl alloy targets. The composition
+of Co : Ir : Mn : Al in the ﬁlms was evaluated as 28.1 : 27.6 : 20.7 : 23.6 (at%).
+Out-of-planeXRDindicatedtheB2ordered(001)-orientedCoIrMnAlﬁlms
+epitaxially grown on MgO(001), as shown in Fig. 7. However, no L21 or
+Y-ordered phase was conﬁrmed via the absence of the superlattice peaks
+from(111).Magnetisationhysteresisloopswereclearlydetectedasshownin
+Fig. 8. The saturation magnetisation at 10 K was close to 500 kA/m, which is
+approximately a factor of 0.7 smaller than the theoretical value, 722 kA/m
+(4.03 μB/f.u.) in the fully-ordered CoIrMnAl31. The Curie temperature was
+also evaluated as about 400 K, which is also smaller than the values pre-
+dicted, 584 K, in the fully-ordered CoIrMnAl31. It is likely that these dis-
+crepancies originate from the site-disorder, as previously discussed30.
+These studies indicated some advanced techniques of ﬁlm fabrications
+may be required for new Heusler alloys in line with the computational
+prediction of phase stability and preferential site-ordering at ground states.
+From the theoretical point of view, Y-CoIrMnAl is thermodynamically
+stable.Thus,moresystematicresearchshouldbeperformed,inparticular,in
+bulk. Y-NiCrMnSi is not thermodynamically stable, requiring to obtain this
+as metastable form. It could be accessed using MBE on an appropriate
+substrate. Even in sputtering at low deposition temperature, some ordered
+metastable alloys are obtained using special template. In the case of Mn-
+based Heusler, we and other group previously discuss template effects
+promoting ﬁlm growth with well chemical-ordering even at low
+temperature32,33. To our knowledge to date, the physics behind such special
+growth process is not yet clear and should be addressed for controlling
+metastable state of multi-element ordered alloy/compounds.
+Machine learning and ﬁrst-principles calculations for
+more complex materials
+As observed in the Heusler alloys, atomic disordering plays a critical role in
+insulating tunnel barrier materials of MTJs. The examples involve spinel-
+type oxides AB2O4, the particular of which are advantageous in terms of
+lattice-well-matched heterointerface of bcc-based ferromagnetic materials
+with a high TMR ratio and/or low resistance-area product (RA)34–37. The
+physicalpropertiesofTMRjunctionsdesiredforspintronicapplicationscan
+be potentially addressed by wide variations of constituent elements, e.g.,
+theircompositionsandatomicdisordering.Totacklesuchcomplexity,data-
+driven material design has opened a new era of materials science, but
+materials exploration using conventional machine learning models, such as
+Bayesian optimisation and Monte Carlo tree search, can make efﬁcient
+materials exploration difﬁcult due to the combinatorial explosion resulting
+from the large number of degrees of freedom in the materials themselves.
+Table 1 | Magnetic stiffness calculated at XX’YZ/MgO
+interfaces
+Heusler alloy XX’YZ
+Termination
+Magnetic stiffness [mJ/m2]
+Fe2CoAl (inverse)
+CoFe/FeAl/MgO
+616
+Fe2CoGa (inverse)
+CoFe/FeGa/MgO
+581
+Fe2CoIn (inverse)
+CoFe/FeIn/MgO
+530
+Co2MnAl
+CoCo/MnAl/MgO
+497
+CoCrMnIn
+MnIn/CoCr/MgO
+494
+CoCrMnGa
+MnGa/CoCr/MgO
+485
+Co2FeSi
+FeSi/CoCo/MgO
+480
+CoCrMnSi
+MnSi/CoCr/MgO
+470
+Fig. 6 | Structural analysis of NiCrMnSi ﬁlms. Transmission electron microscopy
+images (left), and elements analysis (right) for NiCrMnSi ﬁlms deposited at (a) 500
+and (b) 700 °C. Blue, yellow green, and orange data points corresponding to the Ni,
+Cr, Mn and Si elements, respectively. Reprinted with permission from Onodera
+et al.29. © 2020 The Japan Society of Applied Physics.
+https://doi.org/10.1038/s44306-025-00094-z
+Review
+npj Spintronics |  (2025) 3:32 
+4
+
+
+--- PAGE 5 ---
+To address the abovementioned issue, an alternative approach is
+introduced here, which is not to use only ﬁrst-principles calculations and
+machine learning, but to further combine them with quantum annealing
+(QA) that is inspired from quantum computing technologies recently
+available. Focusing on atomic disordering of MgGa2O4 of an MTJ for
+example, namely Fe/atomic-disordering MgGa2O4/Fe(001) system, we
+demonstrate a proof-of-concept study to search for suitable MTJs in terms
+of energetically stable (lower ΔETotal), higher TMR ratios and lower RA
+ﬁgures by optimising an atomic arrangement of Mg and Ga of MgGa2O4
+tunnel barrier.
+In the MTJ with inverse-type spinel MgGa2O4 as shown in Fig. 9a, all
+the Mg and half the Ga atoms randomly occupy the octahedral site (orange
+sites in Fig. 9a) and the remaining Ga atoms occupy the tetrahedral site
+(green sites in Fig. 9a). In this work, the atomic arrangement of Mg and Ga at
+the octahedral sites, in which the number of total combinations can be
+deﬁned as 10C5 ¼ 252, can be optimised by ﬁrst-principles calculations of
+density functional theory (DFT), machine learning and QA techniques. In
+the QA-based framework, the combinatorial optimisation problem is
+replaced with an Ising model, and the QA obtains the lowest Ising energy of
+the given Ising Hamiltonian, which describes well the relationship between
+physical properties and materials expressed by quantum bits (qubits). An
+Ising model Hamiltonian can be constructed by using a machine learning,
+so-called factorization machine (FM)38. In the FM model, the target property
+of interest can be expressed by atomic arrangement of Mg and Ga as follows:
+f ðxÞ ¼ b þ
+X
+N
+i¼1
+qixi þ
+X
+N1
+i¼1
+X
+N
+j¼iþ1
+hvi; vjixixj;
+ð4Þ
+Fig. 7 | Structural analysis using X-ray diffraction of CoIrMnAl equiatomic
+quaternary Heusler alloy epitaxial ﬁlms. a Out-of-plane and b in-plane XRD
+patterns for ﬁlms with various post-annealing temperatures (Ta). Reprinted with
+permission from Monma et al.30. © 2021 Elsevier.
+Fig. 8 | Magnetic properties of CoIrMnAl ﬁlms. a Magnetisation curves and
+b corresponding saturation magnetisation as a function of temperature measured on
+CoIrMnAl equiatomic quaternary Heusler alloy epitaxial ﬁlms. Reprinted with
+permission from Monma et al.30. © 2021 Elsevier.
+https://doi.org/10.1038/s44306-025-00094-z
+Review
+npj Spintronics |  (2025) 3:32 
+5
+
+
+--- PAGE 6 ---
+whereN isthenumberofqubitscorrespondingtodisorderingsites[N ¼ 10
+in this work as shown in Fig. 9a] and a vector x ¼ x1; x2; .. . ; xN is a
+descriptor deﬁning an atomic arrangement of Mg and Ga (xi ¼ 0 for Mg
+and xi ¼ 1 for Ga at disordering site i). The ﬁtting model parameters are
+bias term b, linear term qi and quadratic term hvi; vji ¼ PK
+k VikVjk. A
+hyperparameter K determines a rank of FM model and optimised to be 7, 2,
+and 3 for the optimisation of ΔETotal, TMR, and RA, respectively, in this
+work. The ﬁtted model parameters, qi and hvi; vji, can be transformed into
+the quadratic unconstrained binary optimisation (QUBO) form to solve the
+Ising model by the QA as below:
+Qij ¼
+qi ði ¼ jÞ
+h; vi; vji ði ≠jÞ
+(
+:
+ð5Þ
+The Ising Hamiltonian called HQUBO is then given as
+HQUBO ¼
+X
+i < j
+Qijxixj þ α
+X
+N
+i¼1
+xi  N
+2
+ 
+!2
+:
+ð6Þ
+The ﬁrst term is a cost function, and the second term is a penalty term
+to constrain the atomic composition of Mg and Ga to be 1:1. A hyper-
+parameter α (real number, α > 0) is to control the strength of penalty term.
+The QA solves the HQUBO and the solution with the lowest Ising energy is
+the next candidate of Mg/Ga atomic arrangement for which target physical
+property should be evaluated by the DFT calculations. The total energy,
+ground-state electronic structures, and spin-transport properties are
+obtained from ﬁrst-principles calculations with the basis of linear combi-
+nation of atomic orbitals, implemented in the Quantum Atomistix Toolkit
+(Quantum-ATK) simulation39. The GGA is employed for the exchange-
+correlation functional18, For the details of calculations method, refer to
+ref. 40. Our calculation ﬂow, FM + QA + DFT, is shown in Fig. 9b. The
+FM + QA + DFT is referred to FM + QA (DFT is omitted) hereafter.
+In Fig. 10, the resultsof FM + QAof the searching historyto obtain the
+suitable MTJ are shown for the ΔETotal, TMR, and RA. To investigate an
+effectiveness of FM + QA, FM + simulated annealing (FM + SA), FM +
+exact solver (FM + ES) (In the FM+ES, the Ising energy is evaluated for all
+the atomic arrangements (x’s) of the training data, and then the vector x
+giving the lowest Ising energy is always selected as the next candidate.),
+Bayesian optimisation (BO), and random search (RS) were also performed,
+where 10 trials were carried out using different initial training datasets that
+include randomly selected 20 MTJ structures. For the ΔETotal, as shown in
+Fig. 10a the FM + QA obtains successfully the suitable MTJ within
+approximately 50 structures (including the training data of 20 structures),
+and this is comparable to that of FM + ES (Fig. 10c), verifying our FM +
+QA method. The efﬁciency obtained from the FM + QA is slightly faster
+than the FM + SA (see Fig. 10b) and signiﬁcantly than the BO and RS (see
+Fig. 10d, e). For the TMR, similar searching efﬁciency is obtained among
+FM + QA, FM + SA, and FM + ES (Fig. 10f–h), and this efﬁciency is much
+better than those of BO and RS (see Fig. 10i, j). From these results, thus, the
+FM + QA might be a promising approach in the search for the preferred
+Fig. 9 | Modelling and calculation processes
+on MTJs. a MTJ structure of Fe/atomic-disordering
+MgGa2O4/Fe(001), where Mg and Ga atoms ran-
+domly occupy octahedral site (orange site). b Frow
+of calculations combined with QA, FM, and DFT40.
+https://doi.org/10.1038/s44306-025-00094-z
+Review
+npj Spintronics |  (2025) 3:32 
+6
+
+
+--- PAGE 7 ---
+MTJ with the energetically stable atomic disordering and the highest TMR
+property.
+On the other hand, there remains a difﬁculty in optimising the atomic
+arrangement for MTJs with lower RA by using FM + QA. Figure 10k shows
+that the variation of the number of structures required to be optimised is
+very wide, depending on the initial training datasets, with a maximum of
+over150structuresrequired(seetheinset).Thisfeatureisconﬁrmedevenin
+FM + SA and FM + ES (see Fig. 10m, n). These results seem to reﬂect the
+inaccuracy of the FM training, from which the HQUBO is constructed, rather
+than the performance of QA solver. Therefore, it is difﬁcult to reach an
+optimal solution, i.e., an MTJ with lower RA, from such HQUBO. In contrast,
+the BO efﬁciently reaches the best MTJ with the lowest RA.
+HerepotentialsolutionstoimprovetherobustnessoftheFMmodelfor
+RA optimisation are discussed. One may obtain better performance of FM
+model with the hyperparameter K greater than K = 10, although the K is set
+to 3, yielding the best performance from a pre-test validated within
+K = 1 ~ 10 in this proof-of-concept study. Additionally, the size of database
+usedinthisdemonstration,i.e.,20trainingdata,maybetoosmalland/ortoo
+sparce to adequately train the relationship of the RA and atomic arrange-
+ment in the FM model. The latter would be more serious in deﬁning the
+Fig. 10 |Historyof the calculated number of structuresrequired to obtain the best
+MTJ structure. a–e ΔETotal, (f)–(j) TMR, and (k)–(o) RA obtained by FM + QA,
+FM + SA, FM + ES, BO, and RS, respectively. In each property and method, 10 trials
+were carried out by using the training dataset including 20 MTJ structures. The
+horizontal axis includes those initial training dataset, the range of which is different
+between the RS and others40.
+https://doi.org/10.1038/s44306-025-00094-z
+Review
+npj Spintronics |  (2025) 3:32 
+7
+
+
+--- PAGE 8 ---
+generalisability of FM model, but should be mitigated in a natural way at the
+practical level of FM + QA( + DFT), where combinatorial explosion
+occurs, so that the number of training dataset is expected to be larger than
+that of this demonstration. Furthermore, in a real problem, ﬁnding several
+good material candidates is beneﬁcial for device developments by materials
+informatics, rather than ﬁnding only one best solution. In this context, our
+demonstration, although still inferior to BO, achieves efﬁcient search per-
+formance comparable to those of ΔETotal and a TMR ratio for RA optimi-
+sation (see searching efﬁciency results denoted as “RA*”, in Fig. 4 of ref. 37).
+To conclude, we propose an alternative approach adaptable to com-
+binatorial explosion problems by combining state-of-the-art QA, FM, and
+DFT techniques and applied it to optimisation problem of an atomic dis-
+orderinginMTJswithspinel-oxidetunnelbarrier,MgGa2O4.Ourproof-of-
+concept study achieved higher searching efﬁciency in particular physical
+properties compared to the conventional machine learning, such as Baye-
+sian optimisation, while leaving room for improvement of our method. The
+present approach may offer a breakthrough to overcome the combinatorial
+explosion, which is inaccessible to conventional machine learnings
+regardless of whether the system is ordering and disordering. More speci-
+ﬁcally, the FM + QA + DFT is applicable to multi-component materials
+such as Heusler alloy families once the combinatorial optimisation problem
+of atomic elements, compositions, defects, crystal structures, and other
+degrees of freedom of interest can be mapped onto the Ising model.
+Summary
+By using machine learning, we successfully fabricated new Heusler alloy
+ﬁlms. Such virtual screening can save time signiﬁcantly to develop a new
+spintronic material. Experimentally they show some disordering issues to
+demonstrate their properties as predicted. This may be caused by one of the
+following reasons: In the virtual prediction, (i) one should take the corre-
+sponding phase diagrams into account, meaning the experiments are cor-
+rect or (ii) improve the growth process, indicating the calculations are
+correct. (i) For example, an alloy consisting of Ni, Mn and Si has been
+reported to contain almost 100 phases41, which cannot be considered in the
+machine-learning prediction and may not be well represented by the total
+crystalline energy calculated by ﬁrst principles. Alternatively the quantum
+annealing can be adopted for further optimisation of the system with
+complex structures. (ii) In a quaternary Heusler alloy with the form of
+XX’YZ, the X (and/or X’) and Y atoms can be replaced, such as Mn and Ni,
+differentiating the corresponding crystalline structures. However they
+cannot be experimentally distinguished with the current technology. We
+hence need to develop these additional two approaches for more precise
+prediction and development.
+Data availability
+Data is provided within the manuscript.
+Received: 16 March 2025; Accepted: 13 June 2025;
+References
+1.
+Hirohata, A. et al. Review on spintronics: Principles and device
+applications. J. Magn. Magn. Mater. 509, 166711 (2020).
+2.
+Jung,J.W.,Sakuraba,Y.,Sasaki,T.T.,Miura,Y.&Hono,K.Enhancement
+of magnetoresistance by inserting thin NiAl layers at the interfaces in
+Co2FeGa0.5Ge0.5/Ag/Co2FeGa0.5Ge0.5 current-perpendicular-to-
+plane pseudo spin valves. Appl. Phys. Lett. 108, 102408 (2016).
+3.
+Scheike, T., Wen, Z., Sukegawa, H. & Mitani, S. 631% room
+temperature tunnel magnetoresistance with large oscillation effect in
+CoFe/MgO/CoFe(001) junctions. Appl. Phys. Lett. 122, 112404 (2023).
+4.
+Felser C. and Hirohata A. (Eds.), “Heusler Alloys,” (Springer, Berlin,
+Germany, 2016).
+5.
+Elphick, K. et al. Heusler alloys for spintronic devices: Review on
+recent development and future perspectives. Sci. Technol. Adv.
+Mater. 22, 235–271 (2020).
+6.
+Okabe, R. et al. Materials informatics for the development and
+discovery of future magnetic materials. IEEE Magn. Lett. 14,
+2500305–5 (2023).
+7.
+Kim, K. et al. Machine-learning-accelerated high-throughput
+materials screening: Discovery of novel quaternary Heusler
+compounds. Phys. Rev. Mater. 2, 123801 (2018).
+8.
+Nelson, J. & Sanvito, S. Predicting the Curie temperature of ferromagnets
+using machine learning. Phys. Rev. Mater. 3, 104405 (2019).
+9.
+Hu, X. et al. Searching high spin polarization ferromagnet in Heusler
+alloy via machine learning. J. Phys. Condens. Matter 32, 205901
+(2020).
+10. Kawaguchi, M. et al. Determination of the Dzyaloshinskii-Moriya
+interaction using pattern recognition and machine learning. npj
+Comput. Mater. 7, 20 (2021).
+11. Nawa, K., Hagiwara, K. & Nakamura, K. Prediction-accuracy
+improvement of neural network to ferromagnetic multilayers by
+Gaussian data augmentation and ensemble learning. Comput. Mater.
+Sci. 219, 112032 (2023).
+12. Chaudhary, L. et al.Machinelearningbasedpredictionof speciﬁc heat
+capacity for half-Heusler compounds. AIP Adv. 15, 015306 (2025).
+13. Kurniawan, I., Miura, Y. & Hono, K. Machine learning study of highly
+spin-polarized Heusleralloysat ﬁnite temperature. Phys. Rev.Mater 6,
+L091402 (2022).
+14. Ju, S. et al. Machine learning analysis of tunnel magnetoresistance of
+magnetic tunnel junctions with disorderedMgAl2O4. Phys. Rev. Res.
+2, 023187 (2020).
+15. Iwasaki, Y., Sawada, R., Saitoh, E. & Ishida, M. Machine learning
+autonomous identiﬁcation of magnetic alloys beyond the Slater-
+Pauling limit. Commun. Mater. 2, 31 (2021).
+16. Blöchl, P. Projector augmented-wave method. Phys. Rev. B 50,
+17953–17979 (1994).
+17. Kresse, G. & Furthmuller, J. Efﬁcient iterative schemes for ab initio
+total-energy calculations using a plane-wave basis set. Phys. Rev. B
+54, 11169–11186 (1996).
+18. Perdew, J. P., Burke, K. & Ernzerhof, M. Generalized gradient
+approximation made simple. Phys. Rev. Lett. 77, 3865–3868 (1996).
+19. Liechtenstein, A. I., Katsnelson, M. I., Antropov, V. P. & Gubanov, V. A.
+Local spin density functional approach to the theory of exchange
+interactions inferromagnetic metalsandalloys.J. Magn.Magn.Mater.
+67, 65–74 (1987).
+20. Ebert, H., Ködderitzsch, D. & Minár, J. Calculating condensed matter
+properties using the KKR-Green's function method—recent
+developments and applications. Rep. Prog. Phys. 74, 096501 (2011).
+21. Sasioglu, E., Sandratskii, L. M. & Bruno, P. First-principles study of
+exchange interactions and Curie temperatures of half-metallic
+ferrimagnetic full Heusler alloys Mn2V Z (Z = Al, Ge). J. Phys.:
+Condens. Matter 17, 995 (2005).
+22. Miura, Y., Abe, K. & Shirai, M. Effects of interfacial noncollinear
+magnetic structures on spin-dependent conductance in Co2MnSi/
+MgO/Co2MnSi magnetic tunnel junctions: A ﬁrst-principles study.
+Phys. Rev. B 83, 214411 (2011).
+23. Roy, T., Tsujikawa, M. & Shirai, M. Ballistic spin-transport properties
+of magnetic tunnel junctions with MnCr-based ferrimagnetic
+quaternary Heusler alloys. Phys. Rev. Mater. 7, 104410 (2023).
+24. Yamada, M. et al. Copper in the suprachiasmatic circadian clock: A
+possible link between multiple circadian oscillators. NPG Asia Mater.
+12, 47–70 (2020).
+25. Kawasaki, K. Heusler interfaces—Opportunities beyond spintronics.
+APL Mater. 7, 080907 (2019).
+26. Miura, Y., Abe, K. & Shirai, M. J. Phys.: Conf. Ser. 200, 052016 (2010).
+27. Ozawa, E., Tsunegi, S., Oogane, M., Naganuma, H. & Ando, Y. J.
+Phys.: Conf. Ser. 266, 012104 (2011).
+28. Brown-Heft, T. L. et al. Epitaxial Heusler superlattice Co2MnAl/
+Fe2MnAl with perpendicular magnetic anisotropy and termination-
+dependent half-metallicity. Phys. Rev. Mater 2, 034402 (2018).
+https://doi.org/10.1038/s44306-025-00094-z
+Review
+npj Spintronics |  (2025) 3:32 
+8
+
+
+--- PAGE 9 ---
+29. Onodera, Y. et al. Experimental inspection of a computationally-
+designed NiCrMnSi Heusler alloy with high Curie temperature. Jpn. J.
+Appl. Phys. 59, 073003 (2020).
+30. Monma, R. et al. Structural and magnetic properties of CoIrMnAl
+equiatomic quaternary Heusler alloy epitaxial ﬁlms designed using
+ﬁrst-principles calculations. J. Alloy. Comp. 868, 159175 (2021).
+31. Roy, T., Tsujikawa, M., Kanemura, T. & Shirai, M. Ab-initio study of
+electronic and magnetic properties of CoIrMnZ (Z=Al, Si, Ga, Ge)
+Heusler alloys. J. Magn. Magn. Mater. 498, 166092 (2020).
+32. Suzuki, K. Z. et al. Perpendicular magnetic tunnel junction with a
+strained Mn-based nanolayer. Sci. Rep. 6, 30249 (2016).
+33. Filippou, P. C. et al. Chiral domain wall motion in unit-cell thick
+perpendicularly magnetized Heusler ﬁlms prepared by chemical
+templating. Nat. Commun. 9, 4653 (2018).
+34. Scheike, T., Wen, Z., Sukegawa, H. & Mitani, S. Enhanced tunnel
+magnetoresistance in Fe/Mg4Al-Ox/Fe(001) magnetic tunnel
+junctions. Appl. Phys. Lett. 120, 032404 (2022).
+35. Sukegawa, H. et al. MgGa2O4 spinel barrier for magnetic tunnel
+junctions: Coherent tunneling and low barrier height. Appl. Phys. Lett.
+110, 122404 (2017).
+36. Miura, Y., Muramoto, S., Abe, K. & Shirai, M. First-principles study of
+tunneling magnetoresistance in Fe/MgAl2O4/Fe(001) magnetic
+tunnel junctions. Phys. Rev. B 86, 024426 (2012).
+37. Nawa, K., Masuda, K. & Miura, Y. Interfacial resonant tunneling
+induced by folded bands and providing highly spin-polarized current
+in spinel-oxide barrier junctions. Phys. Rev. B 102, 144423 (2020).
+38. Kitai, K. Designing metamaterials with quantum annealing and
+factorization machines. Phys. Rv. Res. 2, 013319 (2020).
+39. Smidstrup, S. et al. QuantumATK: an integrated platform of electronic
+and atomic-scale modelling tools. J. Phys. Condens. Matter 32,
+015901 (2020).
+40. Nawa, K., Suzuki, T., Masuda, K., Tanaka, S. & Miura, Y. Quantum
+Annealing Optimization Method for the Design of Barrier Materials in
+Magnetic Tunnel Junctions. Phys. Rev. Appl. 20, 024044 (2023).
+41. Gupta, K. P. The Mn-Ni-Si (Manganese-Nickel-Silicon) system. J.
+Phase Equil. Diff. 27, 529–534 (2006).
+42. Momma, K. & Izumi, F. VESTA3for three-dimensional visualization of
+crystal, volumetric and morphology data. J. Appl. Crystallogr. 44,
+1272–1276 (2011).
+Acknowledgements
+This work was partially supported by Japan Science and Technology
+Agency (JST) Core Research for Evolutional Science and Technology
+(CREST) project (No. JPMJCR17J5) and Adopting Sustainable Partnerships
+for Innovative Research Ecosystem (ASPIRE) programme (No.
+JPMJAP2409). A.H. appreciate ﬁnancial support by the Japan Society for
+the Promotion of Science (JSPS) Grants-in-Aid for Scientiﬁc Research—
+Home-Returning Researcher Development Research programme
+(No.23K34567), X-nicsand European Commission (EC) European Research
+Council (ERC) Advanced Grant “Strain-Free All Heusler Alloy Junctions—
+SAHAJ” (No. 101097475). S.M. thanks for the support from KAKENHI
+(JP21H05000, JP24K21234) and X-nics of MEXT (Grant No. JPJ011438),
+and S.M. and M.S. thank the Spintronics Research Network of Japan (Spin-
+RNJ). K.N. thanks T. Suzuki at TDK Corporation, K. Masuda at NIMS, S.
+Tanaka at Keio University, and Y. Miura at Kyoto Institute of Technology for
+their signiﬁcant contributions, as well as the ﬁnancial support from TDK
+Corporation, JSPS KAKENHI (Grants No. JP20H02190, JP20K14782,
+JP21H01750, JP21K03391, JP22H04966, JP22K14290, JP23H05447 and
+JP23K03933), JST (Grant No. JPMJPF2221) and the computational facility
+of Numerical Materials Simulator at NIMS.
+Author contributions
+T.R., M.T., M.S. and K.N. carried out the calculations using machine learning
+and ab initio methods. S.M. grew the predicted alloy ﬁlms using sputtering
+and characterisedthemstructurallyand magnetically. A.H. and H.K. initiated
+this review and all the authors contributed to ﬁnalise it.
+Competing interests
+The authors declare no competing interests.
+Additional information
+Correspondence and requests for materials should be addressed to
+Atsufumi Hirohata.
+Reprints and permissions information is available at
+http://www.nature.com/reprints
+Publisher’s note Springer Nature remains neutral withregardtojurisdictional
+claims in published maps and institutional afﬁliations.
+Open Access This article is licensed under a Creative Commons
+Attribution 4.0 International License, which permits use, sharing,
+adaptation, distribution and reproduction in any medium or format, as long
+as you give appropriate credit to the original author(s) and the source,
+provide a link to the Creative Commons licence, and indicate if changes
+were made. The images or other third party material in this article are
+included in the article’s Creative Commons licence, unless indicated
+otherwise in a credit line to the material. If material is not included in the
+article’s Creative Commons licence and your intended use is not permitted
+by statutory regulation or exceeds the permitted use, you will need to
+obtain permission directly from the copyright holder. To view a copy of this
+licence, visit http://creativecommons.org/licenses/by/4.0/.
+© The Author(s) 2025
+https://doi.org/10.1038/s44306-025-00094-z
+Review
+npj Spintronics |  (2025) 3:32 
+9

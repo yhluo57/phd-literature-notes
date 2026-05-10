@@ -1,0 +1,1756 @@
+
+
+--- PAGE 1 ---
+npj | spintronics
+Review
+https://doi.org/10.1038/s44306-024-00044-1
+Recent progress in spin-orbit torque
+magnetic random-access memory
+Check for updates
+V. D. Nguyen
+, S. Rao, K. Wostyn & S. Couet
+Spin-orbit torque magnetic random-access memory (SOT-MRAM) offers promise for fast operation
+and high endurance but faces challenges such as low switching current, reliable ﬁeld free switching,
+and back-end of line manufacturing processes. We review recent advancements in perpendicular
+SOT-MRAM devices, emphasizing on material developments to enhance charge-spin conversion
+efﬁciency and large-scale device integration strategies. We also discuss the remaining challenges in
+achieving a single device with low switching current, reliable ﬁeld free switching to unlock the full
+potential of SOT-MRAM technology.
+The miniaturization predicted by Moore’s law has driven the evolution
+of electronic devices, leading to the explosive growth of our digital
+society as today1. However, as we continue to advance high-performance
+computing and energy efﬁciency, traditional charge-based memory
+technologies such as Static Random-Access Memory (SRAM) encounter
+signiﬁcant challenges, primarily stemming from leakage current and
+limited density scaling, especially as the industry transition to the
+nanosheet transistor era1.
+Magnetic random-access memory (MRAM), leveraging the spin
+propertiesof materials for data storage, has emergedas a promisingsolution
+to the challenges of charge-based memory devices2–6. At the core of MRAM
+is the magnetic tunnel junction (MTJ), a heterostructure comprising an
+oxide tunneling barrier sandwiched between the free and pinned layers. In
+MTJ devices, the magnetization state of the free layer serves to store bits of
+information, while the magnetization state of the reference layer remains
+ﬁxed. Over the years, MRAM technology has seen signiﬁcant advance-
+ments, boosting the scalability and performances2–4. With its non-volatility,
+fast read/write speeds, and high endurance, MRAM holds the potential to
+replace charge-based memory in various levels of the memory hierarchy
+(Fig. 1).
+While Spin-Transfer Torque (STT)-MRAM has matured, its writing
+operation where a current is injected through the junction to switch the
+magnetizationorientationofthefreelayer,facesinherenttrade-offsbetween
+fast switching speeds and long-term endurance, primarily attributed to the
+shared read and write current paths2,4,5.
+In response to these challenges, Spin-Orbit Torque (SOT)-
+MRAM, by employing separated write and read paths, has emerged
+as a promising alternative to mitigate the challenges associated with
+fast operation and high endurance in STT-MRAM devices5,7–10. This
+unique feature positions SOT-MRAM as a compelling candidate for
+providing a fast and dense memory alternative to SRAM (at least for
+the bigger caches), where high performance and reliability are
+important. Following the industrial trend towards chiplets and 3D
+integration, high-performance memory dies can be envisioned for 3D
+integration alongside accelerator processing units.
+However, realizing the full potential of SOT-MRAM requires over-
+coming several critical hurdles such as:
+• Integrating perpendicular magnetic anisotropy (PMA) systems is
+imperative to unlock the scalability potential of SOT-MRAM, aligning
+it with the evolution of advanced technological nodes.
+• Implementing ﬁeld-free switching mechanisms and achieving low
+switching currents in PMA systems are also critical for practical
+application of SOT-MRAM.
+• Furthermore, ensuring compatibility with back-end of line (BEOL)
+complementary
+metal-oxide-semiconductor
+(CMOS)
+fabrication
+processes is essential for seamless integration into existing manufac-
+turing processes.
+To address these challenges, advancements in understanding
+physics of SOT phenomena, materials research, and device engineer-
+ing are essential for realizing SOT-MRAM technology. The funda-
+mental physics of charge-to-spin conversion and methodologies for
+quantifying its efﬁciency across various material categories, along with
+SOT induced magnetization switching, have been comprehensively
+covered in numerous review articles5,9–13. In this review, our primary
+focus lies on
+the
+technological aspects, particularly
+enabling
+SOT-MRAM technology through material advancements and device
+integration strategies.
+SOT-MRAM with in-plane MTJs have been demonstrated to be
+compatible with BEOL processes and enable ﬁeld-free switching
+operation14,15. However, achieving furtherminiaturization and scaling of in-
+plane SOT-MRAM technology is hindered by speciﬁc elliptical shape
+requirements, limiting their scalability potential.
+Therefore, this review delves into recent advancements in perpendi-
+cular SOT-MRAM device development, highlighting important technolo-
+gical requirements, progress of material research, large-scale integration
+Interuniversity Microelectronics Center (IMEC), Leuven, Belgium.
+e-mail: van.dai.nguyen@imec.be; sebastien.couet@imec.be
+npj Spintronics |  (2024) 2:48 
+1
+1234567890():,;
+1234567890():,;
+
+
+--- PAGE 2 ---
+demonstrations, and approaches for ﬁeld-free SOT switching. Ongoing
+research endeavors aim to achieve BEOL compatibility, ultra-scale cells, and
+voltage-gated SOT devices in multi-pillar MTJs, thereby addressing the
+footprint challenges and prospects in SOT-MRAM technology.
+Key requirements to enable SOT-MRAM devices
+SOT-MRAM memory cell typically consists of a top-pinned 3-terminal
+MTJ where two contacts are connected to the SOT track for write operation
+while one to the top of the pillar for TMR read operation (Fig. 2). While this
+design leads to a larger footprint compared to 2-terminal STT-MRAM
+devices, it offers advantages in tunnel barrier integrity, potentially reducing
+writing errors and enhancing endurance5. Ongoing research includes
+alternative SOT device designs, such as multi-pillar cells with shared SOT
+layer, aiming to maximize cell density and performance16–18. This topic will
+be discussed later in this review.
+In SOT-MRAM, critical criteria for MTJ cells require energy efﬁcient
+reading and writing of bit information while remaining compact and
+compatible with BEOL CMOS processes. These requirements are inﬂu-
+enced byvariousfactorslike tunnelingmagnetoresistance (TMR),efﬁciency
+of charge-to-spin conversion, SOT track resistance, and thermal stability,
+impacting overall power consumption and performances5,9. The require-
+ment of an external magnetic ﬁeld for deterministic SOT switching in
+perpendicular MTJs adds an additional complexity to development of
+materials and processes.
+Conventionally, perpendicular MTJ devices employ materials like
+CoFeB for both the free layer and reference layer to obtain high TMR ratios
+and high PMA. Using double MgO barrier concept developed in STT-
+MRAM technology to enhance thermal stability but this approach presents
+challenges for SOT-MTJs regarding the spin transparency at the interface
+between SOT track and free layer. An alternative hybrid free layer concept
+has emerged, enhancing thermal stability and enabling the introduction of
+complex materials19,20.
+Additionally, the fabrication process of SOT-MRAM poses at least one
+extra challenge compared to its STT-MRAM counterpart. Indeed, precise
+control of the etch-stop process during MTJ pillar patterning step is crucial
+in preventing inadvertent damage on the thin (<10 nm) SOT track. Unlike
+established etching techniques in STT-MRAM, the integrity of the SOT
+layer requires a precise approach of etch-stop during the patterning process
+of MTJ pillar since minor deviations in etching process parameters can
+profoundly affect device performance and reliability [Fig. 3].
+Material and device integration of SOT-MRAM
+ToadvancethepracticalintegrationofSOT-MRAMdevices,theselectionof
+materials stack for both SOT and magnetic layers plays a crucial role in
+determining device performance metrics such as writing/reading energies,
+data retention and endurance. Hence, research and development of the
+SOT-MTJ stack involves addressing two key aspects:
+1. The SOT track material, which focuses on enhancing the charge-spin
+conversion ratio of damping-like torque to minimize write current.
+2. Optimizing the free layer to enhance MTJ properties such as TMR,
+PMA and compatibility with integration processes such as thermal
+budget at BEOL 400 °C annealing.
+This section discusses critical aspects for optimizing SOT-MTJ per-
+formance to meet practical application requirements. It covers the materials
+used in SOT devices, including spin sources and magnetic free layers. Spin
+sources generally search for high charge-to-spin conversion efﬁciency,
+eventually resulting in low critical switching current11,12. The selection of
+magnetic free layers prioritizes compatibility with MRAM technology
+integration processes while ensuring MTJ properties meet requirement of
+high TMR and retention.
+SOT track materials
+Spin sources from heavy metals. The spin Hall effect (SHE) in heavy
+metals such as Pt, Ta, or W, owing to the strong spin-orbit coupling, is a
+phenomenon wherein a charge current induces the generation of a
+transverse spin current perpendicular to its ﬂow direction. This phe-
+nomenon is the main driver for the development of SOT-MRAM tech-
+nology. The key advantages of these materials are high spin Hall angles,
+integration-friendly process, in particular their compatibility with PMA
+magnetic layers5,11,12. Numerous studies have focused on optimizing these
+materials to achieve a high charge-to-spin conversion ratio while pre-
+serving the good PMA of the magnetic layer. In Fig. 4a–c, Kumar et al.
+revealed that undoped Tungsten (W) changes a β-to-α phase transition at
+~4 nm, resulting in a loss of PMA and SOT efﬁciency21. Interestingly, they
+demonstrated that introducing oxygen (W(O)) or nitrogen (W(N))
+doping extends the β-phase thickness, altering properties such as PMA
+and magnetization saturation while maintaining a similar intrinsic spin
+Hall efﬁciency (~−56%). Employing a W (O, N) bilayer lattice optimizes
+PMA and enhances anti-damping SOT efﬁciency, extending the critical
+Fig. 1 | Memory hierarchy presents various types of memory. MRAM technologies
+provide promise to replace charge-based memory devices at different cache levels,
+ranging from L1 to L4. SRAM and DRAM stand for Static Random-Access Memory
+and Dynamic Random-Access Memory, respectively, while HDD refers to magnetic
+hard disk drives. SOT-MRAM is aimed at replacing SRAM due to its fast operation,
+while STT-MRAM is targeted for high-performance and high-density embedded
+DRAM applications. Voltage-controlled magnetic anisotropy technology offers
+potential for low-power operationand isbeing explored as a replacement for DRAM.
+Fig. 2 | Large-scale integration of perpendicular SOT-MRAM devices.
+a Schematic of three-terminal SOT-MTJ devices illustrates the write operation
+enabled by charge current ﬂow in the SOT track, inducing magnetization switching
+of the free layer, while read operations utilize electrical detection of TMR signal.
+b Transmission electron microscope images depict SOT-MTJ devices fabricated via
+CMOS-compatible processes on 300 mm wafers. W vias are used for applying
+current along the SOT track during write operations, while Cu vias serve for read
+operations. c High magniﬁcation image reveals MTJ cells with straight-proﬁle free
+layers placed on continuous SOT tracks.
+https://doi.org/10.1038/s44306-024-00044-1
+Review
+npj Spintronics |  (2024) 2:48 
+2
+
+
+--- PAGE 3 ---
+thickness for phase transition and improving anti-damping SOT efﬁ-
+ciency (-44.4% vs. -35%) compared to undoped W. This enhancement
+eventually reduces the threshold current for the switching of free layer by
+25% when integrated into SOT-MTJ devices21.
+Additionally, intrinsic factors like crystal structure22, the orientation of
+crystal structure23, and ﬁlm resistivity24,25 play key roles in modulating the
+SOT efﬁciency, enabling tailored material design for speciﬁc applications.
+Beyond traditional heavy metals, transition metals like Mo, Ru, Pd, and 3d
+metal Cr, despite weaker spin-orbit coupling, exhibit substantial SOT
+efﬁciency12. Furthermore, alloys with heavy elements such as CuAu, AuPt,
+PdPt, and TaPt offer unique advantages in SOT, with tunable spin Hall
+angles and resistivity12.
+Platinum,nobleamongheavy metals, is distinguishedby its substantial
+spin Hall conductivity, low resistivity, high thermal stability, and compat-
+ibility with CMOS processes. Recent works by refs. 26,27. have revealed a
+relationship between intrinsic spin Hall conductivity of Pt and longitudinal
+resistivity, demonstrating a strong, non-monotonic trend. Alloys of Pt with
+elements such as Au, Pd, or Cu enhance both longitudinal resistivity and
+spin Hall resistivity, thereby maximizing anti-damping torque, Fig. 4d–f.
+Consequently, these heavy-element alloys offer promising pathways for
+further advancement in SOT technology.
+Topological insulator materials and beyond. In demand of pushing
+switching current to lower boundary, materials with high spin Hall angles
+like
+topological
+insulators
+(TIs),
+have
+emerged
+as
+promising
+candidates28–32. This is attributed to their high spin-orbit coupling,
+resulting in complete spin-momentum locking in surface states. Lever-
+aging TIs for SOT-induced magnetization switching has shown ultra-low
+current density at room temperature28. While Bi2Se3, Bi2Te3, and BixSb1-x
+are standout choices, their deposition via molecular beam epitaxy pre-
+sents challenges for industrial-scale production. Moreover, the high
+resistivity in TIs potentially challenges for low-power demands. Recent
+studies on magnetron sputtered TI ﬁlms30,33 have shown promising
+results, achieving signiﬁcant spin Hall angles and reduced resistivity.
+These advancements signify progress in exploiting the potential of TIs for
+SOT devices. However, challenges persist in integrating TIs into MRAM
+devices, including issues related to intermixing with ferromagnetic
+materials and susceptibility to processing damage. Therefore, research
+efforts are underway to enhance the thermal budget of TI materials,
+ensuring they meet the requirements above 350 °C in BEOL processes34,35.
+Interestingly, by incorporating molybdenum (Mo) into TI/ferro-
+magnet (FM) structures, Pan et al., have successfully grown high-quality
+CoFeB/MgO layers on epitaxial TIs34. The resulting TI/Mo/CoFeB/MgO
+ﬁlm stack demonstrated robust PMA that withstands annealing up to
+400 °C, meeting BEOL thermal budget requirements. Remarkably, this
+studydemonstrated thattheenergyefﬁciencyofTI-based structuresismore
+than an order of magnitude greater than similar heavy metal-based struc-
+tures.
+Therefore,
+the
+demonstrated
+current-induced
+magnetization
+switching, energy efﬁciency, and thermal tolerance in TI/Mo/CoFeB/MgO
+ﬁlm stacks with PMA represent a signiﬁcant step toward practical SOT
+implementation with TI materials.
+It is worth to note that ongoing research continues to explore TIs and
+other materials like van der Waals compounds such as Dirac Weyl
+semimetals28,36–38. Indeed, Dirac and Weyl semimetals holds the potential in
+advancing SOT-MRAM technology, owing to their remarkable SOT efﬁ-
+ciencies and distinctive electronic properties, enabling low-power and high-
+performance memory applications. Dirac and Weyl semimetals, char-
+acterized by their metallic nature, demonstrate efﬁcient charge-to-spin
+conversion from both surface and bulk states, resulting in high SOT efﬁ-
+ciency, making them as promising candidates for SOT-MRAM. Addi-
+tionally,theirlowerresistivitycomparedtoTIsholdspromiseforlow-power
+SOT devices. Importantly, the low crystal symmetry in nonmagnetic Weyl
+semimetals generates out-of-plane spin polarizations, leading to uncon-
+ventional out-of-plane damping-like SOT39,40. This capability enables ﬁeld-
+free deterministic SOT-induced magnetization switching of PMA systems,
+streamlining their integration into established SOT-MRAM technology.
+Nevertheless, depositing the PMA magnetic layer directly onto Weyl
+semimetals remains challenging due to concerns about disrupting time-
+reversal symmetry and compromising topological properties. Maintaining
+high-quality crystalline ﬁlms, addressing material defects, and integrating
+with CMOS technology also pose signiﬁcant obstacles28. Despite these
+challenges, topological materials hold promise for revolutionizing MRAM
+technology. Enhancing material quality, interface engineering, and thermal
+stability while preserving scalable and cost-effective fabrication methods is
+crucial for the practical implementation of SOT-MRAM technology in
+commercial applications.
+Fig. 3 | Comparison of integration challenges related to pillar patterning in STT
+and SOT-MRAM devices reveals the challenges of SOT-MRAM integration. STT-
+MRAM devices allow over-etching through the seed layer, while the integration
+process for SOT-MRAM demands precise etch-stop on the tunneling barrier
+without surface damage to SOT track materials.
+https://doi.org/10.1038/s44306-024-00044-1
+Review
+npj Spintronics |  (2024) 2:48 
+3
+
+
+--- PAGE 4 ---
+To address the thermal budget challenges of TI and Weyl semimetal
+materials, ongoing research is exploring a new class of topological semi-
+metals based on half-Heusler alloys, which offer a high spin Hall angle and
+improved thermal budget41–46. Crystal structure of half-Heusler alloy
+topological semi-metals materials is constructed from three kinds of ele-
+ment XYZ, where X and Y are transition or rare-earth metals, and Z is the
+main-group element. These materials offer high controllability of lattice
+constants and band structures41. Unlike TIs, half-Heusler alloy topological
+semi-metals have a cubic structure that matches FM materials and MgO-
+based tunneling barrier, and their high melting points ensure BEOL process
+compatibility. For instance, Shirokura et al. has recently demonstrated a
+giant spin Hall angle up to 4.1 and a thermal budget up to 600 °C with
+YPtBi42. Furthermore, magnetization switching of a perpendicular CoPt
+thin ﬁlm using YPtBi-based SOT track has been demonstrated at sig-
+niﬁcantlylowercurrentdensitiesthanheavymetals.Although lowergrowth
+temperatures degrade the spin Hall properties of YPtBi, recent studies on
+YPtBi thin ﬁlms deposited via sputtering at temperatures as low as 300 °C
+suggest that achieving giant spin Hall angle at lower temperatures is
+feasible45,46.
+Further development is needed to demonstrate high SOT efﬁciency in
+perpendicular MTJs with YPtBi-based SOT tracks, particularly focusing on
+TMR and nanoscale implementation. Integrating YPtBi into nanoscale MTJ
+structures requires precise control over material deposition and interface
+quality to maintain the intrinsic properties of YPtBi and ensure high TMR
+and effective SOT efﬁciency. The challenge is to maintain high thermal
+stability and spin Hall efﬁciency at reduced dimensions, crucial for device
+scalability in practical applications. Overcoming these obstacles will enable
+the use of YPtBi’s superior spin Hall angle and thermal budget in advancing
+SOT-MRAM technology.
+Impact of longitudinal resistivity on the performance of SOT-MRAM
+devices. In the writing scheme of SOT devices, electrical current ﬂows
+along the SOT track to switch the magnetic state of the free layer.
+Therefore, the longitudinal resistivity of SOT materials plays crucial role
+in determining the writing power and performance of SOT-MRAM
+devices. Among various SOT materials, those with lower resistivity lead
+to reduced power consumption, enhancing the energy efﬁciency and
+overall performance of SOT-MRAMs25,47. For instance, by comparing
+Fig. 4 | Enhancement of SOT efﬁciency in W and Pt-based SOT tracks.
+a Thickness dependence of anti-damping SOT efﬁciency (ξAD
+J
+) for various types of
+doped Tungsten. The solid lines represent ﬁts to experimental data points using a
+drift-diffusion model to extract the intrinsic spin Hall angle and the spin diffusion
+length. b Saturation magnetization of Co-Fe-B plotted versus doped Tungsten layer
+thickness. c Effective anisotropy ﬁeld (BK
+eff) of Co-Fe-B versus Tungsten thickness.
+Positive BK
+eff values indicate PMA while negative values correspond to in-plane
+magnetic anisotropy due to demagnetization ﬁeld effects. Figure (a–c) are reprinted
+with permission from ref. 21, copyright 2021 by the American Physical Society.
+d The plotted ﬁgures illustrate the measured TintσSH (open symbols) and intrinsic
+spin Hall conductivity (σSH, solid symbols), (d) the spin Hall ratio (θ;SH, solid
+symbols), and (e) the damping-like SOT efﬁciency per unit current density (ξDL,
+open symbols). Additionally, (f) θ;SHλS and ξDLλS are shown for Pt-MgO alloys, Pt-
+Hf multilayers, and Pt-Ti multilayers, all plotted against electrical conductivity (ρxx).
+Figure (d–f) are reprinted with permission from ref. 26, copyright 2021 by the AIP
+publishing.
+https://doi.org/10.1038/s44306-024-00044-1
+Review
+npj Spintronics |  (2024) 2:48 
+4
+
+
+--- PAGE 5 ---
+switching efﬁciency of different SOT-based materials, Zhu et al. high-
+lighted high SOT efﬁciency and low resistivity Au0.25Pt0.75-based SOT
+track outperforms other materials like Pt, β-W, and β-Ta, exhibiting
+signiﬁcantly lower power consumption25. Additionally, materials with
+higher resistivity, such as TIs Bi2Se3 and (Bi, Se)2Te3, exhibit higher
+power consumption due to signiﬁcant current shunting effects. Fur-
+thermore, benchmarking study by Li et al. showed that low resistivity of
+SOT track materials will signiﬁcantly impact switching speed by reducing
+the overall resistance of the SOT track. This indeed leads to decrease the
+resistor-capacitor time constant of the circuit, eventually enabling faster
+switching times47. This enhancement is crucial for achieving higher
+operating speed, essential for improving SOT-MRAM performance and
+its competitiveness. Importantly, high resistivity can lead to increased
+Joule heating, impacting the thermal stability of the MTJ. Therefore,
+materials with lower resistivity, generate less heat, thereby enhancing
+thermal stability and reducing the risk of thermal degradation over time.
+This ensures long-term reliability in SOT-MRAM devices. Achieving a
+balance between resistivity and other material properties such as spin
+Hall angle is crucial for optimizing SOT-MRAM performance and
+mitigating parasitic effects, especially in advanced technology nodes.
+Insummary,heavymetalsplayanimportantroleinthedevelopmentof
+SOT-MRAM devices thanks to their high spin Hall angle, low resistivity,
+compatibility with PMA magnetic layers, and large-scale integration
+friendly. Doping techniques, as demonstrated with Tungsten, can optimize
+higher SOT efﬁciency. Platinum enhances anti-damping torque when
+alloyedwithelementslikeAu,Pd,orCubuttheexperimentaldemonstration
+high SOT efﬁciency in perpendicular SOT-MTJ with PtX-based SOT track
+has not been reported so far. Additionally, challenges exist with TI materials
+due to the integration with perpendicular MTJ integration and resistivity
+limitations, despite their potential for ultra-low switching current require-
+ments. The half-Heusler alloy topological semi-metals offer potential for
+energy-efﬁcient, BEOL-compatible SOT-MRAM devices due to their giant
+spin Hall angle and high thermal budget. Nonetheless, achieving high SOT
+efﬁciency in perpendicular SOT-MTJs with YPtBi-based tracks, focusing on
+TMR and nanoscale integration, requires further development. Ongoing
+research explores various materials for SOT applications, but mass pro-
+duction integration remains an open question.
+Free layer materials on SOT track
+Ferromagnetic materials with PMA such as Cobalt (Co) and cobalt-iron-
+boron (CoFe(B)) hold signiﬁcant potential in the development of SOT-
+MRAM. They not only serve as key components for detecting and char-
+acterizing the SOT efﬁciency of heavy metals such as Pt and W11,12 but also
+commonly integrated in the free layer of MTJs. To accomplish a high TMR
+readout signal, CoFe(B) is often directly in contact with the MgO tunneling
+barrier due to its compatibility with the body-centered cubic (001)-oriented
+crystal structure of MgO. On the other hand, Cobalt is typically incorpo-
+rated into the MRAM device through a hybrid free layer design19,20, which
+optimizes the performance of the device by mostly decoupling the “TMR”
+CoFeB part with a switching layer in contact with the SOT track.
+In recent years, there has been considerable progress in leveraging
+antiferromagnets (AFM) and synthetic antiferromagnets (SAFs) for SOT-
+MRAM thanks to several advantages including the absence of stray ﬁelds,
+high thermal stability, and fast switching dynamics48,49. However, detecting
+magnetic states in nanoscale AFM and SAF devices still poses signiﬁcant
+challenges due to their inherently low magnetic moments. Considerable
+advancement lies in the ability to manipulate the Neel order of AFM
+materials50,51 while the readout of magnetic state enabled via anisotropic
+magnetoresistance.
+Interestingly, the recent breakthroughs in AFM writing52,53 and
+reading54,55 capabilities which highlight the remarkable potential of AFMs in
+boosting the performance of MRAM devices. These ﬁndings suggest that
+using AFMs as free and ﬁxed layers for SOT-MRAM holds considerable
+promise. Indeed, AFM devices leverage the unique properties of the AFM
+Néel vector as a state variable, offering advantages over conventional FM
+materials, positioning them as ideal candidates for advanced spintronic
+devices. However, achieving complete electrical operation in a single AFM-
+based device remains signiﬁcant challenges, include controlling Néel vectors
+in collinear antiferromagnet MTJs, where experimental demonstrations are
+lacking. Complex domain structures in AFM ﬁlms hinder TMR signal, but
+aligningdomains via FM layersmayoffera solution56. Therefore, developing
+electrically driven methods to manipulate AFM domains is essential for
+future applications. Noncollinear AFM metals offer alternative energy efﬁ-
+cient spin-torque switching but limited material options for suitable elec-
+trodes. Antiferromagnet MTJs with multiple anisotropy axes could enable
+multiple resistance states, while tunneling barrier choice and crystallinity are
+key for optimal performance. It is important to note that scaling effects from
+edgeroughnessduringfabricationmayimpactnanoscaledevices.Therefore,
+understanding and reliably controlling these effects at the nanoscale level is
+crucial for advancing antiferromagnet MTJs technology. Despite these
+challenges, antiferromagnet MTJs offer signiﬁcant advantages over con-
+ventional MTJs in TMR, switching speed, and packing density, positioning
+their potential as a new spintronic device. Further research is essential to
+address
+these
+challenges
+and
+unlock
+the
+full
+potential
+of
+antiferromagnet MTJs.
+It is worth to mention that SAFs are formed based on the
+Ruderman–Kittel–Kasuya–Yosida interaction, have also emerged as pro-
+mising alternatives to ferromagnets in MRAMs. SAFs-based systems have
+been demonstrated to exhibit higher efﬁciency in SOT-induced switching
+compared to their ferromagnetic counterparts57–60 and have the option to
+Table 1 | List of experimentally reported demonstrations of SOT-MTJ along with their key characteristics and properties
+SOT materials
+Free layer
+Magnetic system
+MTJ size (nm)
+TMR (%)
+SOT width (nm)
+Ic or Jc
+Pulse width range
+Ref
+Ta (6.2 nm)
+CoFeB (1.6 nm)
+In-plane
+100 × 300
+50
+1000
+2 mA
+8
+Ta (5 nm)
+CoFeB (1.48 nm)
+In-plane
+160 × 400
+94
+1200
+10 MA/cm2
+500 ms
+15
+Ta (10 nm)
+CoFeB (1.4 nm)
+In-plane
+420 × 1470
+102
+8.2 MA/cm2
+40 ns to 100 ms
+120
+Pt (4 nm)
+CoFeB (1.6 nm)
+In-plane
+50 × 180
+80
+1200
+16 MA/cm2
+121
+Au0.25Pt0.75 (5 nm)
+CoFeB (1.4 nm)
+In-plane
+45 × 190
+18
+300
+20 MA/cm2
+0.2 to 3 ns
+122
+[Pt 0.6/Hf
+0.2]5/Pt 0.6
+CoFeB (1.6 nm)
+In-plane
+45 × 190
+300
+3.6 MA/cm2
+123
+W
+CoFeB
+Canted In-plane
+88 × 315
+167
+385
+236 MA/cm2
+0.35 ns
+14
+Ta (20 nm)
+CoFeB (1 nm)
+PMA
+1000
+90
+1300
+50 MA/cm2
+50 ns
+77
+Ta (3.8 nm)
+CoFeB (1 nm)
+PMA
+110
+60
+220
+0.5 mA
+10 ms
+109
+W (3.5 nm)
+CoFeB (1 nm)
+PMA
+60
+110
+170
+130 MA/cm2
+0.3 to 10 ns
+78
+W (O, N) (6 nm)
+CoFeB (1 nm)
+PMA
+60
+80
+160
+0.31 mA
+0.3 to 10 ns
+21
+Pt (4 nm)
+Co/CoFeB hybrid
+PMA
+60
+110
+170
+0.4 mA
+0.3 to 10 ns
+20
+https://doi.org/10.1038/s44306-024-00044-1
+Review
+npj Spintronics |  (2024) 2:48 
+5
+
+
+--- PAGE 6 ---
+integrate with CoFeB layer for TMR read-out19,61. Remarkably, recent
+breakthroughs in achieving deterministic SOT switching have shown the
+signiﬁcant potential of SAF materials for SOT-MRAM technology62–64.
+Indeed, researchers have demonstrated ﬁeld-free SOT switching solutions
+by reducing the Dzyaloshinskii-Moriya interaction at the interface between
+the heavy metal and magnetic layer57,58 or by introducing symmetry
+breaking through interlayer Dzyaloshinskii-Moriya interaction between
+magnetic layers65,66. These experimental results open a path to enable
+practical implementation of perpendicular SOT-MRAM devices with SAF
+materials.
+Recent attention has focused on ferrimagnetic materials for fast
+switching dynamics, including rare earth-transition metal alloys like CoTb
+and GdFeCo67,68. These alloys exhibit bulk PMA and high SOT switching
+efﬁciencynearthemagnetizationcompositionpoint.FerrimagneticHeusler
+alloy Mn2Ru1-xGa69,70 shares similar properties while insulating materials
+such as ferrimagnetic thulium iron garnet (Tm3Fe5O12) offer energy-
+efﬁcient alternatives with comparable SOT switching efﬁciency to all-metal
+system71–73. Additionally, van der Waals materials have unveiled magnetic
+orders at the monolayer level, presenting novel opportunities for future
+explorations74–76.
+In short, ferromagnetic materials like Co and CoFe(B) are vital for
+SOT-MRAM, offering efﬁcient SOT detection and characterization while
+compatible with the state-of-the-art MTJs. Antiferromagnets and SAFs
+bring advantagessuchas zero stray ﬁelds and fast dynamicsand higher SOT
+efﬁciency overcoming challenges of conventional ferromagnetic materials.
+Ferrimagnetic materials and insulators offer promising alternatives with
+efﬁcient SOT switching, while van der Waals materials open new explora-
+tion paths at the monolayer level. It should be noted that a lot of these new
+materials suitability for integration will also be strongly inﬂuenced by their
+abilityto withstand 400°Canneal thermal budgets withoutdegradation,as it
+is a standard in advanced CMOS process ﬂows.
+Experimental demonstration of SOT-MTJ functionality
+The integration challenges of SOT-MRAM pertain to preserving the
+integrity of SOT layer during the patterning process of MTJ pillars. Various
+studies have successfully demonstrated the functionality of SOT-MTJ
+devices in both PMA and in-plane systems. The utilization of various SOT
+track materials in these MTJ devices highlights the adaptability and versa-
+tility of SOT-MRAM technology. Table 1 provides experimental reports of
+SOT-MTJ devices along with their key characteristics. The ﬁrst proof of
+concept for a perpendicular MTJ was reported in 2014, featuring a Ta/
+FeCoB/MgO/FeCoB-based stack on a Ta track77. The author demonstrated
+reliable switching of the CoFeB free layer with current pulses at 5 × 1011A/
+m² in the Ta layer.
+In 2018, Garello et al., reported the ﬁrst demonstration of perpendi-
+cular SOT-MTJs cells comprising W/CoFeB/MgO-based stack on 300 mm
+wafers using CMOS-compatible processes78. In this study, speciﬁc stop-etch
+conditions have been developed to leave the W layer intact while patterning
+the MTJ pillar without producing sidewall shorts across the MgO barrier.
+This study demonstrated promising characteristics of 62 nm SOT-MTJ
+devices with a TMR of 90% and reasonable high thermal stability. By
+evaluating both STT and SOT switching performances in the same device,
+the authors found that, in STT switching, the critical voltage is ~1 V (cor-
+responds to switching energy ~470 fJ), while SOT achieves reliable
+switching at ~1 V within 210 ps and at 0.7 V within 500 ps, resulting in an
+energyaslowas350 fJat280 ps,respectively,Fig.5.Additionally,endurance
+measurements on a 50 nm device show robustness, enduring up to 5 × 1010
+events using 100 ns. The demonstration of SOT driven switching in per-
+pendicular MTJs not only highlights the potential of SOT-MRAM tech-
+nology but also signiﬁes an advancement in exploring the SOT switching
+dynamics in nanoscale devices. By utilizing TMR signal detection, which
+provides a higher signal-to-noise ratio compared to conventional Hall bar
+detection methods, researchers can now delve deeper into the underlying
+physics of SOT switching at the nanoscale. This demonstration also opens
+new avenues for studying how nanofabrication processes impact the per-
+formance and reliability of these devices. Furthermore, by gaining insights
+into the effects of nanofabrication on device behavior, it allows us to reﬁne
+fabrication techniques and optimize device designs for enhanced perfor-
+mance and functionality.
+SOT switching dynamics in MTJs via real-time electrical
+detection
+Understanding SOT-driven magnetization switching dynamics in nanos-
+cale devices promises scalable, low-power, and high-speed operation of
+SOT-MRAM devices79,80. Through real-time single-shot measurements of
+SOT driven switching in MTJ devices, ref. 81, revealed deterministic and
+stochastic events in the switching process. The ﬁnding reveals the ﬁnite
+incubation time necessary for SOT-induced magnetization reversal, deter-
+mined by the interplay of SOT, in-plane ﬁeld, and Joule heating. Com-
+parative analysis betweenSOT-induced reversaland STT in the same device
+highlights signiﬁcant differences in dynamics, timescales, and efﬁciency of
+the two mechanisms. Fig. 6.
+Further investigation distinguishes between the effects of STT and
+voltage control of magnetic anisotropy (VCMA) on SOT-driven magneti-
+zation reversal in MTJ devices.
+In short, the demonstration of SOT-MTJ on 300 mm wafers marks a
+signiﬁcantmilestoneinthedevelopmentofSOT-MRAM.Thisachievement
+not only represents a technological advancement but also offers valuable
+insights into the fundamental aspects of SOT driven magnetization
+switching dynamics in nanoscale devices. The switching behavior observed
+in SOT-MTJ devices showcases reliable and efﬁcient operation at sub-ns
+timescales. However, to fully exploit the beneﬁts of SOT-MRAM technol-
+ogy, further research is required to address challenges related to optimizing
+reliable ﬁeld-free switching mechanisms.
+Field free SOT solutions with MTJ compatible
+Role of damping-like and anti-damping torques on SOT
+switching
+The damping-like torque effective ﬁeld. In general, a SOT can be
+decomposed into two components: a longitudinal damping-like torque
+and a transverse ﬁeld-like torque. The damping-like torque destabilizes
+the magnetization and induces rotation toward the spin polarization,
+Fig. 5 | Comparing the switching characteristics of STT and SOT on identical
+62 nm MTJ devices. a, b The distribution of switching events is depicted relative to
+pulse voltage VSTT and SOT for different pulse durations τp (P-AP transition).
+c Critical switching voltage is shown as a function of the inverse of pulse duration,
+demonstrating switching frequencies up to 5 GHz. d Switching energy is illustrated
+over time, highlighting the ultrafast and low-power performance of SOT devices.
+The ﬁgure is reprinted with the permission from ref. 78, copyright 2018 by IEEE.
+https://doi.org/10.1038/s44306-024-00044-1
+Review
+npj Spintronics |  (2024) 2:48 
+6
+
+
+--- PAGE 7 ---
+leading to reversal, whereas the ﬁeld-like torque drives magnetization
+into precession, impacting dynamics and switching speed5,9. Damping-
+like torque acts as an effective damping term, aligning magnetization with
+spin polarization and directly contributing to deterministic switching,
+making it more efﬁcient. In contrast, ﬁeld-like torque functions as an
+effective magnetic ﬁeld, inﬂuencing precessional motion and affecting
+switching dynamics and speed. Understanding these mechanisms is
+crucial for optimizing SOT devices, highlighting damping-like torque for
+deterministic switching and ﬁeld-like torque for overall performance.
+Currently, MTJ devices with PMA are designed as unit cells for SOT-
+MRAM due to their high thermal stability and scalability. In this device,
+the damping-like torque can immediately drive the magnetization into
+Table 2 | Comparison of various ﬁeld free SOT switching in PMA MTJ devices
+Magnetic hard mask
+STT + SOT
+Bending current
+In-plane magnet
+Scheme
+Key features
+˗ Integration friendly on 300 mm wafer
+˗ MTJs size ~60 nm
+˗ 0.3 ns switching
+˗ CMOS compatible process
+˗ MTJ size ~57 nm
+˗ 10 ns switching
+˗ Integration friendly on
+300 mm wafer
+˗ MTJs size ~60 nm
+˗ 10 ns switching
+˗ Integration friendly on 300 mm wafer
+˗ MTJ size ~60 nm
+˗ Sub-ns switching
+Challenges
+˗ Scaling since stray ﬁeld is proportional
+to volume of magnetic hard mask
+˗ Integration for multi-pilar device
+˗ Endurance/reliability due to MgO
+breakdown
+˗ No separate read/write paths
+˗ Local Joule heating on free
+layer
+˗ Large footprint
+˗ Integration for multi-pilar
+device
+˗ Current shunting
+˗ Dynamics interplay between IP/PMA
+magnet
+˗ BEOL 400 °C compatibility
+Fig. 6 | Study of the combined inﬂuence of voltage-controlled magnetic aniso-
+tropy and STT on SOT-induced switching in SOT-MTJ devices. Schematics
+depicting SOT-induced switching are presented for the reference layer pointing both
+up (a) and down (b). Black arrows indicate bias, while white block arrows signify
+magnetization states. Yellow and red arrows represent the preferred switching
+directions due to SOT and STT, respectively. In (a), STT aids SOT-induced
+switching, whereas in (b), STT opposes it. c Averaged voltage-time traces of
+SOT-induced P-AP switching with varying STT biases are shown. d The critical
+voltage evolution is depicted as a function of pulse length for different VSTT/VSOT
+ratios. e Normalized critical voltages v ↑and v ↓are plotted as a function of inverse
+pulse length for various VSTT/VSOT ratio. f Change in average critical VCMA-like
+voltage contribution. The ﬁgures are reprinted with the permission from ref. 81,
+copyright 2020 by Springer Nature.
+https://doi.org/10.1038/s44306-024-00044-1
+Review
+npj Spintronics |  (2024) 2:48 
+7
+
+
+--- PAGE 8 ---
+the in-plane direction and achieve switching in the presence of an
+external in-plane ﬁeld to break symmetry, eventually determining the
+perpendicular direction of the magnet due to the in-plane effective ﬁeld
+(both damping-like and ﬁeld-like) from SOT. However, this requirement
+for an assistant ﬁeld is a major obstacle for the industrial application.
+Therefore, achieving magnetic ﬁeld-free SOT switching has become a key
+in realizing SOT-MRAM5,9.
+The anti-damping-like torque. The anti-damping-like torque acts
+against the intrinsic Gilbert damping of ferromagnet and enabling ﬁeld-
+free switching of PMA ferromagnets. The anti-damping-like torque
+comprises two components: the anti-damping and the ﬁeld-like com-
+ponents. In this scheme, the anti-damping component destabilizes the
+magnetization, inducing the rotation of magnetization towards the spin
+polarization, thereby enabling deterministic switching. In contrast, the
+ﬁeld-like component acts akin to an effective magnetic ﬁeld, driving the
+magnetization into precessional motion and inﬂuencing the switching
+dynamics. Various strategies have been explored to generate anti-
+damping out-of-spin to advance the development of SOT-MRAM
+technology. First, the materials like WTe240, MnPd382, and interfaces
+such as CuPt/CoPt83 leverage the lack of lateral inversion symmetry in
+their crystal structure. Passing an in-plane current through these mate-
+rials generates out-of-plane spin polarization, facilitated by their unique
+electronic properties and crystal symmetries, enabling efﬁcient conver-
+sion of charge currents into spin currents with an out-of-plane polar-
+ization component.
+Secondly, tri-layer structure incorporating an in-plane magnet layer
+beneath the non-magnetic metal layer like the in-plane CoFeB/Ti/perpen-
+dicular CoFeB system, the interfacial Rashba ﬁeld induces spin precession,
+leading to the creation of an out-of-plane spin polarization component84–86.
+This ﬁeld-free switching concept will be comprehensively reviewed in the
+next section. These approaches exploit material properties and interfacial
+effects to enable ﬁeld-free SOT switching. Mastering these mechanisms is
+crucial for advancing MRAM, where efﬁcient and reliable magnetization
+switching is essential.
+In short, both damping-like torque and anti-damping like torque play
+crucial roles in the development of SOT-MRAM technology. It is worth to
+note that their role on SOT-induced magnetization switching dynamics can
+be quite different. For instance, a larger damping-like torque efﬁciency can
+lead to improved device performance, such as lower switching current while
+the unconventional out-of-plane anti-damping-torque enable deterministic
+ﬁeld-free switching of a PMA ferromagnet. Both PMA and in-plane MTJs
+enable ﬁeld-free switching through the anti-damping mechanism, yet they
+possess distinct characteristics. In-plane MTJs have been effectively inte-
+grated into SOT-MRAM, demonstrating sub-ns write speeds and com-
+patibility with BEOL processes, facilitating ﬁeld-free switching. However,
+challenges in speciﬁc elliptical shape requirements limit scalability and
+widespread adoption in future memory applications. Perpendicular SOT-
+MRAM, on the other hand, shows promise for scalability and competi-
+tiveness in the memory market. Despitethis, it faces practical hurdles due to
+the need for an external in-plane magnetic ﬁeld to achieve deterministic
+SOT-induced magnetization7,8. Various strategies for enabling ﬁeld-free
+SOT switching have been actively researched13,87. This involves introducing
+in-plane stray ﬁelds88, exchange bias89,90, lateral structural symmetry
+breaking within the device structure, typically achieved by incorporating a
+wedge-shaped layer or manipulating the geometry of the magnetic
+layer87,91,92. However, reproducible fabrication of a wedge layer remains a
+signiﬁcant challenge, especially for large-scale wafer integration. Despite
+recent advancements, the demand for reliable ﬁeld-free switching solutions
+remains pressing in SOT-MRAM technology. Additionally, current
+experiments and physical understanding are typically limited to Hall bar
+devices at microscale devices, limiting its capabilities to real application of
+SOT-MRAM devices. Furthermore, scaling effects resulting from edge
+roughness during fabrication processes may affect the ﬁeld-free switching at
+nanoscale devices. Therefore, understanding and reliably controlling ﬁeld-
+free switching at the nanoscale level in MTJ devices represents a crucial step
+toward advancing SOT-MRAM technology. This section will discuss
+experimental demonstration for ﬁeld-free SOT switching manufacturable
+and compatible with perpendicular MTJs.
+Stray ﬁeld from magnetic hard mask
+Garello et al. demonstrated an integration-friendly approach by embedding
+a Cobalt ferromagnet in the hard mask used to shape the SOT track during
+device fabrication process. This Cobalt magnetic hard maskgenerates anin-
+plane stray ﬁeld large enough to induce symmetry breaking to enable ﬁeld-
+free switching88, panel (a) in Table 2. The results show that devices exhibit
+sub-ns switching down 300 ps, without compromising MTJ properties.
+Endurance tests reveal a low write error rate of 105 events and endurance up
+to 1011 cycles at 1 ns, with negligible variation in SOT and MTJ resistances
+post-testing, conﬁrming the robustness of the devices under high stress
+conditions. Real-time single-shot measurements revealed a stochastic
+incubation delay near the critical voltage threshold with a transition time of
+~1 ns93. Importantly, this study emphasizes the negligible impact of mag-
+netic hard mask on the MTJ properties.
+In short, magnetic hard mask solutions offer advantages in manu-
+facturablecontextsbutitalsoholdsasetofchallengesthatpotentiallyhinder
+their widespread adoption within SOT-MRAM technology. The ﬁrst one
+lies in the scaling of cell size, where the stray ﬁeld may diminish as the
+dimension of individual cells decreases. The second challenge is anticipated
+to be challenge for the integration of multi-pillar devices commonly used in
+high-density SOT-MRAM architectures. In this conﬁguration, the stray
+ﬁeld approach may not scale effectively to accommodate the increased
+density of memory cells.
+Combination of STT + SOT for ﬁeld-free switching
+Recently, a full electrical control of ﬁeld-free switching scheme in perpen-
+dicular SOT-MRAM devices has emerged, integrating both STT and SOT
+effects within a single device, panel (b) in Table 2. This approach offers two
+distinct scenarios: SOT assisting STT and vice versa. Through experimental
+validation and modeling, it has been shown that this combined approach
+enables various switching regimes. High SOT current enables fast ﬁeld-free
+switching while low SOT assists STT dynamics, reducing incubation
+time94–96. Remarkably, this approach has been experimentally validated,
+demonstrating ﬁeld-free switching without compromising sub-ns writing
+and endurance97,98. The combination between SOT and STT offers multiple
+advantages, including breaking the symmetry of SOT by even small STT
+currents. Furthermore, micromagnetic simulations illustrate the scalability
+of this method, with reduced power consumption by a factor of 10 as device
+size decreases from 60 nm to 10 nm.
+In summary, the concept of combining STT and SOT certainly
+introduces an intriguing possibility for a full electrical control of ﬁeld-free
+switching in perpendicular MTJ devices. However, it also raises concerns
+regarding the potential impact on device reliability, akin to the issues
+observed in STT devices. The reliability of such SOT devices, particularly
+concerning their endurance, needs thorough investigation. Evaluating how
+the current ﬂow affects the tunnel barrier and endurance will be crucial in
+determining the feasibility and reliability of this ﬁeld-free switching scheme.
+Design of bending structure for ﬁeld free switching
+Recently, an innovative approach for ﬁeld-free switching in perpendicular
+MTJs has been experimentally demonstrated by introducing a geometric
+bending structure of the SOT channel99, panel (c) in Table 2. This design
+introduces a structural imbalance within the system, prompting the ﬂow of
+non-uniform charge current along the SOT channel. As a result, the
+modiﬁcations in spin current distribution led to non-uniform SOT exerted
+on the free layer of the MTJ, thereby breaking the time-reversal symmetry
+crucial for deterministic SOT switching. Micromagnetic simulations reveal
+that domain wall nucleation primarily occurs at the inner corner of the bent
+structure due to higher spin current density, inﬂuencing domain wall
+dynamics. This study found that factors like stray ﬁelds and Oersted ﬁeld
+https://doi.org/10.1038/s44306-024-00044-1
+Review
+npj Spintronics |  (2024) 2:48 
+8
+
+
+--- PAGE 9 ---
+from the curved SOT channel minimally impact switching dynamics, while
+variations in damping parameters and Joule heating show moderate effects
+on switching reliability. Shortening the SOT channel is proposed to reduce
+resistance and enable studies with shorter pulse regimes. Additionally, a
+design-to-technology co-optimization (DTCO) analysis reveals that opti-
+mizing the MTJ position, closer to the inner corner, reduces switching
+current by ~32% while maintaining area efﬁciency. However, the imple-
+mentation of device concept raises concerns regarding the occurrence of
+local Joule heating within the free layer. This design also poses challenges,
+particularly in terms of the large footprint resulting from the speciﬁc geo-
+metry of the SOT track. Additionally, there are implementation issues to be
+addressed, particularly in the context of multi-pillar devices, to enable high-
+density capabilities of SOT-MRAM devices.
+Concept of hybrid spin source for ﬁeld-free switching
+Recent advancements have shown ﬁeld-free switching in PMA systems by
+incorporating an in-plane magnet layer beneath the non-magnetic metal
+layer, forming a hybrid spin source layer derived from the bottom magnetic
+layer or its interfaces84–86,100–104. In this concept, the interface between a FM
+and a non-magnetic (NM) layer generates signiﬁcant spin currents when a
+charge current ﬂows into the FM/NM bilayer. This induces interface scat-
+tering driven by the spin-orbit ﬁeld (BSO), triggering two key mechanisms:
+spin-orbit ﬁltering and spin-orbit precession. Spin-orbit ﬁltering selectively
+transmits or reﬂects spins parallel or antiparallel to BSO, resulting in a spin
+currentpolarizedalongBSO,whilespin-orbitprecessionproducesanout-of-
+plane spin polarization perpendicular to the magnetization direction of FM
+layers103,104. The FM/NM bilayer conﬁguration generates spin currents with
+both in-plane and out-of-plane components, enabling sub-ns ﬁeld-free
+switching with signiﬁcantly reduced current densities102. Micromagnetic
+simulations highlight the critical role of the out-of-plane spin current in
+reducingthecurrentdensityforshortcurrentpulse.Analysisrevealsthatthe
+incubation time for ﬁeld-free switching is orders of magnitude smaller than
+that observed in STT-driven switching. Recently, this ﬁeld-free switching
+concept has been successfully demonstrated in multi-pillar (MP) SOT-
+MTJs devices, fabricated on CMOS-compatible 300 mm wafers105. Ultrafast
+ﬁeld-free switching hasbeenachieved using currentpulses as shortas0.3 ns,
+with a corresponding power consumption of 60 fJ/bit.
+In summary, hybrid spin sources using an in-plane magnetic layer
+within the structure offers a scalable solution. However, this approach also
+comes with its challenges including the shunting current passed into the
+underlying in-plane magnetic layer. Furthermore, the torque exerted by the
+SOT applies to both magnetic layers in the structure which potentially
+induces a reversal in the orientation of the in-plane ferromagnet. Such
+unintended reversals can introduce errors in the writing process, leading to
+higher write error rate and decreased overall reliability of the device.
+Toward practical applications of SOT-MRAM
+SOT-MTJ stack design for 400 °C BEOL compatible
+The integration of SOT-MRAM technology into BEOL processes, compa-
+tible at annealing temperatures up to 400 °C, marks a signiﬁcant advance-
+ment towards practical applications. However, this achievement holds a set
+of challenges including material intermixing at the interfaces. Honjo et al.
+has tackled these challenges by developing a canted SOT device, fully
+compatible with the 400 °C thermal tolerance requirement14. These
+achievements highlight the potential of canted MTJs design but the scal-
+ability challenges remain.
+Additionally, employing interfacial PMA of CoFeB/MgO-based stacks
+at high annealing temperatures introduces complexities due to diffusion
+phenomena, potentially compromising the PMA interface.
+In response to these challenges, a hybrid free layer design for BEOL
+compatible at 400 °C annealing with perpendicular MTJs has been
+demonstrated20. This stack design incorporates CoFeB for enabling high
+TMR read-out with intrinsic PMA material in contact with the SOT track,
+enabling retention control and improved thermal budget requirement,
+Fig. 7.
+Moreover, this concept holds potential to employ alternative magnetic
+materials on the SOT track while maintaining MTJ properties, providing
+ﬂexibility in the SOT material set to further enhance device performance.
+Experimental results demonstrated that retention of hybrid free layer
+design exceeding Δ>75 kBT down to a 50 nm size and operation at tem-
+peraturesup to125 °C.Endurance testsrevealrobustperformance of hybrid
+free layer devices under 2.1010 cycles with 1 ns pulses, indicating minimal
+Fig. 7 | Hybrid free layer SOT-MTJ stack design. Comparison of single CoFeB free
+layer (a) vs the hybrid free layer stack design (b) which enable back end of line
+compatibility at 400 °C annealing while simultaneously enable high TMR readout
+and data retention. c Illustration of data retention (Δ) versus size indicates achieving
+Δ > 100 kBT down to 50 nm CD using the hybrid free layer. d The relationship
+between switching voltage (top) and current (bottom) versus the inverse of pulse
+width is demonstrated. Figure are reprinted with the permission from ref. 20,
+copyright 2021 by the Japan Society of Applied Physics.
+Fig. 8 | Schematic of the traditional SOT-MRAM design featuring margins in the
+SOT track. a An extreme SOT design with no margins is proposed to prevent power
+consumption within these margins. b Illustration of energy consumption (ESW) of
+devices with varying margins in width or length. The extreme devices exhibit the
+lowest ESW at 79 fJ/bit. c Endurance measurements conducted for 50% lifetime
+analysis using bipolar pulses under SOT stress for (left) various track widths with
+MTJ CD = 63 nm and (right) track lengths with MTJ CD = 81 nm. Figure are rep-
+rinted with the permission from ref. 108, copyright 2023 by IEEE.
+https://doi.org/10.1038/s44306-024-00044-1
+Review
+npj Spintronics |  (2024) 2:48 
+9
+
+
+--- PAGE 10 ---
+degradation. Additionally, tight distributions of TMR and SOT track
+resistance across 300 mm wafers highlight the manufacturing potential and
+reliability of the hybrid free layer design. This advancement represents a
+signiﬁcant step forward in the development of SOT-MRAM technology.
+Enable ultra-scale SOT-MRAM cells to be compatible with
+smaller access transistors
+Advancements in CMOS technology enable smaller access transistors,
+enhancing speed, efﬁciency, and density but providing lower operational
+currents for embedded MRAM. Consequently, downsizing of MTJ is
+imperative to be compatible with advanced node but poses a challenge due
+to compromised data retention106,107.
+In response, Van Beek et al. have experimentally demonstrated
+alternative approaches to scale down both SOT tracks and MTJ
+dimensions, achieving scalability and compatibility with CMOS
+technology108. The authors demonstrated that scaled devices where
+the size of SOT track is comparable with size of MTJ reduces
+switching energy by 63%, reaching down to 79 fJ, Fig. 8. This leads to
+a signiﬁcant improvement of write error rate performance, achieving
+a level of 10−5 while the endurance reached beyond 1015 cycles.
+Furthermore, using a BEOL compatible 400 °C hybrid free layer stack
+design addresses the challenge of scaling MTJ size while maintaining
+good data retention. While the W/CoFeB stack lacks sufﬁcient
+retention for CD < 60 nm, the hybrid free layer stack exhibits higher
+retention (>100 kBT) down to 54 nm, allowing extended scaling.
+Shrinking the MTJ size to ~20 nm while maintaining retention
+requirements could reduce switching current to ~100 μA. This scal-
+ing approach offers signiﬁcant advantages in reducing SOT-MRAM
+cell dimensions.
+High density and low power with Vg SOT concept
+The 3-terminal conﬁguration of SOT-MRAM devices requires the incor-
+poration of at least two transistors, thereby posing challenges for high-
+density capability. To tackle these challenges, novel device concepts such as
+two terminal SOT-MRAM device109,110 and the concept of voltage-gate
+assisted (VGSOT-MRAM)16–18,111,112 has been proposed and experimentally
+demonstrated. The two-terminal SOT-MRAM aims to enhance density by
+reducing the number of terminals, while the VGSOT-MRAM leverages
+bothSOTandVCMAeffectstoenablemultipleMTJpillarsinthesameSOT
+track. The VGSOT-MRAM device concept, the SOT is primarily respon-
+sible for enabling the switching of free layer while VCMA effect modiﬁes its
+magnetic anisotropy. Incorporating VCMA effect offers beneﬁts such as
+lower write currents for SOT switching and the potential for selective write
+operation in multi-pillar cell structures, addressing density limitations in
+conventional SOT technologies.
+Concept of a two terminal SOT-MRAM devices. The 3-terminal con-
+ﬁgurationofSOT-MRAMincreasescellsize,challengingthecompetitiveness
+of SOT-MRAM in high-density applications. To address this, Sato et al.
+proposed and experimentally demonstrated the function of a two-terminal
+SOT-MRAM cell with a perpendicular MTJ, comprising a CoFeB/MgO MTJ
+pillar on an ultrathin Ta underlayer109. In this device conﬁguration, the
+application of voltage generates both out-of-plane and in-plane currents
+where the out-of-plane current induces STT while the in-plane current
+induces SOT. The author demonstrated that the switching process was
+dominated by SOT as evidenced by symmetric switching depending on the
+applied in-plane ﬁeld direction. Although STT only contributes around 10%
+to the switching process, the writing current for the two-terminal device is
+notably reduced by about 70% compared to purely STT-driven switching,
+suggesting higher energy efﬁciency compared to its STT-driven counterpart.
+This proof of concept highlights the potential for advancing simpler, high-
+density, and energy-efﬁcient SOT-MRAM technology. Its simpler design
+enables higher-density memory arrays by minimizing connections and space
+requirements compared to standard SOT-MRAM devices. However, the
+developmentoftwo-terminalSOT-MRAMfaceschallenges,notablythehigh
+resistance issue arising from the series-connected SOT layer, potentially
+compromising reliable TMR readout. Addressing this requires exploration of
+low-resistivity SOT materials and novel structural designs to minimize
+resistancecontributionsfromtheSOTlayer.Additionally,therequirementof
+an in-plane external magnetic ﬁeld for SOT switching complicates device
+complexity, requiring further investigation into ﬁeld-free SOT switching
+solutions. Concerns over device reliability emerge from the need to pass high
+currentthroughthetunnelbarrierofMTJcellsforwriteoperation.Therefore,
+thoroughly investing the reliability of SOT devices, especially regarding
+endurance, is crucial. This involves assessing how current ﬂow affects the
+tunnelbarrierandendurancetodeterminethefeasibilityandreliabilityofthis
+device concept.
+Selective operation of multi-pillar SOT-MTJs devices via VCMA
+assisted SOT switching. Wu et al. developed a methodology to char-
+acterize voltage-gate assisted SOT effects on perpendicular MTJ devices
+with a W/CFB/MgO-based stack113, Fig. 9. The study showed a linear
+relationship between gate voltage and SOT write current, leading to a 25%
+reduction at Vg = 1 V. As a result, this led to a substantial decrease in total
+energy consumption with energy per bit reaching as low as 30 fJ for 80 nm
+devices at a speed of 400 ps. Additionally, reliability assessments showed
+write error rate down to below 10−5 and robust endurance exceeding 1012
+cycles without degradation.
+Remarkably, Cai et al. have made signiﬁcant progress on the devel-
+opment of VG SOT-MRAM concept by introducing multi-pillar MTJs on
+CMOS-compatible 300 mm wafers, showcasing lower write currents and
+enhanced integration density18, Fig. 10.
+In this study, the authors showed that gate voltages enable individual
+selection of multiple MTJs on a shared SOT track, switched independently
+by sub-ns pulses, resulting in 30% reduction in operational current. This
+selective operation concept, requiring less transistors and lower writing
+energy, promises signiﬁcant advancements in SOT-MRAM density and
+energy efﬁciency. Speciﬁcally, they also demonstrated successful selective
+switching of two bits, preserving magnetization states of unselected pillars
+via gate voltage.
+Fig. 9 | Diagram illustrating the voltage-gated SOT writing scheme. a A positive
+VCMA top gate induces electron accumulation at the FL/MgO interface, reducing
+the PMA of the FL and enabling SOT switching with reduced current. b Probability
+distribution of SOT switching (Psw) plotted against SOT pulsed voltage (VSOT) for
+various gate values (Vg) at tp = 0.4 ns. c Average intrinsic critical current (Ic0 avg)
+depicted as a function of Vg. Figure are reprinted with the permission from ref. 113,
+copyright 2021 by the American Physical Society.
+https://doi.org/10.1038/s44306-024-00044-1
+Review
+npj Spintronics |  (2024) 2:48 
+10
+
+
+--- PAGE 11 ---
+Interestingly, Li et al. demonstrated the ﬁeld-free switching VGSOT
+switching in IrMn-based perpendicular MTJs using MTJs with 80 nm
+diameters114. Experimental ﬁndings revealed ﬁeld-free switching under var-
+ious pulse widths and gate voltages, showcasing versatility and robustness of
+this device concept. Applying a gate voltage of 0.8 V led to a remarkable 70%
+reductionincriticalcurrentdensity,resultingina91%decreaseintotalpower
+consumption. This result highlights signiﬁcant energy consumption reduc-
+tions with voltage-gated SOT switching, enhancing device efﬁciency.
+Endurance tests demonstrated over 1 × 1012 write cycles and a low write error
+rate below 8 × 10−5, emphasizing device robustness.
+Design-to-technology co-optimization analysis on voltage-gated
+SOT-based memory. TheDTCOstudysuggeststhataVGSOTdesignwith
+multi-pillar MTJs can substantially reduce effective area compared to con-
+ventional SOT-MRAM, making it comparable to STT-MRAM and less than
+50% of HD-SRAM, with minimal performance degradation115–117. Despite
+current limitations arising from high MTJ resistance, optimization strategies
+targetimprovingreadperformancebyoptimizingtheresistance-areaproduct
+without compromising VCMA gate effects. Furthermore, write power
+remains higher for 2MTJ and 4MTJ designs compared to typical SOT cells
+duetoincreasedSOTchannellengthandresistance.However,improvements
+in SOT and VCMA efﬁciencies are expected to signiﬁcantly reduce switching
+current. The projection of VGSOT performance under speciﬁc conditions
+demonstrates signiﬁcant improvements in read latency and write power,
+promising high-performance, low-power, and high-density SOT-MRAM
+memories, Fig. 11.
+In summary, while conventional 3-terminal SOT-MRAM faces inte-
+gration complexities and high write currents, recent experimental
+advancements in VGSOT-MRAM offer promising solutions. By integrating
+SOT and VCMA effects, this hybrid device concept achieves remarkable
+reductions in write currents, leading to lower energy consumption and
+improved endurance. Multi-pillar SOT-MRAM architectures and ﬁeld-free
+switching VGSOT switching techniques further enhance efﬁciency and
+reliability. Challenges persist, particularly in improving VCMA coefﬁcient
+and SOT efﬁciency for enlarging the selective writing window. Moreover,
+DTCO analyses project signiﬁcant improvements in effective area and
+performance for VGSOT-4MTJ designs, supporting the feasibility and
+scalability of VGSOT-based memory solutions. Thus, VGSOT-MRAM
+presents a pathway for next-generation memory applications, with the
+potential to overcome integration hurdles and improve energy efﬁciency for
+low-power, high-density SOT-MRAM technologies.
+Perspectives and current challenges of SOT-MRAM
+SOT-MRAM presents a signiﬁcant promise in revolutionizing memory
+technology, offering sub-ns operation, practically unlimited endurance, and
+reasonable power consumption. We reviewed recent material research
+advancements, focusing on optimizing charge-spin conversion efﬁciency
+and ﬁeld-free switching concepts, crucial for MTJ technology and BEOL
+processes compatibility. The proof of concept of multi-pillar MTJs with
+selective write operation using voltage-gated SOT devices hold potential in
+reducing switching currents and boosting memory density. Coupled with
+thedevelopmentofultra-scaleSOT-MTJcells,theseadvancementsenhance
+device performance and energy efﬁciency.
+FabricatingSOT-MRAMhasposedsigniﬁcantchallengescomparedto
+STT-MRAM, particularly in controlling the integrity of SOT materials.
+However, the successful demonstration of SOT-MTJ on CMOS-compatible
+300 mm wafers marks a signiﬁcant milestone, offering valuable insights in
+SOT-driven magnetization switching dynamics in nanoscale devices and
+accelerating material research for more energy-efﬁcient materials. Despite
+these advancements, realizing the full potential of SOT-MRAM requires
+overcoming challenges such as reliable ﬁeld-free switching and low
+switching current.
+Fig. 10 | Proof-of-concept of selective operation in multipillar VG SOT-MRAM.
+a Diagram illustrating the architecture of multi-terminal MTJs on a common SOT
+track. b Cross-sectional transmission electron microscopy (TEM) view of the inte-
+grated multi-pillar SOT device with four MTJ pillars. Separate top electrodes (TEs)
+enable individual voltage control and readout of the MTJs. c Diagram of the multi-
+pillar measurement setup and the switching loops for all combinations of ±VG
+(±0.5 V). d Experimental validation of selective operations on two bits. Sequential
+operations include MTJ initialization, input settings (gate voltages, and SOT writing
+current), and output readings (MTJ readout). Figure are reprinted with the per-
+mission from ref. 18, copyright 2022 by IEEE.
+https://doi.org/10.1038/s44306-024-00044-1
+Review
+npj Spintronics |  (2024) 2:48 
+11
+
+
+--- PAGE 12 ---
+We discussed various ﬁeld-free switching schemes demonstrated
+experimentallyinperpendicularMTJs.Whilemagnetichardmasksolutions
+showed potential, integrating them faces hurdles, especially in scaling cell
+size. Stray ﬁeld generation from magnetic hard mask may not scale for
+multi-pillar devices in high-density SOT-MRAM architectures, limiting
+memory density. Using current ﬂow through the tunnel barrier in STT and
+SOT ﬁeld-free switching scheme is intriguing but raises reliability concerns.
+Therefore, the reliability of this writing scheme, especially their endurance,
+requires careful investigation. Assessing the impact of current ﬂow on
+tunnel barriers and investigating degradation mechanisms are vital for
+determining feasibility and reliability in this ﬁeld-free switching schemes.
+The bending current concept enables deterministic ﬁeld-free switching
+in scaled SOT-MTJs, offering scalable, independent of material properties
+and compatible with wafer-scale manufacturing. However, it raises con-
+cerns about local Joule heating in the free layer. Challenges include the large
+footprint due to the geometry of SOT track and implementation issues in
+multi-pillar devices. Finally, unconventional out-of-plane spin with an in-
+plane magnetic layer below SOT track provides a scalable and energy-
+efﬁcient solution but presents signiﬁcant challenges. The risk of unintended
+reversals of in-plane magnet due to SOT-induced torque underscores the
+importance of optimization for reliable operation.
+Advancing SOT-MRAM technology towards practical application, we
+discussed hybrid free design for 400 °C BEOL compatible with perpendi-
+cular MTJs, incorporates CoFeB for high TMR read-out and intrinsic PMA
+material, allowing for retention control and improved thermal budget
+requirement. Furthermore, simultaneously downsizing SOT tracks and
+MTJ dimensions via geometrical design was experimentally demonstrated
+to reduce the switching energy. Importantly, this advancement makes SOT
+devices to be accessible with small transistors at advanced technological
+nodes, to reduce switching current and energy while improving write error
+rate performances. Additionally, selective multi-bit write operations using
+VGSOT-MRAM concept offered signiﬁcant advancements in density and
+energy efﬁciency. This device concept highlights the efﬁcacy of voltage-
+gated SOT switching for high efﬁciency and integration density in multi-bit
+SOT devices, suggesting future research directions to enhance the density
+and performances of SOT-MRAM applications.
+In summary, recent advancements in material research for SOT-
+MRAM focused on improving charge-spin conversion efﬁciency and reli-
+able ﬁeld-free switching mechanisms. These advancements are pivotal to
+ensure seamless integration with MTJ technology and manufacturing BEOL
+processes.
+However, signiﬁcant challenges persist in achieving a single device that
+combines low switching current, reliable ﬁeld-free switching, and compat-
+ibility with BEOL processes. Addressing these challenges is crucial for
+unlocking the full potential of SOT-MRAM technology. Future research
+should prioritize reﬁning reliable ﬁeld-free switching schemes and reducing
+SOT switching current to drive SOT-MRAM technology evolution. These
+efforts will enhance efﬁciency, increase integration density, and broaden
+applicability in computing and memory systems.
+While the focused topic of this manuscript is SOT, it is worth to
+mention the importance of ongoing research on orbital Hall effect to further
+improve the performance of spintronic devices118,119. Orbital Hall effect
+generates an orbital current perpendicular to an applied electric ﬁeld
+through nonequilibrium interband superpositions of Bloch states induced
+by the ﬁeld, transferring angular momentum from the lattice to the electron
+system. While detecting orbital currents experimentally remains challen-
+ging,recenttheoriessuggesttheirpotentialto exerttorque onmagnetization
+in bilayer systems, potentially enhancing SOT device efﬁciency. Exploring
+orbital torque shows promise for enhancing spintronic devices, including
+MRAM, due to its unique characteristics and compatibility with various
+materialsystems.Itslong-rangeangularmomentumtransportsurpassesthe
+limited spin transport length in metallic FMs, paving the way for applica-
+tions beyond magnetization switching in MRAM. The extended decay of
+orbital currents hints at their potential for signal transmission among
+diverse array components. Additionally, the compatibility of orbital torque
+with different material systems encourages the exploration of novel device
+architectures and material combinations. While still in its early stages, the
+exploration of orbital torque in MRAM presents a compelling avenue for
+further research and development, given its unique advantages and
+potential synergies with existing spintronic concepts.
+Received: 2 May 2024; Accepted: 10 July 2024;
+References
+1.
+International Roadmap for Devices and Systems (IRDS™) 2022
+Edition: https://irds.ieee.org/editions/2022/irds%E2%84%A2-
+2022-beyond-cmos-and-emerging-research-materials.
+2.
+Dieny, B. et al. Opportunities and challenges for spintronics in the
+microelectronics industry. Nat. Electron. 3, 446 (2020).
+3.
+Yang, H. et al. Two-dimensional materials prospects for non-volatile
+spintronic memories. Nature 606, 663 (2022).
+Fig. 11 | Benchmarking of VG SOT-MRAM with other memory technologies. a Diagram and layout of a multi-bit SOT device. b DTCO analysis of performance across
+various embedded memory technologies at the 5 nm technology node (with VDD = 0.7 V). Figure are reprinted with the permission from ref. 18, copyright 2022 by IEEE.
+https://doi.org/10.1038/s44306-024-00044-1
+Review
+npj Spintronics |  (2024) 2:48 
+12
+
+
+--- PAGE 13 ---
+4.
+Bhatti, S. et al. Spintronics based random access memory: a review.
+Mater. Today 20, 530 (2017).
+5.
+Shao, Q. et al. Roadmap of spin–orbit torques.IEEE Trans. Magn. 57,
+7 (2021).
+6.
+Nozaki, T. et al. Recent progress in the voltage-controlled magnetic
+anisotropy effect and the challenges faced in developing voltage-
+torque MRAM. Micromachines 10, 327 (2019).
+7.
+Miron, M. et al. Perpendicular switching of a single ferromagnetic
+layer induced by in-plane current injection. Nature 476, 189 (2011).
+8.
+Liu, K. et al. Spin-torque switching with the giant spin Hall effect of
+tantalum. Science 336, 555 (2012).
+9.
+Krizakova, V. et al. Spin-orbit torque switching of magnetic tunnel
+junctions for memory applications. J. Magn. Magn. Mater. 562,
+169692 (2022).
+10.
+Ramaswamy, R. et al. Recent advances in spin-orbit torques:
+moving towards device applications. Appl. Phys. Rev. 5,
+031107 (2018).
+11.
+Han, X. et al. Spin-orbit torques: materials, physics, and devices.
+Appl. Phys. Lett. 118, 120502 (2021).
+12.
+Song, C. et al. Spin-orbit torques: materials, mechanisms,
+performances, and potential applications. Prog. Mater. Sci 118,
+100761 (2021).
+13.
+Zhu, L. Switching of perpendicular magnetization by spin-orbit
+torque. Adv. Mater. 35, 2300853 (2024).
+14.
+Honjo, H. et al. First demonstration of ﬁeld-free SOT-MRAM with
+0.35 ns write speed and 70 thermal stability under 400°C thermal
+tolerance by canted SOT structure and its advanced patterning/SOT
+channel technology. In Proc. IEEE International Electron Devices
+Meeting (IEDM) 28.5.1–28.5.4 (IEEE, 2019).
+15.
+Fukami, S. et al. A spin–orbit torque switching scheme with collinear
+magnetic easy axis and current conﬁguration. Nat. Nano. 11,
+621 (2016).
+16.
+Yoda, H. et al. Voltage-control spintronics memory (VoCSM) having
+potentials of ultra-low energy-consumption and high-density. In
+Proc. IEEE International Electron Devices Meeting (IEDM)
+27.6.1–27.6.4 (IEEE, 2016).
+17.
+Mishra, R. et al. Shared-write-channel-based device for high-
+density spin-orbit-torque magnetic random-access memory. Phys.
+Rev. Appl. 15, 024063 (2021).
+18.
+Cai, K. et al. Selective operations of multi-pillar SOT-MRAM for high
+density and low power embedded memories. In Proc. IEEE
+Symposium VLSI on Technology 375–376 (IEEE, 2022).
+19.
+Raymenants, E. et al. Nanoscale domain wall devices with magnetic
+tunnel junction read and write. Nat. Electron. 4, 392 (2021).
+20.
+Couet, S. et al. BEOL compatible high retention perpendicular SOT-
+MRAM device for SRAM replacement and machine learning. In Proc.
+IEEE Symposium on VLSI Technology. 1–2 (IEEE, 2021).
+21.
+Kurma, K. et al. Optimization of Tungsten β-phase window for spin-
+orbit-torque magneticrandom-access memory. Phys.Rev. Appl.16,
+064009 (2021).
+22.
+Ishikawa et al. Large intrinsic spin Hall conductivity in orthorhombic
+tungsten. Phys. Rev. Mater. 7, 026202 (2023).
+23.
+Ryuet al. Crystalorientation dependence of spin-orbit torquesin Co/
+Pt bilayers. Appl. Phys. Lett. 114, 142402 (2019).
+24.
+Kumar, A. et al. Large spin current generation by the spin Hall effect
+in mixed crystalline phase Ta thin ﬁlms. Phys. Rev. B 98,
+104403 (2018).
+25.
+Zhu, L. et al. Highly efﬁcient spin-current generation by the spin Hall
+effect in Au1-xPtx. Phys. Rev. Appl. 10, 031001 (2018).
+26.
+Zhu, L. et al. Maximizing spin-orbit torque generated by the spin Hall
+effect of Pt. Appl. Phys. Rev. 8, 031308 (2021).
+27.
+Zhu, L. et al. Strong damping-like spin-orbit torque and tunable
+Dzyaloshinskii-Moriya interaction generated by low-resistivity
+Pd1-xPtx alloys. Adv. Func. Mater. 29, 1805822 (2019).
+28.
+Wang, Y. et al. Spin–orbit torques based on topological materials.
+Acc. Mater. Res. 3, 1061 (2022).
+29.
+Mahendra, D. C. et al. Room-temperature high spin–orbit torque due
+to quantum conﬁnement in sputtered BixSe(1–x) ﬁlms. Nat. Mater. 17,
+800 (2018).
+30.
+Wu, H. et al. Magnetic memory driven by topological insulators. Nat.
+Commun. 12, 6251 (2021).
+31.
+Mellnik, A. R. et al. Spin-transfer torque generated by a topological
+insulator. Nature 511, 449 (2014).
+32.
+Khang, N. H. D. et al. A conductive topological insulator with large
+spin Hall effect for ultralow power spin–orbit torque switching. Nat.
+Mater. 17, 808 (2018).
+33.
+Fan, T. et al. Ultrahigh efﬁcient spin orbit torque magnetization
+switching in fully sputtered topological insulator and ferromagnet
+multilayers. Sci. Rep. 12, 2998 (2022).
+34.
+Pan, Q. et al. Efﬁcient spin-orbit torque switching of perpendicular
+magnetization using topological insulators with high thermal
+tolerance. Adv. Electron. Mater. 8, 2200003 (2022).
+35.
+Choi, G. S. et al. Highly efﬁcient room-temperature spin-orbit-torque
+switching in a Van der Waals heterostructure of topological insulator
+and ferromagnet. Adv. Sci. 11, 2400893 (2024).
+36.
+Shi, S. et al. Recent progress in strong spin-orbit coupling van der
+Waals materials and their heterostructures for spintronic
+applications. Mater. Today Electron. 6, 100060 (2023).
+37.
+Cui, J. et al. All van der Waals three-terminal SOT-MRAM realized by
+topological ferromagnet Fe3GeTe2. Adv. Electron. Mater. 2400041.
+https://onlinelibrary.wiley.com/doi/epdf/10.1002/aelm.202400041
+(2024).
+38.
+Yang, S. et al. van der Waals magnets: material family, detection and
+modulation of magnetism, and perspective in spintronics. Adv. Sci.
+8, 2002488 (2021).
+39.
+Zhang, Y. et al. Room temperature ﬁeld-free switching of
+perpendicular magnetization through spin-orbit torque originating
+from low-symmetry type II Weyl semimetal. Sci. Adv. 9,
+eadg9819 (2023).
+40.
+Kajale, S. N. et al. Field-free deterministic switching of all–van der
+Waals spin-orbit torque system above room temperature. Sci. Adv.
+10, eadk8669 (2024).
+41.
+Chadov, S. et al. Tunable multifunctional topological insulators in
+ternary Heusler compounds. Nat. Mater. 9, 541 (2010).
+42.
+Shirokura, T. et al. Efﬁcient spin current source using a half‑Heusler
+alloy topological semimetal with back end of line compatibility. Sci.
+Rep. 12, 2426 (2022).
+43.
+Shirokura, T. et al. High temperature spin Hall effect in topological
+insulator. Appl. Phys. Lett. 122, 232404 (2023).
+44.
+Shirokura, T. et al. High-efﬁcient spin orbit torque generated by
+topological semimetal YPtBi deposited on oxidized Si substrates.
+Appl. Phys. Lett. 124, 052402 (2024).
+45.
+Shirokura, T. et al. Giant spin Hall effect in half-Heusler alloy
+topological semimetal YPtBi grown at low temperature. AIP Adv. 12,
+125116 (2022).
+46.
+Kagami, S. et al. Effects of post-growth annealing in YPtBi
+topological semimetal and Co/Pt perpendicular magnetization
+multilayers. Jpn. J. Appl. Phys. 63, 02SP98 (2024).
+47.
+Li, X. et al. Materials requirements of high-speed and low-power
+spin-orbit-torque magnetic random-access memory. IEEE J. Elec.
+Dev. Soc. 8, 674 (2020).
+48.
+Duine, R. A. et al. Synthetic antiferromagnetic spintronics. Nat. Phys.
+14, 217–219 (2018).
+49.
+Baltz, V. et al. Antiferromagnetic spintronics. Rev. Mod. Phys. 90,
+015005 (2018).
+50.
+DuttaGupta, S. et al. Spin-orbit torque switching of an
+antiferromagnetic metallic heterostructure. Nat. Commun. 11,
+5715 (2020).
+https://doi.org/10.1038/s44306-024-00044-1
+Review
+npj Spintronics |  (2024) 2:48 
+13
+
+
+--- PAGE 14 ---
+51.
+Han, L. et al. Electrical 180° switching of Néel vector in spin-splitting
+antiferromagnet. Sci. Adv. 10, eadn0479 (2024).
+52.
+Tsai, H. et al. Electrical manipulation of a topological
+antiferromagnetic state. Nature 580, 608 (2020).
+53.
+Yoon, J. Y. et al. Handedness anomaly in a non-collinear
+antiferromagnet under spin–orbit torque. Nat. Mater. 22,
+1106 (2023).
+54.
+Chen, X. et al. Octupole-driven magnetoresistance in an
+antiferromagnetic tunnel junction. Nature 613, 490 (2023).
+55.
+Qin, P. et al. Room-temperature magnetoresistance in an all-
+antiferromagnetic tunnel junction. Nature 613, 485 (2023).
+56.
+Shao, D. F. et al. Antiferromagnetic tunnel junctions for spintronics.
+npj Spintron. 2, 13 (2024).
+57.
+Chen, R. et al. Reducing Dzyaloshinskii-Moriya interaction and ﬁeld-
+free spin-orbit torque switching in synthetic antiferromagnets Nat.
+Com 12, 3113 (2021).
+58.
+Wei, J. et al. Field-free spin–orbit torque switching in perpendicularly
+magnetized synthetic antiferromagnets. Adv. Funct. Mater. 32,
+2109455 (2022).
+59.
+Zhou, T. Critical magnetic ﬁeld for lifting the degeneracy of
+monochiral domain walls with strong interlayer antiferromagnetic
+coupling. Phys. Rev. B 105, 144434 (2022).
+60.
+Zhang, P. X. et al. Spin-orbit torque in a completely compensated
+synthetic antiferromagnet. Phys. Rev. B 97, 214403 (2018).
+61.
+Kateel, V. et al. Impact of net magnetization on spin–orbit torque
+switching of synthetic ferromagnets in magnetic tunnel junctions.
+Appl. Phys. Lett. 124, 062402 (2024).
+62.
+Fan, H. et al. Field-free spin-orbit torque switching in synthetic ferro
+and antiferromagents with exchange ﬁeld gradient. Adv. Funct.
+Mater. 33, 2211953 (2023).
+63.
+He, W. et al. Field-free spin−orbit torque switching enabled by the
+interlayer Dzyaloshinskii−Moriya interaction. Nano Lett 22,
+6857 (2022).
+64.
+Dou, P. et al. Deterministic magnetization switching via tunable
+noncollinear spin conﬁgurations in canted magnets. Nano Lett 23,
+6449 (2023).
+65.
+Fernández-Pacheco, A. et al. Symmetry-breaking interlayer
+Dzyaloshinskii–Moriya interactions in synthetic antiferromagnets.
+Nat. Mater. 18, 679 (2019).
+66.
+Wang, Z. et al. Field-free spin-orbit torque switching of synthetic
+antiferromagnet through interlayer Dzyaloshinskii-Moriya
+interactions. Cell Rep. Phys. Sci 4, 101334 (2023).
+67.
+Kim, S. K. et al. Ferrimagnetic spintronics. Nat. Mater. 21, 24 (2022).
+68.
+Cai, K. et al. Ultrafast and energy-efﬁcient spin–orbit torque
+switching in compensated ferrimagnets. Nat. Electron. 3, 37 (2020).
+69.
+Finley, J. et al. Spin–orbit torque switching in a nearly compensated
+Heusler ferrimagnet. Adv. Mater. 31, 1805361 (2019).
+70.
+Finley, J. et al. Spintronics with compensated ferrimagnets. Appl.
+Phys. Lett. 116, 110501 (2020).
+71.
+Carreta, L. et al. Domain walls speed up in insulating ferrimagnetic
+garnets. APL Mater. 12, 011106 (2024).
+72.
+Quindeau, A. et al. Tm3Fe5O12/Pt heterostructures with
+perpendicular magnetic anisotropy for spintronic applications. Adv.
+Electron. Mater. 3, 1600376 (2017).
+73.
+Onur Avci, C. et al. Interface-driven chiral magnetism and current-
+driven domain walls in insulating magnetic garnets. Nat.
+Nanotechnol. 14, 561 (2019).
+74.
+Shin, I. et al. Spin–orbit torque switching in an all-van der Waals
+heterostructure. Adv. Mater. 34, 2101730 (2022).
+75.
+Kajale, S. N. et al. Current-induced switching of a van der Waals
+ferromagnet at room temperature. Nat. Commun. 15,
+1485 (2024).
+76.
+Wang, X. et al. Current-driven magnetization switching in a van der
+Waals ferromagnet Fe3GeTe2. Sci. Adv. 5, eaaw8904 (2019).
+77.
+Cubukcu, M. et al. Spin-orbit torque magnetization switching of a
+three-terminal perpendicular magnetic tunnel junction. Appl. Phys.
+Lett. 104, 042406 (2014).
+78.
+Garello, K. et al. SOT-MRAM 300 mm integration for low power and
+ultrafast embedded memories. In Proc. IEEE Symposium on VLSI
+Circuit 81–82 (IEEE, 2018).
+79.
+Cui, Y.-T. et al. Single-shot time-domain studies of spin-torque-
+driven switching in magnetic tunnel junctions. Phys. Rev. Lett. 104,
+097201 (2010).
+80.
+Baumgartner, M. et al. Spatially and time-resolved magnetization
+dynamics driven by spin–orbit torques. Nat. Nanotechnol. 12,
+980 (2017).
+81.
+Grimaldi, E. et al. Single-shot dynamics of spin–orbit torque and spin
+transfer torque switching in three-terminal magnetic tunnel
+junctions. Nat. Nano. 15, 111 (2020).
+82.
+Mahendra, D. C. et al. Observation of anti-damping spin–orbit
+torques generated by in-plane and out-of-plane spin polarizations in
+MnPd3. Nat. Mat 22, 591 (2023).
+83.
+Liu, L. et al. Symmetry-dependent ﬁeld-free switching of
+perpendicular magnetization. Nat. Nanotechnol. 16, 277 (2021).
+84.
+Amin, V. P. et al. Interface-generated spin currents. Phys. Rev. Lett.
+121, 136805 (2018).
+85.
+Baek, S. C. et al. Spin currents and spin–orbit torques in
+ferromagnetic trilayers. Nat. Mater. 17, 509 (2018).
+86.
+Kim, K. W. et al. Spin current and spin-orbit torque induced by
+ferromagnets. npj Spintron 2, 8 (2024).
+87.
+Wu, H. et al. Field-free approaches for deterministic spin–orbit
+torque switching of the perpendicular magnet. Mater. Futures 1,
+022201 (2022).
+88.
+Garello, K. et al. Manufacturable 300 mm platform solution for Field-
+Free Switching SOT-MRAM. In Proc. IEEE Symposium on VLSI
+Technology 194–195 (IEEE, 2019).
+89.
+Fukami, S. et al. Magnetization switching by spin-orbit torque in an
+antiferromagnet-ferromagnet bilayer system. Nat. Mater. 15,
+535 (2016).
+90.
+Peng, S. et al. Exchange bias switching in an antiferromagnet/
+ferromagnet bilayer driven by spin–orbit torque. Nat. Electron. 3,
+757 (2020).
+91.
+Yu, G. et al. Switching of perpendicular magnetization by spin–orbit
+torques in the absence of external magnetic ﬁelds. Nat.
+Nanotechnol. 9, 548 (2014).
+92.
+Zheng, Z. et al. Field-free spin-orbit torque-induced switching of
+perpendicular magnetization in a ferrimagnetic layer with a vertical
+composition gradient. Nat. Commun. 12, 4555 (2021).
+93.
+Krizakova, V. et al. Field-free switching of magnetic tunnel junctions
+driven by spin–orbit torques at sub-ns timescales. Appl. Phys. Lett.
+116, 232406 (2020).
+94.
+Meo, A. et al. Magnetisation switching dynamics induced by
+combination of spin transfer torque and spin orbit torque. Sci. Rep.
+12, 3380 (2022).
+95.
+Yoshida, C. Field-free reliable magnetization switching in a three-
+terminal perpendicular magnetic tunnel junction via spin-orbit
+torque, spin-transfer torque, and voltage-controlled magnetic
+anisotropy. J. Phys. D Appl. Phys. 55, 365003 (2020).
+96.
+Kang, D. H. et al. Critical switching current density of magnetic
+tunnel junction with shape perpendicular magnetic anisotropy
+through the combination of spin-transfer and spin-orbit torques. Sci.
+Rep. 11, 22842 (2021).
+97.
+Wang, M. et al. Field-free switching of a perpendicular magnetic
+tunnel junction through the interplay of spin–orbit and spin-transfer
+torques. Nat. Electron. 1, 582 (2018).
+98.
+Zhang, C. et al. Field-free and sub-ns magnetization switching of
+magnetic tunnel junctions by combining spin-transfer torque and
+spin–orbit torque. Appl. Phys. Lett. 118, 092406 (2021).
+https://doi.org/10.1038/s44306-024-00044-1
+Review
+npj Spintronics |  (2024) 2:48 
+14
+
+
+--- PAGE 15 ---
+99.
+Kateel, V. et al. Field-free spin–orbit torque driven switching of
+perpendicular magnetic tunnel junction through bending current.
+Nano Lett. 23, 5482 (2023).
+100.
+Xue, S. et al. Field-free spin-orbit torque switching assisted by in-
+plane unconventional spin torque in ultrathin [Pt/Co]N. Nat.
+Commun. 14, 3932 (2023).
+101.
+Lee, D.-K. et al. Spin-orbit torque switching of perpendicular
+magnetization in ferromagnetic trilayers. Sci. Rep. 10, 1 (2020).
+102.
+Yang, Q. et al. Field-free spin–orbit torque switching in
+ferromagnetic trilayers at sub-ns timescales. Nat. Commun. 15,
+1814 (2024).
+103.
+Oh, Y.-W. et al. Material and thickness investigation in ferromagnet/
+Ta/CoFeB trilayers for enhancement of spin–orbit torque and ﬁeld-
+free switching. Adv. Electron. Mater. 5, 1900598 (2019).
+104.
+Oh, Y. W. et al. Field-free switching of perpendicular magnetization
+through spin–orbit torque in antiferromagnet/ferromagnet/oxide
+structures. Nat. Nanotechnol. 11, 878 (2016).
+105.
+Cai, K. et al. First demonstration of ﬁeld-free perpendicular SOT-
+MRAM for ultrafast and high-density embedded memories. In Proc.
+IEEE International Electron Devices Meeting (IEDM) 36, 2 (2022).
+106.
+Watanabe, K. et al. Shape anisotropy revisited in single-digit
+nanometer magnetic tunnel junctions. Nat. Commun. 9, 663 (2018).
+107.
+Perrissin, N. et al. A highly thermally stable sub-20 nm magnetic
+random-access memory based on perpendicular shape anisotropy.
+Nanoscale 10, 12187 (2018).
+108.
+Van Beek, S. et al. Scaling the SOT track–a path towards maximizing
+efﬁciency in SOT-MRAM. In Proc. IEEE International Electron
+Devices Meeting (IEDM) 39.3.1 (IEEE, 2023).
+109.
+Sato, N. et al. Two-terminal spin–orbit torque magnetoresistive
+random access memory. Nat. Electron. 1, 508 (2018).
+110.
+Yu, G. et al. Two-terminal MRAM with a spin. Nat. Electron. 1,
+496 (2018).
+111.
+Lu, J. et al. Voltage-gated spin-orbit torque switching in IrMn-based
+perpendicular magnetic tunnel junctions. Appl. Phys. Lett. 122,
+012402 (2023).
+112.
+Zhang, K. et al. Compact modeling and analysis of voltage-gated spin-
+orbit torque magnetic tunnel junction. IEEE Access 8, 50792 (2020).
+113.
+Wu, Y. C. et al. Voltage-gate-assisted spin-orbit-torque magnetic
+random-access memory for high-density and low-power embedded
+applications. Phys. Rev. Appl. 15, 064015 (2021).
+114.
+Li, W. et al. Selective data writing in IrMn-based perpendicular
+magnetic tunnel junction array through voltage-gated spin-orbit
+torque. IEEE Elec. Dev. Lett. 45, 921 (2024).
+115.
+Gupta, M. et al. High-density SOT-MRAM technology and design
+speciﬁcations for the embedded domain at 5 nm node, IEEE
+International Electron Devices Meeting (IEDM) 24.5.1, (IEEE, 2020).
+116.
+Saha, R. Comparative analysis of STT and SOT based MRAMs for
+last level caches. J. Magn. Magn. Mater. 551, 169161 (2022).
+117.
+Mishty, K. et al. System and design technology co-optimization of
+SOT-MRAM for high-performance AI accelerator memory system.
+IEEE Trans. Comp. Aid. Desig. Integ. Cir. Sys. 43, 1065 (2024).
+118.
+Kontani, H. et al. Giant orbital Hall effect in transition metals: origin of
+large spin and anomalous Hall effects. Phys. Rev. Lett. 102,
+016601 (2009).
+119.
+Hayashi, H. et al. Observation of long-range orbital transport and
+giant orbital torque. Commun. Phys. 6, 32 (2023).
+120.
+Ziaur Rahaman, S. K. et al. Pulse-width and temperature effect on
+the switching behavior of an etch-stop-on-MgO-barrier spin-orbit-
+torque MRAM cell. IEEE Elec. Dev. Lett. 39, 1306 (2018).
+121.
+Nguyen, M. H. et al. Enhancement of the anti-damping spin torque
+efﬁcacy of platinum by interface modiﬁcation. Appl. Phys. Lett. 106,
+222402 (2015).
+122.
+Zhu, L. et al. Energy-efﬁcient ultrafast SOT-MRAMs based on low-
+resistivity spin Hall metal Au0.25Pt0.75. Adv. Electron. Mater. 6,
+1901131 (2020).
+123.
+Zhu, L. et al. Enhancing spin-orbit torque by strong interfacial
+scattering from ultrathin insertion layers. Phys. Rev. Appl. 11,
+061004 (2019).
+Acknowledgements
+This work is supported by Imec’s industrial afﬁliation program on MRAM
+devices. We also acknowledge support from the ECSEL Joint Undertaking
+Program (grant No. 876925- project ANDANTE).
+Author contributions
+V.D.N., S.R., K.W., S.C. conceptualized and discussed the content of the
+manuscript. V.D.N. and S.C. wrote the manuscript. All authors commented
+and edited the manuscript.
+Competing interests
+The authors declare no competing interests.
+Additional information
+Correspondence and requests for materials should be addressed to
+V. D. Nguyen or S. Couet.
+Reprints and permissions information is available at
+http://www.nature.com/reprints
+Publisher’s note Springer Nature remains neutral withregardtojurisdictional
+claims in published maps and institutional afﬁliations.
+Open Access This article is licensed under a Creative Commons
+Attribution 4.0 International License, which permits use, sharing,
+adaptation, distribution and reproduction in any medium or format, as long
+as you give appropriate credit to the original author(s) and the source,
+provide a link to the Creative Commons licence, and indicate if changes
+were made. The images or other third party material in this article are
+included in the article’s Creative Commons licence, unless indicated
+otherwise in a credit line to the material. If material is not included in the
+article’s Creative Commons licence and your intended use is not permitted
+by statutory regulation or exceeds the permitted use, you will need to
+obtain permission directly from the copyright holder. To view a copy of this
+licence, visit http://creativecommons.org/licenses/by/4.0/.
+© The Author(s) 2024
+https://doi.org/10.1038/s44306-024-00044-1
+Review
+npj Spintronics |  (2024) 2:48 
+15

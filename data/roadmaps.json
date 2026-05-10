@@ -1,0 +1,353 @@
+{
+  "mtj": {
+    "title": "MnGa MTJ 路线图",
+    "subtitle": "从成分与退火耐受，到应变超薄 MnGa，再到 Mg/CoMn/CoMnFe 插层超过 100% TMR。",
+    "paper_ids": [
+      "009",
+      "010",
+      "011",
+      "012",
+      "013"
+    ],
+    "stages": [
+      {
+        "year": 2011,
+        "paper_id": "009",
+        "problem": "MnGa/MgO TMR 偏低，且需要退火耐受。",
+        "strategy": "比较 Mn-Ga 成分和退火温度。",
+        "result": "Mn62Ga38: 23% at 10 K，退火耐受到 375 C。",
+        "lesson": "成分和退火窗口是 MnGa MTJ 的第一层约束。"
+      },
+      {
+        "year": 2016,
+        "paper_id": "010",
+        "problem": "超薄 MnGa 难保持高 PMA，TMR 仍低。",
+        "strategy": "CoGa 缓冲层 + 应变 MnGa 纳米层。",
+        "result": "3 nm MnGa: Hk 约 36 kOe，室温 TMR 约 3.1%。",
+        "lesson": "高 PMA 和有利能带不等于高 TMR，界面仍是瓶颈。"
+      },
+      {
+        "year": 2017,
+        "paper_id": "011",
+        "problem": "MnGa MTJ 如何转化为器件应用？",
+        "strategy": "L10-MnGa/Co/MgO/Fe 正交磁化传感结构。",
+        "result": "室温 TMR 27.4%，动态范围 +/-5600 Oe。",
+        "lesson": "MnGa 的高 PMA/高矫顽力可用于高磁场传感。"
+      },
+      {
+        "year": 2023,
+        "paper_id": "012",
+        "problem": "MnGa p-MTJ 需要超过 100% 的室温 TMR。",
+        "strategy": "Mg + metastable bcc CoMn 插层。",
+        "result": "室温 TMR 118%，低温 >260%。",
+        "lesson": "界面插层工程是突破 TMR 的关键。"
+      },
+      {
+        "year": 2025,
+        "paper_id": "013",
+        "problem": "高 TMR 同时需要更好退火稳定性。",
+        "strategy": "用 bcc CoMnFe 替代 CoMn，并探索双界面结构。",
+        "result": "单界面约 106%，双界面约 110%，300 C 稳定。",
+        "lesson": "CoMnFe 是更面向工艺稳定性的插层候选。"
+      }
+    ]
+  },
+  "sot": {
+    "title": "MnGa SOT / 电流诱导翻转路线图",
+    "subtitle": "从 Pt 自旋 Hall 写入，到 CoGa 功能复用，再到 Ta/MnGa 的插层和缓冲层调控。",
+    "paper_ids": [
+      "025",
+      "026",
+      "024",
+      "027"
+    ],
+    "stages": [
+      {
+        "year": 2016,
+        "paper_id": "025",
+        "problem": "大 PMA MnGa 能否被 SOT 翻转？",
+        "strategy": "CoGa/MnGa/Pt Hall bar。",
+        "result": "实验 Jc 约 5e11 A/m2 in Pt；相图支持 Pt SHE。",
+        "lesson": "证明 MnGa 可用于 SOT 写入，但翻转可能非宏自旋。"
+      },
+      {
+        "year": 2017,
+        "paper_id": "026",
+        "problem": "能否去掉重金属顶层，保留 p-MTJ 友好结构？",
+        "strategy": "CoGa/MnGa/MgO，让 CoGa 作为自旋流来源。",
+        "result": "Jc 约 1e11 A/m2，CoGa 正自旋 Hall 角。",
+        "lesson": "CoGa 可同时服务外延和 SOT。"
+      },
+      {
+        "year": 2016,
+        "paper_id": "024",
+        "problem": "如何调控 MnGa/Ta 的 Jc 和 SOT 有效场？",
+        "strategy": "插入 Co2FeAl 或 Co，比较耦合和有效场。",
+        "result": "Co2FeAl 降 Jc 至 5e7 A/cm2，Co 增至 9e7 A/cm2。",
+        "lesson": "Jc 是 PMA、耦合、SHE/Rashba 和界面共同作用的结果。"
+      },
+      {
+        "year": 2019,
+        "paper_id": "027",
+        "problem": "缓冲层如何影响超薄 MnGa 的确定性翻转？",
+        "strategy": "比较 Cr 与 NiAl 缓冲层上的 Ta/MnGa。",
+        "result": "NiAl 保持 square loop 和清晰 SOT；Cr 出现 partial switching。",
+        "lesson": "PMA 质量和局部晶格畸变直接决定开关可靠性。"
+      }
+    ]
+  },
+  "comparison_tables": {
+    "mtj": [
+      [
+        "论文",
+        "界面策略",
+        "室温结果",
+        "关键限制"
+      ],
+      [
+        "009",
+        "成分 + Mg 插层 + 退火",
+        "约 7% TMR",
+        "界面电子结构和 TMR 偏低"
+      ],
+      [
+        "010",
+        "CoGa 缓冲 + 应变 MnGa",
+        "3.1% TMR",
+        "界面终止/有序度限制"
+      ],
+      [
+        "011",
+        "Co 插层 + 正交磁化",
+        "27.4% TMR, +/-5600 Oe",
+        "传感结构，不是标准 MRAM 读写结构"
+      ],
+      [
+        "012",
+        "Mg + CoMn 插层",
+        "118% TMR",
+        "高 TMR 窗口依赖 Mg 厚度和退火"
+      ],
+      [
+        "013",
+        "Mg + CoMnFe 插层",
+        "~106-110% TMR",
+        "325 C 后可能因 Ga 扩散退化"
+      ]
+    ],
+    "sot": [
+      [
+        "论文",
+        "SOT 来源/调控",
+        "开关指标",
+        "可模拟参数"
+      ],
+      [
+        "025",
+        "Pt 自旋 Hall",
+        "~5e11 A/m2",
+        "Ms, Hk, Pt theta_SH, thermal/nonuniform switching"
+      ],
+      [
+        "026",
+        "CoGa 自旋 Hall",
+        "~1e11 A/m2",
+        "CoGa 厚度, Hk, Joule heating, damping-like torque"
+      ],
+      [
+        "024",
+        "Ta + Co2FeAl/Co 插层",
+        "5e7-9e7 A/cm2",
+        "Hk, field-like/damping-like fields, theta_SH"
+      ],
+      [
+        "027",
+        "Ta SHE + NiAl/Cr 缓冲层",
+        "~1.3e11 A/m2",
+        "PMA degradation, in-plane component, partial switching"
+      ]
+    ],
+    "vcma": [
+      [
+        "论文",
+        "定位",
+        "关键问题",
+        "对你有用的字段"
+      ],
+      [
+        "028",
+        "VCMA 总入口",
+        "VCMA-MRAM 前景与挑战",
+        "VCMA coefficient, WER, field-free"
+      ],
+      [
+        "029",
+        "可靠性 checklist",
+        "WER、窗口、读扰动、系数提升",
+        "pulse width, operation window, RDR"
+      ],
+      [
+        "030",
+        "SOT-MRAM 背景",
+        "低电流、无场翻转、BEOL",
+        "Jsw, field-free, endurance"
+      ],
+      [
+        "031",
+        "器件/阵列案例",
+        "单极写入与并行写入",
+        "interlayer coupling, VCMA gate, 5D-4MTJ"
+      ]
+    ],
+    "ml_mbe": [
+      [
+        "论文",
+        "定位",
+        "ML 方法",
+        "可迁移到你的方向"
+      ],
+      [
+        "032",
+        "生长条件优化",
+        "Bayesian optimization",
+        "MnGa/MnAl 生长温度/束流/退火优化"
+      ],
+      [
+        "033",
+        "实时闭环生长",
+        "3D ResNet + RHEED video feedback",
+        "RHEED/原位信号在线控制"
+      ],
+      [
+        "036",
+        "中文综述入口",
+        "RHEED 图像 ML、多模态融合",
+        "实验数据结构与智能外延框架"
+      ],
+      [
+        "035",
+        "MTJ 材料发现",
+        "ML + DFT + quantum annealing",
+        "Heusler/Mn 基材料候选筛选"
+      ],
+      [
+        "037",
+        "SOT 材料文本挖掘",
+        "word embedding + NN projection",
+        "寻找重金属/拓扑/AFM SOT 层候选"
+      ],
+      [
+        "034",
+        "器件应用共设计",
+        "RL + evolutionary optimization",
+        "微磁模拟参数到应用目标优化"
+      ]
+    ]
+  },
+  "vcma": {
+    "title": "VCMA / 电压辅助 MRAM 路线图",
+    "subtitle": "从 VCMA 作为 beyond-STT 写入机制，到可靠性挑战，再到与 SOT、层间耦合和并行写入结合。",
+    "paper_ids": [
+      "028",
+      "029",
+      "030",
+      "031"
+    ],
+    "stages": [
+      {
+        "year": 2023,
+        "paper_id": "028",
+        "problem": "STT 写入在高密度低功耗 MRAM 中面临电流和可靠性瓶颈。",
+        "strategy": "梳理 VCMA-MTJ 作为电压控制写入机制的物理与应用。",
+        "result": "明确 VCMA 系数、WER、field-free switching 是核心挑战。",
+        "lesson": "VCMA 分支的入口：先理解它为什么能降低写入能耗。"
+      },
+      {
+        "year": 2024,
+        "paper_id": "029",
+        "problem": "VCMA-MRAM 难点分散在可靠性、窗口和读扰动。",
+        "strategy": "系统整理 field-free、WER、operation window、VCMA coefficient 等技术路线。",
+        "result": "形成 VCMA 实用化 checklist。",
+        "lesson": "以后记录 VCMA 论文不能只写系数，还要写 WER 和脉冲窗口。"
+      },
+      {
+        "year": 2024,
+        "paper_id": "030",
+        "problem": "SOT-MRAM 同样需要低电流、无场翻转和 BEOL 兼容。",
+        "strategy": "把 VCMA 放到 SOT-MRAM 技术背景中看。",
+        "result": "VCMA 可作为 SOT 选择性、辅助写入和低能耗控制手段。",
+        "lesson": "VCMA 和 SOT 分支不是分开的，后续应交叉整理。"
+      },
+      {
+        "year": 2026,
+        "paper_id": "031",
+        "problem": "传统 MTJ 双极写入限制并行写入。",
+        "strategy": "单极电流调控层间耦合 + VCMA 调制临界电流。",
+        "result": "演示 5D-4MTJ 并行写入架构。",
+        "lesson": "VCMA 可以从“材料效应”走向“阵列架构控制”。"
+      }
+    ]
+  },
+  "ml_mbe": {
+    "title": "ML / MBE / Spintronics 材料发现路线图",
+    "subtitle": "从贝叶斯优化减少生长试错，到 RHEED 视频实时反馈，再到 MTJ/SOT 材料与器件的 AI 设计。",
+    "paper_ids": [
+      "032",
+      "033",
+      "036",
+      "035",
+      "037",
+      "034"
+    ],
+    "stages": [
+      {
+        "year": 2019,
+        "paper_id": "032",
+        "problem": "MBE 生长条件试错成本高、依赖经验。",
+        "strategy": "用贝叶斯优化逐步优化 SrRuO3 生长条件。",
+        "result": "24 次生长得到 RRR > 50 的高质量薄膜。",
+        "lesson": "这是把 ML 用于外延生长优化的基础范式。"
+      },
+      {
+        "year": 2024,
+        "paper_id": "033",
+        "problem": "事后 ML 不能及时修正生长偏差。",
+        "strategy": "用 RHEED 视频 + 3D ResNet 50 做实时反馈控制。",
+        "result": "InAs/GaAs QD 密度可调到 3.8e8-1.4e11 cm-2。",
+        "lesson": "真正有前景的是 in-situ signal 到 process control 的闭环。"
+      },
+      {
+        "year": 2025,
+        "paper_id": "036",
+        "problem": "ML/MBE 文献分散，需要方法综述。",
+        "strategy": "总结 RHEED 图像识别、生长条件优化、多材料体系应用。",
+        "result": "给出智能 MBE 的中文路线和未来策略。",
+        "lesson": "适合作为你自己实验记录和数据结构设计参考。"
+      },
+      {
+        "year": 2025,
+        "paper_id": "035",
+        "problem": "MTJ 新材料组合空间巨大，手动搜索不可行。",
+        "strategy": "结合 ML、DFT、量子退火筛选 Heusler/势垒/MTJ 材料。",
+        "result": "形成 MTJ 材料信息学流程。",
+        "lesson": "将来可把 MnGa/MnAl 候选扩展到更大成分空间。"
+      },
+      {
+        "year": 2025,
+        "paper_id": "037",
+        "problem": "高效 SOT 材料很少，传统搜索慢。",
+        "strategy": "用科学文本 word embedding 挖掘材料-SOT 隐含关联。",
+        "result": "预测 97 个新 SOT 候选，16 个效率可能 >1。",
+        "lesson": "文献库本身可以成为材料发现数据源。"
+      },
+      {
+        "year": 2025,
+        "paper_id": "034",
+        "problem": "器件参数要服务具体应用，而不只是单指标最优。",
+        "strategy": "用 RL/EA 优化 SOT/STT MTJ 随机器件。",
+        "result": "得到面向 TRNG 的低能耗候选器件。",
+        "lesson": "微磁模拟可以进一步走向应用目标驱动的参数优化。"
+      }
+    ]
+  }
+}

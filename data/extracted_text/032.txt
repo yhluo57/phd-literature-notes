@@ -1,0 +1,578 @@
+
+
+--- PAGE 1 ---
+
+View
+Online 
+Export
+Citation
+RESEARCH ARTICLE |  OCTOBER 16 2019
+Machine-learning-assisted thin-film growth: Bayesian
+optimization in molecular beam epitaxy of SrRuO3 thin films
+Yuki K. Wakabayashi ; Takuma Otsuka; Yoshiharu Krockenberger; Hiroshi Sawada 
+ ; Yoshitaka Taniyasu;
+Hideki Yamamoto
+APL Mater. 7, 101114 (2019)
+https://doi.org/10.1063/1.5123019
+Articles You May Be Interested In
+SrRuO 3 / SrTiO 3 / SrRuO 3 heterostructures for magnetic tunnel junctions
+J. Appl. Phys. (May 2003)
+Structural and transport properties of highly Ru-deficient SrRu0.7O3 thin films prepared by molecular beam
+epitaxy: Comparison with stoichiometric SrRuO3
+AIP Advances (March 2021)
+Encapsulation materials for SrRuO 3 to avoid H 2 anneal-induced decomposition
+J. Vac. Sci. Technol. A (January 2002)
+ 10 February 2026 07:43:37
+
+
+--- PAGE 2 ---
+APL Materials
+ARTICLE
+scitation.org/journal/apm
+Machine-learning-assisted thin-film growth:
+Bayesian optimization in molecular beam
+epitaxy of SrRuO3 thin films
+Cite as: APL Mater. 7, 101114 (2019); doi: 10.1063/1.5123019
+Submitted: 5 August 2019 • Accepted: 19 September 2019 •
+Published Online: 16 October 2019
+Yuki K. Wakabayashi,1,a) Takuma Otsuka,2 Yoshiharu Krockenberger,1 Hiroshi Sawada,2
+Yoshitaka Taniyasu,1 and Hideki Yamamoto1
+AFFILIATIONS
+1 NTT Basic Research Laboratories, NTT Corporation, Atsugi, Kanagawa 243-0198, Japan
+2NTT Communication Science Laboratories, NTT Corporation, Soraku-gun, Kyoto 619-0237, Japan
+a)Author to whom correspondence should be addressed: yuuki.wakabayashi.we@hco.ntt.co.jp
+ABSTRACT
+Materials informatics exploiting machine learning techniques, e.g., Bayesian optimization (BO), have the potential to reduce the number of
+thin-film growth runs for optimization of thin-film growth conditions through incremental updates of machine learning models in accordance
+with newly measured data. Here, we demonstrated BO-based molecular beam epitaxy (MBE) of SrRuO3, one of the most intensively studied
+materials in the research field of oxide electronics, mainly owing to its unique nature as a ferromagnetic metal. To simplify the intricate
+search space of entangled growth conditions, we ran the BO for a single condition while keeping the other conditions fixed. As a result, high-
+crystalline-quality SrRuO3 film exhibiting a high residual resistivity ratio of over 50 as well as strong perpendicular magnetic anisotropy was
+developed in only 24 MBE growth runs in which the Ru flux rate, growth temperature, and O3-nozzle-to-substrate distance were optimized.
+Our BO-based search method provides an efficient experimental design that is not as dependent on the experience and skills of individual
+researchers, and it reduces experimental time and cost, which will accelerate materials research.
+© 2019 Author(s). All article content, except where otherwise noted, is licensed under a Creative Commons Attribution (CC BY) license
+(http://creativecommons.org/licenses/by/4.0/). https://doi.org/10.1063/1.5123019., s
+I. INTRODUCTION
+The itinerant ferromagnetic perovskite SrRuO3 is one of the
+most promising materials for oxide electronics.1–10 Owing to its
+compatibility with other perovskite-structured oxides, as well as its
+high conductivity and chemical stability,3 SrRuO3 is widely used
+as an epitaxial conducting layer in oxide heterostructures. How-
+ever, a thorough understanding of its transport properties, electronic
+structure, and origin of its ferromagnetism remains elusive despite
+tremendous efforts for over five decades. While high-quality speci-
+mens are indispensable for exploring electronic states, it is difficult
+to make high-quality bulk single crystals of SrRuO3, and hence,
+thin film specimens have been used in such research. The residual
+resistivity ratio (RRR), which is defined as the ratio of resistivity
+at 300 K [ρ(300 K)] to that at 4 K [ρ(4 K)], is a good measure
+of the purity of a metallic system, and accordingly, the quality of
+single-crystalline SrRuO3 thin films: RRR is very sensitive to defects,
+such as Ru deficiencies and orthorhombic domains.8,11–14 More
+specifically, only SrRuO3 films with high RRR values above 40 and 60
+have enabled the observation of sharp dispersive quasiparticle peaks
+near the Fermi level by angle-resolved photoemission spectroscopy
+(ARPES) and of quantum oscillations in the electrical resistivity,
+respectively.15,16 Such high-quality films maintain their metallic and
+ferromagnetic character even when the thickness is reduced to a
+monolayer,17 providing a rare example of two-dimensional ferro-
+magnetism. This means that extremely thin SrRuO3 films can serve
+as a two-dimensional spin-polarized electron system, as the exis-
+tence of a spin-polarized electron current has been established in
+thicker SrRuO3-based magnetic tunnel junctions.18,19 Accordingly,
+high-quality SrRuO3 thin films are also promising for future spin-
+tronics applications. However, fine-tuning of multiple growth con-
+ditions, including the flux ratio of Ru/Sr, the growth temperature,
+APL Mater. 7, 101114 (2019); doi: 10.1063/1.5123019
+7, 101114-1
+© Author(s) 2019
+ 10 February 2026 07:43:37
+
+
+--- PAGE 3 ---
+APL Materials
+ARTICLE
+scitation.org/journal/apm
+and the oxygen pressure, is required for high-RRR SrRuO3 growth,
+and only a few papers have reported SrRuO3 films with RRRs
+over 50.7,10,16
+To optimize the growth conditions, one may take a con-
+ventional trial-and-error approach, which is time-consuming and
+costly, whose optimization efficiency largely depends on the
+skills and experience of individual researchers. In contrast, recent
+advances in materials informatics exploiting machine learning tech-
+niques, such as Bayesian optimization (BO) and artificial neural
+networks, offer an alternative approach of high-throughput experi-
+ments.20–24 So far, materials informatics has mainly focused on high-
+throughput predictions of brand-new materials, having designated
+functions by utilizing materials databases and/or theoretical calcu-
+lations.24–32 Nevertheless, there have been a few reports on high-
+throughput experiments in which the machine learning models were
+incrementally updated in accordance with newly measured data.33–37
+Since BO is a sample-efficient approach for global optimization,38
+adaptive sampling of the growth conditions with BO will streamline
+the optimization of the thin-film growth conditions.
+In this article, we describe machine-learning-assisted molecu-
+lar beam epitaxy (MBE) of SrRuO3 thin films. We developed a high
+RRR (>50) SrRuO3 film in only 24 MBE growth runs. Thorough
+crystallographic analyses confirmed the high crystallinity of the films
+with large RRR values. In addition, these films showed perpendicu-
+lar magnetization with rectangular hysteresis and a small coercive
+field of 0.1 T, which is advantageous for spintronics applications.
+The algorithm presented here is an efficient means for experimen-
+tal designs aimed at optimizing the growth conditions, with which
+advancement will be less empirical as compared with the conven-
+tional process and at significant reductions in experimental time and
+cost.
+II. EXPERIMENT
+Single-crystalline SrRuO3 thin films (65-nm thick) were epitax-
+ially grown on (001) SrTiO3 substrates in a custom-designed MBE
+setup equipped with multiple e-beam evaporators for Sr and Ru
+[Fig. 1(a)].39–41 We precisely controlled the elemental fluxes even
+for elements with high melting points, e.g., Ru (2250 ○C), by moni-
+toring the flux rates with an electron-impact-emission-spectroscopy
+sensor and feeding the results back to the power supplies for the
+e-beam evaporators. The oxidation during growth was carried out
+with ozone (O3) gas. O3 gas (∼15% O3 + 85% O2) was introduced
+through an alumina nozzle pointed at the substrate. Further infor-
+mation about the MBE setup and preparation of the substrates are
+described elsewhere.41 It is known that the ratio of the Ru flux to
+the Sr flux, the growth temperature, and the local ozone pressure
+at the growth surface are important parameters in the growth of
+SrRuO3 films.8,10 To change the ratio of the Ru flux to the Sr flux
+systematically, we changed the Ru flux while keeping the Sr flux
+at 0.98 Å/s. The growth temperature was controlled by the heater
+shown in Fig. 1(a). We can adjust the local ozone pressure at the
+growth surface by changing either the O3-nozzle-to-substrate dis-
+tance or the flow rate of the O3 gas. In this study, we changed the
+O3-nozzle-to-substrate distance while keeping the flow rate of O3 gas
+at ∼2 sccm. In the conventional synthesis procedure, three impor-
+tant growth parameters, i.e., the Ru flux rate, growth temperature,
+and O3-nozzle-to-substrate distance, are systematically optimized,
+but in an empirical manner whose success depends on the experi-
+ence of the researchers. In contrast, we optimized the three param-
+eters by using the BO algorithm. The Ru flux rate, growth tempera-
+ture, and nozzle-to-substrate distance were varied in ranges between
+0.18 and 0.61 Å/s, 565 and 815 ○C, and 1 and 31 mm, in correspon-
+dence with the search ranges in BO. Here, the search range of the
+growth temperature was within the typical thermodynamic growth
+window for the growth of SrRuO3 thin films.10 We searched equally
+spaced grid points for each parameter. The number and correspond-
+ing intervals of the respective quantities were 44 (0.01 Å/s interval),
+41 (6.25 ○C interval), and 31 (1 mm interval). The experimental
+errors of the actual values from the nominal values for the respective
+growth parameters are typically ±0.005 Å/s, ±1 ○C, and ±0.2 mm,
+respectively. Since the three-dimensional parameter space consisted
+of 55 924 (44 × 41 × 31) points, full surveillance of the entire
+space in a point-by-point manner was unrealistic, as only a limited
+FIG. 1. (a) Schematic illustration of our
+multisource oxide MBE setup. EIES:
+Electron Impact Emission Spectroscopy.
+(b) Flowchart of the machine-learning-
+assisted MBE growth of SrRuO3 thin
+films based on the BO algorithm.
+APL Mater. 7, 101114 (2019); doi: 10.1063/1.5123019
+7, 101114-2
+© Author(s) 2019
+ 10 February 2026 07:43:37
+
+
+--- PAGE 4 ---
+APL Materials
+ARTICLE
+scitation.org/journal/apm
+number runs can be carried out per day with a typical MBE sys-
+tem. The crystal quality of the films was monitored by in situ
+reflection high-energy electron diffraction (RHEED) during and
+after the growth. When diffractions from the SrRuO3 phase were
+indiscernible and/or diffractions from SrO or RuO2 precipitates
+appeared, we defined the RRR value of those samples to be 0.10
+Figure 1(b) shows the procedure of machine-learning-assisted
+MBE growth of the SrRuO3 thin films based on the BO algorithm,
+which is a sequential design to optimize a black-box function S(x).42
+In this study, we optimized the growth parameters in one dimension
+at a time. In concrete terms, we first optimized the Ru flux rate while
+keeping the other parameters unaltered. Subsequently, we tuned the
+growth temperature and the nozzle-to-substrate distance. Here, RRR
+= S(x) is the target function specific to our SrRuO3 films, and x is
+the growth parameter (Ru flux rate, growth temperature, or nozzle-
+to-substrate distance). We used a data set {xm, RRRm}M
+m=1 obtained
+from the past M MBE growths and RRR measurements of SrRuO3
+films to construct a model to predict the value of S(x) at an unseen
+x. To this end, we use Gaussian process regression (GPR) to esti-
+mate the mean (μ) and variance (σ) at an arbitrary parameter value
+x. Specifically, GPR predicts S(x) that follows a Gaussian distribu-
+tion N(μ, σ2), where μ and σ depend on x and the M data samples.
+In short, μ(x) represents the expected value of RRR and σ(x) repre-
+sents the uncertainty of RRR at x. To take into account the inher-
+ent noise in the RRR of SrRuO3 films grown nominally under the
+same conditions, the variance of the observation noise β of the GPR
+model was set to 0.02 or 0.002. In our implementation, we used the
+same kernel function (Matérn 5/2 kernel) used in materials science35
+as well as in the BO literature38 since this kernel is good at fitting
+functions with steep gradients. The kernel parameter l was obtained
+such that the marginal log likelihood of the observed RRR values,
+given the corresponding configurations of a growth parameter x are
+maximized. We iterated the routine after the initial MBE growth
+and RRR measurements for each growth parameter optimization.
+First, GPR was updated using the data set at the time of optimization
+for the specific parameter currently being surveyed. Subsequently, to
+assign the value of the growth parameter in the next run, we calcu-
+lated the expected improvement (EI);43 EI balances exploitation and
+exploration by using the predicted μ(x) and σ(x) and the best exper-
+imental RRR value at that time. More specifically, an unmeasured
+value of x at which the EI(x) takes a maximum is sampled in the next
+sequence. Note that we excluded already measured x values from
+being the next sampling point to avoid duplicate trials. This routine
+is iterated to grow and measure more samples until an arbitrary cri-
+terion is satisfied. Examples of such criteria include the degree of
+convergence of EI values and setting a predetermined number of
+sampling points. Here, we stopped the routine at 11 samples per
+parameter. After completing 11 samplings for a certain parame-
+ter, we chose the value that gave the highest RRR and started the
+optimization of another parameter.
+III. RESULTS AND DISCUSSION
+A. Bayesian optimization of MBE growth of SrRuO3
+First, we optimized the Ru flux rate while keeping the growth
+temperature and the nozzle-to-substrate distance fixed (615 ○C and
+16 mm, respectively). Here, we could have started with any ini-
+tial growth temperature and nozzle-to-substrate distance, although
+the selection may affect the efficiency of the optimization. Figure 2
+shows how the BO algorithm predicts RRR values with unseen
+parameter configurations and acquires new data points: the process
+starts with 5 random initial Ru flux rates [Fig. 2(a)] and gains exper-
+imental RRR values for the updated GPR model with 7 [Fig. 2(b)],
+9 [Fig. 2(c)], and 11 [Fig. 2(d)] Ru flux rates. The EI values at the
+respective stages are shown in the lower panels. In Figs. 2(b)–2(d),
+the search range was reduced to the Ru flux rate range within which
+the SrRuO3 phase had formed. For the RRR predicted with five
+FIG. 2. Experimental and predicted RRR values with (a) 5 random initial Ru flux rates and with (b) 7, (c) 9, and (d) 11 Ru flux rates determined by the BO algorithm. The
+EI values are shown in the lower panels. The black filled circles, blue solid curves, and red dashed curves represent the experimental RRR, predicted RRR, and predicted
+RRR ± σ, respectively. In (a)–(c), the purple dashed lines represent the next sampling points.
+APL Mater. 7, 101114 (2019); doi: 10.1063/1.5123019
+7, 101114-3
+© Author(s) 2019
+ 10 February 2026 07:43:37
+
+
+--- PAGE 5 ---
+APL Materials
+ARTICLE
+scitation.org/journal/apm
+initial data points [Fig. 2(a)], the σ value above 0.4 Å/s increased with
+increasing Ru flux rate. This indicates that the RRR prediction in
+that region is uncertain because of the absence of data points above
+0.4 Å/s. The results in Fig. 2(a) indicate that the highest EI was at
+0.61 Å/s. The overall variance of the predicted RRR became smaller
+as the data points increased from 5 to 11, leading to lower EI values.
+This suggests that we have only a limited chance to improve the RRR
+value by further modification of the Ru flux rate. The highest exper-
+imental RRR (29.33) was obtained at 0.42 Å/s, which was in good
+agreement with the prediction, and hence, we set the Ru flux rate to
+0.42 Å/s in the next optimization, namely, the growth temperature
+optimization.
+The growth temperature optimization was carried out at the
+optimized Ru flux rate (0.42 Å/s) and at a fixed initial (not yet opti-
+mized) nozzle-to-substrate distance (16 mm). Four initial growth
+temperatures were chosen at equal intervals [Fig. 3(a)]. As in the
+case of the Ru flux rate optimization, the variance of the predicted
+RRR became smaller as more data points were collected, resulting
+in a reduction in EI. For 721 ○C, the maximum experimental RRR
+(49.23) coincided with the prediction [Fig. 3(d)]. Accordingly, we
+fixed the growth temperature for the nozzle-to-substrate distance
+optimization at 721 ○C.
+We optimized the O3-nozzle-to-substrate distance while keep-
+ing the Ru flux rate and growth temperature at their optimized
+values. Three initial O3-nozzle-to-substrate distances were chosen
+at equal intervals [Fig. 4(a)]. The search range was reduced to the
+nozzle-to-substrate distance range within which the SrRuO3 phase
+had formed. Again, the variance of the predicted RRR became
+smaller, with a concomitant reduction in EI, as the number of data
+points increased. The highest experimental RRR, 51.79, was achieved
+at a nozzle-to-substrate distance of 15 mm. Through these optimiza-
+tions, SrRuO3 films with RRRs over 10, 20, 40, and 50 were obtained
+in 4, 5, 12, and 24 MBE growth runs (Fig. 5).
+The quality of the SrRuO3 films exhibiting RRRs over 50 was
+high enough to investigate the intrinsic electronic structure by using
+ARPES and to make an atomically thin ferromagnetic and conduct-
+ing layer.15,17 However, the highest RRR (51.79) was still lower than
+the highest value ever reported (∼80).7 To increase the RRR of our
+SrRuO3 films, it is necessary to find the global-best point in the
+three-dimensional parameter space. In the following, we detail two
+methods to enhance the RRR value. One is to iterate the parameter-
+wise optimization while setting the other parameters to their best
+values, i.e., to restart with the optimization of the Ru flux rate
+with the growth temperature and nozzle-to-substrate distance set at
+721 ○C and 15 mm. The other is to run the BO algorithm in the three-
+dimensional space directly. The latter idea, however, may lead to
+an inefficient search because a GPR prediction in three-dimensional
+space requires more data points for accuracy than a GPR prediction
+in one-dimensional space.
+B. Crystallographic, electrical, and magnetic
+properties of high-quality SrRuO3 films (RRR > 50)
+We experimentally characterized the high-quality SrRuO3 thin
+films with RRRs larger than 50. First, the crystallinity of the
+SrRuO3 films was examined by RHEED, X-ray diffraction (XRD),
+atomic force microscopy (AFM), and high-angle annular dark-
+field scanning transmission electron microscopy (HAADF-STEM).
+Figure 6(a) shows the RHEED pattern of a SrRuO3 thin film surface,
+where the sharp streaky patterns with clear Kikuchi lines indicate the
+growth of the single-crystalline SrRuO3 film with an atomically flat
+surface. The AFM observations show a surface morphology com-
+posed of flat terraces and molecular steps with a height of ∼0.4 nm,
+corresponding to a single unit cell (u.c.) thickness for the pseudocu-
+bic lattice of SrRuO3 [Fig. 6(b)]. Laue fringes in the θ-2θ-scanned
+XRD pattern [Fig. 6(c)] also indicate high crystalline quality and
+a large coherent volume of the film. The out-of-plane lattice con-
+stant, estimated from the Nelson-Riley extrapolation method,44 was
+3.949 Å, ∼0.5% larger than the pseudocubic lattice constant of the
+bulk specimens (3.93 Å).8 This implies that the SrRuO3 film was
+FIG. 3. Experimental and predicted RRR values with (a) 4 initial growth temperatures and with (b) 6, (c) 9, and (d) 11 growth temperatures determined by the BO algorithm.
+The EI values are shown in the lower panels. The black filled circles, blue solid curves, and red dashed curves represent the experimental RRR, predicted RRR, and predicted
+RRR ± σ, respectively. In (a)–(c), the purple dashed lines represent the next sampling points.
+APL Mater. 7, 101114 (2019); doi: 10.1063/1.5123019
+7, 101114-4
+© Author(s) 2019
+ 10 February 2026 07:43:37
+
+
+--- PAGE 6 ---
+APL Materials
+ARTICLE
+scitation.org/journal/apm
+FIG. 4. Experimental RRR and predicted RRR values with (a) 3 initial O3-nozzle-to-substrate distances and with (b) 5, (c) 7, and (d) 11 O3-nozzle-to-substrate distances
+determined by the BO algorithm. The EI values are shown in the lower panels. The black filled circles, blue solid curves, and red dashed curves represent the experimental
+RRR, predicted RRR, and predicted RRR ± σ, respectively. In (a)–(c), the purple dashed lines represent the next sampling points.
+compressively strained due to the lattice constant of the SrTiO3
+substrate (3.905 Å) being ∼0.6% smaller than the pseudocubic lat-
+tice constant of SrRuO3. Figures 6(d)–6(f) show cross-sectional
+HAADF-STEM images of a SrRuO3 thin film taken along the [110]
+direction of the SrTiO3 substrate. At a glance, one can recognize
+that a single-crystalline SrRuO3 film with an abrupt substrate/film
+interface had grown epitaxially on a (001) SrTiO3 substrate. As
+the intensity in the HAADF-STEM image is proportional to ∼Zn
+(n ∼1.7–2.0, and Z is the atomic number), the clear and period-
+ical contrast between the cations [Sr (Z = 38) and Ru (Z = 44)]
+shown in Fig. 6(f) means that the atomic arrangement in the film was
+uniform.
+For comparison, we also examined the structural differences
+between the samples with the low RRR of 7.29 and the high RRR
+FIG. 5. Highest experimental RRR values plotted as a function of the total number
+of MBE growth runs.
+of 51.79 by XRD, which revealed that the SrRuO3 film with the RRR
+of 7.29 had more Ru deficiencies (see the supplementary material).
+Next, the electrical and magnetic properties were investigated.
+The resistivity vs temperature curve shows a clear kink at ∼152 K
+[Fig. 7(a)], at which the ferromagnetic transition occurs and spin-
+dependent scattering is suppressed;7 the Curie temperature (TC) of
+the film was ∼152 K. A clear ferromagnetic transition at ∼152 K was
+also observed in the magnetization vs temperature curves when a
+magnetic field of 100 Oe was applied to the out-of-plane [001] or
+in-plane [001] direction of the SrTiO3 substrate [Fig. 7(a)]. TC was
+lower by ∼8 K than the value reported for bulk specimens.8 This
+discrepancy most likely stems from compressive strain, as the high-
+est TC ever reported for thin film specimens epitaxially grown on
+SrTiO3 substrates is ∼152 K,7 identical to ours. Since Ru vacancies
+are known to reduce TC,45 the high TC value confirms that our films
+were free from Ru deficiencies. Moreover, the low residual resistiv-
+ity of 2.70 μΩcm at 4 K means that there were few defects and little
+off-stoichiometry, which contributed to the high RRR.8,11,12
+Figure 7(b) plots the magnetization-vs-magnetic field curves at
+10 K with a magnetic field applied to the out-of-plane [001] or in-
+plane [100] direction of the SrTiO3 substrate. The saturation mag-
+netization along the out-of-plane [001] direction was 1.25 μB/Ru,
+which is a typical value for bulk and thin-film specimens.8 In con-
+trast, the magnetization along the in-plane [100] direction did not
+saturate even at 4 T. This indicates that the easy direction of mag-
+netization was perpendicular to the film surface, as is the case with
+compressively strained SrRuO3 films on SrTiO3 substrates.7,46,47 Per-
+pendicular magnetic anisotropy is more advantageous than in-plane
+magnetic anisotropy for spintronics applications; the magnetic con-
+figuration is thermally more stable, and the spin-transfer switching
+current is lower.48,49 Notably, the ratio of magnetization along the
+out-of-plane [001] direction at 2 T to that along the in-plane [100]
+direction is 2.9, which is about twice as large as those reported for
+SrRuO3 films (1.4–1.7) on SrTiO3.7,47 Since magnetic anisotropy in
+APL Mater. 7, 101114 (2019); doi: 10.1063/1.5123019
+7, 101114-5
+© Author(s) 2019
+ 10 February 2026 07:43:37
+
+
+--- PAGE 7 ---
+APL Materials
+ARTICLE
+scitation.org/journal/apm
+FIG. 6. (a) RHEED pattern, (b) AFM image, (c) θ-2θ scanned XRD pattern, and (d) cross-sectional HAADF-STEM image of the SrRuO3 thin film with the RRR of 50–52. (e)
+Magnified image near the interface in (d). (f) Magnified image near the interface in (e). In (a), the incident electron beam is parallel to the [110] axis of the SrTiO3 substrate.
+In (b), the scan area is 1 × 1 μm2. In (d)–(f), images are taken along the [110] direction of the SrTiO3 substrate.
+FIG. 7. (a) Resistivity vs the temperature curve (the red
+curve) and magnetization vs temperature curves of the
+SrRuO3 film with a RRR of 51.79. The magnetization vs
+temperature curves were measured in a field-cooled cool-
+ing process with a magnetic field of 100 Oe applied to the
+out-of-plane [001] (green filled circles) and in-plane [100]
+(purple filled circles) directions of the SrTiO3 substrate. In
+(a), the black dashed line indicates TC. (b) Magnetization
+vs magnetic field curves at 10 K with magnetic fields applied
+to the out-of-plane [001] (green circles) and in-plane [100]
+(purple circles) directions of the SrTiO3 substrate.
+magnetic oxides is often reduced by grain boundaries and other
+defects,50–52 the strong perpendicular magnetic anisotropy is a hall-
+mark of the excellent crystallinity of our SrRuO3 films. In addi-
+tion, as shown in Fig. 7(b), the coercive field Hc was ∼0.1 T, along
+both the easy and hard axes. This value is smaller than those previ-
+ously reported for SrRuO3 films (Hc > 0.2 T).7,8,47 Since the mag-
+netic domains tend to be pinned by grain boundaries and other
+defects, the small Hc stems from the higher crystallinity of our
+film.7
+Altogether, the above results indicate that these SrRuO3 thin
+films prepared by machine-learning-assisted MBE had high crys-
+talline quality and strong perpendicular magnetic anisotropy.
+IV. SUMMARY
+We demonstrated machine-learning-assisted MBE growth uti-
+lizing the BO algorithm for optimization of the growth parameters
+and grew SrRuO3 films whose RRR values were over 50. SrRuO3
+films with RRRs over 10, 20, 40, and 50 were developed in 4, 5, 12,
+and 24 MBE growth runs. The SrRuO3 films grown under the opti-
+mized conditions showed high crystalline quality and strong perpen-
+dicular magnetic anisotropy. The algorithm presented here will play
+an important role in the thin-film growth of various materials, as it
+offers an efficient experimental design platform that is not as depen-
+dent on the experience and skills of individual researchers. Since
+APL Mater. 7, 101114 (2019); doi: 10.1063/1.5123019
+7, 101114-6
+© Author(s) 2019
+ 10 February 2026 07:43:37
+
+
+--- PAGE 8 ---
+APL Materials
+ARTICLE
+scitation.org/journal/apm
+the algorithm provides the growth condition that should be exam-
+ined in the next run, we foresee that the optimization process can
+be automated to work in combination with the automatic thin-film
+growth53–55 and characterization systems.
+SUPPLEMENTARY MATERIAL
+In the supplementary material, structural differences between
+the SrRuO3 films with the low RRR of 7.29 and the high RRR of
+51.79 were examined by XRD.
+ACKNOWLEDGMENTS
+We thank Ai Ikeda for her help with the maintenance of the
+MBE system.
+REFERENCES
+1J. J. Randall and R. Ward, J. Am. Chem. Soc. 81, 2629 (1958).
+2J. M. Longo, P. M. Raccah, and J. B. Goodenough, J. Appl. Phys. 39, 1327 (1968).
+3R. J. Bouchard and J. L. Gillson, Mater. Res. Bull. 7, 873 (1972).
+4L. Klein, J. S. Dodge, C. H. Ahn, J. W. Reiner, L. Mieville, T. H. Geballe,
+M. R. Beasley, and A. Kapitulnik, J. Phys.: Condens. Matter 8, 10111 (1996).
+5C. B. Eom, R. J. Cava, R. M. Fleming, J. M. Phillips, R. B. Vandover, J. H. Marshall,
+J. W. Hsu, J. J. Krajewski, and W. F. Peck, Science 258, 1766 (1992).
+6X. D. Wu, S. R. Foltyn, R. C. Dye, Y. Coulter, and R. E. Muenchausen, Appl. Phys.
+Lett. 62, 2434 (1993).
+7M. Izumi, K. Nakazawa, Y. Bando, Y. Yoneda, and H. Terauchi, J. Phys. Soc. Jpn.
+66, 3893 (1997).
+8G. Koster, L. Klein, W. Siemons, G. Rijnders, J. S. Dodge, C. B. Eom, D. H. A.
+Blank, and M. R. Beasley, Rev. Mod. Phys. 84, 253 (2012).
+9D. Kan, M. Mizumaki, T. Nishimura, and Y. Shimakawa, Phys. Rev. B 94, 214420
+(2016).
+10H. P. Nair, Y. Liu, J. P. Ruf, N. J. Schreiber, S. L. Shang, D. J. Baek, B. H. Goodge,
+L. F. Kourkoutis, Z. K. Liu, K. M. Shen, and D. G. Schlom, APL Mater. 6, 046101
+(2018).
+11W. Siemons, G. Koster, A. Vailionis, H. Yamamoto, D. H. A. Blank, and
+M. R. Beasley, Phys. Rev. B 76, 075126 (2007).
+12J. Thompson, J. Nichols, S. Lee, S. Ryee, J. H. Gruenewald, J. G. Connell,
+M. Souri, J. M. Johnson, J. Hwang, M. J. Han, H. N. Lee, D.-W. Kim, and S. S. A.
+Seo, Appl. Phys. Lett. 109, 161902 (2016).
+13Q. Gan, R. A. Rao, and C. B. Eom, Appl. Phys. Lett. 70, 1962 (1997).
+14J. C. Jiang, W. Tian, X. Pan, Q. Gan, and C. B. Eom, Mater. Sci. Eng. B 56, 152
+(1998).
+15D. E. Shai, C. Adamo, D. W. Shen, C. M. Brooks, J. W. Harter, E. J. Monkman,
+B. Burganov, D. G. Schlom, and K. M. Shen, Phys. Rev. Lett. 110, 087004 (2013).
+16A. Mackenzie, J. W. Reiner, A. W. Tyler, L. M. Galvin, S. R. Julian, M. R. Beasley,
+T. H. Geballe, and A. Kapitulnik, Phys. Rev. B 58, R13318 (1998).
+17H. Boschker, T. Harada, T. Asaba, R. Ashoori, A. V. Boris, H. Hilgenkamp,
+C. R. Hughes, M. E. Holtz, L. Li, D. A. Muller, H. Nair, P. Reith, X. R. Wang,
+D. G. Schlom, A. Soukiassian, and J. Mannhart, Phys. Rev. X 9, 011027 (2019).
+18D. C. Worledge and T. H. Geballe, Phys. Rev. Lett. 85, 5182 (2000).
+19K. S. Takahashi, A. Sawa, Y. Ishii, H. Akoh, M. Kawasaki, and Y. Tokura, Phys.
+Rev. B 67, 094413 (2003).
+20T. Mueller, A. G. Kusne, and R. Ramprasad, Reviews in Computational Chem-
+istry (Wiley, Hoboken, 2015), Vol. 29.
+21T. Lookman, F. J. Alexander, and K. Rajan, Information Science for Materials
+Discovery and Design (Springer, Cham, 2016).
+22E. Burnaex and M. Panov, Statistical Learning and Data Sciences (Springer,
+Cham, 2015).
+23A. Agrawal and A. N. Choudhary, APL Mater. 4, 053208 (2016).
+24K. Rajan, Mater. Today 8, 38 (2005).
+25A. Seko, T. Maekawa, K. Tsuda, and I. Tanaka, Phys. Rev. B 89, 054303 (2014).
+26A. Seko, A. Togo, H. Hayashi, K. Tsuda, L. Chaput, and I. Tanaka, Phys. Rev.
+Lett. 115, 205901 (2015).
+27A. Roekeghem, J. Carrete, C. Oses, S. Curtarolo, and N. Mingo, Phys. Rev. X 6,
+041061 (2016).
+28P. V. Balachandran, A. A. Emery, J. E. Gubernatis, T. Lookman, C. Wolverton,
+and A. Zunger, Phys. Rev. Mater. 2, 043802 (2018).
+29M. Yamawaki, M. Ohnishi, S. Ju, and J. Shiomi, Sci. Adv. 4, eaar4192 (2018).
+30M. Scherbela, L. Hörmann, V. Obersteiner, and O. T. Hofmann, Phys. Rev.
+Mater. 2, 043803 (2018).
+31F. Oba and Y. Kumagai, Appl. Phys. Express 11, 060101 (2018).
+32V. Stanev, C. Oses, A. G. Kusne, E. Rodriguez, J. Paglione, S. Curtarolo, and
+I. Takeuchi, npj Comput. Mater. 4, 29 (2018).
+33T. Ueno, H. Hino, A. Hashimoto, Y. Takeichi, M. Sawada, and K. Ono, npj
+Comput. Mater. 4, 4 (2018).
+34F. Ren, L. Ward, T. Williams, K. J. Laws, C. Wolverton, J. H. Simpers, and
+A. Mehta, Sci. Adv. 4, eaaq1556 (2018).
+35Y. K. Wakabayashi, T. Otsuka, Y. Taniyasu, H. Yamamoto, and H. Sawada,
+Appl. Phys. Express 11, 112401 (2018).
+36X. Li, X. Li, Z. Hou, S. Gao, Y. Zeng, J. Ao, Z. Zhou, B. Da, W. Liu, Y. Sun,
+Y. Zhang et al., Sol. RRL 2, 1800198 (2018).
+37Z. Hou, Y. Takagiwa, Y. Shinohara, Y. Xu, and K. Tsuda, ACS Appl. Mater.
+Interfaces 11, 11545 (2019).
+38J. Snoek, H. Larochelle, and R. P. Adams, paper presented at Advances in Neural
+Information Processing Systems 25, 2012, see also http://papers.nips.cc/paper/4522-
+practical-bayesian-optimization.
+39M. Naito and H. Sato, Appl. Phys. Lett. 67, 2557 (1995).
+40H. Yamamoto, Y. Krockenberger, and M. Naito, J. Cryst. Growth 378, 184
+(2013).
+41Y. K. Wakabayashi, Y. Krockenberger, N. Tsujimoto, T. Boykin, S. Tsuneyuki,
+Y. Taniyasu, and H. Yamamoto, Nat. Commun. 10, 535 (2019).
+42D. R. Jones, M. Schonlau, and W. J. Welch, J. Global Optim. 13, 455 (1998).
+43J. Mockus, V. Tiesis, and A. Zilinskas, Towards Global Optimization (North
+Holland, New York, 1978), Vol. 2, p. 117.
+44J. B. Nelson and D. R. Riley, Proc. Phys. Soc. 57, 477 (1945).
+45B. Dabrowski, O. Chmaissem, P. W. Klamut, S. Kolesnik, M. Maxwell, J. Mais,
+Y. Ito, B. D. Armstrong, J. D. Jorgensen, and S. Short, Phys. Rev. B 70, 014423
+(2004).
+46L. Klein, J. S. Dodge, T. H. Geballe, A. Kapitulnik, A. F. Marshall, L. Antognazza,
+and K. Char, Appl. Phys. Lett. 66, 2427 (1995).
+47K. Terai, T. Ohnishi, M. Lippmaa, H. Koinuma, and M. Kawasaki, Jpn. J. Appl.
+Phys., Part 2 43, L227 (2004).
+48M. Nakayama, T. Kai, N. Shimomura, M. Amano, E. Kitagawa, T. Nagase,
+M. Yoshikawa, T. Kishi, S. Ikegawa, and H. Yoda, J. Appl. Phys. 103, 07A710
+(2008).
+49S. Ikeda, K. Miura, H. Yamamoto, K. Mizunuma, H. D. Gan, M. Endo, S. Kanai,
+J. Hayakawa, F. Matsukura, and H. Ohno, Nat. Mater. 9, 721 (2010).
+50D. T. Margulies, F. T. Parker, M. L. Rudee, F. E. Spada, J. N. Chapman, P. R.
+Aitchison, and A. E. Berkowitz, Phys. Rev. Lett. 79, 5162 (1997).
+51Y. K. Wakabayashi, Y. Nonaka, Y. Takeda, S. Sakamoto, K. Ikeda, Z. Chi, G.
+Shibata, A. Tanaka, Y. Saitoh, H. Yamagami, M. Tanaka, A. Fujimori, and R.
+Nakane, Phys. Rev. B 96, 104410 (2017).
+52Y. K. Wakabayashi, Y. Nonaka, Y. Takeda, S. Sakamoto, K. Ikeda, Z. Chi, G.
+Shibata, A. Tanaka, Y. Saitoh, H. Yamagami, M. Tanaka, A. Fujimori, and R.
+Nakane, Phys. Rev. Mater. 2, 104416 (2018).
+53J. Sakai, S. I. Murakami, K. Hirama, T. Ishida, and Z. Oda, J. Vac. Sci. Technol.,
+B: Microelectron. Nanometer Struct. 6, 1657 (1988).
+54M. O’Steen, E. Readinger, S. Farrell, M. Marek, M. Doran, and D. Hanser, in
+Molecular Beam Epitaxy from Research to Mass Production, edited by M. Henini
+(Elsevier, Inc., 2018), pp. 649–675.
+55D. P. Tabor, L. M. Roch, S. K. Saikin, C. Kreisbeck, D. Sheberla, J. H. Mon-
+toya, S. Dwaraknath, M. Aykol, C. Ortiz, H. Tribukait, C. Amador-Bedolla, C. J.
+Brabec, B. Maruyama, K. A. Persson, and A. A. Guzik, Nat. Rev. Mater. 3, 5
+(2018).
+APL Mater. 7, 101114 (2019); doi: 10.1063/1.5123019
+7, 101114-7
+© Author(s) 2019
+ 10 February 2026 07:43:37

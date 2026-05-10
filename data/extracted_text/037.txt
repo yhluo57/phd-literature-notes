@@ -1,0 +1,1670 @@
+
+
+--- PAGE 1 ---
+npj | computational materials
+Article
+Published in partnership with the Shanghai Institute of Ceramics of the Chinese Academy of Sciences
+https://doi.org/10.1038/s41524-025-01626-1
+An unsupervised machine learning based
+approach to identify efﬁcient spin-orbit
+torque materials
+Check for updates
+Shehrin Sayed
+1,2,3
+, Hannah Calzi Kleidermacher
+1, Giulianna Hashemi-Asasi1,
+Cheng-Hsiang Hsu
+1 & Sayeef Salahuddin1,2
+Materials with large spin–orbit torque (SOT) hold considerable signiﬁcance for many spintronic
+applications because of their potential for energy-efﬁcient magnetization switching. Unfortunately,
+most of the existing materials exhibit an SOT efﬁciency factor that is much less than unity, requiring a
+large current for magnetization switching. The search for new materials that can exhibit an SOT
+efﬁciency much greater than unity is a topic ofactive research, and only a few such materials have been
+identiﬁed using conventional approaches. In this paper, we present a machine learning-based
+approach using a word embedding model that can identify new results by deciphering non-trivial
+correlations among various items in a specialized scientiﬁc text corpus. We show that such a model
+can be used to identify materials likely to exhibit high SOT and rank them according to their expected
+SOT strengths. The model captured the essential spintronics knowledge embedded in scientiﬁc
+abstracts within various materials science, physics, and engineering journals and identiﬁed 97 new
+materials to exhibit high SOT. Among them, 16 candidate materials are expected to exhibit an SOT
+efﬁciency greater than unity, and one of them has recently been conﬁrmed with experiments with
+quantitative agreement with the model prediction.
+Materials exhibiting spin–orbit torque (SOT)1–3 are of great interest for
+efﬁcient charge current to spin current conversion that can enable energy-
+efﬁcient nano-magnet switching in many novel applications3–8. In the past
+decade, a large variety of materials1–3 have been explored, exhibiting wide
+ranges of spin current density to charge current density ratios, known as
+SOT efﬁciency factors. However, most of them exhibit an efﬁciency factor
+muchlessthanunity,requiringalargercurrentformagnetizationswitching.
+ThereisagrowinginterestinnewmaterialsthatcanexhibitaSOTefﬁciency
+factor much greater than unity, and only a few9–15 have been identiﬁed.
+While conventional methodologies1–3 are often successful in guiding such
+materialssearch;theycanbequiteexpensiveinevaluatingthelargeavailable
+materials space for SOT. There is an opportunity to use emerging machine
+learning models to accelerate the search for such materials.
+Many materials often get discussed in scientiﬁc publications from
+different domains, which may share similar crystallography or properties as
+seen in various SOT materials. Such non-trivial connections can get hidden
+within the overwhelmingly large text due to its heterogeneous format and
+domain-speciﬁc language. Thus, such unstructured published data on
+diversematerialscanbeleveraged usingnaturallanguageprocessingtoolsto
+identify new and non-trivial results. Such tools have been very useful in
+scientiﬁc text mining16–21, especially in effectively unifying large text data to
+extract materials or synthesize information and build knowledge graph
+structures.
+Recently, there is a growing interest in large language models
+(LLMs)22,23 duetotheirabilityto comprehend andgeneratehuman-liketext.
+The signiﬁcant cost and hardware requirements for training such models24
+make it challenging to implement them in specialized research
+environments25. Source-available LLMs are typically trained over a sub-
+stantially large dataset consisting of publicly available data that is often not
+scientiﬁcally peer-reviewed and a generative model can produce unrealistic
+results if not carefully used26,27. Thus, the use of such models in scientiﬁc
+research remains an evolving topic. Despite the challenges, a number of
+recent works have focused on using LLMs in scientiﬁc research, with or
+without ﬁne-tuning, which showed promising results in property
+prediction28, inverse designs28, molecule-caption translation29, harvesting
+from low-ﬁdelity calculations30, protein structure prediction31, biomedical
+1Department of Electrical Engineering and Computer Sciences, University of California, Berkeley, CA, 94720, USA. 2Materials Sciences Division, Lawrence
+Berkeley National Laboratory, Berkeley, CA, 94720, USA. 3Present address: TDK Headway Technologies, Inc., Milpitas, CA, 95035, USA.
+e-mail: shehrin.sayed@tdk.com; sayeef@berkeley.edu
+npj Computational Materials |  (2025) 11:167 
+1
+1234567890():,;
+1234567890():,;
+
+
+--- PAGE 2 ---
+text
+generation32,
+battery
+research33,
+and
+autonomous
+scientiﬁc
+experiments34.
+Word embedding models35–37 can be very useful and efﬁcient for spe-
+cialized tasks using a tailored dataset while offering scalability and inter-
+pretability within a cost-effective computational framework typically
+available in research laboratories. These models have shown usefulness in
+identifying new scientiﬁc results from large text datasets and have been
+applied in predicting new materials38–40, identifying harmful substances in
+food41, disease assessments and therapeutic identiﬁcation42–46. Later, a
+transformer-based model is used to understand research trends and
+directions47 and to extract information from large corpora of materials48,49
+within appropriate contexts.
+In this paper, we show that a word embedding model trained with
+specializedand peer-reviewed scientiﬁcliteraturecanidentifynewresultsby
+deciphering hidden correlations among various items within the large text.
+The trained word embedding model translates text-based knowledge into a
+high-dimensional vectorial representation50 that allows us to use standard
+mathematical tools to understand many intrinsic featuresof the text corpus.
+Such a model can be useful in domain-speciﬁc research for predicting new
+material candidates and estimating the expected strength of a given phe-
+nomenon relative to a reference material.
+We show that the model learned key concepts of magnetism and
+spintronics in an unsupervised manner from scientiﬁc abstracts published
+in various materials science, physics, and engineering journals. We deﬁne a
+functionthatexploitsthesimilaritiesamongwordembeddingsandprovides
+rankings based on the likelihood of observing a given phenomenon in a
+structure consisting of multiple materials. Our model successfully identiﬁed
+andrankedanumberofmaterialsinthecontextofSOTdevicestructureand
+that the quantitative projection on the SOT strength is in good agreement
+with the experimental reports in various known materials.
+In addition, our modelpredicted 97 new materials to exhibit SOT, with
+16 of them likely to exhibit SOT efﬁciency factors much greater than unity.
+Iron silicide is one of these 16 new high SOT efﬁciency materials, which we
+have recently experimentally demonstrated15 with the measured SOT efﬁ-
+ciency factor in good agreement with the word embedding model projec-
+tion; however, the data on iron silicide experiment was not included in the
+training text corpus. While these materials have been explored in various
+other contexts within the literature, to our knowledge, they have not been
+examined in the context of SOT. We further show that known results on a
+few materials could have been predicted much before their ﬁrst report
+appeared in the literature, which indicates that such a methodology can
+serve as a powerful assistive tool to accelerate materials and device research.
+Results
+We trained a model using a word embedding model called Word2Vec35 (see
+Fig. 1) and adopted an unsupervised training approach similar to the report
+onthermoelectricmaterials38.Ourtrainingdatasetcontainedapproximately
+one million scientiﬁc abstracts from various peer-reviewed materials sci-
+ence, physics, and engineering journals published between 1970 and 2020
+within the American Physical Society (APS) and the Institute of Electrical
+and Electronics Engineers (IEEE). We have restricted our data collection
+until2020becauseoneofourkeyvalidationsofmodelpredictionisbasedon
+our experimental demonstration15 of SOT in iron silicide, and there has not
+beenanydiscussionofironsilicideinthe contextofhighSOTbefore2020to
+our knowledge. Additionally, several other studies were published during
+the peer-review process of this manuscript, which are not included in our
+training dataset and directly or indirectly supported several of our predic-
+tions. We have summarized these studies later in this section. In addition,
+our trained model inherited a broad range of knowledge beyond the
+research presented in this manuscript, which will greatly interest different
+research domains within the scientiﬁc community, and a copy of the model
+is made available online51. However, in this manuscript, we evaluated the
+trained model only in the context of magnetism and spintronics. Further
+detailsaboutmodeltrainingandthetrainingdatasethasbeendiscussedlater
+in the Methods section.
+Materials and devices knowledge encoded in word embeddings
+The relationships among the word embeddings within the trained model
+captured the knowledge encoded in the text corpus. The related words are
+closer to each other by the cosine similarity. If two word embeddings are
+related, the cosine similarity is closer to 1. On the other hand, if the word
+embeddings are unrelated, the cosine similarity is closer to 0. The cosine
+similarity among various word embeddings can be used to generate a list of
+materials, phenomena, and applications related to a target word. For
+example, the target word “spin Hall effect” is closer to the words “spin-
+charge conversion”, “nonequilibrium spin polarization”, “spin currents”,
+and “spin–orbit torque”, among others.
+The word embeddings support analogy operations35,38, which can be
+useful in connecting the material name to its chemical formula. For
+example, in the following vector algebraic expression,
+‘platinum’  ‘Pt’ þ ‘Ta’ ! ‘tantalum’:
+Here, “platinum” −“Pt” speciﬁes the context in which we are relating a
+material name, platinum, to its chemical formula, Pt. Then, the resultant
+vector, after adding the target word “Ta”, is the corresponding material
+name, tantalum. We can ﬁx the context and keep changing the target
+chemical formula to get the corresponding material name, as shown below.
+‘platinum’  ‘Pt’ þ ‘GaAs’ ! ‘gallium arsenide’
+‘platinum’  ‘Pt’ þ ‘SiC’ ! ‘silicon carbide’
+Such vector operations can be useful in populating a list of materials by
+specifying a material's class. For example, in the following expression,
+‘Fe’  ‘ferromagnet’ þ ‘semiconductor’ ! f‘Si’; ‘ZnO’; ‘GaN’; ‘SiC’;
+‘SnO2’; ‘CdTe’; ‘GaAs’; :::g:
+Here, “Fe” −“ferromagnet” sets the context to the chemical formula for a
+material class, “ + semiconductor” speciﬁes the target materials class, and
+the resultant vector is close to word embeddings for chemical formulas of
+different semiconductor materials. Changing the target materials class to
+“topological insulator” also changes the populated materials list that
+Fig. 1 | Word2Vec skip-gram representation of a word embedding model. It
+consists of one-hot encoded input layer, a hidden layer, and an output layer that
+performs negative sampling with n = 15. The trained word embedding model is
+connected to a postprocessing module, which collects material word embeddings
+related to a target word and calculates the similarity (Γ) to a phenomenon within a
+multilayered stack. The ﬁnal output of the postprocessing module ranks those
+materials according to Γ.
+https://doi.org/10.1038/s41524-025-01626-1
+Article
+npj Computational Materials |  (2025) 11:167 
+2
+
+
+--- PAGE 3 ---
+contains materials known to exhibit topological phases. Note that the
+topological phases of materials are of great interest for large SOT efﬁciency
+factors.
+‘Fe’  ‘ferromagnet’ þ ‘topological insulator’ ! f‘Bi2Se3’; ‘Bi2Te3’;
+‘SnTe’; ‘Sb2Te3’; ‘TlBiSe2’; :::g
+We use a similar method to populate a list of SOT materials later in the
+manuscript.
+Our model has been trained with abstracts from both fundamental
+science and engineering journals; therefore, word embeddings can relate
+materialsandphenomenatorelevantdevicesandapplications.Forexample,
+the “tunneling magnetoresistance” phenomenon is used to “read” the bit
+stored in the magnetic tunnel junction devices in the magnetoresistive
+random accessmemory(MRAM) application.Withinthiscontext,if weask
+about the purpose of the “spin-transfer torque” or “spin–orbit torque”
+phenomenon using the following form, the resultant vector is closest to
+“write” by the cosine similarity.
+‘read’  ‘tunneling magnetoresistance’ þ ‘spin  transfer torque’ ! ‘write’:
+‘read’  ‘tunneling magnetoresistance’ þ ‘spin  orbit torque’ ! ‘write’:
+Moreover, the addition of word embeddings corresponding to the two
+phenomena, “tunneling magnetoresistance” and “spin-transfer torque,”
+yields a vector closest to “magnetic tunnel junctions,” which is the device
+that functions based on these phenomena52. Furthermore, if we add the
+resultant word embedding “magnetic tunnel junctions” with the word
+“memory,” it yields a vector closest to ‘MRAM,’ which refers to the appli-
+cation that uses magnetic tunnel junctions52.
+‘tunneling magnetoresistance’ þ ‘spin  transfer torque’ ! ‘magnetictunnel junctions’:
+‘magnetictunnel junctions’ þ ‘memory’ ! ‘MRAM’:
+Note that in some instances, beyond the examples shown here, the
+closest word embedding to the resultant vector may not be the desirable
+answer, and the desirable answer may appear as the second or third nearest
+wordembedding.Thisismostlyduetothenatureofthetrainingtextcorpus,
+especially how these words have been discussed in the text. However, all the
+words closer to the resultant vector are relevant and meaningful in the
+context.
+Word embeddings capture intrinsic ﬁgure-of-merits
+Most spintronics phenomena relevant for potential device applications are
+characterized by multilayered stacks that contain different materials. Thus,
+the cosine similaritiesamong multiple word embeddings related to different
+elements of the stack can provide insight into how a given combination of
+materials is correlated with a particular phenomenon. We deﬁne the fol-
+lowing function to quantify such a similarity (Γ) among multiple word
+embeddings (~x), as given by
+Γ ¼
+ﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+Yi≠j
+i;j
+~xi
+j~xij 
+~xj
+j~xjj
+s
+:
+ð1Þ
+Note that Eq. (1) is not a unique choice for a function to calculate the
+similarity among multiple word embeddings, and other functions may be
+more appropriate depending on the nature of the structure and underlying
+physics. We have deﬁned Eq. (1) such that Γ is highest when all word
+embeddings under consideration ( x!) are highly similar; however, Γ will be
+zero if one of the word embeddings under consideration is independent or
+dissimilar to the others.
+For three-word embeddings x! 2 A; B; C
+f
+g, Eq. (1) reduces to the
+following expression
+Γ ¼ cos C; A
+ð
+Þ × cos C; B
+ð
+Þ × cos A; B
+ð
+Þ;
+ð2Þ
+wherecosðA; BÞ representscosinesimilaritybetweenvectorsA andB.Such
+a reduced function can be used to understand the likelihood of a phe-
+nomenonC beingobserved in a bilayer consisting of materials A and B.The
+value of Γ will depend on the similarities among A, B, and C within the
+trained word embedding model. If both A and B have a high similarity to C
+but the similarity between materials A and B is low due to growth issues or
+interfacial dissimilarities, then overall Γ becomes low.
+Interestingly, within our trained model, the similarity pattern generated
+from Γ for a given set of materials in the context of a particular phenomenon
+often showed a good correlation with the pattern generated by experimental
+measurementsontheintrinsicﬁgure-of-meritforthatphenomenon.Here,we
+show an example by applying Eq. (2) for the phenomenon C  “oscillatory
+exchangecoupling”typicallyobservedinmagneticmultilayerswithtransition
+metal spacers53–56 and utilized as a synthetic-antiferromagnet-based reference
+layer in magnetic tunnel junctions52. We have calculated Γ from the trained
+word embedding model with A being word embeddings for various 3d, 4d,
+and5dtransitionmetalsandB being“Co”(cobalt).Γisplottedasafunctionof
+the atomic numbers of the transition metals as shown in Fig. 2a. For 3d, 4d,
+Fig. 2 | Word embeddings projecting intrinsic ﬁgure-of-merit. a Γ estimated using
+Eq. (2) from the trained word embedding model, with C ¼ ‘oscillatory exchange
+coupling’, B ¼ ‘Co’ (cobalt), and A ¼ 3d, 4d, and 5d transition metals.
+b Experimental reports53–56 on the ﬁrst antiferromagnetic oscillatory exchange
+coupling (OEC) energy peak in various Co/transition metals multilayers.
+https://doi.org/10.1038/s41524-025-01626-1
+Article
+npj Computational Materials |  (2025) 11:167 
+3
+
+
+--- PAGE 4 ---
+and 5d transition metals, Γ increases with the atomic number, peaks at “Cr”,
+“Ru”, and “Ir”, respectively, and then decreases with the atomic number. The
+trendobservedfromΓinFig.2aagreeswellwiththeexperimentallymeasured
+ﬁrst antiferromagnetic oscillatory exchange coupling (OEC) peak energy in
+various Co/transition metals multilayers53–56, as shown in Fig. 2b.
+Theagreementobserved inFig.2isnon-trivialsincetheestimationofΓ
+did not involve the experimental values of the ﬁrst OEC energy peak
+reported in the text corpus. Γ reﬂects the similarities among word embed-
+dings: “oscillatory exchange coupling”, “Co”, and various transition metals,
+the vectorial conﬁgurations of which were set during the training based on
+how those words were used to represent knowledge in the text corpus. Thus,
+Γ can be very useful in ranking materials or materials stacks according to the
+target functionality. Note that in a given research domain, materials exhi-
+biting larger ﬁgure-of-merits are often discussed in more articles than other
+materials. Hence, such a correlation pattern partly builds up based on how
+often a particular materials stack has been discussed in different literature in
+the context of the phenomenon.
+On the other hand, the word embedding model can be useful in
+identifying the correlation between a material and a phenomenon via pat-
+terns hidden within the large text corpus, although such a correlation has
+never been directly discussed in the training dataset. In the next subsection,
+we will show that such indirect correlation build-up can be very useful in
+predicting new materials for a target functionality; however, all elements of
+the new results are part of the training dataset. This method of predictive
+research differs from those employing advanced generative models28–34,
+which can generate results not explicitly part of its training dataset and does
+not serve solely the purpose of ﬁnding hidden correlations among the ele-
+ments within the dataset.
+Materials word embeddings related to large spin–orbit torques
+We apply the trained word embedding model to evaluate various material
+word embeddings in the context of SOT. We ﬁrst populated about ~2000
+word embeddings similar (by the cosine similarity) to the resultant vector of
+the analogy expression “Fe” −“ferromagnet” + “spin–orbit torque”. We
+then ﬁltered out the word embeddings that do not correspond to a material
+to generate the list of materials correlated with SOT (2 A). Note that the
+analogy expression used to generate the list of materials is not unique;
+similar analogy expressions would have provided the same list after
+thresholding and ranking using Γ as described in the next paragraph.
+Next, we calculate Γ for each of these materials word embeddings
+(2 A) using Eq. (2) with the phenomenon C  “spin–orbit torque” and the
+other layer B as “CoFeB” typically used to form the conductor/magnet
+( A=B) bilayers for SOT characterization. We then select candidates for
+SOT by taking materials word embeddings that exhibit a Γ higher than a
+threshold value. The threshold value of Γ for candidate selection was
+determined by the minimum value at which the model identiﬁed a known
+SOT material, which in this case is PtTe2
+57 (see Fig. 3). The threshold is ~3%
+of the calculated Γ for the widely used SOT material platinum58. The cal-
+culated Γ for different candidate materials are shown in Fig. 3a, b. The
+rationale for selecting the threshold value is that any new candidate that
+demonstrates a Γ higher than an established SOT material is likely to be
+signiﬁcantly correlated with the SOT phenomenon.
+Some of the SOT materials identiﬁed by the word embedding model
+have already been discussed in the literature, e.g., IrMn59, Pt58, Ta4, Ir60,
+CuPt61 Cu/Bi2, Bi/Ag62, Bi2Se3
+9, (BiSb)2Te3
+63, SnTe63, WTe2
+64, PtTe2
+57,
+NbSe2
+65, SrIrO3
+66,67, IrO2
+68, Nb-Ta69, and CoGa70, which are shown as blue
+bars in Fig. 3. In addition, the model has identiﬁed 97 new materials that
+have a higher similarity with SOT, which are shown as red bars in Fig. 3.
+Note that we are referring to the red bars as new materials, as they have not
+been discussed in the literature dataset in the context of SOT to the best of
+our knowledge. However, these materials have been discussed in the lit-
+erature in other contexts, and thus, various knowledge on these materials is
+included in our training dataset. The model identiﬁed the blue bars in Fig. 3
+via a direct correlation with SOT; however, the red bars were identiﬁed via
+an indirect correlation with SOT, which was built up within the model
+accordingtotheinformationavailableonthesematerialswithinthetraining
+dataset. ‘FeSi’ (iron silicide) is one of the new materials identiﬁed by the
+model (green bar in Fig. 3), which we have recently experimentally
+demonstrated to exhibit a high SOT15; however, the experimental data were
+not included in the training text corpus.
+Model projection on known spin–orbit torque materials
+WeﬁrstseparatetheknownSOTmaterials(bluebarsinFig.3)andcompare
+the relative positions of Γ among these materials (see Fig. 4a) with the
+experimental reports on the spin Hall conductivities on these materials (see
+Fig. 4b). Spin Hall conductivity is a widely used ﬁgure-of-merit to char-
+acterizetheSOTmaterials1–3.Interestingly,therelativepositionpatternsofΓ
+obtained from the word embeddings reasonably agree with the relative
+positions of the spin Hall conductivities in these materials. Such an agree-
+ment is non-trivial because Γ only calculates the association among the
+words based on the context in which they appeared in the text corpus. The
+calculation of Γ did not take into account the numerical values of the spin
+Hall conductivity reported in the text.
+The model projected a larger Γ for IrMn compared to Pt. The relative
+positionofΓbetweenIrMnandPtisinagreementwiththerelativepositions
+obtained from the experimental spin Hall conductivities59 (see Fig. 4a, b).
+Although SOT in IrMn has been discussed in the past71; the reported
+strength of the spin Hall conductivity was much lower than in Pt. The
+experimental report59 on a strong spin Hall conductivity in IrMn that is
+higher than in Pt is not included in our training dataset. Thus, the model is
+also projecting a high Γ based on an indirect association between the words
+‘IrMn’ and ’spin–orbit torque’.
+Note that our model did not identify ‘W’ (tungsten) as an SOT
+material, although it has been reported many times in the literature72. One
+possible explanation is that a majority of the training text-corpus from
+engineering journals used the symbol “W” to represent watt (unit of power),
+which in turn reduced the correlation between tungsten and SOT. Another
+thingto noteisthat the modelidentiﬁed “Cu/Bi”asanSOT materialand the
+relative position of Γ is in good agreement with the calculated spin Hall
+conductivity for a Cu/Bi Rashba interface2. However, there is an experi-
+mental report of a CuBi alloy that exhibited higher spin Hall conductivity at
+lower temperatures73, which the model has not picked up.
+We exploit the remarkable similarity between the Γ pattern among
+various materials and the corresponding experimental reports of spin Hall
+conductivities to quantitatively estimate the neural network (NN) projec-
+tion of the SOT efﬁciency factor, ξNN
+SOT, using the following expression
+ξNN
+SOT A
+ð Þ ¼ Γ A
+ð Þ
+σ
+×
+σPt
+Γð‘Pt’Þ ;
+ð3Þ
+whereσisthechargeconductivityofthecorrespondingmaterialA,σPtisthe
+spin Hall conductivity of the reference material Pt, and Γð‘Pt’Þ is the Γ value
+for the word embedding of ‘Pt’.
+The NN projected SOT efﬁciency factors for the blue bars (i.e., known
+materials) in Fig. 3 are summarized in Table 1 and compared with corre-
+sponding reports in the literature. The NN projected ξNN
+SOT for various
+known materials are shown in Fig. 4c as a function of their corresponding
+experimentalvaluesreported intheliterature.Fig. 4cisrepresentedonalog-
+log scale to accurately depict the SOT efﬁciency factors of these materials,
+which span several orders of magnitude. We show the ideal line y = x in Fig.
+4c, where the y-axis represents the NN projected ξNN
+SOT and the x-axis
+represents experimental reports, to show how the prediction deviates from
+the experimental reports. Due to the functional dependence of y = x, the
+ideal line also appears linear in the log-log representation. Although a few
+model projections differed from experimental reports by a sizable factor, the
+model correctly projected a value of the SOT efﬁciency factor in the same
+order of magnitude as expected in these materials, see Table 1. Therefore,
+Fig.4cservesasthebenchmarkfortheknownmaterialsubsetoutofthetotal
+candidates identiﬁed by the model (see Fig. 3), and we assert that the
+https://doi.org/10.1038/s41524-025-01626-1
+Article
+npj Computational Materials |  (2025) 11:167 
+4
+
+
+--- PAGE 5 ---
+predictions on the new material candidates reliably project the order of
+magnitude of SOT expected in those materials.
+Such quantitative projections from the trained word embeddingmodel
+are highly data-dependent, especially because they are calculated based on
+the correlationsamongword embeddings,whichmayevolve asmoredata is
+added tothetrainingtextcorpus.Inordertounderstand thestabilityofsuch
+a quantitative projection when more knowledge becomes available every
+year in the form of publishedliterature, we present a timeline analysis in Fig.
+4d. For this analysis, we have trained multiple models by cumulatively
+adding one more year of literature abstracts to the training text corpus. The
+x-axis of Fig. 4d corresponds to six models that were trained using journal
+abstracts starting from 1970 until 2015, 2016, 2017, 2018, 2019, and 2020,
+respectively. For each of these six models, we have evaluated Γ using Eq. (2)
+forthebluebarsinFig.3andthencalculatedξNN
+SOT usingEq.(3),asshownon
+the y-axis of Fig. 4d.
+The magnitudes of the NN projected ξNN
+SOT in most of these known
+materials remained relatively stable beyond 2015, with each succes-
+sive model incorporating additional data. The projection for Cu/Bi
+became relatively stable around 2017. The model did not pick up
+PtTe2 as an SOT material candidate before 2018, and the projected
+ξNN
+SOT ﬂuctuates by an order of magnitude onward, which indicates
+that more data on PtTe2 is needed for a stable quantitative projection
+on ξNN
+SOT; however, there is enough data that resulted in a sizable Γ. The
+model projection on NbSe2 is reasonably stable beyond 2015; how-
+ever, the projected value is about three times higher than the
+experimental report65. Note that the quantitative projection of ξNN
+SOT
+relies on the relative positions of Γ with respect to the reference word
+embedding “Pt” and is independent of the absolute value of Γ.
+Therefore, the stability in the predicted order of magnitude for ξNN
+SOT
+corresponds to the stability of the relative position of Γ for new
+candidates becoming stable with respect to that of “Pt”.
+Surprisingly, the NN projected ξNN
+SOT value for FeSi was relatively stable
+around 2015, although we ﬁrst measured this material in the context of SOT
+in 202074, and subsequently we demonstrated a large SOT efﬁciency factor
+closer to the model prediction in 202215. Furthermore, the model identiﬁed
+SrIrO3asanSOTmaterialandcorrectlyprojectedtheefﬁciencyfactorbased
+onabstractsfromtheliteratureupto2015;however,theexperimentalreport
+appearedfouryearslater66,67.Remarkably,thewordembeddingmodelcould
+have predicted both of these materials (FeSi and SrIrO3) back in 2015,
+showing the signiﬁcant usefulness of such machine learning algorithms in
+materials and device research.
+New materials prediction for large spin–orbit torques
+The word embedding model has identiﬁed 97 new candidates, shown as red
+bars in Fig. 3, which, to our knowledge, have not been directly discussed in
+the context of SOT. Although a few of these candidates have been discussed
+in the literature in the context of special material phases that are often
+correlated to SOT, the model correlated most of them to SOT via patterns
+hidden within the large text corpus. We used Eq. (3) to estimate ξNN
+SOT for
+these new candidate materials (red bars in Fig. 3) and distribution of ξNN
+SOT is
+shown in Fig. 5a. The estimated values of ξNN
+SOT and the corresponding
+conductivities are listed in Table 2.
+Fig. 3 | SOT materials list generated by the word embedding model, which ranked them according to their Γ values. Γ values for various materials are normalized to the
+reference material Pt.
+https://doi.org/10.1038/s41524-025-01626-1
+Article
+npj Computational Materials |  (2025) 11:167 
+5
+
+
+--- PAGE 6 ---
+Among the 97 new materials, 16 of the candidate materials are likely to
+exhibit an SOT efﬁciency factor much larger than or closer to unity (see Fig.
+5a). These 16 candidates include EuSe, CrSe, DyBa2Cu3O7, MnGe,
+CrVTiAl, EuTe, EuMnBi2, CrSi, BiSbTeSe2, CrTe, EuFe2As2, NaCo2O4,
+FeSi, FeGa, TaSe3, and ZrZn2, where EuSe, CrSe, DyBa2Cu3O7, and MnGe
+are projected to exhibit a SOT efﬁciency factor >10. The estimated ξNN
+SOT for
+these 16 candidatesare showninFig. 5b asa functionof their corresponding
+Γ values. Γ values for these candidates range from 10 to 80% of Pt and FeSi,
+EuTe, EuSe, MnGe, CrSi, CrTe, and FeGa have Γ > 50% of Pt while exhi-
+biting ξNN
+SOT > 1. We recently measured a high SOT efﬁciency factor on the
+order of ~2 in one of these 16 candidates, FeSi15, which is in good agreement
+with thequantitative projectionof theword embeddingmodel (see Table 1).
+NotethatthemeasureddataonFeSiorrelatedinformationwasnotincluded
+in the training text corpus. Thus, such an agreement between model pre-
+diction and experimental observation demonstrates the quantitative pre-
+diction capability of the machine learning approach, which will be useful for
+application-speciﬁc materials search.
+In addition to FeSi, the word embedding model predicted SOT in
+various other silicides, including CrSi, MoSi, CoSi, PdSi, PtSi, NiSi, FeSiAl,
+LaPt2Si2, Co2FeSi, Co2MnSi, CePt3Si, CaIrSi3, and YbRh2Si2. The model
+predictsthatCrSiwillexhibitanefﬁciencyfactor~3×higherthanFeSi,close
+to a value of ~5.3. Other silicides identiﬁed by the model are expected to
+exhibit SOT efﬁciencies close to what we observe for transition metals. SOT
+in silicides could be interesting for SOT device applications, as silicides are
+integrable within standard CMOS technologies.
+In orderto understand the stability of such a quantitative projection on
+the high SOT candidates, we have performed a timeline analysis similar to
+that done for the known materials in the previous subsection. We used the
+six models trained with journal abstracts starting from 1970 until 2015,
+2016, 2017,2018, 2019,and 2020,respectively,to calculatetheNN projected
+ξNN
+SOT using Eq. (3) for the 16 high SOT candidate materials identiﬁed by the
+model. Fig. 5c shows ξNN
+SOT for these materials as a function of accumulated
+training data over each consecutive year. The predictions for EuSe, CrSe,
+DyBa2Cu2O7, MnGe, EuTe, and EuFe2As2 were already reasonably stable
+since 2015. The predictions for CrSi, CrTe, TaSe, and ZrZn2 became stable
+between 2016 and 2018. CrVTiAl, EuMnBi, and BiSbTeSe2 were not
+identiﬁed as SOT candidate material before 2019, and the projected ξNN
+SOT is
+still ﬂuctuating as more data is added to the training text corpus.
+Among the other candidate materials identiﬁed by the model, 49 of
+themarepredicted toexhibita sufﬁcientlylargeSOT efﬁciencyfactor within
+the range of 0:1 ≤ξNN
+SOT < 1 (see Fig. 5a), where Co2TiSn, SrMnBi2, NiMn,
+MnAl, Co2MnGe, MnPt, CeRh3B2, CeRu2Al10, NbSe3, and MoSi are
+expected to exhibit ξNN
+SOT ≥0:5. Furthermore, 26 materials are expected to
+have SOT efﬁciency factors ranging within 0:01 ≤ξNN
+SOT < 0:1, and 6
+materials are expected to show very weak SOT efﬁciency factors
+ξNN
+SOT < 0:01. For example, the model identiﬁed highly conductive dela-
+fossite metals, speciﬁcally PdCrO2 and PdCoO2, as SOT materials, although
+their expected SOT efﬁciencies are roughly an order of magnitude lower
+than that of platinum. A detailed list of the candidate materials and their
+expected ξNN
+SOT are given in Table 2.
+Fig. 4 | Model projections on known SOT materials. a Γ vs. material conductivity
+for known SOT materials (blue bars in Fig. 3). b Experimental reports of spin Hall
+conductivities in various conductors: IrMn59, Pt58, Ta4, Ir60, CuPt61, Cu/Bi2, Bi/Ag62,
+Bi2Se3
+9, (BiSb)2Te3
+63, SnTe63, WTe2
+64, PtTe2
+57, NbSe2
+65, SrIrO3
+66,67, IrO2
+68, Nb-Ta69,
+and CoGa70. FeSi is one of the new materials identiﬁed by the model, which we have
+demonstrated experimentally15. c Neural network projected SOT efﬁciency, ξNN
+SOT, vs.
+measured SOT efﬁciency from the literature, ξSOT. d Timeline analysis of the model
+projection on SOT efﬁciency factors as more data is added to the training text corpus.
+https://doi.org/10.1038/s41524-025-01626-1
+Article
+npj Computational Materials |  (2025) 11:167 
+6
+
+
+--- PAGE 7 ---
+Some of the materials identiﬁed by the model have a relatively
+straightforward correlation with SOT. The correlation built up between
+SOTandBiSbTeSe2 isstraightforward,asthismaterialhasbeendiscussed as
+a topological insulator75 in the literature. In particular, many other bismuth-
+based compounds9,63 were discussed as a host for the topological insulator
+phase, and some of them have experimental reports of a strong SOT.
+Another candidate material, MnGe, has been discussed in the context of a
+topological texture76, which is a possible correlation to a strong SOT.
+Another candidate, CaMnBi2, has been discussed to exhibit a nonzero Berry
+phase77, which is associated with the physical origin of SOT in many
+materials1,3.
+Interestingly, a magnetism-induced topological phase has been dis-
+cussed for EuAs3 in the literature78; however, the article appeared beyond
+the time frame of the dataset used to train the model. Similarly, GdPtBi79
+and TaSe3
+80 have been discussed to host a topological semi-metallic phase,
+and such a phase is known to exhibit a strong SOT64; however, these
+articles were published beyond the dataset collected to train the model.
+Moreover, there has been a discussion of a Rashba channel formation in
+GeTe81, which is another intrinsic mechanism for SOT3. An article also
+discussed a strong ﬁeld-like SOT in a GeTe/NiFe bilayer82; however, the
+article also appeared beyondthetime frame of thecollecteddataset used to
+train the model.
+Note that the calculation of the Γ value depends only on the similarities
+among various word embeddings within the trained model, but the calcu-
+lation of the NN projection of the SOT efﬁciency factor also takes into
+account the corresponding material conductivity (see Eq. (3)). Here, we use
+the nominal conductivity reported in the literature for these materials (see
+Table 2 and supplementary information); however, some of the NN pro-
+jectionsofSOTefﬁciencymayneedtobere-calibratedasconductivityvaries
+in different growth and crystallinity conditions.
+t-SNE projection of the possible origin of spin–orbit torque
+SOT in nonmagnetic materials can arise from various intrinsic
+mechanisms1–3, e.g., interfacial mechanisms such as a Rashba interface or a
+topological phase of material9,63,64 or bulk mechanisms such as the spin Hall
+effect. Current-induced SOT has been observed in ferromagnetic
+materials83,84 thatarise from the spinanomalous Halleffect85,theplanarspin
+Hall effect86, or a magnetization-dependent spin Hall effect87. In addition,
+large SOT has also been discussed in antiferromagnetic phases of
+materials59,88.
+The word embedding model can provide insight into a possible
+intrinsic mechanism of SOT for the new candidate materials based on the
+correlation among related word embeddings within the high-dimensional
+space. To understand such a correlation, we use a dimensionality reduction
+methodology called t-distributed stochastic neighbor embedding (t-SNE)89,
+which is a widely used method for visualizing high-dimensional data on a
+two-dimensional (2D) plane. In a t-SNE plot, the data points corresponding
+to similar word embeddings tend to cluster together, and dissimilar data
+points are located farther apart.
+To generate a cluster of word embeddings related to a target word, we
+have collected all word embeddings closer to the target word by a cosine
+similarity ≥0.8 and used the t-SNE method to reduce these high-
+dimensional word embeddings onto a 2D plane. The t-SNE plots were
+generated using scikit-learn with perplexity = 50, n −components = 2,
+init = ‘pca’, n −iterations = 5000, and random states = 10. For visual clarity,
+we represent the cluster for a given target word with a semi-transparent
+colored region constructed by the boundary data points of the cluster. We
+have plotted such clusters for the target words “topological insulator”,
+“topological semimetal”, “spin Hall effect”, “Rashba”, “ferromagnet”, and
+“antiferromagnet”inFig.6withthexandyaxeshavingarbitraryunits.Note
+that the choice of target words is based on the known intrinsic mechanisms
+that can give rise to SOT.
+We also projected the word embeddings for the new candidate mate-
+rials using t-SNE to understand which candidates overlap with various
+clusters for different intrinsic mechanisms, as shown in Fig. 6. Such an
+overlap insinuates a possible origin of SOT in these materials, which are
+summarized in Table 2. For a benchmark of this methodology, we have also
+projectedthewordembeddingsforknownmaterials“Pt”and“Ta”,andthey
+overlap with the ‘spin Hall effect’ cluster, which is the known origin of SOT
+in these transition metals4,58. We have also projected the word embeddings
+for known topological insulator materials “Bi2Se3” and “Bi2Te3” on the 2D
+t-SNE plot, and they overlap with the “topological insulator” cluster, con-
+ﬁrming the intrinsic mechanism.
+Note that the t-SNE method effectively preserves the local structure of
+the data, but may not accurately represent the overall data distribution. As a
+result,whileanyoverlapofdatapointsandspatialseparationofdataclusters
+may indicate a possible qualitative relation, the quantitative distance
+between two data points may not be meaningful.
+Among the 16 candidate materials with ξNN
+SOT ≥1, EuSe, DyBa2Cu3O7,
+EuTe, CrTe, FeGa, and FeSi overlap with the “spin Hall effect” cluster (see
+Fig.6a),indicatingthatthespinHalleffectis apossiblemechanismexpected
+in these materials. On the other hand, CrSe, CrSi, BiSbTeSe2, and TaSe3 are
+expected to exhibit a topological phase based on the overlap with ‘topolo-
+gical insulator’ and ‘topological semimetal’ clusters, as shown in Fig. 6a.
+Note that BiSbTeSe2 has been established as a topological insulator75 in the
+literature. Moreover, TaSe3 has been discussed as a topological semimetal in
+ref. 80, in agreement with the overlap with the ‘topological semimetal’
+cluster (see Fig. 6a); however, the article was published beyond the dataset
+collected to train the model. MnGe and EuFe2As2 overlap with both
+“antiferromagnet” or “ferromagnet” clusters, indicating a possible
+mechanism similar to that observed in ferromagnetic or antiferromagnetic
+conductors. Other high SOT candidates such as CrVTiAl, EuMnBi2,
+NaCo2O4, and ZrZn2 did not overlap with any clusters for known
+mechanisms,andweleave thefurtherevaluationsof thesecandidatesforthe
+future.
+Other candidate materials likely to exhibit a spin Hall effect-induced
+SOT include Co2MnGe, MnPt, MoSi, Co-doped ZnO, GeTe, CoZrNb,
+CuMnAs, Co2FeAl, CoS2, Co2CrAl, GdAl2, FeZr, PdSi, GdPtBi, CeNiSn,
+NiMnSb, CrGe, RuO2, AuFe, PdNi, NiSi, PtSi, NiGe, FeCu, CuCr, and
+PdCoO2, as shown in Fig. 6a–d. Note that the Rashba mechanism has been
+Table 1 | Spin–orbit torque efﬁciencies projected for known
+materials from word embeddings and comparison to
+experimental reports
+Material
+Name
+Conductivity
+× 106 Ω/m
+Spin–orbit torque efﬁciencies
+Experimental
+reports
+Estimation from word
+embeddings
+Pt58
+5
+0.07
+0.07
+Ta4
+0.53
+0.15
+0.42
+Ir60
+3.5
+0.1
+0.09
+IrMn59
+1.2
+0.6
+0.33
+CuPt61
+2.22
+0.04
+0.05
+Cu/Bi
+2.5
+0.07
+0.03
+Bi/Ag62
+60
+0.0027
+0.0035
+Bi2Se3
+9
+0.057
+2 ~ 3.5
+3.5
+(BiSb)2Te3
+63
+0.0183
+2.5
+5.2
+SnTe63
+0.0545
+1.4
+3
+WTe2
+64
+0.17
+0.35
+0.97
+PtTe2
+57
+0.3
+0.05
+0.08
+SrIrO3
+66,67
+0.25
+0.4
+0.5
+IrO2
+68
+1
+0.25
+0.17
+CoGa70
+0.57
+0.05
+0.2
+NbSe2
+65
+0.57
+0.05
+0.12
+Nb-Ta69
+0.5
+0.04
+0.27
+FeSi15
+0.1
+2
+1.82
+https://doi.org/10.1038/s41524-025-01626-1
+Article
+npj Computational Materials |  (2025) 11:167 
+7
+
+
+--- PAGE 8 ---
+discussed in GeTe81 with a strong ﬁeld-like SOT in a GeTe/NiFe bilayer82;
+however, a direct discussion of the spin Hall effect in GeTe is not present in
+the literature. In addition, a topological Weyl semimetal state in GdPtBi has
+been discussed79 under hydrostatic pressure. In a recent article90, RuO2 has
+been discussed as a powerful spin current generator to achieve ﬁeld-free
+SOT switching. However, these articles appeared beyond the timeframe of
+the dataset used to train the model.
+Candidate materials that are likely to exhibit a topological semi-
+metallic phase include SrMnBi2, SrPtAs, LaPt2Si2, CuTe, and EuS/Al. Two
+of the candidate materials, CaMnBi2 and MnBi, overlapped with both
+“topological insulator” and “topological semimetal” clusters; indicating a
+possible topological phase in these materials. Note that two-dimensional
+Dirac fermions and a nonzero Berry phase have been discussed for
+CaMnBi2
+77. Candidates such as CoSi, Cu2MnAl, NbZr, and PtIr overlapped
+with clusters for both ‘topological insulator’ and ‘spin Hall effect’; while
+other candidates such as Co2TiSn, YCo5, and PtMnSb overlapped with
+clusters for both ‘topological semimetal’ and ‘spin Hall effect’.
+Some candidate SOT materials only overlapped with the “antiferro-
+magnet” or “ferromagnet” clusters. Candidate materials such as MnAl,
+CeRh3B2, CeRu2Al10, FeGe, SmAl2, CoS2, EuAs3, YbPtIn, GdPtBi, NbFe2,
+YbRh2Si2,RhSn,PtGa,TiBe2overlapwiththe“antiferromagnet”clusterand
+may exhibit SOT using a similar mechanism as seen in a few known
+antiferromagnets59,88. Note that a magnetism-induced topological transition
+has been discussed78 for EuAs3 where a topological massive Dirac metal
+phase has been studied in the antiferromagnetic ground state at low tem-
+peratures; however, the article appeared beyond the time frame of the
+dataset used to train our model. On the other hand, TaS2 and FeAs overlap
+with the “ferromagnet” cluster only. The proper magnetic phase in these
+materials and associated mechanisms can be further evaluated using con-
+ventional theoretical and experimental methodologies.
+Discussion
+Inconclusion,wepresentanewapproachtoidentifyingnewmaterialsinthe
+context of a phenomenon, a device, or an application. We used a word
+embeddingmodeltoenableunsupervisedtrainingofaneuralnetworkusing
+a text corpus containing scientiﬁc abstracts collected from various materials
+science, physics, and engineering journals. The trained word embedding
+model can learn special concepts in science and engineering and quanti-
+tatively project on the expected strength of the intrinsic ﬁgure-of-merit. We
+applied the model to identify SOT materials and rank them according to
+their expected SOT strengths. While the model quantitatively showed rea-
+sonably good agreement with the known SOT materials, it also identiﬁed 97
+new materials that are likely to exhibit strong SOT. Interestingly, 16 of the
+new candidate materials are expected to exhibit an SOT efﬁciency factor
+much larger than unity, one of which we have recently demonstrated
+experimentally and in good agreement with model projection. We further
+show that a widely used dimensionality reduction technique can provide
+insight into the expected underlying mechanism of the targeted phenom-
+enon. The method presented here is general and can be applied to different
+research domains to accelerate the application or device-speciﬁc materials
+search.
+Methods
+Training dataset preparation
+We have collected approximately one million scientiﬁc abstracts from
+various peer-reviewed materials science, physics, and engineering journals
+Fig. 5 | Model prediction of new SOT materials.
+a Distribution of the neural network (NN) projected
+strength of the spin–orbit torque (SOT) efﬁciency
+factors, ξNN
+SOT, for the predicted materials. b ξNN
+SOT as a
+function of their corresponding Γ for the 16 high
+SOT (ξNN
+SOT ≥1) candidates. c Timeline analysis of
+the prediction on ξNN
+SOT for the 16 high SOT candi-
+dates as more data is added to the training dataset.
+https://doi.org/10.1038/s41524-025-01626-1
+Article
+npj Computational Materials |  (2025) 11:167 
+8
+
+
+--- PAGE 9 ---
+Table 2 | Spin–orbit torque efﬁciencies predicted by the word embedding model in new materials
+Candidate Material
+σ × 106Ω/m
+ξNN
+SOT
+Overlapping Clusters
+Candidate Material
+σ × 106 Ω/m
+ξNN
+SOT
+Overlapping Clusters
+EuSe
+0.005
+43.3
+Spin Hall effect, Ferromagnet
+YCo5
+0.77
+0.18
+Topological semimetal, Spin Hall effect
+CrSe
+0.007
+24.4
+Topological insulator
+GdAl2
+1.11
+0.18
+Spin Hall effect, Ferromagnet
+DyBa2Cu3O7
+0.004
+17.5
+Spin Hall effect
+FeZr
+0.65
+0.17
+Spin Hall effect
+MnGe
+0.017
+13.2
+Antiferromagnet, Ferromagnet
+SmPd2Al3
+0.67
+0.17
+No overlap
+CrVTiAl
+0.005
+9.7
+No overlap
+YbPtIn
+0.43
+0.14
+Antiferromagnet
+EuTe
+0.025
+8.1
+Spin Hall effect, Ferromagnet
+SmCu
+0.714
+0.14
+No overlap
+EuMnBi2
+0.01
+7
+No overlap
+PdSi
+0.945
+0.14
+Spin Hall effect
+CrSi
+0.04
+5.3
+Topological insulator and semimetal
+LaPt2Si2
+0.67
+0.14
+Topological semimetal
+BiSbTeSe2
+0.033
+3.4
+Topological insulator
+GdPtBi
+0.5
+0.14
+Spin Hall effect, Antiferromagnet
+CrTe
+0.09
+2.5
+Spin Hall effect
+CeAl3
+0.83
+0.14
+No overlap
+EuFe2As2
+0.0625
+2.1
+Antiferromagnet, Ferromagnet
+CaMnBi2
+0.67
+0.13
+Topological insulator and semimetal
+NaCo2O4
+0.057
+1.96
+No overlap
+CeNiSn
+0.67
+0.13
+Spin Hall effect, Ferromagnet
+FeGa
+0.167
+1.6
+Spin Hall effect, Ferromagnet
+Co2FeSi
+0.94
+0.13
+No overlap
+TaSe3
+0.057
+1.3
+Topological semimetal and insulator
+NiCr
+0.89
+0.11
+No overlap
+ZrZn2
+0.16
+1.0
+No overlap
+CuMnSb
+1
+0.11
+No overlap
+Co2TiSn
+0.212
+0.7
+Topological semimetal, Spin Hall effect
+UAl2
+1.11
+0.1
+No overlap
+SrMnBi2
+0.143
+0.7
+Topological semimetal
+ErAs
+1.43
+0.09
+No overlap
+NiMn
+0.53
+0.62
+No overlap
+NbZr
+1
+0.09
+Topological insulator, Spin Hall effect
+Ferromagnet
+MnAl
+0.49
+0.6
+Antiferromagnet
+CePt3Si
+1.2
+0.08
+No overlap
+Co2MnGe
+0.5
+0.57
+Spin Hall effect, Ferromagnet
+NiMnSb
+3.3
+0.08
+Spin Hall effect, Ferromagnet
+MnPt
+0.45
+0.56
+Spin Hall effect, Ferromagnet
+CrGe
+0.5
+0.08
+Spin Hall effect
+CeRh3B2
+0.33
+0.56
+Antiferromagnet
+RuO2
+2.81
+0.07
+Spin Hall effect, Ferromagnet
+CeRu2Al10
+0.22
+0.56
+Antiferromagnet
+FeSiAl
+1.25
+0.07
+No overlap
+NbSe3
+0.33
+0.51
+No overlap
+Co2MnSi
+5
+0.07
+No overlap
+MoSi
+0.43
+0.5
+Spin Hall effect
+NbFe2
+2.22
+0.06
+Antiferromagnet
+Cu-Mn
+0.48
+0.46
+No overlap
+AuFe
+4.8
+0.05
+Spin Hall effect, Ferromagnet
+Co-doped ZnO
+0.5
+0.44
+Spin Hall effect
+CaIrSi3
+0.55
+0.05
+No overlap
+CaRuO3
+0.44
+0.44
+No overlap
+MnBi
+7.1
+0.04
+Topological insulator and semimetal
+TaS2
+0.33
+0.41
+Ferromagnet
+CuTe
+1.25
+0.04
+Toplogical semimetal
+GeTe
+0.57
+0.4
+Spin Hall effect
+TmSb
+3.3
+0.03
+No overlap
+EuB6
+0.5
+0.39
+Spin Hall effect, Ferromagnet
+PdNi
+4
+0.03
+Spin Hall effect, Ferromagnet
+FeAs
+0.5
+0.35
+Ferromagnet
+YbRh2Si2
+1.33
+0.03
+Antiferromagnet
+CoZrNb
+0.5
+0.33
+Spin Hall effect, Ferromagnet
+RhSn
+1.43
+0.08
+Antiferromagnet
+MnPd
+0.63
+0.32
+No overlap
+CrMn
+5
+0.03
+No overlap
+CoSi
+0.64
+0.31
+Topological insulator, Spin Hall effect
+NiSi
+5
+0.03
+Spin Hall effect
+FeGe
+1
+0.3
+Antiferromagnet, Ferromagnet
+PtSi
+2.63
+0.023
+Spin Hall effect
+SrPtAs
+0.25
+0.3
+Topological semimetal
+Cu-Pb
+4.83
+0.022
+No overlap
+CuMnAs
+0.48
+0.29
+Spin Hall effect, Ferromagnet
+PtIr
+4
+0.023
+Topological insulator, Spin Hall effect,
+Ferromagnet
+MgFeGe
+0.2
+0.25
+No overlap
+NiGe
+6.7
+0.022
+Spin Hall effect
+SmAl2
+1
+0.23
+Antiferromagnet
+PtGa
+5.12
+0.021
+Antiferromagnet
+CeFe2
+0.83
+0.23
+No overlap
+Cu-Nb
+10
+0.018
+No overlap
+Cu2MnAl
+1
+0.23
+Topological insulator, Spin Hall effect,
+Ferromagnet
+FeCu
+15
+0.016
+Spin Hall effect, Ferromagnet
+Co2FeAl
+0.61
+0.23
+Spin Hall effect
+PdCrO2
+12.5
+0.009
+No overlap
+CoS2
+0.67
+0.22
+Spin Hall effect, Ferromagnet,
+Antiferromagnet
+PtMnSb
+40
+0.007
+Topological semimetal, Spin Hall effect
+EuAs3
+0.56
+0.22
+Antiferromagnet
+CuCr
+20
+0.005
+Spin Hall effect
+CeRu2
+0.83
+0.2
+No overlap
+EuS/Al
+37.73
+0.004
+Topological semimetal
+Co2CrAl
+0.83
+0.19
+Spin Hall effect
+PdCoO2
+33.3
+0.002
+Spin Hall effect
+UGe2
+0.64
+0.19
+No overlap
+TiBe2
+100
+0.001
+Antiferromagnet
+The references for the material conductivities are provided in the supplementary information.
+https://doi.org/10.1038/s41524-025-01626-1
+Article
+npj Computational Materials |  (2025) 11:167 
+9
+
+
+--- PAGE 10 ---
+published between 1970 and 2020 within the American Physical Society
+(APS) and the Institute of Electrical and Electronics Engineers (IEEE).
+Article metadata was obtained from the APS Harvest (harvest.aps.org) and
+IEEE Xplore (developer.ieee.org) application programming interfaces
+(APIs), and only the abstract text was extracted and written into a text ﬁle
+without any labeling. Extraneous symbols, speciﬁcally markup tags, were
+removed from the text ﬁles. Although the full-text of an article contains
+more technical details of the research, the abstract summarizes the key
+research ﬁndings, often within 200 words. Thus, restricting ourselves to
+abstract-only dataset, we were able to include about one million indepen-
+dent research articles and their key ﬁndings within our computational
+limits.
+We have collected the data in chronological order and merged them
+together to create the dataset to train the word embedding model. We have
+avoided any keyword-based search in collecting manuscript abstracts and
+pre-processing of any form to avoid any unintentional bias in the training
+text corpus. The journals were selected to encompass sufﬁcient knowledge
+of materials, physics, and devices, and all selected journals are peer-
+reviewed. Note that we have restricted our data collection until 2020 as there
+have been no discussions of SOT in iron silicide prior to this date and our
+experimental demonstration15 serves as a key validation of our model.
+Word embedding model
+The training was carried out by a word embedding model, Word2Vec35,
+using gensim (https:// radimrehurek.com/gensim/). We have adopted an
+unsupervised training approach similar to the report on thermoelectric
+materials38. We have used the skip-gram architecture of the neural network,
+where the target word is represented as a one-hot encoded vector at the
+input layer. The skip-gram architecture91 is efﬁcient with larger datasets and
+predicts context words from a given target word, making it particularly
+effective at capturing uncommon words within the corpus. The neural
+network also consists of a single hidden layer and an output layer that
+performs negative sampling with n = 15. Such a word embedding model
+represents the words in the training text corpus into high-dimensional
+vectors, where we have set the dimension to 200 according to the nature of
+the text corpus. Note that a lower dimension may lead to closely spaced
+vectorsthat do notcapture the relationships in the data.In contrast,a higher
+dimension may lead to over-ﬁtting that captures noise rather than mean-
+ingful patterns. The optimum dimension of the vector is around 200 for the
+size of our training text corpus. The window size is set to 10. The minimum
+count threshold is set to 5, which excludes any words that do not appear
+more than ﬁve times in the text corpus. The learning rate is set to 0.01. The
+number of epochs is set to 30.
+Fig. 6 | Utilization of t-distributed stochastic neighbor embedding (t-SNE) plots
+to understand the expected underlying mechanism. Different colored regions
+correspond to the data clusters for the target words “topological insulator”, “topo-
+logical semimetal”, “spin Hall effect”, “Rashba”, “ferromagnet”, and
+“antiferromagnet”. The black scatter points are the new SOT materials identiﬁed by
+the word embedding model, shown into four groups for visual clarity:
+a 0:4 < ξNN
+SOT ≤50, b 0:2 < ξNN
+SOT ≤0.4, c 0:1 < ξNN
+SOT ≤0.2, and d ξNN
+SOT ≤0.1. The blue
+scatter points are a few known SOT materials for benchmarking purposes.
+https://doi.org/10.1038/s41524-025-01626-1
+Article
+npj Computational Materials |  (2025) 11:167 
+10
+
+
+--- PAGE 11 ---
+The largest training corpus comprises approximately 200 million
+words, including repeated occurrences of identical words. The model was
+trained on a computer with moderate speciﬁcations, equipped with an
+Intel(R) Xeon(R) X5550 2.66 GHz CPU and 24 GB RAM. A single model
+training process took ~20 h using the optimized set of hyperparameters.
+Data availability
+The journal abstract text data used to train neural networks in this work
+were collected from the American Physical Society (APS) and the Institute
+of Electrical and Electronics Engineers (IEEE). The raw data is available at
+their respective data repository and can be accessed via their application
+programming interfaces (APIs) harvest.aps.org and developer.ieee.org,
+respectively. The trained word embedding model and related instructions
+are available for download at https://nanohub.org/resources/38611. The
+data generated by the trained models are incorporated in this article in
+tabular and graphical forms.
+Received: 2 June 2022; Accepted: 15 April 2025;
+References
+1.
+Sinova, J., Valenzuela, S. O., Wunderlich, J., Back, C. H. & Jungwirth,
+T. Spin hall effects. Rev. Mod. Phys. 87, 1213–1260 (2015).
+2.
+Sayed, S. et al. Uniﬁed framework for charge-spin interconversion in
+spin-orbit materials. Phys. Rev. Appl. 15, 054004 (2021).
+3.
+Shao, Q. et al. Roadmap of spin-orbit torques. IEEE Trans. Magn. 57,
+1–39 (2021).
+4.
+Liu, L. et al. Spin-torque switching with the giant spin hall effect of
+tantalum. Science 336, 555–558 (2012).
+5.
+Manipatruni, S. et al. Scalable energy-efﬁcient magnetoelectric spin-
+orbit logic. Nature 565, 35–42 (2019).
+6.
+Sayed, S., Hong, S., Marinero, E. E. & Datta, S. Proposal of a single
+nano-magnet memory device. IEEE Electron Device Lett. 38,
+1665–1668 (2017).
+7.
+Sato, N., Xue, F., White, R. M., Bi, C. & Wang, S. X. Two-terminal spin-
+orbit torque magnetoresistive random access memory. Nat. Electron.
+1, 508–511 (2018).
+8.
+Sayed, S., Salahuddin, S. & Yablonovitch, E. Spin-orbit torque
+rectiﬁer for weak rf energy harvesting. Appl. Phys. Lett. 118, 052408
+(2021).
+9.
+Mellnik, A. R. et al. Spin-transfer torque generated by a topological
+insulator. Nature 511, 449–451 (2014).
+10. Lesne, E. et al. Highly efﬁcient and tunable spin-to-charge conversion
+through Rashba coupling at oxide interfaces. Nat. Mater. 15,
+1261–1266 (2016).
+11. Khang, N. H. D., Ueda, Y. & Hai, P. N. A conductive topological
+insulator with large spin hall effect for ultralow power spin-orbit torque
+switching. Nat. Mater. 17, 808–813 (2018).
+12. DC, M. et al. Room-temperature high spin–orbit torque due to
+quantum conﬁnement in sputtered BixSe(1−−x) ﬁlms. Nat. Mater. 17,
+800–807 (2018).
+13. Shirokura, T., Fan, T., Khang, N. H. D., Kondo, T. & Hai, P. N. Efﬁcient
+spin current source using a half-heusler alloy topological semimetal
+with back end of line compatibility. Sci. Rep. 12, 2426 (2022).
+14. York, B. et al. High spin hall angle doped BiSbX topological
+insulators using novel high resistive growth and migration barrier
+layers. In 2022 IEEE 33rd Magnetic Recording Conference (TMRC)
+1–2 (IEEE, 2022).
+15. Hsu, C.-H. et al. Large spin-orbit torque generated by amorphous iron
+silicide. Preprint at Research Square 10.21203/rs.3.rs-1946953/v1
+(2022).
+16. Huang, S. & Cole, J. M. A database of battery materials auto-
+generated using ChemDataExtractor. Sci. Data 7, 1–13 (2020).
+17. Raccuglia, P. et al. Machine-learning-assisted materials discovery
+using failed experiments. Nature 533, 73–76 (2016).
+18. Kim, E. et al. Machine-learned and codiﬁed synthesis parameters of
+oxide materials. Sci. Data 4, 170127 (2017).
+19. Mehr, S. H. M., Craven, M., Leonov, A. I., Keenan, G. & Cronin, L. A
+universal system for digitization and automatic execution of the
+chemical synthesis literature. Science 370, 101–108 (2020).
+20. Krenn, M. & Zeilinger, A. Predicting research trends with semantic and
+neural networks with an application in quantum physics. Proc. Natl
+Acad. Sci. USA 117, 1910–1916 (2020).
+21. Venugopal, V., Broderick, S. R. & Rajan, K. A picture is worth a
+thousand words: applying natural language processing tools for
+creating a quantum materials database map. MRS Commun. 9,
+1134–1141 (2019).
+22. Minaee, S. et al. Large language models: a survey. Preprint at
+arXiv:2402.06196 (2024).
+23. Naveed, H. et al. A comprehensive overview of large language
+models. Preprint at arXiv.2307.06435 (2024).
+24. Sharir, O., Peleg, B. & Shoham, Y. The cost of training NLP models: a
+concise overview. Preprint at arXiv.2004.08900 (2020).
+25. Lei, G., Docherty, R. & Cooper, S. J. Materials science in the era of
+large language models: a perspective. Digit. Discov. 3, 1257–1272
+(2024).
+26. Augenstein, I. et al. Factuality challenges in the era of large language
+models and opportunities for fact-checking. Nat. Mach. Intell. 6,
+852–863 (2024).
+27. Garry, M., Chan, W. M., Foster, J. & Henkel, L. A. Large language
+models (LLMs) and the institutionalization of misinformation. Trends
+Cogn. Sci. 28, 1078–1088 (2024).
+28. Jablonka, K. M., Schwaller, P., Ortega-Guerrero, A. & Smit, B.
+Leveraging large language models for predictive chemistry. Nat.
+Mach. Intell. 6, 161–169 (2024).
+29. Li, J. et al. Empowering molecule discovery for molecule-caption
+translation with large language models: A ChatGPT perspective. IEEE
+Trans. Knowl. Data Eng. 36, 6071–6083 (2024).
+30. Ward, L. et al. Machine learning prediction of accurate atomization
+energies of organic molecules from low-ﬁdelity quantum chemical
+calculations. MRS Commun. 9, 891–899 (2019).
+31. Lin, Z. et al. Evolutionary-scale prediction of atomic-level protein
+structure with a language model. Science 379, 1123–1130 (2023).
+32. Luo, R. et al. BioGPT: generative pre-trained transformer for
+biomedical text generation and mining. Brief. Bioinformatics 23,
+bbac409 (2022).
+33. Zhao, S. et al. Potential to transform words to watts with large
+language models in battery research. Cell Rep. Phys. Sci.5, 101844
+(2024).
+34. Boiko, D. A., MacKnight, R., Kline, B. & Gomes, G. Autonomous
+chemical research with large language models. Nature 624, 570–578
+(2023).
+35. Mikolov, T., Sutskever, I., Chen, K., Corrado, G. & Dean, J. Distributed
+representations of words and phrases and their compositionality. In
+Proc. 27th International Conference on Neural Information Processing
+Systems (NIPS'13) 3111–3119 Vol. 2 (Curran Associates Inc., Red
+Hook, NY, USA, 2013).
+36. Pennington, J., Socher, R. & Manning, C. GloVe: global vectors for
+word representation. In Proc. 2014 Conference on Empirical Methods
+in Natural Language Processing (EMNLP) 1532–1543 (Association for
+Computational Linguistics, 2014).
+37. Bojanowski, P., Grave, E., Joulin, A. & Mikolov, T. Enriching word
+vectors with subword information. Trans. the Assoc. Comput.
+Linguist. 5, 135–146 (2017).
+38. Tshitoyan, V. et al. Unsupervised word embeddings capture latent
+knowledge from materials science literature. Nature 571, 95–98
+(2019).
+39. He, M. & Zhang, L. Prediction of solar-chargeable battery materials: a
+text-mining and ﬁrst-principles investigation. Int. J. Energy Res. 45,
+15521–15533 (2021).
+https://doi.org/10.1038/s41524-025-01626-1
+Article
+npj Computational Materials |  (2025) 11:167 
+11
+
+
+--- PAGE 12 ---
+40. Pei, Z., Yin, J., Liaw, P. K. & Raabe, D. Toward the design of ultrahigh-
+entropyalloysvia miningsix million texts.Nat. Commun. 14, 54(2023).
+41. Gavai, A. K. et al. Artiﬁcial intelligence to detect unknown stimulants
+from scientiﬁc literature and media reports. Food Control 130, 108360
+(2021).
+42. Krämer, A. et al. Mining hidden knowledge: Embedding models of
+cause-effect relationships curated from the biomedical literature.
+Bioinform. Adv. 2, vbac022 (2021).
+43. Freeman, T. C. B. et al. A neural network approach for understanding
+patient experiences of chronic obstructive pulmonary disease
+(COPD): retrospective, cross-sectional study of social media
+content. JMIR Med. Inform 9, e26272 (2021).
+44. Tworowski, D. et al. COVID19 drug repository: text-mining the
+literature in search of putative COVID19 therapeutics. Nucleic Acids
+Res. 49, D1113–D1121 (2020).
+45. Powell, J. & Sentz, K. Diachronic text mining investigation of
+therapeutic candidates for COVID-19. Preprint at arXiv.2110.13971
+(2021).
+46. Martinc, M. et al. in Discovery Science (eds Appice, A., Tsoumakas,
+G., Manolopoulos, Y. & Matwin, S.) (Springer International Publishing,
+2020).
+47. Choi, J. et al. Deep learning of electrochemical co2 conversion
+literature revealsresearchtrends anddirections. J. Mater.Chem.A 11,
+17628–17643 (2023).
+48. Shetty, P. et al. A general-purpose material property data extraction
+pipeline from large polymer corpora using natural language
+processing. npj Comput. Mater. 9, 52 (2023).
+49. Weston, L. et al. Named entity recognition and normalization applied
+to large-scale information extraction from the materials science
+literature. J. Chem. Inf. Model. 59, 3692–3702 (2019).
+50. Harris, Z. S. Distributional structure. WORD 10, 146–162 (1954).
+51. Sayed, S., Hannah, K., Hashemi-Asasi, G., Hsu, C.-H. & Salahuddin,
+S. Supplementary data for “an unsupervised machine learning based
+approach to identify efﬁcient spin-orbit torque materials”. https://
+nanohub.org/resources/38611. (2024).
+52. Apalkov, D., Dieny, B. & Slaughter, J. M. Magnetoresistive random
+access memory. Proc. IEEE 104, 1796–1830 (2016).
+53. Parkin, S. S. P. Systematic variation of the strength and oscillation
+period of indirect magnetic exchange coupling through the 3d, 4d,
+and 5d transition metals. Phys. Rev. Lett. 67, 3598–3601 (1991).
+54. Qiu, Z. Q., Pearson, J., Berger, A. & Bader, S. D. Short-period
+oscillations in the interlayer magnetic coupling of wedged Fe(100)/
+Mo(100)/Fe(100) grown on Mo(100) by molecular-beam epitaxy. Phys.
+Rev. Lett. 68, 1398–1401 (1992).
+55. Gökemeijer, N. J., Ambrose, T. & Chien, C. L. Long-range
+exchange bias across a spacer layer. Phys. Rev. Lett. 79,
+4270–4273 (1997).
+56. Smardz, L. Interlayer exchange coupling across quasi-amorphous Ti-
+Co and Zr-Co spacers. Czech. J. Phys. 52, 209–214 (2002).
+57. Xu, H. et al. High spin hall conductivity in large-area type-ii dirac
+semimetal PtTe2. Adv. Mater. 32, 2000513 (2020).
+58. Liu, L., Lee, O. J., Gudmundsen, T. J., Ralph, D. C. & Buhrman, R. A.
+Current-induced switching of perpendicularly magnetized magnetic
+layers using spin torque from the spin hall effect. Phys. Rev. Lett. 109,
+096602 (2012).
+59. Zhou, J. et al. Large spin-orbit torque efﬁciency enhanced by
+magnetic structure of collinear antiferromagnet IrMn. Sci. Adv. 5,
+eaau6696 (2019).
+60. Liu, Y., Zhou, B. & Zhu, J.-G. Field-free magnetization switching by
+utilizing the spin hall effect and interlayer exchange coupling of
+iridium. Sci. Rep. 9, 325 (2019).
+61. Ramaswamy, R. et al. Extrinsic spin hall effect in Cu1−xPtx. Phys. Rev.
+Appl. 8, 024034 (2017).
+62. Niimi, Y. et al. Extrinsic spin hall effects measured with lateral spin
+valve structures. Phys. Rev. B 89, 054401 (2014).
+63. Wu, H. et al. Room-temperature spin-orbit torque from topological
+surface states. Phys. Rev. Lett. 123, 207205 (2019).
+64. Shi, S. et al. All-electric magnetization switching and
+dzyaloshinskii–moriya interaction in WTe2/ferromagnet
+heterostructures. Nat. Nanotechnol. 14, 945–949 (2019).
+65. Guimarães, M. H. D., Stiehl, G. M., MacNeill, D., Reynolds, N. D. &
+Ralph, D. C. Spin–orbit torques in NbSe2/permalloy bilayers. Nano
+Lett. 18, 1311–1316 (2018).
+66. Everhardt, A. S. et al. Tunable charge to spin conversion in strontium
+iridate thin ﬁlms. Phys. Rev. Mater. 3, 051201 (2019).
+67. Nan, T. et al. Anisotropic spin-orbit torque generation in epitaxial
+SrIrO3 by symmetry design. Proc. Natl Acad. Sci. USA 116,
+16186–16191 (2019).
+68. Bose, A. et al. Effects of anisotropic strain on spin–orbit torque
+produced by the dirac nodal line semimetal IrO2. ACS Appl. Mater.
+Interfaces 12, 55411–55416 (2020).
+69. Lee, M. H. et al. Spin-orbit torques in normal metal/Nb/ferromagnet
+heterostructures. Sci. Rep. 11, 21081 (2021).
+70. Lau, Y.-., Lee, H., Qu, G., Nakamura, K. & Hayashi, M. Spin hall effect
+from hybridized 3d −4p orbitals. Phys. Rev. B 99, 064410 (2019).
+71. Zhang, W. et al. Spin hall effects in metallic antiferromagnets. Phys.
+Rev. Lett. 113, 196602 (2014).
+72. Pai, C.-F. et al. Spin transfer torque devices utilizing the giant spin hall
+effect of tungsten. Appl. Phys. Lett. 101,122404 (2012).
+73. Niimi, Y. et al. Giant spin hall effect induced by skew scattering from
+bismuth impurities inside thin ﬁlm CuBi alloys. Phys. Rev. Lett. 109,
+156602 (2012).
+74. Hsu, C.-H. et al. Spin-orbit torque generated by amorphous FexSi1−x.
+Preprint at arXiv:2006.07786 [cond-mat.mes-hall] (2020).
+75. Segawa, K. et al. Ambipolar transport in bulk crystals of a topological
+insulator by gating with ionic liquid. Phys. Rev. B 86, 075306 (2012).
+76. Fujishiro, Y. et al. Large magneto-thermopower in mnge with
+topological spin texture. Nat. Commun. 9, 28012–28018 (2018).
+77. Wang, K. et al. Two-dimensional dirac fermions and quantum
+magnetoresistance in CaMnBi2. Phys. Rev. B 85, 041101 (2012).
+78. Cheng, E. et al. Magnetism-induced topological transition in EuAs3.
+Nat. Commun. 12, 6970 (2021).
+79. Zhang, J. et al. Modulation of weyl semimetal state in half-heusler GdPtBi
+enabled by hydrostatic pressure. N. J. Phys. 23, 083041 (2021).
+80. Saleheen, A. I. U. et al. Evidence for topological semimetallicity in a
+chain-compound TaSe3. npj Quantum Mater. 5, 53 (2020).
+81. Di Sante, D., Barone, P., Bertacco, R. & Picozzi, S. Electric control of
+the giant rashba effect in bulk GeTe. Adv. Mater. 25, 509–513 (2013).
+82. Jeon, J. et al. Field-like spin–orbit torque induced by bulk rashba
+channels in GeTe/NiFe bilayers. NPG Asia Mater. 13, 76 (2021).
+83. Yang, W. L. et al. Determining spin-torque efﬁciency in ferromagnetic
+metals via spin-torque ferromagnetic resonance. Phys. Rev. B 101,
+064412 (2020).
+84. Davidson, A., Amin, V. P., Aljuaid, W. S., Haney, P. M. & Fan, X.
+Perspectives of electrically generated spin currents in ferromagnetic
+materials. Phys. Lett. A 384, 126228 (2020).
+85. Taniguchi, T., Grollier, J. & Stiles, M. D. Spin-transfer torques
+generated by the anomalous hall effect and anisotropic
+magnetoresistance. Phys. Rev. Appl. 3, 044001 (2015).
+86. Safranski, C., Montoya, E. A. & Krivorotov, I. N. Spin–orbit torque
+driven by a planar hall current. Nat. Nanotechnol. 14, 27–30 (2019).
+87. Qu, G., Nakamura, K. & Hayashi, M. Magnetization direction
+dependent spin hall effect in 3d ferromagnets. Phys. Rev. B 102,
+144440 (2020).
+88. Fukami, S., Zhang, C., DuttaGupta, S., Kurenkov, A. & Ohno, H.
+Magnetization switching by spin–orbit torque in an
+antiferromagnet–ferromagnet bilayersystem.Nat.Mater. 15, 535–541
+(2016).
+89. van der Maaten, L. & Hinton, G. Visualizing data using t −SNE. J.
+Mach. Learn. Res. 9, 2579–2605 (2008).
+https://doi.org/10.1038/s41524-025-01626-1
+Article
+npj Computational Materials |  (2025) 11:167 
+12
+
+
+--- PAGE 13 ---
+90. Li, Z. et al. Fully ﬁeld-free spin-orbit torque switching induced by spin
+splitting effect in altermagnetic RuO2. Adv. Mater. 37, 2416712 (2025).
+91. Mikolov, T., Chen, K., Corrado, G. & Dean, J. Efﬁcient estimation of word
+representations in vector space. Preprint at arXiv:1301.3781 (2013).
+Acknowledgements
+Thiswork wasinpart supported by ApplicationsandSystems-DrivenCenter
+for Energy-Efﬁcient Integrated NanoTechnologies (ASCENT), one of six
+centers in the Joint University Microelectronics Program (JUMP), a Semi-
+conductor Research Corporation (SRC) program sponsored by Defense
+Advanced Research Projects Agency (DARPA) and in part by the US
+Department of Energy, under Contract No. DE-AC02-05-CH11231 within
+the NonEquilibrium Magnetic Materials (NEMM) program.
+Author contributions
+Shehrin Sayed developed the program, trained word embedding
+models, optimized the hyperparameters, analyzed the models,
+generated results, benchmarked with experiments, and wrote the
+manuscript. Hannah Calzi Kleidermacher primarily collected and
+preprocessed the raw data and optimized the training. Giulianna
+Hashemi-Asasi used the raw data to train multiple neural networks
+using optimized hyperparameters and evaluated the models on various
+contexts. Cheng-Hsiang Hsu primarily worked on validating model
+projections with experiments. Sayeef Salahuddin supervised the entire
+project and helped everyone with valuable input. All authors partici-
+pated in analyzing the results and reviewing the manuscript.
+Competing interests
+The authors declare no competing interests.
+Additional information
+Supplementary information The online version contains
+supplementary material available at
+https://doi.org/10.1038/s41524-025-01626-1.
+Correspondence and requests for materials should be addressed to
+Shehrin Sayed or Sayeef Salahuddin.
+Reprints and permissions information is available at
+http://www.nature.com/reprints
+Publisher’s note Springer Nature remains neutral with regard to
+jurisdictional claims in published maps and institutional afﬁliations.
+Open Access This article is licensed under a Creative Commons
+Attribution 4.0 International License, which permits use, sharing,
+adaptation, distribution and reproduction in any medium or format, as long
+as you give appropriate credit to the original author(s) and the source,
+provide a link to the Creative Commons licence, and indicate if changes
+were made. The images or other third party material in this article are
+included in the article’s Creative Commons licence, unless indicated
+otherwise in a credit line to the material. If material is not included in the
+article’s Creative Commons licence and your intended use is not permitted
+by statutory regulation or exceeds the permitted use, you will need to
+obtain permission directly from the copyright holder. To view a copy of this
+licence, visit http://creativecommons.org/licenses/by/4.0/.
+© The Author(s) 2025
+https://doi.org/10.1038/s41524-025-01626-1
+Article
+npj Computational Materials |  (2025) 11:167 
+13

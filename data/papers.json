@@ -1,0 +1,1788 @@
+[
+  {
+    "id": "001",
+    "title": "2014-IEEE-Theoretical Study on Tunneling Magnetoresistance of Magnetic Tunnel Tunctions",
+    "title_zh": "",
+    "year": 2014,
+    "venue": "IEEE",
+    "category": "MnGa MTJ",
+    "topic": "MTJ",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ/2014-IEEE-Theoretical Study on Tunneling Magnetoresistance of Magnetic Tunnel Tunctions.pdf",
+    "material_system": "MnGa/Mn-based",
+    "device_structure": "Magnetic Tunnel Junction",
+    "physical_mechanisms": [
+      "MTJ/TMR"
+    ],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "MnGa MTJ",
+      "MTJ/TMR",
+      "Heavy Metal/Seed Layer"
+    ]
+  },
+  {
+    "id": "002",
+    "title": "2017-Sci. Rep.-Design and Synthesis of an Artificial Perpendicular Hard Ferrimagnet with High Thermal and Magnetic Field Stabilities",
+    "title_zh": "",
+    "year": 2017,
+    "venue": "Scientific Reports",
+    "category": "MnGa MTJ",
+    "topic": "MTJ",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ/2017-Sci. Rep.-Design and Synthesis of an Artificial Perpendicular Hard Ferrimagnet with High Thermal and Magnetic Field Stabilities.pdf",
+    "material_system": "MnGa/Mn-based",
+    "device_structure": "Magnetic Tunnel Junction",
+    "physical_mechanisms": [],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "MnGa MTJ",
+      "Heavy Metal/Seed Layer"
+    ]
+  },
+  {
+    "id": "003",
+    "title": "2018-APL-FeB-Fe插层",
+    "title_zh": "",
+    "year": 2018,
+    "venue": "Applied Physics Letters",
+    "category": "MnGa MTJ",
+    "topic": "MTJ",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ/2018-APL-FeB-Fe插层.pdf",
+    "material_system": "MnGa/Mn-based",
+    "device_structure": "Magnetic Tunnel Junction",
+    "physical_mechanisms": [],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "MnGa MTJ"
+    ]
+  },
+  {
+    "id": "004",
+    "title": "2018-APL-Mn 插层",
+    "title_zh": "",
+    "year": 2018,
+    "venue": "Applied Physics Letters",
+    "category": "MnGa MTJ",
+    "topic": "MTJ",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ/2018-APL-Mn 插层.pdf",
+    "material_system": "MnGa/Mn-based",
+    "device_structure": "Magnetic Tunnel Junction",
+    "physical_mechanisms": [],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "MnGa MTJ",
+      "MnGa/Mn-based"
+    ]
+  },
+  {
+    "id": "005",
+    "title": "2018 Zhao Chinese Phys. Lett. 35 087501-Tunneling Anisotropic Magnetoresistance in L10-MnGa Based Antiferromagnetic Perpendicular Tunnel Junction",
+    "title_zh": "",
+    "year": 2018,
+    "venue": "Chinese Physics Letters",
+    "category": "MnGa MTJ",
+    "topic": "MTJ",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ/2018_Zhao_Chinese_Phys._Lett._35_087501-Tunneling Anisotropic Magnetoresistance in L10-MnGa Based Antiferromagnetic Perpendicular Tunnel Junction.pdf",
+    "material_system": "MnGa / L10-MnGa",
+    "device_structure": "Magnetic Tunnel Junction",
+    "physical_mechanisms": [
+      "MTJ/TMR",
+      "SOT/Switching"
+    ],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "MnGa MTJ",
+      "MnGa/Mn-based",
+      "MTJ/TMR",
+      "SOT/Switching",
+      "Heavy Metal/Seed Layer"
+    ]
+  },
+  {
+    "id": "006",
+    "title": "2020 Kunimatsu Appl. Phys. Express-Co3Mn-MgO-Co3Mn",
+    "title_zh": "",
+    "year": 2020,
+    "venue": "",
+    "category": "MnGa MTJ",
+    "topic": "MTJ",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ/2020_Kunimatsu_Appl._Phys._Express-Co3Mn-MgO-Co3Mn.pdf",
+    "material_system": "MgO",
+    "device_structure": "Magnetic Tunnel Junction",
+    "physical_mechanisms": [],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "MnGa MTJ",
+      "MnGa/Mn-based",
+      "MgO"
+    ]
+  },
+  {
+    "id": "007",
+    "title": "2021-APL-CoMn 插层-Enhanced tunnel magnetoresistance in Mn-based perpendicular magnetic tunnel junctions utilizing antiferromagnetically coupled bcc-Co-based interlayer",
+    "title_zh": "",
+    "year": 2021,
+    "venue": "Applied Physics Letters",
+    "category": "MnGa MTJ",
+    "topic": "MTJ",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ/2021-APL-CoMn 插层-Enhanced tunnel magnetoresistance in Mn-based perpendicular magnetic tunnel junctions utilizing antiferromagnetically coupled bcc-Co-based interlayer.pdf",
+    "material_system": "CoMn",
+    "device_structure": "Magnetic Tunnel Junction",
+    "physical_mechanisms": [
+      "MTJ/TMR"
+    ],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "MnGa MTJ",
+      "MnGa/Mn-based",
+      "MTJ/TMR",
+      "Heavy Metal/Seed Layer"
+    ]
+  },
+  {
+    "id": "008",
+    "title": "2023-JAC-Large tunnel magnetoresistance in magnetic tunnel junctions with magnetic electrodes of metastable bcc",
+    "title_zh": "",
+    "year": 2023,
+    "venue": "Journal of Alloys and Compounds",
+    "category": "MnGa MTJ",
+    "topic": "MTJ",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ/2023-JAC-Large tunnel magnetoresistance in magnetic tunnel junctions with magnetic electrodes of metastable bcc.pdf",
+    "material_system": "MnGa/Mn-based",
+    "device_structure": "Magnetic Tunnel Junction",
+    "physical_mechanisms": [
+      "MTJ/TMR"
+    ],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "MnGa MTJ",
+      "MTJ/TMR",
+      "Heavy Metal/Seed Layer"
+    ]
+  },
+  {
+    "id": "009",
+    "title": "2011-APL-Mg 插层-",
+    "title_zh": "Mn-Ga电极MTJ中磁阻效应的成分依赖与退火耐受性",
+    "year": 2011,
+    "venue": "Applied Physics Letters",
+    "category": "MnGa MTJ",
+    "topic": "MTJ",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ/✅2011-APL-Mg 插层-.pdf",
+    "material_system": "MnGa/Mn-based",
+    "device_structure": "Magnetic Tunnel Junction",
+    "physical_mechanisms": [],
+    "key_metrics": {
+      "max_tmr_10k": "23% (Mn62Ga38, 退火 375 C)",
+      "tmr_300k": "约 7% (Mn62Ga38, 退火 350 C)",
+      "annealing_endurance": "TMR 退火耐受可到 375 C",
+      "pma": "Ku 约 1-2 x 10^7 erg/cm3"
+    },
+    "experimental_conditions": {
+      "stack": "MgO(100)/Cr(40)/Mn-Ga(30)/Mg(0.4)/MgO(2.2)/CoFe(2.5)/Ta(5)/Ru(5), nm",
+      "compositions": "Mn54Ga46, Mn62Ga38, Mn71Ga29",
+      "deposition": "UHV magnetron sputtering, base pressure < 1e-7 Pa",
+      "annealing": "MTJ vacuum annealing 250-400 C",
+      "measurement": "four-terminal transport at 10 K and 300 K"
+    },
+    "research_question": "不同 Mn-Ga 成分如何影响 MnGa/MgO/CoFe MTJ 的 TMR、偏压依赖和退火稳定性？",
+    "main_contribution": "建立了 Mn-Ga 成分、退火温度和 TMR 表现之间的早期实验基准，指出 Mn62Ga38 是较优的 MnGa MTJ 电极成分。",
+    "evidence_chain": [
+      {
+        "label": "Fig. 2",
+        "text": "退火温度依赖显示 Mn62Ga38 在较高退火温度下仍保持 TMR，是这篇对工艺兼容性的核心证据。"
+      },
+      {
+        "label": "Fig. 3",
+        "text": "偏压依赖随成分变化，说明界面电子结构而非单纯磁性决定 TMR 行为。"
+      },
+      {
+        "label": "Fig. 4",
+        "text": "第一性原理能带用于解释不同 Mn-Ga 成分的隧穿态差异。"
+      }
+    ],
+    "figures": [],
+    "my_notes": "这篇不是最高 TMR，但对“为什么 MnGa MTJ 难做高 TMR”很重要。可作为后续 Co/Mg/CoMn 插层工作的前史。",
+    "relevance_to_my_project": "适合作为 MnGa-MTJ 路线的基准论文：它给出成分、退火、TMR 的早期对照，也提醒后续实验要同时记录成分和退火窗口。",
+    "status": "重点图谱-v1",
+    "tags": [
+      "MnGa MTJ"
+    ],
+    "pdf_pages": 4,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 --- Composition dependence of magnetoresistance effect and its annealing endurance in tunnel junctions having Mn-Ga electrode with high perpendicular magnetic anisotropy Takahide Kubota, Masaaki Araidai, Shigemi Mizukami, Xianmin Zhang, Qinli Ma, Hiroshi Naganuma, Mikihiko Oogane, Yasuo Ando, Masaru Tsukada, and Terunobu Miyazaki Citation: Applied Physics Letters 99, 192509 (2011); doi: 10.1063/1.3659484 View online: http://dx.doi.org/10.1063/1.3659484 View Table of Contents: http://scitation.aip.org/content/aip/journal/apl/99/19?ver=pdfcov Published by the AIP Publishing Articles you may be interested in Tunnel magnetoresistance effect using perpendicularly magnetized tetragonal and cubic Mn-Co-Ga Heusler alloy electrode J. Appl. Phys. 115, 17C704 (2014); 10.1063/1.4855016 Magnetoresistance effect in L10-MnGa/MgO/CoFeB perpendicular magnetic tunnel junctions with Co interlayer Appl. Phys. Lett. 101, 032402 (2012); 10.1063/1.4737000 Annealing effects on CoFeB-MgO magnetic tunnel junctions with perpendicular anisotropy J. Appl. Phys. 110, 033904 (2011); 10.1063/1.3611426 Effect of metallic Mg insertion on the magnetoresistance effect in MgO-based t",
+    "authors": "Takahide Kubota et al.",
+    "doi": "10.1063/1.3659484",
+    "abstract": "研究 Mn-Ga/MgO/CoFe 垂直磁隧道结中 Mn-Ga 成分与退火温度对 TMR 的影响。作者比较 Mn54Ga46、Mn62Ga38、Mn71Ga29，发现 Mn62Ga38 兼具较好的 TMR 和高温退火耐受性。",
+    "detail_level": "stage-3",
+    "figure_cards": [
+      {
+        "fig": "Fig. 2",
+        "claim": "退火窗口决定 Mn-Ga MTJ 的实用性",
+        "what_to_read": "看 TMR 随退火温度变化，Mn62Ga38 在 375 C 仍保持较好 TMR。",
+        "why_it_matters": "这说明 MnGa 电极的 CMOS 后段兼容性不仅取决于 PMA，还取决于成分和界面退火稳定性。",
+        "use_for": "写 MnGa MTJ 早期基准、退火耐受性对比。"
+      },
+      {
+        "fig": "Fig. 3",
+        "claim": "TMR 偏压依赖反映界面电子结构差异",
+        "what_to_read": "比较不同 Mn-Ga 成分的 dI/dV 和 TMR-V 曲线。",
+        "why_it_matters": "偏压曲线不是简单性能图，而是判断隧穿态和界面态的重要证据。",
+        "use_for": "讨论为什么 MnGa/MgO 的 TMR 长期偏低。"
+      },
+      {
+        "fig": "Fig. 4",
+        "claim": "第一性原理能带给出成分差异的物理解释",
+        "what_to_read": "关注 Delta1 相关能带在费米能级附近的分布。",
+        "why_it_matters": "把实验 TMR 差异与自旋选择隧穿机制连接起来。",
+        "use_for": "建立材料成分-能带-TMR 的因果链。"
+      }
+    ]
+  },
+  {
+    "id": "010",
+    "title": "2016-Sci. Rep.-MnGa(3nm)-MgO-CoFeB",
+    "title_zh": "具有应变 MnGa 纳米层的垂直磁隧道结",
+    "year": 2016,
+    "venue": "Scientific Reports",
+    "category": "MnGa MTJ",
+    "topic": "MTJ",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ/✅2016-Sci. Rep.-MnGa(3nm)-MgO-CoFeB.pdf",
+    "material_system": "MnGa / CoFeB / MgO",
+    "device_structure": "Magnetic Tunnel Junction",
+    "physical_mechanisms": [],
+    "key_metrics": {
+      "tmr": "3.1% at 300 K, 9.7% at 100 K, 12.8% at 5 K",
+      "pma_field": "Hk 约 36 kOe",
+      "ms": "约 350 +/- 50 emu/cm3",
+      "ku": "约 6.3 +/- 0.9 x 10^6 erg/cm3 (有效), 7.1 +/- 1.1 x 10^6 erg/cm3 (intrinsic)"
+    },
+    "experimental_conditions": {
+      "stack": "MgO substrate/Cr(40)/Co55Ga45(30)/Mn60.5Ga39.5(3)/MgO(2)/Co20Fe60B20(1)/Ta(3)/Ru(5), nm",
+      "growth": "UHV sputtering; CoGa buffer; layers deposited at room temperature",
+      "annealing": "MTJ not intentionally annealed after microfabrication",
+      "characterization": "HRTEM, HAADF-STEM, XAS/XMCD, MOKE/VSM, transport, VASP calculation"
+    },
+    "research_question": "能否把超薄 MnGa 做进 p-MTJ，同时保持高 PMA、低 Ms，并通过应变获得高自旋极化隧穿态？",
+    "main_contribution": "证明 CoGa 缓冲层可支撑 3 nm MnGa p-MTJ，并提出“应变调控 MnGa 能带以获得高 TMR 潜力”的机制图像。",
+    "evidence_chain": [
+      {
+        "label": "Fig. 2",
+        "text": "TEM/STEM 证明 CoGa/MnGa/MgO 界面和应变外延结构。"
+      },
+      {
+        "label": "Fig. 4-5",
+        "text": "TMR 温度依赖显示低温提升明显，但室温 TMR 仍受限。"
+      },
+      {
+        "label": "Fig. 6",
+        "text": "计算显示应变 MnGa 的 Delta1 相关能带变得更有利于自旋选择隧穿。"
+      }
+    ],
+    "figures": [],
+    "my_notes": "这篇适合和 2023/2025 高 TMR 插层论文连读：2016 年解决“能不能做超薄 MnGa p-MTJ”，后面工作解决“怎么把 TMR 做高”。",
+    "relevance_to_my_project": "与你的 MnGa/MnAl 薄膜和 MTJ 方向高度相关，尤其是 CoGa 缓冲层、超薄 L10-MnGa、应变、PMA 与界面终止之间的关系。",
+    "status": "重点图谱-v1",
+    "tags": [
+      "MnGa MTJ",
+      "MnGa/Mn-based",
+      "CoFeB/CoFe",
+      "MgO"
+    ],
+    "pdf_pages": 9,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 --- 1 Scientific Reports | 6:30249 | DOI: 10.1038/srep30249 www.nature.com/scientificreports Perpendicular magnetic tunnel junction with a strained Mn-based nanolayer K. Z. Suzuki1, R. Ranjbar1, J. Okabayashi2, Y. Miura3, A. Sugihara1, H. Tsuchiura4 & S. Mizukami1 A magnetic tunnel junction with a perpendicular magnetic easy-axis (p-MTJ) is a key device for spintronic non-volatile magnetoresistive random access memory (MRAM). Co-Fe-B alloy-based p-MTJs are being developed, although they have a large magnetisation and medium perpendicular magnetic anisotropy (PMA), which make it difficult to apply them to a future dense MRAM. Here, we demonstrate a p-MTJ with an epitaxially strained MnGa nanolayer grown on a unique CoGa buffer material, which exhibits a large PMA of more than 5 Merg/cm3 and magnetisation below 500 emu/cm3; these properties are sufficient for application to advanced MRAM. Although the experimental tunnel magnetoresistance (TMR) ratio is still low, first principles calculations confirm that the strain-induced crystal lattice distortion modifies the band dispersion along the tetragonal c-axis into the fully spin-polarised state; thus, a huge TM",
+    "authors": "K. Z. Suzuki et al.",
+    "doi": "10.1038/srep30249",
+    "abstract": "作者用 CoGa 缓冲层实现 3 nm L10-MnGa 纳米层的垂直 MTJ。MnGa 具有高 PMA 和低磁化强度，但实验 TMR 仍低；第一性原理显示应变 MnGa 沿 c 轴可能形成有利于高 TMR 的完全自旋极化 Delta1 态。",
+    "detail_level": "stage-3",
+    "figure_cards": [
+      {
+        "fig": "Fig. 1",
+        "claim": "CoGa 缓冲层支撑超薄 MnGa p-MTJ 结构",
+        "what_to_read": "膜堆为 Cr/CoGa/MnGa/MgO/CoFeB，MnGa 厚度 3 nm。",
+        "why_it_matters": "这是后续 MnGa/MgO 插层工程的结构基础。",
+        "use_for": "介绍 CoGa 缓冲层和超薄 L10-MnGa 外延。"
+      },
+      {
+        "fig": "Fig. 4-5",
+        "claim": "低 TMR 是真实瓶颈而非测量偶然",
+        "what_to_read": "室温 TMR 约 3.1%，低温升至 12.8%。",
+        "why_it_matters": "说明应变和高 PMA 并不自动带来高 TMR，界面终止/化学有序仍是关键。",
+        "use_for": "引出 2023/2025 CoMn、CoMnFe 插层。"
+      },
+      {
+        "fig": "Fig. 6",
+        "claim": "应变 MnGa 可能具备高 TMR 的能带条件",
+        "what_to_read": "比较 bulk 与 strained MnGa 沿 c 轴的自旋分辨能带。",
+        "why_it_matters": "给出“理论上可行、实验上受界面限制”的核心矛盾。",
+        "use_for": "写机制讨论或组会图。"
+      }
+    ]
+  },
+  {
+    "id": "011",
+    "title": "2017-JPD-L10-MnGa based magnetic tunnel junction for high magnetic field sensor",
+    "title_zh": "面向高磁场传感器的 L10-MnGa 磁隧道结",
+    "year": 2017,
+    "venue": "Journal of Physics D",
+    "category": "MnGa MTJ",
+    "topic": "MTJ",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ/✅2017-JPD-L10-MnGa based magnetic tunnel junction for high magnetic field sensor.pdf",
+    "material_system": "MnGa / L10-MnGa",
+    "device_structure": "Magnetic Tunnel Junction",
+    "physical_mechanisms": [
+      "MTJ/TMR"
+    ],
+    "key_metrics": {
+      "tmr_300k": "27.4%",
+      "tmr_5k": "74.6%",
+      "calibrated_tmr_300k": "50.2% (deduced P-AP case)",
+      "dynamic_range": "+/- 5600 Oe",
+      "sensitivity": "约 0.0011%/Oe"
+    },
+    "experimental_conditions": {
+      "stack": "GaAs(001)/L10-MnGa(25)/Co(0.8)/MgO(2.3)/Fe(5)/Pd(2), nm",
+      "growth": "MBE on GaAs(001)",
+      "annealing": "GaAs buffer and L10 ordering related annealing, MnGa process around 300 C",
+      "measurement": "TMR curves at 5-300 K; perpendicular field cycling for sensor linearity"
+    },
+    "research_question": "L10-MnGa 的高矫顽力和 PMA 能否用于构建宽动态范围、高线性度的 MTJ 磁场传感器？",
+    "main_contribution": "把 MnGa MTJ 从存储读出语境扩展到高磁场传感器，展示 Co 插层带来的 TMR 提升和宽动态范围。",
+    "evidence_chain": [
+      {
+        "label": "Fig. 1",
+        "text": "磁滞回线和 TEM 显示 MnGa/Co/MgO/Fe 结构与垂直参考层。"
+      },
+      {
+        "label": "Fig. 2",
+        "text": "TMR 温度依赖和磁场响应证明 Co 插层提升界面质量。"
+      },
+      {
+        "label": "Fig. 3",
+        "text": "多循环 R-H 曲线展示宽动态范围与较好重复性。"
+      }
+    ],
+    "figures": [],
+    "my_notes": "重点不是最高 TMR，而是正交磁化结构和动态范围。可用于综述中说明 MnGa-MTJ 的非存储应用。",
+    "relevance_to_my_project": "如果你的 MnGa/MnAl 工作不仅服务 MRAM，也考虑磁传感或 AHE/TMR 器件，这篇可作为“应用转向”的参考。",
+    "status": "重点图谱-v1",
+    "tags": [
+      "MnGa MTJ",
+      "MnGa/Mn-based",
+      "MTJ/TMR"
+    ],
+    "pdf_pages": 7,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 --- This content has been downloaded from IOPscience. Please scroll down to see the full text. Download details: IP Address: 207.162.240.147 This content was downloaded on 06/07/2017 at 10:19 Please note that terms and conditions apply. L10-MnGa based magnetic tunnel junction for high magnetic field sensor View the table of contents for this issue, or go to the journal homepage for more 2017 J. Phys. D: Appl. Phys. 50 285002 (http://iopscience.iop.org/0022-3727/50/28/285002) Home Search Collections Journals About Contact us My IOPscience You may also be interested in: Magnetic tunnel junctions of perpendicularly magnetized L10-MnGa/Fe/MgO/CoFe structures: Fe-layer-thickness dependences of magnetoresistance effect and tunnelling conductance spectra T Kubota, Q L Ma, S Mizukami et al. Tunable three-axis magnetoresistance sensor with a spin-polarised current Jui-Hang Chang and Ching-Ray Chang Perpendicular magnetic tunnel junction and its application in magnetic random access memory Liu Hou-Fang, Syed Shahbaz Ali and Han Xiu-Feng Low current density induced spin-transfer torque switching in CoFeB–MgO magnetic tunnel junctions with perpendicular anisotropy H Meng, R Sbiaa,",
+    "authors": "X. P. Zhao et al.",
+    "doi": "10.1088/1361-6463/aa7466",
+    "abstract": "提出 L10-MnGa/Co/MgO/Fe 正交磁化结构用于高磁场 TMR 传感。Co 插层改善 MnGa/MgO 界面质量并提升 TMR，同时 MnGa 参考层提供宽动态范围。",
+    "detail_level": "stage-3",
+    "figure_cards": [
+      {
+        "fig": "Fig. 1",
+        "claim": "正交磁化结构把 MnGa 引入磁场传感",
+        "what_to_read": "MnGa 垂直参考层、Fe 面内感应层和 Co 插层。",
+        "why_it_matters": "MnGa 的高矫顽力/大 PMA 变成宽动态范围优势。",
+        "use_for": "说明 MnGa-MTJ 不只服务 MRAM。"
+      },
+      {
+        "fig": "Fig. 2",
+        "claim": "Co 插层提升 TMR 和界面质量",
+        "what_to_read": "TMR 在 300 K 达 27.4%，5 K 达 74.6%。",
+        "why_it_matters": "这是插层改善 MnGa/MgO 晶格匹配和自旋极化的早期证据。",
+        "use_for": "插层路线前史。"
+      },
+      {
+        "fig": "Fig. 3",
+        "claim": "传感器宽动态范围和重复性",
+        "what_to_read": "R-H 循环在 +/-5600 Oe 范围内保持响应。",
+        "why_it_matters": "展示器件层面指标，而非单纯材料性能。",
+        "use_for": "应用场景比较。"
+      }
+    ]
+  },
+  {
+    "id": "012",
+    "title": "2023-AIP Advances-Tunnel magnetoresistance exceeding 100% in magnetic tunnel junctions using Mn-based tetragonal alloy electrodes with perpendicular magnetic anisotropy-MnGa-Mg-CoMn-",
+    "title_zh": "使用垂直磁各向异性 Mn 基四方合金电极实现超过 100% TMR 的 MTJ",
+    "year": 2023,
+    "venue": "AIP Advances",
+    "category": "MnGa MTJ",
+    "topic": "MTJ",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ/✅2023-AIP Advances-Tunnel magnetoresistance exceeding 100% in magnetic tunnel junctions using Mn-based tetragonal alloy electrodes with perpendicular magnetic anisotropy-MnGa-Mg-CoMn-.pdf",
+    "material_system": "MnGa / CoMn",
+    "device_structure": "Magnetic Tunnel Junction",
+    "physical_mechanisms": [
+      "MTJ/TMR",
+      "SOT/Switching"
+    ],
+    "key_metrics": {
+      "max_tmr_300k": "118%",
+      "max_tmr_10k": ">260%",
+      "mg_interlayer": "0.4-0.5 nm 最优",
+      "annealing_window": "TMR 最大值出现在约 250-275 C"
+    },
+    "experimental_conditions": {
+      "stack": "MgO/Cr(40)/Co55Ga45(30)/Mn61Ga39(3)/Mg(tMg)/Co80Mn20(tCoMn)/Mg(0.4)/MgO(2)/FeCoB(1.4)/Ta/Ru, nm",
+      "variables": "tMg = 0-0.8 nm; tCoMn = 0.8-1.4 nm",
+      "deposition": "UHV sputtering, base pressure below 1e-7 Pa",
+      "annealing": "vacuum annealing without external magnetic field",
+      "characterization": "MR, AHE, HAADF-STEM, EDX"
+    },
+    "research_question": "如何突破 MnGa/MgO p-MTJ 长期低 TMR 的瓶颈，并让 Mn 基四方合金电极真正进入可用读出区间？",
+    "main_contribution": "通过 Mg + metastable bcc CoMn 插层工程，把 MnGa p-MTJ 的室温 TMR 推到 100% 以上。",
+    "evidence_chain": [
+      {
+        "label": "Fig. 1",
+        "text": "Mg 插层厚度和退火温度的系统扫描显示超过 100% TMR 的窗口。"
+      },
+      {
+        "label": "Fig. 2",
+        "text": "HAADF-STEM/EDX 支持 Mg 插层未破坏 CoMn 外延，并影响界面扩散。"
+      },
+      {
+        "label": "Fig. 3-4",
+        "text": "温度依赖说明高 TMR 来自界面工程而非单一测量偶然性。"
+      }
+    ],
+    "figures": [],
+    "my_notes": "非常值得精读。对你自己的膜堆设计，Mg 插层厚度、CoMn 成分、退火窗口和界面扩散是最值得借鉴的四个变量。",
+    "relevance_to_my_project": "这是 MnGa-MTJ 路线的关键阶段性论文。你的网页后续可以把它设为“核心节点”，连接 2011、2016 和 2025 的工作。",
+    "status": "重点图谱-v1",
+    "tags": [
+      "MnGa MTJ",
+      "MnGa/Mn-based",
+      "MTJ/TMR",
+      "SOT/Switching",
+      "Heavy Metal/Seed Layer"
+    ],
+    "pdf_pages": 7,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 ---  View Online  Export Citation RESEARCH ARTICLE | MARCH 16 2023 Tunnel magnetoresistance exceeding 100% in magnetic tunnel junctions using Mn-based tetragonal alloy electrodes with perpendicular magnetic anisotropy Kazuya Z. Suzuki ; Shigemi Mizukami  AIP Advances 13, 035225 (2023) https://doi.org/10.1063/5.0141706 Articles You May Be Interested In Enhanced tunnel magnetoresistance in Mn-based perpendicular magnetic tunnel junctions utilizing antiferromagnetically coupled bcc-Co-based interlayer Appl. Phys. Lett. (April 2021) Enhancement of tunnel magnetoresistance in fully perpendicular MnGa-based magnetic tunnel junctions with metastable bcc CoMnFe interlayer AIP Advances (March 2025) Perpendicular magnetic tunnel junctions with Mn-modified ultrathin MnGa layer Appl. Phys. Lett. (February 2018) 28 November 2025 03:03:51 --- PAGE 2 --- AIP Advances ARTICLE scitation.org/journal/adv Tunnel magnetoresistance exceeding 100% in magnetic tunnel junctions using Mn-based tetragonal alloy electrodes with perpendicular magnetic anisotropy Cite as: AIP Advances 13, 035225 (2023); doi: 10.1063/5.0141706 Submitted: 8 January 2023 • Accepted: 23 February 2023 • Publis",
+    "authors": "Kazuya Z. Suzuki and Shigemi Mizukami",
+    "doi": "10.1063/5.0141706",
+    "abstract": "研究 MnGa/CoMn/MgO/FeCoB p-MTJ，通过 CoMn 插层和超薄 Mg 插层工程显著提升 TMR。0.4-0.5 nm Mg 插层可使室温 TMR 超过 100%，最高达到 118%。",
+    "detail_level": "stage-3",
+    "figure_cards": [
+      {
+        "fig": "Fig. 1",
+        "claim": "Mg 插层厚度存在最优窗口",
+        "what_to_read": "0.4-0.5 nm Mg 插层使 TMR 超过 100%。",
+        "why_it_matters": "超薄 Mg 不是简单防氧化层，而是决定 CoMn/MnGa/MgO 界面质量的旋钮。",
+        "use_for": "核心图，适合放进 MnGa MTJ 路线图。"
+      },
+      {
+        "fig": "Fig. 2",
+        "claim": "高 TMR 来自界面工程而非偶然样品",
+        "what_to_read": "HAADF-STEM/EDX 观察 Mg、CoMn、MnGa 界面和退火扩散。",
+        "why_it_matters": "把性能提升落到可操作的界面结构上。",
+        "use_for": "实验设计参考：插层厚度、退火、扩散。"
+      },
+      {
+        "fig": "Fig. 3-4",
+        "claim": "室温 118% 与低温 >260% 的性能节点",
+        "what_to_read": "TMR、RAp 和温度依赖。",
+        "why_it_matters": "这是 MnGa p-MTJ 从低 TMR 走向可用读出的关键节点。",
+        "use_for": "作为综述中的里程碑数据。"
+      }
+    ]
+  },
+  {
+    "id": "013",
+    "title": "2025-AIP Advances-Enhancement of tunnel magnetoresistance in fully perpendicular MnGa-based magnetic tunnel junctions with metastable bcc CoMnFe interlayer",
+    "title_zh": "使用亚稳 bcc CoMnFe 插层增强全垂直 MnGa MTJ 的 TMR",
+    "year": 2025,
+    "venue": "AIP Advances",
+    "category": "MnGa MTJ",
+    "topic": "MTJ",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/02 MTJ/✅2025-AIP Advances-Enhancement of tunnel magnetoresistance in fully perpendicular MnGa-based magnetic tunnel junctions with metastable bcc CoMnFe interlayer.pdf",
+    "material_system": "MnGa / CoMnFe",
+    "device_structure": "Magnetic Tunnel Junction",
+    "physical_mechanisms": [
+      "MTJ/TMR"
+    ],
+    "key_metrics": {
+      "single_interface_tmr": "~106% at 300 C annealing",
+      "double_interface_tmr": "~110% at 300 C annealing",
+      "annealing_stability": "超过 100% TMR 可稳定到 300 C；325 C 后下降",
+      "interlayer": "Co65Mn19Fe16, tCoMnFe 约 1.2 nm 常用"
+    },
+    "experimental_conditions": {
+      "single_interface_stack": "MgO/Cr(40)/MnGa(30)/Mg(0.4)/CoMnFe(t)/Mg(0.4)/MgO(d)/CoFeB(1.2)/Ta/Ru, nm",
+      "double_interface_stack": "top CoFeB/Ta/CoFeB/MgO double-interface electrode added",
+      "deposition": "UHV magnetron sputtering, base pressure below 5e-7 Pa",
+      "annealing": "Cr 700 C, MnGa 500 C in situ; MTJ vacuum annealing up to 325 C",
+      "characterization": "p-MOKE, MR curves, annealing dependence, interface discussion"
+    },
+    "research_question": "相比 CoMn，CoMnFe 插层能否在保持高 TMR 的同时提高 MnGa p-MTJ 的退火稳定性？",
+    "main_contribution": "证明 CoMnFe 是 MnGa/MgO 界面工程的有效插层，可在 300 C 退火后保持超过 100% TMR。",
+    "evidence_chain": [
+      {
+        "label": "Fig. 1",
+        "text": "p-MOKE 显示 CoMnFe/MnGa 磁耦合随退火变化。"
+      },
+      {
+        "label": "Fig. 3-4",
+        "text": "单界面结构的 TMR 随退火、CoMnFe 和 MgO 厚度变化，最高约 106%。"
+      },
+      {
+        "label": "Fig. 5",
+        "text": "双界面结构最高约 110%，并揭示 325 C 后下降可能来自底界面退化。"
+      }
+    ],
+    "figures": [],
+    "my_notes": "如果你以后设计 MnGa/MnAl MTJ，CoMnFe 插层可以作为重要候选；需要特别关注 Ga 扩散和 300-325 C 的退火边界。",
+    "relevance_to_my_project": "它是 2023 年 CoMn/Mg 插层工作的直接后续，特别适合你建立 MnGa MTJ 发展脉络和实验参数表。",
+    "status": "重点图谱-v1",
+    "tags": [
+      "MnGa MTJ",
+      "MnGa/Mn-based",
+      "MTJ/TMR",
+      "Heavy Metal/Seed Layer"
+    ],
+    "pdf_pages": 9,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 ---  View Online  Export Citation RESEARCH ARTICLE | MARCH 05 2025 Enhancement of tunnel magnetoresistance in fully perpendicular MnGa-based magnetic tunnel junctions with metastable bcc CoMnFe interlayer Special Collection: 16th Joint MMM-Intermag Conference Deepak Kumar  ; Naoki Kamata ; Kwon Hyeokjin ; Shigemi Mizukami AIP Advances 15, 035006 (2025) https://doi.org/10.1063/9.0000889 Articles You May Be Interested In Tunnel magnetoresistance exceeding 100% in magnetic tunnel junctions using Mn-based tetragonal alloy electrodes with perpendicular magnetic anisotropy AIP Advances (March 2023) Giant exchange bias based on magnetic transition in γ -Fe 2 MnGa melt-spun ribbons Appl. Phys. Lett. (December 2010) Tunneling magnetoresistance effect in MnGa based perpendicular magnetic tunnel junction with Fe/Co interlayer J. Appl. Phys. (October 2013) 13 August 2025 09:12:41 --- PAGE 2 --- AIP Advances ARTICLE pubs.aip.org/aip/adv Enhancement of tunnel magnetoresistance in fully perpendicular MnGa-based magnetic tunnel junctions with metastable bcc CoMnFe interlayer Cite as: AIP Advances 15, 035006 (2025); doi: 10.1063/9.0000889 Submitted: 10 November 2024 • Acc",
+    "authors": "Deepak Kumar et al.",
+    "doi": "10.1063/9.0000889",
+    "abstract": "在全垂直 MnGa p-MTJ 中引入亚稳 bcc CoMnFe 插层，提高 TMR 并改善退火稳定性。单界面和双界面结构在 300 C 退火后分别达到约 106% 和 110% TMR。",
+    "detail_level": "stage-3",
+    "figure_cards": [
+      {
+        "fig": "Fig. 1",
+        "claim": "CoMnFe/MnGa 耦合随退火改变",
+        "what_to_read": "p-MOKE 曲线显示 CoMnFe 和 MnGa 的磁化过程。",
+        "why_it_matters": "解释为什么 300 C 有利，而 325 C 后可能退化。",
+        "use_for": "退火稳定性机制讨论。"
+      },
+      {
+        "fig": "Fig. 3-4",
+        "claim": "CoMnFe 插层把 TMR 稳定推到 100% 以上",
+        "what_to_read": "单界面 p-MTJ 在 300 C 退火后最高约 106%。",
+        "why_it_matters": "CoMnFe 比 CoMn 更强调退火稳定和 bcc 亚稳结构保持。",
+        "use_for": "高 TMR 插层候选比较。"
+      },
+      {
+        "fig": "Fig. 5",
+        "claim": "双界面结构最高约 110%",
+        "what_to_read": "Top CoFeB/Ta/CoFeB/MgO 结构的 TMR 退火依赖。",
+        "why_it_matters": "说明上电极结构可调，但底部 MnGa/CoMnFe 界面仍是主要限制。",
+        "use_for": "STT 器件结构优化讨论。"
+      }
+    ]
+  },
+  {
+    "id": "014",
+    "title": "2016-PRB-MnGa-IrMn",
+    "title_zh": "",
+    "year": 2016,
+    "venue": "Physical Review B",
+    "category": "Current-Induced Switching",
+    "topic": "SOT Switching",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转/2016-PRB-MnGa-IrMn.pdf",
+    "material_system": "MnGa / IrMn",
+    "device_structure": "Perpendicular magnetic multilayer / SOT device",
+    "physical_mechanisms": [],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "Current-Induced Switching",
+      "MnGa/Mn-based",
+      "Heavy Metal/Seed Layer"
+    ]
+  },
+  {
+    "id": "015",
+    "title": "2018-3M-Current-induced switching in CoGa-L10 MnGa-(CoGa)-Pt structure with",
+    "title_zh": "",
+    "year": 2018,
+    "venue": "",
+    "category": "Current-Induced Switching",
+    "topic": "SOT Switching",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转/2018-3M-Current-induced switching in CoGa-L10 MnGa-(CoGa)-Pt structure with.pdf",
+    "material_system": "MnGa / CoGa / Pt",
+    "device_structure": "Perpendicular magnetic multilayer / SOT device",
+    "physical_mechanisms": [
+      "SOT/Switching"
+    ],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "Current-Induced Switching",
+      "MnGa/Mn-based",
+      "SOT/Switching",
+      "Heavy Metal/Seed Layer"
+    ]
+  },
+  {
+    "id": "016",
+    "title": "2019-APL-Zhao-D22-Mn3Ga",
+    "title_zh": "",
+    "year": 2019,
+    "venue": "Applied Physics Letters",
+    "category": "Current-Induced Switching",
+    "topic": "SOT Switching",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转/2019-APL-Zhao-D22-Mn3Ga.pdf",
+    "material_system": "Mn3Ga / D22-Mn3Ga",
+    "device_structure": "Perpendicular magnetic multilayer / SOT device",
+    "physical_mechanisms": [],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "Current-Induced Switching",
+      "MnGa/Mn-based"
+    ]
+  },
+  {
+    "id": "017",
+    "title": "2019-JAP-Ta-MnGa-NiAl",
+    "title_zh": "",
+    "year": 2019,
+    "venue": "Journal of Applied Physics",
+    "category": "Current-Induced Switching",
+    "topic": "SOT Switching",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转/2019-JAP-Ta-MnGa-NiAl.pdf",
+    "material_system": "MnGa / Ta / NiAl",
+    "device_structure": "Perpendicular magnetic multilayer / SOT device",
+    "physical_mechanisms": [],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "Current-Induced Switching",
+      "MnGa/Mn-based",
+      "Heavy Metal/Seed Layer"
+    ]
+  },
+  {
+    "id": "018",
+    "title": "2021-AIP Advance-Ta-switching",
+    "title_zh": "",
+    "year": 2021,
+    "venue": "AIP Advances",
+    "category": "Current-Induced Switching",
+    "topic": "SOT Switching",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转/2021-AIP Advance-Ta-switching.pdf",
+    "material_system": "Ta",
+    "device_structure": "Perpendicular magnetic multilayer / SOT device",
+    "physical_mechanisms": [
+      "SOT/Switching"
+    ],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "Current-Induced Switching",
+      "SOT/Switching",
+      "Heavy Metal/Seed Layer"
+    ]
+  },
+  {
+    "id": "019",
+    "title": "2021-APL-Antiferromagnet-mediated spin–orbit torque induced magnetization switching in perpendicularly magnetized L1-MnGa",
+    "title_zh": "",
+    "year": 2021,
+    "venue": "Applied Physics Letters",
+    "category": "Current-Induced Switching",
+    "topic": "SOT Switching",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转/2021-APL-Antiferromagnet-mediated spin–orbit torque induced magnetization switching in perpendicularly magnetized L1-MnGa.pdf",
+    "material_system": "MnGa",
+    "device_structure": "Perpendicular magnetic multilayer / SOT device",
+    "physical_mechanisms": [
+      "SOT/Switching"
+    ],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "Current-Induced Switching",
+      "MnGa/Mn-based",
+      "SOT/Switching"
+    ]
+  },
+  {
+    "id": "020",
+    "title": "2022-IEEE-Ta-MnGa-Co2MnSi",
+    "title_zh": "",
+    "year": 2022,
+    "venue": "IEEE",
+    "category": "Current-Induced Switching",
+    "topic": "SOT Switching",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转/2022-IEEE-Ta-MnGa-Co2MnSi.pdf",
+    "material_system": "MnGa / Ta / Co2MnSi",
+    "device_structure": "Perpendicular magnetic multilayer / SOT device",
+    "physical_mechanisms": [],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "Current-Induced Switching",
+      "MnGa/Mn-based",
+      "Heavy Metal/Seed Layer"
+    ]
+  },
+  {
+    "id": "021",
+    "title": "2024-APLM-Enhanced interlayer Dzyaloshinskii–Moriya interaction and field-free switching in magnetic trilayers with orthogonal magnetization",
+    "title_zh": "",
+    "year": 2024,
+    "venue": "APL Machine Learning",
+    "category": "Current-Induced Switching",
+    "topic": "SOT Switching",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转/2024-APLM-Enhanced interlayer Dzyaloshinskii–Moriya interaction and field-free switching in magnetic trilayers with orthogonal magnetization.pdf",
+    "material_system": "MnGa/MnAl multilayer",
+    "device_structure": "Perpendicular magnetic multilayer / SOT device",
+    "physical_mechanisms": [
+      "SOT/Switching",
+      "DMI"
+    ],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "Current-Induced Switching",
+      "SOT/Switching",
+      "DMI",
+      "Field-free Switching"
+    ]
+  },
+  {
+    "id": "022",
+    "title": "2024 Sun Chinese Phys. Lett. 41 057503-Current-Induced Magnetization Switching Behavior in Perpendicular Magnetized L10-MnAl-B2-CoGa Bilayer",
+    "title_zh": "",
+    "year": 2024,
+    "venue": "Chinese Physics Letters",
+    "category": "Current-Induced Switching",
+    "topic": "SOT Switching",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转/2024_Sun_Chinese_Phys._Lett._41_057503-Current-Induced Magnetization Switching Behavior in Perpendicular Magnetized L10-MnAl-B2-CoGa Bilayer.pdf",
+    "material_system": "MnAl / CoGa",
+    "device_structure": "Perpendicular magnetic multilayer / SOT device",
+    "physical_mechanisms": [
+      "SOT/Switching"
+    ],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "Current-Induced Switching",
+      "MnGa/Mn-based",
+      "MnAl",
+      "SOT/Switching"
+    ]
+  },
+  {
+    "id": "023",
+    "title": "2025-PRB-Even-symmetric Hall signal in perpendicular-in-plane magnetic anisotropy multilayers",
+    "title_zh": "",
+    "year": 2025,
+    "venue": "Physical Review B",
+    "category": "Current-Induced Switching",
+    "topic": "SOT Switching",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转/2025-PRB-Even-symmetric Hall signal in perpendicular-in-plane magnetic anisotropy multilayers.pdf",
+    "material_system": "MnGa/MnAl multilayer",
+    "device_structure": "Perpendicular magnetic multilayer / SOT device",
+    "physical_mechanisms": [
+      "SOT/Switching"
+    ],
+    "key_metrics": {},
+    "experimental_conditions": {},
+    "research_question": "",
+    "main_contribution": "",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "",
+    "relevance_to_my_project": "",
+    "status": "已读待精整理",
+    "tags": [
+      "Current-Induced Switching",
+      "SOT/Switching"
+    ]
+  },
+  {
+    "id": "024",
+    "title": "2016-Sci. Rep.-MnGa-Ta",
+    "title_zh": "通过插入铁磁层调控 MnGa/Ta 薄膜中的开关电流密度与自旋轨道力矩",
+    "year": 2016,
+    "venue": "Scientific Reports",
+    "category": "Current-Induced Switching",
+    "topic": "SOT Switching",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转/✅2016-Sci. Rep.-MnGa-Ta.pdf",
+    "material_system": "MnGa / Ta",
+    "device_structure": "Perpendicular magnetic multilayer / SOT device",
+    "physical_mechanisms": [],
+    "key_metrics": {
+      "jc_mnga_ta": "8.5 x 10^7 A/cm2",
+      "jc_co2feal": "5 x 10^7 A/cm2 with 0.8 nm Co2FeAl",
+      "jc_co": "9 x 10^7 A/cm2 with 0.8 nm Co",
+      "anisotropy_fields": "MnGa/Ta 1.5 T; Co2FeAl insertion 1.2 T; Co insertion 1.7 T",
+      "spin_hall_angle_ta": "theta_SH about -0.11 (extracted)"
+    },
+    "experimental_conditions": {
+      "structures": "MnGa/Ta, MnGa/Co2FeAl/Ta, MnGa/Co/Ta, MnGa/Co/Al",
+      "device": "10 um x 80 um Hall bar",
+      "measurement": "AHE switching, harmonic Hall, SMR, M-H loops",
+      "current_probe": "Hall resistance measured with 1 mA; switching under in-plane field"
+    },
+    "research_question": "在 MnGa/Ta 体系中，插层的磁耦合和界面效应如何调控 SOT、有效场和开关电流密度？",
+    "main_contribution": "证明 SOT 开关电流不只由重金属决定，还可通过 MnGa/插层界面的耦合、Rashba 效应和 SHE 共同调节。",
+    "evidence_chain": [
+      {
+        "label": "Fig. 1-2",
+        "text": "磁滞回线和电流开关曲线给出 Jc 与各向异性场变化。"
+      },
+      {
+        "label": "Fig. 4",
+        "text": "谐波 Hall 分离 field-like 和 damping-like 有效场。"
+      },
+      {
+        "label": "Fig. 5",
+        "text": "SMR 分析支持 SHE 参数变化与界面自旋输运解释。"
+      }
+    ],
+    "figures": [],
+    "my_notes": "这篇的价值在变量拆解。若做微磁模拟，可把各向异性场变化和 SOT 项作为参数扫描入口。",
+    "relevance_to_my_project": "对 MnGa 电流诱导翻转很重要：它把材料插层、耦合方式、SOT 有效场和 Jc 串起来，适合用于设计低电流 MnGa 开关实验。",
+    "status": "重点图谱-v1",
+    "tags": [
+      "Current-Induced Switching",
+      "MnGa/Mn-based",
+      "Heavy Metal/Seed Layer"
+    ],
+    "pdf_pages": 8,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 --- 1 Scientific Reports | 6:38375 | DOI: 10.1038/srep38375 www.nature.com/scientificreports Modulated switching current density and spin-orbit torques in MnGa/Ta films with inserting ferromagnetic layers Kangkang Meng1, Jun Miao1, Xiaoguang Xu1, Yong Wu1, Jiaxing Xiao2, Jianhua Zhao2 & Yong Jiang1 We report modulated switching current density and spin-orbit torques (SOT) in MnGa/Ta films with inserting very thin Co2FeAl and Co layers. Ferromagnetic coupling has been found in MnGa/Co2FeAl/Ta, resulting in a decreased effective anisotropy field. On the contrary, in MnGa/Co/Ta, antiferromagnetic coupling plays a dominant role. The switching current density Jc in MnGa/Ta is 8.5 × 107 A/cm2. After inserting 0.8-nm-thick Co2FeAl and Co, the Jc becomes 5 × 107 A/cm2 and 9 × 107 A/cm2, respectively. By performing adiabatic harmonic Hall voltage measurements, it is demonstrated that the inserted Co2FeAl layer has mainly enhanced the field-like torques, while in MnGa/Co/Ta the damping-like torques have been enhanced. Finally, the enhanced spin Hall effect (SHE) has also been studied using the spin Hall magnetoresistance measurement. The modulated Jc and SOT are ascr",
+    "authors": "Kangkang Meng et al.",
+    "doi": "10.1038/srep38375",
+    "abstract": "研究 MnGa/Ta 中插入超薄 Co2FeAl 或 Co 后的 SOT 开关与有效场。Co2FeAl 通过铁磁耦合降低有效各向异性场并降低 Jc，Co 则增强阻尼型力矩但因各向异性更大使 Jc 增加。",
+    "detail_level": "stage-3",
+    "figure_cards": [
+      {
+        "fig": "Fig. 1",
+        "claim": "插层改变 PMA 和磁耦合",
+        "what_to_read": "MnGa/Ta、MnGa/Co2FeAl/Ta、MnGa/Co/Ta 的磁滞和有效各向异性场。",
+        "why_it_matters": "Jc 改变首先来自磁各向异性和耦合状态改变。",
+        "use_for": "SOT 参数表。"
+      },
+      {
+        "fig": "Fig. 2",
+        "claim": "Co2FeAl 降低 Jc，Co 提高 Jc",
+        "what_to_read": "Jc: MnGa/Ta 8.5e7 A/cm2；Co2FeAl 5e7；Co 9e7。",
+        "why_it_matters": "同样是插层，铁磁/反铁磁耦合和各向异性变化会给出相反趋势。",
+        "use_for": "插层调控开关电流的对比。"
+      },
+      {
+        "fig": "Fig. 4-5",
+        "claim": "谐波 Hall 和 SMR 分离 SOT 来源",
+        "what_to_read": "field-like、damping-like 有效场与 SMR 提取参数。",
+        "why_it_matters": "有助于把实验 Jc 变化拆成 SHE、Rashba、界面耦合几部分。",
+        "use_for": "微磁模拟中设置 SOT 项和参数扫描。"
+      }
+    ]
+  },
+  {
+    "id": "025",
+    "title": "2016 Ranjbar Jpn. J. Appl. Phys. 55 120302-Current-induced spin–orbit torque magnetization switching in a MnGa-Pt film with a perpendicular magnetic anisotropy",
+    "title_zh": "具有垂直磁各向异性的 MnGa/Pt 薄膜中的电流诱导 SOT 磁化翻转",
+    "year": 2016,
+    "venue": "Japanese Journal of Applied Physics",
+    "category": "Current-Induced Switching",
+    "topic": "SOT Switching",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转/✅2016_Ranjbar_Jpn._J._Appl._Phys._55_120302-Current-induced spin–orbit torque magnetization switching in a MnGa-Pt film with a perpendicular magnetic anisotropy.pdf",
+    "material_system": "MnGa / Pt",
+    "device_structure": "Perpendicular magnetic multilayer / SOT device",
+    "physical_mechanisms": [
+      "SOT/Switching"
+    ],
+    "key_metrics": {
+      "ms": "~150 kA/m",
+      "pma_field": "mu0 Hk_eff ~2.5 T",
+      "pma_thickness_product": "Ku_eff t ~0.47 mJ/m2",
+      "experimental_jc": "~5.0 x 10^11 A/m2 in Pt at switching",
+      "stack": "CoGa(15)/MnGa(2.5)/Pt(2.0) on MgO(001)"
+    },
+    "experimental_conditions": {
+      "stack": "MgO(001)/CoGa(15)/MnGa(2.5)/Pt(2.0), nm",
+      "growth": "UHV magnetron sputtering; CoGa and MnGa compositions Co60Ga40 and Mn59Ga41",
+      "device": "micron-sized Hall bar",
+      "measurement": "AHE under in-plane longitudinal field; current sweep phase diagram"
+    },
+    "research_question": "大体 PMA、低磁化强度的 MnGa 是否能像传统 HM/FM 体系一样实现 SOT 开关？",
+    "main_contribution": "首次级别地展示 MnGa/Pt 中可观测的 SOT 开关，为 Mn 基大 PMA 材料进入三端 MRAM 写入方案提供实验依据。",
+    "evidence_chain": [
+      {
+        "label": "Fig. 1",
+        "text": "磁化和 AHE 曲线证明低 Ms 与高 PMA。"
+      },
+      {
+        "label": "Fig. 2",
+        "text": "不同面内场下的电流开关展示 SOT 的极性依赖。"
+      },
+      {
+        "label": "Fig. 3",
+        "text": "开关电流-面内场相图与自旋 Hall SOT 模型定性一致。"
+      }
+    ],
+    "figures": [],
+    "my_notes": "注意实验 Jc 远低于简单宏自旋估计，提示真实翻转可能受非均匀磁化、热效应、畴壁运动或界面 Rashba 影响。",
+    "relevance_to_my_project": "它是 MnGa SOT 开关路线的起点论文之一。适合作为“MnGa 可用于 SOT-MRAM 写入”的基础引用。",
+    "status": "重点图谱-v1",
+    "tags": [
+      "Current-Induced Switching",
+      "MnGa/Mn-based",
+      "SOT/Switching",
+      "Heavy Metal/Seed Layer"
+    ],
+    "pdf_pages": 5,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 --- Japanese Journal of Applied Physics RAPID COMMUNICATION Current-induced spin–orbit torque magnetization switching in a MnGa/Pt film with a perpendicular magnetic anisotropy To cite this article: Reza Ranjbar et al 2016 Jpn. J. Appl. Phys. 55 120302 View the article online for updates and enhancements. You may also like Some Considerations on the Influence of Voltage in Potentiostatic Two-Step Anodizing of AA1050 J. M. Montero-Moreno, M. Sarret and C. Müller - Formation of Stoichiometric SrRuO3 Electrodes for PZT Capacitors by Pulsed- MOCVD Jun Minamidate, Atsushi Nagai, Sukpil Kim et al. - Passivity and Pit Stability Behavior of Copper as a Function of Selected Water Chemistry Variables Hongbo Cong, Harold T. Michels and John R. Scully - This content was downloaded from IP address 159.226.35.194 on 27/07/2025 at 16:02 --- PAGE 2 --- Current-induced spin–orbit torque magnetization switching in a MnGa/Pt ﬁlm with a perpendicular magnetic anisotropy Reza Ranjbar1, Kazuya Z. Suzuki1*, Yuta Sasaki1,2, Lakhan Bainsla1, and Shigemi Mizukami1 1WPI Advanced Institute for Materials Research, Tohoku University, Sendai 980-8577, Japan 2Department of Applied Physics,",
+    "authors": "Reza Ranjbar et al.",
+    "doi": "10.7567/JJAP.55.120302",
+    "abstract": "在 Pt 覆盖的超薄 MnGa Hall bar 中演示电流诱导磁化翻转。MnGa 具有低 Ms 和较大 PMA，开关相图与 Pt 层自旋 Hall 效应产生的 SOT 定性一致。",
+    "detail_level": "stage-3",
+    "figure_cards": [
+      {
+        "fig": "Fig. 1",
+        "claim": "MnGa/Pt 兼具低 Ms 与大 PMA",
+        "what_to_read": "Ms 约 150 kA/m，mu0 Hk_eff 约 2.5 T。",
+        "why_it_matters": "低 Ms + 大 PMA 是 MnGa 用于高密度 SOT-MRAM 的材料动机。",
+        "use_for": "材料优势介绍。"
+      },
+      {
+        "fig": "Fig. 2",
+        "claim": "面内场控制电流开关极性",
+        "what_to_read": "不同 HL 下 AHE 随电流切换。",
+        "why_it_matters": "极性关系是判断 SOT/SHE 机制的关键证据。",
+        "use_for": "SOT 机制图。"
+      },
+      {
+        "fig": "Fig. 3",
+        "claim": "开关相图支持 Pt 自旋 Hall 来源",
+        "what_to_read": "Ic-HL 相图与 Pt 层 SHE 模型定性一致。",
+        "why_it_matters": "这是 MnGa/Pt SOT 开关的基础证明。",
+        "use_for": "SOT 路线起点。"
+      }
+    ]
+  },
+  {
+    "id": "026",
+    "title": "2017 Appl. Phys. Express 10 073004-Takikawa-In-plane current-induced magnetization switching in CoGa-MnGa-MgO films",
+    "title_zh": "CoGa/MnGa/MgO 薄膜中的面内电流诱导磁化翻转",
+    "year": 2017,
+    "venue": "",
+    "category": "Current-Induced Switching",
+    "topic": "SOT Switching",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转/✅2017_Appl._Phys._Express_10_073004-Takikawa-In-plane current-induced magnetization switching in CoGa-MnGa-MgO films.pdf",
+    "material_system": "MnGa / CoGa / MgO",
+    "device_structure": "Perpendicular magnetic multilayer / SOT device",
+    "physical_mechanisms": [
+      "SOT/Switching"
+    ],
+    "key_metrics": {
+      "switching_current_density": "~1 x 10^11 A/m2",
+      "experimental_jc_coga": "~2 x 10^11 A/m2 at mu0Hy = 200 mT",
+      "pma_field": "mu0 Hk_eff = 2.63 +/- 0.08 T",
+      "ms": "350 +/- 50 kA/m",
+      "stack": "MgO/MgO(10)/CoGa(15-25)/MnGa(2)/Mg/MgO/Ta"
+    },
+    "experimental_conditions": {
+      "stack": "MgO(001)/MgO(10)/CoGa(15,20,25)/MnGa(2)/Mg(0.4)/MgO(2)/Ta(2), nm",
+      "growth": "UHV sputtering; MgO substrate flushed 700 C; CoGa annealed 500 C; remaining layers at RT",
+      "device": "Hall bar, main channel 30 um x 6 um",
+      "measurement": "AHE current switching, CoGa thickness dependence, pulse response"
+    },
+    "research_question": "如果去掉 Pt/Ta 重金属顶层，CoGa 缓冲层本身能否为 MnGa 提供足够 SOT，实现可用于 p-MTJ 结构的电流翻转？",
+    "main_contribution": "证明 CoGa/MnGa/MgO 这种更接近 MTJ 底电极的结构也能发生 SOT 开关，强调 CoGa 不只是缓冲层，也可能是自旋流来源。",
+    "evidence_chain": [
+      {
+        "label": "Fig. 1",
+        "text": "结构和 RH-H 曲线确认 MnGa 高 PMA。"
+      },
+      {
+        "label": "Fig. 2",
+        "text": "电流开关相图显示面内场方向与开关极性符合 damping-like SOT。"
+      },
+      {
+        "label": "pulse response",
+        "text": "脉冲宽度依赖提示 Joule heating 对翻转阈值有帮助。"
+      }
+    ],
+    "figures": [],
+    "my_notes": "后续做微磁模拟时，可以把 CoGa 提供的 damping-like SOT、热辅助和畴壁运动作为假设场景。",
+    "relevance_to_my_project": "非常贴近 MnGa MTJ 结构设计：CoGa 既是外延缓冲层，又可能参与 SOT 写入。对你理解膜堆中“功能层复用”很有价值。",
+    "status": "重点图谱-v1",
+    "tags": [
+      "Current-Induced Switching",
+      "MnGa/Mn-based",
+      "SOT/Switching",
+      "MgO",
+      "Heavy Metal/Seed Layer"
+    ],
+    "pdf_pages": 5,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 --- Applied Physics Express LETTERS In-plane current-induced magnetization switching in CoGa/MnGa/MgO films To cite this article: Masahiro Takikawa et al 2017 Appl. Phys. Express 10 073004 View the article online for updates and enhancements. You may also like Electrospun X-type Fe2CoGa nanowires: assessment of structural, magnetic, and electronic properties for nanomagnetic applications Dinesh Subba and Ananthakrishnan Srinivasan - Slow spin dynamics in a CoM2O4 A-site spinel (M=Al, Ga, and Rh) T Naka, T Nakane, J Valenta et al. - Current-Induced Magnetization Switching Behavior in Perpendicular Magnetized L10-MnAl/B2-CoGa Bilayer Hong-Li Sun, , Rong-Kun Han et al. - This content was downloaded from IP address 159.226.35.194 on 07/09/2025 at 04:09 --- PAGE 2 --- In-plane current-induced magnetization switching in CoGa/MnGa/MgO ﬁlms Masahiro Takikawa1,2, Kazuya Z. Suzuki1*, Reza Ranjbar1, and Shigemi Mizukami1 1WPI Advanced Institute for Materials Research, Tohoku University, Sendai 980-8577, Japan 2Department of Applied Physics, Graduate School of Engineering, Tohoku University, Sendai 980-8579, Japan *E-mail: kazuya.suzuki.d8@tohoku.ac.jp Received May 9, 2",
+    "authors": "Masahiro Takikawa et al.",
+    "doi": "10.7567/APEX.10.073004",
+    "abstract": "在无重金属顶层的 CoGa/MnGa/MgO 结构中观察到 SOT 开关。结果表明 CoGa 层可通过正自旋 Hall 角产生阻尼型 SOT，并驱动超薄 MnGa 翻转。",
+    "detail_level": "stage-3",
+    "figure_cards": [
+      {
+        "fig": "Fig. 1",
+        "claim": "CoGa/MnGa/MgO 保持高 PMA",
+        "what_to_read": "RH-Hz 和 RH-Hy 曲线，Hk_eff 约 2.63 T。",
+        "why_it_matters": "证明去掉重金属顶层后，结构仍适合 p-MTJ。",
+        "use_for": "CoGa 缓冲层功能复用。"
+      },
+      {
+        "fig": "Fig. 2",
+        "claim": "CoGa 可以提供 damping-like SOT",
+        "what_to_read": "电流开关随 Hy 和 CoGa 厚度变化。",
+        "why_it_matters": "CoGa 不只是生长模板，也可能是自旋流来源。",
+        "use_for": "三端写入结构设计。"
+      },
+      {
+        "fig": "pulse response",
+        "claim": "Joule heating 参与降低开关阈值",
+        "what_to_read": "脉冲宽度和温度相关开关行为。",
+        "why_it_matters": "提醒微磁模拟或器件解释不能只用宏自旋 SOT。",
+        "use_for": "模拟假设和实验复现注意事项。"
+      }
+    ]
+  },
+  {
+    "id": "027",
+    "title": "2019-AIP Advance-Ta-MnGa-NiAl or Cr",
+    "title_zh": "Cr 与 NiAl 缓冲层上 Ta/MnGa 的磁性与 SOT 磁化翻转",
+    "year": 2019,
+    "venue": "AIP Advances",
+    "category": "Current-Induced Switching",
+    "topic": "SOT Switching",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/师兄发的/（个人使用）MnGa MnAl相关文献/03 MnGa/05 电流诱导磁化翻转/✅2019-AIP Advance-Ta-MnGa-NiAl or Cr.pdf",
+    "material_system": "MnGa / Ta / NiAl / Cr",
+    "device_structure": "Perpendicular magnetic multilayer / SOT device",
+    "physical_mechanisms": [],
+    "key_metrics": {
+      "mnga_thickness": "1-3 nm",
+      "ni_al_sample_pma": "1 nm MnGa 的有效各向异性场约 0.75 T",
+      "switching_current_density_ta": "约 1.3 x 10^11 A/m2",
+      "comparison": "Cr buffer: skewed loops / partial switching; NiAl buffer: square loops / clearer switching"
+    },
+    "experimental_conditions": {
+      "cr_stack": "MgO(2)/Ta(5)/MnGa(3)/Cr(3) from surface side, nm",
+      "nial_stack": "MgO(2)/Ta(5)/MnGa(1-2)/NiAl(3), nm",
+      "growth": "MgO(001) substrate; Cr/NiAl buffers annealed 540 C; MnGa annealed 400 C",
+      "device": "10 um wide Hall device",
+      "measurement": "RHEED, AHE, SOT current switching under in-plane field"
+    },
+    "research_question": "缓冲层导致的 PMA 质量差异如何影响超薄 MnGa 的 SOT 翻转行为？",
+    "main_contribution": "指出 NiAl 缓冲层优于 Cr 缓冲层，可抑制面内磁化分量并改善 Ta/MnGa 的 SOT 开关确定性。",
+    "evidence_chain": [
+      {
+        "label": "RHEED + loops",
+        "text": "Cr 缓冲层表面粗糙/局部晶格畸变对应 skewed loops，NiAl 则保持 square loops。"
+      },
+      {
+        "label": "switching curves",
+        "text": "NiAl 样品中 I 与 Hin 极性相关的非对称翻转更清晰。"
+      },
+      {
+        "label": "comparison",
+        "text": "Cr 样品部分翻转说明 PMA 退化和面内分量会破坏 SOT 确定性。"
+      }
+    ],
+    "figures": [],
+    "my_notes": "这篇适合放在“缓冲层/种子层影响”专题。NiAl 是值得重点标记的缓冲层候选。",
+    "relevance_to_my_project": "对你做 MnGa/MnAl 外延或溅射很实用：缓冲层不仅影响 PMA，也直接影响电流翻转路径和器件一致性。",
+    "status": "重点图谱-v1",
+    "tags": [
+      "Current-Induced Switching",
+      "MnGa/Mn-based",
+      "Heavy Metal/Seed Layer"
+    ],
+    "pdf_pages": 5,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 ---  View Online  Export Citation RESEARCH ARTICLE | MAGNETISM AND MAGNETIC MATERIALS | DECEMBER 30 2019 Magnetic properties and spin-orbit-torque-induced magnetization switching in Ta/MnGa grown on Cr and NiAl buffer layers Special Collection: 64th Annual Conference on Magnetism and Magnetic Materials Michihiko Yamanouchi ; Nguyen Viet Bao; Fumiaki Shimohashi; Kohey Jono; Masaki Inoue; Tetsuya Uemura AIP Advances 9, 125245 (2019) https://doi.org/10.1063/1.5129300 Articles You May Be Interested In Spin–orbit torque induced magnetization switching for an ultrathin MnGa/Co2MnSi bilayer AIP Advances (February 2021) Perpendicular magnetic tunnel junctions with Mn-modified ultrathin MnGa layer Appl. Phys. Lett. (February 2018) Antiferromagnet-mediated spin–orbit torque induced magnetization switching in perpendicularly magnetized L1 -MnGa Appl. Phys. Lett. (March 2021) 07 September 2025 09:03:45 --- PAGE 2 --- AIP Advances ARTICLE scitation.org/journal/adv Magnetic properties and spin-orbit-torque-induced magnetization switching in Ta/MnGa grown on Cr and NiAl buffer layers Cite as: AIP Advances 9, 125245 (2019); doi: 10.1063/1.5129300 Presented: 8 November 2019 • S",
+    "authors": "Michihiko Yamanouchi et al.",
+    "doi": "10.1063/1.5129300",
+    "abstract": "比较 Ta/MnGa/Cr 与 Ta/MnGa/NiAl 结构的 PMA 和 SOT 开关。NiAl 缓冲层可在 1 nm MnGa 中保持较方正的垂直磁滞并实现清晰非对称 SOT 开关；Cr 缓冲层中 PMA 退化导致部分翻转和面内分量。",
+    "detail_level": "stage-3",
+    "figure_cards": [
+      {
+        "fig": "RHEED + AHE loops",
+        "claim": "NiAl 缓冲层优于 Cr 缓冲层",
+        "what_to_read": "Cr 样品 skewed loops，NiAl 样品 square loops。",
+        "why_it_matters": "缓冲层粗糙度/局部晶格畸变会直接破坏 PMA。",
+        "use_for": "种子层选择依据。"
+      },
+      {
+        "fig": "switching curves",
+        "claim": "NiAl 结构 SOT 翻转更确定",
+        "what_to_read": "Ta/MnGa(1 nm)/NiAl 在 +/-Hin 下呈清晰非对称翻转。",
+        "why_it_matters": "确定性 SOT 翻转需要足够好的垂直磁化质量。",
+        "use_for": "SOT 器件一致性讨论。"
+      },
+      {
+        "fig": "comparison",
+        "claim": "PMA 退化导致部分翻转和面内分量",
+        "what_to_read": "Cr 样品存在与 Hin 相反的面内分量解释。",
+        "why_it_matters": "这给微磁模拟提供了一个真实非理想场景。",
+        "use_for": "非均匀翻转/畴壁模型。"
+      }
+    ]
+  },
+  {
+    "id": "028",
+    "title": "2023-Adv Materials- Shao - Progress and Application Perspectives",
+    "title_zh": "电压控制磁隧道结的进展与应用前景",
+    "year": 2023,
+    "venue": "Advanced Materials",
+    "category": "VCMA",
+    "topic": "VCMA",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/VCMA",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/VCMA/2023-Adv Materials- Shao - Progress and Application Perspectives.pdf",
+    "material_system": "",
+    "device_structure": "",
+    "physical_mechanisms": [
+      "VCMA"
+    ],
+    "key_metrics": {
+      "focus": "VCMA coefficient, write error rate, field-free switching, voltage-controlled MTJ applications"
+    },
+    "experimental_conditions": {
+      "paper_type": "Perspective / review",
+      "system": "VCMA-MTJ, perpendicular MTJ, voltage-controlled switching"
+    },
+    "research_question": "VCMA 能否成为 beyond-STT 的低能耗 MRAM 写入机制？",
+    "main_contribution": "总结 VCMA 机制、低 WER、field-free switching、VCMA 系数提升和安全/随机器件应用。",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "适合作为“为什么需要 VCMA”的综述引用。",
+    "relevance_to_my_project": "作为 VCMA 分支入口论文，适合理解为什么电压调控能和 MRAM、SOT-MRAM、低功耗写入结合。",
+    "status": "分支整理-v1",
+    "tags": [
+      "VCMA"
+    ],
+    "pdf_pages": 15,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 --- PERSPECTIVE www.advmattechnol.de Progress and Application Perspectives of Voltage-Controlled Magnetic Tunnel Junctions Yixin Shao and Pedram Khalili Amiri* This article discusses the current state of development, open research opportunities, and application perspectives of electric-ﬁeld-controlled magnetic tunnel junctions that use the voltage-controlled magnetic anisotropy eﬀect to control their magnetization. The integration of embedded magnetic random-access memory (MRAM) into mainstream semiconductor foundry manufacturing opens new possibilities for the development of energy-eﬃcient, high-performance, and intelligent computing systems. The current generation of MRAM, which uses the current-controlled spin-transfer torque (STT) eﬀect to write information, has gained traction due to its nonvolatile data retention and lower integration cost compared to embedded Flash. However, scaling MRAM to high bit densities will likely require a transition from current-controlled to voltage-controlled operation. In this perspective, an overview of voltage-controlled magnetic anisotropy (VCMA) as a promising beyond-STT write mechanism for MRAM devices is provided and recent adv",
+    "authors": "Yixin Shao and Pedram Khalili Amiri",
+    "doi": "10.1002/admt.202300676",
+    "abstract": "综述 VCMA-MRAM 的发展状态、开放问题和应用前景，强调从 STT 电流写入转向电压控制写入对高密度低能耗 MRAM 的意义。",
+    "detail_level": "branch-v1",
+    "figure_cards": [
+      {
+        "fig": "核心图/表",
+        "claim": "总结 VCMA 机制、低 WER、field-free switching、VCMA 系数提升和安全/随机器件应用。",
+        "what_to_read": "先读摘要、方法框架图和总结表，抓住它服务的是机制综述、实验闭环还是材料/器件优化。",
+        "why_it_matters": "作为 VCMA 分支入口论文，适合理解为什么电压调控能和 MRAM、SOT-MRAM、低功耗写入结合。",
+        "use_for": "作为 VCMA 或 ML/MBE 分支路线图节点。"
+      }
+    ]
+  },
+  {
+    "id": "029",
+    "title": "2024-JAP-VCMA",
+    "title_zh": "基于 VCMA 的自旋电子磁存储器件：挑战与展望",
+    "year": 2024,
+    "venue": "Journal of Applied Physics",
+    "category": "VCMA",
+    "topic": "VCMA",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/VCMA",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/VCMA/2024-JAP-VCMA.pdf",
+    "material_system": "",
+    "device_structure": "",
+    "physical_mechanisms": [
+      "VCMA"
+    ],
+    "key_metrics": {
+      "challenges": "field-free switching, WER, operation window, VCMA coefficient, read disturbance/read delay"
+    },
+    "experimental_conditions": {
+      "paper_type": "Review",
+      "scope": "VCMA switching, VGSOT, strain-assisted, skyrmion-assisted, CFL-based methods"
+    },
+    "research_question": "VCMA-MRAM 从概念走向实用器件主要卡在哪些可靠性与工艺问题上？",
+    "main_contribution": "把 VCMA 器件挑战拆成 field-free、WER、operation window、VCMA coefficient、read disturbance 等可追踪问题。",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "这篇适合做 VCMA 可靠性 checklist。",
+    "relevance_to_my_project": "适合给你的网页建立 VCMA 字段模板：不仅记录 VCMA 系数，还要记录 WER、脉冲窗口和读扰动。",
+    "status": "分支整理-v1",
+    "tags": [
+      "VCMA"
+    ],
+    "pdf_pages": 24,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 ---  View Online  Export Citation REVIEW ARTICLE | JUNE 14 2024 Voltage-controlled magnetic anisotropy-based spintronic devices for magnetic memory applications: Challenges and perspectives Pinkesh Kumar Mishra  ; Meenakshi Sravani ; Arnab Bose ; Swapnil Bhuktare J. Appl. Phys. 135, 220701 (2024) https://doi.org/10.1063/5.0201648 Articles You May Be Interested In Impact of ambient temperature on the switching of voltage-controlled perpendicular magnetic tunnel junction Appl. Phys. Lett. (March 2021) Voltage-gated spin-orbit torque switching in IrMn-based perpendicular magnetic tunnel junctions Appl. Phys. Lett. (January 2023) Strain-mediated voltage controlled magnetic anisotropy based switching for magnetic memory applications J. Appl. Phys. (September 2023) 17 March 2026 06:59:48 --- PAGE 2 --- Voltage-controlled magnetic anisotropy-based spintronic devices for magnetic memory applications: Challenges and perspectives Cite as: J. Appl. Phys. 135, 220701 (2024); doi: 10.1063/5.0201648 View Online Export Citation CrossMark Submitted: 31 January 2024 · Accepted: 15 May 2024 · Published Online: 14 June 2024 Pinkesh Kumar Mishra,1,a) Meenakshi Sravani,1 Arn",
+    "authors": "Pinkesh Kumar Mishra et al.",
+    "doi": "10.1063/5.0201648",
+    "abstract": "系统综述 VCMA 物理起源、磁存储应用中的挑战，以及 field-free switching、低 WER、宽操作窗口、高 VCMA 系数和低读扰动等解决方案。",
+    "detail_level": "branch-v1",
+    "figure_cards": [
+      {
+        "fig": "核心图/表",
+        "claim": "把 VCMA 器件挑战拆成 field-free、WER、operation window、VCMA coefficient、read disturbance 等可追踪问题。",
+        "what_to_read": "先读摘要、方法框架图和总结表，抓住它服务的是机制综述、实验闭环还是材料/器件优化。",
+        "why_it_matters": "适合给你的网页建立 VCMA 字段模板：不仅记录 VCMA 系数，还要记录 WER、脉冲窗口和读扰动。",
+        "use_for": "作为 VCMA 或 ML/MBE 分支路线图节点。"
+      }
+    ]
+  },
+  {
+    "id": "030",
+    "title": "2024-npj-Recent progress in SOT MRAM",
+    "title_zh": "SOT-MRAM 最新进展",
+    "year": 2024,
+    "venue": "npj",
+    "category": "VCMA",
+    "topic": "VCMA",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/VCMA",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/VCMA/2024-npj-Recent progress in SOT MRAM .pdf",
+    "material_system": "",
+    "device_structure": "",
+    "physical_mechanisms": [
+      "VCMA",
+      "SOT/Switching"
+    ],
+    "key_metrics": {
+      "focus": "low switching current, reliable field-free switching, BEOL integration, endurance, write error"
+    },
+    "experimental_conditions": {
+      "paper_type": "Review",
+      "scope": "perpendicular SOT-MRAM devices and integration strategies"
+    },
+    "research_question": "SOT-MRAM 要成为快速高耐久存储，还需要解决哪些材料与集成瓶颈？",
+    "main_contribution": "将 SOT-MRAM 的问题归纳为 PMA 集成、field-free switching、低电流、BEOL 兼容和阵列集成。",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "可作为 SOT-MRAM 总背景，与 MnGa/Pt、CoGa/MnGa/MgO 那条路线互相连接。",
+    "relevance_to_my_project": "把你 MnGa-SOT 论文放到产业 SOT-MRAM 背景下，判断哪些指标需要补齐。",
+    "status": "分支整理-v1",
+    "tags": [
+      "VCMA",
+      "SOT/Switching"
+    ],
+    "pdf_pages": 15,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 --- npj | spintronics Review https://doi.org/10.1038/s44306-024-00044-1 Recent progress in spin-orbit torque magnetic random-access memory Check for updates V. D. Nguyen , S. Rao, K. Wostyn & S. Couet Spin-orbit torque magnetic random-access memory (SOT-MRAM) offers promise for fast operation and high endurance but faces challenges such as low switching current, reliable ﬁeld free switching, and back-end of line manufacturing processes. We review recent advancements in perpendicular SOT-MRAM devices, emphasizing on material developments to enhance charge-spin conversion efﬁciency and large-scale device integration strategies. We also discuss the remaining challenges in achieving a single device with low switching current, reliable ﬁeld free switching to unlock the full potential of SOT-MRAM technology. The miniaturization predicted by Moore’s law has driven the evolution of electronic devices, leading to the explosive growth of our digital society as today1. However, as we continue to advance high-performance computing and energy efﬁciency, traditional charge-based memory technologies such as Static Random-Access Memory (SRAM) encounter signiﬁcant challenges, primarily",
+    "authors": "V. D. Nguyen et al.",
+    "doi": "10.1038/s44306-024-00044-1",
+    "abstract": "综述垂直 SOT-MRAM 的材料、器件集成和制造挑战，重点讨论低开关电流、可靠无场翻转和 BEOL 兼容。",
+    "detail_level": "branch-v1",
+    "figure_cards": [
+      {
+        "fig": "核心图/表",
+        "claim": "将 SOT-MRAM 的问题归纳为 PMA 集成、field-free switching、低电流、BEOL 兼容和阵列集成。",
+        "what_to_read": "先读摘要、方法框架图和总结表，抓住它服务的是机制综述、实验闭环还是材料/器件优化。",
+        "why_it_matters": "把你 MnGa-SOT 论文放到产业 SOT-MRAM 背景下，判断哪些指标需要补齐。",
+        "use_for": "作为 VCMA 或 ML/MBE 分支路线图节点。"
+      }
+    ]
+  },
+  {
+    "id": "031",
+    "title": "2026-npj-Yang Meiyin",
+    "title_zh": "通过电控制层间磁耦合实现 MTJ 并行写入",
+    "year": 2026,
+    "venue": "npj",
+    "category": "VCMA",
+    "topic": "VCMA",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/VCMA",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/VCMA/2026-npj-Yang Meiyin.pdf",
+    "material_system": "",
+    "device_structure": "",
+    "physical_mechanisms": [
+      "VCMA"
+    ],
+    "key_metrics": {
+      "architecture": "5D-4MTJ",
+      "mechanism": "unipolar current + VCMA modulation + interlayer coupling transition",
+      "advantage": "parallel writing, potential speed enhancement"
+    },
+    "experimental_conditions": {
+      "system": "orange-peel coupling MTJ, shared SOT channel, VCMA gate voltage",
+      "measurement": "R-J loops, switching probability, parallel writing demonstration"
+    },
+    "research_question": "能否绕开传统 MTJ 双极写入限制，实现多 MTJ 并行写入？",
+    "main_contribution": "把热调控层间耦合、SOT 和 VCMA 结合，演示 5D-4MTJ 并行写入架构。",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "对你的方向更像启发：VCMA 不只是降低写入能耗，也可做选择性和并行写入控制。",
+    "relevance_to_my_project": "这是 VCMA 从单器件调控走向阵列/架构的例子，适合放在“器件应用”节点。",
+    "status": "分支整理-v1",
+    "tags": [
+      "VCMA"
+    ],
+    "pdf_pages": 6,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 --- npj | spintronics Article https://doi.org/10.1038/s44306-025-00119-7 Parallel writing of magnetic tunnel junctions by electrical control of interlayer magnetic coupling Check for updates Meiyin Yang1,2,3,6 , Lei Zhao4,6, Ruipeng Shi5, Bowen Yang1,2,3, Zhuangzhuang Ye5, Zizhao Li1,2,3, Jingsong Huang1,2,3, Bao Zhang1,2,3, Jianfeng Gao1,2, Yanru Li1,2,3, Peiyue Yu1,2,3, Shuaiyu Gong1,2,3, Yan Cui1,2,3, Xiaolei Yang4, Ming Wang4, Shikun He4, Kaiming Cai5 & Jun Luo1,2,3 Parallel writing architectures offer orders-of-magnitude speed enhancement over single-device programming in microelectronics by enabling simultaneous operation across multiple devices. However, implementing parallel writing in spin-torque devices faces inherent challenges due to the bipolar electrical signals required for magnetization switching. Here, we propose a model enabling unipolar-current tuning of interlayer magnetic coupling energy in an orange peel coupling system. Leveraging this model, we achieve deterministic switching of magnetic tunnel junctions (MTJs) governed solely by the magnitude of unipolar current. We demonstrate parallel writing which relies on independent magnetic switching in",
+    "authors": "Meiyin Yang et al.",
+    "doi": "10.1038/s44306-025-00119-7",
+    "abstract": "提出利用单极电流调控 orange-peel coupling 中的层间耦合能，并结合 VCMA 实现单极 MTJ 的独立/并行写入。",
+    "detail_level": "branch-v1",
+    "figure_cards": [
+      {
+        "fig": "核心图/表",
+        "claim": "把热调控层间耦合、SOT 和 VCMA 结合，演示 5D-4MTJ 并行写入架构。",
+        "what_to_read": "先读摘要、方法框架图和总结表，抓住它服务的是机制综述、实验闭环还是材料/器件优化。",
+        "why_it_matters": "这是 VCMA 从单器件调控走向阵列/架构的例子，适合放在“器件应用”节点。",
+        "use_for": "作为 VCMA 或 ML/MBE 分支路线图节点。"
+      }
+    ]
+  },
+  {
+    "id": "032",
+    "title": "2019-APL Materials- BO",
+    "title_zh": "机器学习辅助薄膜生长：SrRuO3 MBE 的贝叶斯优化",
+    "year": 2019,
+    "venue": "APL Materials",
+    "category": "ML with MBE",
+    "topic": "ML-assisted Growth",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/ML with MBE",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/ML with MBE/2019-APL Materials- BO.pdf",
+    "material_system": "",
+    "device_structure": "",
+    "physical_mechanisms": [],
+    "key_metrics": {
+      "growth_runs": "24 MBE growth runs",
+      "target": "RRR > 50 SrRuO3 film; strong PMA",
+      "method": "Bayesian optimization"
+    },
+    "experimental_conditions": {
+      "material": "SrRuO3",
+      "technique": "MBE + BO",
+      "variables": "Ru flux, growth temperature, O3 nozzle-substrate distance"
+    },
+    "research_question": "能否用 BO 减少 MBE 生长条件试错次数？",
+    "main_contribution": "展示 BO 在 MBE 单条件逐步优化中的可行性，降低对个人经验的依赖。",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "这是 ML/MBE 路线的起点型论文。",
+    "relevance_to_my_project": "可迁移到 MnGa/MnAl 生长参数优化：把温度、束流、退火和结构指标作为 BO 变量/目标。",
+    "status": "分支整理-v1",
+    "tags": [
+      "ML with MBE"
+    ],
+    "pdf_pages": 8,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 ---  View Online  Export Citation RESEARCH ARTICLE | OCTOBER 16 2019 Machine-learning-assisted thin-film growth: Bayesian optimization in molecular beam epitaxy of SrRuO3 thin films Yuki K. Wakabayashi ; Takuma Otsuka; Yoshiharu Krockenberger; Hiroshi Sawada ; Yoshitaka Taniyasu; Hideki Yamamoto APL Mater. 7, 101114 (2019) https://doi.org/10.1063/1.5123019 Articles You May Be Interested In SrRuO 3 / SrTiO 3 / SrRuO 3 heterostructures for magnetic tunnel junctions J. Appl. Phys. (May 2003) Structural and transport properties of highly Ru-deficient SrRu0.7O3 thin films prepared by molecular beam epitaxy: Comparison with stoichiometric SrRuO3 AIP Advances (March 2021) Encapsulation materials for SrRuO 3 to avoid H 2 anneal-induced decomposition J. Vac. Sci. Technol. A (January 2002) 10 February 2026 07:43:37 --- PAGE 2 --- APL Materials ARTICLE scitation.org/journal/apm Machine-learning-assisted thin-film growth: Bayesian optimization in molecular beam epitaxy of SrRuO3 thin films Cite as: APL Mater. 7, 101114 (2019); doi: 10.1063/1.5123019 Submitted: 5 August 2019 • Accepted: 19 September 2019 • Published Online: 16 October 2019 Yuki K. Wakabayashi,1,a) Takuma O",
+    "authors": "Yuki K. Wakabayashi et al.",
+    "doi": "10.1063/1.5123019",
+    "abstract": "用贝叶斯优化辅助 SrRuO3 MBE 生长，在 24 次生长内优化 Ru flux、生长温度和 O3 nozzle-substrate distance，获得高质量薄膜。",
+    "detail_level": "branch-v1",
+    "figure_cards": [
+      {
+        "fig": "核心图/表",
+        "claim": "展示 BO 在 MBE 单条件逐步优化中的可行性，降低对个人经验的依赖。",
+        "what_to_read": "先读摘要、方法框架图和总结表，抓住它服务的是机制综述、实验闭环还是材料/器件优化。",
+        "why_it_matters": "可迁移到 MnGa/MnAl 生长参数优化：把温度、束流、退火和结构指标作为 BO 变量/目标。",
+        "use_for": "作为 VCMA 或 ML/MBE 分支路线图节点。"
+      }
+    ]
+  },
+  {
+    "id": "033",
+    "title": "2024-nc-machine learning for mbe",
+    "title_zh": "机器学习辅助和实时反馈控制的 InAs/GaAs 量子点生长",
+    "year": 2024,
+    "venue": "Nature Communications",
+    "category": "ML with MBE",
+    "topic": "ML-assisted Growth",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/ML with MBE",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/ML with MBE/2024-nc-machine learning for mbe.pdf",
+    "material_system": "",
+    "device_structure": "",
+    "physical_mechanisms": [
+      "ML/MBE"
+    ],
+    "key_metrics": {
+      "model": "3D ResNet 50",
+      "data": "120 RHEED videos",
+      "qd_density_range": "3.8e8 to 1.4e11 cm-2",
+      "feedback": "near-real-time growth control"
+    },
+    "experimental_conditions": {
+      "material": "InAs/GaAs QDs",
+      "input": "RHEED videos",
+      "output": "QD formation and density class",
+      "control": "growth parameter adjustment during MBE"
+    },
+    "research_question": "能否把 RHEED 视频实时连接到 MBE 生长状态，并在生长过程中闭环调控目标密度？",
+    "main_contribution": "从 post-growth 优化推进到 real-time feedback control，展示 RHEED 视频 + 深度学习的在线控制。",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "如果实验条件允许采集 RHEED/反射信号，这篇是闭环控制范式。",
+    "relevance_to_my_project": "对你未来做智能 MBE/溅射最有启发：RHEED 视频或原位信号可以变成在线反馈，而不是事后表征。",
+    "status": "分支整理-v1",
+    "tags": [
+      "ML with MBE",
+      "ML/MBE"
+    ],
+    "pdf_pages": 11,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 --- Article https://doi.org/10.1038/s41467-024-47087-w Machine-learning-assisted and real-time- feedback-controlled growth of InAs/GaAs quantum dots Chao Shen1,2,3,7, Wenkang Zhan1,2,7, Kaiyao Xin2,4, Manyang Li1,2, Zhenyu Sun1,2, Hui Cong2,5, Chi Xu2,5, Jian Tang6, Zhaofeng Wu3, Bo Xu1,2, Zhongming Wei 2,4, Chunlai Xue2,5, Chao Zhao 1,2 & Zhanguo Wang1,2 The applications of self-assembled InAs/GaAs quantum dots (QDs) for lasers and single photon sources strongly rely on their density and quality. Estab- lishing the process parameters in molecular beam epitaxy (MBE) for a speciﬁc density of QDs is a multidimensional optimization challenge, usually addres- sed through time-consuming and iterative trial-and-error. Here, we report a real-time feedback control method to realize the growth of QDs with arbitrary density, which is fully automated and intelligent. We develop a machine learning (ML) model named 3D ResNet 50 trained using reﬂection high-energy electron diffraction (RHEED) videos as input instead of static images and providing real-time feedback on surface morphologies for process control. As a result, we demonstrate that ML from previous growth could predict the",
+    "authors": "Chao Shen et al.",
+    "doi": "10.1038/s41467-024-47087-w",
+    "abstract": "用 RHEED 视频训练 3D ResNet 50，实现 InAs/GaAs 量子点密度的实时反馈控制，可将 QD 密度调到 3.8e8 到 1.4e11 cm-2。",
+    "detail_level": "branch-v1",
+    "figure_cards": [
+      {
+        "fig": "核心图/表",
+        "claim": "从 post-growth 优化推进到 real-time feedback control，展示 RHEED 视频 + 深度学习的在线控制。",
+        "what_to_read": "先读摘要、方法框架图和总结表，抓住它服务的是机制综述、实验闭环还是材料/器件优化。",
+        "why_it_matters": "对你未来做智能 MBE/溅射最有启发：RHEED 视频或原位信号可以变成在线反馈，而不是事后表征。",
+        "use_for": "作为 VCMA 或 ML/MBE 分支路线图节点。"
+      }
+    ]
+  },
+  {
+    "id": "034",
+    "title": "2025-ne-Ai guided",
+    "title_zh": "面向 MTJ 真随机数发生器材料与器件设计的 AI 引导框架",
+    "year": 2025,
+    "venue": "Nature Electronics",
+    "category": "ML with MBE",
+    "topic": "ML-assisted Growth",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/ML with MBE",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/ML with MBE/2025-ne-Ai guided.pdf",
+    "material_system": "",
+    "device_structure": "",
+    "physical_mechanisms": [
+      "ML/MBE"
+    ],
+    "key_metrics": {
+      "methods": "reinforcement learning, evolutionary optimization",
+      "device": "SOT/STT MTJ",
+      "application": "true random number generator"
+    },
+    "experimental_conditions": {
+      "paper_type": "AI-guided simulation/codesign",
+      "target": "probabilistic MTJ devices, energy minimization"
+    },
+    "research_question": "AI 能否直接优化 MTJ 器件和材料参数以服务特定应用？",
+    "main_contribution": "把 ML 从材料生长扩展到 MTJ device/application co-design，展示 RL/EA 优化随机器件。",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "不是 MBE 生长论文，但适合 ML + MTJ 器件设计分支。",
+    "relevance_to_my_project": "如果你后续做微磁模拟参数优化，这篇提供“应用目标驱动器件参数搜索”的思路。",
+    "status": "分支整理-v1",
+    "tags": [
+      "ML with MBE",
+      "ML/MBE"
+    ],
+    "pdf_pages": 11,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 --- communications engineering Article A Nature Portfolio journal https://doi.org/10.1038/s44172-025-00376-8 AI-guided framework for the design of materials and devices for magnetic- tunnel-junction-based true random number generators Check for updates Karan P. Patel 1,4, Andrew Maicke2,4, Jared Arzate2, Jaesuk Kwon 2, J. Darby Smith 3, James B. Aimone 3, Jean Anne C. Incorvia2, Suma G. Cardwell 3 & Catherine D. Schuman 1 Emerging devices, such as magnetic tunnel junctions, are key for energy-efﬁcient, performant future computing systems. However, designing devices with the desirable speciﬁcation and performance for these applications is often found to betime-consuming and non-trivial. Here, we investigate the design and optimization of spin–orbit torque and spin transfer torque magnetic tunnel junction models as the probabilistic devices for true random number generation. We leverage reinforcement learning and evolutionary optimization to vary key device and material properties of the various device models for stochastic operation. Our artiﬁcial-intelligence-guided codesign methods generated different candidate devices capable of generating stochastic samples for a de",
+    "authors": "Karan P. Patel et al.",
+    "doi": "10.1038/s44172-025-00376-8",
+    "abstract": "用强化学习和进化优化联合设计 SOT/STT MTJ 概率器件，使其在满足目标随机分布的同时降低能耗。",
+    "detail_level": "branch-v1",
+    "figure_cards": [
+      {
+        "fig": "核心图/表",
+        "claim": "把 ML 从材料生长扩展到 MTJ device/application co-design，展示 RL/EA 优化随机器件。",
+        "what_to_read": "先读摘要、方法框架图和总结表，抓住它服务的是机制综述、实验闭环还是材料/器件优化。",
+        "why_it_matters": "如果你后续做微磁模拟参数优化，这篇提供“应用目标驱动器件参数搜索”的思路。",
+        "use_for": "作为 VCMA 或 ML/MBE 分支路线图节点。"
+      }
+    ]
+  },
+  {
+    "id": "035",
+    "title": "2025-npj-ml for mtj",
+    "title_zh": "机器学习用于 MTJ 新材料开发",
+    "year": 2025,
+    "venue": "npj",
+    "category": "ML with MBE",
+    "topic": "ML-assisted Growth",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/ML with MBE",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/ML with MBE/2025-npj-ml for mtj.pdf",
+    "material_system": "",
+    "device_structure": "",
+    "physical_mechanisms": [
+      "MTJ/TMR",
+      "ML/MBE"
+    ],
+    "key_metrics": {
+      "search_space": "Heusler alloys >100k combinations",
+      "targets": "high spin polarization, TMR, RA, stable tunnel barrier",
+      "methods": "ML, ab initio, quantum annealing"
+    },
+    "experimental_conditions": {
+      "paper_type": "Perspective/review",
+      "scope": "MTJ electrode and tunnel barrier material discovery"
+    },
+    "research_question": "面对巨大组分空间，如何用 ML/DFT/QA 加速 MTJ 新材料发现？",
+    "main_contribution": "给出 spintronics/MTJ 材料信息学流程，把虚拟筛选、实验验证和 MBE/界面控制连接起来。",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "适合把“材料候选-DFT-生长-器件”串成长期课题图。",
+    "relevance_to_my_project": "可作为 MnGa/MnAl/Heusler-like 材料筛选的总方法论文。",
+    "status": "分支整理-v1",
+    "tags": [
+      "ML with MBE",
+      "MTJ/TMR",
+      "ML/MBE"
+    ],
+    "pdf_pages": 9,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 --- npj | spintronics Review https://doi.org/10.1038/s44306-025-00094-z Machine learning for the development of new materials for a magnetic tunnel junction Check for updates Atsufumi Hirohata1,2,3 , Hiroki Koizumi1,8, Tufan Roy1,2, Masahito Tsujikawa2, Shigemi Mizukami1,4, Kenji Nawa5,6,7 & Masafumi Shirai1,2 In materials science, we have been increasing the number of constituent elements in an alloy and compounds to improve their properties. For example, in magnetism and spintronics, ternary alloys, such as NdFeB and CoFeB have been developed and widely used in permanent magnets and memories/sensors, respectively. It has now been considered to be a time to add more elements to further explore their horizon. For such a complicated development, a manual systematic study is no longer practical, leading to the utilisation of machine learning to predict a candidate. These candidates can then be additionally screened by ab initio calculations before experimental conﬁrmation, which can be performed routinely. Additional use of quantum annealing may also broaden the adoptability of machine learning on the materials development. In this perspective, we plan to offer a standar",
+    "authors": "Atsufumi Hirohata et al.",
+    "doi": "10.1038/s44306-025-00094-z",
+    "abstract": "综述机器学习、第一性原理和量子退火在 MTJ 新材料开发中的作用，重点包括 Heusler 合金、隧穿势垒和高 TMR/低 RA 搜索。",
+    "detail_level": "branch-v1",
+    "figure_cards": [
+      {
+        "fig": "核心图/表",
+        "claim": "给出 spintronics/MTJ 材料信息学流程，把虚拟筛选、实验验证和 MBE/界面控制连接起来。",
+        "what_to_read": "先读摘要、方法框架图和总结表，抓住它服务的是机制综述、实验闭环还是材料/器件优化。",
+        "why_it_matters": "可作为 MnGa/MnAl/Heusler-like 材料筛选的总方法论文。",
+        "use_for": "作为 VCMA 或 ML/MBE 分支路线图节点。"
+      }
+    ]
+  },
+  {
+    "id": "036",
+    "title": "924",
+    "title_zh": "机器学习在分子束外延生长中的应用进展",
+    "year": null,
+    "venue": "",
+    "category": "ML with MBE",
+    "topic": "ML-assisted Growth",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/ML with MBE",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/ML with MBE/924.pdf",
+    "material_system": "",
+    "device_structure": "",
+    "physical_mechanisms": [],
+    "key_metrics": {
+      "focus": "RHEED image/video, growth condition optimization, real-time feedback, multimodal data fusion"
+    },
+    "experimental_conditions": {
+      "paper_type": "Chinese review",
+      "scope": "ML in MBE for semiconductors, oxides, 2D materials"
+    },
+    "research_question": "机器学习如何进入 MBE 的条件优化、RHEED 分析和实时反馈？",
+    "main_contribution": "系统梳理 MBE 常用 ML 模型、RHEED 图像分析进展和未来智能外延策略。",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "可用来设计自己实验记录表：RHEED、XRD、XPS、AFM、磁性指标都要保留元数据。",
+    "relevance_to_my_project": "这篇非常适合作为你自己学习 ML+MBE 的中文入口和术语索引。",
+    "status": "分支整理-v1",
+    "tags": [
+      "ML with MBE"
+    ],
+    "pdf_pages": 11,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 --- 第 54 卷 第 6 期 2025 年 6 月 Vol. 54 No. 6 June，2025 人 工 晶 体 学 报 JOURNAL OF SYNTHETIC CRYSTALS DOI：10. 16553/j. cnki. issn1000-985x. 2024. 0272 机器学习在分子束外延生长的应用进展 杨再洪 1，2，周 灿 2，范柳燕 2，张燕辉 2，陈泽中 1，陈平平 2 （1. 上海理工大学材料与化学学院，上海 200093；2. 中国科学院上海技术物理研究所红外科学与技术全国重点实验室，上海 200083） 摘要：最近几年，人工智能在材料领域得到广泛应用，机器学习在分子束外延（MBE）技术中的应用引人关注。基于原 位反射高能电子衍射（RHEED）及相关物性的智能识别和反馈的MBE 技术，能够显著提升生长材料的质量和生长效 率，有望实现薄膜的MBE智能外延。本综述聚焦机器学习MBE中的应用研究，首先介绍了MBE中常用的机器学习算 法模型，阐述了机器学习在优化MBE 生长条件中的应用，着重总结了不同材料体系（半导体薄膜和量子结构材料、氧 化物材料和二维材料等）基于RHEED图像机器学习的研究进展，并就存在的问题和未来的发展策略进行了总结展望。 关键词：分子束外延；机器学习；反射高能电子衍射；Ⅲ-Ⅴ族半导体材料；人工智能 中图分类号：O484. 1 文献标志码：A 文章编号：1000-985X（2025）06-0924-11 Research Progress on Application of Machine Learning in Molecular Beam Epitaxy Growth YANG Zaihong 1，2， ZHOU Can 2， FAN Liuyan 2， ZHANG Yanhui 2， CHEN Zezhong 1， CHEN Pingping 2 （1. School of Materials and Chemistry， University of Shanghai for Science and Technology， Shanghai 200093， China； 2. State Key Laboratory of Infrared Physics， Shanghai Institute of Technical Physics， Chinese Academy of Sciences， Shanghai 200083， China） Abstract：In recent years， artificial intelligence has been widely applied in the field of materials， and the applicat",
+    "authors": "杨再洪等",
+    "doi": "10.16553/j.cnki.issn1000-985x.2024.0272",
+    "abstract": "中文综述机器学习在 MBE 中的应用，重点包括生长条件优化、RHEED 图像识别、半导体/氧化物/二维材料中的智能外延。",
+    "detail_level": "branch-v1",
+    "figure_cards": [
+      {
+        "fig": "核心图/表",
+        "claim": "系统梳理 MBE 常用 ML 模型、RHEED 图像分析进展和未来智能外延策略。",
+        "what_to_read": "先读摘要、方法框架图和总结表，抓住它服务的是机制综述、实验闭环还是材料/器件优化。",
+        "why_it_matters": "这篇非常适合作为你自己学习 ML+MBE 的中文入口和术语索引。",
+        "use_for": "作为 VCMA 或 ML/MBE 分支路线图节点。"
+      }
+    ]
+  },
+  {
+    "id": "037",
+    "title": "s41524-025-01626-1",
+    "title_zh": "基于无监督机器学习识别高效 SOT 材料",
+    "year": null,
+    "venue": "",
+    "category": "ML with MBE",
+    "topic": "ML-assisted Growth",
+    "source_folder": "/Users/luoyuhan/Documents/博1/文献/ML with MBE",
+    "local_path": "/Users/luoyuhan/Documents/博1/文献/ML with MBE/s41524-025-01626-1.pdf",
+    "material_system": "",
+    "device_structure": "",
+    "physical_mechanisms": [],
+    "key_metrics": {
+      "candidates": "97 new SOT materials",
+      "high_efficiency": "16 candidates with projected SOT efficiency > 1",
+      "validation": "FeSi experimentally confirmed"
+    },
+    "experimental_conditions": {
+      "method": "word embedding on scientific corpus + neural-network projection",
+      "target": "SOT materials"
+    },
+    "research_question": "能否从文献文本中挖掘非显然材料关联，发现高 SOT 效率候选？",
+    "main_contribution": "展示无监督文本挖掘可用于 spintronics 材料发现，尤其是高 SOT 材料排序和候选生成。",
+    "evidence_chain": [],
+    "figures": [],
+    "my_notes": "它把“读文献”本身变成数据源，很适合和你的网页知识库长期结合。",
+    "relevance_to_my_project": "如果你要找 MnGa/MnAl 之外的 SOT 层或插层候选，这篇提供文献挖掘路线。",
+    "status": "分支整理-v1",
+    "tags": [
+      "ML with MBE"
+    ],
+    "pdf_pages": 13,
+    "text_extract_status": "ok",
+    "text_excerpt": "--- PAGE 1 --- npj | computational materials Article Published in partnership with the Shanghai Institute of Ceramics of the Chinese Academy of Sciences https://doi.org/10.1038/s41524-025-01626-1 An unsupervised machine learning based approach to identify efﬁcient spin-orbit torque materials Check for updates Shehrin Sayed 1,2,3 , Hannah Calzi Kleidermacher 1, Giulianna Hashemi-Asasi1, Cheng-Hsiang Hsu 1 & Sayeef Salahuddin1,2 Materials with large spin–orbit torque (SOT) hold considerable signiﬁcance for many spintronic applications because of their potential for energy-efﬁcient magnetization switching. Unfortunately, most of the existing materials exhibit an SOT efﬁciency factor that is much less than unity, requiring a large current for magnetization switching. The search for new materials that can exhibit an SOT efﬁciency much greater than unity is a topic ofactive research, and only a few such materials have been identiﬁed using conventional approaches. In this paper, we present a machine learning-based approach using a word embedding model that can identify new results by deciphering non-trivial correlations among various items in a specialized scientiﬁc text corpus. We show",
+    "authors": "Shehrin Sayed et al.",
+    "doi": "10.1038/s41524-025-01626-1",
+    "abstract": "使用科学文献语料的 word embedding 模型识别高 SOT 候选材料，预测 97 个新材料，其中 16 个 SOT 效率可能大于 1，并有 FeSi 实验验证。",
+    "detail_level": "branch-v1",
+    "figure_cards": [
+      {
+        "fig": "核心图/表",
+        "claim": "展示无监督文本挖掘可用于 spintronics 材料发现，尤其是高 SOT 材料排序和候选生成。",
+        "what_to_read": "先读摘要、方法框架图和总结表，抓住它服务的是机制综述、实验闭环还是材料/器件优化。",
+        "why_it_matters": "如果你要找 MnGa/MnAl 之外的 SOT 层或插层候选，这篇提供文献挖掘路线。",
+        "use_for": "作为 VCMA 或 ML/MBE 分支路线图节点。"
+      }
+    ]
+  }
+]

@@ -1,0 +1,558 @@
+
+
+--- PAGE 1 ---
+npj | spintronics
+Article
+https://doi.org/10.1038/s44306-025-00119-7
+Parallel writing of magnetic tunnel
+junctions by electrical control of interlayer
+magnetic coupling
+Check for updates
+Meiyin Yang1,2,3,6
+, Lei Zhao4,6, Ruipeng Shi5, Bowen Yang1,2,3, Zhuangzhuang Ye5, Zizhao Li1,2,3,
+Jingsong Huang1,2,3, Bao Zhang1,2,3, Jianfeng Gao1,2, Yanru Li1,2,3, Peiyue Yu1,2,3, Shuaiyu Gong1,2,3,
+Yan Cui1,2,3, Xiaolei Yang4, Ming Wang4, Shikun He4, Kaiming Cai5
+& Jun Luo1,2,3
+Parallel writing architectures offer orders-of-magnitude speed enhancement over single-device
+programming in microelectronics by enabling simultaneous operation across multiple devices.
+However, implementing parallel writing in spin-torque devices faces inherent challenges due to the
+bipolar electrical signals required for magnetization switching. Here, we propose a model enabling
+unipolar-current tuning of interlayer magnetic coupling energy in an orange peel coupling system.
+Leveraging this model, we achieve deterministic switching of magnetic tunnel junctions (MTJs)
+governed solely by the magnitude of unipolar current. We demonstrate parallel writing which relies on
+independent magnetic switching in unipolar MTJs through the coordinated application of unipolar
+current and voltage-controlled magnetic anisotropy (VCMA) effect. This work establishes an alternate
+strategy toward ultrahigh-speed spintronic devices with low energy consumption.
+The spintronics by spin torque has emerged as a promising technology for
+the next generation memory and logic due to its non-volatility, high-speed
+operation, and superior endurance1–4. However, its ultra-fast switching
+capabilities are facing challenges due to the exponential increase in write
+current density as pulse widths approach the sub-nanosecond regime5–7.
+High current demands not only escalate energy consumption but also
+necessitate large-footprint transistors for current regulation8–11, thereby
+compromising storage density. Furthermore, high-current operation
+degrades endurance and reliability12–15. Thus, state-of-the-art spintronics,
+both spin-transfer torque magnetic random access memory (STT-
+MRAM)16 and spin-orbit torque MRAM (SOT-MRAM)17 variants—
+demonstrate practical operation timescales of 10–20 ns at the circuit level.
+Consequently, achieving sub-nanosecond switching speeds remains a
+pivotal challenge for realizing high-speed spin torque device with high
+efﬁciency18–20.
+Parallel writing unlocks orders-of-magnitude speed acceleration
+in microelectronics by enabling simultaneous programming of device
+arrays. This strategy has been successfully demonstrated in NAND
+ﬂash technology, where simultaneous programming of ~105 cells
+enables effective write speeds of 3 × 108bit/s21,22—three orders of
+magnitude faster than single-cell operation (2 × 105bit/s)23. Recent
+efforts to adapt this paradigm to spin torque devices have explored
+multi-cell SOT-MTJ arrays on shared spin source channels24–28. The
+STT-assisted SOT24–26 and voltage-controlled magnetic anisotropy
+(VCMA) modulation27,28 are used to enable selective cell addressing.
+However, these implementations remain fundamentally limited to
+write one MTJ. The parallel writing of multiple MTJs is still
+challenging.
+The difﬁculty of the parallel writing for MTJs is the switching
+requirement of bipolar current in conventional MTJ. In this work, we
+propose a model to realize unipolar MTJ by controlling the interlayer
+exchange coupling via unipolar current in an orange peel coupling
+system. A transient Joule heating from unipolar current pulses raises
+the temperature, induces interfacial ferromagnetic (FM) and anti-
+ferromagnetic (AFM) coupling transitions and decay of stray ﬁeld in
+an orange peel structure (Fig. 1a), which determines the magnetic
+switching direction (Fig. 1b). VCMA effect (VG) modulates the cri-
+tical switching current density while preserving unipolar operation
+(Fig. 1c), which can enable independent state programming in par-
+allel writing architecture (Fig. 1d). Our work provides an alternate
+framework and pathway for achieving high-speed, low energy and
+high-capacity spintronics devices and system.
+1Key Laboratory of Fabrication Technologies for Integrated Circuits, Chinese Academy of Sciences, Beijing, China. 2Institute of Microelectronics, Chinese
+Academy of Sciences, Beijing, China. 3School of Integrated Circuits, University of Chinese Academy of Sciences, Beijing, China. 4Zhejiang Hikstor Technology Co.
+LTD., Zhejiang, China. 5School of Physics, Huazhong University of Science and Technology, Wuhan, China. 6These authors contributed equally: Meiyin Yang, Lei
+Zhao.
+e-mail: yangmeiyin@ime.ac.cn; kmcai@hust.edu.cn; luojun@ime.ac.cn
+npj Spintronics |  (2026) 4:1 
+1
+1234567890():,;
+1234567890():,;
+
+
+--- PAGE 2 ---
+Results
+Model of tuning interlayer exchange couplings by unipolar
+current
+We propose a unipolar-writable MTJ model based on current-amplitude-
+modulated AFM/FM interlayer coupling transitions. The switching
+mechanism originates from interlayer exchange coupling control in the free
+layer (FL)/MgO/reference layer (RL) structure, where the currentamplitude
+mediates AFM-FM coupling transitions through controlled Joule heating.
+The ﬁnal magnetic state is determined by the joint effects of interlayer
+coupling strength and the stray ﬁeld from the synthetic antiferromagnet
+(SAF) during the write pulse relaxation phase.
+The interfacial coupling is modeled using an orange-peel coupling
+model with periodic roughness29, as schematized in Fig. 2a. The total system
+energy (E) comprises three key contributions: interlayer exchange energy
+(Eex), interfacial anisotropy energy (Ean), and magnetostatic energy (Emag).
+The coupling type is governed by the energy difference ΔE = E ↑↑- E ↑↓,
+where negative (positive) ΔE indicates FM (AFM) coupling. (Complete
+mathematical formulation using single and doth sinusoids and how it is
+deduced are provided in Supplementary Note S1.)
+This model systematically investigates the governing parameters of
+interfacial magnetic coupling. As demonstrated in Fig. 2b, under ﬁxed
+geometric constraints (wavelength W = 9.5 nm, MgO thickness d = 1.2 nm,
+magnetic layer thickness b = 1 nm), the interfacial anisotropy constant Ku
+emerges as a critical coupling determinant. For interface roughness
+h = 0.4 nm, ΔE transitions from negative (FM) to positive (AFM) when Ku
+decreases below 6 × 105J/m3. Conversely, reduced roughness (h = 0.1 nm)
+yields Ku-insensitive coupling with near-zero ΔE. These results establish Ku
+modulation as an effective control knob for coupling reversal in orange-peel
+coupled systems. Remarkably, Ku-mediated coupling control exhibits
+strong parametric selectivity, showing minimal dependence on saturation
+magnetization (Ms) and layer thickness variations (Supplementary
+Note S2).
+To systematically investigate the temperature dependence of Ku, we
+conducted
+temperature-dependent
+magnetometry
+on
+a
+W(5 nm)/
+CoFeB(1 nm)/MgO(1.2 nm) heterostructure. The Ku values, extracted
+through Stoner–Wohlfarth formalism (Supplementary Note S3), demon-
+stratestrongthermalsensitivityinthistemperatureregime.AsshowninFig.
+2c, the Ku exhibits monotonic reduction from 300 K to 400 K. This
+temperature-induced Ku modulation directly enables reversible thermal
+control of interfacial exchange coupling, possibly providing a physical
+pathwayforthermallyactivatedAFM/FM transitioninorange-peelcoupled
+systems.
+WeﬁrstengineeredMTJﬁlmswithtailored interfacialroughnessusing
+a W(5 nm)/CoFeB(1 nm)/MgO(d = 1.0, 1.2 nm)/CoFeB(1.2 nm)/W/SAF
+stack. Cross-sectional TEM analysis (Fig. 2d) conﬁrmed the designed
+interface morphologies: the d = 1.2 nm MgO layer exhibited periodic
+orange-peel coupling (T = 9.5 nm, h = 0.4 nm) matching the modeling
+parameters in Fig. 2b, while the d = 1.0 nm interface showed atomically
+smooth proﬁles (h < 0.1 nm). The means to realize speciﬁc interface
+roughness has been reported in our previous work30.
+To probe the coupling ﬁeld of different interfaces, we performed
+temperature-dependent hysteresis loop measurements (h = 0.4) in Fig. 2e
+(hysteresis loops for device of h = 0.1 is in Supplementary Note S4). For a
+rough interface (h = 0.4 nm), the Hoffset ﬁrst increases with temperature
+before undergoing a reversal (Fig. 2f), mirroring the predicted FM/AFM
+transition in Fig. 2b. This non-monotonic evolution arises from competing
+thermal effects: initial enhancement of FM coupling through activated FL
+and RL magnetic alignment at moderate temperatures (300–350 K), fol-
+lowed by decreased Ku driven AFM dominance and the reduced stray ﬁeld
+fromtheSAFasheatingprogresses(350–400 K,Fig.2c).Incontrast,smooth
+Fig. 1 | Parallel writing of MTJs. a Schematics of thermally modulated AFM/ FM
+coupling in an orange peel coupled system. Ferromagnetic coupling dominates at
+low temperature T1, while antiferromagnetic coupling prevails at higher tempera-
+ture T2. b Unipolar current-driven magnetization switching. A single-polarity write
+current density (Jwrite) controls the MTJ’s resistance state by thermally inducing
+AFM/FM coupling transitions. c VCMA modulation. Gate voltage (VG) tunes the
+critical Jwrite threshold, enabling VG -selectable high/low resistance states. d Parallel
+programming architecture. Orthogonal control of Jwrite and VG (state selection)
+enables simultaneous multi-bit writing in unipolar MTJ arrays.
+https://doi.org/10.1038/s44306-025-00119-7
+Article
+npj Spintronics |  (2026) 4:1 
+2
+
+
+--- PAGE 3 ---
+interfaces (d = 1.0 nm) exhibited Hoffset reduction (Fig. 2f), consistent with
+Ms thermal decay from the stray ﬁeld of SAF without orange-peel coupling
+contributions31.
+To evaluate the temperature ﬂuctuation in MTJ during writing
+operation, we did simulations of Joule heating in Supplementary Note S5.
+The write pulses elevate MTJ temperatures from 300 to 400 K, fully span-
+ning the Ku threshold required for a coupling reversal. Using write pulse to
+achieve unipolar MTJ by controlling the interlayer coupling is highly pos-
+sible. Otherparameters of inﬂuencing temperature of the device, such as the
+variation of R due to spacer layer thickness and interface conductance are
+quantiﬁed in Supplementary Note S6.
+Experimental demonstration of the unipolar MTJ
+The thermal controlled coupling mechanism enables unipolar MTJ
+switching through precise current amplitude modulation. During write
+operations, an auxiliary out-of-plane ﬁeld compensates SAF stray ﬁelds—a
+temporary requirement addressable via structural optimization. As illu-
+stratedinFig.3a,threedistinctoperationalregimesemergeunderincreasing
+current density. Low J (RT) maintains state stability for reliable readout.
+Intermediate J increases the device temperature to T1 and writes P states
+throughlowerKu-enhancedFMcoupling(Fig.3b).HigherJheatsthedevice
+toT2and furtherreducestheKuandMSAF,activatingAPstate.Thiscurrent-
+dependent thermal control successfully achieves deterministic unipolar
+switching.
+The switching probability characteristics of the unipolar MTJ
+were systematically quantiﬁed in Fig. 3b. At RT, both AP →P and
+P →AP transitions exhibit zero switching probability, ensuring stable
+readout integrity. With increasing current density, the AP →P
+switching probability initiates an upward trend, achieving near-
+deterministic conversion (>99%) at critical current density exceeding
+J > 3.3 × 107A/cm2. This trend reverses when the current density sur-
+passes 4 × 107A/cm2, where the AP →P probability decreases con-
+comitant with rising P →AP switching efﬁciency. Ultimately, the
+P →AP transition approaches near 100% switching rate at current
+densities
+beyond
+4.5 × 107A/cm2.
+These
+distinct
+probabilistic
+thresholds establish well-separated operational windows for reliable
+read and write operations under unipolar current.
+The proposed unipolar MTJ retains functional compatibility with
+conventional SOT-MTJ devices. Bipolar current switching measurements
+under an in-plane magnetic ﬁeld (Hₓ = 180 Oe) reveal characteristic square
+hysteresis loops with counterclockwise chirality in Fig. 3c, conﬁrming SOT-
+driven magnetization dynamics. The SOT signiﬁcantly reduces both the
+effectiveswitchingenergybarrierandlowersthecoercivityoftheMTJ.ForP
+statewriting, Joule heating induced temperature T1 shifts the hysteresis loop
+to the right in Fig. 3d (FM coupling), wherein the combined effects of SOT-
+mediated coercivity reduction drive the MTJ into the P state. Upon current
+pulse termination, the absence of SOT assistance results in coercivity
+recovery, stabilizing the P state during cooling. This mechanism operates
+reciprocallyforAPstatewritingattemperatureT2.Onedifferenceisthatthe
+cooling trajectory from T2 to RT traverses T1. At T1 in this situation, the P
+statecannotbeformedduetotheelevatedcoercivityinSOT-freeconditions.
+As a result, the AP state can be maintained during the cooling process from
+T1 to RT. Thus, the SOT plays an essential role in the writing of P or AP
+conﬁgurations by controlling the coercivity of the device.
+This SOT-enabled switching also permits ultrafast operation of MTJs
+across nanosecond timescales, as evidenced by successful magnetization
+reversal at both 50 ns and 1 ns pulse widths (Fig. 3e). Detailed analysis of the
+switchingdynamicsunder1-nscurrentpulsesisprovidedinSupplementary
+Note S7. Simulations determining threshold pulse widths are presented in
+Supplementary Note S8.
+Capitalizing on the unipolar current characteristic, we implemented a
+selection scheme through diode-MTJ integration (inset of Fig. 3e). The
+diodes’ unidirectional conduction property inherently restricts effective
+switching to negative current polarities, creating a self-selecting means that
+eliminates conventional transistor-based selection requirements.
+Parallel writing of the unipolar MTJs
+To enable parallel writing, we implemented a shared-electrode architecture
+where four MTJs share a common SOT channel while maintaining indi-
+vidual addressability. This architecture leverages VCMA effects by applying
+Fig. 2 | Mechanisms and experimental validation of magnetic coupling transi-
+tion. a Schematics of the magnetostatic interaction in an orange peel couplings
+system. b The energy difference (ΔE) between AFM coupling and FM coupling vs.
+magnetic anisotropy constant Ku. c Temperature dependence of Ku. d Cross-
+sectional TEM micrographs comparing interface roughness in fabricated MTJs:
+smooth (h = 0.1 nm) vs. orange-peel (h = 0.4 nm) interfaces. e Tunnel magnetore-
+sistance (TMR) versus perpendicular magnetic ﬁeld (H) for d = 1.2 nm at varying
+temperatures. f Hoffset as a dependence on the temperature with different h.
+Temperature-dependent offset ﬁeld (Hoffset) evolution with different interface
+roughness.
+https://doi.org/10.1038/s44306-025-00119-7
+Article
+npj Spintronics |  (2026) 4:1 
+3
+
+
+--- PAGE 4 ---
+VG across the MgO barrier to locally modulate switching thresholds. As
+detailed in Supplementary Note S9, VG tuning enables precise control of
+both coercive ﬁeld (Hc) and anisotropy ﬁeld (HK), allowing dynamic
+adjustment of critical switching currents of an individual cell without
+crosstalk issue.
+The voltage-controlled modulation of switching characteristics was
+investigated through VG application across the MgO barrier. Resistance-
+current (R-J) measurements in Fig. 4a demonstrate reversible threshold
+adjustments, where negative VG decreases the critical switching current
+whilepositiveVGincreasesit.Thisvoltagecontrolisfurtherquantiﬁedinthe
+Psw measurements for P →AP transitions (Fig. 4b), revealing systematic
+curve shifts under VG variation. The shift of Psw created by VG enable dual-
+state writing at identical current densities—negative biases facilitate AP
+state, whereas positive biases favor P state.
+The multi-MTJ integration scheme employs a shared bottom electrode
+(BE) architecture, as illustrated in Fig. 4c, where four MTJ devices are
+interconnected via a printed circuit board (PCB). This conﬁguration
+implements a 5D-4MTJ (ﬁve diodes, four MTJs) selector network that
+decouples read/write paths: A shared diode controls write operations while
+four dedicated diodes govern individual read channels. As experimentally
+demonstrated in Fig. 4d, localized gate voltage (VG) adjustments enable
+parallel writing of individual MTJs with the existence of J.
+Discussions
+Conventional STT/SOT-MRAM designs can write state bits (all ‘1’s or all
+‘0’s) within a single clock cycle, requiring two cycles for arbitrary data
+patterns. Nevertheless, our approach delivers substantially greater speed
+advantages due to fundamental differences in circuit architecture, channel
+utilization, and scalability. The achievable parallelism in conventional
+designs is constrained by the requirement for independent write circuits -
+including complex row/column decoders and drivers capable of selecting
+individual bits.
+Whencomparing systems withequivalent circuitcomplexitytowrite n
+channels, our parallel write architecture achieves signiﬁcant performance
+gains. Conventional STT(SOT)-MRAM requires ~2t time (t = write cycle
+duration) to complete writing operations through n bits (n channels),
+yielding average speed ~2t/n. Our shared-channel 5D-4MTJ structure
+writes 4n bits for n channels. This results in substantially faster average
+operational speed (t/4n), representing at least an eightfold improvement
+over conventional design.
+This acceleration stems from our architecture’s inherent trait: shared
+channels simultaneously write all MTJs for the active state, eliminating per-
+cell selection during write operations. This intrinsic feature removes sig-
+niﬁcant write-path latency and circuit complexity inherent in conventional
+approaches. The demonstrated t/4n average time per bit (8× speedup)
+constitutes a conservative baseline from our 4-MTJ-per-channel imple-
+mentation. Crucially, this parallelism scales with process technology
+advancement. As feature dimensions decrease, integrating additional MTJs
+per shared write channel becomes feasible, enabling proportionally greater
+speed enhancements without corresponding increases in write circuit
+complexity.
+The concurrency-driven approach of the 5D-4MTJ architecture
+enables parallelized array operations, which dramatically enhances effective
+write speed—a four-device array written in 1 ns translates to an equivalent
+250 ps per-bit write latency. Table 1 presents the simulation results for 2T-
+1MTJ, 2D-1MTJ and 5D-4MTJ MRAM cells (the layouts were designed in
+Supplementary Note S10). In comparison to the 2T-1MTJ SOT-MRAM
+[13], the average speed can increase by 4 times due to the parallel writing.
+Compared to conventional 2T-1MTJ cell, the 5D-4MTJ conﬁguration
+reduces bit-cell area by 80% (from 0.0162 μm² to 0.003 μm²) by replacing
+area-intensive transistors with vertically stackable Schottky diodes.
+Theenhancedparallelwritingcapabilityofthe5D-4MTJconﬁguration
+demonstrates a 75% reduction in energy consumption per bit compared to
+conventional 5T-4MTJ architectures, primarily attributable to its distinct
+data writing mechanism. This signiﬁcant reduction stems from the funda-
+mental disparity in their operational mechanisms: the 5D-4MTJ archi-
+tecture achieves parallel writing of four bits per clock cycle through
+optimizedmagnetictunneljunctionsynchronization,whereasthe5T-4MTJ
+Fig. 3 | Demonstration of the unipolar MTJ. a Current induced switching loops of
+the unipolar MTJ. b Switching probabilities of the MTJ of AP to P and P to AP,
+respectively. c Current-induced switching under magnetic ﬁeld of Hx = 180 Oe.
+d Schematics of writing of P and AP state at different temperature. e Current induced
+switching curve of the 2D-1MTJ structure at pulse duration of 50 ns and 1 ns.
+https://doi.org/10.1038/s44306-025-00119-7
+Article
+npj Spintronics |  (2026) 4:1 
+4
+
+
+--- PAGE 5 ---
+implementationremainsconstrainedtoserializedsingle-bitoperations.The
+5D-4MTJ architecture achieves dual optimization by simultaneously
+boosting processing speed and reducing energy consumption. The WER
+comparation between the unipolar MTJ and SOT-MTJ base line device is in
+Supplementary Note S11.
+Methods
+Sample growth and device fabrication
+The ﬁlm stack, consisting of W (5 nm)/CoFeB (0.9 nm, FL)/MgO
+(1,1.2 nm)/CoFeB (1.1 nm, RL)/W (0.6 nm)/Co (0.6 nm)/Synthetic
+antiferromagnetic (SAF)/Hard mask (HM) (starting from the bot-
+tom), was deposited using the Ulvac SME200 magnetron sputtering
+system, as shown in Fig. 2d. Following deposition, the wafers were
+annealed in vacuum at 350 °C for 1 h to ensure the preservation of
+perpendicular magnetic anisotropy and interface roughness.
+The devices are manufactured on a 200 mm back-end-of-line
+(BEOL) platform. The MTJ and the bottom electrodes of the MTJs
+are patterned through deep ultraviolet lithography and etched using
+inductively coupled plasma etching techniques. The MTJ is encap-
+sulated with layers of SiN and SiO2. The top electrode is composed of
+Al/TiN.
+Electrical measurement of MTJs
+Electrical transport measurements are performed using a magnetic ﬁeld
+probe station supplied by East Changing Technologies. Write pulses down
+to0.8 nsisgeneratedfromthePG1072pulsegenerator.Theresistanceofthe
+MTJ is measured by Keithley 2602 after the write pulses. VG applied on the
+junctions are also applied by Keithley 2602. It was applied before the write
+pulse. Attenuators were connected to the read channel of the MTJs to
+compensate the voltage induced by the write pulse.
+Data availability
+The data generated during this study are available with request.
+Received: 7 June 2025; Accepted: 10 November 2025;
+References
+1.
+Shao, Q. et al. Roadmap of Spin–Orbit Torques. IEEE Trans Magn 57,
+1–39 (2021).
+2.
+Yang, H. et al. Two-dimensional materials prospects for non-volatile
+spintronic memories. Nature 606, 663–673 (2022).
+3.
+Mangin, S., Ravelosona, D., Katine, J., Carey, M., Terris, B., Fullerton
+E. E. Current-induced magnetization reversal in nanopillars with
+perpendicular anisotropy. Nat. Mater. 5, 210–215 (2006).
+4.
+Ikeda, S. et al. A perpendicular-anisotropy CoFeB–MgO magnetic
+tunnel junction. Nat. Mater. 9, 721–724 (2010).
+5.
+Yang, T. et al. Field-free deterministic writing of spin-orbit torque
+magnetic tunneling junction by unipolar current. IEEE Electron Device
+Lett 43, 709–712 (2022).
+6.
+Zhang, Y. et al. Compact modeling of perpendicular-anisotropy
+CoFeB/MgO magnetic tunnel junctions. IEEE Trans. Electron Devices
+59, 819–826 (2012).
+7.
+Cubukcu, M. et al. Ultra-fast perpendicular spin–orbit torque MRAM.
+IEEE Trans. Magnet. 54, 1–4 (2018).
+8.
+Lu, L., Mani, A., Do, A. T. A 129.83 TOPS/W area efﬁcient digital SOT/
+STT MRAM-based computing-in-memory for advanced edge AI
+chips.In: 2023 IEEE International Symposium on Circuitsand Systems
+(ISCAS) (IEEE, 2023).
+Table 1 | Comparation of different bit cells
+MRAM
+2T-1MTJ32
+5T-4MTJ32
+2D-1MTJ
+(This work)
+5D-4MTJ
+(This work)
+Bit/cycle
+1
+1
+1
+4
+Metal lines/bit
+5
+2.75
+3
+1.75
+Transistors/cell
+2
+5
+0
+0
+Write energy (a.u.)
+1a
+2.5
+1a
+0.625
+Bits/
+sequence(write)
+1
+1
+1
+4
+Area/bit(um²)
+0.0162 (75F2)
+0.0101 (47F2)
+0.004 (24F2)
+0.003 (15F2)
+F = 14 nm.
+aRepresents the normalized energy value for writing a 2T-1MTJ or 2D-1MTJ cell.
+Fig. 4 | Parallel writing of the 5D-4MTJ structure. a RMTJ-J loops of the MTJ by different VG. b Psw of P to AP switching with different VG. c The schematics and PCB of 5
+diodes and 4 MTJs structures (5D-4MTJ). d Experimental demonstration of parallel writing of the 5D-4MTJ structure.
+https://doi.org/10.1038/s44306-025-00119-7
+Article
+npj Spintronics |  (2026) 4:1 
+5
+
+
+--- PAGE 6 ---
+9.
+Zhao, W., Devolder, T., Lakys, Y., Klein, J.-O., Chappert, C., Mazoyer,
+P. Design considerations and strategies for high-reliable STT-MRAM.
+Microelectronics Reliability 51, 1454–1458 (2011).
+10. Yang, A., Jiang, Z., Huang, Z., Zhang, Z., Jiang, Y., Papers SIR.
+Double-ended superposition anti-noise resistance monitoring write
+termination scheme for reliable write operation in STT-MRAM. IEEE
+Trans. Circ. Syst. I Regul. Papers 70, 1147–1160 (2022).
+11. Yoda, H. et al. Progress of STT-MRAM technology and the effect on
+normally-off computing systems. In: 2012 International Electron
+Devices Meeting) (IEEE, 2012).
+12. Prenat, G., Jabeur, K., Di Pendina, G., Boulle, O. & Gaudin, G. Beyond
+STT-MRAM, spin orbit torque RAM SOT-MRAM for high speed and
+high reliability applications. In Spintronics-based Computing 145–157
+(Springer, 2015).
+13. Sethuraman, S., Tavva, V. K. & Srinivas, M. B. Techniques to Improve
+Write and Retention Reliability of STT-MRAM Memory Subsystem.
+IEEE Trans. Comput. Aided Des. Integrated Circ. Syst. 41, 2901–2914
+(2021).
+14. Zhang, L. et al. Reliability and performance evaluation for STT-MRAM
+under temperature variation. In: 2016 17th International Conference
+on Thermal, Mechanical and Multi-Physics Simulation and
+Experiments in Microelectronics and Microsystems (EuroSimE) (IEEE,
+2016).
+15. Dhull, S., Nisar, A. & Kaushik, B. K. SOT and STT based four-Bit
+parallel MRAM cell for high-density applications. IEEE Trans.
+Nanotechnol. 20, 653–661 (2021).
+16. Wang, Z. et al. Dual QSPI 8Gb STT-MRAM for space applications. In:
+2023 International Electron Devices Meeting (IEDM) (IEEE, 2023).
+17. Yasin, F. et al. Extremely scaled perpendicular SOT-MRAM array
+integration on 300mm wafer. In: 2024 IEEE Symposium on VLSI
+Technology and Circuits (VLSI Technology and Circuits) (IEEE, 2024).
+18. Song, M. et al. High speed (1ns) and low voltage (1.5 V) demonstration
+of 8Kb SOT-MRAM array. In: 2022 IEEE Symposium on VLSI
+Technology and Circuits (VLSI Technology and Circuits) (IEEE, 2022).
+19. Cai, K. et al. First demonstration of ﬁeld-free perpendicular SOT-
+MRAM for ultrafast and high-density embedded memories. In: 2022
+International Electron Devices Meeting (IEDM) (IEEE, 2022).
+20. Yang, Q. et al. Field-free spin–orbit torque switching in ferromagnetic
+trilayers at sub-ns timescales. Nat. Commun. 15, 1814 (2024).
+21. Park, J. K. & Kim, S. E. A review of cell operation algorithm for 3D
+NAND ﬂash memory. Appl. Sci. 12, 10697 (2022).
+22. Kim, S. S. et al. Review of semiconductor ﬂash memory devices for
+material and process issues. Adv. Mater. 35, 2200659 (2023).
+23. Matteo, F., Simola, R., Postel-Pellerin, J. & Coulie, K. 1T-NOR Flash
+memory after endurance degradation: an advanced TCAD simulation.
+Microelectron Reliab. 138, 114621 (2022).
+24. Wang, Z. et al. High-density NAND-like spin transfer torque memory
+with spin orbit torque erase operation. IEEE Electron Device Lett. 39,
+343–346 (2018).
+25. Shi, K. et al. Experimental demonstration of NAND-like spin-torque
+memory unit. IEEE Electron Device Lett. 42, 513–516 (2021).
+26. Hwang, W. et al. Experimental demonstration of ﬁeld-free STT-
+assisted SOT-MRAM (SAS-MRAM) with four bits per SOT
+programming line. IEEE Electron Device Lett. 45, 1800–1803 (2024).
+27. Peng, S. et al. Field-free switching of perpendicular magnetization
+through voltage-gated spin-orbit torque. In: 2019 IEEE International
+Electron Devices Meeting (IEDM) (IEEE, 2019).
+28. Gupta, M. et al. Ultimate MRAM scaling: design exploration of high-
+density, high-performance and energy-efﬁcient VGSOT for last level
+cache. In: 2023 International Electron Devices Meeting (IEDM) (IEEE,
+2023).
+29. Moritz, J., Garcia, F., Toussaint, J. C., Dieny, B. & Nozières, J. P.
+Orange peel coupling in multilayers with perpendicular magnetic
+anisotropy: application to (Co/Pt)-based exchange-biased spin-
+valves. Europhys. Lett. 65, 123 (2004).
+30. Yang, T. et al. Thermal stability of SOT-MTJ thin ﬁlms tuning by
+multiple interlayer couplings. J. Magn. Magn. Mater. 529, 167823
+(2021).
+31. Wu, Y. C. et al. Impact of operating temperature on the electrical and
+magnetic properties of the bottom-pinned perpendicular magnetic
+tunnel junctions. Appl. Phys. Lett. 113, 142405 (2018).
+32. Cai, K. M. et al. Selective operations of multi-pillar SOT-MRAM for
+high density and low power embedded memories. In IEEE VLSI, 375
+(IEEE,2022).
+Acknowledgements
+This work was supported by the National Key R&D Program of China (No.
+2024YFB4405503), Beijing Nova Program (No. 20230484358 and No.
+20240484609) and Beijing Municipal Natural Science Foundation (No.
+4244071).
+Author contributions
+M.Y., K.C. and J.L. conceived this work. L.Z. fabricated the MTJs and
+simulated the temperatures of the device. B.Y., J.H. and Z.L. measured the
+VCMA effect of the MTJs. J.G. deposited the MTJ thin ﬁlms. L.Z., X.Y., M.W.
+and S.H. measured the *R* - *J* loops of the MTJ at different temperatures.
+R.S.andZ.Y.investigatedthemagneticexchangecouplingmodel.Y.L.,P.Y.
+and S.G. measured the writing behaviors of the MTJs. B.Z. discussed the
+structure of NAND. M.Y., L.Z., K.C. and J.L. wrote the paper. Y.C., S.H. and
+all the other authors discussed the results and revised the manuscript.
+Competing interests
+The authors declare no competing interests.
+Additional information
+Supplementary information The online version contains
+supplementary material available at
+https://doi.org/10.1038/s44306-025-00119-7.
+Correspondence and requests for materials should be addressed to
+Meiyin Yang, Kaiming Cai or Jun Luo.
+Reprints and permissions information is available at
+http://www.nature.com/reprints
+Publisher’s note Springer Nature remains neutral with regard to
+jurisdictional claims in published maps and institutional afﬁliations.
+Open Access This article is licensed under a Creative Commons
+Attribution 4.0 International License, which permits use, sharing,
+adaptation, distribution and reproduction in any medium or format, as long
+as you give appropriate credit to the original author(s) and the source,
+provide a link to the Creative Commons licence, and indicate if changes
+were made. The images or other third party material in this article are
+included in the article’s Creative Commons licence, unless indicated
+otherwise in a credit line to the material. If material is not included in the
+article’s Creative Commons licence and your intended use is not permitted
+by statutory regulation or exceeds the permitted use, you will need to
+obtain permission directly from the copyright holder. To view a copy of this
+licence, visit http://creativecommons.org/licenses/by/4.0/.
+© The Author(s) 2025
+https://doi.org/10.1038/s44306-025-00119-7
+Article
+npj Spintronics |  (2026) 4:1 
+6

@@ -1,0 +1,634 @@
+
+
+--- PAGE 1 ---
+
+View
+Online 
+Export
+Citation
+RESEARCH ARTICLE |  MARCH 05 2025
+Enhancement of tunnel magnetoresistance in fully
+perpendicular MnGa-based magnetic tunnel junctions with
+metastable bcc CoMnFe interlayer
+Special Collection: 16th Joint MMM-Intermag Conference
+Deepak Kumar  
+ ; Naoki Kamata 
+ ; Kwon Hyeokjin 
+ ; Shigemi Mizukami 
+AIP Advances 15, 035006 (2025)
+https://doi.org/10.1063/9.0000889
+Articles You May Be Interested In
+Tunnel magnetoresistance exceeding 100% in magnetic tunnel junctions using Mn-based tetragonal alloy
+electrodes with perpendicular magnetic anisotropy
+AIP Advances (March 2023)
+Giant exchange bias based on magnetic transition in γ -Fe 2 MnGa melt-spun ribbons
+Appl. Phys. Lett. (December 2010)
+Tunneling magnetoresistance effect in MnGa based perpendicular magnetic tunnel junction with Fe/Co
+interlayer
+J. Appl. Phys. (October 2013)
+ 13 August 2025 09:12:41
+
+
+--- PAGE 2 ---
+AIP Advances
+ARTICLE
+pubs.aip.org/aip/adv
+Enhancement of tunnel magnetoresistance
+in fully perpendicular MnGa-based magnetic
+tunnel junctions with metastable bcc CoMnFe
+interlayer
+Cite as: AIP Advances 15, 035006 (2025); doi: 10.1063/9.0000889
+Submitted: 10 November 2024 • Accepted: 17 December 2024 •
+Published Online: 5 March 2025
+Deepak Kumar,1,a)
+Naoki Kamata,1,2
+Kwon Hyeokjin,1,2
+and Shigemi Mizukami1,3
+AFFILIATIONS
+1 WPI Advanced Institute for Materials Research, Tohoku University, Katahira 2-1-1, Sendai 980-8577, Japan
+2Department of Applied Physics, Graduate School of Engineering, Tohoku University, Sendai 980-8579, Japan
+3Center for Science and Innovation in Spintronics, Tohoku University, Katahira 2-1-1, Sendai 980-8577, Japan
+Note: This paper was presented at the 16th Joint MMM-Intermag Conference.
+a)Author to whom correspondence should be addressed: kumar.deepak.e3@tohoku.ac.jp
+ABSTRACT
+We investigated the tunnel magnetoresistance (TMR) effect in fully perpendicular magnetized MnGa-based magnetic tunnel junctions (MTJs)
+with CoFeB as the top electrode. In these perpendicular (p)-MTJs, thin metastable body-centered cubic (bcc) CoMnFe alloys are used as an
+interlayer between the MgO barrier and MnGa layers to enhance the TMR ratio. This study highlights the utility of bcc Co-based alloys,
+such as CoMnFe, which exhibit antiferromagnetic coupling with MnGa in p-MTJs. The TMR ratios of ∼106% and 110% were observed
+corresponding to single and double interface p-MTJs, respectively, after annealing at 300 ○C, demonstrating the potential of these materials
+for high-performance spin-transfer torque (STT) devices based on p-MTJs.
+© 2025 Author(s). All article content, except where otherwise noted, is licensed under a Creative Commons Attribution (CC BY) license
+(https://creativecommons.org/licenses/by/4.0/). https://doi.org/10.1063/9.0000889
+I. INTRODUCTION
+Tetragonal Mn-based ordered magnetic alloys have attracted
+attention because of their unique magnetic properties.1,2 Past stud-
+ies discussed about their large uniaxial magnetic anisotropy, small
+net magnetization, and relatively low Gilbert damping constants
+observed in L10-MnZ (Z = Al, Ga), D022-Mn3Z (Z = Al, Ga, Ge,
+Sn), and C38-MnYZ (Y = Al, Ga, Mn, Z = Ge, Sb).1–6 Those (001)-
+oriented films exhibit strong perpendicular anisotropy (PMA),
+therefore those films are well suited for magnetic electrodes in
+perpendicular (p-) magnetic tunnel junctions (MTJs). The p-MTJs
+are used for spin-transfer-torque magnetoresistive memory (STT-
+MRAM) and also for potential logic, high-frequency applications,
+and artificial intelligence hardware.7–12 Therefore, there have been
+many studies focusing on those thin films for such STT-device
+applications.13–27
+One issue of p-MTJs using Mn-based ordered magnetic alloys
+has been their low tunnel magnetoresistance (TMR) effect. The TMR
+effect is used for memory reading in STT-MRAM, for examples,
+therefore the TMR ratio should be large, at least, more than 100%
+for practical use. However, such high TMR effects had not been
+experimentally observed,28–30 though ab initio calculations had indi-
+cated high TMR ratios in the p-MTJ comprising a (001)-oriented
+MgO barrier and Mn-based alloy electrodes.31 This may be par-
+tially due to the difficulty obtaining a better crystalline interface in
+the Mn-based alloys (001)/MgO(001) barrier with some lattice mis-
+match. Although there had also been many attempts to obtain a high
+TMR ratio using an interlayer technique, such as in Mn-based alloys
+(001)/FeCo(B)(001)/MgO(001) barrier,32–36 the TMR ratio had not
+yet exceeded several tens of percent. The reason is unclear because
+the high TMR ratio above 100%, typically obtained in p-MTJ with
+a MgO(001) barrier and FeCo(B)(001) electrodes37,38 and also a
+AIP Advances 15, 035006 (2025); doi: 10.1063/9.0000889
+15, 035006-1
+© Author(s) 2025
+ 13 August 2025 09:12:41
+
+
+--- PAGE 3 ---
+AIP Advances
+ARTICLE
+pubs.aip.org/aip/adv
+much higher TMR ratio was obtained with in-plane magnetized
+MTJs.39–45
+Quite recently, we resolved this issue of the low TMR ratio in
+Mn-based alloys p-MTJs utilizing novel interlayer magnetic alloys.
+We first reported a TMR ratio of 85% in p-MTJs with a metastable
+bcc CoMn(001) between MnGa and MgO,46 Subsequently, the TMR
+ratio more than 100% was successfully demonstrated in further
+optimized MTJs with CoMn interlayers.47 This breakthrough is
+brought into via intriguing metastable bcc CoMn alloys.48–51 How-
+ever, questions and issues are remained. One issue is that the TMR
+ratio for those MTJs becomes deteriorated at the MTJs annealing
+temperature about 250 ○C, and this is related to a low thermal sta-
+bility of metastable bcc structure of CoMn interlayer, as discussed
+before.46,47,49,52 In general, the high annealing stability is needed
+since the TMR effect tends to increase with increasing annealing
+temperature.41
+To address this annealing stability issue and gain insight into
+the mechanism behind it, we investigate the interlayer of metastable
+bcc CoMnFe alloys. As demonstrated in our previous study,53 the in-
+plane magnetized MTJs with bcc CoMnFe alloys electrodes showed
+better stability against the annealing process in their bcc structure
+up to 400 ○C and also exhibit the TMR ratio much higher than those
+in the MTJs with CoMn alloy electrodes, up to about 350% at room
+temperature and more than 1000% at low temperature. This indi-
+cates that it may be effective to apply this CoMnFe interlayer to the
+Mn-based alloys p-MTJs. Consequently, using bcc metastable CoM-
+nFe interlayer, we successfully achieved both the TMR ratio of more
+than 100% as well as the annealing stability at the temperature of
+more than 300 ○C, as shown in this article.
+II. EXPERIMENTAL METHODS
+Sample films were deposited using an ultrahigh-vacuum mag-
+netron sputtering system with a base pressure below 5 × 10−7 Pa.
+We prepared two kinds of MTJ. One is the MTJ with a top CoFeB
+layer as a conventional MTJ, whose stack was MgO(001) substrate
+Cr(40)/MnGa(30)/Mg(0.4)/CoMnFe(tCoMnFe)/Mg(0.4)/MgO(dMgO)/
+CoFeB(1.2)/Ta(3)/Ru(5) with various thickness of CoMnFe tCoMnFe
+= 1.0, 1.2, and 1.4 nm and MgO barrier dMgO = 1.6, 1.8, 2.0, 2.2, and
+2.4 nm. We also fabricated the MTJs with a top CoFeB/Ta/
+CoFeB
+layer,
+the
+so-called
+double
+interface.54,55
+The
+stack
+was MgO(001) substrate/Cr(40)/MnGa(30)/Mg(0.4)/CoMnFe(1.2)/
+Mg(0.4)/MgO(2)/CoFeB(1.4)/Ta(0.4)/CoFeB(1.2)/MgO(1.4)/Ta(3)/
+Ru(5). Here, the numbers written in parentheses are in nanometers.
+We used the alloy targets of Mn55 Ga45, Co60 Mn23 Fe17, and Co20
+Fe60 B20 (at%). The compositions of MnGa and CoMnFe films were
+Mn61 Ga39 and Co65 Mn19 Fe16 (at. %), evaluated with inductively-
+coupled plasma mass spectrometry (ICP-MS) in those alloy films
+prepared separately. In all the stacks, the substrate was flushed at
+700 ○C before the deposition for cleaning their surfaces. Then, each
+layer was deposited at room temperature. In situ post-annealing was
+performed for Cr and MnGa at 700 and 500 ○C, respectively. The
+magnetic properties were investigated using the polar magneto-
+optical Kerr effect (p-MOKE) with the out-of-plane magnetic
+field range of ±20 kOe at room temperature. We performed the
+MTJ patterning using standard optical lithography technique with
+Ar-ion etching, and the junction area, A, for the MTJs ranged from
+10 × 10 μm2 to 100 × 100 μm2. MTJs were annealed using a vacuum
+furnace, and magnetoresistance measurements were performed
+using the standard four-probe method at room temperature with
+the out-of-plane magnetic field range of ±5 kOe.
+III. EXPERIMENTAL RESULTS AND DISCUSSIONS
+To investigate the magnetization behavior of MnGa and CoM-
+nFe, we performed p-MOKE measurements for multilayer films
+[Fig. 1(a)]. Figures 1(b)–1(e) show the magnetic field dependence
+of the p-MOKE signal for the as-deposited films and for the
+films annealed at different annealing temperatures (Ta). Here, we
+depicted the individual magnetization directions for the MnGa and
+CoMnFe magnetic layers in the figures. For reference, we also show
+Ta dependence of the Kerr rotation angles evaluated at 20 kOe and
+zero field in Fig. 1(f).
+In the as-deposited film, the p-MOKE curve shows a hystere-
+sis loop with a slope between the magnetic field range of ±5 kOe
+[Fig. 1(b)]. We observe that the remanent Kerr rotation angle, corre-
+sponding to the remanent magnetization (the point “2”), is slightly
+higher than that of the MnGa single-layer film (not shown here).
+This indicates that the magnetization of CoMnFe is coupled to
+MnGa through the interfacial ferromagnetic coupling and the mag-
+netization of CoMnFe is tilted slightly upward at zero field.56 Note
+that the direction of the magnetization for CoMnFe becomes like
+a cone state at a certain point, as shown in Figs. 1(b)–1(e), rather
+than tilt to the left or right direction. This behavior arises because
+CoMnFe and MnGa layers exhibit different magnetic anisotropies:
+CoMnFe exhibits easy-plane magnetic anisotropy, whereas MnGa
+shows perpendicular magnetic anisotropy. With taking account of
+the interfacial ferromagnetic coupling, the magnetization process for
+the as-deposited film can be understood as follows. At the field
+of 20 kOe, the magnetizations of MnGa and CoMnFe are aligned
+in the same direction (the point “1”) and display saturation type
+behavior above ±10 kOe. As the magnetic field was swept from
+20 kOe to −20 kOe, the magnetization of CoMnFe starts to rotate
+from the upward to the downward direction. Below 10 kOe, the
+Kerr rotation angle decreases approximately linearly and shows a
+lower magnetization value compared to the high-field condition at
+the point “2.” At the magnetic field of −20 kOe, the magnetiza-
+tions of both layers are aligned parallel but in the opposite direction
+(the point “3”).
+On the other hand, we can understand the magnetization
+process for the annealed films with taking account of the interfa-
+cial antiferromagnetic coupling for the magnetization of MnGa and
+CoMnFe [Figs. 1(c)–1(e)]. For the sample annealed at 250 ○C, the
+hysteresis loop exhibits a non-saturating behavior throughout the
+magnetic field range of ±20 kOe [Fig. 1(c)]. The Kerr rotation angle
+at 20 kOe is close to that observed in the as-deposited films, and the
+remanent Kerr rotation angle is lower than that of the as-deposited
+films as well as the MnGa single-layer film. These data suggest a weak
+antiferromagnetic coupling between the layers, as mentioned above.
+Upon annealing at 300 ○C, the film shows a fully-squared hysteresis
+loop within the magnetic field range of ±5 kOe and displays non-
+saturating behavior above ±5 kOe [Fig. 1(d)]. The value of remanent
+Kerr rotation angle further decreases in the 300 ○C-annealed film,
+as compared to that for the 250 ○C-annealed film, which indicates
+that the antiferromagnetic coupling between MnGa and CoMnFe
+becomes moderate via the annealing. A further increase in the
+AIP Advances 15, 035006 (2025); doi: 10.1063/9.0000889
+15, 035006-2
+© Author(s) 2025
+ 13 August 2025 09:12:41
+
+
+--- PAGE 4 ---
+AIP Advances
+ARTICLE
+pubs.aip.org/aip/adv
+FIG. 1. (a) Schematic stack information for the multilayer thin films. (b)–(e) Perpendicular magnetic field dependence of polar magneto-optical Kerr effect (p-MOKE) signal
+for the multilayer films with different annealing temperatures (Ta). The magnetization process corresponding to CoMnFe and MnGa layers is also depicted in the figures.
+The magnetization on the cones represents the tilt state for the magnetization of the CoMnFe layer at a certain points. (f) Ta dependence of p-MOKE signal at H = 20 kOe
+and H = 0.
+annealing temperature to 325 ○C results in a completely-squared
+hysteresis loop in the field range measured [Fig. 1(e)]. The remanent
+Kerr rotation angle is almost same as that for the sample annealed
+at 300 ○C. These data indicated that the interfacial antiferromag-
+netic coupling becomes stronger in the film annealed at 325 ○C. As
+shown in Fig. 1(f), the Kerr rotation angle decreases with the increas-
+ing the annealing temperature (Ta) at both 20 kOe and zero fields.
+Such trend is observed similarly in L10-MnGa/Co films in the past.57
+Therefore, the changes in the p-MOKE data for the films undergoes
+annealing mainly originate from the change of the ferromagnetic
+to antiferromagnetic coupling between MnGa and CoMnFe via the
+annealing.57
+Figure 2(a) shows the schematic representation of the stack
+information for p-MTJs prepared in the present study, and
+Figs. 2(b)–2(e) show the magnetoresistance curve for the as-
+deposited and variously annealed p-MTJs (the area “A” of measured
+p-MTJs devices are 30 × 30 μm2), where the CoMnFe layer thick-
+ness is 1.2 nm and the barrier thickness of 2.0 nm. In Figs. 2(b)–2(e),
+we evaluated the TMR ratio using the relation TMR (%) = (Rmax
+−Rmin)/Rmin × 100, where Rmin and Rmax represent the MTJ resis-
+tance related to the parallel and antiparallel states of the magnetiza-
+tion directions for CoFeB and CoMnFe. Note that we schematically
+show the magnetization state at certain magnetic field in its sweep
+range of −5 kOe to +5 kOe in Figs. 2(b)–2(e).
+In Fig. 2(b), the TMR curve shows a clear change in resis-
+tance from low to high and vice versa as the magnetic field was
+swept from ±5 kOe to ∓5 kOe. The characteristic of the TMR curve
+observed here is similar to that for a typical pseudo spin-valve p-
+MTJs,32,58 which reflects the magnetization process for CoFeB and
+MnGa/CoMnFe with the ferromagnetic coupling, as discussed in
+Fig. 1(b). On the other hand, the TMR curves show inverted hys-
+teresis loops for the MTJs annealed, as observed in Figs. 2(c)–2(e).
+These inverted TMR curves are caused by the magnetization process
+for CoFeB and MnGa/CoMnFe with the antiferromagnetic coupling,
+as discussed in Figs. 1(c)–1(e).
+One can understand the shape of the TMR curves in
+Figs. 2(c)–2(e) as follows. For example, we consider the magneti-
+zation process in the magnetic field range from −5 kOe to +5 kOe
+(red solid symbols) in the Fig. 2(d). At the magnetic field of −5 kOe
+(the point “i”), the magnetic field is not strong at all enough to align
+the magnetizations for all the layers in the same direction due to
+the moderate antiferromagnetic coupling, as discussed in Fig. 1(d).
+The magnetization for CoMnFe is slightly tilted and approximately
+antiparallel to that of CoFeB though the magnetizations of MnGa
+AIP Advances 15, 035006 (2025); doi: 10.1063/9.0000889
+15, 035006-3
+© Author(s) 2025
+ 13 August 2025 09:12:41
+
+
+--- PAGE 5 ---
+AIP Advances
+ARTICLE
+pubs.aip.org/aip/adv
+FIG. 2. (a) Schematic stack information for the p-MTJs prepared in the present study. (b)–(e) TMR curves for as the function of magnetic field the p-MTJ for tCoMnFe = 1.2
+nm and dMgO = 2.0 nm with different annealing temperatures (Ta). The magnetization process of the layer is also depicted in the figures. The magnetization on the cones
+represents the tilt state for the magnetization of the CoMnFe layer at a certain points. The data shown in the figures for p-MTJ devices of size 30 × 30 μm2.
+and CoFeB are parallel. Consequently, the MTJ resistance is high at
+−5 kOe. As decreasing the magnetic field from −5 kOe to zero (the
+point “ii”), the magnetization of CoMnFe tends to be fully antiparal-
+lel to that of CoFeB; thus, the MTJ resistance reaches its maximum,
+though the magnetization of CoFeB and MnGa are still parallel.
+As the magnetic field is further increased from negative to positive
+region, the orientation of the magnetization for CoFeB reverses at
+the coercivity of CoFeB with PMA. At this state, the magnetizations
+of MnGa and CoMnFe are still in the direction same as those at the
+point “ii,” owing to the large coercivity of MnGa compared to that
+of CoFeB as well as moderate antiferromagnetic coupling of MnGa
+and CoMnFe. Therefore, the MTJ resistance exhibits its minimum
+at this magnetic field (the point “iii”). With the further and positive
+increase of the magnetic field, the MTJ resistance again increases.
+This change is caused by the magnetization reversal of CoMnFe
+which is accompanied via the magnetization reversal of MnGa, ini-
+tiated at the magnetic field similar to the coercivity of MnGa (at the
+point “iv”).
+In Figs. 2(c)–2(e), we also observe the differences in the
+TMR curve shape for the MTJs annealed at different temperatures,
+i.e., the gradual resistance changes become less remarkable with
+increasing the annealing temperature in the high resistance state
+(the point “i” to “ii”) and in low resistance state (near the point
+“iii”). This is understood via the fact that the interfacial antifer-
+romagnetic coupling of MnGa and CoMnFe is increased with the
+annealing, as discussed in Figs. 1(c)–1(e). Note that the inverted
+TMR curves were observed similarly in L10-MnGa/MgO/CoFeB p-
+MTJs with the various interlayers, and those were also discussed
+in terms of the antiferromagnetic coupling of MnGa and magnetic
+interlayers.32,46,47,58
+Figures 3(a) and 3(b) show the annealing temperature (Ta)
+dependence of the TMR ratio and the resistance area product (RPA),
+respectively, in the MTJs with different CoMnFe interlayer thick-
+nesses and an MgO thickness of 2 nm. The TMR ratios are ranged in
+20%–28% for the as-deposited p-MTJs, and those increase as the p-
+MTJs were annealed at 250 ○C. The TMR ratio reaches its maximum
+value at Ta = 300 ○C. RPA exhibits the decrease at Ta of 250–300 ○C
+[Fig. 3(b)], being likely correlated with the rapid increase in the
+TMR ratio at the same range of Ta [Fig. 3(a)]. Such correlation was
+also observed in the CoMnFe/MgO/CoMnFe in-plane MTJs in our
+past studies,59 being related to the improvement in the crystalline
+states of the MgO barrier and its interfaces. The TMR ratios sud-
+denly drop at Ta of 325 ○C in the p-MTJs [Fig. 3(a)] and RPA turns
+to increase at Ta of 325 ○C [Fig. 3(b)]. This observation is contrary to
+AIP Advances 15, 035006 (2025); doi: 10.1063/9.0000889
+15, 035006-4
+© Author(s) 2025
+ 13 August 2025 09:12:41
+
+
+--- PAGE 6 ---
+AIP Advances
+ARTICLE
+pubs.aip.org/aip/adv
+FIG. 3. Annealing temperature (Ta)
+dependence of TMR ratio (a) and RPA
+(b) for the p-MTJs with different CoMnFe
+interlayer thickness, (c) interlayer thick-
+ness (tCoMnFe) dependence of TMR ratio
+at the different Ta for the p-MTJs, for
+dMgO = 2 nm.
+the fact that the TMR ratio is further enhanced up to 300%–350%
+in the CoMnFe/MgO/CoMnFe in-plane MTJs at Ta of 350–375 ○C,
+accompanied with the further reduction of RPA.59 Therefore, the
+increase of RPA at 325 ○C is associated with the reduction of the
+TMR ratio, which is inherent to the p-MTJs in the present study.
+As shown in Fig. 3(c), the p-MTJs with tCoMnFe = 1.2 nm exhibit the
+highest TMR ratio in the present study. It should be noted that the
+TMR curves showed similar behaviors for all interlayer thicknesses
+for the p-MTJs annealed at different Ta (not shown here).
+To gain insight into the mechanism determining the TMR ratio
+observed, we also investigated the influence of the MgO barrier
+thickness to the TMR ratio. Figures 4(a) and 4(b) show the TMR
+ratio and RPA as the function of the MgO barrier thickness (dMgO)
+for different Ta with tCoMnFe = 1.2 nm, respectively. As the MgO
+thickness increases, the value of the TMR ratio increases slightly
+up to 2 nm and is then almost saturated. We observed the high-
+est TMR ratio of 106% for 2 nm thick MgO barrier at Ta = 300 ○C.
+RPA almost exponentially increases with increasing the barrier
+thickness. These features are similar to those observed in the MTJs
+such as Fe/MgO/Fe, stemming from the coherent tunneling in
+CoMnFe/MgO/CoFe(B) structures, namely the TMR ratio is mainly
+governed by the coherent tunneling of fully spin-polarized Δ1 band
+between CoFe(B)(001) and CoMnFe(001) across the MgO(001)
+barrier.60
+Finally, we also investigated the p-MTJs with the top
+CoFeB/Ta/CoFeB/MgO to understand the effect of CoFeB thick-
+ness on the TMR ratio in the present p-MTJs. This is because
+the coherent tunneling TMR effect becomes small in p-MTJs
+with very thin CoFeB electrodes, as previously discussed.61 This
+CoFeB/Ta/CoFeB/MgO p-MTJs stack allows us to increase the
+CoFeB thickness while maintaining perpendicular magnetization
+due to the interfacial PMA stemming from the top MgO layer.62
+However, a stronger PMA generally causes a larger current for STT
+switching in p-MTJs devices,63–67 which needs to be addressed for
+practical applications.
+Figure 5(a) shows the schematic stack information about the
+double interface p-MTJs, and those TMR curves are shown in
+Figs. 5(b)–5(e) with different annealing temperatures (the area “A”
+FIG. 4. The barrier thickness (dMgO)
+dependence of TMR ratio (a) and RPA
+(b) with different Ta for p-MTJs, for
+tCoMnFe = 1.2 nm.
+AIP Advances 15, 035006 (2025); doi: 10.1063/9.0000889
+15, 035006-5
+© Author(s) 2025
+ 13 August 2025 09:12:41
+
+
+--- PAGE 7 ---
+AIP Advances
+ARTICLE
+pubs.aip.org/aip/adv
+FIG. 5. (a) Schematic stack information for the double interface p-MTJs prepared in the present study. (b)–(e) TMR curves for the p-MTJs with different annealing
+temperatures (Ta). The data shown in the figures for p-MTJ devices of size 20 × 20 μm2.
+of measured p-MTJs devices are 20 × 20 μm2). Note that the top
+MgO layer thickness was optimized such a way that PMA for CoFeB
+is sufficiently large and RPA is low enough to compare the TMR ratio
+observed in Figs. 2 and 3. For the as-deposited p-MTJs [Fig. 5(b)],
+the TMR curve is distinct from that in the p-MTJs with the single-
+layer CoFeB [Fig. 2(b)], which is associated with the formation of
+the complex magnetic domain structure in the top CoFeB layers.68
+Inverted TMR curves are observed upon annealing the p-MTJ, sim-
+ilar to the p-MTJs with a single CoFeB layer [Figs. 5(c)–5(e)]. We
+observe the highest TMR ratio of ∼110% for double interface p-MTJs
+at Ta = 300 ○C [Fig. 5(d)]. This value is comparable to that of the
+single-interface p-MTJs, as mentioned above. We also observe the
+reduction of the TMR ratio at Ta = 325 ○C, similarly observed in
+p-MTJs with a single CoFeB layer [Fig. 5(e)].
+From the above-mentioned experimental results, it is likely
+that the reduction of the TMR ratio at 325 ○C may be related
+to the deterioration of the bottom layer consisting of MnGa and
+CoMnFe. We speculate that the deterioration of the TMR ratio
+is caused by the small amount of the thermal diffusion of Ga
+from MnGa into CoMnFe. The Ga diffusion was also discussed
+in MnGa/CoMn interface in the transmission electron micro-
+scopy experiments.52 Moreover, we have observed the TMR ratio
+of less than 100% in p-MTJs without the ultrathin Mg layer
+between MnGa and CoMnFe in the present study (not shown here).
+As discussed previously, the ultrathin Mg insertion layer serves a role
+in obtaining a better interface between MnGa layer and CoMn.47
+This may be also the case in the present MTJs, where the ultra-
+thin Mg layer likely suppresses the Ga diffusion at Ta lower than
+300–325 ○C.
+In summary, we investigated the p-MTJs with the MnGa elec-
+trode utilizing the metastable bcc CoMnFe alloys interlayer. We
+successfully achieved both the TMR ratio of more than 100% as well
+as the annealing stability at the temperature up to 300 ○C, demon-
+strating the advances of p-MTJs with the Mn-based tetragonal alloys
+toward STT devices with better performance. We also investigated
+the p-MTJs with the top CoFeB/Ta/CoFeB/MgO electrodes to gain
+insight into the mechanism of the deterioration of the TMR ratio
+after the annealing. For further enhancing the TMR ratio as well
+as annealing stability, it is necessary to explore the way to suppress
+atomic diffusion across the interface of MnGa/CoMnFe.
+ACKNOWLEDGMENTS
+This work was partially supported by KAKENHI (Grant No.
+21H05000), the JST CREST (Grant No. JPMJCR17J5), and the X-
+NICS of MEXT (Grant No. JPJ011438). We thank M. Konno for his
+technical assistance. S.M. thanks the Spintronics Research Network
+of Japan (Spin-RNJ).
+AIP Advances 15, 035006 (2025); doi: 10.1063/9.0000889
+15, 035006-6
+© Author(s) 2025
+ 13 August 2025 09:12:41
+
+
+--- PAGE 8 ---
+AIP Advances
+ARTICLE
+pubs.aip.org/aip/adv
+AUTHOR DECLARATIONS
+Conflict of Interest
+The authors have no conflicts to disclose.
+Author Contributions
+Deepak Kumar: Investigation (equal); Visualization (equal); Writ-
+ing – original draft (equal); Writing – review & editing (equal).
+Naoki Kamata:
+Investigation
+(supporting).
+Kwon Hyeokjin:
+Investigation (supporting). Shigemi Mizukami: Conceptualization
+(lead); Methodology (equal); Supervision (lead); Writing – original
+draft (equal); Writing – review & editing (equal).
+DATA AVAILABILITY
+The data that support the findings of this study are available
+within the article.
+REFERENCES
+1X. Zhao and J. Liu, Adv. Mater. Interfaces 9, 2201606 (2022).
+2S. Mizukami, A. Sakuma, A. Sugihara, K. Suzuki, and R. Ranjbar, Scr. Mater. 118,
+70 (2016).
+3P. C. Filippou, S. V. Faleev, C. Garg, J. Jeong, Y. Ferrante, T. Topuria, M. G.
+Samant, and S. S. P. Parkin, Sci. Adv. 8, eabg2469 (2022).
+4K. Elphick, W. Frost, M. Samiepour, T. Kubota, K. Takanashi, H. Sukegawa, S.
+Mitani, and A. Hirohata, Sci. Technol. Adv. Mater. 22, 235 (2021).
+5Y. Ferrante, J. Jeong, R. Saha, S. V. Faleev, M. G. Samant, T. Topuria, H. Deniz,
+and S. S. P. Parkin, APL Mater. 7, 031103 (2019).
+6M. Raju, R. Romero, D. Nishio-Hamane, R. Uesugi, M. Asakura, Z. Tagay, T.
+Higo, N. P. Armitage, C. Broholm, and S. Nakatsuji, Phys. Rev. Mater. 8, 014204
+(2024).
+7D.-L. Zhang, C. Sun, Y. Lv, K. B. Schliep, Z. Zhao, J.-Y. Chen, P. M. Voyles, and
+J.-P. Wang, Phys. Rev. Appl. 9, 044028 (2018).
+8S. Tsunegi, K. Mizunuma, K. Suzuki, H. Imamura, S. Tamaru, M. Yoshimura, M.
+Sato, Y. Kono, H. Wado, A. Fukushima, H. Kubota, and S. Mizukami, Appl. Phys.
+Lett. 112, 262408 (2018).
+9S. Mizukami, S. Iihama, Y. Sasaki, A. Sugihara, R. Ranjbar, and K. Z. Suzuki,
+J. Appl. Phys. 120, 142102 (2016).
+10A. Lu, J. Lee, T.-H. Kim, M. A. U. Karim, R. S. Park, H. Simka, and S. Yu, Nat.
+Rev. Electr. Eng. 1, 24 (2024).
+11Y. Huai, H. Gan, Z. Wang, P. Xu, X. Hao, B. K. Yen, R. Malmhall, N. Pakala,
+C. Wang, J. Zhang, Y. Zhou, D. Jung, K. Satoh, R. Wang, L. Xue, and M. Pakala,
+Appl. Phys. Lett. 112, 092402 (2018).
+12C. Grezes, F. Ebrahimi, J. G. Alzate, X. Cai, J. A. Katine, J. Langer, B. Ocker, P.
+Khalili Amiri, and K. L. Wang, Appl. Phys. Lett. 108, 012403 (2016).
+13Y. Takeuchi, R. Okuda, J. Igarashi, B. Jinnai, T. Saino, S. Ikeda, S. Fukami, and
+H. Ohno, Appl. Phys. Lett. 120, 052404 (2022).
+14T. Kubota, K. Ito, R. Y. Umetsu, and K. Takanashi, Appl. Phys. Lett. 118, 262404
+(2021).
+15L. Ren, L. Liu, X. Shu, W. Lin, P. Yang, J. Chen, and K. L. Teo, ACS Appl. Mater.
+Interfaces 13, 18294 (2021).
+16Y. He, G. H. Fecher, C. Fu, Y. Pan, K. Manna, J. Kroder, A. Jha, X. Wang, Z.
+Hu, S. Agrestini, J. Herrero-Martín, M. Valvidares, Y. Skourski, W. Schnelle, P.
+Stamenov, H. Borrmann, L. H. Tjeng, R. Schaefer, S. S. P. Parkin, J. M. D. Coey,
+and C. Felser, Adv. Mater. 32, 2004331 (2020).
+17J. Okabayashi, Y. Miura, Y. Kota, K. Z. Suzuki, A. Sakuma, and S. Mizukami,
+Sci. Rep. 10, 9744 (2020).
+18J. Finley and L. Liu, Appl. Phys. Lett. 116, 110501 (2020).
+19J. Seyd, I. Pilottek, N. Y. Schmidt, O. Caha, M. Urbánek, and M. Albrecht,
+J. Phys.: Condens. Matter 32, 145801 (2020).
+20S. Mao, J. Lu, H. Wang, X. Zhao, D. Wei, and J. Zhao, J. Phys. D: Appl. Phys. 52,
+405002 (2019).
+21S. Mizukami, K. Z. Suzuki, and Y. Miura, Appl. Phys. Express 12, 043003 (2019).
+22K. Z. Suzuki, S. Kimura, H. Kubota, and S. Mizukami, ACS Appl. Mater.
+Interfaces 10, 43305 (2018).
+23P. C. Filippou, J. Jeong, Y. Ferrante, S.-H. Yang, T. Topuria, M. G. Samant, and
+S. S. P. Parkin, Nat. Commun. 9, 4653 (2018).
+24X. Zhang, L. L. Tao, J. Zhang, S. H. Liang, L. Jiang, and X. F. Han, Appl. Phys.
+Lett. 110, 252403 (2017).
+25S. Mao, J. Lu, X. Zhao, X. Wang, D. Wei, J. Liu, J. Xia, and J. Zhao, Sci. Rep. 7,
+43064 (2017).
+26M. Takikawa, K. Z. Suzuki, R. Ranjbar, and S. Mizukami, Appl. Phys. Express
+10, 073004 (2017).
+27B. Zhou, P. Khanal, O. J. Benally, D. Lyu, D. B. Gopman, A. Enriquez, A.
+Habiboglu, K. Warrilow, J.-P. Wang, and W.-G. Wang, Sci. Rep. 13, 3454 (2023).
+28J. Jeong, Y. Ferrante, S. V. Faleev, M. G. Samant, C. Felser, and S. S. P. Parkin,
+Nat. Commun. 7, 10276 (2016).
+29K. Z. Suzuki, R. Ranjbar, J. Okabayashi, Y. Miura, A. Sugihara, H. Tsuchiura,
+and S. Mizukami, Sci. Rep. 6, 30249 (2016).
+30K. Z. Suzuki, Y. Miura, R. Ranjbar, L. Bainsla, A. Ono, Y. Sasaki, and S.
+Mizukami, Appl. Phys. Lett. 112, 062402 (2018).
+31Y. Miura and M. Shirai, IEEE Trans. Magn. 50, 1400504 (2014).
+32Q. L. Ma, S. Mizukami, T. Kubota, X. M. Zhang, Y. Ando, and T. Miyazaki, Phys.
+Rev. Lett. 112, 157202 (2014).
+33Q. L. Ma, A. Sugihara, K. Suzuki, X. Zhang, T. Miyazaki, and S. Mizukami, Spin
+04, 1440024 (2014).
+34A. Titova, C. Fowley, E. Clifford, Y.-C. Lau, K. Borisov, D. Betto, G. Atcheson,
+R. Hübner, C. Xu, P. Stamenov, M. Coey, K. Rode, J. Lindner, J. Fassbender, and
+A. M. Deac, Sci. Rep. 9, 4020 (2019).
+35T. Yamamoto, T. Ichinose, J. Uzuhashi, T. Nozaki, T. Ohkubo, K. Yakushiji, S.
+Tamaru, and S. Yuasa, Phys. Rev. Appl. 19, 024020 (2023).
+36S. H. Liang, L. L. Tao, D. P. Liu, Y. Lu, and X. F. Han, J. Appl. Phys. 115, 133902
+(2014).
+37S. Ikeda, K. Miura, H. Yamamoto, K. Mizunuma, H. D. Gan, M. Endo, S. Kanai,
+J. Hayakawa, F. Matsukura, and H. Ohno, Nat. Mater. 9, 721 (2010).
+38S. Yuasa, Y. Suzuki, T. Katayama, and K. Ando, Appl. Phys. Lett. 87, 242503
+(2005).
+39S. Yuasa, T. Nagahama, A. Fukushima, Y. Suzuki, and K. Ando, Nat. Mater. 3,
+868 (2004).
+40S. S. P. Parkin, C. Kaiser, A. Panchula, P. M. Rice, B. Hughes, M. Samant, and
+S.-H. Yang, Nat. Mater. 3, 862 (2004).
+41S. Ikeda, J. Hayakawa, Y. Ashizawa, Y. M. Lee, K. Miura, H. Hasegawa, M.
+Tsunoda, F. Matsukura, and H. Ohno, Appl. Phys. Lett. 93, 082508 (2008).
+42T. Scheike, Q. Xiang, Z. Wen, H. Sukegawa, T. Ohkubo, K. Hono, and S. Mitani,
+Appl. Phys. Lett. 118, 042411 (2021).
+43Y. Shibata, K. Sato, H. Sukegawa, and H. Kaiju, Appl. Phys. Express 16, 113003
+(2023).
+44T. Scheike, Z. Wen, H. Sukegawa, and S. Mitani, Appl. Phys. Lett. 122, 112404
+(2023).
+45H. Sukegawa, T. Scheike, Q. Xiang, Z. Wen, T. Ohkubo, K. Hono, and S. Mitani,
+in 2021 IEEE 32nd Magnetic Recording Conference (TMRC) (IEEE, 2021), pp. 1–2.
+46K. Z. Suzuki, T. Ichinose, S. Iihama, R. Monma, and S. Mizukami, Appl. Phys.
+Lett. 118, 172412 (2021).
+47K. Z. Suzuki and S. Mizukami, AIP Adv. 13, 035225 (2023).
+48K. Kunimatsu, T. Tsuchiya, K. Elphick, T. Ichinose, K. Z. Suzuki, A. Hirohata,
+and S. Mizukami, Jpn. J. Appl. Phys. 58, 080908 (2019).
+49K. Kunimatsu, T. Tsuchiya, T. Roy, K. Elphick, T. Ichinose, M. Tsujikawa, A.
+Hirohata, M. Shirai, and S. Mizukami, Appl. Phys. Express 13, 083007 (2020).
+50K. Elphick, K. Yoshida, T. Roy, T. Ichinose, K. Kunimatsu, T. Tsuchiya, K. Z.
+Suzuki, M. Tsujikawa, Y. Nagai, S. Mizukami, M. Shirai, and A. Hirohata, Phys.
+Rev. Appl. 16, 054052 (2021).
+51K. Kunimatsu, T. Roy, J. Okabayashi, T. Tsuchiya, T. Ichinose, M. Tsujikawa,
+M. Shirai, and S. Mizukami, J. Magn. Magn. Mater. 548, 168841 (2022).
+52J. Okabayashi, K. Z. Suzuki, and S. Mizukami, J. Magn. Magn. Mater. 564,
+170163 (2022).
+AIP Advances 15, 035006 (2025); doi: 10.1063/9.0000889
+15, 035006-7
+© Author(s) 2025
+ 13 August 2025 09:12:41
+
+
+--- PAGE 9 ---
+AIP Advances
+ARTICLE
+pubs.aip.org/aip/adv
+53T. Ichinose, J. Ikeda, Y. Onodera, T. Tsuchiya, K. Z. Suzuki, and S. Mizukami,
+J. Alloys Compd. 960, 170750 (2023).
+54M. Wang, W. Cai, K. Cao, J. Zhou, J. Wrona, S. Peng, H. Yang, J. Wei, W. Kang,
+Y. Zhang, J. Langer, B. Ocker, A. Fert, and W. Zhao, Nat. Commun. 9, 671 (2018).
+55H. Cheng, J. Chen, S. Peng, B. Zhang, Z. Wang, D. Zhu, K. Shi, S. Eimer, X.
+Wang, Z. Guo, Y. Xu, D. Xiong, K. Cao, and W. Zhao, Adv. Electron. Mater. 6,
+2000271 (2020).
+56R. Ranjbar, K. Suzuki, A. Sugihara, Q. L. Ma, X. M. Zhang, T. Miyazaki, Y. Ando,
+and S. Mizukami, J. Appl. Phys. 117, 17A332 (2015).
+57R. Ranjbar, S. Mizukami, Y. Ando, T. Kubota, Q. Ma, X. Zhang, and T. Miyazaki,
+J. Magn. Magn. Mater. 346, 53 (2013).
+58Q. L. Ma, T. Kubota, S. Mizukami, X. M. Zhang, H. Naganuma, M. Oogane, Y.
+Ando, and T. Miyazaki, Appl. Phys. Lett. 101, 032402 (2012).
+59T. Ichinose, J. Ikeda, Y. Onodera, T. Tsuchiya, K. Z. Suzuki, and S. Mizukami
+(unpublished).
+60W. H. Butler, X.-G. Zhang, T. C. Schulthess, and J. M. MacLaren, Phys. Rev. B
+63, 054416 (2001).
+61J. M. Teixeira, J. Ventura, M. P. Fernández-García, J. P. Araujo, J. B. Sousa, P.
+Wisniowski, and P. P. Freitas, Appl. Phys. Lett. 100, 072406 (2012).
+62H. Sato, M. Yamanouchi, K. Miura, S. Ikeda, R. Koizumi, F. Matsukura, and H.
+Ohno, IEEE Magn. Lett. 3, 3000204 (2012).
+63S. Peng, D. Zhu, W. Li, H. Wu, A. J. Grutter, D. A. Gilbert, J. Lu, D. Xiong, W.
+Cai, P. Shafer, K. L. Wang, and W. Zhao, Nat. Electron. 3, 757 (2020).
+64W. Li, Z. Liu, S. Peng, J. Lu, J. Liu, X. Li, S. Lu, Y. Otani, and W. Zhao, IEEE
+Electron Device Lett. 45, 921 (2024).
+65K. Nishioka, H. Honjo, S. Ikeda, T. Watanabe, S. Miura, H. Inoue, T. Tanigawa,
+Y. Noguchi, M. Yasuhira, H. Sato, and T. Endoh, IEEE Trans. Electron Devices 67,
+995 (2020).
+66H. Sato, M. Yamanouchi, S. Ikeda, S. Fukami, F. Matsukura, and H. Ohno, Appl.
+Phys. Lett. 101, 022414 (2012).
+67H. Sato, M. Yamanouchi, S. Ikeda, S. Fukami, F. Matsukura, and H. Ohno, IEEE
+Trans. Magn. 49, 4437 (2013).
+68K. Z. Suzuki, R. Ranjbar, A. Sugihara, Y. Kondo, and S. Mizukami, AIP Conf.
+Proceedings. 1763, 020008 (2016).
+AIP Advances 15, 035006 (2025); doi: 10.1063/9.0000889
+15, 035006-8
+© Author(s) 2025
+ 13 August 2025 09:12:41
