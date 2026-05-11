@@ -37,7 +37,9 @@
     basePapers: [],
     roadmaps: null,
     theme: { ...defaultTheme },
+    baseTheme: { ...defaultTheme },
     siteSettings: { ...defaultSiteSettings },
+    baseSiteSettings: { ...defaultSiteSettings },
     selectedPaperId: "",
     editCategory: "",
     editQuery: "",
@@ -49,7 +51,7 @@
     githubConfig: {
       owner: "yhluo57",
       repo: "phd-literature-notes",
-      branch: "main",
+      branch: "gh-pages",
       path: "data/papers.json",
       themePath: "data/theme.json",
       sitePath: "data/site.json",
@@ -99,6 +101,10 @@
 
   function siteSettingsDraftKey() {
     return "spintronics-literature-site-settings-draft";
+  }
+
+  function lastSyncKey() {
+    return "spintronics-literature-last-unified-sync";
   }
 
   function normalizeTheme(theme) {
@@ -176,6 +182,7 @@
         ...saved,
         token: sessionStorage.getItem("spintronics-literature-github-token") || ""
       };
+      if (state.githubConfig.branch === "main") state.githubConfig.branch = "gh-pages";
     } catch (error) {
       state.workbenchMessage = `读取 GitHub 配置失败：${error.message}`;
     }
@@ -201,29 +208,48 @@
     localStorage.setItem(localDraftKey(), JSON.stringify(state.papers, null, 2));
   }
 
-  function hasUnsyncedChanges() {
+  function hasPaperChanges() {
     return JSON.stringify(state.papers) !== JSON.stringify(state.basePapers);
   }
 
+  function hasThemeChanges() {
+    return JSON.stringify(normalizeTheme(state.theme)) !== JSON.stringify(normalizeTheme(state.baseTheme));
+  }
+
+  function hasSiteSettingsChanges() {
+    return JSON.stringify(normalizeSiteSettings(state.siteSettings)) !== JSON.stringify(normalizeSiteSettings(state.baseSiteSettings));
+  }
+
+  function monthlyChangeLabels() {
+    return [
+      hasPaperChanges() ? "文献库" : "",
+      hasThemeChanges() ? "主题" : "",
+      hasSiteSettingsChanges() ? "总览文字" : ""
+    ].filter(Boolean);
+  }
+
+  function hasUnsyncedChanges() {
+    return monthlyChangeLabels().length > 0;
+  }
+
   function syncStatusBlock() {
-    const dirty = hasUnsyncedChanges();
+    const changes = monthlyChangeLabels();
+    const dirty = changes.length > 0;
     const tokenReady = Boolean(state.githubConfig.token);
-    const statusText = dirty ? "有未同步修改" : "无未同步修改";
+    const statusText = dirty ? `本地草稿累计修改：${changes.join("、")}` : "无本地草稿修改";
+    const lastSync = localStorage.getItem(lastSyncKey()) || "暂无记录";
     const detail = dirty
-      ? "你的修改已自动保存在当前浏览器中，点击同步后才会正式写回 GitHub。"
-      : "当前浏览器中的文献数据与上次读取/保存到 GitHub 的版本一致。";
+      ? "平时修改只保存在当前浏览器；你可以按自己的节奏统一同步，把文献、主题和总览文字一起写回 GitHub。"
+      : "当前浏览器中的文献、主题和总览文字都与 GitHub 版本一致。";
     return `
       <div class="sync-panel ${dirty ? "dirty" : "clean"}">
         <div>
           <strong>${esc(statusText)}</strong>
           <span>${esc(detail)}</span>
+          <span>上次同步：${esc(lastSync)}</span>
         </div>
         <div class="sync-actions">
-          <label class="toggle-row">
-            <input id="auto-sync" type="checkbox"${state.githubConfig.autoSync ? " checked" : ""}>
-            <span>自动同步模式</span>
-          </label>
-          <button id="sync-now" type="button"${dirty && tokenReady ? "" : " disabled"} title="${esc(syncButtonHint(dirty, tokenReady))}">同步到 GitHub</button>
+          <button id="sync-now" type="button"${dirty && tokenReady ? "" : " disabled"} title="${esc(syncButtonHint(dirty, tokenReady))}">统一同步到 GitHub</button>
         </div>
       </div>
     `;
@@ -232,7 +258,7 @@
   function syncButtonHint(dirty, tokenReady) {
     if (!dirty) return "当前没有需要同步的修改";
     if (!tokenReady) return "请先在下方 GitHub 同步设置中填写 token";
-    return "把当前文献库写回 GitHub";
+    return "一次性同步文献库、主题和总览文字";
   }
 
   function themeField(label, key, type = "color") {
@@ -290,7 +316,7 @@
         </div>
         <div class="button-row">
           <button id="apply-site-settings" type="button">应用到当前浏览器</button>
-          <button id="save-site-settings-github" type="button">保存总览文字到 GitHub</button>
+          <a class="button-link" href="#workbench">回工作台统一同步</a>
           <button id="reset-site-settings" type="button">恢复默认文字</button>
         </div>
       </div>
@@ -298,7 +324,7 @@
       <div class="method-block">
         <p class="eyebrow">Appearance</p>
         <h2>主题设置</h2>
-        <p>这里专门管理网页外观，不和文献导入、编辑、同步混在一起。点击“应用到当前浏览器”会立刻预览且不会增加 GitHub 部署次数；确认喜欢后再点击“保存主题到 GitHub”。</p>
+        <p>这里专门管理网页外观，不和文献导入、编辑、同步混在一起。点击“应用到当前浏览器”会立刻预览并保存为本地草稿；之后按你的节奏回到工作台统一同步。</p>
         <div class="theme-preview">
           <div>
             <strong>雾粉杏 · 鼠尾草绿 · 温柔墨蓝</strong>
@@ -328,7 +354,7 @@
         </div>
         <div class="button-row">
           <button id="apply-theme" type="button">应用到当前浏览器</button>
-          <button id="save-theme-github" type="button">保存主题到 GitHub</button>
+          <a class="button-link" href="#workbench">回工作台统一同步</a>
           <button id="reset-theme" type="button">恢复默认主题</button>
         </div>
       </div>
@@ -338,15 +364,7 @@
 
   function afterPapersChanged(message) {
     saveDraftPapers();
-    if (state.githubConfig.autoSync && state.githubConfig.token) {
-      state.workbenchMessage = `${message} 正在自动同步到 GitHub...`;
-      renderWorkbench();
-      window.setTimeout(() => pushPapersToGithub({ fromAutoSync: true }), 0);
-      return;
-    }
-    state.workbenchMessage = state.githubConfig.autoSync && !state.githubConfig.token
-      ? `${message} 自动同步需要先填写 GitHub token。`
-      : message;
+    state.workbenchMessage = `${message} 已保存为本地草稿，之后可统一同步到 GitHub。`;
     renderWorkbench();
   }
 
@@ -811,7 +829,7 @@
           <a class="back-link" href="#overview">← 返回总览</a>
           <p class="eyebrow">Literature Maintenance</p>
           <h1>文献工作台</h1>
-          <p>这里负责新文献导入、半在线编辑、JSON 自动生成、DOI 补全、重点图谱升级和 GitHub 同步。编辑时会先自动保存在当前浏览器中；你可以手动同步，也可以打开自动同步模式。</p>
+          <p>这里负责新文献导入、半在线编辑、JSON 自动生成、DOI 补全、重点图谱升级和统一同步。平时所有修改先进入本地草稿；你可以按自己的节奏，一次性同步文献、主题和总览文字到 GitHub。</p>
           ${syncStatusBlock()}
           ${state.workbenchMessage ? `<div class="status-message">${esc(state.workbenchMessage)}</div>` : ""}
         </div>
@@ -900,7 +918,7 @@
 
           <div class="method-block">
             <h2>GitHub 同步设置</h2>
-            <p>这部分只需要偶尔设置。Branch 默认用 <code>main</code>，意思是保存到仓库的主分支；Token 不是 Deploy key，而是 GitHub 生成的一串网页授权码，用来允许这个页面更新 <code>data/papers.json</code>。</p>
+            <p>这部分只需要偶尔设置。Branch 默认用 <code>gh-pages</code>，这是当前线上网页实际读取的发布分支；Token 不是 Deploy key，而是 GitHub 生成的一串网页授权码，用来允许这个页面统一更新文献、主题和总览文字。</p>
             <details class="guide-box">
               <summary>第一次使用：如何生成 token</summary>
               <ol>
@@ -922,7 +940,7 @@
             <div class="button-row">
               <button id="save-gh-config" type="button">保存配置</button>
             </div>
-            <div class="note-box">顶部“同步到 GitHub”是正式保存按钮；这里负责填写保存按钮需要的地址和授权。你通常保持 Owner、Repo、Branch、文件路径不变，只在需要同步时填写 Token。</div>
+            <div class="note-box">顶部“统一同步到 GitHub”是正式保存按钮；这里负责填写保存按钮需要的地址和授权。你通常保持 Owner、Repo、Branch 和路径不变，只在需要同步时填写 Token。</div>
           </div>
         </div>
 
@@ -960,15 +978,7 @@
   }
 
   function bindWorkbenchEvents() {
-    document.getElementById("auto-sync")?.addEventListener("change", (event) => {
-      state.githubConfig.autoSync = event.target.checked;
-      persistGithubConfig();
-      state.workbenchMessage = state.githubConfig.autoSync
-        ? "自动同步模式已打开。之后保存文献时会尝试直接同步到 GitHub。"
-        : "自动同步模式已关闭。之后修改会先留在本地，手动点击同步再写回 GitHub。";
-      renderWorkbench();
-    });
-    document.getElementById("sync-now")?.addEventListener("click", () => pushPapersToGithub());
+    document.getElementById("sync-now")?.addEventListener("click", () => pushMonthlyDraftsToGithub());
     document.getElementById("edit-category-filter")?.addEventListener("change", (event) => {
       state.editCategory = event.target.value;
       state.editQuery = "";
@@ -1038,10 +1048,6 @@
     document.getElementById("copy-json")?.addEventListener("click", copyCurrentJson);
     document.getElementById("download-json")?.addEventListener("click", downloadCurrentJson);
     document.getElementById("save-gh-config")?.addEventListener("click", saveGithubConfigFromForm);
-    document.getElementById("apply-theme")?.addEventListener("click", applyThemeFromForm);
-    document.getElementById("save-theme-github")?.addEventListener("click", pushThemeToGithub);
-    document.getElementById("reset-theme")?.addEventListener("click", resetTheme);
-    bindThemeColorInputs();
     document.getElementById("edit-mechanism-add")?.addEventListener("change", () => {
       if (valueOf("edit-mechanism-add") !== "__new__") addValueToList("edit-mechanism-add", "edit-mechanism-new", "edit-mechanisms");
     });
@@ -1056,10 +1062,8 @@
 
   function bindThemeEvents() {
     document.getElementById("apply-site-settings")?.addEventListener("click", applySiteSettingsFromForm);
-    document.getElementById("save-site-settings-github")?.addEventListener("click", pushSiteSettingsToGithub);
     document.getElementById("reset-site-settings")?.addEventListener("click", resetSiteSettings);
     document.getElementById("apply-theme")?.addEventListener("click", applyThemeFromForm);
-    document.getElementById("save-theme-github")?.addEventListener("click", pushThemeToGithub);
     document.getElementById("reset-theme")?.addEventListener("click", resetTheme);
     bindThemeColorInputs();
   }
@@ -1074,16 +1078,15 @@
   function applySiteSettingsFromForm() {
     state.siteSettings = collectSiteSettingsFromForm();
     saveSiteSettingsDraft();
-    state.workbenchMessage = "总览文字已应用到当前浏览器。确认后可以保存到 GitHub。";
+    state.workbenchMessage = "总览文字已保存为本地草稿，之后可回工作台统一同步。";
     app.innerHTML = renderThemeEditor();
     bindThemeEvents();
   }
 
   function resetSiteSettings() {
     state.siteSettings = { ...defaultSiteSettings };
-    localStorage.removeItem(siteSettingsDraftKey());
     saveSiteSettingsDraft();
-    state.workbenchMessage = "已恢复默认总览文字。";
+    state.workbenchMessage = "已恢复默认总览文字，并保存为本地草稿。";
     app.innerHTML = renderThemeEditor();
     bindThemeEvents();
   }
@@ -1117,16 +1120,17 @@
   function applyThemeFromForm() {
     state.theme = collectThemeFromForm();
     saveThemeDraft();
-    state.workbenchMessage = "主题已应用到当前浏览器。确认满意后，可以保存主题到 GitHub。";
-    renderWorkbench();
+    state.workbenchMessage = "主题已保存为本地草稿，之后可回工作台统一同步。";
+    app.innerHTML = renderThemeEditor();
+    bindThemeEvents();
   }
 
   function resetTheme() {
     state.theme = { ...defaultTheme };
-    localStorage.removeItem(themeDraftKey());
-    applyTheme();
-    state.workbenchMessage = "已恢复默认主题。";
-    renderWorkbench();
+    saveThemeDraft();
+    state.workbenchMessage = "已恢复默认主题，并保存为本地草稿。";
+    app.innerHTML = renderThemeEditor();
+    bindThemeEvents();
   }
 
   function setupNewValueToggles() {
@@ -1778,101 +1782,118 @@
     }
   }
 
-  async function pushSiteSettingsToGithub() {
-    state.siteSettings = collectSiteSettingsFromForm();
-    saveSiteSettingsDraft();
+  async function pushMonthlyDraftsToGithub() {
     saveGithubConfigFromForm({ silent: true });
-    const { sitePath } = state.githubConfig;
-    if (!sitePath) {
-      state.workbenchMessage = "请先填写总览文字路径，默认是 data/site.json。";
-      app.innerHTML = renderThemeEditor();
-      bindThemeEvents();
-      return;
+    const files = [];
+    if (hasPaperChanges()) {
+      files.push({ path: state.githubConfig.path, content: JSON.stringify(state.papers, null, 2) + "\n" });
     }
-    try {
-      await putGithubFile(sitePath, JSON.stringify(state.siteSettings, null, 2) + "\n", "Update overview text settings");
-      localStorage.removeItem(siteSettingsDraftKey());
-      state.workbenchMessage = "总览文字已保存到 GitHub。";
-      app.innerHTML = renderThemeEditor();
-      bindThemeEvents();
-    } catch (error) {
-      state.workbenchMessage = `总览文字保存失败：${error.message}`;
-      app.innerHTML = renderThemeEditor();
-      bindThemeEvents();
+    if (hasThemeChanges()) {
+      files.push({ path: state.githubConfig.themePath, content: JSON.stringify(normalizeTheme(state.theme), null, 2) + "\n" });
     }
-  }
-
-  async function pushThemeToGithub() {
-    state.theme = collectThemeFromForm();
-    saveThemeDraft();
-    saveGithubConfigFromForm({ silent: true });
-    const { themePath } = state.githubConfig;
-    if (!themePath) {
-      state.workbenchMessage = "请先填写主题路径，默认是 data/theme.json。";
+    if (hasSiteSettingsChanges()) {
+      files.push({ path: state.githubConfig.sitePath, content: JSON.stringify(normalizeSiteSettings(state.siteSettings), null, 2) + "\n" });
+    }
+    if (!files.length) {
+      state.workbenchMessage = "当前没有需要同步的本地草稿。";
       renderWorkbench();
       return;
     }
     try {
-      await putGithubFile(themePath, JSON.stringify(state.theme, null, 2) + "\n", "Update site theme settings");
-      localStorage.removeItem(themeDraftKey());
-      state.workbenchMessage = "主题已保存到 GitHub。GitHub Pages 通常会在几十秒后刷新。";
-      renderWorkbench();
-    } catch (error) {
-      state.workbenchMessage = `主题保存失败：${error.message}`;
-      renderWorkbench();
-    }
-  }
-
-  async function pushPapersToGithub(options = {}) {
-    saveGithubConfigFromForm({ silent: true });
-    const { path } = state.githubConfig;
-    if (!path) {
-      state.workbenchMessage = "请补全 GitHub 配置，并填入有 Contents 读写权限的 token。";
-      renderWorkbench();
-      return;
-    }
-    try {
-      await putGithubFile(path, JSON.stringify(state.papers, null, 2) + "\n", "Update literature papers data");
+      await commitGithubFiles(files, "Unified literature log sync");
       state.basePapers = structuredClone(state.papers);
+      state.baseTheme = structuredClone(normalizeTheme(state.theme));
+      state.baseSiteSettings = structuredClone(normalizeSiteSettings(state.siteSettings));
       localStorage.removeItem(localDraftKey());
-      state.workbenchMessage = options.fromAutoSync
-        ? "已自动同步到 GitHub。GitHub Pages 通常会在几十秒后刷新。"
-        : "已同步到 GitHub。GitHub Pages 通常会在几十秒后刷新。";
+      localStorage.removeItem(themeDraftKey());
+      localStorage.removeItem(siteSettingsDraftKey());
+      localStorage.setItem(lastSyncKey(), formatSyncTime(new Date()));
+      state.workbenchMessage = `已统一同步 ${files.length} 个文件到 GitHub。GitHub Pages 通常会在几十秒后刷新。`;
       renderWorkbench();
     } catch (error) {
-      state.workbenchMessage = `GitHub 保存失败：${error.message}`;
+      state.workbenchMessage = `统一同步失败：${error.message}`;
       renderWorkbench();
     }
   }
 
-  async function putGithubFile(filePath, content, message) {
+  async function commitGithubFiles(files, message) {
     const { owner, repo, branch, token } = state.githubConfig;
-    if (!owner || !repo || !branch || !filePath || !token) {
+    if (!owner || !repo || !branch || !token || files.some((file) => !file.path)) {
       throw new Error("请补全 GitHub 配置，并填入有 Contents 读写权限的 token。");
     }
-    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`;
+    const apiBase = `https://api.github.com/repos/${owner}/${repo}`;
     const headers = {
       Authorization: `Bearer ${token}`,
       Accept: "application/vnd.github+json",
       "X-GitHub-Api-Version": "2022-11-28"
     };
-    const current = await fetch(`${apiUrl}?ref=${encodeURIComponent(branch)}`, { headers });
-    const currentData = current.ok ? await current.json() : {};
-    const body = {
-      message,
-      content: toBase64(content),
-      branch
-    };
-    if (currentData.sha) body.sha = currentData.sha;
-    const saved = await fetch(apiUrl, {
-      method: "PUT",
-      headers: { ...headers, "Content-Type": "application/json" },
-      body: JSON.stringify(body)
-    });
-    if (!saved.ok) {
-      const error = await saved.json().catch(() => ({}));
-      throw new Error(friendlyGithubError(saved.status, error.message));
+    const refResponse = await fetch(`${apiBase}/git/ref/heads/${encodeURIComponent(branch)}`, { headers });
+    if (!refResponse.ok) {
+      const error = await refResponse.json().catch(() => ({}));
+      throw new Error(friendlyGithubError(refResponse.status, error.message));
     }
+    const refData = await refResponse.json();
+    const headSha = refData.object && refData.object.sha;
+    const commitResponse = await fetch(`${apiBase}/git/commits/${headSha}`, { headers });
+    if (!commitResponse.ok) {
+      const error = await commitResponse.json().catch(() => ({}));
+      throw new Error(friendlyGithubError(commitResponse.status, error.message));
+    }
+    const currentCommit = await commitResponse.json();
+    const treeResponse = await fetch(`${apiBase}/git/trees`, {
+      method: "POST",
+      headers: { ...headers, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        base_tree: currentCommit.tree.sha,
+        tree: files.map((file) => ({
+          path: file.path,
+          mode: "100644",
+          type: "blob",
+          content: file.content
+        }))
+      })
+    });
+    if (!treeResponse.ok) {
+      const error = await treeResponse.json().catch(() => ({}));
+      throw new Error(friendlyGithubError(treeResponse.status, error.message));
+    }
+    const treeData = await treeResponse.json();
+    const newCommitResponse = await fetch(`${apiBase}/git/commits`, {
+      method: "POST",
+      headers: { ...headers, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message,
+        tree: treeData.sha,
+        parents: [headSha]
+      })
+    });
+    if (!newCommitResponse.ok) {
+      const error = await newCommitResponse.json().catch(() => ({}));
+      throw new Error(friendlyGithubError(newCommitResponse.status, error.message));
+    }
+    const newCommit = await newCommitResponse.json();
+    const updateResponse = await fetch(`${apiBase}/git/refs/heads/${encodeURIComponent(branch)}`, {
+      method: "PATCH",
+      headers: { ...headers, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        sha: newCommit.sha,
+        force: false
+      })
+    });
+    if (!updateResponse.ok) {
+      const error = await updateResponse.json().catch(() => ({}));
+      throw new Error(friendlyGithubError(updateResponse.status, error.message));
+    }
+  }
+
+  function formatSyncTime(date) {
+    return new Intl.DateTimeFormat("zh-CN", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit"
+    }).format(date);
   }
 
   function friendlyGithubError(status, message = "") {
@@ -1881,15 +1902,6 @@
     if (status === 404) return "没有找到仓库或文件。请检查 Owner、Repo、Branch 和文件路径。";
     if (status === 409) return "GitHub 上的文件刚被更新过。请刷新页面后再同步。";
     return message || `GitHub 返回 ${status}`;
-  }
-
-  function toBase64(value) {
-    const bytes = new TextEncoder().encode(value);
-    let binary = "";
-    bytes.forEach((byte) => {
-      binary += String.fromCharCode(byte);
-    });
-    return btoa(binary);
   }
 
   function handleRoute() {
@@ -1919,9 +1931,11 @@
   ])
     .then(([papers, roadmaps, theme, siteSettings]) => {
       loadGithubConfig();
-      state.theme = loadThemeDraft(theme);
+      state.baseTheme = normalizeTheme(theme);
+      state.theme = loadThemeDraft(state.baseTheme);
       applyTheme();
-      state.siteSettings = loadSiteSettingsDraft(siteSettings);
+      state.baseSiteSettings = normalizeSiteSettings(siteSettings);
+      state.siteSettings = loadSiteSettingsDraft(state.baseSiteSettings);
       updateDocumentTitle();
       const normalizedPapers = papers.map(normalizePaper);
       state.basePapers = structuredClone(normalizedPapers);

@@ -22,6 +22,7 @@
 - 工作台：支持 PDF 文件名批量生成条目、DOI 新建文献、编辑已有文献、批量编辑、JSON 复制/下载、GitHub API 同步。
 - 重复检测：导入新文献时会检查已有文献重复和同批次重复，强重复默认跳过，疑似重复会提示人工核对。
 - 主题设置：可在工作台里改配色、字体、圆角和界面密度。
+- 统一同步模式：平时文献、主题、总览文字都先保存为当前浏览器的本地草稿；用户按自己的节奏点击一次“统一同步到 GitHub”，用一次提交同时更新 `data/papers.json`、`data/theme.json` 和 `data/site.json`。
 
 ## 主题设置说明
 
@@ -47,11 +48,9 @@
 
 网页本身是静态网页，浏览器不能直接改 GitHub 仓库文件，必须通过 GitHub API。工作台里的 token 是 GitHub 生成的临时授权码，要求 fine-grained token，仓库选择 `yhluo57/phd-literature-notes`，权限只需要 `Contents: Read and write`。
 
-- 同步文献会写入 `data/papers.json`。
-- 保存主题会写入 `data/theme.json`。
-- 保存总览标题/备注会写入 `data/site.json`。
+- 统一同步会按实际变化写入 `data/papers.json`、`data/theme.json` 和 `data/site.json`。
 - 每次写入 GitHub 都会产生一次 commit，并触发一次 GitHub Pages deployment。
-- 只在本地预览主题、复制 JSON、编辑但不点击同步，不会触发 deployment。
+- 只在本地预览主题、修改总览文字、复制 JSON、编辑但不点击统一同步，不会触发 deployment。
 
 ## 给后续 Codex 的上下文
 
