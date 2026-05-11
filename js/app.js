@@ -12,6 +12,7 @@
     materialQuery: "",
     workbenchMessage: "",
     generatedPapers: [],
+    importWarnings: [],
     githubConfig: {
       owner: "yhluo57",
       repo: "phd-literature-notes",
@@ -618,6 +619,7 @@
               <button id="generate-from-filenames" type="button">生成条目</button>
               <button id="append-generated" type="button">加入文献库</button>
             </div>
+            ${renderImportWarnings()}
             <pre id="generated-preview" class="json-preview">${esc(JSON.stringify(state.generatedPapers, null, 2))}</pre>
           </div>
 
@@ -774,7 +776,8 @@
       const folder = document.getElementById("filename-folder").value.trim();
       const status = selectOrNew("filename-status", "filename-status-new", "新导入待整理");
       state.generatedPapers = names.map((name, index) => paperFromFilename(name, { category, folder, status, offset: index }));
-      state.workbenchMessage = `已从 ${state.generatedPapers.length} 个文件名生成 JSON 条目。`;
+      state.importWarnings = detectImportDuplicates(state.generatedPapers).warnings;
+      state.workbenchMessage = `已从 ${state.generatedPapers.length} 个文件名生成 JSON 条目。${state.importWarnings.length ? "请先查看重复提示。" : ""}`;
       renderWorkbench();
     });
     document.getElementById("append-generated")?.addEventListener("click", () => {
@@ -782,10 +785,19 @@
         state.workbenchMessage = "还没有可加入的生成条目。";
         renderWorkbench();
       } else {
-        state.papers = [...state.papers, ...state.generatedPapers.map(normalizePaper)];
-        state.selectedPaperId = state.generatedPapers[0].id;
+        const report = detectImportDuplicates(state.generatedPapers);
+        const safePapers = state.generatedPapers.filter((paper, index) => !report.blockedIndexes.has(index));
+        if (!safePapers.length) {
+          state.importWarnings = report.warnings;
+          state.workbenchMessage = "检测到这些条目都已经存在或在本批次内重复，未加入文献库。";
+          renderWorkbench();
+          return;
+        }
+        state.papers = [...state.papers, ...safePapers.map(normalizePaper)];
+        state.selectedPaperId = safePapers[0].id;
         state.generatedPapers = [];
-        afterPapersChanged("生成条目已加入文献库。");
+        state.importWarnings = [];
+        afterPapersChanged(`已加入 ${safePapers.length} 篇文献；${report.blockedIndexes.size ? `跳过 ${report.blockedIndexes.size} 个强重复条目。` : ""}`);
       }
     });
     document.getElementById("fetch-doi")?.addEventListener("click", fetchDoiIntoPreview);
@@ -883,6 +895,114 @@
       return normalizePaper(updated);
     });
     afterPapersChanged(`已批量更新 ${targets.length} 篇文献。`);
+  }
+
+  function renderImportWarnings() {
+    if (!state.importWarnings.length) return "";
+    return `
+      <div class="duplicate-panel">
+        <h3>重复检测</h3>
+        ${state.importWarnings.map((warning) => `
+          <div class="duplicate-item ${warning.level}">
+            <strong>${esc(warning.label)}</strong>
+            <span>${esc(warning.message)}</span>
+          </div>
+        `).join("")}
+      </div>
+    `;
+  }
+
+  function detectImportDuplicates(candidates) {
+    const warnings = [];
+    const blockedIndexes = new Set();
+    const existingDoi = new Map();
+    const existingTitle = new Map();
+    state.papers.forEach((paper) => {
+      const doi = normalizeDoi(paper.doi);
+      const title = normalizeTitle(paper.title);
+      if (doi) existingDoi.set(doi, paper);
+      if (title) existingTitle.set(title, paper);
+    });
+    const batchDoi = new Map();
+    const batchTitle = new Map();
+    candidates.forEach((paper, index) => {
+      const doi = normalizeDoi(paper.doi);
+      const title = normalizeTitle(paper.title);
+      if (doi && existingDoi.has(doi)) {
+        const matched = existingDoi.get(doi);
+        warnings.push({
+          level: "strong",
+          label: `${paper.id} 强重复`,
+          message: `DOI 与已有文献 ${matched.id} 相同，默认跳过。`
+        });
+        blockedIndexes.add(index);
+      }
+      if (title && existingTitle.has(title)) {
+        const matched = existingTitle.get(title);
+        warnings.push({
+          level: "strong",
+          label: `${paper.id} 强重复`,
+          message: `标题与已有文献 ${matched.id} 基本相同，默认跳过。`
+        });
+        blockedIndexes.add(index);
+      }
+      if (doi && batchDoi.has(doi)) {
+        warnings.push({
+          level: "strong",
+          label: `${paper.id} 批次内重复`,
+          message: `DOI 与本批次 ${batchDoi.get(doi)} 相同，默认跳过后出现的条目。`
+        });
+        blockedIndexes.add(index);
+      } else if (doi) {
+        batchDoi.set(doi, paper.id);
+      }
+      if (title && batchTitle.has(title)) {
+        warnings.push({
+          level: "strong",
+          label: `${paper.id} 批次内重复`,
+          message: `标题与本批次 ${batchTitle.get(title)} 基本相同，默认跳过后出现的条目。`
+        });
+        blockedIndexes.add(index);
+      } else if (title) {
+        batchTitle.set(title, paper.id);
+      }
+      const similar = findSimilarExistingTitle(paper);
+      if (similar && !blockedIndexes.has(index)) {
+        warnings.push({
+          level: "soft",
+          label: `${paper.id} 疑似重复`,
+          message: `标题与已有文献 ${similar.id} 相似，加入前建议核对。`
+        });
+      }
+    });
+    return { warnings, blockedIndexes };
+  }
+
+  function normalizeDoi(value) {
+    return String(value || "").trim().toLowerCase().replace(/^https?:\/\/(dx\.)?doi\.org\//, "");
+  }
+
+  function normalizeTitle(value) {
+    return String(value || "")
+      .toLowerCase()
+      .replace(/\.pdf$/i, "")
+      .replace(/\b(19|20)\d{2}\b/g, "")
+      .replace(/[^a-z0-9\u4e00-\u9fa5]+/g, " ")
+      .trim()
+      .replace(/\s+/g, " ");
+  }
+
+  function findSimilarExistingTitle(candidate) {
+    const candidateTitle = normalizeTitle(candidate.title);
+    if (!candidateTitle || candidateTitle.length < 18) return null;
+    const candidateWords = new Set(candidateTitle.split(" ").filter((word) => word.length > 3));
+    if (candidateWords.size < 4) return null;
+    return state.papers.find((paper) => {
+      const title = normalizeTitle(paper.title);
+      const words = new Set(title.split(" ").filter((word) => word.length > 3));
+      const overlap = [...candidateWords].filter((word) => words.has(word)).length;
+      return overlap / Math.max(candidateWords.size, 1) >= 0.72;
+    }) || null;
   }
 
   function paperMatchesQuery(paper, query) {
@@ -1269,7 +1389,8 @@
     try {
       const paper = await paperFromDoi(doi, selectOrNew("doi-category", "doi-category-new", "待分组"));
       state.generatedPapers = [paper];
-      state.workbenchMessage = "DOI 信息已获取，可加入文献库或补到当前选中文献。";
+      state.importWarnings = detectImportDuplicates(state.generatedPapers).warnings;
+      state.workbenchMessage = `DOI 信息已获取，可作为新条目加入。${state.importWarnings.length ? "但检测到可能重复，请先查看提示。" : ""}`;
       renderWorkbench();
     } catch (error) {
       state.workbenchMessage = `DOI 查询失败：${error.message}`;

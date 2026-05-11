@@ -1,16 +1,16 @@
 :root {
-  --bg: #fbf7f3;
+  --bg: #f7f9f8;
   --panel: #ffffff;
-  --panel-soft: #f7efea;
+  --panel-soft: #eef5f1;
   --text: #25313a;
   --muted: #74808a;
-  --line: #eadfda;
+  --line: #dfe9e5;
   --accent: #6f9f9a;
   --accent-2: #c96f74;
   --accent-3: #6e879d;
   --good: #6f9f9a;
   --warn: #c79662;
-  --shadow: 0 12px 30px rgba(89, 76, 68, 0.08);
+  --shadow: 0 12px 30px rgba(83, 98, 103, 0.08);
 }
 
 * {
@@ -39,7 +39,7 @@ a {
   justify-content: space-between;
   min-height: 64px;
   padding: 0 28px;
-  background: rgba(255, 252, 249, 0.92);
+  background: rgba(248, 251, 250, 0.92);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(12px);
 }
@@ -94,8 +94,8 @@ input {
 }
 
 .topnav a:hover {
-  background: var(--panel-soft);
-  color: var(--text);
+  background: #eef5f1;
+  color: #506f6a;
 }
 
 #app {
@@ -131,6 +131,7 @@ input {
 
 .intro {
   padding: 24px;
+  background: #f4faf7;
 }
 
 .eyebrow {
@@ -173,6 +174,14 @@ h1 {
   box-shadow: var(--shadow);
 }
 
+.stat-card:nth-child(2n) {
+  background: #f7f4fb;
+}
+
+.stat-card:nth-child(3n) {
+  background: #fff8f4;
+}
+
 .stat-value {
   display: block;
   font-size: 30px;
@@ -208,7 +217,7 @@ textarea {
 
 input[readonly] {
   color: var(--muted);
-  background: #f4ece7;
+  background: #eef5f1;
 }
 
 .new-value {
@@ -285,7 +294,7 @@ button:disabled {
 .bar-track {
   height: 8px;
   overflow: hidden;
-  background: #eee5df;
+  background: #e5efeb;
 }
 
 .bar-fill {
@@ -346,8 +355,8 @@ button:disabled {
 }
 
 .th {
-  background: #f7efea;
-  color: #6b5b55;
+  background: #eef5f1;
+  color: #506f6a;
   font-size: 12px;
   font-weight: 750;
 }
@@ -358,7 +367,7 @@ button:disabled {
 }
 
 .row:hover .td {
-  background: #fffaf7;
+  background: #fbfdfc;
 }
 
 .td {
@@ -489,7 +498,7 @@ button:disabled {
 
 .reading-card {
   padding: 14px;
-  background: #fffaf7;
+  background: #fbfdfc;
   border: 1px solid var(--line);
 }
 
@@ -528,12 +537,12 @@ button:disabled {
   gap: 14px;
   padding: 14px;
   border: 1px solid var(--line);
-  background: #fffaf7;
+  background: #fbfdfc;
 }
 
 .timeline-item:hover {
   border-color: #dcbeb5;
-  background: #fff5f1;
+  background: #f4faf7;
 }
 
 .timeline-year {
@@ -641,7 +650,7 @@ button:disabled {
 
 .compare-head > div {
   color: var(--text);
-  background: #f7efea;
+  background: #eef5f1;
   font-weight: 760;
 }
 
@@ -666,10 +675,49 @@ button:disabled {
   color: var(--muted);
 }
 
+.duplicate-panel {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 12px;
+  background: #fbfdfc;
+  border: 1px solid var(--line);
+}
+
+.duplicate-panel h3 {
+  font-size: 14px;
+}
+
+.duplicate-item {
+  display: grid;
+  gap: 3px;
+  padding: 10px;
+  border-radius: 7px;
+  font-size: 13px;
+}
+
+.duplicate-item strong {
+  color: var(--text);
+}
+
+.duplicate-item span {
+  color: var(--muted);
+}
+
+.duplicate-item.strong {
+  background: #fff0ef;
+  border: 1px solid #f0cdcc;
+}
+
+.duplicate-item.soft {
+  background: #f4f6fb;
+  border: 1px solid #dce4ef;
+}
+
 .guide-box {
   margin-top: 14px;
   padding: 12px 14px;
-  background: #fffaf7;
+  background: #fbfdfc;
   border: 1px solid var(--line);
 }
 
@@ -791,7 +839,7 @@ button:disabled {
   margin: 14px 0 0;
   padding: 14px;
   color: #354149;
-  background: #fffaf7;
+  background: #fbfdfc;
   border: 1px solid var(--line);
   font-size: 12px;
   line-height: 1.55;
@@ -815,7 +863,7 @@ button:disabled {
   margin-top: 16px;
   padding: 14px;
   border: 1px solid var(--line);
-  background: #fffaf7;
+  background: #fbfdfc;
 }
 
 .sync-panel.dirty {
