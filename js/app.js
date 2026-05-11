@@ -1,10 +1,37 @@
 (function () {
   "use strict";
 
+  const defaultTheme = {
+    bg: "#fbf7f3",
+    panel: "#ffffff",
+    panelSoft: "#f8ece9",
+    text: "#25313a",
+    muted: "#74808a",
+    line: "#eadfda",
+    accent: "#6f9f9a",
+    accent2: "#d98b8b",
+    accent3: "#8aa6c1",
+    buttonHover: "#5d8e89",
+    tableHead: "#f8ece9",
+    noteBg: "#fff8f4",
+    chipBg: "#f8ece9",
+    fontFamily: "system",
+    radius: "7",
+    density: "comfortable"
+  };
+
+  const fontOptions = {
+    system: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif',
+    songti: '"Noto Serif SC", "Songti SC", SimSun, serif',
+    yuanti: '"Yuanti SC", "PingFang SC", "Microsoft YaHei", sans-serif',
+    mono: '"SFMono-Regular", Consolas, "Liberation Mono", monospace'
+  };
+
   const state = {
     papers: [],
     basePapers: [],
     roadmaps: null,
+    theme: { ...defaultTheme },
     selectedPaperId: "",
     editCategory: "",
     editQuery: "",
@@ -18,6 +45,7 @@
       repo: "phd-literature-notes",
       branch: "main",
       path: "data/papers.json",
+      themePath: "data/theme.json",
       token: "",
       autoSync: false
     },
@@ -56,6 +84,54 @@
 
   function githubConfigKey() {
     return "spintronics-literature-github-config";
+  }
+
+  function themeDraftKey() {
+    return "spintronics-literature-theme-draft";
+  }
+
+  function normalizeTheme(theme) {
+    return { ...defaultTheme, ...(theme || {}) };
+  }
+
+  function loadThemeDraft(fetchedTheme) {
+    try {
+      const draft = JSON.parse(localStorage.getItem(themeDraftKey()) || "null");
+      return normalizeTheme(draft || fetchedTheme);
+    } catch (error) {
+      state.workbenchMessage = `主题草稿读取失败，已使用默认主题：${error.message}`;
+      return normalizeTheme(fetchedTheme);
+    }
+  }
+
+  function applyTheme() {
+    const theme = normalizeTheme(state.theme);
+    const root = document.documentElement;
+    const varMap = {
+      bg: "--bg",
+      panel: "--panel",
+      panelSoft: "--panel-soft",
+      text: "--text",
+      muted: "--muted",
+      line: "--line",
+      accent: "--accent",
+      accent2: "--accent-2",
+      accent3: "--accent-3",
+      buttonHover: "--button-hover",
+      tableHead: "--table-head",
+      noteBg: "--note-bg",
+      chipBg: "--chip-bg"
+    };
+    Object.entries(varMap).forEach(([key, cssVar]) => root.style.setProperty(cssVar, theme[key]));
+    root.style.setProperty("--font-body", fontOptions[theme.fontFamily] || fontOptions.system);
+    root.style.setProperty("--radius", `${theme.radius || defaultTheme.radius}px`);
+    root.style.setProperty("--control-min-height", theme.density === "compact" ? "34px" : "40px");
+    root.style.setProperty("--block-padding", theme.density === "compact" ? "18px" : "22px");
+  }
+
+  function saveThemeDraft() {
+    localStorage.setItem(themeDraftKey(), JSON.stringify(state.theme, null, 2));
+    applyTheme();
   }
 
   function loadGithubConfig() {
@@ -123,6 +199,88 @@
     if (!dirty) return "当前没有需要同步的修改";
     if (!tokenReady) return "请先在下方 GitHub 同步设置中填写 token";
     return "把当前文献库写回 GitHub";
+  }
+
+  function themeField(label, key, type = "color") {
+    const value = state.theme[key] ?? defaultTheme[key];
+    if (type === "select") {
+      return `
+        <label>${esc(label)}
+          <select id="theme-${esc(key)}">
+            <option value="system"${value === "system" ? " selected" : ""}>现代无衬线</option>
+            <option value="songti"${value === "songti" ? " selected" : ""}>宋体/论文感</option>
+            <option value="yuanti"${value === "yuanti" ? " selected" : ""}>圆体/柔和感</option>
+            <option value="mono"${value === "mono" ? " selected" : ""}>等宽/数据感</option>
+          </select>
+        </label>
+      `;
+    }
+    if (type === "density") {
+      return `
+        <label>${esc(label)}
+          <select id="theme-${esc(key)}">
+            <option value="comfortable"${value === "comfortable" ? " selected" : ""}>舒展</option>
+            <option value="compact"${value === "compact" ? " selected" : ""}>紧凑</option>
+          </select>
+        </label>
+      `;
+    }
+    if (type === "range") {
+      return `
+        <label>${esc(label)}
+          <input id="theme-${esc(key)}" type="range" min="2" max="12" value="${esc(value)}">
+        </label>
+      `;
+    }
+    return `
+      <label>${esc(label)}
+        <span class="color-control">
+          <input id="theme-${esc(key)}" type="color" value="${esc(value)}">
+          <input id="theme-${esc(key)}-text" value="${esc(value)}" spellcheck="false">
+        </span>
+      </label>
+    `;
+  }
+
+  function renderThemeEditor() {
+    return `
+      <div class="method-block">
+        <h2>主题设置</h2>
+        <p>这里可以自己调整配色、字体和界面疏密。点击“应用到当前浏览器”会立刻预览且不会增加 GitHub 部署次数；确认喜欢后再点击“保存主题到 GitHub”。</p>
+        <div class="theme-preview">
+          <div>
+            <strong>雾粉杏 · 鼠尾草绿 · 温柔墨蓝</strong>
+            <span>背景、重点色和参数 chip 会跟随这里的颜色变化。</span>
+          </div>
+          <div class="theme-swatches">
+            ${["bg", "accent", "accent2", "accent3", "panelSoft"].map((key) => `<span style="background:${esc(state.theme[key])}"></span>`).join("")}
+          </div>
+        </div>
+        <div class="form-grid four theme-grid">
+          ${themeField("背景", "bg")}
+          ${themeField("卡片", "panel")}
+          ${themeField("柔和底色", "panelSoft")}
+          ${themeField("主文字", "text")}
+          ${themeField("次级文字", "muted")}
+          ${themeField("边框", "line")}
+          ${themeField("主色", "accent")}
+          ${themeField("玫瑰强调", "accent2")}
+          ${themeField("蓝灰强调", "accent3")}
+          ${themeField("按钮悬停", "buttonHover")}
+          ${themeField("表头底色", "tableHead")}
+          ${themeField("笔记底色", "noteBg")}
+          ${themeField("标签底色", "chipBg")}
+          ${themeField("字体", "fontFamily", "select")}
+          ${themeField("卡片圆角", "radius", "range")}
+          ${themeField("界面密度", "density", "density")}
+        </div>
+        <div class="button-row">
+          <button id="apply-theme" type="button">应用到当前浏览器</button>
+          <button id="save-theme-github" type="button">保存主题到 GitHub</button>
+          <button id="reset-theme" type="button">恢复默认主题</button>
+        </div>
+      </div>
+    `;
   }
 
   function afterPapersChanged(message) {
@@ -704,6 +862,7 @@
               <label>Repo<input id="gh-repo" value="${esc(state.githubConfig.repo)}"></label>
               <label>Branch<input id="gh-branch" value="${esc(state.githubConfig.branch)}"></label>
               <label>文件路径<input id="gh-path" value="${esc(state.githubConfig.path)}"></label>
+              <label>主题路径<input id="gh-theme-path" value="${esc(state.githubConfig.themePath)}"></label>
               <label class="wide">Token<input id="gh-token" type="password" placeholder="Fine-grained token: Contents read/write"></label>
             </div>
             <div class="button-row">
@@ -712,6 +871,8 @@
             <div class="note-box">顶部“同步到 GitHub”是正式保存按钮；这里负责填写保存按钮需要的地址和授权。你通常保持 Owner、Repo、Branch、文件路径不变，只在需要同步时填写 Token。</div>
           </div>
         </div>
+
+        ${renderThemeEditor()}
 
         <div class="method-block">
           <h2>批量编辑</h2>
@@ -817,6 +978,10 @@
     document.getElementById("copy-json")?.addEventListener("click", copyCurrentJson);
     document.getElementById("download-json")?.addEventListener("click", downloadCurrentJson);
     document.getElementById("save-gh-config")?.addEventListener("click", saveGithubConfigFromForm);
+    document.getElementById("apply-theme")?.addEventListener("click", applyThemeFromForm);
+    document.getElementById("save-theme-github")?.addEventListener("click", pushThemeToGithub);
+    document.getElementById("reset-theme")?.addEventListener("click", resetTheme);
+    bindThemeColorInputs();
     document.getElementById("edit-mechanism-add")?.addEventListener("change", () => {
       if (valueOf("edit-mechanism-add") !== "__new__") addValueToList("edit-mechanism-add", "edit-mechanism-new", "edit-mechanisms");
     });
@@ -827,6 +992,47 @@
     document.getElementById("add-tag")?.addEventListener("click", () => addValueToList("edit-tag-add", "edit-tag-new", "edit-tags"));
     document.getElementById("apply-batch")?.addEventListener("click", applyBatchEdit);
     setupNewValueToggles();
+  }
+
+  function bindThemeColorInputs() {
+    Object.keys(defaultTheme).forEach((key) => {
+      const picker = document.getElementById(`theme-${key}`);
+      const text = document.getElementById(`theme-${key}-text`);
+      if (!picker || !text) return;
+      picker.addEventListener("input", () => {
+        text.value = picker.value;
+      });
+      text.addEventListener("input", () => {
+        if (/^#[0-9a-f]{6}$/i.test(text.value.trim())) picker.value = text.value.trim();
+      });
+    });
+  }
+
+  function collectThemeFromForm() {
+    const nextTheme = { ...state.theme };
+    Object.keys(defaultTheme).forEach((key) => {
+      const textInput = document.getElementById(`theme-${key}-text`);
+      const input = textInput || document.getElementById(`theme-${key}`);
+      if (!input) return;
+      nextTheme[key] = input.value.trim() || defaultTheme[key];
+    });
+    nextTheme.radius = String(Math.max(2, Math.min(12, Number(nextTheme.radius) || Number(defaultTheme.radius))));
+    return normalizeTheme(nextTheme);
+  }
+
+  function applyThemeFromForm() {
+    state.theme = collectThemeFromForm();
+    saveThemeDraft();
+    state.workbenchMessage = "主题已应用到当前浏览器。确认满意后，可以保存主题到 GitHub。";
+    renderWorkbench();
+  }
+
+  function resetTheme() {
+    state.theme = { ...defaultTheme };
+    localStorage.removeItem(themeDraftKey());
+    applyTheme();
+    state.workbenchMessage = "已恢复默认主题。";
+    renderWorkbench();
   }
 
   function setupNewValueToggles() {
@@ -1464,6 +1670,7 @@
       repo: valueOf("gh-repo"),
       branch: valueOf("gh-branch") || "main",
       path: valueOf("gh-path") || "data/papers.json",
+      themePath: valueOf("gh-theme-path") || state.githubConfig.themePath || "data/theme.json",
       token: valueOf("gh-token") || state.githubConfig.token,
       autoSync: Boolean(document.getElementById("auto-sync")?.checked)
     };
@@ -1474,38 +1681,37 @@
     }
   }
 
+  async function pushThemeToGithub() {
+    state.theme = collectThemeFromForm();
+    saveThemeDraft();
+    saveGithubConfigFromForm({ silent: true });
+    const { themePath } = state.githubConfig;
+    if (!themePath) {
+      state.workbenchMessage = "请先填写主题路径，默认是 data/theme.json。";
+      renderWorkbench();
+      return;
+    }
+    try {
+      await putGithubFile(themePath, JSON.stringify(state.theme, null, 2) + "\n", "Update site theme settings");
+      localStorage.removeItem(themeDraftKey());
+      state.workbenchMessage = "主题已保存到 GitHub。GitHub Pages 通常会在几十秒后刷新。";
+      renderWorkbench();
+    } catch (error) {
+      state.workbenchMessage = `主题保存失败：${error.message}`;
+      renderWorkbench();
+    }
+  }
+
   async function pushPapersToGithub(options = {}) {
     saveGithubConfigFromForm({ silent: true });
-    const { owner, repo, branch, path, token } = state.githubConfig;
-    if (!owner || !repo || !path || !token) {
+    const { path } = state.githubConfig;
+    if (!path) {
       state.workbenchMessage = "请补全 GitHub 配置，并填入有 Contents 读写权限的 token。";
       renderWorkbench();
       return;
     }
     try {
-      const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-      const headers = {
-        Authorization: `Bearer ${token}`,
-        Accept: "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28"
-      };
-      const current = await fetch(`${apiUrl}?ref=${encodeURIComponent(branch)}`, { headers });
-      const currentData = current.ok ? await current.json() : {};
-      const body = {
-        message: "Update literature papers data",
-        content: toBase64(JSON.stringify(state.papers, null, 2) + "\n"),
-        branch
-      };
-      if (currentData.sha) body.sha = currentData.sha;
-      const saved = await fetch(apiUrl, {
-        method: "PUT",
-        headers: { ...headers, "Content-Type": "application/json" },
-        body: JSON.stringify(body)
-      });
-      if (!saved.ok) {
-        const error = await saved.json().catch(() => ({}));
-        throw new Error(friendlyGithubError(saved.status, error.message));
-      }
+      await putGithubFile(path, JSON.stringify(state.papers, null, 2) + "\n", "Update literature papers data");
       state.basePapers = structuredClone(state.papers);
       localStorage.removeItem(localDraftKey());
       state.workbenchMessage = options.fromAutoSync
@@ -1515,6 +1721,36 @@
     } catch (error) {
       state.workbenchMessage = `GitHub 保存失败：${error.message}`;
       renderWorkbench();
+    }
+  }
+
+  async function putGithubFile(filePath, content, message) {
+    const { owner, repo, branch, token } = state.githubConfig;
+    if (!owner || !repo || !branch || !filePath || !token) {
+      throw new Error("请补全 GitHub 配置，并填入有 Contents 读写权限的 token。");
+    }
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`;
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      Accept: "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28"
+    };
+    const current = await fetch(`${apiUrl}?ref=${encodeURIComponent(branch)}`, { headers });
+    const currentData = current.ok ? await current.json() : {};
+    const body = {
+      message,
+      content: toBase64(content),
+      branch
+    };
+    if (currentData.sha) body.sha = currentData.sha;
+    const saved = await fetch(apiUrl, {
+      method: "PUT",
+      headers: { ...headers, "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    });
+    if (!saved.ok) {
+      const error = await saved.json().catch(() => ({}));
+      throw new Error(friendlyGithubError(saved.status, error.message));
     }
   }
 
@@ -1555,10 +1791,13 @@
 
   Promise.all([
     fetch("data/papers.json").then((res) => res.json()),
-    fetch("data/roadmaps.json").then((res) => res.json()).catch(() => null)
+    fetch("data/roadmaps.json").then((res) => res.json()).catch(() => null),
+    fetch("data/theme.json").then((res) => res.json()).catch(() => defaultTheme)
   ])
-    .then(([papers, roadmaps]) => {
+    .then(([papers, roadmaps, theme]) => {
       loadGithubConfig();
+      state.theme = loadThemeDraft(theme);
+      applyTheme();
       const normalizedPapers = papers.map(normalizePaper);
       state.basePapers = structuredClone(normalizedPapers);
       state.papers = loadDraftPapers(normalizedPapers).map(normalizePaper);

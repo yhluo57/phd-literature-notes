@@ -1,0 +1,18 @@
+{
+  "bg": "#fbf7f3",
+  "panel": "#ffffff",
+  "panelSoft": "#f8ece9",
+  "text": "#25313a",
+  "muted": "#74808a",
+  "line": "#eadfda",
+  "accent": "#6f9f9a",
+  "accent2": "#d98b8b",
+  "accent3": "#8aa6c1",
+  "buttonHover": "#5d8e89",
+  "tableHead": "#f8ece9",
+  "noteBg": "#fff8f4",
+  "chipBg": "#f8ece9",
+  "fontFamily": "system",
+  "radius": "7",
+  "density": "comfortable"
+}
