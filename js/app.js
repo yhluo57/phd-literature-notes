@@ -6,6 +6,9 @@
     basePapers: [],
     roadmaps: null,
     selectedPaperId: "",
+    editCategory: "",
+    editQuery: "",
+    roadmapCategory: "",
     workbenchMessage: "",
     generatedPapers: [],
     githubConfig: {
@@ -514,14 +517,26 @@
 
   function renderWorkbench() {
     const categories = uniq(state.papers.map((p) => p.category));
-    const selected = state.papers.find((paper) => paper.id === state.selectedPaperId) || state.papers[0] || normalizePaper({});
+    const currentPaper = state.papers.find((paper) => paper.id === state.selectedPaperId);
+    const editCategory = state.editCategory || (currentPaper && currentPaper.category) || categories[0] || "";
+    const editQuery = state.editQuery || "";
+    const categoryPapers = state.papers.filter((paper) => !editCategory || paper.category === editCategory);
+    const selectablePapers = categoryPapers.filter((paper) => paperMatchesQuery(paper, editQuery));
+    const visiblePapers = selectablePapers.length ? selectablePapers : categoryPapers;
+    const selected = selectablePapers.find((paper) => paper.id === state.selectedPaperId)
+      || categoryPapers.find((paper) => paper.id === state.selectedPaperId)
+      || selectablePapers[0]
+      || categoryPapers[0]
+      || state.papers[0]
+      || normalizePaper({});
     state.selectedPaperId = selected.id;
+    state.editCategory = selected.category || editCategory;
     app.innerHTML = `
       <section class="method-page">
         <div class="method-block">
           <a class="back-link" href="#overview">← 返回总览</a>
           <p class="eyebrow">Literature Maintenance</p>
-          <h1>文献维护台</h1>
+          <h1>文献工作台</h1>
           <p>这里负责新文献导入、半在线编辑、JSON 自动生成、DOI 补全、重点图谱升级和 GitHub 同步。编辑时会先自动保存在当前浏览器中；你可以手动同步，也可以打开自动同步模式。</p>
           ${syncStatusBlock()}
           ${state.workbenchMessage ? `<div class="status-message">${esc(state.workbenchMessage)}</div>` : ""}
@@ -560,7 +575,12 @@
         <div class="method-block">
           <h2>在线/半在线编辑</h2>
           <div class="form-grid three">
-            <label>选择文献<select id="paper-select">${state.papers.map((paper) => `<option value="${esc(paper.id)}"${paper.id === selected.id ? " selected" : ""}>${esc(paper.id)} · ${esc(paper.title.slice(0, 72))}</option>`).join("")}</select></label>
+            <label>先选分组<select id="edit-category-filter">${categories.map((category) => `<option value="${esc(category)}"${category === state.editCategory ? " selected" : ""}>${esc(category)}</option>`).join("")}</select></label>
+            <label>再搜文献<input id="paper-search" type="search" value="${esc(editQuery)}" placeholder="标题、编号、作者、DOI..."></label>
+            <label>当前范围<input readonly value="${esc(selectablePapers.length)} / ${esc(categoryPapers.length)} 篇"></label>
+          </div>
+          <div class="form-grid three">
+            <label>选择文献<select id="paper-select">${visiblePapers.map((paper) => `<option value="${esc(paper.id)}"${paper.id === selected.id ? " selected" : ""}>${esc(paper.id)} · ${esc(paper.title.slice(0, 72))}</option>`).join("")}</select></label>
             <label>编号<input id="edit-id" value="${esc(selected.id)}"></label>
             <label>年份<input id="edit-year" value="${esc(selected.year || "")}"></label>
             <label>标题<input id="edit-title" value="${esc(selected.title || "")}"></label>
@@ -634,8 +654,21 @@
       renderWorkbench();
     });
     document.getElementById("sync-now")?.addEventListener("click", () => pushPapersToGithub());
+    document.getElementById("edit-category-filter")?.addEventListener("change", (event) => {
+      state.editCategory = event.target.value;
+      state.editQuery = "";
+      state.selectedPaperId = "";
+      state.workbenchMessage = "";
+      renderWorkbench();
+    });
+    document.getElementById("paper-search")?.addEventListener("input", (event) => {
+      state.editQuery = event.target.value;
+      renderWorkbench();
+    });
     document.getElementById("paper-select")?.addEventListener("change", (event) => {
       state.selectedPaperId = event.target.value;
+      const paper = state.papers.find((item) => item.id === state.selectedPaperId);
+      if (paper) state.editCategory = paper.category || state.editCategory;
       state.workbenchMessage = "";
       renderWorkbench();
     });
@@ -682,25 +715,115 @@
     document.getElementById("save-gh-config")?.addEventListener("click", saveGithubConfigFromForm);
   }
 
+  function paperMatchesQuery(paper, query) {
+    const q = query.trim().toLowerCase();
+    if (!q) return true;
+    const haystack = [
+      paper.id,
+      paper.title,
+      paper.title_zh,
+      paper.authors,
+      paper.doi,
+      paper.venue,
+      paper.topic,
+      paper.material_system,
+      paper.device_structure,
+      (paper.tags || []).join(" ")
+    ].join(" ").toLowerCase();
+    return haystack.includes(q);
+  }
+
   function renderRoadmap() {
-    const data = state.roadmaps;
-    if (!data) {
-      app.innerHTML = `<div class="empty">路线图数据还没有加载。</div>`;
-      return;
-    }
+    const categories = uniq(state.papers.map((paper) => paper.category));
+    const selectedCategory = state.roadmapCategory || categories[0] || "";
+    state.roadmapCategory = selectedCategory;
+    const papers = state.papers
+      .filter((paper) => !selectedCategory || paper.category === selectedCategory)
+      .sort((a, b) => Number(a.year || 9999) - Number(b.year || 9999) || String(a.id).localeCompare(String(b.id)));
     app.innerHTML = `
       <section class="method-page">
         <div class="method-block">
           <a class="back-link" href="#overview">← 返回总览</a>
-          <p class="eyebrow">Stage 3 Research Map</p>
-          <h1>MnGa/MRAM 文献路线图</h1>
-          <p>这一页把单篇笔记进一步整理成研究脉络：MnGa MTJ、MnGa SOT/电流诱导翻转、VCMA/电压辅助 MRAM，以及 ML/MBE/材料发现。后续继续读文献时，可以把新论文挂到对应节点上。</p>
+          <p class="eyebrow">Research Map</p>
+          <h1>分组文献路线图</h1>
+          <p>先选择一个研究分组，再查看该分组内全部文献形成的时间线。这里不只显示重点图谱文献，所有已导入文献都会参与路线图；重点文献会通过状态标签单独标出来。</p>
+          <div class="category-picker">
+            ${categories.map((category) => {
+              const count = state.papers.filter((paper) => paper.category === category).length;
+              return `<button class="category-button${category === selectedCategory ? " active" : ""}" data-category="${esc(category)}" type="button">${esc(category)}<span>${count} 篇</span></button>`;
+            }).join("")}
+          </div>
         </div>
-        ${renderRoadmapBranch("mtj", "MnGa MTJ 对比表")}
-        ${renderRoadmapBranch("sot", "MnGa SOT / 电流诱导翻转对比表")}
-        ${renderRoadmapBranch("vcma", "VCMA / 电压辅助 MRAM 对比表")}
-        ${renderRoadmapBranch("ml_mbe", "ML / MBE / 材料发现对比表")}
+        ${renderDynamicRoadmap(selectedCategory, papers)}
+        ${renderDynamicComparison(selectedCategory, papers)}
       </section>
+    `;
+    bindRoadmapEvents();
+  }
+
+  function bindRoadmapEvents() {
+    document.querySelectorAll(".category-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.roadmapCategory = button.dataset.category;
+        renderRoadmap();
+      });
+    });
+  }
+
+  function renderDynamicRoadmap(category, papers) {
+    if (!papers.length) {
+      return `<div class="method-block"><h2>${esc(category || "未选择分组")}</h2><p>这个分组下还没有文献。</p></div>`;
+    }
+    return `
+      <div class="method-block">
+        <h2>${esc(category)} · 全部文献路线图</h2>
+        <p>按年份排序，共 ${papers.length} 篇。点击任意文献可进入单篇笔记页。</p>
+        <div class="timeline">
+          ${papers.map((paper) => `
+            <a class="timeline-item" href="#paper/${esc(paper.id)}">
+              <span class="timeline-year">${esc(paper.year || "待定")}</span>
+              <div>
+                <h3>${esc(paper.id)} · ${esc(paper.title_zh || paper.title)}</h3>
+                <div class="detail-meta compact">
+                  ${chip(paper.status || "待整理", paper.status && paper.status.includes("重点"))}
+                  ${paper.venue ? chip(paper.venue) : ""}
+                  ${paper.topic ? chip(paper.topic) : ""}
+                </div>
+                <p><strong>研究对象：</strong>${esc([paper.material_system, paper.device_structure].filter(Boolean).join(" / ") || "待补充")}</p>
+                <p><strong>主要线索：</strong>${esc(paper.main_contribution || paper.research_question || paper.abstract || "待精整理")}</p>
+                <p><strong>课题关系：</strong>${esc(paper.relevance_to_my_project || "待补充")}</p>
+              </div>
+            </a>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  function renderDynamicComparison(category, papers) {
+    if (!papers.length) return "";
+    return `
+      <div class="method-block">
+        <h2>${esc(category)} · 全量对照表</h2>
+        <div class="compare-table all-papers">
+          <div class="compare-row compare-head">
+            <div>编号</div>
+            <div>年份</div>
+            <div>论文</div>
+            <div>材料/结构</div>
+            <div>状态</div>
+          </div>
+          ${papers.map((paper) => `
+            <div class="compare-row">
+              <div><a href="#paper/${esc(paper.id)}">${esc(paper.id)}</a></div>
+              <div>${esc(paper.year || "-")}</div>
+              <div>${esc(paper.title_zh || paper.title)}</div>
+              <div>${esc([paper.material_system, paper.device_structure].filter(Boolean).join(" / ") || "-")}</div>
+              <div>${esc(paper.status || "待整理")}</div>
+            </div>
+          `).join("")}
+        </div>
+      </div>
     `;
   }
 

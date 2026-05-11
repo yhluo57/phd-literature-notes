@@ -543,6 +543,45 @@ button:disabled {
   line-height: 1.6;
 }
 
+.category-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.category-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  color: var(--accent-3);
+  background: var(--panel-soft);
+  border-color: var(--line);
+}
+
+.category-button span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.category-button.active,
+.category-button:hover {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.category-button.active span,
+.category-button:hover span {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.detail-meta.compact {
+  margin: 8px 0 10px;
+}
+
 .compare-table {
   display: grid;
   overflow-x: auto;
@@ -554,6 +593,11 @@ button:disabled {
   display: grid;
   grid-template-columns: 90px minmax(180px, 1fr) minmax(180px, 1fr) minmax(220px, 1.2fr);
   min-width: 760px;
+}
+
+.compare-table.all-papers .compare-row {
+  grid-template-columns: 76px 76px minmax(280px, 1.5fr) minmax(220px, 1fr) minmax(140px, 0.7fr);
+  min-width: 920px;
 }
 
 .compare-row > div {
