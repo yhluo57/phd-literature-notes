@@ -93,7 +93,7 @@
   function syncStatusBlock() {
     const dirty = hasUnsyncedChanges();
     const tokenReady = Boolean(state.githubConfig.token);
-    const statusText = dirty ? "有未同步修改" : "已与 GitHub 同步";
+    const statusText = dirty ? "有未同步修改" : "无未同步修改";
     const detail = dirty
       ? "你的修改已自动保存在当前浏览器中，点击同步后才会正式写回 GitHub。"
       : "当前浏览器中的文献数据与上次读取/保存到 GitHub 的版本一致。";
@@ -108,10 +108,16 @@
             <input id="auto-sync" type="checkbox"${state.githubConfig.autoSync ? " checked" : ""}>
             <span>自动同步模式</span>
           </label>
-          <button id="sync-now" type="button"${dirty && tokenReady ? "" : " disabled"}>同步到 GitHub</button>
+          <button id="sync-now" type="button"${dirty && tokenReady ? "" : " disabled"} title="${esc(syncButtonHint(dirty, tokenReady))}">同步到 GitHub</button>
         </div>
       </div>
     `;
+  }
+
+  function syncButtonHint(dirty, tokenReady) {
+    if (!dirty) return "当前没有需要同步的修改";
+    if (!tokenReady) return "请先在下方 GitHub 同步设置中填写 token";
+    return "把当前文献库写回 GitHub";
   }
 
   function afterPapersChanged(message) {
@@ -539,16 +545,15 @@
           </div>
 
           <div class="method-block">
-            <h2>DOI 补全文献信息</h2>
+            <h2>从 DOI 新建文献</h2>
             <div class="form-grid two">
               <label>DOI<input id="doi-input" placeholder="10.xxxx/xxxxx"></label>
               <label>导入到分组<input id="doi-category" value="${esc(selected.category || "待分组")}"></label>
             </div>
             <div class="button-row">
-              <button id="fetch-doi" type="button">从 DOI 获取信息</button>
-              <button id="apply-doi-to-selected" type="button">补到当前选中文献</button>
+              <button id="fetch-doi" type="button">生成新条目预览</button>
             </div>
-            <div id="doi-preview" class="note-box">DOI 查询会调用 Crossref 公开接口，返回后可作为新条目或补全文献信息。</div>
+            <div id="doi-preview" class="note-box">这里用于从 DOI 直接生成一篇新文献。若要补全已有文献，请在下方编辑区选择那篇文献后使用“用 DOI 补全当前文献”。</div>
           </div>
         </div>
 
@@ -563,7 +568,7 @@
             <label>期刊/会议<input id="edit-venue" value="${esc(selected.venue || "")}"></label>
             <label>分组<input id="edit-category" value="${esc(selected.category || "")}"></label>
             <label>主题<input id="edit-topic" value="${esc(selected.topic || "")}"></label>
-            <label>DOI<input id="edit-doi" value="${esc(selected.doi || "")}"></label>
+            <label>DOI<input id="edit-doi" value="${esc(selected.doi || "")}" placeholder="10.xxxx/xxxxx"></label>
             <label>作者<input id="edit-authors" value="${esc(selected.authors || "")}"></label>
             <label>材料体系<input id="edit-material" value="${esc(selected.material_system || "")}"></label>
             <label>器件结构<input id="edit-device" value="${esc(selected.device_structure || "")}"></label>
@@ -580,6 +585,7 @@
           </div>
           <div class="button-row">
             <button id="save-selected" type="button">保存到本地草稿</button>
+            <button id="apply-doi-to-selected" type="button">用 DOI 补全当前文献</button>
             <button id="new-paper" type="button">新建空白条目</button>
             <button id="upgrade-atlas" type="button">升级为重点图谱</button>
             <button id="reset-draft" type="button">放弃本地草稿</button>
@@ -599,7 +605,7 @@
 
           <div class="method-block">
             <h2>GitHub 同步设置</h2>
-            <p>这部分的作用是让网页有权限替你更新仓库里的 <code>data/papers.json</code>。GitHub API 可以理解成网页和 GitHub 之间的“保存按钮”：网页把当前 JSON 发给 GitHub，GitHub 收到后生成一次提交，公开页面随后自动刷新。</p>
+            <p>这部分只需要偶尔设置。Branch 默认用 <code>main</code>，意思是保存到仓库的主分支；Token 不是 Deploy key，而是 GitHub 生成的一串网页授权码，用来允许这个页面更新 <code>data/papers.json</code>。</p>
             <div class="form-grid two">
               <label>Owner<input id="gh-owner" value="${esc(state.githubConfig.owner)}"></label>
               <label>Repo<input id="gh-repo" value="${esc(state.githubConfig.repo)}"></label>
@@ -609,9 +615,8 @@
             </div>
             <div class="button-row">
               <button id="save-gh-config" type="button">保存配置</button>
-              <button id="push-github" type="button">同步到 GitHub</button>
             </div>
-            <div class="note-box">Token 是 GitHub 给网页的临时钥匙。建议使用 fine-grained token，只给这个仓库 Contents 读写权限；Token 只保存在当前浏览器会话中，关闭浏览器后需要重新填写。</div>
+            <div class="note-box">顶部“同步到 GitHub”是正式保存按钮；这里负责填写保存按钮需要的地址和授权。你通常保持 Owner、Repo、Branch、文件路径不变，只在需要同步时填写 Token。</div>
           </div>
         </div>
       </section>
@@ -675,7 +680,6 @@
     document.getElementById("copy-json")?.addEventListener("click", copyCurrentJson);
     document.getElementById("download-json")?.addEventListener("click", downloadCurrentJson);
     document.getElementById("save-gh-config")?.addEventListener("click", saveGithubConfigFromForm);
-    document.getElementById("push-github")?.addEventListener("click", pushPapersToGithub);
   }
 
   function renderRoadmap() {
@@ -905,10 +909,10 @@
   }
 
   async function applyDoiToSelected() {
-    const doi = valueOf("doi-input").replace(/^https?:\/\/(dx\.)?doi\.org\//i, "");
+    const doi = valueOf("edit-doi").replace(/^https?:\/\/(dx\.)?doi\.org\//i, "");
     const index = state.papers.findIndex((paper) => paper.id === state.selectedPaperId);
     if (!doi || index < 0) {
-      state.workbenchMessage = "请先输入 DOI 并选择要补全的文献。";
+      state.workbenchMessage = "请先在编辑区 DOI 字段输入 DOI，并选择要补全的文献。";
       renderWorkbench();
       return;
     }
@@ -1055,8 +1059,9 @@
   ])
     .then(([papers, roadmaps]) => {
       loadGithubConfig();
-      state.basePapers = structuredClone(papers);
-      state.papers = loadDraftPapers(papers).map(normalizePaper);
+      const normalizedPapers = papers.map(normalizePaper);
+      state.basePapers = structuredClone(normalizedPapers);
+      state.papers = loadDraftPapers(normalizedPapers).map(normalizePaper);
       state.roadmaps = roadmaps;
       handleRoute();
       window.addEventListener("hashchange", handleRoute);
