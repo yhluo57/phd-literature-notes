@@ -212,6 +212,10 @@ h1 {
   margin-bottom: 14px;
 }
 
+.toolbar select {
+  font-size: 13px;
+}
+
 input,
 select,
 textarea {

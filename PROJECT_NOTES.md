@@ -10,6 +10,7 @@
 - 页面逻辑：`js/app.js`。
 - 文献数据：`data/papers.json`。
 - 主题配置：`data/theme.json`。
+- 总览文字：`data/site.json`。
 - 路线图旧数据：`data/roadmaps.json`，现在路线图主要由 `papers.json` 动态生成。
 
 ## 已有功能
@@ -48,6 +49,7 @@
 
 - 同步文献会写入 `data/papers.json`。
 - 保存主题会写入 `data/theme.json`。
+- 保存总览标题/备注会写入 `data/site.json`。
 - 每次写入 GitHub 都会产生一次 commit，并触发一次 GitHub Pages deployment。
 - 只在本地预览主题、复制 JSON、编辑但不点击同步，不会触发 deployment。
 
@@ -55,7 +57,7 @@
 
 用户不是计算机专业，第一次使用 GitHub。解释时请尽量少用术语，必要术语要用生活化语言解释。她偏好浅、柔和、但不要单调的配色；当前目标是“雾粉杏 + 鼠尾草绿 + 温柔墨蓝”交叉使用，而不是大面积单一绿色或杏色。
 
-如果新的对话没有上下文，优先读取这个文件、`README.md`、`data/papers.json`、`data/theme.json`、`js/app.js` 和 `css/style.css`。不要随意覆盖用户在工作台里同步过的文献数据。
+如果新的对话没有上下文，优先读取这个文件、`README.md`、`data/papers.json`、`data/theme.json`、`data/site.json`、`js/app.js` 和 `css/style.css`。不要随意覆盖用户在工作台里同步过的文献数据。
 
 ## 常见维护任务
 

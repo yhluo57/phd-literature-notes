@@ -27,11 +27,17 @@
     mono: '"SFMono-Regular", Consolas, "Liberation Mono", monospace'
   };
 
+  const defaultSiteSettings = {
+    title: "Yuhan's Literature Log",
+    overviewNote: ""
+  };
+
   const state = {
     papers: [],
     basePapers: [],
     roadmaps: null,
     theme: { ...defaultTheme },
+    siteSettings: { ...defaultSiteSettings },
     selectedPaperId: "",
     editCategory: "",
     editQuery: "",
@@ -46,6 +52,7 @@
       branch: "main",
       path: "data/papers.json",
       themePath: "data/theme.json",
+      sitePath: "data/site.json",
       token: "",
       autoSync: false
     },
@@ -90,8 +97,16 @@
     return "spintronics-literature-theme-draft";
   }
 
+  function siteSettingsDraftKey() {
+    return "spintronics-literature-site-settings-draft";
+  }
+
   function normalizeTheme(theme) {
     return { ...defaultTheme, ...(theme || {}) };
+  }
+
+  function normalizeSiteSettings(settings) {
+    return { ...defaultSiteSettings, ...(settings || {}) };
   }
 
   function loadThemeDraft(fetchedTheme) {
@@ -132,6 +147,25 @@
   function saveThemeDraft() {
     localStorage.setItem(themeDraftKey(), JSON.stringify(state.theme, null, 2));
     applyTheme();
+  }
+
+  function loadSiteSettingsDraft(fetchedSettings) {
+    try {
+      const draft = JSON.parse(localStorage.getItem(siteSettingsDraftKey()) || "null");
+      return normalizeSiteSettings(draft || fetchedSettings);
+    } catch (error) {
+      state.workbenchMessage = `页面文字草稿读取失败，已使用默认设置：${error.message}`;
+      return normalizeSiteSettings(fetchedSettings);
+    }
+  }
+
+  function saveSiteSettingsDraft() {
+    localStorage.setItem(siteSettingsDraftKey(), JSON.stringify(state.siteSettings, null, 2));
+    updateDocumentTitle();
+  }
+
+  function updateDocumentTitle() {
+    document.title = `${state.siteSettings.title || defaultSiteSettings.title} | Spintronics Literature Workbench`;
   }
 
   function loadGithubConfig() {
@@ -247,6 +281,21 @@
       <section class="method-page">
       <div class="method-block">
         <a class="back-link" href="#workbench">← 返回工作台</a>
+        <p class="eyebrow">Page Text</p>
+        <h2>总览文字</h2>
+        <p>这里管理总览第一页的标题和备注。备注可以留空；想写使用提醒时再补。</p>
+        <div class="form-grid two">
+          <label>网页名字<input id="site-title" value="${esc(state.siteSettings.title)}"></label>
+          <label class="wide">备注<textarea id="site-note" rows="4" placeholder="可以留空；以后写给自己看的使用注意事项。">${esc(state.siteSettings.overviewNote)}</textarea></label>
+        </div>
+        <div class="button-row">
+          <button id="apply-site-settings" type="button">应用到当前浏览器</button>
+          <button id="save-site-settings-github" type="button">保存总览文字到 GitHub</button>
+          <button id="reset-site-settings" type="button">恢复默认文字</button>
+        </div>
+      </div>
+
+      <div class="method-block">
         <p class="eyebrow">Appearance</p>
         <h2>主题设置</h2>
         <p>这里专门管理网页外观，不和文献导入、编辑、同步混在一起。点击“应用到当前浏览器”会立刻预览且不会增加 GitHub 部署次数；确认喜欢后再点击“保存主题到 GitHub”。</p>
@@ -472,8 +521,8 @@
       <section class="hero">
         <div class="intro">
           <p class="eyebrow">Spintronics Literature Workbench</p>
-          <h1>面向 MRAM、MnGa/MnAl 与微磁模拟的文献整理网页</h1>
-          <p>第一版先把你已经读过的本地文献整理成可筛选的研究工作台。相比原 ISSCC 页面，这里把重点从芯片工艺/能效改成材料体系、器件结构、物理机制、实验条件、关键证据和与你课题的关系。</p>
+          <h1>${esc(state.siteSettings.title || defaultSiteSettings.title)}</h1>
+          ${state.siteSettings.overviewNote ? `<p>${esc(state.siteSettings.overviewNote)}</p>` : ""}
         </div>
         <div class="stat-grid">
           ${statCard(state.papers.length, "已导入文献")}
@@ -867,6 +916,7 @@
               <label>Branch<input id="gh-branch" value="${esc(state.githubConfig.branch)}"></label>
               <label>文件路径<input id="gh-path" value="${esc(state.githubConfig.path)}"></label>
               <label>主题路径<input id="gh-theme-path" value="${esc(state.githubConfig.themePath)}"></label>
+              <label>总览文字路径<input id="gh-site-path" value="${esc(state.githubConfig.sitePath)}"></label>
               <label class="wide">Token<input id="gh-token" type="password" placeholder="Fine-grained token: Contents read/write"></label>
             </div>
             <div class="button-row">
@@ -1005,10 +1055,37 @@
   }
 
   function bindThemeEvents() {
+    document.getElementById("apply-site-settings")?.addEventListener("click", applySiteSettingsFromForm);
+    document.getElementById("save-site-settings-github")?.addEventListener("click", pushSiteSettingsToGithub);
+    document.getElementById("reset-site-settings")?.addEventListener("click", resetSiteSettings);
     document.getElementById("apply-theme")?.addEventListener("click", applyThemeFromForm);
     document.getElementById("save-theme-github")?.addEventListener("click", pushThemeToGithub);
     document.getElementById("reset-theme")?.addEventListener("click", resetTheme);
     bindThemeColorInputs();
+  }
+
+  function collectSiteSettingsFromForm() {
+    return normalizeSiteSettings({
+      title: valueOf("site-title") || defaultSiteSettings.title,
+      overviewNote: valueOf("site-note")
+    });
+  }
+
+  function applySiteSettingsFromForm() {
+    state.siteSettings = collectSiteSettingsFromForm();
+    saveSiteSettingsDraft();
+    state.workbenchMessage = "总览文字已应用到当前浏览器。确认后可以保存到 GitHub。";
+    app.innerHTML = renderThemeEditor();
+    bindThemeEvents();
+  }
+
+  function resetSiteSettings() {
+    state.siteSettings = { ...defaultSiteSettings };
+    localStorage.removeItem(siteSettingsDraftKey());
+    saveSiteSettingsDraft();
+    state.workbenchMessage = "已恢复默认总览文字。";
+    app.innerHTML = renderThemeEditor();
+    bindThemeEvents();
   }
 
   function bindThemeColorInputs() {
@@ -1688,6 +1765,7 @@
       branch: valueOf("gh-branch") || state.githubConfig.branch || "main",
       path: valueOf("gh-path") || state.githubConfig.path || "data/papers.json",
       themePath: valueOf("gh-theme-path") || state.githubConfig.themePath || "data/theme.json",
+      sitePath: valueOf("gh-site-path") || state.githubConfig.sitePath || "data/site.json",
       token: valueOf("gh-token") || state.githubConfig.token,
       autoSync: document.getElementById("auto-sync")
         ? Boolean(document.getElementById("auto-sync").checked)
@@ -1697,6 +1775,30 @@
     if (!options.silent) {
       state.workbenchMessage = "GitHub 同步配置已更新。";
       renderWorkbench();
+    }
+  }
+
+  async function pushSiteSettingsToGithub() {
+    state.siteSettings = collectSiteSettingsFromForm();
+    saveSiteSettingsDraft();
+    saveGithubConfigFromForm({ silent: true });
+    const { sitePath } = state.githubConfig;
+    if (!sitePath) {
+      state.workbenchMessage = "请先填写总览文字路径，默认是 data/site.json。";
+      app.innerHTML = renderThemeEditor();
+      bindThemeEvents();
+      return;
+    }
+    try {
+      await putGithubFile(sitePath, JSON.stringify(state.siteSettings, null, 2) + "\n", "Update overview text settings");
+      localStorage.removeItem(siteSettingsDraftKey());
+      state.workbenchMessage = "总览文字已保存到 GitHub。";
+      app.innerHTML = renderThemeEditor();
+      bindThemeEvents();
+    } catch (error) {
+      state.workbenchMessage = `总览文字保存失败：${error.message}`;
+      app.innerHTML = renderThemeEditor();
+      bindThemeEvents();
     }
   }
 
@@ -1796,8 +1898,6 @@
       renderDetail(hash.replace("#paper/", ""));
     } else if (hash === "#roadmap") {
       renderRoadmap();
-    } else if (hash === "#method") {
-      renderMethod();
     } else if (hash === "#materials") {
       renderMaterialsIndex();
     } else if (hash === "#workbench") {
@@ -1814,12 +1914,15 @@
   Promise.all([
     fetch("data/papers.json").then((res) => res.json()),
     fetch("data/roadmaps.json").then((res) => res.json()).catch(() => null),
-    fetch("data/theme.json").then((res) => res.json()).catch(() => defaultTheme)
+    fetch("data/theme.json").then((res) => res.json()).catch(() => defaultTheme),
+    fetch("data/site.json").then((res) => res.json()).catch(() => defaultSiteSettings)
   ])
-    .then(([papers, roadmaps, theme]) => {
+    .then(([papers, roadmaps, theme, siteSettings]) => {
       loadGithubConfig();
       state.theme = loadThemeDraft(theme);
       applyTheme();
+      state.siteSettings = loadSiteSettingsDraft(siteSettings);
+      updateDocumentTitle();
       const normalizedPapers = papers.map(normalizePaper);
       state.basePapers = structuredClone(normalizedPapers);
       state.papers = loadDraftPapers(normalizedPapers).map(normalizePaper);
