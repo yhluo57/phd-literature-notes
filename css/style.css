@@ -233,6 +233,13 @@ button:hover {
   background: #185f6d;
 }
 
+button:disabled {
+  color: #7f8b96;
+  background: #e6ebef;
+  border-color: #d6dee4;
+  cursor: not-allowed;
+}
+
 .dashboard {
   display: grid;
   grid-template-columns: 280px minmax(0, 1fr);
@@ -663,12 +670,78 @@ button:hover {
   line-height: 1.6;
 }
 
+.sync-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  background: #fbfcfd;
+}
+
+.sync-panel.dirty {
+  border-color: #e0c27b;
+  background: #fffaf0;
+}
+
+.sync-panel.clean {
+  border-color: #b8d9c8;
+  background: #f0fbf5;
+}
+
+.sync-panel strong,
+.sync-panel span {
+  display: block;
+}
+
+.sync-panel span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.sync-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.toggle-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 720;
+  white-space: nowrap;
+}
+
+.toggle-row input {
+  width: 18px;
+  min-height: 18px;
+}
+
 @media (max-width: 980px) {
   .hero,
   .dashboard,
   .detail-layout,
-  .workbench-grid {
+  .workbench-grid,
+  .sync-panel {
     grid-template-columns: 1fr;
+  }
+
+  .sync-panel {
+    display: grid;
+    align-items: start;
+  }
+
+  .sync-actions {
+    justify-content: flex-start;
   }
 
   .toolbar,

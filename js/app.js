@@ -13,7 +13,8 @@
       repo: "phd-literature-notes",
       branch: "main",
       path: "data/papers.json",
-      token: ""
+      token: "",
+      autoSync: false
     },
     filters: {
       q: "",
@@ -83,6 +84,48 @@
 
   function saveDraftPapers() {
     localStorage.setItem(localDraftKey(), JSON.stringify(state.papers, null, 2));
+  }
+
+  function hasUnsyncedChanges() {
+    return JSON.stringify(state.papers) !== JSON.stringify(state.basePapers);
+  }
+
+  function syncStatusBlock() {
+    const dirty = hasUnsyncedChanges();
+    const tokenReady = Boolean(state.githubConfig.token);
+    const statusText = dirty ? "有未同步修改" : "已与 GitHub 同步";
+    const detail = dirty
+      ? "你的修改已自动保存在当前浏览器中，点击同步后才会正式写回 GitHub。"
+      : "当前浏览器中的文献数据与上次读取/保存到 GitHub 的版本一致。";
+    return `
+      <div class="sync-panel ${dirty ? "dirty" : "clean"}">
+        <div>
+          <strong>${esc(statusText)}</strong>
+          <span>${esc(detail)}</span>
+        </div>
+        <div class="sync-actions">
+          <label class="toggle-row">
+            <input id="auto-sync" type="checkbox"${state.githubConfig.autoSync ? " checked" : ""}>
+            <span>自动同步模式</span>
+          </label>
+          <button id="sync-now" type="button"${dirty && tokenReady ? "" : " disabled"}>同步到 GitHub</button>
+        </div>
+      </div>
+    `;
+  }
+
+  function afterPapersChanged(message) {
+    saveDraftPapers();
+    if (state.githubConfig.autoSync && state.githubConfig.token) {
+      state.workbenchMessage = `${message} 正在自动同步到 GitHub...`;
+      renderWorkbench();
+      window.setTimeout(() => pushPapersToGithub({ fromAutoSync: true }), 0);
+      return;
+    }
+    state.workbenchMessage = state.githubConfig.autoSync && !state.githubConfig.token
+      ? `${message} 自动同步需要先填写 GitHub token。`
+      : message;
+    renderWorkbench();
   }
 
   function resetDraftPapers() {
@@ -473,7 +516,8 @@
           <a class="back-link" href="#overview">← 返回总览</a>
           <p class="eyebrow">Literature Maintenance</p>
           <h1>文献维护台</h1>
-          <p>这里负责新文献导入、半在线编辑、JSON 自动生成、DOI 补全、重点图谱升级和 GitHub 保存。浏览器会先把修改保存在本地草稿里，确认无误后再写回 GitHub。</p>
+          <p>这里负责新文献导入、半在线编辑、JSON 自动生成、DOI 补全、重点图谱升级和 GitHub 同步。编辑时会先自动保存在当前浏览器中；你可以手动同步，也可以打开自动同步模式。</p>
+          ${syncStatusBlock()}
           ${state.workbenchMessage ? `<div class="status-message">${esc(state.workbenchMessage)}</div>` : ""}
         </div>
 
@@ -554,7 +598,8 @@
           </div>
 
           <div class="method-block">
-            <h2>GitHub API 保存修改</h2>
+            <h2>GitHub 同步设置</h2>
+            <p>这部分的作用是让网页有权限替你更新仓库里的 <code>data/papers.json</code>。GitHub API 可以理解成网页和 GitHub 之间的“保存按钮”：网页把当前 JSON 发给 GitHub，GitHub 收到后生成一次提交，公开页面随后自动刷新。</p>
             <div class="form-grid two">
               <label>Owner<input id="gh-owner" value="${esc(state.githubConfig.owner)}"></label>
               <label>Repo<input id="gh-repo" value="${esc(state.githubConfig.repo)}"></label>
@@ -564,9 +609,9 @@
             </div>
             <div class="button-row">
               <button id="save-gh-config" type="button">保存配置</button>
-              <button id="push-github" type="button">写回 GitHub</button>
+              <button id="push-github" type="button">同步到 GitHub</button>
             </div>
-            <div class="note-box">Token 只保存在当前浏览器会话中。建议使用 GitHub fine-grained token，只给这个仓库 Contents 读写权限。</div>
+            <div class="note-box">Token 是 GitHub 给网页的临时钥匙。建议使用 fine-grained token，只给这个仓库 Contents 读写权限；Token 只保存在当前浏览器会话中，关闭浏览器后需要重新填写。</div>
           </div>
         </div>
       </section>
@@ -575,6 +620,15 @@
   }
 
   function bindWorkbenchEvents() {
+    document.getElementById("auto-sync")?.addEventListener("change", (event) => {
+      state.githubConfig.autoSync = event.target.checked;
+      persistGithubConfig();
+      state.workbenchMessage = state.githubConfig.autoSync
+        ? "自动同步模式已打开。之后保存文献时会尝试直接同步到 GitHub。"
+        : "自动同步模式已关闭。之后修改会先留在本地，手动点击同步再写回 GitHub。";
+      renderWorkbench();
+    });
+    document.getElementById("sync-now")?.addEventListener("click", () => pushPapersToGithub());
     document.getElementById("paper-select")?.addEventListener("change", (event) => {
       state.selectedPaperId = event.target.value;
       state.workbenchMessage = "";
@@ -596,14 +650,13 @@
     document.getElementById("append-generated")?.addEventListener("click", () => {
       if (!state.generatedPapers.length) {
         state.workbenchMessage = "还没有可加入的生成条目。";
+        renderWorkbench();
       } else {
         state.papers = [...state.papers, ...state.generatedPapers.map(normalizePaper)];
         state.selectedPaperId = state.generatedPapers[0].id;
         state.generatedPapers = [];
-        saveDraftPapers();
-        state.workbenchMessage = "生成条目已加入本地草稿。";
+        afterPapersChanged("生成条目已加入文献库。");
       }
-      renderWorkbench();
     });
     document.getElementById("fetch-doi")?.addEventListener("click", fetchDoiIntoPreview);
     document.getElementById("apply-doi-to-selected")?.addEventListener("click", applyDoiToSelected);
@@ -612,9 +665,7 @@
       const paper = normalizePaper({ id: nextPaperId(), category: "待分组" });
       state.papers.push(paper);
       state.selectedPaperId = paper.id;
-      saveDraftPapers();
-      state.workbenchMessage = "已新建空白条目。";
-      renderWorkbench();
+      afterPapersChanged("已新建空白条目。");
     });
     document.getElementById("upgrade-atlas")?.addEventListener("click", upgradeSelectedToAtlas);
     document.getElementById("reset-draft")?.addEventListener("click", () => {
@@ -808,9 +859,7 @@
       state.papers.push(paper);
     }
     state.selectedPaperId = paper.id;
-    saveDraftPapers();
-    state.workbenchMessage = `已保存 ${paper.id} 到本地草稿。`;
-    renderWorkbench();
+    afterPapersChanged(`已保存 ${paper.id}。`);
   }
 
   function upgradeSelectedToAtlas() {
@@ -832,9 +881,7 @@
       { fig: "Fig. 3", claim: "机制解释或模型", what_to_read: "找出作者用来排除其他解释的证据。", why_it_matters: "帮助你把文献从现象整理升级为机制整理。", use_for: "论文讨论/后续模拟假设" }
     ];
     state.papers[index] = normalizePaper(paper);
-    saveDraftPapers();
-    state.workbenchMessage = `${paper.id} 已升级为重点图谱模板。`;
-    renderWorkbench();
+    afterPapersChanged(`${paper.id} 已升级为重点图谱模板。`);
   }
 
   async function fetchDoiIntoPreview() {
@@ -868,9 +915,7 @@
     try {
       const fetched = await paperFromDoi(doi, state.papers[index].category || valueOf("doi-category") || "待分组");
       state.papers[index] = normalizePaper({ ...state.papers[index], ...fetched, id: state.papers[index].id });
-      saveDraftPapers();
-      state.workbenchMessage = `${state.papers[index].id} 已用 DOI 信息补全。`;
-      renderWorkbench();
+      afterPapersChanged(`${state.papers[index].id} 已用 DOI 信息补全。`);
     } catch (error) {
       state.workbenchMessage = `DOI 补全失败：${error.message}`;
       renderWorkbench();
@@ -919,21 +964,24 @@
     renderWorkbench();
   }
 
-  function saveGithubConfigFromForm() {
+  function saveGithubConfigFromForm(options = {}) {
     state.githubConfig = {
       owner: valueOf("gh-owner"),
       repo: valueOf("gh-repo"),
       branch: valueOf("gh-branch") || "main",
       path: valueOf("gh-path") || "data/papers.json",
-      token: valueOf("gh-token") || state.githubConfig.token
+      token: valueOf("gh-token") || state.githubConfig.token,
+      autoSync: Boolean(document.getElementById("auto-sync")?.checked)
     };
     persistGithubConfig();
-    state.workbenchMessage = "GitHub 保存配置已更新。";
-    renderWorkbench();
+    if (!options.silent) {
+      state.workbenchMessage = "GitHub 同步配置已更新。";
+      renderWorkbench();
+    }
   }
 
-  async function pushPapersToGithub() {
-    saveGithubConfigFromForm();
+  async function pushPapersToGithub(options = {}) {
+    saveGithubConfigFromForm({ silent: true });
     const { owner, repo, branch, path, token } = state.githubConfig;
     if (!owner || !repo || !path || !token) {
       state.workbenchMessage = "请补全 GitHub 配置，并填入有 Contents 读写权限的 token。";
@@ -966,7 +1014,9 @@
       }
       state.basePapers = structuredClone(state.papers);
       localStorage.removeItem(localDraftKey());
-      state.workbenchMessage = "已写回 GitHub。GitHub Pages 通常会在几十秒后刷新。";
+      state.workbenchMessage = options.fromAutoSync
+        ? "已自动同步到 GitHub。GitHub Pages 通常会在几十秒后刷新。"
+        : "已同步到 GitHub。GitHub Pages 通常会在几十秒后刷新。";
       renderWorkbench();
     } catch (error) {
       state.workbenchMessage = `GitHub 保存失败：${error.message}`;
