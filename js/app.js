@@ -9,6 +9,7 @@
     editCategory: "",
     editQuery: "",
     roadmapCategory: "",
+    materialQuery: "",
     workbenchMessage: "",
     generatedPapers: [],
     githubConfig: {
@@ -238,6 +239,61 @@
       const selected = String(value) === String(current) ? " selected" : "";
       return `<option value="${esc(value)}"${selected}>${esc(value)}</option>`;
     }).join("");
+  }
+
+  function renderOptionsWithNew(values, current, label) {
+    const hasCurrent = values.includes(current);
+    return `<option value="">${esc(label)}</option>` + values.map((value) => {
+      const selected = String(value) === String(current) ? " selected" : "";
+      return `<option value="${esc(value)}"${selected}>${esc(value)}</option>`;
+    }).join("") + `<option value="__new__"${current && !hasCurrent ? " selected" : ""}>新建...</option>`;
+  }
+
+  function selectOrNew(selectId, inputId, fallback = "") {
+    const selected = valueOf(selectId);
+    if (selected === "__new__") return valueOf(inputId) || fallback;
+    return selected || fallback;
+  }
+
+  function newValueInput(id, current, values, placeholder) {
+    const show = current && !values.includes(current);
+    return `<input id="${esc(id)}" class="${show ? "" : "new-value"}" value="${show ? esc(current) : ""}" placeholder="${esc(placeholder)}">`;
+  }
+
+  function allFieldValues(field) {
+    return uniq(state.papers.map((paper) => paper[field]).filter(Boolean));
+  }
+
+  function allArrayValues(field) {
+    return uniq(state.papers.flatMap((paper) => paper[field] || []));
+  }
+
+  function formatMetricKey(key) {
+    const labels = {
+      tmr: "TMR",
+      tmr_300k: "TMR 300K",
+      max_tmr_300k: "最大 TMR 300K",
+      max_tmr_10k: "最大 TMR 10K",
+      ra: "RA",
+      pma: "PMA",
+      pma_field: "PMA field",
+      ms: "Ms",
+      ku: "Ku",
+      switching_current_density: "开关电流密度",
+      switching_current_density_ta: "Ta 开关电流密度",
+      experimental_jc: "实验 Jc",
+      experimental_jc_coga: "CoGa 实验 Jc",
+      vcma_coefficient: "VCMA coefficient",
+      annealing_stability: "退火稳定性",
+      annealing_window: "退火窗口"
+    };
+    return labels[key] || formatKey(key);
+  }
+
+  function metricSummary(paper, maxItems = 4) {
+    const entries = Object.entries(paper.key_metrics || {}).filter(([, value]) => value != null && value !== "");
+    if (!entries.length) return "";
+    return entries.slice(0, maxItems).map(([key, value]) => `${formatMetricKey(key)}: ${value}`).join("；");
   }
 
   function renderOverview() {
@@ -517,6 +573,12 @@
 
   function renderWorkbench() {
     const categories = uniq(state.papers.map((p) => p.category));
+    const statuses = allFieldValues("status");
+    const materials = allFieldValues("material_system");
+    const devices = allFieldValues("device_structure");
+    const topics = allFieldValues("topic");
+    const mechanisms = allArrayValues("physical_mechanisms");
+    const tags = allArrayValues("tags");
     const currentPaper = state.papers.find((paper) => paper.id === state.selectedPaperId);
     const editCategory = state.editCategory || (currentPaper && currentPaper.category) || categories[0] || "";
     const editQuery = state.editQuery || "";
@@ -547,9 +609,9 @@
             <h2>从 PDF 文件名批量生成条目</h2>
             <textarea id="filename-input" rows="9" placeholder="每行一个 PDF 文件名，或直接选择 PDF 文件。"></textarea>
             <div class="form-grid">
-              <label>默认分组<input id="filename-category" value="${esc(categories[0] || "待分组")}"></label>
+              <label>默认分组<select id="filename-category">${renderOptionsWithNew(categories, categories[0] || "待分组", "选择分组")}</select>${newValueInput("filename-category-new", "", categories, "新分组名称")}</label>
               <label>默认来源文件夹<input id="filename-folder" placeholder="例如 MnGa/02 MTJ"></label>
-              <label>默认状态<input id="filename-status" value="新导入待整理"></label>
+              <label>默认状态<select id="filename-status">${renderOptionsWithNew(statuses, "新导入待整理", "选择状态")}</select>${newValueInput("filename-status-new", "新导入待整理", statuses, "新状态名称")}</label>
               <label>选择 PDF 文件<input id="pdf-picker" type="file" accept="application/pdf,.pdf" multiple></label>
             </div>
             <div class="button-row">
@@ -563,7 +625,7 @@
             <h2>从 DOI 新建文献</h2>
             <div class="form-grid two">
               <label>DOI<input id="doi-input" placeholder="10.xxxx/xxxxx"></label>
-              <label>导入到分组<input id="doi-category" value="${esc(selected.category || "待分组")}"></label>
+              <label>导入到分组<select id="doi-category">${renderOptionsWithNew(categories, selected.category || "待分组", "选择分组")}</select>${newValueInput("doi-category-new", selected.category || "待分组", categories, "新分组名称")}</label>
             </div>
             <div class="button-row">
               <button id="fetch-doi" type="button">生成新条目预览</button>
@@ -586,15 +648,15 @@
             <label>标题<input id="edit-title" value="${esc(selected.title || "")}"></label>
             <label>中文题名<input id="edit-title-zh" value="${esc(selected.title_zh || "")}"></label>
             <label>期刊/会议<input id="edit-venue" value="${esc(selected.venue || "")}"></label>
-            <label>分组<input id="edit-category" value="${esc(selected.category || "")}"></label>
-            <label>主题<input id="edit-topic" value="${esc(selected.topic || "")}"></label>
+            <label>分组<select id="edit-category">${renderOptionsWithNew(categories, selected.category || "", "选择分组")}</select>${newValueInput("edit-category-new", selected.category || "", categories, "新分组名称")}</label>
+            <label>主题<select id="edit-topic">${renderOptionsWithNew(topics, selected.topic || "", "选择主题")}</select>${newValueInput("edit-topic-new", selected.topic || "", topics, "新主题名称")}</label>
             <label>DOI<input id="edit-doi" value="${esc(selected.doi || "")}" placeholder="10.xxxx/xxxxx"></label>
             <label>作者<input id="edit-authors" value="${esc(selected.authors || "")}"></label>
-            <label>材料体系<input id="edit-material" value="${esc(selected.material_system || "")}"></label>
-            <label>器件结构<input id="edit-device" value="${esc(selected.device_structure || "")}"></label>
-            <label>物理机制<input id="edit-mechanisms" value="${esc((selected.physical_mechanisms || []).join("，"))}"></label>
-            <label>标签<input id="edit-tags" value="${esc((selected.tags || []).join("，"))}"></label>
-            <label>状态<input id="edit-status" value="${esc(selected.status || "")}"></label>
+            <label>材料体系<select id="edit-material">${renderOptionsWithNew(materials, selected.material_system || "", "选择材料体系")}</select>${newValueInput("edit-material-new", selected.material_system || "", materials, "新材料体系")}</label>
+            <label>器件结构<select id="edit-device">${renderOptionsWithNew(devices, selected.device_structure || "", "选择器件结构")}</select>${newValueInput("edit-device-new", selected.device_structure || "", devices, "新器件结构")}</label>
+            <label>物理机制<select id="edit-mechanism-add">${renderOptionsWithNew(mechanisms, "", "添加机制")}</select>${newValueInput("edit-mechanism-new", "", mechanisms, "新机制名称")}<button class="small-button" id="add-mechanism" type="button">加入机制</button><input id="edit-mechanisms" value="${esc((selected.physical_mechanisms || []).join("，"))}"></label>
+            <label>标签<select id="edit-tag-add">${renderOptionsWithNew(tags, "", "添加标签")}</select>${newValueInput("edit-tag-new", "", tags, "新标签名称")}<button class="small-button" id="add-tag" type="button">加入标签</button><input id="edit-tags" value="${esc((selected.tags || []).join("，"))}"></label>
+            <label>状态<select id="edit-status">${renderOptionsWithNew(statuses, selected.status || "", "选择状态")}</select>${newValueInput("edit-status-new", selected.status || "", statuses, "新状态名称")}</label>
             <label>本地路径<input id="edit-local-path" value="${esc(selected.local_path || "")}"></label>
           </div>
           <div class="form-grid two notes">
@@ -626,6 +688,15 @@
           <div class="method-block">
             <h2>GitHub 同步设置</h2>
             <p>这部分只需要偶尔设置。Branch 默认用 <code>main</code>，意思是保存到仓库的主分支；Token 不是 Deploy key，而是 GitHub 生成的一串网页授权码，用来允许这个页面更新 <code>data/papers.json</code>。</p>
+            <details class="guide-box">
+              <summary>第一次使用：如何生成 token</summary>
+              <ol>
+                <li>打开 GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens。</li>
+                <li>选择仓库 <code>yhluo57/phd-literature-notes</code>。</li>
+                <li>Repository permissions 里只给 Contents 选择 Read and write。</li>
+                <li>生成后复制 token，粘贴到这里。关闭浏览器后需要重新粘贴一次。</li>
+              </ol>
+            </details>
             <div class="form-grid two">
               <label>Owner<input id="gh-owner" value="${esc(state.githubConfig.owner)}"></label>
               <label>Repo<input id="gh-repo" value="${esc(state.githubConfig.repo)}"></label>
@@ -637,6 +708,27 @@
               <button id="save-gh-config" type="button">保存配置</button>
             </div>
             <div class="note-box">顶部“同步到 GitHub”是正式保存按钮；这里负责填写保存按钮需要的地址和授权。你通常保持 Owner、Repo、Branch、文件路径不变，只在需要同步时填写 Token。</div>
+          </div>
+        </div>
+
+        <div class="method-block">
+          <h2>批量编辑</h2>
+          <p>批量编辑会作用于当前筛选出的文献。建议先选分组和搜索关键词，确认“当前范围”数量正确后再应用。</p>
+          <div class="form-grid four">
+            <label>修改字段<select id="batch-field">
+              <option value="status">状态</option>
+              <option value="category">分组</option>
+              <option value="material_system">材料体系</option>
+              <option value="device_structure">器件结构</option>
+              <option value="add_tag">添加标签</option>
+              <option value="add_mechanism">添加物理机制</option>
+            </select></label>
+            <label>已有值<select id="batch-value">${renderOptionsWithNew(uniq([...statuses, ...categories, ...materials, ...devices, ...tags, ...mechanisms]), "", "选择已有值")}</select>${newValueInput("batch-value-new", "", [], "新建值")}</label>
+            <label>作用范围<input readonly value="${esc(selectablePapers.length)} 篇"></label>
+            <label>确认<input id="batch-confirm" placeholder="输入 APPLY"></label>
+          </div>
+          <div class="button-row">
+            <button id="apply-batch" type="button">应用批量编辑</button>
           </div>
         </div>
       </section>
@@ -678,9 +770,9 @@
     });
     document.getElementById("generate-from-filenames")?.addEventListener("click", () => {
       const names = document.getElementById("filename-input").value.split(/\n+/).map((name) => name.trim()).filter(Boolean);
-      const category = document.getElementById("filename-category").value.trim() || "待分组";
+      const category = selectOrNew("filename-category", "filename-category-new", "待分组");
       const folder = document.getElementById("filename-folder").value.trim();
-      const status = document.getElementById("filename-status").value.trim() || "新导入待整理";
+      const status = selectOrNew("filename-status", "filename-status-new", "新导入待整理");
       state.generatedPapers = names.map((name, index) => paperFromFilename(name, { category, folder, status, offset: index }));
       state.workbenchMessage = `已从 ${state.generatedPapers.length} 个文件名生成 JSON 条目。`;
       renderWorkbench();
@@ -713,6 +805,84 @@
     document.getElementById("copy-json")?.addEventListener("click", copyCurrentJson);
     document.getElementById("download-json")?.addEventListener("click", downloadCurrentJson);
     document.getElementById("save-gh-config")?.addEventListener("click", saveGithubConfigFromForm);
+    document.getElementById("edit-mechanism-add")?.addEventListener("change", () => {
+      if (valueOf("edit-mechanism-add") !== "__new__") addValueToList("edit-mechanism-add", "edit-mechanism-new", "edit-mechanisms");
+    });
+    document.getElementById("edit-tag-add")?.addEventListener("change", () => {
+      if (valueOf("edit-tag-add") !== "__new__") addValueToList("edit-tag-add", "edit-tag-new", "edit-tags");
+    });
+    document.getElementById("add-mechanism")?.addEventListener("click", () => addValueToList("edit-mechanism-add", "edit-mechanism-new", "edit-mechanisms"));
+    document.getElementById("add-tag")?.addEventListener("click", () => addValueToList("edit-tag-add", "edit-tag-new", "edit-tags"));
+    document.getElementById("apply-batch")?.addEventListener("click", applyBatchEdit);
+    setupNewValueToggles();
+  }
+
+  function setupNewValueToggles() {
+    [
+      ["filename-category", "filename-category-new"],
+      ["filename-status", "filename-status-new"],
+      ["doi-category", "doi-category-new"],
+      ["edit-category", "edit-category-new"],
+      ["edit-topic", "edit-topic-new"],
+      ["edit-material", "edit-material-new"],
+      ["edit-device", "edit-device-new"],
+      ["edit-mechanism-add", "edit-mechanism-new"],
+      ["edit-tag-add", "edit-tag-new"],
+      ["edit-status", "edit-status-new"],
+      ["batch-value", "batch-value-new"]
+    ].forEach(([selectId, inputId]) => {
+      const select = document.getElementById(selectId);
+      const input = document.getElementById(inputId);
+      if (!select || !input) return;
+      const sync = () => input.classList.toggle("new-value", select.value !== "__new__");
+      select.addEventListener("change", sync);
+      sync();
+    });
+  }
+
+  function addValueToList(selectId, newInputId, targetId) {
+    const value = selectOrNew(selectId, newInputId);
+    if (!value) return;
+    const target = document.getElementById(targetId);
+    const values = uniq([...asArray(target.value), value]);
+    target.value = values.join("，");
+  }
+
+  function currentWorkbenchSelection() {
+    const category = state.editCategory || "";
+    const query = state.editQuery || "";
+    return state.papers.filter((paper) => (!category || paper.category === category) && paperMatchesQuery(paper, query));
+  }
+
+  function applyBatchEdit() {
+    const targets = currentWorkbenchSelection();
+    const field = valueOf("batch-field");
+    const value = selectOrNew("batch-value", "batch-value-new");
+    const confirmed = valueOf("batch-confirm") === "APPLY";
+    if (!targets.length) {
+      state.workbenchMessage = "当前筛选范围没有文献，未执行批量编辑。";
+      renderWorkbench();
+      return;
+    }
+    if (!value || !confirmed) {
+      state.workbenchMessage = "请填写批量编辑值，并在确认框输入 APPLY。";
+      renderWorkbench();
+      return;
+    }
+    const ids = new Set(targets.map((paper) => paper.id));
+    state.papers = state.papers.map((paper) => {
+      if (!ids.has(paper.id)) return paper;
+      const updated = { ...paper };
+      if (field === "add_tag") {
+        updated.tags = uniq([...(updated.tags || []), value]);
+      } else if (field === "add_mechanism") {
+        updated.physical_mechanisms = uniq([...(updated.physical_mechanisms || []), value]);
+      } else {
+        updated[field] = value;
+      }
+      return normalizePaper(updated);
+    });
+    afterPapersChanged(`已批量更新 ${targets.length} 篇文献。`);
   }
 
   function paperMatchesQuery(paper, query) {
@@ -755,6 +925,7 @@
           </div>
         </div>
         ${renderDynamicRoadmap(selectedCategory, papers)}
+        ${renderMetricTable(selectedCategory, papers)}
         ${renderDynamicComparison(selectedCategory, papers)}
       </section>
     `;
@@ -790,11 +961,40 @@
                   ${paper.topic ? chip(paper.topic) : ""}
                 </div>
                 <p><strong>研究对象：</strong>${esc([paper.material_system, paper.device_structure].filter(Boolean).join(" / ") || "待补充")}</p>
+                <p><strong>关键参数：</strong>${esc(metricSummary(paper) || "待补充")}</p>
                 <p><strong>主要线索：</strong>${esc(paper.main_contribution || paper.research_question || paper.abstract || "待精整理")}</p>
                 <p><strong>课题关系：</strong>${esc(paper.relevance_to_my_project || "待补充")}</p>
               </div>
             </a>
           `).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  function renderMetricTable(category, papers) {
+    return `
+      <div class="method-block">
+        <h2>${esc(category)} · 关键参数汇总</h2>
+        <p>自动读取每篇文献的 key_metrics 字段。还没整理参数的文献会标为“待补充”，方便后续补齐。</p>
+        <div class="compare-table metric-table">
+          <div class="compare-row compare-head">
+            <div>编号</div>
+            <div>年份</div>
+            <div>论文</div>
+            <div>关键参数</div>
+          </div>
+          ${papers.map((paper) => {
+            const metrics = Object.entries(paper.key_metrics || {}).filter(([, value]) => value != null && value !== "");
+            return `
+              <div class="compare-row">
+                <div><a href="#paper/${esc(paper.id)}">${esc(paper.id)}</a></div>
+                <div>${esc(paper.year || "-")}</div>
+                <div>${esc(paper.title_zh || paper.title)}</div>
+                <div>${metrics.length ? metrics.map(([key, value]) => `<span class="metric-chip">${esc(formatMetricKey(key))}: ${esc(value)}</span>`).join("") : `<span class="metric-missing">待补充</span>`}</div>
+              </div>
+            `;
+          }).join("")}
         </div>
       </div>
     `;
@@ -882,6 +1082,52 @@
     `;
   }
 
+  function renderMaterialsIndex() {
+    const query = state.materialQuery.trim().toLowerCase();
+    const materialMap = new Map();
+    state.papers.forEach((paper) => {
+      splitMaterialNames(paper.material_system || "未标注材料体系").forEach((material) => {
+        if (!materialMap.has(material)) materialMap.set(material, []);
+        materialMap.get(material).push(paper);
+      });
+    });
+    const entries = [...materialMap.entries()]
+      .filter(([material]) => !query || material.toLowerCase().includes(query))
+      .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], "zh-CN"));
+    app.innerHTML = `
+      <section class="method-page">
+        <div class="method-block">
+          <a class="back-link" href="#overview">← 返回总览</a>
+          <p class="eyebrow">Material Index</p>
+          <h1>材料体系索引</h1>
+          <p>按材料体系聚合文献，适合快速查 MnGa、MnAl、CoGa、Ta、Pt、MgO、CoMnFe 等材料线索。</p>
+          <div class="toolbar single">
+            <input id="material-search" type="search" value="${esc(state.materialQuery)}" placeholder="搜索材料体系...">
+          </div>
+        </div>
+        <div class="material-grid">
+          ${entries.map(([material, papers]) => `
+            <div class="material-card">
+              <h2>${esc(material)}</h2>
+              <p>${papers.length} 篇文献</p>
+              <div class="material-paper-list">
+                ${papers.slice(0, 8).map((paper) => `<a href="#paper/${esc(paper.id)}">${esc(paper.id)} · ${esc(paper.title_zh || paper.title)}</a>`).join("")}
+              </div>
+            </div>
+          `).join("")}
+        </div>
+      </section>
+    `;
+    document.getElementById("material-search")?.addEventListener("input", (event) => {
+      state.materialQuery = event.target.value;
+      renderMaterialsIndex();
+    });
+  }
+
+  function splitMaterialNames(value) {
+    return uniq(String(value).split(/\s*\/\s*|\s*,\s*|，|、/).map((item) => item.trim()).filter(Boolean));
+  }
+
   function paperFromFilename(filename, options) {
     const cleanName = filename.replace(/\.pdf$/i, "").replace(/[_]+/g, " ").trim();
     const yearMatch = cleanName.match(/\b(19|20)\d{2}\b/);
@@ -956,15 +1202,15 @@
       title_zh: valueOf("edit-title-zh"),
       year: Number(valueOf("edit-year")) || valueOf("edit-year"),
       venue: valueOf("edit-venue"),
-      category: valueOf("edit-category"),
-      topic: valueOf("edit-topic"),
+      category: selectOrNew("edit-category", "edit-category-new", "待分组"),
+      topic: selectOrNew("edit-topic", "edit-topic-new"),
       doi: valueOf("edit-doi"),
       authors: valueOf("edit-authors"),
-      material_system: valueOf("edit-material"),
-      device_structure: valueOf("edit-device"),
+      material_system: selectOrNew("edit-material", "edit-material-new"),
+      device_structure: selectOrNew("edit-device", "edit-device-new"),
       physical_mechanisms: asArray(valueOf("edit-mechanisms")),
       tags: asArray(valueOf("edit-tags")),
-      status: valueOf("edit-status"),
+      status: selectOrNew("edit-status", "edit-status-new", "新导入待整理"),
       local_path: valueOf("edit-local-path"),
       research_question: valueOf("edit-question"),
       main_contribution: valueOf("edit-contribution"),
@@ -1021,7 +1267,7 @@
     const preview = document.getElementById("doi-preview");
     preview.textContent = "正在查询 DOI...";
     try {
-      const paper = await paperFromDoi(doi, valueOf("doi-category") || "待分组");
+      const paper = await paperFromDoi(doi, selectOrNew("doi-category", "doi-category-new", "待分组"));
       state.generatedPapers = [paper];
       state.workbenchMessage = "DOI 信息已获取，可加入文献库或补到当前选中文献。";
       renderWorkbench();
@@ -1040,7 +1286,7 @@
       return;
     }
     try {
-      const fetched = await paperFromDoi(doi, state.papers[index].category || valueOf("doi-category") || "待分组");
+      const fetched = await paperFromDoi(doi, state.papers[index].category || "待分组");
       state.papers[index] = normalizePaper({ ...state.papers[index], ...fetched, id: state.papers[index].id });
       afterPapersChanged(`${state.papers[index].id} 已用 DOI 信息补全。`);
     } catch (error) {
@@ -1137,7 +1383,7 @@
       });
       if (!saved.ok) {
         const error = await saved.json().catch(() => ({}));
-        throw new Error(error.message || `GitHub 返回 ${saved.status}`);
+        throw new Error(friendlyGithubError(saved.status, error.message));
       }
       state.basePapers = structuredClone(state.papers);
       localStorage.removeItem(localDraftKey());
@@ -1149,6 +1395,14 @@
       state.workbenchMessage = `GitHub 保存失败：${error.message}`;
       renderWorkbench();
     }
+  }
+
+  function friendlyGithubError(status, message = "") {
+    if (status === 401) return "Token 无效或已过期。请重新生成 fine-grained token。";
+    if (status === 403) return "Token 权限不够。请确认仓库权限选择了 Contents: Read and write。";
+    if (status === 404) return "没有找到仓库或文件。请检查 Owner、Repo、Branch 和文件路径。";
+    if (status === 409) return "GitHub 上的文件刚被更新过。请刷新页面后再同步。";
+    return message || `GitHub 返回 ${status}`;
   }
 
   function toBase64(value) {
@@ -1168,6 +1422,8 @@
       renderRoadmap();
     } else if (hash === "#method") {
       renderMethod();
+    } else if (hash === "#materials") {
+      renderMaterialsIndex();
     } else if (hash === "#workbench") {
       renderWorkbench();
     } else {
