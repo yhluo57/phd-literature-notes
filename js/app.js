@@ -244,9 +244,12 @@
 
   function renderThemeEditor() {
     return `
+      <section class="method-page">
       <div class="method-block">
+        <a class="back-link" href="#workbench">← 返回工作台</a>
+        <p class="eyebrow">Appearance</p>
         <h2>主题设置</h2>
-        <p>这里可以自己调整配色、字体和界面疏密。点击“应用到当前浏览器”会立刻预览且不会增加 GitHub 部署次数；确认喜欢后再点击“保存主题到 GitHub”。</p>
+        <p>这里专门管理网页外观，不和文献导入、编辑、同步混在一起。点击“应用到当前浏览器”会立刻预览且不会增加 GitHub 部署次数；确认喜欢后再点击“保存主题到 GitHub”。</p>
         <div class="theme-preview">
           <div>
             <strong>雾粉杏 · 鼠尾草绿 · 温柔墨蓝</strong>
@@ -280,6 +283,7 @@
           <button id="reset-theme" type="button">恢复默认主题</button>
         </div>
       </div>
+      </section>
     `;
   }
 
@@ -872,8 +876,6 @@
           </div>
         </div>
 
-        ${renderThemeEditor()}
-
         <div class="method-block">
           <h2>批量编辑</h2>
           <p>批量编辑会作用于当前筛选出的文献。建议先选分组和搜索关键词，确认“当前范围”数量正确后再应用。</p>
@@ -892,6 +894,14 @@
           </div>
           <div class="button-row">
             <button id="apply-batch" type="button">应用批量编辑</button>
+          </div>
+        </div>
+
+        <div class="method-block theme-entry">
+          <h2>页面外观</h2>
+          <p>配色、字体、圆角和界面疏密已经移到独立分支，避免打断文献维护流程。</p>
+          <div class="button-row">
+            <a class="button-link" href="#theme">打开主题设置</a>
           </div>
         </div>
       </section>
@@ -992,6 +1002,13 @@
     document.getElementById("add-tag")?.addEventListener("click", () => addValueToList("edit-tag-add", "edit-tag-new", "edit-tags"));
     document.getElementById("apply-batch")?.addEventListener("click", applyBatchEdit);
     setupNewValueToggles();
+  }
+
+  function bindThemeEvents() {
+    document.getElementById("apply-theme")?.addEventListener("click", applyThemeFromForm);
+    document.getElementById("save-theme-github")?.addEventListener("click", pushThemeToGithub);
+    document.getElementById("reset-theme")?.addEventListener("click", resetTheme);
+    bindThemeColorInputs();
   }
 
   function bindThemeColorInputs() {
@@ -1666,13 +1683,15 @@
 
   function saveGithubConfigFromForm(options = {}) {
     state.githubConfig = {
-      owner: valueOf("gh-owner"),
-      repo: valueOf("gh-repo"),
-      branch: valueOf("gh-branch") || "main",
-      path: valueOf("gh-path") || "data/papers.json",
+      owner: valueOf("gh-owner") || state.githubConfig.owner,
+      repo: valueOf("gh-repo") || state.githubConfig.repo,
+      branch: valueOf("gh-branch") || state.githubConfig.branch || "main",
+      path: valueOf("gh-path") || state.githubConfig.path || "data/papers.json",
       themePath: valueOf("gh-theme-path") || state.githubConfig.themePath || "data/theme.json",
       token: valueOf("gh-token") || state.githubConfig.token,
-      autoSync: Boolean(document.getElementById("auto-sync")?.checked)
+      autoSync: document.getElementById("auto-sync")
+        ? Boolean(document.getElementById("auto-sync").checked)
+        : state.githubConfig.autoSync
     };
     persistGithubConfig();
     if (!options.silent) {
@@ -1783,6 +1802,9 @@
       renderMaterialsIndex();
     } else if (hash === "#workbench") {
       renderWorkbench();
+    } else if (hash === "#theme") {
+      app.innerHTML = renderThemeEditor();
+      bindThemeEvents();
     } else {
       renderOverview();
     }

@@ -260,6 +260,22 @@ button {
   font-weight: 720;
 }
 
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 13px;
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  font-weight: 720;
+}
+
+.button-link:hover {
+  background: var(--button-hover);
+}
+
 button:hover {
   background: #5d8e89;
   background: var(--button-hover);
