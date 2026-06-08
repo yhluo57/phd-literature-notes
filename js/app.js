@@ -890,6 +890,15 @@
             <label>与我课题的关系<textarea id="edit-relevance" rows="4">${esc(selected.relevance_to_my_project || "")}</textarea></label>
             <label>我的笔记<textarea id="edit-notes" rows="4">${esc(selected.my_notes || "")}</textarea></label>
           </div>
+          <div class="deep-edit-box">
+            <h3>深度整理</h3>
+            <p>关键指标和实验条件按“一行一个：名称 = 内容”填写；关键图谱卡片按 JSON 保存，适合先整理重点图、读图要点和证据链。</p>
+            <div class="form-grid two notes">
+              <label>关键指标<textarea id="edit-key-metrics" rows="6" placeholder="TMR = 120%\nRA = 8 Ω·µm²">${esc(objectToEditableLines(selected.key_metrics))}</textarea></label>
+              <label>实验条件<textarea id="edit-experimental-conditions" rows="6" placeholder="annealing = 350°C, 1 h\nfield = out-of-plane">${esc(objectToEditableLines(selected.experimental_conditions))}</textarea></label>
+              <label class="wide">关键图谱卡片<textarea id="edit-figure-cards" rows="10" placeholder='[{"fig":"Fig. 1","claim":"样品结构与研究对象","what_to_read":"读清材料堆栈和条件","why_it_matters":"判断能否对比","use_for":"组会/论文讨论"}]'>${esc(JSON.stringify(selected.figure_cards || [], null, 2))}</textarea></label>
+            </div>
+          </div>
           <div class="button-row">
             <button id="save-selected" type="button">保存到本地草稿</button>
             <button id="apply-doi-to-selected" type="button">用 DOI 补全当前文献</button>
@@ -1609,6 +1618,44 @@
     return uniq(tags);
   }
 
+  function objectToEditableLines(obj) {
+    return Object.entries(obj || {})
+      .filter(([, value]) => value != null && value !== "")
+      .map(([key, value]) => `${key} = ${value}`)
+      .join("\n");
+  }
+
+  function editableLinesToObject(value) {
+    const result = {};
+    String(value || "").split(/\n+/).forEach((line) => {
+      const trimmed = line.trim();
+      if (!trimmed) return;
+      const parts = trimmed.split(/\s*[:=：]\s*/);
+      const key = parts.shift();
+      if (!key) return;
+      result[key.trim()] = parts.join(" = ").trim();
+    });
+    return result;
+  }
+
+  function parseFigureCardsFromForm() {
+    const text = valueOf("edit-figure-cards");
+    if (!text) return [];
+    try {
+      const cards = JSON.parse(text);
+      if (!Array.isArray(cards)) throw new Error("关键图谱卡片必须是数组格式。");
+      return cards.map((card) => ({
+        fig: card.fig || "",
+        claim: card.claim || "",
+        what_to_read: card.what_to_read || "",
+        why_it_matters: card.why_it_matters || "",
+        use_for: card.use_for || ""
+      }));
+    } catch (error) {
+      throw new Error(`关键图谱卡片 JSON 格式不正确：${error.message}`);
+    }
+  }
+
   function collectPaperFromForm() {
     return normalizePaper({
       ...(state.papers.find((paper) => paper.id === state.selectedPaperId) || {}),
@@ -1630,7 +1677,10 @@
       research_question: valueOf("edit-question"),
       main_contribution: valueOf("edit-contribution"),
       relevance_to_my_project: valueOf("edit-relevance"),
-      my_notes: valueOf("edit-notes")
+      my_notes: valueOf("edit-notes"),
+      key_metrics: editableLinesToObject(valueOf("edit-key-metrics")),
+      experimental_conditions: editableLinesToObject(valueOf("edit-experimental-conditions")),
+      figure_cards: parseFigureCardsFromForm()
     });
   }
 
@@ -1639,7 +1689,14 @@
   }
 
   function saveSelectedFromForm() {
-    const paper = collectPaperFromForm();
+    let paper;
+    try {
+      paper = collectPaperFromForm();
+    } catch (error) {
+      state.workbenchMessage = error.message;
+      renderWorkbench();
+      return;
+    }
     const index = state.papers.findIndex((item) => item.id === state.selectedPaperId);
     if (index >= 0) {
       state.papers[index] = paper;
@@ -1675,7 +1732,14 @@
   function upgradeSelectedToAtlas() {
     const index = state.papers.findIndex((paper) => paper.id === state.selectedPaperId);
     if (index < 0) return;
-    const paper = collectPaperFromForm();
+    let paper;
+    try {
+      paper = collectPaperFromForm();
+    } catch (error) {
+      state.workbenchMessage = error.message;
+      renderWorkbench();
+      return;
+    }
     paper.status = paper.status && paper.status.includes("重点") ? paper.status : "重点图谱-v2";
     paper.research_question = paper.research_question || "这篇文献试图解决什么关键瓶颈？";
     paper.main_contribution = paper.main_contribution || "用一句话写清楚作者的核心贡献、关键结构/方法与最好结果。";
