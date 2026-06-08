@@ -368,12 +368,6 @@
     renderWorkbench();
   }
 
-  function resetDraftPapers() {
-    state.papers = structuredClone(state.basePapers);
-    localStorage.removeItem(localDraftKey());
-    state.workbenchMessage = "已恢复为 GitHub 上的原始数据。";
-  }
-
   function nextPaperId() {
     const maxId = state.papers.reduce((max, paper) => {
       const number = Number.parseInt(paper.id, 10);
@@ -845,7 +839,7 @@
               <label>选择 PDF 文件<input id="pdf-picker" type="file" accept="application/pdf,.pdf" multiple></label>
             </div>
             <div class="button-row">
-              <button id="generate-from-filenames" type="button">生成条目</button>
+              <button id="generate-from-filenames" type="button">从文件名生成文献信息</button>
               <button id="append-generated" type="button">加入文献库</button>
             </div>
             ${renderImportWarnings()}
@@ -899,9 +893,9 @@
           <div class="button-row">
             <button id="save-selected" type="button">保存到本地草稿</button>
             <button id="apply-doi-to-selected" type="button">用 DOI 补全当前文献</button>
-            <button id="new-paper" type="button">新建空白条目</button>
+            <button id="new-paper" type="button">新建一篇文献</button>
             <button id="upgrade-atlas" type="button">升级为重点图谱</button>
-            <button id="reset-draft" type="button">放弃本地草稿</button>
+            <button id="delete-selected-paper" class="danger-button" type="button">删除此文献</button>
           </div>
         </div>
 
@@ -961,7 +955,7 @@
             <label>确认<input id="batch-confirm" placeholder="输入 APPLY"></label>
           </div>
           <div class="button-row">
-            <button id="apply-batch" type="button">应用批量编辑</button>
+            <button id="apply-batch" type="button">批量修改文献</button>
           </div>
         </div>
 
@@ -1038,13 +1032,10 @@
       const paper = normalizePaper({ id: nextPaperId(), category: "待分组" });
       state.papers.push(paper);
       state.selectedPaperId = paper.id;
-      afterPapersChanged("已新建空白条目。");
+      afterPapersChanged("已新建一篇文献。");
     });
     document.getElementById("upgrade-atlas")?.addEventListener("click", upgradeSelectedToAtlas);
-    document.getElementById("reset-draft")?.addEventListener("click", () => {
-      resetDraftPapers();
-      renderWorkbench();
-    });
+    document.getElementById("delete-selected-paper")?.addEventListener("click", deleteSelectedPaper);
     document.getElementById("copy-json")?.addEventListener("click", copyCurrentJson);
     document.getElementById("download-json")?.addEventListener("click", downloadCurrentJson);
     document.getElementById("save-gh-config")?.addEventListener("click", saveGithubConfigFromForm);
@@ -1657,6 +1648,28 @@
     }
     state.selectedPaperId = paper.id;
     afterPapersChanged(`已保存 ${paper.id}。`);
+  }
+
+  function deleteSelectedPaper() {
+    const paper = state.papers.find((item) => item.id === state.selectedPaperId);
+    if (!paper) {
+      state.workbenchMessage = "没有找到当前选中的文献，未删除。";
+      renderWorkbench();
+      return;
+    }
+    const message = [
+      `确定要删除这篇文献吗？`,
+      "",
+      `${paper.id} · ${paper.title_zh || paper.title}`,
+      "",
+      "如果这篇文献还没有同步到 GitHub，删除后会丢失该文献及其中所有笔记/整理内容。",
+      "删除只会先保存到本地草稿；只有点击“统一同步到 GitHub”后，线上文献库才会一起更新。"
+    ].join("\n");
+    if (!window.confirm(message)) return;
+    state.papers = state.papers.filter((item) => item.id !== paper.id);
+    const nextPaper = state.papers.find((item) => item.category === paper.category) || state.papers[0];
+    state.selectedPaperId = nextPaper ? nextPaper.id : "";
+    afterPapersChanged(`已删除 ${paper.id}。`);
   }
 
   function upgradeSelectedToAtlas() {

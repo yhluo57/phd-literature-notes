@@ -285,6 +285,15 @@ button:hover {
   background: var(--button-hover);
 }
 
+.danger-button {
+  background: #b85f64;
+  border-color: #b85f64;
+}
+
+.danger-button:hover {
+  background: #9f4d53;
+}
+
 .small-button {
   min-height: 32px;
   padding: 0 10px;
