@@ -43,6 +43,7 @@
     selectedPaperId: "",
     editCategory: "",
     editQuery: "",
+    addMode: "pdf",
     roadmapCategory: "",
     materialQuery: "",
     workbenchMessage: "",
@@ -828,10 +829,19 @@
           ${state.workbenchMessage ? `<div class="status-message">${esc(state.workbenchMessage)}</div>` : ""}
         </div>
 
-        <div class="workbench-grid">
-          <div class="method-block">
-            <h2>从 PDF 文件名批量生成条目</h2>
-            <textarea id="filename-input" rows="9" placeholder="每行一个 PDF 文件名，或直接选择 PDF 文件。"></textarea>
+        <div class="method-block">
+          <h2>添加新文献</h2>
+          <p>这里专门负责把新论文放进文献库。先选择一种添加方式，生成“待加入文献”，确认没有重复后再加入本地文献库。</p>
+          <div class="segmented-row">
+            <button class="mode-button${state.addMode === "pdf" ? " active" : ""}" data-mode="pdf" type="button">从 PDF 添加</button>
+            <button class="mode-button${state.addMode === "doi" ? " active" : ""}" data-mode="doi" type="button">从 DOI 添加</button>
+            <button class="mode-button${state.addMode === "manual" ? " active" : ""}" data-mode="manual" type="button">手动添加</button>
+          </div>
+
+          <div class="add-mode-panel${state.addMode === "pdf" ? " active" : ""}" data-add-panel="pdf">
+            <h3>从 PDF 添加</h3>
+            <p>适合你桌面上有 PDF 的情况。网页会根据文件名猜标题、年份、期刊等信息。</p>
+            <textarea id="filename-input" rows="7" placeholder="每行一个 PDF 文件名，或直接选择 PDF 文件。"></textarea>
             <div class="form-grid">
               <label>默认分组<select id="filename-category">${renderOptionsWithNew(categories, categories[0] || "待分组", "选择分组")}</select>${newValueInput("filename-category-new", "", categories, "新分组名称")}</label>
               <label>默认来源文件夹<input id="filename-folder" placeholder="例如 MnGa/02 MTJ"></label>
@@ -839,28 +849,50 @@
               <label>选择 PDF 文件<input id="pdf-picker" type="file" accept="application/pdf,.pdf" multiple></label>
             </div>
             <div class="button-row">
-              <button id="generate-from-filenames" type="button">从文件名生成文献信息</button>
-              <button id="append-generated" type="button">加入文献库</button>
+              <button id="generate-from-filenames" type="button">生成待加入文献</button>
             </div>
-            ${renderImportWarnings()}
-            <pre id="generated-preview" class="json-preview">${esc(JSON.stringify(state.generatedPapers, null, 2))}</pre>
           </div>
 
-          <div class="method-block">
-            <h2>从 DOI 新建文献</h2>
+          <div class="add-mode-panel${state.addMode === "doi" ? " active" : ""}" data-add-panel="doi">
+            <h3>从 DOI 添加</h3>
+            <p>适合你手里有 DOI 的情况。网页会查询标题、作者、年份、期刊等基础信息。</p>
             <div class="form-grid two">
               <label>DOI<input id="doi-input" placeholder="10.xxxx/xxxxx"></label>
               <label>导入到分组<select id="doi-category">${renderOptionsWithNew(categories, selected.category || "待分组", "选择分组")}</select>${newValueInput("doi-category-new", selected.category || "待分组", categories, "新分组名称")}</label>
             </div>
             <div class="button-row">
-              <button id="fetch-doi" type="button">生成新条目预览</button>
+              <button id="fetch-doi" type="button">查询 DOI 并生成待加入文献</button>
             </div>
-            <div id="doi-preview" class="note-box">这里用于从 DOI 直接生成一篇新文献。若要补全已有文献，请在下方编辑区选择那篇文献后使用“用 DOI 补全当前文献”。</div>
+          </div>
+
+          <div class="add-mode-panel${state.addMode === "manual" ? " active" : ""}" data-add-panel="manual">
+            <h3>手动添加</h3>
+            <p>适合没有 PDF 或 DOI，但想先占一个位置，之后再慢慢补信息。</p>
+            <div class="form-grid">
+              <label>标题<input id="manual-title" placeholder="论文标题"></label>
+              <label>年份<input id="manual-year" placeholder="例如 2026"></label>
+              <label>分组<select id="manual-category">${renderOptionsWithNew(categories, selected.category || "待分组", "选择分组")}</select>${newValueInput("manual-category-new", selected.category || "待分组", categories, "新分组名称")}</label>
+              <label>状态<select id="manual-status">${renderOptionsWithNew(statuses, "新导入待整理", "选择状态")}</select>${newValueInput("manual-status-new", "新导入待整理", statuses, "新状态名称")}</label>
+            </div>
+            <div class="button-row">
+              <button id="generate-manual-paper" type="button">生成待加入文献</button>
+            </div>
+          </div>
+
+          <div class="pending-import-box">
+            <h3>待加入文献</h3>
+            <p>${state.generatedPapers.length ? `当前有 ${state.generatedPapers.length} 篇待加入。` : "还没有待加入文献。请先从 PDF、DOI 或手动方式生成。"}</p>
+            ${renderImportWarnings()}
+            <div class="button-row">
+              <button id="append-generated" type="button"${state.generatedPapers.length ? "" : " disabled"}>确认加入文献库</button>
+              <button id="clear-generated" type="button"${state.generatedPapers.length ? "" : " disabled"}>清空待加入列表</button>
+            </div>
+            <pre id="generated-preview" class="json-preview">${esc(JSON.stringify(state.generatedPapers, null, 2))}</pre>
           </div>
         </div>
 
         <div class="method-block">
-          <h2>在线/半在线编辑</h2>
+          <h2>编辑已有文献</h2>
           <div class="form-grid three">
             <label>先选分组<select id="edit-category-filter">${categories.map((category) => `<option value="${esc(category)}"${category === state.editCategory ? " selected" : ""}>${esc(category)}</option>`).join("")}</select></label>
             <label>再搜文献<input id="paper-search" type="search" value="${esc(editQuery)}" placeholder="标题、编号、作者、DOI..."></label>
@@ -902,7 +934,6 @@
           <div class="button-row">
             <button id="save-selected" type="button">保存到本地草稿</button>
             <button id="apply-doi-to-selected" type="button">用 DOI 补全当前文献</button>
-            <button id="new-paper" type="button">新建一篇文献</button>
             <button id="upgrade-atlas" type="button">升级为重点图谱</button>
             <button id="delete-selected-paper" class="danger-button" type="button">删除此文献</button>
           </div>
@@ -982,6 +1013,13 @@
 
   function bindWorkbenchEvents() {
     document.getElementById("sync-now")?.addEventListener("click", () => pushMonthlyDraftsToGithub());
+    document.querySelectorAll(".mode-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.addMode = button.dataset.mode || "pdf";
+        state.workbenchMessage = "";
+        renderWorkbench();
+      });
+    });
     document.getElementById("edit-category-filter")?.addEventListener("change", (event) => {
       state.editCategory = event.target.value;
       state.editQuery = "";
@@ -1011,19 +1049,19 @@
       const status = selectOrNew("filename-status", "filename-status-new", "新导入待整理");
       state.generatedPapers = names.map((name, index) => paperFromFilename(name, { category, folder, status, offset: index }));
       state.importWarnings = detectImportDuplicates(state.generatedPapers).warnings;
-      state.workbenchMessage = `已从 ${state.generatedPapers.length} 个文件名生成 JSON 条目。${state.importWarnings.length ? "请先查看重复提示。" : ""}`;
+      state.workbenchMessage = `已从 ${state.generatedPapers.length} 个文件名生成待加入文献。${state.importWarnings.length ? "请先查看重复提示。" : ""}`;
       renderWorkbench();
     });
     document.getElementById("append-generated")?.addEventListener("click", () => {
       if (!state.generatedPapers.length) {
-        state.workbenchMessage = "还没有可加入的生成条目。";
+        state.workbenchMessage = "还没有待加入文献。";
         renderWorkbench();
       } else {
         const report = detectImportDuplicates(state.generatedPapers);
         const safePapers = state.generatedPapers.filter((paper, index) => !report.blockedIndexes.has(index));
         if (!safePapers.length) {
           state.importWarnings = report.warnings;
-          state.workbenchMessage = "检测到这些条目都已经存在或在本批次内重复，未加入文献库。";
+          state.workbenchMessage = "检测到这些文献都已经存在或在本批次内重复，未加入文献库。";
           renderWorkbench();
           return;
         }
@@ -1031,18 +1069,19 @@
         state.selectedPaperId = safePapers[0].id;
         state.generatedPapers = [];
         state.importWarnings = [];
-        afterPapersChanged(`已加入 ${safePapers.length} 篇文献；${report.blockedIndexes.size ? `跳过 ${report.blockedIndexes.size} 个强重复条目。` : ""}`);
+        afterPapersChanged(`已加入 ${safePapers.length} 篇文献；${report.blockedIndexes.size ? `跳过 ${report.blockedIndexes.size} 个强重复文献。` : ""}`);
       }
     });
     document.getElementById("fetch-doi")?.addEventListener("click", fetchDoiIntoPreview);
+    document.getElementById("generate-manual-paper")?.addEventListener("click", generateManualPaperPreview);
+    document.getElementById("clear-generated")?.addEventListener("click", () => {
+      state.generatedPapers = [];
+      state.importWarnings = [];
+      state.workbenchMessage = "已清空待加入文献列表。";
+      renderWorkbench();
+    });
     document.getElementById("apply-doi-to-selected")?.addEventListener("click", applyDoiToSelected);
     document.getElementById("save-selected")?.addEventListener("click", saveSelectedFromForm);
-    document.getElementById("new-paper")?.addEventListener("click", () => {
-      const paper = normalizePaper({ id: nextPaperId(), category: "待分组" });
-      state.papers.push(paper);
-      state.selectedPaperId = paper.id;
-      afterPapersChanged("已新建一篇文献。");
-    });
     document.getElementById("upgrade-atlas")?.addEventListener("click", upgradeSelectedToAtlas);
     document.getElementById("delete-selected-paper")?.addEventListener("click", deleteSelectedPaper);
     document.getElementById("copy-json")?.addEventListener("click", copyCurrentJson);
@@ -1138,6 +1177,8 @@
       ["filename-category", "filename-category-new"],
       ["filename-status", "filename-status-new"],
       ["doi-category", "doi-category-new"],
+      ["manual-category", "manual-category-new"],
+      ["manual-status", "manual-status-new"],
       ["edit-category", "edit-category-new"],
       ["edit-topic", "edit-topic-new"],
       ["edit-material", "edit-material-new"],
@@ -1254,7 +1295,7 @@
         warnings.push({
           level: "strong",
           label: `${paper.id} 批次内重复`,
-          message: `DOI 与本批次 ${batchDoi.get(doi)} 相同，默认跳过后出现的条目。`
+          message: `DOI 与本批次 ${batchDoi.get(doi)} 相同，默认跳过后出现的文献。`
         });
         blockedIndexes.add(index);
       } else if (doi) {
@@ -1264,7 +1305,7 @@
         warnings.push({
           level: "strong",
           label: `${paper.id} 批次内重复`,
-          message: `标题与本批次 ${batchTitle.get(title)} 基本相同，默认跳过后出现的条目。`
+          message: `标题与本批次 ${batchTitle.get(title)} 基本相同，默认跳过后出现的文献。`
         });
         blockedIndexes.add(index);
       } else if (title) {
@@ -1575,6 +1616,29 @@
     });
   }
 
+  function generateManualPaperPreview() {
+    const title = valueOf("manual-title");
+    if (!title) {
+      state.workbenchMessage = "请先填写论文标题。";
+      renderWorkbench();
+      return;
+    }
+    const category = selectOrNew("manual-category", "manual-category-new", "待分组");
+    const status = selectOrNew("manual-status", "manual-status-new", "新导入待整理");
+    state.generatedPapers = [normalizePaper({
+      id: nextPaperId(),
+      title,
+      year: Number(valueOf("manual-year")) || valueOf("manual-year"),
+      category,
+      topic: inferTopic(category, title),
+      status,
+      tags: inferTags(category, title)
+    })];
+    state.importWarnings = detectImportDuplicates(state.generatedPapers).warnings;
+    state.workbenchMessage = `已生成 1 篇待加入文献。${state.importWarnings.length ? "请先查看重复提示。" : ""}`;
+    renderWorkbench();
+  }
+
   function guessVenue(text, pieces) {
     const known = [
       ["nat.", "Nature"],
@@ -1765,13 +1829,12 @@
       renderWorkbench();
       return;
     }
-    const preview = document.getElementById("doi-preview");
-    preview.textContent = "正在查询 DOI...";
+    state.workbenchMessage = "正在查询 DOI...";
     try {
       const paper = await paperFromDoi(doi, selectOrNew("doi-category", "doi-category-new", "待分组"));
       state.generatedPapers = [paper];
       state.importWarnings = detectImportDuplicates(state.generatedPapers).warnings;
-      state.workbenchMessage = `DOI 信息已获取，可作为新条目加入。${state.importWarnings.length ? "但检测到可能重复，请先查看提示。" : ""}`;
+      state.workbenchMessage = `DOI 信息已获取，已生成 1 篇待加入文献。${state.importWarnings.length ? "但检测到可能重复，请先查看提示。" : ""}`;
       renderWorkbench();
     } catch (error) {
       state.workbenchMessage = `DOI 查询失败：${error.message}`;

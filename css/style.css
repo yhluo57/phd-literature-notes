@@ -895,6 +895,56 @@ button:disabled {
   margin-top: 14px;
 }
 
+.segmented-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.mode-button {
+  color: var(--accent);
+  background: var(--panel);
+  border-color: var(--line);
+}
+
+.mode-button.active,
+.mode-button:hover {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.add-mode-panel {
+  display: none;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.add-mode-panel.active {
+  display: block;
+}
+
+.add-mode-panel h3,
+.pending-import-box h3 {
+  font-size: 15px;
+}
+
+.add-mode-panel p,
+.pending-import-box p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.pending-import-box {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
 .theme-preview {
   display: flex;
   align-items: center;
